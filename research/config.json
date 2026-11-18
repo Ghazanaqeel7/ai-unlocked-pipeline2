@@ -1,0 +1,78 @@
+{
+  "_help": "Research bot settings. Edit freely: add/remove keywords or competitor channels (channel id UC... or @handle). Runs on GitHub Actions; results go to docs/research/latest.json and the dashboard Research page.",
+  "own_channel": "",
+  "_own_channel_note": "Fill this in once the @AIUnlocked channel exists (Settings -> Advanced settings -> Channel ID on YouTube). Owner to-do until then.",
+  "region": "US",
+  "language": "en",
+  "shorts": {
+    "days": 90,
+    "min_views": 100000,
+    "max_seconds": 180,
+    "keywords": [
+      "AI tool trick",
+      "chatgpt hack",
+      "AI secret feature",
+      "AI tool nobody tells you",
+      "AI productivity trick",
+      "AI automation trick",
+      "prompt trick",
+      "AI tool you didn't know"
+    ],
+    "min_seconds": 15
+  },
+  "long": {
+    "days": 365,
+    "min_views": 50000,
+    "min_seconds": 240,
+    "keywords": [
+      "how to use AI for",
+      "AI tutorial step by step",
+      "best AI tools for",
+      "AI automation tutorial",
+      "AI workflow explained",
+      "how I use AI to"
+    ]
+  },
+  "competitors": [
+    "@AIGuruOfficialz",
+    "@ai_guy",
+    "@YourAIGuy09",
+    "@AllAboutAI",
+    "@NetworkChuck",
+    "@MattWolfe",
+    "@SkillLeapAI",
+    "@matthew_berman"
+  ],
+  "suggest_seeds": [
+    "chatgpt",
+    "claude ai",
+    "midjourney",
+    "gemini ai",
+    "perplexity ai",
+    "n8n automation",
+    "prompt engineering",
+    "ai agents",
+    "ai productivity",
+    "ai side hustle",
+    "ai for business",
+    "canva ai",
+    "ai coding",
+    "ai automation",
+    "how to use ai",
+    "ai tools 2026",
+    "free ai tools",
+    "ai workflow"
+  ],
+  "exclude_countries": [],
+  "exclude_words": [
+    "crore",
+    "lakh",
+    "rupees",
+    "₹",
+    "nsfw",
+    "prank",
+    "reaction",
+    "election",
+    "war"
+  ]
+}

@@ -1,0 +1,117 @@
+name: render
+# Renders every job whose status in state.json is "render_queued", using the kinetic-typography/motion-graphics
+# engine in pipeline/template (Remotion). Videos here are 4-8 min explainers, so (unlike Sneaky Deals' 12-15 min
+# documentaries) one GitHub Actions job renders the whole thing — no chunked matrix needed.
+on:
+  push:
+    branches: [main]
+    paths: ['state.json']
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Job id to (re)render (leave empty = first render_queued job)'
+        required: false
+
+concurrency:
+  group: render
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+
+      - name: Pick job
+        id: pick
+        run: |
+          J=$(python3 - <<'PY'
+          import json, os
+          s = json.load(open('state.json')); inp = os.environ.get('INPUT_JOB', '').strip()
+          for k, v in s['jobs'].items():
+              if (inp and k == inp) or (not inp and v.get('status') == 'render_queued'):
+                  print(k); break
+          else:
+              print('')
+          PY
+          )
+          echo "job=$J" >> $GITHUB_OUTPUT; echo "picked: '$J'"
+        env:
+          INPUT_JOB: ${{ github.event.inputs.job }}
+
+      - name: Nothing to do
+        if: steps.pick.outputs.job == ''
+        run: echo "no job with status render_queued"
+
+      - uses: actions/setup-node@v4
+        if: steps.pick.outputs.job != ''
+        with: { node-version: 20 }
+
+      - name: System packages
+        if: steps.pick.outputs.job != ''
+        run: |
+          echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg ttf-mscorefonts-installer fonts-dejavu >/dev/null
+          fc-cache -f >/dev/null
+
+      - name: Render
+        if: steps.pick.outputs.job != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          J=${{ steps.pick.outputs.job }}
+          git config user.name "render-bot"; git config user.email "render-bot@users.noreply.github.com"
+          python3 pipeline/scripts/set_status.py "$J" rendering run="${{ github.run_id }}"
+          python3 pipeline/scripts/progress.py "$J" "🎞 Render starting: images, voice and music (~10-20 min)" || true
+
+          # always render with the latest engine: refresh code from the template, keep the job's own scenes/thumb/timing/assets
+          (cd pipeline/template && tar cf - --exclude=node_modules --exclude=out --exclude='public/assets/*' --exclude=./src/scenes.json --exclude=./src/thumb.json --exclude=./src/timing.json .) | (cd "jobs/$J/project" && mkdir -p . && tar xf -)
+
+          python3 pipeline/video/validate_long.py "jobs/$J"
+          python3 pipeline/video/fetch_assets.py "jobs/$J"
+
+          cd "jobs/$J/project"
+          npm ci --no-audit --no-fund >/dev/null 2>&1 || npm install --no-audit --no-fund >/dev/null
+          CH=$(command -v google-chrome || command -v chromium || true)
+          npx remotion still src/index.jsx Thumb ../thumbnail.jpg --image-format=jpeg --jpeg-quality=92 --gl=swangle ${CH:+--browser-executable=$CH} || echo "thumbnail failed"
+          cd ../../..
+
+          python3 -m pip install -q --break-system-packages kokoro-onnx soundfile numpy
+          python3 pipeline/video/make_voice_long.py "jobs/$J"
+          bash pipeline/video/mix_audio.sh "jobs/$J"
+          python3 pipeline/video/chapters.py "jobs/$J" || true
+
+          DUR=$(python3 -c "import json;print(json.load(open('jobs/$J/project/src/timing.json'))['duration'])")
+          FRAMES=$(python3 -c "print(max(1,int(round($DUR*30))-1))")
+          bash pipeline/video/render_chunk.sh "jobs/$J" 0 "$FRAMES" out/chunk.mp4 4
+
+          bash pipeline/video/finalize_long.sh "jobs/$J" "jobs/$J/project/out/chunk.mp4"
+
+          TITLE=$(python3 -c "import json;print(json.load(open('jobs/$J/meta.json'))['title'])")
+          gh release delete "job-$J" -y --cleanup-tag 2>/dev/null || true
+          ASSETS="jobs/$J/project/out/final.mp4 jobs/$J/project/out/preview.mp4 jobs/$J/project/out/upload.mp4"
+          [ -f "jobs/$J/thumbnail.jpg" ] && ASSETS="$ASSETS jobs/$J/thumbnail.jpg"
+          gh release create "job-$J" $ASSETS --title "$TITLE" --notes "Pipeline render for $J" --prerelease
+
+          git add jobs/$J/upload.json jobs/$J/credits.txt 2>/dev/null || true
+          git add -f jobs/$J/thumbnail.jpg 2>/dev/null || true
+          git commit -m "$J: upload helper data" || true
+          git checkout -- . ; git clean -fdq "jobs/$J/project" "jobs/$J/review" 2>/dev/null || true
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && break || sleep $((i*4)); done
+
+          URL="https://github.com/${{ github.repository }}/releases/download/job-$J/final.mp4"
+          PURL="https://github.com/${{ github.repository }}/releases/download/job-$J/preview.mp4"
+          UURL="https://github.com/${{ github.repository }}/releases/download/job-$J/upload.mp4"
+          if [ -f "jobs/$J/project/out/final.mp4" ]; then
+            python3 pipeline/scripts/set_status.py "$J" video_ready video_url="$URL" preview_url="$PURL" upload_url="$UURL"
+          else
+            python3 pipeline/scripts/set_status.py "$J" render_failed run="${{ github.run_id }}"
+          fi

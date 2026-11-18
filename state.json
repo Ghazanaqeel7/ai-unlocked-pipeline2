@@ -1,0 +1,47 @@
+{
+  "config": {
+    "publish_days": ["Mon", "Wed", "Fri"],
+    "pipeline_buffer": 2,
+    "longform_enabled": false,
+    "reels": false,
+    "social_windows_pkt": ["05:00-09:00", "19:00-23:00"]
+  },
+  "jobs": {},
+  "ideas": [],
+  "inbox": [],
+  "owner_todos": [
+    {
+      "id": "create-channel",
+      "title": "Create the @AIUnlocked YouTube channel",
+      "why": "The pipeline needs a real channel to publish to.",
+      "how": "Create a YouTube channel named AI Unlocked, handle @AIUnlocked if available.",
+      "link": "https://www.youtube.com/create_channel",
+      "done": false
+    },
+    {
+      "id": "fill-own-channel-id",
+      "title": "Add the channel ID to research/config.json",
+      "why": "The research bot needs this to track our own channel's stats and exclude us from competitor scans.",
+      "how": "Once the channel exists: YouTube Studio -> Settings -> Channel -> Advanced settings -> copy the Channel ID, paste it into research/config.json -> own_channel.",
+      "link": "https://studio.youtube.com",
+      "done": false
+    },
+    {
+      "id": "yt-api-key-secret",
+      "title": "Add a YT_API_KEY repo secret",
+      "why": "GitHub Actions (research/stats workflows) needs a YouTube Data API key to read public video stats.",
+      "how": "Create an API key in Google Cloud Console with YouTube Data API v3 enabled, then add it as a repository secret named YT_API_KEY (Settings -> Secrets and variables -> Actions).",
+      "link": "https://console.cloud.google.com/apis/credentials",
+      "done": false
+    },
+    {
+      "id": "confirm-repo-public",
+      "title": "Confirm this repo is public and GitHub Pages is on",
+      "why": "GitHub Pages (the dashboard) only serves for free on a public repo.",
+      "how": "Settings -> General -> Danger Zone -> check visibility is Public. Then Settings -> Pages -> Source: Deploy from a branch -> main -> /docs.",
+      "link": "",
+      "done": false
+    }
+  ],
+  "last_story_date": null
+}

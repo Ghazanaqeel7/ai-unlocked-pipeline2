@@ -1,0 +1,13 @@
+node_modules/
+out/
+stills/
+*_tmp.wav
+RAW.wav
+hook_sample.wav
+.DS_Store
+__pycache__/
+node_modules/
+out/
+pipeline/template/public/assets/*
+!pipeline/template/public/assets/.gitkeep
+.bot-static.json

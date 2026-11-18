@@ -1,0 +1,26 @@
+{
+ "title": "Sample AI Unlocked video (template demo)",
+ "scenes": [
+  {
+   "id": "s01",
+   "text": "Most people use ChatGPT wrong. Here is the one setting that changes everything.",
+   "visual": {
+    "type": "title",
+    "text": "You're using ChatGPT wrong",
+    "accent": ["wrong"]
+   },
+   "tone": "dark"
+  },
+  {
+   "id": "s02",
+   "text": "This single trick saves hours every week.",
+   "visual": {
+    "type": "headline",
+    "kicker": "AI UNLOCKED · TRICK #1",
+    "text": "One setting most people never touch",
+    "source": "Sample text — replace with the real script"
+   },
+   "tone": "cyan"
+  }
+ ]
+}
