@@ -7,7 +7,7 @@ Allowed licences: Public domain, CC0, CC BY, CC BY-SA (credit is auto-collected)
 Photos that cannot be found keep no 'resolved' -> the scene shows its fallback icon (strict mode fails instead)."""
 import json, os, re, sys, urllib.parse, urllib.request, hashlib, html
 API = 'https://commons.wikimedia.org/w/api.php'
-UA = {'User-Agent': 'AIUnlockedBot/1.0 (https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2; owner channel @AIUnlocked)'}
+UA = {'User-Agent': 'AIGraphicTVBot/1.0 (https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2; owner channel @AIGraphicTV)'}
 OK = re.compile(r'^(public domain|pd\b|pd-|cc0|cc[- ]by(?!-nc)(?!-nd)|cc[- ]by-sa|attribution(?! non)|no restrictions)', re.I)
 BAD = re.compile(r'(non-?commercial|\bnc\b|no-?deriv|\bnd\b|fair use|copyrighted|all rights)', re.I)
 

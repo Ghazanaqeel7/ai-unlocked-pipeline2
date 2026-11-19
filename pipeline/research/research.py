@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""AI Unlocked research bot (free: YouTube Data API v3 + YouTube search suggestions).
+"""AI Graphic TV research bot (free: YouTube Data API v3 + YouTube search suggestions).
 
 Usage (GitHub Actions runs this daily; env YT_API_KEY needed for --full):
   python3 pipeline/research/research.py --full     # daily: outliers, competitors, hot words, suggestions, title checks,
@@ -304,7 +304,7 @@ def views_ago(snaps, hours, key='views'):
     return old[-1][key] if old else None
 
 def track_own_videos(own):
-    """Snapshot of the channel and every public AI Unlocked video (hourly via --stats, daily via --full):
+    """Snapshot of the channel and every public AI Graphic TV video (hourly via --stats, daily via --full):
     views over time, change in the last 24 h, views at day 1/3/7 for fair comparisons. Feeds the dashboard Stats page."""
     path = os.path.join(OUT_DIR, 'own_videos.json')
     data = json.load(open(path)) if os.path.exists(path) else {'videos': {}}
@@ -406,7 +406,7 @@ def summary(res, tr=None):
     up = ((tr or {}).get('rising') or {}).get('brands', {}).get('rising') or []
     if up and (tr or {}).get('days_of_memory', 0) >= 8: L.append('📈 Barh rahe topics (7 din): ' + ', '.join(f"{m['name']} (+{m['change']})" for m in up[:5]))
     o = res.get('own')
-    if o: L.append(f"📈 AI Unlocked: {fmt(o['subs'])} subs" + (f" ({o['subs_change']:+d} pichle scan se)" if o.get('subs_change') is not None else ''))
+    if o: L.append(f"📈 AI Graphic TV: {fmt(o['subs'])} subs" + (f" ({o['subs_change']:+d} pichle scan se)" if o.get('subs_change') is not None else ''))
     return L
 
 if __name__ == '__main__':

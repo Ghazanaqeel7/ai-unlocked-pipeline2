@@ -28,7 +28,7 @@ def note(j, msg):
     j['progress_count'] = j.get('progress_count', 0) + 1
 
 def queue_thumb(jid, vid, j):
-    """Add the video to feed/thumbs.xml; the Zap "AI Unlocked -> YouTube thumbnail" sets it (YouTube only keeps a
+    """Add the video to feed/thumbs.xml; the Zap "AI Graphic TV -> YouTube thumbnail" sets it (YouTube only keeps a
     Short's custom thumbnail when it is set after processing, so the upload Zap's own thumbnail does not stick)."""
     if j.get('thumb_queued_at') or not os.path.exists(os.path.join(ROOT, 'jobs', jid, 'thumbnail.jpg')):
         return

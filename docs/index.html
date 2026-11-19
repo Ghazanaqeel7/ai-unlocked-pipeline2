@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Unlocked — Production desk</title>
+<title>AI Graphic TV — Production desk</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="icon" href="logo.png">
@@ -12,13 +12,13 @@
 <script src="https://cdn.jsdelivr.net/npm/dompurify@3/dist/purify.min.js"></script>
 <style>
 :root{
-  /* AI Unlocked — near-black indigo, electric violet + cyan accents (matches pipeline/template theme.js) */
-  --bg:#0a0a14; --bg2:#121226; --card:#15152b; --card2:#1c1c38; --line:#2a2a4a; --line2:#30304f;
-  --ink:#eef0ff; --ink2:#b7bbe8; --ink3:#8688b0;
-  --gold:#8b5cf6; --gold2:#c4b5fd; --gold-bg:#241a42;
+  /* AI Graphic TV — deep navy background, gold + sky-blue accents (matches the channel logo) */
+  --bg:#070c16; --bg2:#0b1222; --card:#101a2e; --card2:#152038; --line:#223049; --line2:#2a3b58;
+  --ink:#f3f6fc; --ink2:#aab7cf; --ink3:#71809c;
+  --gold:#d4af37; --gold2:#e9cc70; --gold-bg:#2e2410;
   --coral:#f0506e; --coral-bg:#3a1424; --mint:#34d399; --mint-bg:#0f2e26;
-  --blue:#22d3ee; --blue-bg:#0d2a33; --mute-bg:#1c1c38;
-  --r:16px; --r2:12px; --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 28px rgba(139,92,246,.08);
+  --blue:#4fb3e8; --blue-bg:#0d2a3a; --mute-bg:#152038;
+  --r:16px; --r2:12px; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 28px rgba(212,175,55,.10);
   --display:"Space Grotesk",system-ui,sans-serif; --sans:"Space Grotesk","Inter",system-ui,sans-serif; --mono:"Geist Mono",ui-monospace,monospace;
   --paper:var(--bg); --sheet:var(--card); --rule:var(--line2); --rule2:var(--line); --sig:var(--gold2); --sig-bg:var(--gold-bg);
   --ok:var(--mint); --ok-bg:var(--mint-bg); --bad:var(--coral); --bad-bg:var(--coral-bg); --info:var(--blue); --info-bg:var(--blue-bg);
@@ -344,7 +344,7 @@ audio{width:100%;border-radius:999px}
 </head>
 <body>
 <header class="top">
-  <div class="brand"><img src="logo.png" alt="AI Unlocked logo"><div><b>AI Unlocked</b><span>Production studio</span></div></div>
+  <div class="brand"><img src="logo.png" alt="AI Graphic TV logo"><div><b>AI Graphic TV</b><span>Production studio</span></div></div>
   <nav class="nav" id="nav" aria-label="Main"></nav>
   <button class="health" id="health" onclick="go('settings')" aria-label="System status"></button>
   <div class="auth" id="auth"></div>
@@ -629,11 +629,11 @@ async function renderTab(){
     const igLock=TOKEN&&!j.ig_at,fbLock=TOKEN&&!j.fb_at,dis=(ok)=>ok?'':'disabled';
     const tags=(t)=>Array.isArray(t)?t.join(' '):(t||'');
     P.innerHTML=`<div class="grid2"><div>
-      <div class="lbl" style="font-size:12px;color:var(--ink)">Instagram Reel · @aiunlocked</div>
+      <div class="lbl" style="font-size:12px;color:var(--ink)">Instagram Reel · @aigraphictv</div>
       ${auto?'<div class="note">Claude has not written an Instagram caption for this video yet — the YouTube description is adapted automatically. Write your own below to override it.</div>':''}
       <div class="field"><div class="lbl">Caption <span class="counter" id="igc"></span></div><textarea id="ig_cap" rows="11" ${dis(igLock)} oninput="dirty();countS()" placeholder="First line = the hook (shows before 'more'). Then the story, the question, the CTA.">${esc(ig.caption||'')}</textarea></div>
       <div class="field"><div class="lbl">Hashtags (max 5) <span class="counter" id="igh"></span></div><input type="text" id="ig_tags" value="${esc(tags(ig.hashtags))}" ${dis(igLock)} oninput="dirty();countS()" placeholder="#business #disney #history"></div>
-      <div class="lbl" style="font-size:12px;color:var(--ink);margin-top:22px">Facebook Reel · AI Unlocked Page</div>
+      <div class="lbl" style="font-size:12px;color:var(--ink);margin-top:22px">Facebook Reel · AI Graphic TV Page</div>
       <div class="field"><div class="lbl">Title <span class="counter" id="fbt"></span></div><input type="text" id="fb_title" value="${esc(fb.title||meta.title)}" ${dis(fbLock)} oninput="dirty();countS()"></div>
       <div class="field"><div class="lbl">Description</div><textarea id="fb_desc" rows="7" ${dis(fbLock)} oninput="dirty()" placeholder="Empty = use the Instagram caption">${esc(fb.description||'')}</textarea></div>
       <div class="field"><div class="lbl">Hashtags (max 3)</div><input type="text" id="fb_tags" value="${esc(tags(fb.hashtags))}" ${dis(fbLock)} oninput="dirty()"></div>
@@ -642,7 +642,7 @@ async function renderTab(){
       <div class="lbl">How it goes out</div>
       <div class="kv"><div>When</div><div>Same morning as YouTube, right after it (${publishSlots(S.state)[id]?pt2(publishSlots(S.state)[id]):esc(nextSlotText(S.state))+' PKT'})</div><div>Instagram</div><div>n8n → feed/reels.xml → Zapier → Reel</div><div>Facebook</div><div>n8n → feed/facebook.xml → Zapier → Page video</div><div>Video</div><div>Same file as YouTube (9:16)</div></div>
       <div class="lbl" style="margin-top:20px">Instagram preview</div>
-      <div class="igprev"><b>aiunlocked</b> <span id="ig_prev"></span></div>
+      <div class="igprev"><b>aigraphictv</b> <span id="ig_prev"></span></div>
       <div class="note" style="margin-top:14px">Instagram shows only the first ~125 characters before "more" — put the hook there. Instagram now favours a few precise hashtags (max 5) and keyword-rich captions (they are searchable). Facebook: short title, end with a question to get comments.</div>
     </div></div>`;countS();
   }
@@ -677,7 +677,7 @@ function platStatus(id,j){
 function platformStrip(id,j){
   const p=platStatus(id,j);
   const row=(icon,name,[c,t],link)=>`<div class="pl"><span class="pi">${icon}</span><b>${name}</b><span class="chip c-${c}">${esc(t)}</span>${link?`<a href="${link}" target="_blank">open ↗</a>`:''}</div>`;
-  return `<div class="plats">${row(PICON.yt,'YouTube',p.yt,'https://www.youtube.com/@AIUnlocked')}${row(PICON.ig,'Instagram',p.ig,'https://www.instagram.com/aiunlocked/')}${row(PICON.fb,'Facebook',p.fb,'')}</div>`}
+  return `<div class="plats">${row(PICON.yt,'YouTube',p.yt,'https://www.youtube.com/@AIGraphicTV')}${row(PICON.ig,'Instagram',p.ig,'https://www.instagram.com/aigraphictv/')}${row(PICON.fb,'Facebook',p.fb,'')}</div>`}
 
 // ---------- today ----------
 async function cachedDaily(path){const key='d|'+path+'|'+new Date().toISOString().slice(0,13);if(S.cache[key])return S.cache[key];const v=JSON.parse(await readText(path));S.cache[key]=v;return v}
@@ -841,7 +841,7 @@ const ptabs=()=>`<div class="tabs" style="margin:0 0 18px">${[['goal','💰 Earn
 function renderSocialStats(k){
   const th=(id,j)=>`${RAW}/jobs/${esc(id)}/thumbnail.jpg?u=${encodeURIComponent(j.updated||'')}`;
   const name=k==='ig'?'Instagram':'Facebook',at=(j)=>k==='ig'?(j.ig_at||j.reels_at):(j.fb_at||j.reels_at);
-  const link=k==='ig'?'https://www.instagram.com/aiunlocked/':'https://www.facebook.com/profile.php';
+  const link=k==='ig'?'https://www.instagram.com/aigraphictv/':'https://www.facebook.com/profile.php';
   const jobs=Object.entries(S.state.jobs).filter(([id,j])=>isJob(id)&&j.type!=='long'&&['published','video_approved'].includes(j.status)).sort((a,b)=>(at(b[1])||'9').localeCompare(at(a[1])||'9'));
   const sent=jobs.filter(([,j])=>at(j)).length;
   const SO=(S.social||{})[k==='ig'?'instagram':'facebook']||{posts:[]};
@@ -850,19 +850,19 @@ function renderSocialStats(k){
   const likeKey=k==='ig'?'likes':'reactions';
   const row=([id,j])=>{const t=at(j);const st=t?['ok','Sent to Zapier']:j.status==='published'?['mute','Not sent (before IG/FB setup)']:['wait','Goes out with YouTube'];
     const p=P(id);return `<tr><td><div class="vv"><img alt="" src="${th(id,j)}" onerror="this.onerror=null;this.src='logo.png'"><div><a href="#" onclick="pick('${id}','social');return false">${esc(j.title||titleFromId(id))}</a><div class="note" style="margin:3px 0 0">${esc(id)}</div></div></div></td><td><span class="chip c-${st[0]}">${p?'Live':st[1]}</span>${p&&p.url?` <a href="${esc(p.url)}" target="_blank">open ↗</a>`:''}</td><td style="text-align:right"><b>${p?fmtN(p.views||0):'—'}</b></td><td style="text-align:right">${p?fmtN(p[likeKey]||0):'—'}</td><td style="text-align:right">${p?fmtN(p.comments||0):'—'}</td><td>${t?pt2(t):'—'}</td></tr>`};
-  $('#main').innerHTML=`<div class="pagehead"><div><div class="kicker">${name} · @aiunlocked</div><h1 style="margin:6px 0 0">Stats</h1><p class="lead">${sent} video${sent===1?'':'s'} sent to ${name}${S.social?` · numbers updated ${ago(S.social.updated)} (every 6 h)`:''}</p></div></div>${ptabs()}
+  $('#main').innerHTML=`<div class="pagehead"><div><div class="kicker">${name} · @aigraphictv</div><h1 style="margin:6px 0 0">Stats</h1><p class="lead">${sent} video${sent===1?'':'s'} sent to ${name}${S.social?` · numbers updated ${ago(S.social.updated)} (every 6 h)`:''}</p></div></div>${ptabs()}
     <div class="stats" style="margin:0 0 16px"><div class="stat"><div class="kicker">Views</div><b>${fmtN(tot('views'))}</b></div><div class="stat"><div class="kicker">${k==='ig'?'Likes':'Reactions'}</div><b>${fmtN(tot(likeKey))}</b></div><div class="stat"><div class="kicker">Comments</div><b>${fmtN(tot('comments'))}</b></div><div class="stat"><div class="kicker">${k==='ig'?'Reach':'Followers'}</div><b>${k==='ig'?fmtN(tot('reach')):(SO.followers!=null?fmtN(SO.followers):'—')}</b></div></div>
     <div class="card" style="overflow-x:auto">${jobs.length?`<table class="vt"><thead><tr><th>Video</th><th>Status</th><th style="text-align:right">Views</th><th style="text-align:right">${k==='ig'?'Likes':'Reactions'}</th><th style="text-align:right">Comments</th><th>Sent</th></tr></thead><tbody>${jobs.map(row).join('')}</tbody></table>`:'<div class="empty" style="padding:20px">No videos yet.</div>'}</div>
     <div class="note" style="margin-top:12px">"Sent to Zapier" = the video is in the ${name} Zap's feed; Zapier posts it within ~15 min. If it fails, Zapier emails you. <a href="${link}" target="_blank">${name} open ↗</a></div>`;
 }
 async function renderYtStats(){
   let O=S.own;try{O=JSON.parse(await readText('docs/research/own_videos.json'));S.own=O}catch(e){}
-  if(!O||!O.channel){$('#main').innerHTML=`<div class="pagehead"><div><div class="kicker">YouTube · @AIUnlocked</div><h1 style="margin:6px 0 0">Stats</h1><p class="lead">The stats bot fetches subscribers and every video’s views each hour. The first numbers appear within an hour of it starting.</p></div></div>${ptabs()}`;return}
+  if(!O||!O.channel){$('#main').innerHTML=`<div class="pagehead"><div><div class="kicker">YouTube · @AIGraphicTV</div><h1 style="margin:6px 0 0">Stats</h1><p class="lead">The stats bot fetches subscribers and every video’s views each hour. The first numbers appear within an hour of it starting.</p></div></div>${ptabs()}`;return}
   const c=O.channel,vids=Object.entries(O.videos||{}).map(([id,v])=>({id,...v})).sort((a,b)=>(b.published||'').localeCompare(a.published||''));
   const v24=vids.reduce((a,v)=>a+(v.views_24h||0),0);
   const d=(n,suf='in 24 h')=>n==null?'<div class="note" style="margin:0">first day of data</div>':`<div class="note" style="margin:0;color:${n>0?'var(--mint)':'var(--ink3)'}">${n>=0?'+':''}${fmtN(n)} ${suf}</div>`;
   const cell=(x)=>x==null?'<span class="dim">—</span>':fmtN(x);
-  $('#main').innerHTML=`<div class="pagehead"><div><div class="kicker">YouTube · @AIUnlocked</div><h1 style="margin:6px 0 0">Stats</h1><p class="lead">Updated ${ago(O.updated)} · refreshes every hour</p>${ptabs()}</div>
+  $('#main').innerHTML=`<div class="pagehead"><div><div class="kicker">YouTube · @AIGraphicTV</div><h1 style="margin:6px 0 0">Stats</h1><p class="lead">Updated ${ago(O.updated)} · refreshes every hour</p>${ptabs()}</div>
     <div class="stats"><div class="stat"><div class="kicker">Subscribers</div><b>${fmtN(c.subs)}</b>${d(c.subs_24h)}</div><div class="stat"><div class="kicker">Channel views</div><b>${fmtN(c.views)}</b>${d(c.views_24h)}</div><div class="stat"><div class="kicker">Views · 24 h</div><b>${fmtN(v24)}</b><div class="note" style="margin:0">all videos</div></div><div class="stat"><div class="kicker">Public videos</div><b>${vids.length}</b><div class="note" style="margin:0">${vids.filter(v=>v.short).length} Short${vids.filter(v=>v.short).length===1?'':'s'}</div></div></div></div>
     <div class="tgrid"><div class="card chartbox"><div class="sec" style="margin:0 0 12px"><h2>Channel views</h2></div>${bigChart(c.snaps,'views','views')}</div>
       <div class="card chartbox"><div class="sec" style="margin:0 0 12px"><h2>Subscribers</h2></div>${bigChart(c.snaps,'subs','subscribers')}</div></div>
@@ -959,7 +959,7 @@ async function renderResearch(){
   $('#main').innerHTML=`<h1>Research</h1>
   <div class="sub"><span>Last full scan ${ago(R.full_run)} (${pt2(R.full_run)})</span><span>Runs daily 06:00 PKT</span><span>${R.units_used||0} of 10,000 free API units</span><a href="https://github.com/${OWNER}/${REPO}/actions/workflows/research.yml" target="_blank">Run now ↗</a></div>
   <div class="overview">
-    <div><div class="lbl">AI Unlocked subs</div><div class="big">${fmtN(o.subs)}</div><div class="note">${o.subs_change!=null?(o.subs_change>=0?'+':'')+o.subs_change+' since last scan':'first scan'}</div></div>
+    <div><div class="lbl">AI Graphic TV subs</div><div class="big">${fmtN(o.subs)}</div><div class="note">${o.subs_change!=null?(o.subs_change>=0?'+':'')+o.subs_change+' since last scan':'first scan'}</div></div>
     <div><div class="lbl">Channel views</div><div class="big">${fmtN(o.views)}</div><div class="note">${o.views_change!=null?'+'+fmtN(o.views_change)+' since last scan':'&nbsp;'}</div></div>
     <div><div class="lbl">Hits found</div><div class="big">${(R.shorts||[]).length+(R.long||[]).length}</div><div class="note">US, English, last ${R.config.shorts.days} d Shorts / ${R.config.long.days} d long</div></div>
     <div><div class="lbl">Ideas queued</div><div class="big">${ideas.length}</div><div class="note">Claude uses them first</div></div>

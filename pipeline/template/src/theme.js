@@ -1,4 +1,4 @@
-// Look of AI Unlocked: near-black/indigo background, electric-violet + cyan accents, kinetic typography, motion graphics.
+// Look of AI Graphic TV: near-black/indigo background, electric-violet + cyan accents, kinetic typography, motion graphics.
 export const W = 1920, H = 1080, FPS = 30;
 export const C = {
   ink: '#0a0a14', ink2: '#121226', slate: '#1c1c38', line: '#30304f',

@@ -1,4 +1,4 @@
-# AI Unlocked playbook
+# AI Graphic TV playbook
 
 The rules Claude follows when picking topics and writing titles, hooks and scripts. Claude rewrites this file
 every Monday from the research bot's data (`docs/research/`) and our own videos' numbers. The owner can edit it

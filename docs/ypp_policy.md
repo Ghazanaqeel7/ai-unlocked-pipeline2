@@ -1,4 +1,4 @@
-# YouTube monetisation rulebook (AI Unlocked)
+# YouTube monetisation rulebook (AI Graphic TV)
 
 Sources: YouTube Channel Monetisation Policies (support.google.com/youtube/answer/1311392) and YouTube Partner
 Programme overview & eligibility (support.google.com/youtube/answer/72851), read 19 Nov 2026. Re-read both in the

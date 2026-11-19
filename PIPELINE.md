@@ -1,6 +1,6 @@
-# AI Unlocked — production pipeline (instructions for Claude's daily run)
+# AI Graphic TV — production pipeline (instructions for Claude's daily run)
 
-Channel: **AI Unlocked** (@AIUnlocked). 4-8 minute motion-graphics explainers: real AI-tool tricks, secrets and
+Channel: **AI Graphic TV** (@AIGraphicTV). 4-8 minute motion-graphics explainers: real AI-tool tricks, secrets and
 step-by-step implementation knowledge, told with kinetic typography and bold scene-to-scene transitions (no
 cartoon characters — see `docs/render_guide.md` for the look). Audience: **"har type ki"** — every type of user,
 from total beginners to people already using AI daily, worldwide (primary: US/UK, broad reach otherwise).

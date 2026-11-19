@@ -19,7 +19,7 @@ GOOD = {'bankruptcy': 5, 'collapse': 5, 'recall': 4, 'closing': 4, 'closes': 4, 
 POLITICS = re.compile(r'\b(trump|biden|harris|starmer|sunak|labour|tory|tories|democrat|republican|congress|senate|parliament|election|vote[sr]?|war|gaza|ukraine|israel|hamas|russia|nato|immigration|abortion|shooting|murder|police|court(room)?|trial|minister|president|prime minister)\b', re.I)
 NAME = re.compile(r"\b([A-Z][a-zA-Z&'.-]+(?:\s[A-Z][a-zA-Z&'.-]+){0,2})\b")
 def fetch(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (AIUnlockedBot)'})
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (AIGraphicTVBot)'})
     with urllib.request.urlopen(req, timeout=25) as r: return r.read()
 def parse(xml, source, region):
     out = []

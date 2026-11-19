@@ -1,6 +1,6 @@
-# AI Unlocked — render guide (for Claude, writing `scenes.json`)
+# AI Graphic TV — render guide (for Claude, writing `scenes.json`)
 
-This is the equivalent of Sneaky Deals' `longform_guide.md`, adapted for AI Unlocked's single
+This is the equivalent of Sneaky Deals' `longform_guide.md`, adapted for AI Graphic TV's single
 format: 4-8 minute AI-tools/tricks explainer videos in a **kinetic typography + motion graphics**
 style. Read this before writing `jobs/<id>/project/src/scenes.json` for any job.
 

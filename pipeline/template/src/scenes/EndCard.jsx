@@ -5,7 +5,7 @@ import {prog, ease} from '../util.js';
 import {Bg} from './common.jsx';
 
 // last scene. params: title ("Next: ..."), sub
-export const EndCard = ({title = 'An AI trick that actually works', sub = 'Subscribe to AI Unlocked', tone: tn = 'dark'}) => {
+export const EndCard = ({title = 'An AI trick that actually works', sub = 'Subscribe to AI Graphic TV', tone: tn = 'dark'}) => {
   const f = useCurrentFrame(); const t = tone(tn);
   return (
     <AbsoluteFill>

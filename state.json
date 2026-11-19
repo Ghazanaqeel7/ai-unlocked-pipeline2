@@ -12,9 +12,9 @@
   "owner_todos": [
     {
       "id": "create-channel",
-      "title": "Create the @AIUnlocked YouTube channel",
+      "title": "Create the @AIGraphicTV YouTube channel",
       "why": "The pipeline needs a real channel to publish to.",
-      "how": "Create a YouTube channel named AI Unlocked, handle @AIUnlocked if available.",
+      "how": "Create a YouTube channel named AI Graphic TV, handle @AIGraphicTV if available.",
       "link": "https://www.youtube.com/create_channel",
       "done": false
     },
