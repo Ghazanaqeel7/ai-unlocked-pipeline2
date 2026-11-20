@@ -36,14 +36,23 @@ def main():
                         x = r.get(k)
                         if not (isinstance(x, (int, float)) or (isinstance(x, str) and x.strip())): errs.append(f'{sid}: {b["type"]} row "{r.get("label")}" {k} must be a number or short text')
         if len(t.split()) > 40: warns.append(f'{sid}: scene is {len(t.split())} words (~16s+ on one beat; a Short needs faster cuts)')
-    if sc and types[-1:] != ['endcard']: warns.append('last scene is not an endcard')
+    if sc and types[-1:] not in (['endcard'], ['socialctacard']): warns.append('last scene is neither an endcard nor a socialctacard')
+    # Single clean closing beat (render_guide.md): socialctacard is the whole outro on its own — a
+    # trailing endcard right after it is a redundant second closing screen, not a cleaner one.
+    if len(types) >= 2 and types[-2:] == ['socialctacard', 'endcard']:
+        errs.append('redundant endcard immediately after socialctacard; socialctacard should be the sole closing beat on a Short — drop the trailing endcard scene')
     # Shorts: ~2.4 words/sec spoken pace (slightly brisker than long-form) -> target 35-55s band
     seconds = words / 2.4
     if meta.get('demo') and seconds >= 10: pass   # demo render (never published)
     elif seconds < 35: errs.append(f'narration only ~{seconds:.0f}s ({words} words); Shorts need >= 35s')
     elif seconds > 55: errs.append(f'narration ~{seconds:.0f}s ({words} words); Shorts must stay <= 55s')
-    # tighter pace than long-form: a new visual at least every ~3-4s given the short runtime
-    if len(types) < seconds / 4: warns.append(f'only {len(types)} beats for ~{seconds:.0f}s; keep cuts to every 3-4s on a Short')
+    # Strict pacing rule (render_guide.md): 14-16 fast beats at ~2.0-3.2s each, nothing sitting static.
+    if not (meta.get('demo') and seconds < 10):
+        if len(types) < 14: warns.append(f'only {len(types)} beats; render_guide.md asks for 14-16 fast beats (2.0-3.2s each) on a Short')
+        elif len(types) > 16: warns.append(f'{len(types)} beats; render_guide.md asks for 14-16 fast beats (2.0-3.2s each) on a Short, not more')
+        avg = seconds / max(1, len(types))
+        if avg < 2.0: warns.append(f'~{avg:.1f}s/beat on average; below the 2.0-3.2s pacing band, beats may feel rushed')
+        elif avg > 3.2: warns.append(f'~{avg:.1f}s/beat on average; above the 2.0-3.2s pacing band, split the longer scenes into more beats')
     if len(set(types)) < 2 and len(types) > 2: warns.append('low visual variety for a multi-beat Short (<2 distinct scene types)')
     if not any(t in PRIMARY for t in types): warns.append('no beats from the primary UI-card family (hookcard/toolgrid/browsersim/dochighlighter/workflowstepper/datavizcard/socialctacard); Shorts should lead with these, not the long-form secondary types')
     for msg in check_no_repeat(types, max_run=1): warns.append(msg)  # Shorts: don't even allow back-to-back repeats

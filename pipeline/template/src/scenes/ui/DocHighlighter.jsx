@@ -27,18 +27,19 @@ export const DocHighlighter = ({kind = 'article', content = '', highlights = [],
       <GridBg tn={tName} />
       <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <div style={{
-          width: narrow ? '88%' : '72%', maxWidth: narrow ? 900 : 1400, position: 'relative',
+          width: narrow ? '90%' : '72%', maxWidth: narrow ? 980 : 1400, position: 'relative',
           opacity: Math.min(1, kIn * 1.3), transform: `scale(${0.95 + Math.min(1, kIn) * 0.05})`,
         }}>
-          <GlassPanel radius={16} pad={narrow ? '26px 26px' : '38px 46px'} glow={t.accent} style={{overflow: 'hidden', position: 'relative'}}>
+          <GlassPanel radius={16} pad={narrow ? '34px 30px' : '38px 46px'} glow={t.accent} tn={tName}
+            style={{overflow: 'hidden', position: 'relative', minHeight: narrow ? Math.round(h * 0.5) : undefined, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
             {kind === 'tweet' && (
               <div style={{display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16}}>
                 <div style={{width: 40, height: 40, borderRadius: '50%', background: `linear-gradient(135deg, ${t.accent}, ${t.accent2 || t.accent})`}} />
-                <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 18 : 17, color: t.fg}}>@source</div>
+                <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 24 : 17, color: t.fg}}>@source</div>
               </div>
             )}
             <div style={{
-              fontFamily: code ? F.mono : F.sans, fontSize: code ? (narrow ? 18 : 18) : (narrow ? 24 : 23),
+              fontFamily: code ? F.mono : F.sans, fontSize: code ? (narrow ? 25 : 18) : (narrow ? 32 : 23),
               lineHeight: 1.6, color: t.fg, whiteSpace: code ? 'pre-wrap' : 'normal',
             }}>
               {segs.map((seg, i) => (

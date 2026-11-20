@@ -11,7 +11,10 @@ import {F} from '../../theme.js';
 // split (see make_voice_long.py: split_words()). Pure time-lookup — no per-frame ASR/alignment, so this
 // stays cheap even on long-form renders.
 // `words` is the full-video flat word list: [{w, start, end}] with start/end in seconds, global timeline.
-export const Captions = ({words}) => {
+// `polaritySegments` (optional): [{from, dur, polarity}] in frames, same clock as the beats themselves
+// (built in Doc.jsx from each beat's resolved polarity) — lets the caption flip to dark ink whenever the
+// beat underneath is a `polarity:"light"` card, instead of staying white (invisible on a light canvas).
+export const Captions = ({words, polaritySegments}) => {
   const frame = useCurrentFrame();
   const {fps, width} = useVideoConfig();
   const narrow = width < 1600;
@@ -35,18 +38,27 @@ export const Captions = ({words}) => {
     }
   }
 
+  let polarity = 'dark';
+  if (polaritySegments && polaritySegments.length) {
+    for (let i = polaritySegments.length - 1; i >= 0; i--) {
+      const s = polaritySegments[i];
+      if (frame >= s.from) { polarity = s.polarity; break; }
+    }
+  }
+
   return (
     <>
-      {idx !== -1 && <CaptionLine words={words} idx={idx} narrow={narrow} />}
-      <Watermark narrow={narrow} />
+      {idx !== -1 && <CaptionLine words={words} idx={idx} narrow={narrow} polarity={polarity} />}
+      <Watermark narrow={narrow} polarity={polarity} />
     </>
   );
 };
 
-const CaptionLine = ({words, idx, narrow}) => {
+const CaptionLine = ({words, idx, narrow, polarity}) => {
   const WINDOW = narrow ? 5 : 7;
   const startIdx = Math.max(0, idx - Math.floor(WINDOW / 2));
   const slice = words.slice(startIdx, startIdx + WINDOW);
+  const light = polarity === 'light';
 
   return (
     <AbsoluteFill
@@ -71,7 +83,7 @@ const CaptionLine = ({words, idx, narrow}) => {
         {slice.map((w, i) => {
           const active = startIdx + i === idx;
           return active ? (
-            <ActiveWord key={startIdx + i} word={w.w} narrow={narrow} />
+            <ActiveWord key={startIdx + i} word={w.w} narrow={narrow} light={light} />
           ) : (
             <span
               key={startIdx + i}
@@ -79,8 +91,8 @@ const CaptionLine = ({words, idx, narrow}) => {
                 fontFamily: F.sans,
                 fontWeight: 600,
                 fontSize: narrow ? 42 : 32,
-                color: 'rgba(255,255,255,.72)',
-                textShadow: '0 2px 10px rgba(0,0,0,.55)',
+                color: light ? 'rgba(15,23,42,.78)' : 'rgba(255,255,255,.72)',
+                textShadow: light ? '0 1px 2px rgba(255,255,255,.6)' : '0 2px 10px rgba(0,0,0,.55)',
                 letterSpacing: '-0.01em',
               }}
             >
@@ -94,8 +106,9 @@ const CaptionLine = ({words, idx, narrow}) => {
 };
 
 // the signature pick: italic serif word inside a 1.5px blue box with 4 corner square handles, exactly
-// the "selection tool picked this word" look from the reference videos.
-const ActiveWord = ({word, narrow}) => {
+// the "selection tool picked this word" look from the reference videos. Crisp dark ink (#0F172A) on a
+// light-polarity beat, white on dark — never white-on-white.
+const ActiveWord = ({word, narrow, light}) => {
   const size = narrow ? 6 : 7;
   const handle = (top, left) => (
     <div
@@ -111,7 +124,8 @@ const ActiveWord = ({word, narrow}) => {
       <span
         style={{
           position: 'absolute', inset: 0, border: '1.5px solid #3B82F6', borderRadius: 4,
-          boxShadow: '0 0 14px rgba(59,130,246,.35)', pointerEvents: 'none',
+          background: light ? 'rgba(255,255,255,.55)' : 'transparent',
+          boxShadow: light ? '0 0 14px rgba(59,130,246,.25)' : '0 0 14px rgba(59,130,246,.35)', pointerEvents: 'none',
         }}
       />
       {handle(0, 0)}
@@ -121,8 +135,8 @@ const ActiveWord = ({word, narrow}) => {
       <span
         style={{
           fontFamily: F.serif, fontStyle: 'italic', fontWeight: 700,
-          fontSize: narrow ? 46 : 36, color: '#fff',
-          textShadow: '0 2px 10px rgba(0,0,0,.6)',
+          fontSize: narrow ? 46 : 36, color: light ? '#0F172A' : '#fff',
+          textShadow: light ? '0 1px 2px rgba(255,255,255,.4)' : '0 2px 10px rgba(0,0,0,.6)',
         }}
       >
         {word}
@@ -131,10 +145,13 @@ const ActiveWord = ({word, narrow}) => {
   );
 };
 
-const Watermark = ({narrow}) => (
-  <AbsoluteFill style={{alignItems: 'center', justifyContent: 'flex-end', paddingBottom: narrow ? 70 : 40, pointerEvents: 'none'}}>
-    <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 24 : 20, letterSpacing: 1, color: 'rgba(255,255,255,.35)'}}>
-      @AIGraphicTV
-    </div>
-  </AbsoluteFill>
-);
+const Watermark = ({narrow, polarity}) => {
+  const light = polarity === 'light';
+  return (
+    <AbsoluteFill style={{alignItems: 'center', justifyContent: 'flex-end', paddingBottom: narrow ? 70 : 40, pointerEvents: 'none'}}>
+      <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 24 : 20, letterSpacing: 1, color: light ? 'rgba(15,23,42,.42)' : 'rgba(255,255,255,.35)'}}>
+        @AIGraphicTV
+      </div>
+    </AbsoluteFill>
+  );
+};

@@ -28,7 +28,7 @@ export const TONES = {
   amber: {bg: '#1a1306', fg: C.white, sub: '#e8cf9a', accent: C.amber, card: '#2b2110', line: C.glassLine, vignette: '#1a1306'},
   // "Warm Editorial Alabaster" — the light half of AI Graphic TV's dark<->light per-beat polarity system
   // (render_guide.md "polarity" rule): step-by-step tool walkthroughs use this instead of 'glass'.
-  alabaster: {bg: '#F4F2EC', fg: '#14151B', sub: '#5b5f6b', accent: C.royal, accent2: '#B45309', gold: C.gold, card: '#FFFFFF', line: 'rgba(10,15,25,.07)', vignette: '#F4F2EC', shadow: 'rgba(20,20,30,.12)'},
+  alabaster: {bg: '#F4F2EC', fg: '#0F172A', sub: '#5b5f6b', accent: C.royal, accent2: '#B45309', gold: C.gold, card: '#FFFFFF', line: 'rgba(10,15,25,.07)', vignette: '#F4F2EC', shadow: 'rgba(20,20,30,.12)'},
 };
 export const tone = (name) => TONES[name] || TONES.glass;
 // per-beat dark<->light polarity switch (render_guide.md): 'light' maps to the alabaster tone, anything

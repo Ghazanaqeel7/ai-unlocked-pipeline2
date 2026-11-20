@@ -27,7 +27,7 @@ export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = []
   const kK = prog(f, 0, 12, ease);
   return (
     <AbsoluteFill>
-      <GridBg tn={tn} />
+      <GridBg tn={tName} />
       <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', padding: narrow ? '0 70px' : '0 150px'}}>
         {kicker && (
           <div style={{marginBottom: 22, opacity: kK, transform: `translateY(${(1 - kK) * -16}px)`}}>
@@ -35,10 +35,11 @@ export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = []
           </div>
         )}
         {!!stack.length && (
-          <div style={{display: 'flex', gap: narrow ? -18 : -26, marginBottom: 30}}>
+          <div style={{display: 'flex', gap: narrow ? -18 : -26, marginBottom: narrow ? 42 : 30}}>
             {stack.slice(0, 4).map((s, i) => {
               const k = springPop(f, i * 5, {damping: 15});
               const rot = (i - (stack.length - 1) / 2) * 7;
+              const lightCard = t.card === '#FFFFFF';
               return (
                 <div key={i} style={{
                   opacity: Math.min(1, k * 1.4), zIndex: 10 - i,
@@ -47,10 +48,13 @@ export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = []
                 }}>
                   <div style={{
                     background: t.card, border: `1px solid ${t.line || 'rgba(255,255,255,.1)'}`, borderRadius: 16,
-                    padding: narrow ? '14px 18px' : '18px 26px', boxShadow: '0 14px 34px rgba(0,0,0,.4)', textAlign: 'center',
+                    padding: narrow ? '20px 24px' : '18px 26px', textAlign: 'center',
+                    boxShadow: lightCard
+                      ? '0 1px 2px rgba(15,23,42,.05), 0 8px 16px rgba(15,23,42,.06), 0 24px 48px rgba(15,23,42,.10)'
+                      : '0 14px 34px rgba(0,0,0,.4)',
                   }}>
-                    <div style={{fontFamily: F.display, fontSize: narrow ? 34 : 46, color: t.accent}}>{s.value}</div>
-                    <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 14 : 16, color: t.sub, marginTop: 2}}>{s.label}</div>
+                    <div style={{fontFamily: F.display, fontSize: narrow ? 50 : 46, color: t.accent}}>{s.value}</div>
+                    <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 19 : 16, color: t.sub, marginTop: 2}}>{s.label}</div>
                   </div>
                 </div>
               );

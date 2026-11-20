@@ -27,9 +27,13 @@ of (or alongside) the older `tone` prop — prefer `polarity` in new jobs.
 - `hookcard` — the core kinetic-typography beat: a bold split headline with keyword pills, and now an
   optional fanned-out `stack` of mini-cards (a kinetic counter/stack effect) above the headline. Use for
   the hook, the payoff of a trick, or any line that should hit hard.
-- `toolgrid` — floating grid of tool badges (`tools: [{name:'Claude', glyph:'bulb'}]`). Use when naming
-  3+ tools together. Badges are a generic glass tile + the tool's name as **text** + an abstract glyph —
-  never a real logo. `glyph` is any name from `src/scenes/icons.jsx`, or omit it for an abstract mark.
+- `toolgrid` — floating grid of tool badges (`tools: [{name:'Claude', role:'Chat', glyph:'bulb'}]`). Use
+  when naming 3+ tools together. Badges are a generic glass/white tile (never a real logo) + the tool's
+  **text** name + an optional short `role` caption (e.g. "Video gen", "Voice") + an abstract glyph —
+  `glyph` is any name from `src/scenes/icons.jsx`, or omit it and each badge still gets its own distinct
+  abstract mark seeded from the tool's own name, never an identical dot repeated across tiles. On the
+  narrow (Shorts) canvas, tiles render at a large `260×260px` to fill the vertical hero stage (see below)
+  instead of the old small floating-dot grid.
 - `browsersim` — a simulated, trademark-safe interface in one of three `mode`s: `"app"` (AI tool
   chat/generator window — prompt types in, optional simulated cursor click, dropdown, upload progress),
   `"repo"` (generic GitHub-style repo card — stars, tags, file tree reveal), or `"terminal"` (generic CLI
@@ -53,7 +57,8 @@ of (or alongside) the older `tone` prop — prefer `polarity` in new jobs.
   the schema fix for the "counter stuck at 0" bug; the validators now enforce it as a hard error.
 - `socialctacard` — the comment-to-DM outro: a generic `@AIGraphicTV`-style profile card + a simulated
   comment box where `commentWord` types in and "sends," plus an optional top slide-down "Sent! Check
-  your DMs" notification banner. Use for the Comment-to-DM CTA beat (often right before `endcard`).
+  your DMs" notification banner. **On a Short, this is the sole closing beat** — see "Single clean
+  closing beat" below; don't follow it with an `endcard`.
 
 ### Legacy aliases (do not use in new jobs, kept only so older jobs never break)
 
@@ -85,20 +90,41 @@ examples below), never the old ones.
 - **Show, then tell the "why it matters."** After a `browsersim`/`workflowstepper` beat demonstrating a
   trick, add a short `datavizcard`/`hookcard` beat on the concrete outcome (time saved, money saved).
 - **Numbered structure.** Group tricks/steps and use `chapter` scenes as dividers on `long` videos.
-- **End with a recap + one clear next action** on the `endcard` (often preceded by a `socialctacard`
-  Comment-to-DM beat).
+- **End with a recap + one clear next action.** On `long` videos that's the `endcard`. On `short`
+  videos, see "Single clean closing beat" below — `socialctacard` carries the whole outro alone.
+- **Single clean closing beat (Shorts only):** a `short` job's last beat is `socialctacard` **or**
+  `endcard` — never both back to back. The Comment-to-DM `socialctacard` is already a full, punchy
+  closing screen (profile card + CTA + notification banner); stacking a legacy `endcard` right after it
+  is a redundant second closing screen, not a cleaner one. `validate_short.py` enforces this as a hard
+  error. (`long` videos are unaffected — they still close on an `endcard`, with an optional
+  `socialctacard` beat earlier as a mid-video CTA if the script calls for one.)
 - **Pacing — strict, per the reference-video rework:**
-  - Each beat holds **2.0–4.0 seconds**. Nothing sits frozen for 8+ seconds — if narration for one idea
-    runs longer than ~4s, split it into two beats (e.g. a `browsersim` beat, then a `datavizcard` beat
-    on the same idea's payoff) rather than stretching one beat's duration.
+  - **Shorts: 14–16 fast beats at 2.0–3.2 seconds each** across the 35-55s runtime — tighter and more
+    specific than a general "every few seconds" rule. `validate_short.py` warns if a job lands outside
+    that beat-count or average-per-beat-duration band; treat the warning as a real signal to re-cut the
+    scene list, not noise.
+  - **Long-form: each beat holds 2.0–4.0 seconds.** Nothing sits frozen for 8+ seconds — if narration for
+    one idea runs longer than ~4s, split it into two beats (e.g. a `browsersim` beat, then a
+    `datavizcard` beat on the same idea's payoff) rather than stretching one beat's duration.
   - **Canvas fill 82–90%** — every primary component's main card/window should occupy roughly that
     fraction of the frame width/height (not a small box floating in empty space). `browsersim`'s window
-    width is already set to `narrow ? '88%' : '74%'`+max-width by design; keep custom layouts in that
+    width is already set to `narrow ? '90%' : '74%'`+max-width by design; keep custom layouts in that
     range too.
+  - **Vertical hero-stage fill on `short` jobs (1080×1920):** every primary component
+    (`hookcard`/`browsersim`/`dochighlighter`/`workflowstepper`/`datavizcard`/`socialctacard`) fills the
+    middle **~55-65% vertical stage (roughly 1050px of the 1920px canvas)** on the narrow canvas, via a
+    multi-layered vertical composition (e.g. `browsersim`'s title-bar strip + a tall body area;
+    `socialctacard`'s profile card + comment card stacked together) — each component sets an explicit
+    `minHeight` for this on its narrow-canvas layout, so it's automatic, not something `scenes.json` has
+    to request. Typography also scales up roughly **2x** on the narrow canvas vs. the old sizes (hero
+    numbers, headlines, body text) to match — this is baked into each component, not a per-beat prop.
   - **Sub-beat motion every ~1 second** — nothing should be fully static for a whole beat. Rely on each
     component's own built-in staggered reveals (chip pop-ins, bar fills, typing cursors, checklist ticks,
     scan-lines) rather than one static card sitting still; if a beat genuinely has nothing left to
-    animate after ~1s, it's a sign the beat is too long — shorten it.
+    animate after ~1s, it's a sign the beat is too long — shorten it. On top of each component's own
+    reveals, `Doc.jsx`'s `Fade` wrapper also applies a subtle continuous zoom (`scale: 1.0 → 1.04`) across
+    every beat's full on-screen duration automatically — nothing in `scenes.json` needs to ask for this,
+    it's baked into the engine.
 - **No-repeat rule:** don't use the same `visual.type` more than **twice in a row** (once in a row on
   `short` jobs) — rotate through the primary family (and drop in a secondary type occasionally) so the
   video doesn't feel templated. `validate_long.py`/`validate_short.py` enforce this; don't rely on
@@ -121,6 +147,16 @@ tone — `"dark"` resolves to the existing `glass` tone (deep navy `#060B14`), `
 so a video can alternate canvas polarity beat-to-beat rather than staying one flat dark tone for 8+
 minutes, matching the reference videos' dark↔light rhythm. Alternate polarity roughly every 2-4 beats;
 don't hold one polarity for an entire long-form chapter. Omit `polarity` (and `tone`) to default to dark.
+
+On `polarity: "light"`, every component's cards render as **crisp editorial white**, not muddy gray: pure
+white (`#FFFFFF`) elevated cards, a hairline `1px solid rgba(15,23,42,.08)` border, a soft multi-layer
+drop shadow (no glow/blur meant for a dark background), dark-ink (`#0F172A`) text, and the same vibrant
+cyan/royal-blue/gold accent colors as the dark tone for status pills, bars, and highlights — never a
+desaturated/muddy gray box. `GlassPanel`/`ToolBadge`/`AnimatedBar`/`GaugeArc`/`MatrixDots` in
+`common.jsx` all switch on the resolved tone name automatically; a component just needs to pass its
+resolved tone (`tn`) through to them, it never needs its own light/dark card logic. The Top Kinetic
+Captions (below) also flip to the same dark-ink `#0F172A` on a light-polarity beat instead of staying
+white-on-white.
 
 ## Top Kinetic Captions
 

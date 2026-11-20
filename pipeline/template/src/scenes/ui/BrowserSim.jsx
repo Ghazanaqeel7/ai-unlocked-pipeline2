@@ -23,21 +23,25 @@ export const BrowserSim = ({
   lines = [],
 }) => {
   const f = useCurrentFrame(); const tName = resolveTone(tn, polarity); const t = tone(tName);
-  const {width: w} = useVideoConfig(); const narrow = w < 1600;
-  const winW = narrow ? '88%' : '74%';
+  const {width: w, height: h} = useVideoConfig(); const narrow = w < 1600;
+  const winW = narrow ? '90%' : '74%';
   const kIn = springPop(f, 0, {damping: 16});
+  // narrow (Shorts) canvas: fill the middle 55-65% vertical "hero stage" (~1050px of 1920) rather than
+  // a small horizontal strip floating in dead space — the window's content area gets an explicit
+  // minHeight so the title bar + body together occupy that band.
+  const contentMinH = narrow ? Math.round(h * 0.52) : undefined;
 
   return (
     <>
       <GridBg tn={tName} />
       <div style={{position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
         <div style={{
-          width: winW, maxWidth: narrow ? 900 : 1500, position: 'relative',
+          width: winW, maxWidth: narrow ? 980 : 1500, position: 'relative',
           opacity: Math.min(1, kIn * 1.3), transform: `scale(${0.94 + Math.min(1, kIn) * 0.06}) translateY(${(1 - Math.min(1, kIn)) * 30}px)`,
         }}>
-          <GlassPanel radius={18} pad="0" glow={t.accent} style={{overflow: 'hidden'}}>
+          <GlassPanel radius={18} pad="0" glow={t.accent} tn={tName} style={{overflow: 'hidden'}}>
             <TitleBar narrow={narrow} t={t} label={mode === 'repo' ? (title || 'repository') : mode === 'terminal' ? '~/project' : 'New chat'} />
-            <div style={{padding: narrow ? '22px 24px 28px' : '30px 36px 36px', position: 'relative'}}>
+            <div style={{padding: narrow ? '28px 28px 34px' : '30px 36px 36px', position: 'relative', minHeight: contentMinH, display: 'flex', flexDirection: 'column', justifyContent: narrow ? 'space-between' : 'flex-start'}}>
               {mode === 'repo' && <RepoBody f={f} t={t} narrow={narrow} title={title} stars={stars} tags={tags} tree={tree} />}
               {mode === 'terminal' && <TerminalBody f={f} t={t} narrow={narrow} lines={lines} />}
               {(mode === 'app' || !mode) && (
@@ -57,7 +61,7 @@ const TitleBar = ({narrow, t, label}) => (
     <div style={{width: 11, height: 11, borderRadius: '50%', background: '#f0506e'}} />
     <div style={{width: 11, height: 11, borderRadius: '50%', background: '#fbbf24'}} />
     <div style={{width: 11, height: 11, borderRadius: '50%', background: '#34d399'}} />
-    <div style={{marginLeft: 12, fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 16 : 15, color: t.sub}}>{label}</div>
+    <div style={{marginLeft: 12, fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 22 : 15, color: t.sub}}>{label}</div>
   </div>
 );
 
@@ -84,7 +88,7 @@ const AppBody = ({f, t, narrow, prompt, chips, responseLines, dropdown, uploadPr
         </div>
       )}
       {prompt && (
-        <div style={{background: 'rgba(0,0,0,.25)', border: `1px solid ${t.line}`, borderRadius: 12, padding: narrow ? '16px 18px' : '18px 22px', fontFamily: F.sans, fontSize: narrow ? 20 : 19, color: t.fg, minHeight: narrow ? 56 : 50}}>
+        <div style={{background: 'rgba(0,0,0,.25)', border: `1px solid ${t.line}`, borderRadius: 12, padding: narrow ? '16px 18px' : '18px 22px', fontFamily: F.sans, fontSize: narrow ? 26 : 19, color: t.fg, minHeight: narrow ? 90 : 50}}>
           {prompt.slice(0, Math.round(prompt.length * promptK))}
           <span style={{opacity: promptK < 1 ? (f % 20 < 10 ? 1 : 0) : 0}}>|</span>
         </div>
@@ -101,7 +105,7 @@ const AppBody = ({f, t, narrow, prompt, chips, responseLines, dropdown, uploadPr
           opacity: 0.85 + springPop(f, genClickAt, {damping: 20}) * 0.15,
           transform: `scale(${1 - Math.max(0, 1 - springPop(f, genClickAt, {damping: 10})) * 0.08})`,
           background: `linear-gradient(90deg, ${t.accent}, ${t.accent2 || t.accent})`, color: '#071018', fontFamily: F.sans, fontWeight: 800,
-          fontSize: narrow ? 18 : 17, padding: '10px 22px', borderRadius: 10, boxShadow: `0 0 24px ${t.accent}66`,
+          fontSize: narrow ? 23 : 17, padding: narrow ? '16px 30px' : '10px 22px', borderRadius: 10, boxShadow: `0 0 24px ${t.accent}66`,
         }}>Generate ⚡</div>
       </div>
       {!!responseLines.length && (
@@ -109,7 +113,7 @@ const AppBody = ({f, t, narrow, prompt, chips, responseLines, dropdown, uploadPr
           {responseLines.map((l, i) => {
             const k = prog(f, respStart + i * 8, 10, ease);
             return (
-              <div key={i} style={{opacity: k, transform: `translateX(${(1 - k) * -14}px)`, fontFamily: F.mono, fontSize: narrow ? 16 : 15, color: '#34d399'}}>
+              <div key={i} style={{opacity: k, transform: `translateX(${(1 - k) * -14}px)`, fontFamily: F.mono, fontSize: narrow ? 21 : 15, color: '#34d399'}}>
                 ✓ {l}
               </div>
             );
@@ -125,7 +129,7 @@ const RepoBody = ({f, t, narrow, title, stars, tags, tree}) => {
   return (
     <>
       <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14}}>
-        <div style={{fontFamily: F.sans, fontWeight: 800, fontSize: narrow ? 24 : 26, color: t.fg}}>{title}</div>
+        <div style={{fontFamily: F.sans, fontWeight: 800, fontSize: narrow ? 32 : 26, color: t.fg}}>{title}</div>
         <div style={{display: 'flex', alignItems: 'center', gap: 6, transform: `scale(${Math.min(1.2, starK)})`, color: t.gold || t.accent, fontFamily: F.mono, fontWeight: 700, fontSize: narrow ? 18 : 17}}>
           ★ {stars}
         </div>
@@ -139,7 +143,7 @@ const RepoBody = ({f, t, narrow, title, stars, tags, tree}) => {
         </div>
       )}
       {!!tree.length && (
-        <div style={{background: 'rgba(0,0,0,.25)', borderRadius: 10, padding: narrow ? '14px 16px' : '16px 20px', fontFamily: F.mono, fontSize: narrow ? 16 : 15}}>
+        <div style={{background: 'rgba(0,0,0,.25)', borderRadius: 10, padding: narrow ? '14px 16px' : '16px 20px', fontFamily: F.mono, fontSize: narrow ? 21 : 15}}>
           {tree.map((file, i) => {
             const k = prog(f, 26 + i * 6, 8, ease);
             return (
@@ -155,7 +159,7 @@ const RepoBody = ({f, t, narrow, title, stars, tags, tree}) => {
 };
 
 const TerminalBody = ({f, t, narrow, lines}) => (
-  <div style={{fontFamily: F.mono, fontSize: narrow ? 17 : 16, lineHeight: 1.7}}>
+  <div style={{fontFamily: F.mono, fontSize: narrow ? 24 : 16, lineHeight: 2}}>
     {lines.map((l, i) => {
       const k = prog(f, l.at != null ? l.at : i * 16, 8, ease);
       const running = l.status === 'running';

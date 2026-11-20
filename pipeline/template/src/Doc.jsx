@@ -43,13 +43,23 @@ export const REGISTRY = {
 };
 const OVERLAP = 9;   // frames: a beat keeps showing this long after its end so the next one cross-fades in
 
-const Fade = ({children, first, last}) => {
-  const f = useCurrentFrame(); const {durationInFrames} = useVideoConfig();
+// `dur` is this beat's OWN Sequence duration (passed explicitly rather than read off useVideoConfig,
+// which reflects the whole composition, not the current Sequence).
+const Fade = ({children, first, last, dur}) => {
+  const f = useCurrentFrame();
   const a = first ? 1 : interpolate(f, [0, OVERLAP], [0, 1], {extrapolateRight: 'clamp'});
-  const b = last ? 1 : interpolate(f, [durationInFrames - OVERLAP, durationInFrames], [1, 0], {extrapolateLeft: 'clamp'});
-  const s = first ? 1 : 1 + 0.08 * (1 - a);
+  const b = last ? 1 : interpolate(f, [dur - OVERLAP, dur], [1, 0], {extrapolateLeft: 'clamp'});
+  const entrance = first ? 1 : 1 + 0.08 * (1 - a);
+  // render_guide.md pacing rule: a subtle continuous zoom across the WHOLE beat (not just the entrance)
+  // so nothing ever sits fully static for its 2-4s on screen.
+  const zoom = interpolate(f, [0, Math.max(1, dur)], [1.0, 1.04], {extrapolateRight: 'clamp'});
+  const s = entrance * zoom;
   return <AbsoluteFill style={{opacity: Math.min(a, b), transform: `scale(${s})`}}>{children}</AbsoluteFill>;
 };
+
+// A beat's effective light/dark polarity, for the Captions overlay: explicit `polarity` wins; else an
+// explicit legacy `tone` of 'alabaster' counts as light; everything else defaults dark.
+const resolvePolarity = (visual) => (visual.polarity || (visual.tone === 'alabaster' ? 'light' : 'dark'));
 
 // scene -> list of beats [{from, dur, visual, scene}] in frames
 export const buildBeats = () => {
@@ -87,22 +97,27 @@ const buildWords = () => {
 export const Doc = () => {
   const beats = React.useMemo(buildBeats, []);
   const words = React.useMemo(buildWords, []);
+  const polaritySegments = React.useMemo(
+    () => beats.map((b) => ({from: b.from, dur: b.dur, polarity: resolvePolarity(b.visual)})),
+    [beats]
+  );
   const lastIdx = beats.length - 1;
   return (
     <AbsoluteFill style={{backgroundColor: '#000'}}>
       {beats.map((b, i) => {
         const Comp = REGISTRY[b.visual.type] || Title;
         const isLast = i === lastIdx;
+        const seqDur = b.dur + (isLast ? 0 : OVERLAP);
         return (
-          <Sequence key={b.key} from={b.from} durationInFrames={b.dur + (isLast ? 0 : OVERLAP)}>
-            <Fade first={i === 0} last={isLast}><Comp {...b.visual} frames={b.dur} /></Fade>
+          <Sequence key={b.key} from={b.from} durationInFrames={seqDur}>
+            <Fade first={i === 0} last={isLast} dur={seqDur}><Comp {...b.visual} frames={b.dur} /></Fade>
             {i > 0 && <Sfx type="whoosh" at={0} volume={0.45} />}
           </Sequence>
         );
       })}
       <AbsoluteFill style={{background: 'radial-gradient(ellipse 90% 85% at 50% 50%, rgba(0,0,0,0) 62%, rgba(0,0,0,.35) 100%)', pointerEvents: 'none'}} />
       <Grain />
-      <Captions words={words} />
+      <Captions words={words} polaritySegments={polaritySegments} />
     </AbsoluteFill>
   );
 };

@@ -107,15 +107,26 @@ export const GridBg = ({tn = 'glass'}) => {
   );
 };
 
-// frosted glass card. pass children; w/h optional (defaults to auto via padding). radius/pad tunable.
-export const GlassPanel = ({children, style, radius = 28, pad = '34px 44px', glow}) => (
-  <div style={{
-    position: 'relative', background: C.glassBg, border: `1px solid ${C.glassLine}`, borderRadius: radius,
-    padding: pad, backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)',
-    boxShadow: glow ? `0 20px 60px rgba(0,0,0,.45), 0 0 40px ${glow}33` : '0 20px 60px rgba(0,0,0,.45)',
-    ...style,
-  }}>{children}</div>
-);
+// frosted glass card (dark polarity) OR crisp white editorial card (light/'alabaster' polarity) — pass
+// `tn` (the resolved tone NAME, e.g. 'glass'|'alabaster') so the card picks the right treatment: on
+// 'alabaster' this is a pure #FFFFFF elevated card with a hairline border and a soft multi-layer drop
+// shadow + dark ink text context, never the muddy semi-transparent navy-tinted glass meant for dark
+// backgrounds. w/h optional (defaults to auto via padding). radius/pad tunable.
+export const GlassPanel = ({children, style, radius = 28, pad = '34px 44px', glow, tn}) => {
+  const light = tn === 'alabaster';
+  const bg = light ? '#FFFFFF' : C.glassBg;
+  const border = light ? '1px solid rgba(15,23,42,.08)' : `1px solid ${C.glassLine}`;
+  const boxShadow = light
+    ? `0 1px 2px rgba(15,23,42,.05), 0 8px 16px rgba(15,23,42,.06), 0 24px 48px rgba(15,23,42,.10)${glow ? `, 0 0 36px ${glow}26` : ''}`
+    : (glow ? `0 20px 60px rgba(0,0,0,.45), 0 0 40px ${glow}33` : '0 20px 60px rgba(0,0,0,.45)');
+  return (
+    <div style={{
+      position: 'relative', background: bg, border, borderRadius: radius,
+      padding: pad, backdropFilter: light ? 'none' : 'blur(20px)', WebkitBackdropFilter: light ? 'none' : 'blur(20px)',
+      boxShadow, ...style,
+    }}>{children}</div>
+  );
+};
 
 // keyword pill / badge, e.g. "1 LINE = FULL VIDEO". color = background, dark text by default (gold/cyan are light bg).
 export const Pill = ({text, color = C.skyBlue, dark = true, size = 34, style}) => (
@@ -127,15 +138,25 @@ export const Pill = ({text, color = C.skyBlue, dark = true, size = 34, style}) =
 );
 
 // generic rounded glyph tile for a named tool/product — NEVER a real brand logo (trademark-safe by design).
-// name is rendered as text; `glyph` is one of icons.jsx's names (falls back to a neutral dot).
-export const ToolBadge = ({name, glyph, color = C.skyBlue, size = 150, delay = 0, frame}) => {
+// name is rendered as text; `glyph` is one of icons.jsx's names (falls back to a neutral dot, seeded
+// per-name so each tile's abstract mark is visually distinct). Optional `role` renders a small caption
+// line under the name (e.g. "Video gen", "Voice"). `tn` (resolved tone name) switches the tile itself
+// between the dark-glass treatment and a crisp white editorial card, same rule as GlassPanel.
+export const ToolBadge = ({name, role, glyph, color = C.skyBlue, size = 150, delay = 0, frame, tn}) => {
   const k = springPop(frame, delay, {damping: 16});
+  const light = tn === 'alabaster';
+  const bg = light ? '#FFFFFF' : C.glassBg;
+  const border = light ? '1px solid rgba(15,23,42,.08)' : `1px solid ${C.glassLine}`;
+  const shadow = light
+    ? `0 2px 6px rgba(15,23,42,.06), 0 16px 34px rgba(15,23,42,.10), inset 0 0 0 1px ${color}14`
+    : `0 16px 40px rgba(0,0,0,.4), inset 0 0 0 1px ${color}22`;
   return (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, opacity: Math.min(1, k * 1.4), transform: `scale(${Math.min(1.08, k)}) translateY(${(1 - Math.min(1, k)) * 40}px)`}}>
-      <div style={{width: size, height: size, borderRadius: size * 0.26, background: C.glassBg, border: `1px solid ${C.glassLine}`, backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 16px 40px rgba(0,0,0,.4), inset 0 0 0 1px ${color}22`}}>
-        <GlyphDot name={glyph} color={color} size={size * 0.46} />
+      <div style={{width: size, height: size, borderRadius: size * 0.22, background: bg, border, backdropFilter: light ? 'none' : 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: shadow}}>
+        <GlyphDot name={glyph || name} color={color} size={size * 0.46} />
       </div>
-      {name && <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: size * 0.17, color: '#fff', textAlign: 'center', maxWidth: size * 1.3}}>{name}</div>}
+      {name && <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: size * 0.17, color: light ? '#0F172A' : '#fff', textAlign: 'center', maxWidth: size * 1.3}}>{name}</div>}
+      {role && <div style={{fontFamily: F.sans, fontWeight: 600, fontSize: size * 0.11, color: light ? 'rgba(15,23,42,.55)' : 'rgba(255,255,255,.5)', textAlign: 'center', maxWidth: size * 1.3, textTransform: 'uppercase', letterSpacing: 0.5}}>{role}</div>}
     </div>
   );
 };
@@ -175,7 +196,10 @@ export const Sfx = ({type = 'pop', at = 0, volume = 0.7}) => {
 // cursor, DocHighlighter's stamp) — kept here so none of those components duplicate this logic ----
 
 // a single animated horizontal comparison bar with a counting number, staggered by `i`.
-export const AnimatedBar = ({name, value, max, color, frame, i = 0, narrow, startAt = 0}) => {
+// `light` (bool): the dark track/label colors below are for the 'glass' dark tone — on 'alabaster'
+// (light polarity, white card) they'd be nearly invisible, so pass `light` to flip to dark-ink
+// label/track colors instead (crisp editorial-card rule).
+export const AnimatedBar = ({name, value, max, color, frame, i = 0, narrow, startAt = 0, light}) => {
   const at = startAt + i * 6;
   const k = prog(frame, at, 40, ease);
   const pct = Math.max(0, Math.min(100, (value / (max || Math.max(value, 1))) * 100)) * k;
@@ -183,10 +207,10 @@ export const AnimatedBar = ({name, value, max, color, frame, i = 0, narrow, star
   return (
     <div style={{marginBottom: narrow ? 22 : 28}}>
       <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 24 : 22}}>
-        <span style={{color: 'rgba(255,255,255,.85)'}}>{name}</span>
+        <span style={{color: light ? 'rgba(15,23,42,.78)' : 'rgba(255,255,255,.85)'}}>{name}</span>
         <span style={{color}}>{fmtNumSafe(shown)}</span>
       </div>
-      <div style={{width: '100%', height: narrow ? 16 : 18, borderRadius: 9, background: 'rgba(255,255,255,.08)', overflow: 'hidden'}}>
+      <div style={{width: '100%', height: narrow ? 16 : 18, borderRadius: 9, background: light ? 'rgba(15,23,42,.08)' : 'rgba(255,255,255,.08)', overflow: 'hidden'}}>
         <div style={{height: '100%', width: `${pct}%`, background: `linear-gradient(90deg, ${color}aa, ${color})`, borderRadius: 9}} />
       </div>
     </div>
@@ -195,24 +219,24 @@ export const AnimatedBar = ({name, value, max, color, frame, i = 0, narrow, star
 const fmtNumSafe = (n) => Number(n).toLocaleString('en-US', {maximumFractionDigits: 1});
 
 // circular 0->pct gauge arc (DataVizCard mode="gauge"). pct is 0..1 (already eased by the caller).
-export const GaugeArc = ({pct, color, size = 220, strokeWidth = 16}) => {
+export const GaugeArc = ({pct, color, size = 220, strokeWidth = 16, light}) => {
   const r = (size - strokeWidth) / 2; const c = size / 2; const circ = 2 * Math.PI * r;
   return (
     <svg width={size} height={size} style={{transform: 'rotate(-90deg)'}}>
-      <circle cx={c} cy={c} r={r} fill="none" stroke="rgba(255,255,255,.08)" strokeWidth={strokeWidth} />
+      <circle cx={c} cy={c} r={r} fill="none" stroke={light ? 'rgba(15,23,42,.08)' : 'rgba(255,255,255,.08)'} strokeWidth={strokeWidth} />
       <circle cx={c} cy={c} r={r} fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round"
-        strokeDasharray={circ} strokeDashoffset={circ * (1 - pct)} style={{filter: `drop-shadow(0 0 10px ${color}88)`}} />
+        strokeDasharray={circ} strokeDashoffset={circ * (1 - pct)} style={{filter: light ? 'none' : `drop-shadow(0 0 10px ${color}88)`}} />
     </svg>
   );
 };
 
 // dot-matrix ratio grid (DataVizCard mode="matrix"): cols*rows dots, `lit` of them filled in reading order.
-export const MatrixDots = ({cols = 10, rows = 10, lit = 0, color, size = 14, gap = 8}) => (
+export const MatrixDots = ({cols = 10, rows = 10, lit = 0, color, size = 14, gap = 8, light}) => (
   <div style={{display: 'grid', gridTemplateColumns: `repeat(${cols}, ${size}px)`, gap}}>
     {Array.from({length: cols * rows}, (_, i) => (
       <div key={i} style={{
         width: size, height: size, borderRadius: size * 0.3,
-        background: i < lit ? color : 'rgba(255,255,255,.08)',
+        background: i < lit ? color : (light ? 'rgba(15,23,42,.08)' : 'rgba(255,255,255,.08)'),
         boxShadow: i < lit ? `0 0 8px ${color}aa` : 'none',
         transition: 'none',
       }} />
