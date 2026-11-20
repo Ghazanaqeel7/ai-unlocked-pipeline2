@@ -10,4 +10,6 @@ node_modules/
 out/
 pipeline/template/public/assets/*
 !pipeline/template/public/assets/.gitkeep
+!pipeline/template/public/assets/sfx/
+!pipeline/template/public/assets/sfx/*
 .bot-static.json

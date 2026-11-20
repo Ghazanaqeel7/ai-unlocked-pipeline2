@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 import {F, C, tone} from '../../theme.js';
 import {prog, ease} from '../../util.js';
-import {GridBg, GlassPanel, springPop} from '../common.jsx';
+import {GridBg, GlassPanel, springPop, Sfx} from '../common.jsx';
 
 // Simulated app interface: a glass browser/app chrome with a prompt box whose text types in, plus optional
 // "picker" rows (model/tool selector chips) and a response area. Never mimics a specific real app's exact
@@ -29,6 +29,8 @@ export const MockupWindow = ({title = 'New chat', prompt = '', chips = [], respo
   return (
     <AbsoluteFill>
       <GridBg tn={tn} />
+      <Sfx type="click" at={18} volume={0.35} />
+      {!!responseLines.length && <Sfx type="pop" at={respStart} volume={0.4} />}
       <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center'}}>
         <div style={{width: panelW, opacity: Math.min(1, kIn * 1.3), transform: `scale(${0.92 + Math.min(1, kIn) * 0.08}) translateY(${(1 - Math.min(1, kIn)) * 40}px)`}}>
           <GlassPanel radius={22} pad="0" glow={t.accent} style={{overflow: 'hidden'}}>

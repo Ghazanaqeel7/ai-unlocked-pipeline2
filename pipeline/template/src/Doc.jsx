@@ -15,13 +15,14 @@ import {ListScene} from './scenes/ListScene.jsx';
 import {Quote} from './scenes/Quote.jsx';
 import {Illustration} from './scenes/Illustration.jsx';
 import {EndCard} from './scenes/EndCard.jsx';
-import {Grain} from './scenes/common.jsx';
+import {Grain, Sfx} from './scenes/common.jsx';
 import {HookCard} from './scenes/ui/HookCard.jsx';
 import {MockupWindow} from './scenes/ui/MockupWindow.jsx';
 import {ToolGrid} from './scenes/ui/ToolGrid.jsx';
 import {ComparisonCard} from './scenes/ui/ComparisonCard.jsx';
 import {StatCounter} from './scenes/ui/StatCounter.jsx';
 import {StepFlow} from './scenes/ui/StepFlow.jsx';
+import {Captions} from './scenes/ui/Captions.jsx';
 
 // Primary UI-card types (hookcard/mockup/toolgrid/comparecard/statcounter/stepflow) are this channel's
 // main visual language (see docs/render_guide.md). The rest (photo/stat/chart/timeline/map/headline/
@@ -60,8 +61,23 @@ export const buildBeats = () => {
   return out;
 };
 
+// Flat, global-timeline word list for the Captions overlay: [{w,start,end}], or [] if a job's
+// timing.json predates the word-level split (older jobs still render fine, just without captions).
+const buildWords = () => {
+  const out = [];
+  for (const s of timing.scenes) {
+    if (Array.isArray(s.words)) out.push(...s.words);
+  }
+  return out;
+};
+
+// One component serves BOTH the 16:9 `Doc` and the 9:16 `ShortDoc` compositions (Root.jsx registers
+// this same component under two Composition ids/sizes) — nothing here hardcodes canvas dimensions,
+// every scene reads useVideoConfig() instead, so the only real difference between formats is which
+// scenes.json/timing.json a job writes, not the code.
 export const Doc = () => {
   const beats = React.useMemo(buildBeats, []);
+  const words = React.useMemo(buildWords, []);
   const lastIdx = beats.length - 1;
   return (
     <AbsoluteFill style={{backgroundColor: '#000'}}>
@@ -71,11 +87,13 @@ export const Doc = () => {
         return (
           <Sequence key={b.key} from={b.from} durationInFrames={b.dur + (isLast ? 0 : OVERLAP)}>
             <Fade first={i === 0} last={isLast}><Comp {...b.visual} frames={b.dur} /></Fade>
+            {i > 0 && <Sfx type="whoosh" at={0} volume={0.45} />}
           </Sequence>
         );
       })}
       <AbsoluteFill style={{background: 'radial-gradient(ellipse 90% 85% at 50% 50%, rgba(0,0,0,0) 62%, rgba(0,0,0,.35) 100%)', pointerEvents: 'none'}} />
       <Grain />
+      <Captions words={words} />
     </AbsoluteFill>
   );
 };

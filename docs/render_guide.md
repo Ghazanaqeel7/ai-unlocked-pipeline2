@@ -96,3 +96,31 @@ Keep `line1`/`line2` short (2-4 words each), `box` as the punchy CTA/claim, `box
 accent hexes above (gold `#F59E0B` reads well as a CTA color against the navy background). `image.q`
 should describe an abstract/UI-adjacent visual (never a real app's exact UI or a real logo) — e.g.
 "glowing neural network abstract", "futuristic glass dashboard interface abstract".
+
+## Captions & micro-SFX
+
+`make_voice_long.py` writes a fast, lightweight word-level caption split alongside the usual per-scene
+timing — no ASR/alignment model: each scene's known speech duration is divided across its words
+proportional to character length (`split_words()`), written as `timing.json → scenes[].words:
+[{w,start,end}]` on the same global clock as the scene's own `start`/`end`. `src/scenes/ui/Captions.jsx`
+flattens all scenes' `words` into one list and renders the active word highlighted (gold, bold) inside a
+glass pill in the lower third, word-by-word, auto-sizing/positioning for both `Doc` and `ShortDoc`. It's
+wired into `Doc.jsx` as a full-timeline overlay (not a per-beat scene type) and degrades safely — a job
+whose `timing.json` predates this (no `words` field) still renders, just without captions. If word-
+boundary accuracy ever needs to beat this simple proportional split, swap `split_words()` for
+`faster-whisper` forced alignment later; nothing else in the caption pipeline needs to change.
+
+Short UI "whoosh"/"pop"/"click" SFX (`public/assets/sfx/*.mp3`, currently CC0-style placeholders
+synthesized with ffmpeg — swap for real licensed SFX whenever convenient) play automatically: a
+`whoosh` on every scene-transition cross-fade (`Doc.jsx`), and context `pop`/`click` cues inside
+`MockupWindow`/`ToolGrid`/`StepFlow` keyed to their own entrance timing. Use `<Sfx type="..." at={frame}
+volume={0..1} />` from `scenes/common.jsx` to add more.
+
+## Creating a job (`pipeline/video/new_job.sh`)
+
+`new_job.sh <id> [long|short]` (type defaults to `long`) scaffolds `jobs/<id>/` and seeds `meta.json`
+with `{"type": "long"|"short"}` — fill in the rest of `meta.json` (`title`/`description`/`tags`/etc.)
+per `PIPELINE.md`. The render workflow reads `meta.json.type` to pick the Remotion composition (`Doc`
+vs `ShortDoc`) and the matching validator (`validate_long.py` vs `validate_short.py`) automatically —
+nothing else about writing `scenes.json` changes between formats besides pacing and scene choice (see
+the top of this guide).

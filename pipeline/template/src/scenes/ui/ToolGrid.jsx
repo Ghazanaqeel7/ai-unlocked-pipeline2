@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 import {F, tone} from '../../theme.js';
 import {prog, ease} from '../../util.js';
-import {GridBg, ToolBadge} from '../common.jsx';
+import {GridBg, ToolBadge, Sfx} from '../common.jsx';
 
 // Floating grid of tool badges popping in with spring physics. Badges are always generic glass tiles +
 // the tool's name as text (see ToolBadge in common.jsx) — never a real brand logo, so this stays
@@ -26,7 +26,10 @@ export const ToolGrid = ({title, tools = [], tone: tn = 'glass'}) => {
       <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', paddingTop: title ? (narrow ? 60 : 90) : 0}}>
         <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: narrow ? 28 : 46, maxWidth: perRow * (size + (narrow ? 28 : 46))}}>
           {tools.map((tl, i) => (
-            <ToolBadge key={i} name={tl.name} glyph={tl.glyph} color={tl.color || t.accent} size={size} delay={6 + i * 6} frame={f} />
+            <React.Fragment key={i}>
+              <ToolBadge name={tl.name} glyph={tl.glyph} color={tl.color || t.accent} size={size} delay={6 + i * 6} frame={f} />
+              <Sfx type="pop" at={6 + i * 6} volume={0.3} />
+            </React.Fragment>
           ))}
         </div>
       </AbsoluteFill>

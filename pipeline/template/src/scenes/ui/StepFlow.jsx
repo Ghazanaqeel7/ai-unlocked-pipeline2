@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 import {F, tone} from '../../theme.js';
 import {prog, ease} from '../../util.js';
-import {GridBg, GlassPanel, springPop} from '../common.jsx';
+import {GridBg, GlassPanel, springPop, Sfx} from '../common.jsx';
 
 // Step-by-step workflow: glass cards connected by a glowing animated line, each popping in in sequence.
 // Horizontal on widescreen, vertical (stacked) automatically on the 9:16 Shorts canvas.
@@ -42,6 +42,7 @@ export const StepFlow = ({title, steps = [], tone: tn = 'glass'}) => {
                     {s.sub && <div style={{fontFamily: F.sans, fontSize: vertical ? 20 : 21, color: t.sub, lineHeight: 1.35}}>{s.sub}</div>}
                   </GlassPanel>
                 </div>
+                <Sfx type="pop" at={delay} volume={0.3} />
               </React.Fragment>
             );
           })}

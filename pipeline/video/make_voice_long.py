@@ -8,6 +8,26 @@ CACHE = os.path.expanduser('~/.cache/sd-kokoro')
 URLS = {'kokoro.onnx': 'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/kokoro-v1.0.onnx',
         'voices.bin': 'https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0/voices-v1.0.bin'}
 GAP, LEAD, TAIL = 0.35, 1.2, 2.5
+
+def split_words(text, start, dur):
+    """Fast character-proportional word-level split: no ASR/alignment model, just distributes the
+    scene's known speech duration across its words by character length (longer words get more time).
+    Returns [{w,start,end}] with start/end on the GLOBAL timeline (same clock as timing.json scenes[].start).
+    Lightweight by design (render_guide.md captions decision) — swap for faster-whisper alignment later
+    if word-boundary accuracy ever needs to be tighter than this gives."""
+    words = text.split()
+    if not words or dur <= 0:
+        return []
+    lengths = [len(w) for w in words]
+    total = sum(lengths) or 1
+    out = []
+    cursor = start
+    for w, ln in zip(words, lengths):
+        wdur = dur * (ln / total)
+        out.append({'w': w, 'start': round(cursor, 3), 'end': round(cursor + wdur, 3)})
+        cursor += wdur
+    return out
+
 def ensure():
     os.makedirs(CACHE, exist_ok=True)
     for n, u in URLS.items():
@@ -32,7 +52,8 @@ def main():
         assert r == sr, r
         a = a.astype('float32'); dur = len(a) / sr
         end_pad = TAIL if i == len(sc) - 1 else GAP
-        out.append({'id': s['id'], 'start': round(t - (0 if i else LEAD), 3), 'end': round(t + dur + end_pad, 3), 'text': s['text']})
+        words = split_words(s['text'].strip(), t, dur)
+        out.append({'id': s['id'], 'start': round(t - (0 if i else LEAD), 3), 'end': round(t + dur + end_pad, 3), 'text': s['text'], 'words': words})
         if s.get('chapter'): chapters.append({'title': s['chapter'], 'start': round(max(0, t - 0.2), 1)})
         chunks += [a, np.zeros(int(end_pad * sr), dtype='float32')]; t += dur + end_pad
         print(f"{s['id']} {dur:.1f}s", flush=True)
