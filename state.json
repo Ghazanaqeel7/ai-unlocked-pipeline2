@@ -15,8 +15,8 @@
   },
   "jobs": {
     "900-test-short": {
-      "status": "rendering",
-      "updated": "2026-11-20T20:06:56Z",
+      "status": "video_ready",
+      "updated": "2026-11-20T20:54:33Z",
       "title": "3 AI Tools That Build Your Video in 1 Line",
       "run": "44808301201",
       "progress": [
@@ -25,7 +25,10 @@
           "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
         }
       ],
-      "progress_count": 1
+      "progress_count": 1,
+      "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-900-test-short/final.mp4",
+      "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-900-test-short/preview.mp4",
+      "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-900-test-short/upload.mp4"
     }
   },
   "ideas": [],
