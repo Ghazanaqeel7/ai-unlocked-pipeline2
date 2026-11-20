@@ -124,3 +124,58 @@ per `PIPELINE.md`. The render workflow reads `meta.json.type` to pick the Remoti
 vs `ShortDoc`) and the matching validator (`validate_long.py` vs `validate_short.py`) automatically —
 nothing else about writing `scenes.json` changes between formats besides pacing and scene choice (see
 the top of this guide).
+
+## Companion guide (`project/src/guide.json` schema)
+
+Every job (`long` and `short` alike) should also get a `project/src/guide.json` written in the **same
+pass** that writes `scenes.json` — a lightweight/free LLM (Gemini Flash, Groq Llama-3.3-70B, etc.) can
+produce both from one structured prompt using this doc alone, with zero extra Claude usage. After
+render, `pipeline/video/make_guide.py` turns it (pure templating, **no LLM call**) into
+`project/out/guide.md`, `guide.pdf` (styled A4, AI Graphic TV navy/cyan/gold banner + `@AIGraphicTV`
+footer), and `social_copy.txt` (YouTube description, IG/FB Reel caption with a Comment-to-DM CTA, and a
+pinned-comment template) — all shipped as release assets alongside the video. Missing `guide.json` is a
+**warning**, not an error (`validate_long.py`/`validate_short.py`), and `make_guide.py` no-ops cleanly
+if it's absent, so this never blocks a render.
+
+Schema (every field optional except `title`; omit a key entirely rather than sending an empty array/
+string you don't have content for):
+
+```json
+{
+  "title": "3 AI Tools That Build Your Video in 1 Line",
+  "tldr": [
+    "First-line summary of the core result.",
+    "Second-line summary — what the viewer walks away able to do."
+  ],
+  "tools": [
+    {"name": "Runway", "link": "[TOOL_LINK]", "note": "short note on what it's used for"}
+  ],
+  "steps": [
+    {"title": "Short imperative step title", "detail": "One sentence of extra detail, or omit"}
+  ],
+  "snippets": [
+    {"label": "What this snippet is", "lang": "text|json|bash|python|...", "code": "the literal copy-paste text"}
+  ],
+  "tips": ["A pro tip, phrased as one short sentence"],
+  "mistakes": ["A common mistake to avoid, phrased as one short sentence"],
+  "cta": {
+    "comment_word": "GUIDE",
+    "affiliate_link": "[AFFILIATE_LINK]"
+  }
+}
+```
+
+Notes for whichever LLM is writing this:
+- `tldr` — exactly **two** lines; only the first two are used even if more are given.
+- `tools`/`steps`/`snippets`/`tips`/`mistakes` — any length; `tools[].link` and `cta.affiliate_link`
+  should stay as the literal placeholder text (`[TOOL_LINK]`, `[AFFILIATE_LINK]`) unless a real
+  affiliate/referral link has actually been supplied elsewhere in the job — never invent a URL.
+  `[AFFILIATE_LINK]`/`[TOOL_LINK]` are filled in by hand (or a later automation pass) before
+  publishing; `make_guide.py` passes them through as-is.
+- `cta.comment_word` — a single short, shoutable word/phrase for the Comment-to-DM automation (defaults
+  to `"GUIDE"` if omitted).
+- Keep `steps[].title` imperative and short (checklist-style) — `make_guide.py` renders each as a
+  `- [ ]` Markdown checkbox / PDF checkbox glyph.
+- `snippets[].code` should be the exact literal text a viewer copy-pastes (a prompt, a CLI command, a
+  config block) — don't wrap it in extra quoting or escape it; write it as it should appear on the
+  page.

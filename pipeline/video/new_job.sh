@@ -13,7 +13,7 @@ rsync -a --exclude node_modules --exclude package-lock.json --exclude out --excl
 mkdir -p "$D/project/public/assets" "$D/review"
 echo "{\"type\": \"$TYPE\"}" > "$D/meta.json"
 if [ "$TYPE" = "short" ]; then
-  echo "created $D (type:short, composition:ShortDoc, 1080x1920, ~35-55s). Write: $D/script.md, $D/factmap.md, $D/project/src/scenes.json, $D/meta.json (add title/etc to the type key already set), $D/project/src/thumb.json"
+  echo "created $D (type:short, composition:ShortDoc, 1080x1920, ~35-55s). Write: $D/script.md, $D/factmap.md, $D/project/src/scenes.json, $D/meta.json (add title/etc to the type key already set), $D/project/src/thumb.json, $D/project/src/guide.json (companion guide — see docs/render_guide.md's guide.json schema)"
 else
-  echo "created $D (type:long, composition:Doc, 1920x1080, ~6-10min). Write: $D/script.md, $D/factmap.md, $D/project/src/scenes.json, $D/meta.json (add title/etc to the type key already set), $D/project/src/thumb.json"
+  echo "created $D (type:long, composition:Doc, 1920x1080, ~6-10min). Write: $D/script.md, $D/factmap.md, $D/project/src/scenes.json, $D/meta.json (add title/etc to the type key already set), $D/project/src/thumb.json, $D/project/src/guide.json (companion guide — see docs/render_guide.md's guide.json schema)"
 fi

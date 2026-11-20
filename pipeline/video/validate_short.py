@@ -52,6 +52,7 @@ def main():
     if not os.path.exists(os.path.join(job, 'factmap.md')): warns.append('factmap.md missing (2 independent sources per claim) — recommended even for Shorts')
     th = os.path.join(P, 'thumb.json')
     if not os.path.exists(th): warns.append('thumb.json missing (Shorts rely mostly on the cover frame, but a thumb.json still helps the dashboard)')
+    if not os.path.exists(os.path.join(P, 'guide.json')): warns.append('guide.json missing (companion guide.md/guide.pdf/social_copy.txt will be skipped for this job)')
     for w in warns: print('WARN ', w)
     for e in errs: print('ERROR', e)
     print(f'{len(sc)} scenes, {len(types)} beats, {words} words (~{seconds:.0f}s)')
