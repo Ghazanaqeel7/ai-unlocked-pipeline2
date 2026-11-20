@@ -1,0 +1,32 @@
+{
+ "title": "4 AI Agents Just Fixed Production Code With Zero Human Edits",
+ "tldr": [
+  "A 4-agent loop (Planner, Patcher, Sandbox Runner, Shipper) found a real bug, patched it, tested it, and shipped it automatically.",
+  "The loop pattern — plan, patch, sandbox-test, ship — is what to copy, whatever stack you're on."
+ ],
+ "tools": [
+  {"name": "Planner agent", "link": "[TOOL_LINK]", "note": "reads the failing function and scopes the fix"},
+  {"name": "Patcher agent", "link": "[TOOL_LINK]", "note": "writes the actual code patch"},
+  {"name": "Sandbox Runner", "link": "[TOOL_LINK]", "note": "runs the full test suite against the patch in isolation"},
+  {"name": "Shipper agent", "link": "[TOOL_LINK]", "note": "opens the PR and deploys once tests pass"}
+ ],
+ "steps": [
+  {"title": "Point the Planner at the failing test", "detail": "Give it the stack trace and the file, not just a vague bug description."},
+  {"title": "Let the Patcher write one focused fix", "detail": "One function at a time — smaller patches are easier for the sandbox to verify."},
+  {"title": "Run the full suite in a sandbox before anything ships", "detail": "Never let an agent push straight to production without this step."},
+  {"title": "Only ship on a clean pass", "detail": "If the sandbox fails, loop back to Patch — never force a merge."}
+ ],
+ "snippets": [
+  {"label": "Example sandbox test command", "lang": "bash", "code": "pytest --strict -q"}
+ ],
+ "tips": [
+  "Keep each patch scoped to one function — multi-file patches are much harder for a sandbox step to verify safely."
+ ],
+ "mistakes": [
+  "Skipping the sandbox step to save time — that's the step that actually makes this safe to automate."
+ ],
+ "cta": {
+  "comment_word": "AGENT",
+  "affiliate_link": "[AFFILIATE_LINK]"
+ }
+}

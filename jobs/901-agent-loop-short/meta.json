@@ -1,0 +1,8 @@
+{
+ "type": "short",
+ "demo": true,
+ "title": "4 AI Agents Just Fixed Production Code With Zero Human Edits",
+ "description": "A 4-agent AI loop (Planner, Patcher, Sandbox Runner, Shipper) finds a real bug, patches it, tests it, and ships it — with zero human edits.\n\nSources: pipeline stress-test render (manual trigger, not a scheduled publish) — exercises the full new component set (HookCard, ToolGrid, BrowserSim repo/terminal, DocHighlighter, WorkflowStepper, DataVizCard gauge+bars, SocialCtaCard).\n\nSubscribe to AI Graphic TV for more AI tool breakdowns.\n\n#ai #aiagents #automation #codefix #aicoding #agentloop #shorts",
+ "tags": ["ai agents", "agentic ai", "ai coding", "autonomous agents", "code automation", "ai shorts", "devops ai", "self-healing code"],
+ "pinned_comment": "Would you trust an AI agent loop to ship a fix to production on its own?"
+}
