@@ -9,7 +9,7 @@ case "$TYPE" in long|short) ;; *) echo "type must be 'long' or 'short'"; exit 1;
 D="jobs/$ID"; [ -e "$D" ] && { echo "$D exists"; exit 1; }
 mkdir -p "$D"
 rsync -a --exclude node_modules --exclude package-lock.json --exclude out --exclude 'public/assets/*' pipeline/template/ "$D/project/" 2>/dev/null || {
-  mkdir -p "$D/project"; (cd pipeline/template-long && tar cf - --exclude=node_modules --exclude=out --exclude='public/assets/*' .) | (cd "$D/project" && tar xf -); }
+  mkdir -p "$D/project"; (cd pipeline/template && tar cf - --exclude=node_modules --exclude=out --exclude='public/assets/*' .) | (cd "$D/project" && tar xf -); }
 mkdir -p "$D/project/public/assets/sfx" "$D/review"
 cp pipeline/template/public/assets/sfx/*.mp3 "$D/project/public/assets/sfx/" 2>/dev/null || true
 echo "{\"type\": \"$TYPE\"}" > "$D/meta.json"
