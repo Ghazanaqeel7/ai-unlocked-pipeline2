@@ -1,6 +1,6 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
-import {F, tone} from '../../theme.js';
+import {F, tone, resolveTone} from '../../theme.js';
 import {prog, ease, wordsWithAccent} from '../../util.js';
 import {GridBg, Pill, springPop} from '../common.jsx';
 
@@ -12,10 +12,14 @@ import {GridBg, Pill, springPop} from '../common.jsx';
 //              highlight system; different from Pill below)
 //   pills    — array of strings/[{text,color}] rendered as glass-pill badges under the headline,
 //              e.g. ["1 LINE = FULL VIDEO"] or [{text:'FREE', color: C.gold}]
-//   sub      — one short supporting line under the pills
-//   tone     — defaults 'glass' (this channel's primary look); 'cyan'/'amber'/'dark' still work for variety
-export const HookCard = ({kicker, text = '', accent = [], pills = [], sub, tone: tn = 'glass'}) => {
-  const f = useCurrentFrame(); const t = tone(tn); const {width: w} = useVideoConfig();
+//   stack    — optional 2-4 small fan-out badge cards [{label,value}], spring in staggered with a
+//              slight rotation offset each (the "kinetic stack" look) — use for a quick multi-item
+//              hook ("3 tools", "4 steps") instead of (or alongside) `pills`
+//   sub      — one short supporting line under the pills/stack
+//   polarity — 'dark' (default) | 'light' — per-beat Obsidian-Grid/Alabaster theme switch
+//   tone     — explicit tone name override (back-compat); wins over `polarity` if both are given
+export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = [], sub, polarity, tone: tn}) => {
+  const f = useCurrentFrame(); const tName = resolveTone(tn, polarity); const t = tone(tName); const {width: w} = useVideoConfig();
   const ws = wordsWithAccent(text, accent);
   const narrow = w < 1600; // vertical/Shorts canvas gets a smaller, tighter type size
   const fs = (ws.length > 9 ? 0.6 : ws.length > 5 ? 0.78 : 0.95) * (narrow ? 72 : 118);
@@ -28,6 +32,29 @@ export const HookCard = ({kicker, text = '', accent = [], pills = [], sub, tone:
         {kicker && (
           <div style={{marginBottom: 22, opacity: kK, transform: `translateY(${(1 - kK) * -16}px)`}}>
             <Pill text={kicker} color={t.gold || t.accent} size={narrow ? 26 : 32} />
+          </div>
+        )}
+        {!!stack.length && (
+          <div style={{display: 'flex', gap: narrow ? -18 : -26, marginBottom: 30}}>
+            {stack.slice(0, 4).map((s, i) => {
+              const k = springPop(f, i * 5, {damping: 15});
+              const rot = (i - (stack.length - 1) / 2) * 7;
+              return (
+                <div key={i} style={{
+                  opacity: Math.min(1, k * 1.4), zIndex: 10 - i,
+                  transform: `translateY(${(1 - Math.min(1, k)) * 30}px) rotate(${rot * Math.min(1, k)}deg)`,
+                  marginLeft: i === 0 ? 0 : (narrow ? -18 : -26),
+                }}>
+                  <div style={{
+                    background: t.card, border: `1px solid ${t.line || 'rgba(255,255,255,.1)'}`, borderRadius: 16,
+                    padding: narrow ? '14px 18px' : '18px 26px', boxShadow: '0 14px 34px rgba(0,0,0,.4)', textAlign: 'center',
+                  }}>
+                    <div style={{fontFamily: F.display, fontSize: narrow ? 34 : 46, color: t.accent}}>{s.value}</div>
+                    <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 14 : 16, color: t.sub, marginTop: 2}}>{s.label}</div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         )}
         <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: `0 ${fs * 0.24}px`, maxWidth: narrow ? 900 : 1620, textAlign: 'center'}}>

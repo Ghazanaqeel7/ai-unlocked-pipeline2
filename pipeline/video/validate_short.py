@@ -5,7 +5,7 @@ from beat_rules.py so long and short formats stay in sync on the REGISTRY and vi
 Exit 1 on errors."""
 import json, os, sys, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from beat_rules import TYPES, PRIMARY, flatten_beats, check_no_repeat
+from beat_rules import TYPES, PRIMARY, flatten_beats, check_no_repeat, check_required_props
 
 def main():
     job = sys.argv[1].rstrip('/'); errs = []; warns = []
@@ -28,7 +28,8 @@ def main():
             types.append(b['type'])
             if b['type'] == 'hookcard' and not b.get('text'): errs.append(f'{sid}: hookcard without text')
             if b['type'] == 'mockup' and not b.get('prompt'): errs.append(f'{sid}: mockup without prompt')
-            if b['type'] == 'toolgrid' and len(b.get('tools', [])) < 2: warns.append(f'{sid}: toolgrid with <2 tools; use hookcard/mockup for a single tool')
+            if b['type'] == 'toolgrid' and len(b.get('tools', [])) < 2: warns.append(f'{sid}: toolgrid with <2 tools; use hookcard/browsersim for a single tool')
+            for msg in check_required_props(b): errs.append(f'{sid}: {msg}')
             if b['type'] in ('compare', 'comparecard'):
                 for r in b.get('rows', []):
                     for k in ('a', 'b'):
@@ -44,7 +45,7 @@ def main():
     # tighter pace than long-form: a new visual at least every ~3-4s given the short runtime
     if len(types) < seconds / 4: warns.append(f'only {len(types)} beats for ~{seconds:.0f}s; keep cuts to every 3-4s on a Short')
     if len(set(types)) < 2 and len(types) > 2: warns.append('low visual variety for a multi-beat Short (<2 distinct scene types)')
-    if not any(t in PRIMARY for t in types): warns.append('no beats from the primary UI-card family (hookcard/mockup/toolgrid/comparecard/statcounter/stepflow); Shorts should lead with these, not the long-form secondary types')
+    if not any(t in PRIMARY for t in types): warns.append('no beats from the primary UI-card family (hookcard/toolgrid/browsersim/dochighlighter/workflowstepper/datavizcard/socialctacard); Shorts should lead with these, not the long-form secondary types')
     for msg in check_no_repeat(types, max_run=1): warns.append(msg)  # Shorts: don't even allow back-to-back repeats
     for k in ('title', 'description', 'tags'):
         if not meta.get(k): errs.append(f'meta.json missing {k}')

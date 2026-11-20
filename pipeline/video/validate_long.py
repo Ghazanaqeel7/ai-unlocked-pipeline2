@@ -4,7 +4,7 @@ Checks scenes.json, thumb.json, meta.json, script length, visual variety. Exit 1
 Shared logic (TYPES, PRIMARY, no-repeat check) lives in beat_rules.py so validate_short.py stays in sync."""
 import json, os, sys, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from beat_rules import TYPES, PRIMARY, flatten_beats, check_no_repeat
+from beat_rules import TYPES, PRIMARY, flatten_beats, check_no_repeat, check_required_props
 
 def main():
     job = sys.argv[1].rstrip('/'); errs = []; warns = []
@@ -29,7 +29,8 @@ def main():
                 errs.append(f'{sid}: headline source must be a real attribution or omitted (not "{b.get("source")}")')
             if b['type'] == 'hookcard' and not b.get('text'): errs.append(f'{sid}: hookcard without text')
             if b['type'] == 'mockup' and not b.get('prompt'): errs.append(f'{sid}: mockup without prompt')
-            if b['type'] == 'toolgrid' and len(b.get('tools', [])) < 2: warns.append(f'{sid}: toolgrid with <2 tools; use hookcard/mockup for a single tool')
+            if b['type'] == 'toolgrid' and len(b.get('tools', [])) < 2: warns.append(f'{sid}: toolgrid with <2 tools; use hookcard/browsersim for a single tool')
+            for msg in check_required_props(b): errs.append(f'{sid}: {msg}')
             if b['type'] in ('compare', 'comparecard'):
                 for r in b.get('rows', []):
                     for k in ('a', 'b'):
@@ -52,7 +53,7 @@ def main():
     # new scene-writing rule: a new visual at least every ~7 s on average (tighter than the old 15-18s pace)
     if len(types) < minutes * 60 / 7: warns.append(f'only {len(types)} beats for {minutes:.1f} min; render_guide.md asks for a new visual every 3-5 s')
     if len(set(types)) < 4: warns.append('low visual variety (<4 scene types)')
-    if not any(t in PRIMARY for t in types): warns.append('no beats from the primary UI-card family (hookcard/mockup/toolgrid/comparecard/statcounter/stepflow); the secondary scenes are for occasional variety, not the whole video')
+    if not any(t in PRIMARY for t in types): warns.append('no beats from the primary UI-card family (hookcard/toolgrid/browsersim/dochighlighter/workflowstepper/datavizcard/socialctacard); the secondary scenes are for occasional variety, not the whole video')
     for msg in check_no_repeat(types): warns.append(msg)
     for k in ('title', 'description', 'tags'):
         if not meta.get(k): errs.append(f'meta.json missing {k}')

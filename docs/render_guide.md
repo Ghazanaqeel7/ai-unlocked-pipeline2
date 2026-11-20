@@ -20,24 +20,48 @@ picture.
 
 ## Scene types (REGISTRY)
 
-**Primary — this channel's UI-card identity (`src/scenes/ui/`). Use these for the large majority of beats:**
+**Primary — this channel's UI-card identity (`src/scenes/ui/`). Use these for the large majority of beats.**
+Every one of these accepts `polarity: "dark" | "light"` (see Dark↔Light canvas polarity below) in place
+of (or alongside) the older `tone` prop — prefer `polarity` in new jobs.
 
-- `hookcard` — the core kinetic-typography beat: a bold split headline with keyword pills
-  (`pills: ["1 LINE = FULL VIDEO"]`). Use for the hook, the payoff of a trick, or any line that should
-  hit hard. This is the new workhorse type (replaces `headline` as the default).
-- `mockup` — a simulated app window: title bar, optional model/tool chips, a prompt box that types in,
-  optional response lines. Use whenever the script describes typing something into an AI tool or seeing
-  a result. **Never recreate a specific real app's exact chrome/branding** — it's deliberately generic
-  (plain traffic-light dots + a plain title you write), so it reads as "an AI tool," not a trademarked UI.
+- `hookcard` — the core kinetic-typography beat: a bold split headline with keyword pills, and now an
+  optional fanned-out `stack` of mini-cards (a kinetic counter/stack effect) above the headline. Use for
+  the hook, the payoff of a trick, or any line that should hit hard.
 - `toolgrid` — floating grid of tool badges (`tools: [{name:'Claude', glyph:'bulb'}]`). Use when naming
   3+ tools together. Badges are a generic glass tile + the tool's name as **text** + an abstract glyph —
   never a real logo. `glyph` is any name from `src/scenes/icons.jsx`, or omit it for an abstract mark.
-- `comparecard` — two glass cards side by side ("Old Way" vs "AI Way", Tool A vs Tool B). Same `rows`
-  shape as the old `compare` type (`[{label, a, b, unit, dec, win}]`, values number or short text).
-- `statcounter` — one big number in a glass card, optional progress bar (`bar:true`). Use for pricing,
-  speed, token counts, benchmark percentages.
-- `stepflow` — numbered glass cards connected by a glowing line (horizontal on `long`, stacked
-  automatically on `short`'s vertical canvas). Use for workflows/step-by-steps instead of `list`.
+- `browsersim` — a simulated, trademark-safe interface in one of three `mode`s: `"app"` (AI tool
+  chat/generator window — prompt types in, optional simulated cursor click, dropdown, upload progress),
+  `"repo"` (generic GitHub-style repo card — stars, tags, file tree reveal), or `"terminal"` (generic CLI
+  — lines appear with a running/ok status). Replaces the old `mockup` type (see Legacy aliases below).
+  **Never recreate a specific real app's exact chrome/branding** — generic traffic-light dots + a plain
+  title you write, so it reads as "an AI tool," not a trademarked UI.
+- `dochighlighter` — a document/code/tweet scanner: `content` text with `highlights:[{text,color}]`
+  marker-pen highlighted as a scan-line sweeps down, with an optional slam-down verdict `stamp` (e.g.
+  "VERIFIED"/"FAKE"). Use for "here's the actual doc/tweet/code that proves it" beats.
+  `kind: "article"|"tweet"|"code"`. (The old `compare`/`comparecard` dual-card "Old Way vs AI Way" look
+  lives on as a legacy alias to `datavizcard`'s `mode:"bars"` — see below — but for a genuinely sourced
+  side-by-side document, prefer `dochighlighter` with two highlight colors instead.)
+- `workflowstepper` — a top row of 3-5 connected step tabs that sequentially activate (green check) while
+  a single lower workspace card updates live underneath (`body.type: "checklist"|"bars"|"stack3d"`) —
+  never a frozen screen. Replaces the old `stepflow` type (see Legacy aliases below). Use for
+  workflows/step-by-steps instead of `list`.
+- `datavizcard` — one unified numbers component, `mode: "gauge"` (single circular-arc counter),
+  `"bars"` (2+ animated comparison bars), or `"matrix"` (dot-grid ratio). Replaces the old `statcounter`
+  and `comparecard` types (see Legacy aliases below). **`values[].value` and `values[].max` are ALWAYS
+  explicit numbers — never a bare fraction/percent** (e.g. `value:90, max:100`, not `bar:0.9`) — this is
+  the schema fix for the "counter stuck at 0" bug; the validators now enforce it as a hard error.
+- `socialctacard` — the comment-to-DM outro: a generic `@AIGraphicTV`-style profile card + a simulated
+  comment box where `commentWord` types in and "sends," plus an optional top slide-down "Sent! Check
+  your DMs" notification banner. Use for the Comment-to-DM CTA beat (often right before `endcard`).
+
+### Legacy aliases (do not use in new jobs, kept only so older jobs never break)
+
+`mockup` → `browsersim` (mode:`"app"`), `statcounter`/`comparecard` → `datavizcard`, `stepflow` →
+`workflowstepper`. Each old type string still works — a thin prop-adapting wrapper in
+`src/scenes/ui/legacyAdapters.jsx` converts the old props to the new component's schema at render time
+— but always write new `scenes.json` against the **new** type strings and schemas above (and the JSON
+examples below), never the old ones.
 
 **Secondary — kept for variety, chapter structure and sourced material. Use sparingly (see pacing below):**
 
@@ -58,29 +82,140 @@ picture.
 - **One idea per beat.** Split a sentence with two ideas into two beats.
 - **Plain language first, jargon second.** Explain any tool name or term in the same breath it's
   introduced.
-- **Show, then tell the "why it matters."** After a `mockup`/`stepflow` beat demonstrating a trick, add
-  a short `statcounter`/`hookcard` beat on the concrete outcome (time saved, money saved).
+- **Show, then tell the "why it matters."** After a `browsersim`/`workflowstepper` beat demonstrating a
+  trick, add a short `datavizcard`/`hookcard` beat on the concrete outcome (time saved, money saved).
 - **Numbered structure.** Group tricks/steps and use `chapter` scenes as dividers on `long` videos.
-- **End with a recap + one clear next action** on the `endcard`.
-- **Pacing:** one visual beat every **3-5 seconds** of narration — tighter than before. On `short` jobs
-  aim at the tight end (3-4s) throughout; on `long` jobs the 8-15s exception still applies to
-  `statcounter`/`chart` beats that need a moment to land.
-- **No-repeat rule:** don't use the same `visual.type` more than **twice in a row** — rotate through the
-  primary family (and drop in a secondary type occasionally) so the video doesn't feel templated.
-  `validate_long.py`/`validate_short.py` enforce this; don't rely on memory alone.
+- **End with a recap + one clear next action** on the `endcard` (often preceded by a `socialctacard`
+  Comment-to-DM beat).
+- **Pacing — strict, per the reference-video rework:**
+  - Each beat holds **2.0–4.0 seconds**. Nothing sits frozen for 8+ seconds — if narration for one idea
+    runs longer than ~4s, split it into two beats (e.g. a `browsersim` beat, then a `datavizcard` beat
+    on the same idea's payoff) rather than stretching one beat's duration.
+  - **Canvas fill 82–90%** — every primary component's main card/window should occupy roughly that
+    fraction of the frame width/height (not a small box floating in empty space). `browsersim`'s window
+    width is already set to `narrow ? '88%' : '74%'`+max-width by design; keep custom layouts in that
+    range too.
+  - **Sub-beat motion every ~1 second** — nothing should be fully static for a whole beat. Rely on each
+    component's own built-in staggered reveals (chip pop-ins, bar fills, typing cursors, checklist ticks,
+    scan-lines) rather than one static card sitting still; if a beat genuinely has nothing left to
+    animate after ~1s, it's a sign the beat is too long — shorten it.
+- **No-repeat rule:** don't use the same `visual.type` more than **twice in a row** (once in a row on
+  `short` jobs) — rotate through the primary family (and drop in a secondary type occasionally) so the
+  video doesn't feel templated. `validate_long.py`/`validate_short.py` enforce this; don't rely on
+  memory alone.
 - **Never fabricate a statistic, benchmark, or quote.** If a number can't be verified from the research
-  step, cut it or phrase it qualitatively ("noticeably faster" instead of an invented %).
-- **Never use a real brand's logo, exact product chrome, or trademarked wordmark.** `toolgrid` badges
-  and `mockup` windows are built generic on purpose — name tools in plain text, never try to reproduce
-  their actual icon or UI pixel-for-pixel.
+  step, cut it or phrase it qualitatively ("noticeably faster" instead of an invented %). For
+  `datavizcard`, that also means never inventing a `max` just to make a bar look fuller — use the real
+  ceiling (100 for a percentage, the real comparison total, etc).
+- **Never use a real brand's logo, exact product chrome, or trademarked wordmark.** `toolgrid` badges,
+  `browsersim` windows, and `socialctacard`'s avatar are all built generic on purpose — name tools/people
+  in plain text or an initial-letter avatar, never try to reproduce a real icon, UI, or photo
+  pixel-for-pixel.
+
+## Dark↔Light canvas polarity
+
+Every primary UI-card component now accepts `polarity: "dark" | "light"` (new jobs should use this
+instead of the older `tone` name, though `tone` still works for back-compat). `polarity` picks a whole
+tone — `"dark"` resolves to the existing `glass` tone (deep navy `#060B14`), `"light"` resolves to a new
+`alabaster` tone (warm off-white `#F4F2EC` background, near-black text, same royal-blue/gold accents) —
+so a video can alternate canvas polarity beat-to-beat rather than staying one flat dark tone for 8+
+minutes, matching the reference videos' dark↔light rhythm. Alternate polarity roughly every 2-4 beats;
+don't hold one polarity for an entire long-form chapter. Omit `polarity` (and `tone`) to default to dark.
+
+## Top Kinetic Captions
+
+`Captions.jsx` now renders at the **top** safe zone (not the lower third): the active word is wrapped in
+an italic serif box with a blue (`#3B82F6`) corner-handle frame (this is the channel's signature caption
+look from the reference videos), context words around it are plain sans-serif with no background panel,
+and a small `@AIGraphicTV` watermark sits in the bottom-safe-zone at all times. This is driven entirely by
+the same `timing.json → scenes[].words` data as before — nothing in `scenes.json` changes for this; it's
+automatic on every job.
+
+## Copy-paste JSON examples — the 6 primary components
+
+Every example below is a single valid `visual` beat object (or array entry) for `scenes.json`. Copy one,
+change the content, keep the required-prop shape — the validators enforce exactly these shapes.
+
+**`hookcard`** (required: `text`):
+```json
+{"type": "hookcard", "kicker": "THE PROBLEM", "text": "You're wasting 10 hours a week on this",
+ "accent": "#22D3EE", "pills": ["1 LINE = FULL VIDEO"], "sub": "Here's the fix.",
+ "stack": [{"label": "Tool A", "value": "Slow"}, {"label": "Tool B", "value": "Manual"}],
+ "polarity": "dark"}
+```
+
+**`browsersim`** (required: `prompt` in `mode:"app"`; `title` in `mode:"repo"`; `lines` in `mode:"terminal"`):
+```json
+{"type": "browsersim", "mode": "app", "prompt": "Turn this script into a 60s video",
+ "chips": ["Model: Fast", "Style: Kinetic"],
+ "responseLines": ["Generating storyboard...", "Rendering 9:16 export..."],
+ "cursor": [{"x": 50, "y": 70, "at": 30}], "polarity": "dark"}
+```
+```json
+{"type": "browsersim", "mode": "repo", "title": "video-pipeline", "stars": "1.2k",
+ "tags": ["python", "remotion"], "tree": ["render.yml", "make_guide.py", "scenes.json"],
+ "polarity": "light"}
+```
+```json
+{"type": "browsersim", "mode": "terminal",
+ "lines": [{"text": "$ python3 render_chunk.sh job-01", "status": "running", "at": 0},
+           {"text": "✓ rendered 24 beats", "status": "ok", "at": 40}],
+ "polarity": "dark"}
+```
+
+**`dochighlighter`** (required: `kind`, `content`):
+```json
+{"type": "dochighlighter", "kind": "article", "content": "The report found usage grew 40% in Q3.",
+ "highlights": [{"text": "grew 40% in Q3", "color": "#22D3EE"}],
+ "scanLine": true, "stamp": "VERIFIED", "polarity": "light"}
+```
+
+**`workflowstepper`** (required: `steps` — 2+, each with `label`):
+```json
+{"type": "workflowstepper",
+ "steps": [{"icon": "1", "label": "Write prompt"}, {"icon": "2", "label": "Generate"}, {"icon": "3", "label": "Export"}],
+ "body": {"type": "checklist", "items": [{"text": "Pick a model"}, {"text": "Add your script"}, {"text": "Hit render"}]},
+ "polarity": "dark"}
+```
+```json
+{"type": "workflowstepper", "steps": [{"label": "Before"}, {"label": "After"}],
+ "body": {"type": "bars", "items": [{"label": "Minutes spent", "value": 45, "max": 60, "color": "#F59E0B"}]},
+ "polarity": "light"}
+```
+
+**`datavizcard`** (required: `values`, each entry with explicit `value` AND `max`):
+```json
+{"type": "datavizcard", "mode": "gauge", "label": "Time saved", "sub": "per video",
+ "values": [{"name": "minutes", "value": 42, "max": 60, "color": "#22D3EE"}], "polarity": "dark"}
+```
+```json
+{"type": "datavizcard", "mode": "bars", "label": "Old Way vs AI Way",
+ "values": [{"name": "Manual · minutes", "value": 45, "max": 60, "color": "#64748b"},
+            {"name": "AI Way · minutes", "value": 4, "max": 60, "color": "#22D3EE"}],
+ "polarity": "light"}
+```
+```json
+{"type": "datavizcard", "mode": "matrix", "label": "Accuracy", "sub": "9 of 10 correct",
+ "values": [{"name": "correct", "value": 9, "max": 10, "color": "#22D3EE"}], "polarity": "dark"}
+```
+
+**`socialctacard`** (no required props — every value has a sane default):
+```json
+{"type": "socialctacard", "handle": "@AIGraphicTV", "name": "AI Graphic TV",
+ "bio": "Practical AI tool breakdowns", "commentWord": "GUIDE",
+ "dmPreview": "Sent! Check your DMs", "polarity": "dark"}
+```
 
 ## Tone names (theme.js)
 
-- `glass` — **default now.** Deep navy (`#060B14`) background, tech grid, cyan/royal-blue accent, gold
-  for secondary highlights (pills, `statcounter` color: `'gold'`). All six UI-card components read this
-  tone by default if `tone` is omitted.
-- `dark` / `cyan` / `amber` / `paper` — the older tones, still available on the secondary scene family
-  for visual variety or a deliberate mood shift (e.g. `amber` for a caveat/warning beat).
+- `glass` — **default.** Deep navy (`#060B14`) background, tech grid, cyan/royal-blue accent, gold for
+  secondary highlights (pills, `datavizcard` bar color `'gold'`). This is what `polarity: "dark"`
+  resolves to, and every primary UI-card component's default if both `tone` and `polarity` are omitted.
+- `alabaster` — new light tone. Warm off-white (`#F4F2EC`) background, near-black text, same royal-blue
+  accent + amber secondary. This is what `polarity: "light"` resolves to.
+- `dark` / `cyan` / `amber` / `paper` — the older tones, still available (via the explicit `tone` prop,
+  not `polarity`) on the secondary scene family for visual variety or a deliberate mood shift (e.g.
+  `amber` for a caveat/warning beat).
 
 ## Palette reference (`src/theme.js`)
 
@@ -113,8 +248,8 @@ boundary accuracy ever needs to beat this simple proportional split, swap `split
 Short UI "whoosh"/"pop"/"click" SFX (`public/assets/sfx/*.mp3`, currently CC0-style placeholders
 synthesized with ffmpeg — swap for real licensed SFX whenever convenient) play automatically: a
 `whoosh` on every scene-transition cross-fade (`Doc.jsx`), and context `pop`/`click` cues inside
-`MockupWindow`/`ToolGrid`/`StepFlow` keyed to their own entrance timing. Use `<Sfx type="..." at={frame}
-volume={0..1} />` from `scenes/common.jsx` to add more.
+`BrowserSim`/`ToolGrid`/`WorkflowStepper` keyed to their own entrance timing. Use `<Sfx type="..."
+at={frame} volume={0..1} />` from `scenes/common.jsx` to add more.
 
 ## Creating a job (`pipeline/video/new_job.sh`)
 

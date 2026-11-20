@@ -20,10 +20,19 @@ export const F = {
 export const TONES = {
   // PRIMARY tone for AI Graphic TV's UI-card scenes (HookCard, MockupWindow, ToolGrid, ComparisonCard,
   // StatCounter, StepFlow). accent2/gold are extra channels those components read beyond the base 5 keys.
-  glass: {bg: C.navy, fg: C.white, sub: '#aab7cf', accent: C.skyBlue, accent2: C.royal, gold: C.gold, card: C.navy2},
-  dark: {bg: C.ink, fg: C.white, sub: C.mute, accent: C.violet, card: C.slate},
-  paper: {bg: C.paper, fg: '#13132a', sub: '#5a5e82', accent: C.violet, card: C.paper2},
-  cyan: {bg: '#061018', fg: C.white, sub: '#9fdcec', accent: C.cyan, card: '#0d2230'},
-  amber: {bg: '#1a1306', fg: C.white, sub: '#e8cf9a', accent: C.amber, card: '#2b2110'},
+  // line/vignette let GridBg draw its grid lines + corner-darkening correctly on both dark and light tones.
+  glass: {bg: C.navy, fg: C.white, sub: '#aab7cf', accent: C.skyBlue, accent2: C.royal, gold: C.gold, card: C.navy2, line: C.glassLine, vignette: C.navy},
+  dark: {bg: C.ink, fg: C.white, sub: C.mute, accent: C.violet, card: C.slate, line: C.glassLine, vignette: C.ink},
+  paper: {bg: C.paper, fg: '#13132a', sub: '#5a5e82', accent: C.violet, card: C.paper2, line: 'rgba(20,20,50,.07)', vignette: C.paper},
+  cyan: {bg: '#061018', fg: C.white, sub: '#9fdcec', accent: C.cyan, card: '#0d2230', line: C.glassLine, vignette: '#061018'},
+  amber: {bg: '#1a1306', fg: C.white, sub: '#e8cf9a', accent: C.amber, card: '#2b2110', line: C.glassLine, vignette: '#1a1306'},
+  // "Warm Editorial Alabaster" — the light half of AI Graphic TV's dark<->light per-beat polarity system
+  // (render_guide.md "polarity" rule): step-by-step tool walkthroughs use this instead of 'glass'.
+  alabaster: {bg: '#F4F2EC', fg: '#14151B', sub: '#5b5f6b', accent: C.royal, accent2: '#B45309', gold: C.gold, card: '#FFFFFF', line: 'rgba(10,15,25,.07)', vignette: '#F4F2EC', shadow: 'rgba(20,20,30,.12)'},
 };
 export const tone = (name) => TONES[name] || TONES.glass;
+// per-beat dark<->light polarity switch (render_guide.md): 'light' maps to the alabaster tone, anything
+// else (including omitted) stays on the channel's primary dark 'glass' tone. Components accept EITHER an
+// explicit `tone` name (back-compat) OR the friendlier `polarity` prop; `tone` wins if both are given.
+export const polarityTone = (polarity) => (polarity === 'light' ? 'alabaster' : 'glass');
+export const resolveTone = (toneName, polarity) => toneName || polarityTone(polarity);

@@ -1,7 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, Img, Audio, staticFile, useCurrentFrame, useVideoConfig, spring, Sequence} from 'remotion';
 import {C, F, tone} from '../theme.js';
-import {prog, ease, rnd} from '../util.js';
+import {prog, ease, rnd, lerp} from '../util.js';
 
 // full-frame background of a scene (tone decides colour); soft moving glow so flat scenes are never static
 export const Bg = ({tn = 'dark', glow = true}) => {
@@ -93,14 +93,16 @@ export const GridBg = ({tn = 'glass'}) => {
   const t = tone(tn); const f = useCurrentFrame(); const {width: w, height: h} = useVideoConfig();
   const x = 50 + Math.sin(f / 160) * 10, y = 45 + Math.cos(f / 190) * 8;
   const cell = Math.round(w / 24);
+  const line = t.line || C.glassLine;
+  const vignette = t.vignette || t.bg;
   return (
     <AbsoluteFill style={{background: t.bg}}>
       <AbsoluteFill style={{
-        backgroundImage: `linear-gradient(${C.glassLine} 1px, transparent 1px), linear-gradient(90deg, ${C.glassLine} 1px, transparent 1px)`,
+        backgroundImage: `linear-gradient(${line} 1px, transparent 1px), linear-gradient(90deg, ${line} 1px, transparent 1px)`,
         backgroundSize: `${cell}px ${cell}px`, opacity: 0.5,
       }} />
       <AbsoluteFill style={{background: `radial-gradient(ellipse 65% 55% at ${x}% ${y}%, ${t.accent}26 0%, rgba(0,0,0,0) 70%)`}} />
-      <AbsoluteFill style={{background: `radial-gradient(ellipse 120% 90% at 50% 100%, ${C.navy}cc 0%, rgba(0,0,0,0) 45%)`}} />
+      <AbsoluteFill style={{background: `radial-gradient(ellipse 120% 90% at 50% 100%, ${vignette}cc 0%, rgba(0,0,0,0) 45%)`}} />
     </AbsoluteFill>
   );
 };
@@ -166,5 +168,103 @@ export const Sfx = ({type = 'pop', at = 0, volume = 0.7}) => {
     <Sequence from={Math.max(0, Math.round(at))} durationInFrames={60} layout="none">
       <Audio src={staticFile(src)} volume={volume} />
     </Sequence>
+  );
+};
+
+// ---- shared data-viz/animation primitives (DataVizCard, WorkflowStepper's "bars" body, BrowserSim's
+// cursor, DocHighlighter's stamp) — kept here so none of those components duplicate this logic ----
+
+// a single animated horizontal comparison bar with a counting number, staggered by `i`.
+export const AnimatedBar = ({name, value, max, color, frame, i = 0, narrow, startAt = 0}) => {
+  const at = startAt + i * 6;
+  const k = prog(frame, at, 40, ease);
+  const pct = Math.max(0, Math.min(100, (value / (max || Math.max(value, 1))) * 100)) * k;
+  const shown = value * k;
+  return (
+    <div style={{marginBottom: narrow ? 22 : 28}}>
+      <div style={{display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 24 : 22}}>
+        <span style={{color: 'rgba(255,255,255,.85)'}}>{name}</span>
+        <span style={{color}}>{fmtNumSafe(shown)}</span>
+      </div>
+      <div style={{width: '100%', height: narrow ? 16 : 18, borderRadius: 9, background: 'rgba(255,255,255,.08)', overflow: 'hidden'}}>
+        <div style={{height: '100%', width: `${pct}%`, background: `linear-gradient(90deg, ${color}aa, ${color})`, borderRadius: 9}} />
+      </div>
+    </div>
+  );
+};
+const fmtNumSafe = (n) => Number(n).toLocaleString('en-US', {maximumFractionDigits: 1});
+
+// circular 0->pct gauge arc (DataVizCard mode="gauge"). pct is 0..1 (already eased by the caller).
+export const GaugeArc = ({pct, color, size = 220, strokeWidth = 16}) => {
+  const r = (size - strokeWidth) / 2; const c = size / 2; const circ = 2 * Math.PI * r;
+  return (
+    <svg width={size} height={size} style={{transform: 'rotate(-90deg)'}}>
+      <circle cx={c} cy={c} r={r} fill="none" stroke="rgba(255,255,255,.08)" strokeWidth={strokeWidth} />
+      <circle cx={c} cy={c} r={r} fill="none" stroke={color} strokeWidth={strokeWidth} strokeLinecap="round"
+        strokeDasharray={circ} strokeDashoffset={circ * (1 - pct)} style={{filter: `drop-shadow(0 0 10px ${color}88)`}} />
+    </svg>
+  );
+};
+
+// dot-matrix ratio grid (DataVizCard mode="matrix"): cols*rows dots, `lit` of them filled in reading order.
+export const MatrixDots = ({cols = 10, rows = 10, lit = 0, color, size = 14, gap = 8}) => (
+  <div style={{display: 'grid', gridTemplateColumns: `repeat(${cols}, ${size}px)`, gap}}>
+    {Array.from({length: cols * rows}, (_, i) => (
+      <div key={i} style={{
+        width: size, height: size, borderRadius: size * 0.3,
+        background: i < lit ? color : 'rgba(255,255,255,.08)',
+        boxShadow: i < lit ? `0 0 8px ${color}aa` : 'none',
+        transition: 'none',
+      }} />
+    ))}
+  </div>
+);
+
+// piecewise-linear cursor position from keyframes [{x,y,at}] (x/y are 0-100 percent of the parent box).
+// holds at the first keyframe before `at[0]` and the last after the final one.
+export const cursorPos = (frame, keyframes) => {
+  if (!keyframes || !keyframes.length) return {x: 50, y: 50};
+  if (frame <= keyframes[0].at) return {x: keyframes[0].x, y: keyframes[0].y};
+  for (let i = 0; i < keyframes.length - 1; i++) {
+    const a = keyframes[i], b = keyframes[i + 1];
+    if (frame >= a.at && frame <= b.at) {
+      const k = prog(frame, a.at, Math.max(1, b.at - a.at), ease);
+      return {x: lerp(a.x, b.x, k), y: lerp(a.y, b.y, k)};
+    }
+  }
+  const last = keyframes[keyframes.length - 1];
+  return {x: last.x, y: last.y};
+};
+// simulated mouse cursor + click pulse, positioned in percent coords inside a `position:relative` parent.
+export const Cursor = ({frame, keyframes, color = '#fff'}) => {
+  const {x, y} = cursorPos(frame, keyframes);
+  const nearestClick = (keyframes || []).find((k) => Math.abs(frame - k.at) < 8);
+  return (
+    <div style={{position: 'absolute', left: `${x}%`, top: `${y}%`, pointerEvents: 'none', zIndex: 20}}>
+      <svg width="22" height="22" viewBox="0 0 22 22" style={{filter: 'drop-shadow(0 2px 6px rgba(0,0,0,.6))'}}>
+        <path d="M2 2 L2 18 L7 14 L10 20 L13 18.5 L10 12.5 L16 12 Z" fill={color} stroke="#0008" strokeWidth="1" />
+      </svg>
+      {nearestClick && (
+        <div style={{
+          position: 'absolute', left: 4, top: 4, width: 26, height: 26, borderRadius: '50%',
+          border: `2px solid ${color}`, transform: `translate(-50%,-50%) scale(${1 + prog(frame, nearestClick.at, 14, ease) * 1.4})`,
+          opacity: 1 - prog(frame, nearestClick.at, 14, ease),
+        }} />
+      )}
+    </div>
+  );
+};
+
+// slam-down verdict stamp (DocHighlighter): rotated, scales in with a hard spring, e.g. "VERIFIED"/"REFUSED".
+export const Stamp = ({text, color = '#f0506e', at = 0, frame, rotate = -14}) => {
+  const k = springPop(frame, at, {damping: 10, stiffness: 220});
+  const s = Math.min(1.15, k);
+  return (
+    <div style={{
+      position: 'absolute', right: '8%', top: '12%', opacity: Math.min(1, k * 1.5),
+      transform: `rotate(${rotate}deg) scale(${s})`, border: `5px solid ${color}`, borderRadius: 10,
+      padding: '10px 22px', color, fontFamily: F.display, fontSize: 40, letterSpacing: 3,
+      textTransform: 'uppercase', boxShadow: `0 0 30px ${color}55`, mixBlendMode: 'normal',
+    }}>{text}</div>
   );
 };
