@@ -1,6 +1,6 @@
 {
   "_help": "Research bot settings. Edit freely: add/remove keywords or competitor channels (channel id UC... or @handle). Runs on GitHub Actions; results go to docs/research/latest.json and the dashboard Research page.",
-  "own_channel": "",
+  "own_channel": "UCh-SKOM4Xp7pBUDHQVq0CSw",
   "_own_channel_note": "Fill this in once the @AIGraphicTV channel exists (Settings -> Advanced settings -> Channel ID on YouTube). Owner to-do until then.",
   "region": "US",
   "language": "en",
@@ -68,7 +68,7 @@
     "crore",
     "lakh",
     "rupees",
-    "₹",
+    "\u20b9",
     "nsfw",
     "prank",
     "reaction",

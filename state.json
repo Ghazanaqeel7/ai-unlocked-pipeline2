@@ -1,10 +1,17 @@
 {
   "config": {
-    "publish_days": ["Mon", "Wed", "Fri"],
+    "publish_days": [
+      "Mon",
+      "Wed",
+      "Fri"
+    ],
     "pipeline_buffer": 2,
     "longform_enabled": false,
     "reels": false,
-    "social_windows_pkt": ["05:00-09:00", "19:00-23:00"]
+    "social_windows_pkt": [
+      "05:00-09:00",
+      "19:00-23:00"
+    ]
   },
   "jobs": {},
   "ideas": [],
@@ -16,7 +23,7 @@
       "why": "The pipeline needs a real channel to publish to.",
       "how": "Create a YouTube channel named AI Graphic TV, handle @AIGraphicTV if available.",
       "link": "https://www.youtube.com/create_channel",
-      "done": false
+      "done": true
     },
     {
       "id": "fill-own-channel-id",
@@ -24,7 +31,7 @@
       "why": "The research bot needs this to track our own channel's stats and exclude us from competitor scans.",
       "how": "Once the channel exists: YouTube Studio -> Settings -> Channel -> Advanced settings -> copy the Channel ID, paste it into research/config.json -> own_channel.",
       "link": "https://studio.youtube.com",
-      "done": false
+      "done": true
     },
     {
       "id": "yt-api-key-secret",
@@ -32,7 +39,7 @@
       "why": "GitHub Actions (research/stats workflows) needs a YouTube Data API key to read public video stats.",
       "how": "Create an API key in Google Cloud Console with YouTube Data API v3 enabled, then add it as a repository secret named YT_API_KEY (Settings -> Secrets and variables -> Actions).",
       "link": "https://console.cloud.google.com/apis/credentials",
-      "done": false
+      "done": true
     },
     {
       "id": "confirm-repo-public",
