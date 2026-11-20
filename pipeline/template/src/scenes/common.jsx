@@ -1,7 +1,7 @@
 import React from 'react';
-import {AbsoluteFill, Img, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig, spring} from 'remotion';
 import {C, F, tone} from '../theme.js';
-import {prog, ease} from '../util.js';
+import {prog, ease, rnd} from '../util.js';
 
 // full-frame background of a scene (tone decides colour); soft moving glow so flat scenes are never static
 export const Bg = ({tn = 'dark', glow = true}) => {
@@ -74,5 +74,80 @@ export const Grain = ({opacity = 0.09}) => {
     <AbsoluteFill style={{pointerEvents: 'none', mixBlendMode: 'overlay', opacity}}>
       <svg width="1920" height="1080"><filter id={`g${f % 6}`}><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed={f % 6} /></filter><rect width="1920" height="1080" filter={`url(#g${f % 6})`} /></svg>
     </AbsoluteFill>
+  );
+};
+
+// ---- UI-card kinetic look (AI Graphic TV primary identity) ----
+
+// deterministic spring pop-in; returns 0..~1.08 scale-ish progress value (not a transform string) so callers
+// can use it for scale, opacity or translate as needed. `config` passed straight to remotion's spring().
+export const springPop = (frame, at, config) => {
+  const {fps} = {fps: 30}; // Doc/ShortDoc are both 30fps (theme.FPS); kept local to avoid a hook-order dependency
+  return spring({frame: Math.max(0, frame - at), fps, config: {damping: 14, mass: 0.6, stiffness: 140, ...config}});
+};
+
+// subtle moving tech-grid + radial glow, used instead of Bg for 'glass'-tone UI-card scenes.
+// reads the live canvas size so it works on both the 16:9 Doc and the 9:16 ShortDoc compositions.
+export const GridBg = ({tn = 'glass'}) => {
+  const t = tone(tn); const f = useCurrentFrame(); const {width: w, height: h} = useVideoConfig();
+  const x = 50 + Math.sin(f / 160) * 10, y = 45 + Math.cos(f / 190) * 8;
+  const cell = Math.round(w / 24);
+  return (
+    <AbsoluteFill style={{background: t.bg}}>
+      <AbsoluteFill style={{
+        backgroundImage: `linear-gradient(${C.glassLine} 1px, transparent 1px), linear-gradient(90deg, ${C.glassLine} 1px, transparent 1px)`,
+        backgroundSize: `${cell}px ${cell}px`, opacity: 0.5,
+      }} />
+      <AbsoluteFill style={{background: `radial-gradient(ellipse 65% 55% at ${x}% ${y}%, ${t.accent}26 0%, rgba(0,0,0,0) 70%)`}} />
+      <AbsoluteFill style={{background: `radial-gradient(ellipse 120% 90% at 50% 100%, ${C.navy}cc 0%, rgba(0,0,0,0) 45%)`}} />
+    </AbsoluteFill>
+  );
+};
+
+// frosted glass card. pass children; w/h optional (defaults to auto via padding). radius/pad tunable.
+export const GlassPanel = ({children, style, radius = 28, pad = '34px 44px', glow}) => (
+  <div style={{
+    position: 'relative', background: C.glassBg, border: `1px solid ${C.glassLine}`, borderRadius: radius,
+    padding: pad, backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)',
+    boxShadow: glow ? `0 20px 60px rgba(0,0,0,.45), 0 0 40px ${glow}33` : '0 20px 60px rgba(0,0,0,.45)',
+    ...style,
+  }}>{children}</div>
+);
+
+// keyword pill / badge, e.g. "1 LINE = FULL VIDEO". color = background, dark text by default (gold/cyan are light bg).
+export const Pill = ({text, color = C.skyBlue, dark = true, size = 34, style}) => (
+  <span style={{
+    display: 'inline-block', background: color, color: dark ? '#071018' : '#fff', fontFamily: F.display,
+    fontSize: size, letterSpacing: 1, padding: `${size * 0.22}px ${size * 0.6}px`, borderRadius: size * 0.4,
+    textTransform: 'uppercase', boxShadow: `0 10px 30px ${color}55`, ...style,
+  }}>{text}</span>
+);
+
+// generic rounded glyph tile for a named tool/product — NEVER a real brand logo (trademark-safe by design).
+// name is rendered as text; `glyph` is one of icons.jsx's names (falls back to a neutral dot).
+export const ToolBadge = ({name, glyph, color = C.skyBlue, size = 150, delay = 0, frame}) => {
+  const k = springPop(frame, delay, {damping: 16});
+  return (
+    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, opacity: Math.min(1, k * 1.4), transform: `scale(${Math.min(1.08, k)}) translateY(${(1 - Math.min(1, k)) * 40}px)`}}>
+      <div style={{width: size, height: size, borderRadius: size * 0.26, background: C.glassBg, border: `1px solid ${C.glassLine}`, backdropFilter: 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: `0 16px 40px rgba(0,0,0,.4), inset 0 0 0 1px ${color}22`}}>
+        <GlyphDot name={glyph} color={color} size={size * 0.46} />
+      </div>
+      {name && <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: size * 0.17, color: '#fff', textAlign: 'center', maxWidth: size * 1.3}}>{name}</div>}
+    </div>
+  );
+};
+
+// minimal abstract glyph (circle + mark) so ToolBadge never needs a real icon library entry per product.
+const GlyphDot = ({name, color, size}) => {
+  const seed = rnd(name || 'x');
+  const pts = 3 + Math.floor(seed * 3); // 3-5 sided abstract mark, stable per name
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10" fill="none" stroke={color} strokeWidth="1.6" opacity="0.5" />
+      {Array.from({length: pts}, (_, i) => {
+        const a = (i / pts) * Math.PI * 2 - Math.PI / 2;
+        return <circle key={i} cx={12 + Math.cos(a) * 6.5} cy={12 + Math.sin(a) * 6.5} r="2.1" fill={color} />;
+      })}
+    </svg>
   );
 };

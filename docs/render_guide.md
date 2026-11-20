@@ -1,68 +1,98 @@
 # AI Graphic TV — render guide (for Claude, writing `scenes.json`)
 
-This is the equivalent of Sneaky Deals' `longform_guide.md`, adapted for AI Graphic TV's single
-format: 4-8 minute AI-tools/tricks explainer videos in a **kinetic typography + motion graphics**
-style. Read this before writing `jobs/<id>/project/src/scenes.json` for any job.
+Adapted for AI Graphic TV's **UI-Card Kinetic Motion Graphics** look: a high-end broadcast-documentary
+take on the viral AI-tool-explainer style (glass panels, tech grid, cyan/gold accents). Two formats now
+exist — read the one that matches the job's `meta.json type`:
+
+- **`long`** — 6-10 minute deep-dive explainers.
+- **`short`** — 35-55 second YouTube Shorts (9:16). Same engine, same `REGISTRY`, same `scenes.json`
+  shape — components read the canvas size live, so the only real differences are pacing (faster) and
+  scene choice (fewer, punchier beats; skip `chart`/`timeline`/`map`/`stepflow`-with-many-steps).
 
 ## Engine
 
-`pipeline/template/` is a Remotion project. `src/Doc.jsx` reads `scenes.json` (the content) and
-`timing.json` (durations) and cross-fades a `Sequence` per scene using `REGISTRY` in `Doc.jsx` to
-map each scene's `type` to a React component in `src/scenes/`.
+`pipeline/template/` is a Remotion project. `src/Doc.jsx` (composition `Doc`, 1920×1080) and the same
+file's `ShortDoc` export (1080×1920) both read `scenes.json` (the content) and `timing.json`
+(durations), and cross-fade a `Sequence` per beat using `REGISTRY` to map each beat's `visual.type` to
+a React component in `src/scenes/`. A scene can have one `visual` or an array of beats (see
+`buildBeats` in `Doc.jsx`) — use the array form whenever ~3-5s of narration should show more than one
+picture.
 
 ## Scene types (REGISTRY)
 
-- `title` — big opening/section title card. Use for the video's cold open and any major section break.
-- `chapter` — a numbered chapter divider ("Trick #1", "Step 2").
-- `headline` — one punchy animated line, the core kinetic-typography beat. Use for the hook, the
-  payoff of a trick, or any line that should hit hard. This is the workhorse type for this channel.
-- `list` — animated bullet/numbered list. Use for "3 ways to...", step-by-steps, feature rundowns.
-- `compare` — two-column before/after or Tool A vs Tool B.
-- `stat` — one big number with context (benchmarks, pricing, speed comparisons).
-- `chart` / `timeline` — only if there's real data to show (benchmark charts, release timelines).
-- `photo` — full-bleed image beat (tool screenshot substitute, UI mockup, abstract tech visuals).
+**Primary — this channel's UI-card identity (`src/scenes/ui/`). Use these for the large majority of beats:**
+
+- `hookcard` — the core kinetic-typography beat: a bold split headline with keyword pills
+  (`pills: ["1 LINE = FULL VIDEO"]`). Use for the hook, the payoff of a trick, or any line that should
+  hit hard. This is the new workhorse type (replaces `headline` as the default).
+- `mockup` — a simulated app window: title bar, optional model/tool chips, a prompt box that types in,
+  optional response lines. Use whenever the script describes typing something into an AI tool or seeing
+  a result. **Never recreate a specific real app's exact chrome/branding** — it's deliberately generic
+  (plain traffic-light dots + a plain title you write), so it reads as "an AI tool," not a trademarked UI.
+- `toolgrid` — floating grid of tool badges (`tools: [{name:'Claude', glyph:'bulb'}]`). Use when naming
+  3+ tools together. Badges are a generic glass tile + the tool's name as **text** + an abstract glyph —
+  never a real logo. `glyph` is any name from `src/scenes/icons.jsx`, or omit it for an abstract mark.
+- `comparecard` — two glass cards side by side ("Old Way" vs "AI Way", Tool A vs Tool B). Same `rows`
+  shape as the old `compare` type (`[{label, a, b, unit, dec, win}]`, values number or short text).
+- `statcounter` — one big number in a glass card, optional progress bar (`bar:true`). Use for pricing,
+  speed, token counts, benchmark percentages.
+- `stepflow` — numbered glass cards connected by a glowing line (horizontal on `long`, stacked
+  automatically on `short`'s vertical canvas). Use for workflows/step-by-steps instead of `list`.
+
+**Secondary — kept for variety, chapter structure and sourced material. Use sparingly (see pacing below):**
+
+- `title` — big opening/section title card. Still the right choice for the video's cold open.
+- `chapter` — numbered chapter divider ("Trick #1").
 - `quote` — a quoted line (official docs, a tweet, a reviewer) — max ~15 words, must be real and sourced.
-- `map` — rarely needed for this niche; skip unless geography is actually relevant.
-- `illustration` — icon-driven concept beat (use the icon registry in `src/scenes/icons.jsx`).
 - `endcard` — outro: recap line + subscribe prompt + (optional) next-video tease.
+- `headline`, `list`, `compare`, `stat`, `illustration`, `photo`, `chart`, `timeline`, `map` — the
+  original documentary-style scenes. Still fully working and still registered; use one occasionally
+  for visual variety or when a beat genuinely needs something they do that the UI-card family doesn't
+  (e.g. a real benchmark `chart` with axis data, a sourced `quote`). Don't lean on them as the default —
+  they're off-brand for this channel now.
 
-## Writing principles for this niche (AI tools/tricks, broad "every type of user" audience)
+## Writing principles
 
-- **Hook in the first 3 seconds.** Open on a `headline` or `title` scene stating the specific result
-  ("This ChatGPT setting triples your output") — never a slow "hey guys welcome back."
-- **One idea per scene.** Kinetic typography reads best when each beat carries a single short claim.
-  Split a sentence with two ideas into two scenes.
-- **Plain language first, jargon second.** The audience is broad — explain any tool name or term in
-  the same breath it's introduced, as if to someone who has never opened the tool.
-- **Show, then tell the "why it matters."** After a `list`/`headline` beat demonstrating a trick, add
-  a short beat on the concrete outcome (time saved, money saved, quality gained).
-- **Numbered structure.** Group tricks/steps and use `chapter` scenes as dividers — it reads as more
-  rewatchable and scrubbable, and YouTube chapters boost retention metrics.
-- **End with a recap + one clear next action** (subscribe, or "try trick #1 today") on the `endcard`.
-- **Pacing:** aim for a new scene every 4-8 seconds during the hook/tricks, slower (8-15s) only for
-  `stat`/`chart` beats that need a beat to land.
-- **Never fabricate a statistic, benchmark, or quote.** If a number can't be verified from the
-  research step, cut it or phrase it qualitatively ("noticeably faster" instead of an invented %).
+- **Hook in the first 3 seconds** on a `hookcard` stating the specific result ("This ChatGPT setting
+  triples your output") — never a slow "hey guys welcome back."
+- **One idea per beat.** Split a sentence with two ideas into two beats.
+- **Plain language first, jargon second.** Explain any tool name or term in the same breath it's
+  introduced.
+- **Show, then tell the "why it matters."** After a `mockup`/`stepflow` beat demonstrating a trick, add
+  a short `statcounter`/`hookcard` beat on the concrete outcome (time saved, money saved).
+- **Numbered structure.** Group tricks/steps and use `chapter` scenes as dividers on `long` videos.
+- **End with a recap + one clear next action** on the `endcard`.
+- **Pacing:** one visual beat every **3-5 seconds** of narration — tighter than before. On `short` jobs
+  aim at the tight end (3-4s) throughout; on `long` jobs the 8-15s exception still applies to
+  `statcounter`/`chart` beats that need a moment to land.
+- **No-repeat rule:** don't use the same `visual.type` more than **twice in a row** — rotate through the
+  primary family (and drop in a secondary type occasionally) so the video doesn't feel templated.
+  `validate_long.py`/`validate_short.py` enforce this; don't rely on memory alone.
+- **Never fabricate a statistic, benchmark, or quote.** If a number can't be verified from the research
+  step, cut it or phrase it qualitatively ("noticeably faster" instead of an invented %).
+- **Never use a real brand's logo, exact product chrome, or trademarked wordmark.** `toolgrid` badges
+  and `mockup` windows are built generic on purpose — name tools in plain text, never try to reproduce
+  their actual icon or UI pixel-for-pixel.
 
 ## Tone names (theme.js)
 
-- `dark` — near-black/indigo background (`C.ink`), white text, violet accent. Default tone — use for
-  most scenes.
-- `cyan` — deep teal-black background, cyan accent. Use for "trick/tip" beats to visually separate
-  them from narrative beats.
-- `amber` — warm dark background, amber accent. Use sparingly for warnings/caveats ("but watch out for...").
-- `paper` — light background. Use only for screenshot-heavy beats where a light frame reads cleaner;
-  don't overuse — the channel's primary identity is dark + violet/cyan.
+- `glass` — **default now.** Deep navy (`#060B14`) background, tech grid, cyan/royal-blue accent, gold
+  for secondary highlights (pills, `statcounter` color: `'gold'`). All six UI-card components read this
+  tone by default if `tone` is omitted.
+- `dark` / `cyan` / `amber` / `paper` — the older tones, still available on the secondary scene family
+  for visual variety or a deliberate mood shift (e.g. `amber` for a caveat/warning beat).
 
 ## Palette reference (`src/theme.js`)
 
-Background `#0a0a14`, card `#1c1c38`, violet accent `#8b5cf6`, cyan accent `#22d3ee`, amber `#fbbf24`,
-green `#34d399`, red `#f0506e`, paper text on dark `#eef0ff`. Display font: Anton (big kinetic
-headlines). Sans: Inter (body/list text). Mono: Space Mono (stats, code snippets, keyboard shortcuts).
+Primary (`glass` tone): background `#060B14`, card glass `rgba(16,26,46,.55)` with 1px
+`rgba(255,255,255,.08)` border + `backdrop-filter: blur(20px)`, sky-blue/cyan accent `#22D3EE`, royal
+blue `#3B82F6`, gold `#F59E0B`, white text. Legacy tones keep their old hexes (see `TONES` in
+`theme.js`). Display font: Anton (headlines). Sans: Inter (body/mockup text). Mono: Space Mono (chips,
+labels, stats).
 
 ## Thumbnail (`src/thumb.json` → `Thumb.jsx`)
 
 Keep `line1`/`line2` short (2-4 words each), `box` as the punchy CTA/claim, `box_color` one of the
-accent hexes above. `image.q` should describe an abstract/UI-adjacent visual (never a real app's
-exact UI, to avoid trademark/screenshot issues) — e.g. "glowing neural network abstract", "futuristic
-dashboard interface abstract".
+accent hexes above (gold `#F59E0B` reads well as a CTA color against the navy background). `image.q`
+should describe an abstract/UI-adjacent visual (never a real app's exact UI or a real logo) — e.g.
+"glowing neural network abstract", "futuristic glass dashboard interface abstract".

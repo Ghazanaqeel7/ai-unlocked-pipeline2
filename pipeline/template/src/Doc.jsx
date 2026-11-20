@@ -16,8 +16,21 @@ import {Quote} from './scenes/Quote.jsx';
 import {Illustration} from './scenes/Illustration.jsx';
 import {EndCard} from './scenes/EndCard.jsx';
 import {Grain} from './scenes/common.jsx';
+import {HookCard} from './scenes/ui/HookCard.jsx';
+import {MockupWindow} from './scenes/ui/MockupWindow.jsx';
+import {ToolGrid} from './scenes/ui/ToolGrid.jsx';
+import {ComparisonCard} from './scenes/ui/ComparisonCard.jsx';
+import {StatCounter} from './scenes/ui/StatCounter.jsx';
+import {StepFlow} from './scenes/ui/StepFlow.jsx';
 
-export const REGISTRY = {title: Title, chapter: Chapter, photo: Photo, stat: Stat, chart: Chart, timeline: Timeline, map: MapScene, headline: Headline, compare: Compare, list: ListScene, quote: Quote, illustration: Illustration, endcard: EndCard};
+// Primary UI-card types (hookcard/mockup/toolgrid/comparecard/statcounter/stepflow) are this channel's
+// main visual language (see docs/render_guide.md). The rest (photo/stat/chart/timeline/map/headline/
+// compare/list/illustration) stay registered for variety/legacy jobs but are secondary now.
+export const REGISTRY = {
+  title: Title, chapter: Chapter, endcard: EndCard, quote: Quote,
+  hookcard: HookCard, mockup: MockupWindow, toolgrid: ToolGrid, comparecard: ComparisonCard, statcounter: StatCounter, stepflow: StepFlow,
+  photo: Photo, stat: Stat, chart: Chart, timeline: Timeline, map: MapScene, headline: Headline, compare: Compare, list: ListScene, illustration: Illustration,
+};
 const OVERLAP = 9;   // frames: a beat keeps showing this long after its end so the next one cross-fades in
 
 const Fade = ({children, first, last}) => {
