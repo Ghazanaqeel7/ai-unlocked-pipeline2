@@ -38,7 +38,14 @@
       "status": "rendering",
       "updated": "2026-11-20T22:52:57Z",
       "title": "4 AI Agents Just Fixed Production Code With Zero Human Edits",
-      "run": "44832463875"
+      "run": "44832463875",
+      "progress": [
+        {
+          "t": "2026-11-20T22:52:59Z",
+          "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
+        }
+      ],
+      "progress_count": 1
     }
   },
   "ideas": [],
