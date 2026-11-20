@@ -1,0 +1,30 @@
+{
+ "title": "3 AI Tools That Build Your Video in 1 Line",
+ "tldr": [
+  "These 3 tools turn one prompt into a finished video.",
+  "No editing experience needed — just copy the prompt and go."
+ ],
+ "tools": [
+  {"name": "Runway", "link": "[TOOL_LINK]", "note": "text-to-video generation"},
+  {"name": "ElevenLabs", "link": "[TOOL_LINK]", "note": "AI voiceover"},
+  {"name": "Pika", "link": "[TOOL_LINK]", "note": "extra scene variations"}
+ ],
+ "steps": [
+  {"title": "Open Runway and paste the prompt below", "detail": "Use the free tier to start"},
+  {"title": "Generate the clip", "detail": "Takes about 2 minutes"},
+  {"title": "Add the voiceover in ElevenLabs", "detail": ""},
+  {"title": "Export and post", "detail": ""}
+ ],
+ "snippets": [
+  {"label": "Prompt template", "lang": "text", "code": "A cinematic shot of <subject>, golden hour, 4k"}
+ ],
+ "tips": [
+  "Keep prompts under 20 words for the cleanest results.",
+  "Always preview a short clip before rendering the full video."
+ ],
+ "mistakes": [
+  "Don't skip setting the aspect ratio before you generate.",
+  "Don't forget to add your own voice track before exporting."
+ ],
+ "cta": {"comment_word": "GUIDE", "affiliate_link": "[AFFILIATE_LINK]"}
+}

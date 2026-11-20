@@ -1,0 +1,37 @@
+{
+ "scenes": [
+  {
+   "id": "s1",
+   "text": "These three AI tools turn one line of text into a finished video, and you don't need any editing skills to do it.",
+   "visual": {"type": "hookcard", "text": "1 LINE = FULL VIDEO"}
+  },
+  {
+   "id": "s2",
+   "text": "First, open Runway, paste your prompt, and hit generate. In under two minutes you get a cinematic clip that's ready to use.",
+   "visual": {
+    "type": "mockup",
+    "prompt": "A cinematic shot of a city skyline at golden hour, 4k",
+    "chips": ["4K", "Cinematic"],
+    "responseLines": ["Rendering scene...", "Done — download ready"]
+   }
+  },
+  {
+   "id": "s3",
+   "text": "Pair it with ElevenLabs for the voice and Pika for extra scene variations, and the whole stack is easy to run from a laptop.",
+   "visual": {
+    "type": "toolgrid",
+    "tools": [{"name": "Runway"}, {"name": "ElevenLabs"}, {"name": "Pika"}]
+   }
+  },
+  {
+   "id": "s4",
+   "text": "That's roughly ninety percent faster than hiring an editor, and you don't need any timeline or editing skills at all.",
+   "visual": {"type": "statcounter", "value": 90, "label": "Faster than editing by hand", "bar": 0.9}
+  },
+  {
+   "id": "s5",
+   "text": "Comment the word guide below and we'll send you the exact prompts for free.",
+   "visual": {"type": "endcard", "title": "Comment GUIDE for the prompts", "sub": "Subscribe to AI Graphic TV"}
+  }
+ ]
+}
