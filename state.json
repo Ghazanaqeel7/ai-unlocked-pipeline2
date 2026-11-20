@@ -18,7 +18,14 @@
       "status": "rendering",
       "updated": "2026-11-20T20:06:56Z",
       "title": "3 AI Tools That Build Your Video in 1 Line",
-      "run": "44808301201"
+      "run": "44808301201",
+      "progress": [
+        {
+          "t": "2026-11-20T20:06:57Z",
+          "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
+        }
+      ],
+      "progress_count": 1
     }
   },
   "ideas": [],
