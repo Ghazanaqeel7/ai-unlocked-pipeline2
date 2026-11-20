@@ -74,6 +74,10 @@ jobs:
 
           # always render with the latest engine: refresh code from the template, keep the job's own scenes/thumb/timing/assets
           (cd pipeline/template && tar cf - --exclude=node_modules --exclude=out --exclude='public/assets/*' --exclude=./src/scenes.json --exclude=./src/thumb.json --exclude=./src/timing.json .) | (cd "jobs/$J/project" && mkdir -p . && tar xf -)
+          # public/assets/* above is excluded so a job keeps its own fetched stock images, but the template's
+          # own SFX (whoosh/pop/click) are shipped WITH the template and must always refresh to the latest copy
+          mkdir -p "jobs/$J/project/public/assets/sfx"
+          cp pipeline/template/public/assets/sfx/*.mp3 "jobs/$J/project/public/assets/sfx/" 2>/dev/null || true
 
           JTYPE=$(python3 -c "import json;print(json.load(open('jobs/$J/meta.json')).get('type','long'))")
           if [ "$JTYPE" = "short" ]; then python3 pipeline/video/validate_short.py "jobs/$J"; else python3 pipeline/video/validate_long.py "jobs/$J"; fi

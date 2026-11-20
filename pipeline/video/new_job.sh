@@ -10,7 +10,8 @@ D="jobs/$ID"; [ -e "$D" ] && { echo "$D exists"; exit 1; }
 mkdir -p "$D"
 rsync -a --exclude node_modules --exclude package-lock.json --exclude out --exclude 'public/assets/*' pipeline/template/ "$D/project/" 2>/dev/null || {
   mkdir -p "$D/project"; (cd pipeline/template-long && tar cf - --exclude=node_modules --exclude=out --exclude='public/assets/*' .) | (cd "$D/project" && tar xf -); }
-mkdir -p "$D/project/public/assets" "$D/review"
+mkdir -p "$D/project/public/assets/sfx" "$D/review"
+cp pipeline/template/public/assets/sfx/*.mp3 "$D/project/public/assets/sfx/" 2>/dev/null || true
 echo "{\"type\": \"$TYPE\"}" > "$D/meta.json"
 if [ "$TYPE" = "short" ]; then
   echo "created $D (type:short, composition:ShortDoc, 1080x1920, ~35-55s). Write: $D/script.md, $D/factmap.md, $D/project/src/scenes.json, $D/meta.json (add title/etc to the type key already set), $D/project/src/thumb.json, $D/project/src/guide.json (companion guide — see docs/render_guide.md's guide.json schema)"
