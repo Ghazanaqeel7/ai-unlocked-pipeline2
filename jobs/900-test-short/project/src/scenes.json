@@ -3,16 +3,26 @@
   {
    "id": "s1",
    "text": "These three AI tools turn one line of text into a finished video, and you don't need any editing skills to do it.",
-   "visual": {"type": "hookcard", "text": "1 LINE = FULL VIDEO"}
+   "visual": {
+    "type": "hookcard",
+    "kicker": "THE PROBLEM",
+    "text": "1 LINE = FULL VIDEO",
+    "pills": ["NO EDITING SKILLS"],
+    "stack": [{"label": "Runway", "value": "Video"}, {"label": "11Labs", "value": "Voice"}, {"label": "Pika", "value": "Scenes"}],
+    "polarity": "dark"
+   }
   },
   {
    "id": "s2",
    "text": "First, open Runway, paste your prompt, and hit generate. In under two minutes you get a cinematic clip that's ready to use.",
    "visual": {
-    "type": "mockup",
+    "type": "browsersim",
+    "mode": "app",
     "prompt": "A cinematic shot of a city skyline at golden hour, 4k",
     "chips": ["4K", "Cinematic"],
-    "responseLines": ["Rendering scene...", "Done — download ready"]
+    "responseLines": ["Rendering scene...", "Done — download ready"],
+    "cursor": [{"x": 50, "y": 75, "at": 28}],
+    "polarity": "light"
    }
   },
   {
@@ -20,17 +30,47 @@
    "text": "Pair it with ElevenLabs for the voice and Pika for extra scene variations, and the whole stack is easy to run from a laptop.",
    "visual": {
     "type": "toolgrid",
-    "tools": [{"name": "Runway"}, {"name": "ElevenLabs"}, {"name": "Pika"}]
+    "tools": [{"name": "Runway"}, {"name": "ElevenLabs"}, {"name": "Pika"}],
+    "polarity": "dark"
    }
   },
   {
    "id": "s4",
    "text": "That's roughly ninety percent faster than hiring an editor, and you don't need any timeline or editing skills at all.",
-   "visual": {"type": "statcounter", "value": 90, "label": "Faster than editing by hand", "bar": 0.9}
+   "visual": {
+    "type": "datavizcard",
+    "mode": "gauge",
+    "label": "Faster than editing by hand",
+    "values": [{"name": "faster", "value": 90, "max": 100, "color": "#22D3EE"}],
+    "polarity": "light"
+   }
   },
   {
    "id": "s5",
+   "text": "The workflow is just three steps: generate the clip, add the voice, then stitch the scenes together.",
+   "visual": {
+    "type": "workflowstepper",
+    "steps": [{"icon": "1", "label": "Generate"}, {"icon": "2", "label": "Voice"}, {"icon": "3", "label": "Stitch"}],
+    "body": {"type": "checklist", "items": [{"text": "Paste your prompt into Runway"}, {"text": "Add an ElevenLabs voiceover"}, {"text": "Stitch scenes in one timeline"}]},
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s6",
    "text": "Comment the word guide below and we'll send you the exact prompts for free.",
+   "visual": {
+    "type": "socialctacard",
+    "handle": "@AIGraphicTV",
+    "name": "AI Graphic TV",
+    "bio": "Practical AI tool breakdowns",
+    "commentWord": "GUIDE",
+    "dmPreview": "Sent! Check your DMs",
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s7",
+   "text": "Subscribe to AI Graphic TV for more tool breakdowns like this one.",
    "visual": {"type": "endcard", "title": "Comment GUIDE for the prompts", "sub": "Subscribe to AI Graphic TV"}
   }
  ]
