@@ -31,6 +31,11 @@
     "t": "2026-11-21T16:13:51Z",
     "subs": 0,
     "views": 0
+   },
+   {
+    "t": "2026-11-21T21:42:21Z",
+    "subs": 0,
+    "views": 0
    }
   ],
   "id": "UCh-SKOM4Xp7pBUDHQVq0CSw",
@@ -40,8 +45,8 @@
   "subs": 0,
   "views": 0,
   "videos": 1,
-  "subs_24h": null,
-  "views_24h": null
+  "subs_24h": 0,
+  "views_24h": 0
  },
- "updated": "2026-11-21T16:13:51Z"
+ "updated": "2026-11-21T21:42:21Z"
 }
