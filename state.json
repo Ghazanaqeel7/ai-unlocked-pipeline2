@@ -53,6 +53,11 @@
       "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-901-agent-loop-short/final.mp4",
       "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-901-agent-loop-short/preview.mp4",
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-901-agent-loop-short/upload.mp4"
+    },
+    "902-hybrid-engine-short": {
+      "status": "render_queued",
+      "updated": "2026-11-21T19:13:43Z",
+      "title": "We Taught Our AI Video Pipeline To Record Its Own Screen"
     }
   },
   "ideas": [],
