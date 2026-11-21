@@ -4,7 +4,7 @@ Checks scenes.json, thumb.json, meta.json, script length, visual variety. Exit 1
 Shared logic (TYPES, PRIMARY, no-repeat check) lives in beat_rules.py so validate_short.py stays in sync."""
 import json, os, sys, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from beat_rules import TYPES, PRIMARY, flatten_beats, check_no_repeat, check_required_props
+from beat_rules import TYPES, PRIMARY, flatten_beats, check_no_repeat, check_required_props, load_custom_types
 
 def main():
     job = sys.argv[1].rstrip('/'); errs = []; warns = []
@@ -13,6 +13,7 @@ def main():
     except Exception as e: print('ERROR scenes.json unreadable:', e); sys.exit(1)
     try: meta = json.load(open(os.path.join(job, 'meta.json'), encoding='utf-8'))
     except Exception as e: print('ERROR meta.json unreadable:', e); sys.exit(1)
+    allowed_types = TYPES | load_custom_types(job)
     ids = set(); words = 0; photos = 0; types = []
     for i, s in enumerate(sc):
         sid = s.get('id')
@@ -23,7 +24,7 @@ def main():
         words += len(t.split())
         beats = s['visual'] if isinstance(s.get('visual'), list) else [s.get('visual')]
         for b in beats:
-            if not isinstance(b, dict) or b.get('type') not in TYPES: errs.append(f'{sid}: bad visual {b!r}'[:120]); continue
+            if not isinstance(b, dict) or b.get('type') not in allowed_types: errs.append(f'{sid}: bad visual {b!r}'[:120]); continue
             types.append(b['type'])
             if b['type'] == 'headline' and re.search(r'reconstruct|sneaky deals|our take', str(b.get('source', '')), re.I):
                 errs.append(f'{sid}: headline source must be a real attribution or omitted (not "{b.get("source")}")')

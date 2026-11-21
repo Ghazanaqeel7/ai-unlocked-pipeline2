@@ -55,6 +55,30 @@ def check_required_props(b):
     return errs
 
 
+def load_custom_types(job):
+    """A job's project/src/custom_scenes/index.js (render_guide.md "Custom per-job scenes") can define
+    bespoke `visual.type` strings the shared TYPES enum above knows nothing about. Rather than hardcode
+    or guess them, read the object keys straight out of that job's own index.js default-export literal
+    — regex, not a JS parser, since the file is always written in the one constrained shape the docs
+    show (`export default {key: Comp, key2: Comp2}`). Returns a set (empty if the file is missing, the
+    default empty `{}`, or anything unparseable — never raises, so a malformed custom file just means
+    no extra types are allow-listed, not a crash)."""
+    import os as _os, re as _re
+    path = _os.path.join(job, 'project', 'src', 'custom_scenes', 'index.js')
+    try:
+        src = open(path, encoding='utf-8').read()
+    except OSError:
+        return set()
+    # strip // line comments first — the template's own index.js documents the convention with an
+    # example `export default {...}` line inside a comment, which would otherwise be matched instead
+    # of (or alongside) the real code below it.
+    src = _re.sub(r'//.*', '', src)
+    m = _re.search(r'export\s+default\s*\{([^}]*)\}', src, _re.S)
+    if not m:
+        return set()
+    return set(_re.findall(r'([A-Za-z_][A-Za-z0-9_]*)\s*:', m.group(1)))
+
+
 def flatten_beats(scenes):
     """scenes: the 'scenes' list from scenes.json. Returns a flat list of visual.type strings, in
     narration order, the same order Doc.jsx's buildBeats() will play them in."""

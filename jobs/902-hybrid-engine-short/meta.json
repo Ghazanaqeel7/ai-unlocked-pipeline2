@@ -1,0 +1,8 @@
+{
+ "type": "short",
+ "demo": true,
+ "title": "We Taught Our AI Video Pipeline To Record Its Own Screen",
+ "description": "A behind-the-scenes test of the hybrid auto-screen-record + custom scene engine: a real headless-browser recording of a public GitHub repo, framed with Ken Burns motion, alongside a bespoke per-job scene.\n\nSources: pipeline stress-test render (manual trigger, not a scheduled publish) — exercises the new LiveClipCard component (real Playwright screen capture) and the custom_scenes per-job scene system.\n\nSubscribe to AI Graphic TV for more AI tool breakdowns.\n\n#ai #automation #aitools #buildinpublic #shorts",
+ "tags": ["ai pipeline", "automation", "ai video", "build in public", "ai tools", "shorts"],
+ "pinned_comment": "Yes, that repo clip is a REAL recording, not an animation. Comment GUIDE for the breakdown."
+}
