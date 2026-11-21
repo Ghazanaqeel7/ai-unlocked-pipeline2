@@ -26,7 +26,9 @@ of (or alongside) the older `tone` prop — prefer `polarity` in new jobs.
 
 - `hookcard` — the core kinetic-typography beat: a bold split headline with keyword pills, and now an
   optional fanned-out `stack` of mini-cards (a kinetic counter/stack effect) above the headline. Use for
-  the hook, the payoff of a trick, or any line that should hit hard.
+  the hook, the payoff of a trick, or any line that should hit hard. `accent` is a list of **words from
+  `text`** to render glowing (e.g. `["wasting", "hours"]`), never a color hex string — the glow color
+  itself always comes from the resolved tone's accent, not a per-beat override.
 - `toolgrid` — floating grid of tool badges (`tools: [{name:'Claude', role:'Chat', glyph:'bulb'}]`). Use
   when naming 3+ tools together. Badges are a generic glass/white tile (never a real logo) + the tool's
   **text** name + an optional short `role` caption (e.g. "Video gen", "Voice") + an abstract glyph —
@@ -187,7 +189,7 @@ change the content, keep the required-prop shape — the validators enforce exac
 **`hookcard`** (required: `text`):
 ```json
 {"type": "hookcard", "kicker": "THE PROBLEM", "text": "You're wasting 10 hours a week on this",
- "accent": "#22D3EE", "pills": ["1 LINE = FULL VIDEO"], "sub": "Here's the fix.",
+ "accent": ["wasting", "hours"], "pills": ["1 LINE = FULL VIDEO"], "sub": "Here's the fix.",
  "stack": [{"label": "Tool A", "value": "Slow"}, {"label": "Tool B", "value": "Manual"}],
  "polarity": "dark"}
 ```

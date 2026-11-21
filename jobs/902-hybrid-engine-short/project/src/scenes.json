@@ -1,7 +1,7 @@
 {
   "scenes": [
     {"id": "s1", "text": "Our AI pipeline just learned something new.",
-     "visual": {"type": "hookcard", "kicker": "BEHIND THE SCENES", "text": "Our pipeline just learned to record its own screen", "accent": "#22D3EE", "pills": ["NEW ENGINE"], "polarity": "dark"}},
+     "visual": {"type": "hookcard", "kicker": "BEHIND THE SCENES", "text": "Our pipeline just learned to record its own screen", "pills": ["NEW ENGINE"], "polarity": "dark"}},
     {"id": "s2", "text": "We used to record every demo by hand.",
      "visual": {"type": "browsersim", "mode": "app", "prompt": "Record this demo manually...", "chips": ["Old way", "Manual capture"], "polarity": "light"}},
     {"id": "s3", "text": "Now a headless browser captures this page live.",
@@ -38,7 +38,7 @@
        "lines": [{"text": "bash render_chunk.sh job-902", "status": "running", "at": 0}, {"text": "rendered 15 beats", "status": "ok", "at": 40}],
        "polarity": "dark"}},
     {"id": "s12", "text": "No more alt tabbing between five recording apps.",
-     "visual": {"type": "hookcard", "kicker": "WHY IT MATTERS", "text": "No more alt-tabbing between five recording apps", "accent": "#F59E0B", "pills": ["ONE REPO"], "polarity": "light"}},
+     "visual": {"type": "hookcard", "kicker": "WHY IT MATTERS", "text": "No more alt-tabbing between five recording apps", "pills": ["ONE REPO"], "polarity": "light"}},
     {"id": "s13", "text": "Record, validate, render, ship, fully hands free.",
      "visual": {"type": "workflowstepper",
        "steps": [{"label": "Record"}, {"label": "Ship"}],
