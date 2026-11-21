@@ -23,24 +23,31 @@ import {DocHighlighter} from './scenes/ui/DocHighlighter.jsx';
 import {WorkflowStepper} from './scenes/ui/WorkflowStepper.jsx';
 import {DataVizCard} from './scenes/ui/DataVizCard.jsx';
 import {SocialCtaCard} from './scenes/ui/SocialCtaCard.jsx';
+import {LiveClipCard} from './scenes/ui/LiveClipCard.jsx';
 import {MockupLegacy, StatCounterLegacy, ComparisonCardLegacy, StepFlowLegacy} from './scenes/ui/legacyAdapters.jsx';
 import {Captions} from './scenes/ui/Captions.jsx';
+import customScenes from './custom_scenes/index.js';
 
 // Primary UI-card types are this channel's main visual language (see docs/render_guide.md):
-// hookcard, toolgrid, browsersim, dochighlighter, workflowstepper, datavizcard, socialctacard.
-// Old type strings (mockup/statcounter/comparecard/stepflow) are kept as safe legacy aliases, each
-// routed through a prop-adapting wrapper to the new component — so older jobs' scenes.json keep
-// rendering unchanged even though the underlying component is new (see legacyAdapters.jsx). The rest
-// (photo/stat/chart/timeline/map/headline/compare/list/illustration) stay registered for
-// variety/legacy jobs but are secondary now.
+// hookcard, toolgrid, browsersim, dochighlighter, workflowstepper, datavizcard, socialctacard,
+// liveclipcard. Old type strings (mockup/statcounter/comparecard/stepflow) are kept as safe legacy
+// aliases, each routed through a prop-adapting wrapper to the new component — so older jobs'
+// scenes.json keep rendering unchanged even though the underlying component is new (see
+// legacyAdapters.jsx). The rest (photo/stat/chart/timeline/map/headline/compare/list/illustration)
+// stay registered for variety/legacy jobs but are secondary now.
 export const REGISTRY = {
   title: Title, chapter: Chapter, endcard: EndCard, quote: Quote,
   hookcard: HookCard, toolgrid: ToolGrid,
   browsersim: BrowserSim, dochighlighter: DocHighlighter, workflowstepper: WorkflowStepper, datavizcard: DataVizCard, socialctacard: SocialCtaCard,
+  liveclipcard: LiveClipCard,
   // legacy aliases — safeguard #2: never break an older job
   mockup: MockupLegacy, statcounter: StatCounterLegacy, comparecard: ComparisonCardLegacy, stepflow: StepFlowLegacy,
   photo: Photo, stat: Stat, chart: Chart, timeline: Timeline, map: MapScene, headline: Headline, compare: Compare, list: ListScene, illustration: Illustration,
 };
+// Per-job bespoke scenes (render_guide.md "Custom per-job scenes") layer on top of — and can override —
+// the shared REGISTRY above. customScenes defaults to {} for any job that hasn't written one; Doc.jsx
+// always imports this same file path so the import itself never fails even when a job has nothing here.
+const FULL_REGISTRY = {...REGISTRY, ...customScenes};
 const OVERLAP = 9;   // frames: a beat keeps showing this long after its end so the next one cross-fades in
 
 // `dur` is this beat's OWN Sequence duration (passed explicitly rather than read off useVideoConfig,
@@ -105,7 +112,7 @@ export const Doc = () => {
   return (
     <AbsoluteFill style={{backgroundColor: '#000'}}>
       {beats.map((b, i) => {
-        const Comp = REGISTRY[b.visual.type] || Title;
+        const Comp = FULL_REGISTRY[b.visual.type] || Title;
         const isLast = i === lastIdx;
         const seqDur = b.dur + (isLast ? 0 : OVERLAP);
         return (

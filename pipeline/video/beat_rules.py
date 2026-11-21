@@ -6,7 +6,7 @@ formats enforce the same REGISTRY and no-repeat policy from docs/render_guide.md
 # PRIMARY_NEW are the current component schemas new jobs should write to; PRIMARY_LEGACY are the old
 # type strings (mockup/statcounter/comparecard/stepflow), kept only as safe aliases (routed through
 # legacyAdapters.jsx) so older jobs' scenes.json never break. New jobs should use PRIMARY_NEW.
-PRIMARY_NEW = {'hookcard', 'toolgrid', 'browsersim', 'dochighlighter', 'workflowstepper', 'datavizcard', 'socialctacard'}
+PRIMARY_NEW = {'hookcard', 'toolgrid', 'browsersim', 'dochighlighter', 'workflowstepper', 'datavizcard', 'socialctacard', 'liveclipcard'}
 PRIMARY_LEGACY = {'mockup', 'statcounter', 'comparecard', 'stepflow'}
 PRIMARY = PRIMARY_NEW | PRIMARY_LEGACY
 SECONDARY = {'title', 'chapter', 'photo', 'stat', 'chart', 'timeline', 'map', 'headline', 'compare', 'list', 'quote', 'illustration', 'endcard'}
@@ -23,6 +23,7 @@ REQUIRED_PROPS = {
     'dochighlighter': ['content'],
     'workflowstepper': ['steps'],
     'socialctacard': [],  # every prop has a sane default
+    'liveclipcard': ['url'],
 }
 
 

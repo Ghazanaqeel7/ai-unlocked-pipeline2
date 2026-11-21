@@ -59,6 +59,18 @@ of (or alongside) the older `tone` prop — prefer `polarity` in new jobs.
   comment box where `commentWord` types in and "sends," plus an optional top slide-down "Sent! Check
   your DMs" notification banner. **On a Short, this is the sole closing beat** — see "Single clean
   closing beat" below; don't follow it with an `endcard`.
+- `liveclipcard` — a REAL headless-browser screen recording (`pipeline/video/record_clips.py`,
+  Playwright) framed in the same glass browser-window chrome as `browsersim`, with a slow Ken Burns
+  pan/zoom and a drifting spotlight glow. **Scope: public, loginless, open-source-adjacent pages only**
+  — GitHub repos, HuggingFace spaces, official docs, public demo pages. `record_clips.py` checks the
+  `url`'s host against an allow-list before even attempting a recording, on top of whatever scenes.json
+  itself should already be scoped to; never point `url` at a site that requires sign-in. Recording has a
+  strict ~12s time budget and fails silently per-clip — if the site blocks headless browsers, times out,
+  or nothing records, the beat renders a generic fallback card (same trademark-safe rule as
+  `browsersim`) instead of a blank frame, so a bad URL never breaks a render. Optional `actions` (a list
+  of `{"type":"wait"|"scroll"|"click", ...}`) script simple interactions (dismiss-cookie-banner handling
+  is automatic). `label` is a short caption shown under the window; it also doubles as the fallback
+  card's headline when recording doesn't happen.
 
 ### Legacy aliases (do not use in new jobs, kept only so older jobs never break)
 
@@ -241,6 +253,40 @@ change the content, keep the required-prop shape — the validators enforce exac
  "bio": "Practical AI tool breakdowns", "commentWord": "GUIDE",
  "dmPreview": "Sent! Check your DMs", "polarity": "dark"}
 ```
+
+**`liveclipcard`** (required: `url`):
+```json
+{"type": "liveclipcard", "url": "https://github.com/some-org/some-repo",
+ "label": "github.com/some-org/some-repo",
+ "actions": [{"type": "wait", "ms": 600}, {"type": "scroll", "dy": 500}],
+ "polarity": "light"}
+```
+
+## Custom per-job scenes (`src/custom_scenes/`)
+
+For a one-off, job-specific visual that isn't worth adding to the shared `REGISTRY` above, a job can
+write its own bespoke React component into its own `project/src/custom_scenes/` folder and register it
+there instead of in `Doc.jsx`:
+
+```jsx
+// jobs/<id>/project/src/custom_scenes/MyBespokeScene.jsx
+export const MyBespokeScene = (props) => { /* ...like any other scene component... */ };
+```
+```js
+// jobs/<id>/project/src/custom_scenes/index.js
+import {MyBespokeScene} from './MyBespokeScene.jsx';
+export default {mybespokescene: MyBespokeScene};
+```
+
+`scenes.json` then uses `{"type": "mybespokescene", ...}` like any other beat. `Doc.jsx` merges this
+per-job map on top of the shared `REGISTRY` (a custom type can even override a shared one for that job
+only). `render.yml`'s "refresh engine" step excludes `src/custom_scenes/` from the template sync, so a
+job's bespoke scene survives every later re-render untouched — this is the one folder under `project/`
+that isn't overwritten with the latest template code. Every job's `custom_scenes/index.js` must always
+exist and default-export an object (an empty `{}` if the job has no bespoke scene); `render.yml`
+guarantees this automatically for any job that doesn't already have one. Reuse the shared primitives in
+`src/scenes/common.jsx` (`GridBg`, `GlassPanel`, `springPop`, etc.) rather than re-implementing the
+channel's dark/light-polarity card look from scratch.
 
 ## Tone names (theme.js)
 
