@@ -72,7 +72,11 @@ of (or alongside) the older `tone` prop — prefer `polarity` in new jobs.
   `browsersim`) instead of a blank frame, so a bad URL never breaks a render. Optional `actions` (a list
   of `{"type":"wait"|"scroll"|"click", ...}`) script simple interactions (dismiss-cookie-banner handling
   is automatic). `label` is a short caption shown under the window; it also doubles as the fallback
-  card's headline when recording doesn't happen.
+  card's headline when recording doesn't happen. `LiveClipCard.jsx` plays the recorded clip with
+  Remotion's `OffthreadVideo` (never `Video`) — seeking a real `<video>` element per rendered frame was
+  found to run at roughly 1/30th normal speed under this pipeline's headless/software-GL render flags,
+  turning a ~1min Short into a 2h+ render; `OffthreadVideo` extracts frames via ffmpeg out-of-band
+  instead and renders at the normal speed.
 
 ### Legacy aliases (do not use in new jobs, kept only so older jobs never break)
 

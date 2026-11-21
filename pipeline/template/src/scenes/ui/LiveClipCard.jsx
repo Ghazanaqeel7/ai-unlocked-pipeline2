@@ -1,5 +1,5 @@
 import React from 'react';
-import {Video, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
+import {OffthreadVideo, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {F, tone, resolveTone} from '../../theme.js';
 import {prog, ease} from '../../util.js';
 import {GridBg, GlassPanel, springPop} from '../common.jsx';
@@ -48,7 +48,11 @@ export const LiveClipCard = ({url, label, resolved, polarity, tone: tn, frames})
               {src ? (
                 <>
                   <div style={{position: 'absolute', inset: 0, transform: `scale(${kbScale}) translate(${kbX}%, ${kbY}%)`}}>
-                    <Video src={src} style={{width: '100%', height: contentMinH ? contentMinH : 'auto', objectFit: 'cover', display: 'block'}} muted />
+                    {/* OffthreadVideo (not Video): Remotion extracts frames via ffmpeg out-of-band instead of
+                        seeking a real <video> element per rendered frame — the latter was found to render at
+                        roughly 1/30th normal speed under this pipeline's headless/software-GL render flags
+                        (render_chunk.sh's --gl=swangle), turning a ~1min Short into a 2h+ render. */}
+                    <OffthreadVideo src={src} style={{width: '100%', height: contentMinH ? contentMinH : 'auto', objectFit: 'cover', display: 'block'}} muted />
                   </div>
                   <SpotlightGlow f={f} dur={dur} />
                 </>
