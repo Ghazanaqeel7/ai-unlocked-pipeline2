@@ -35,8 +35,8 @@
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-900-test-short/upload.mp4"
     },
     "901-agent-loop-short": {
-      "status": "rendering",
-      "updated": "2026-11-21T00:42:50Z",
+      "status": "video_ready",
+      "updated": "2026-11-21T01:33:12Z",
       "title": "4 AI Agents Just Fixed Production Code With Zero Human Edits",
       "run": "44845506070",
       "progress": [
@@ -49,7 +49,10 @@
           "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
         }
       ],
-      "progress_count": 2
+      "progress_count": 2,
+      "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-901-agent-loop-short/final.mp4",
+      "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-901-agent-loop-short/preview.mp4",
+      "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-901-agent-loop-short/upload.mp4"
     }
   },
   "ideas": [],
