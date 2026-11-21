@@ -1,0 +1,230 @@
+{
+ "days": [
+  {
+   "date": "2026-11-21",
+   "words": {
+    "chatgpt": 16,
+    "full": 14,
+    "claude": 11,
+    "tutorial": 10,
+    "learn": 8,
+    "course": 8,
+    "create": 7,
+    "agent": 7,
+    "free": 7,
+    "tools": 7,
+    "beginner": 7,
+    "guide": 7,
+    "minutes": 7,
+    "automation": 7,
+    "build": 7,
+    "codes": 6,
+    "complete": 6,
+    "beginners": 6,
+    "agents": 6,
+    "using": 5,
+    "use": 5,
+    "coding": 5,
+    "step-by-step": 5,
+    "hacks": 4,
+    "people": 4
+   },
+   "brands": {
+    "google": 1
+   }
+  }
+ ],
+ "rising": {
+  "words": {
+   "rising": [
+    {
+     "name": "chatgpt",
+     "now": 16,
+     "before": 0,
+     "change": 16
+    },
+    {
+     "name": "full",
+     "now": 14,
+     "before": 0,
+     "change": 14
+    },
+    {
+     "name": "claude",
+     "now": 11,
+     "before": 0,
+     "change": 11
+    },
+    {
+     "name": "tutorial",
+     "now": 10,
+     "before": 0,
+     "change": 10
+    },
+    {
+     "name": "course",
+     "now": 8,
+     "before": 0,
+     "change": 8
+    },
+    {
+     "name": "learn",
+     "now": 8,
+     "before": 0,
+     "change": 8
+    },
+    {
+     "name": "build",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "free",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "agent",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "automation",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "minutes",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "beginner",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    }
+   ],
+   "falling": [],
+   "steady": [
+    {
+     "name": "chatgpt",
+     "now": 16,
+     "before": 0,
+     "change": 16
+    },
+    {
+     "name": "full",
+     "now": 14,
+     "before": 0,
+     "change": 14
+    },
+    {
+     "name": "claude",
+     "now": 11,
+     "before": 0,
+     "change": 11
+    },
+    {
+     "name": "tutorial",
+     "now": 10,
+     "before": 0,
+     "change": 10
+    },
+    {
+     "name": "course",
+     "now": 8,
+     "before": 0,
+     "change": 8
+    },
+    {
+     "name": "learn",
+     "now": 8,
+     "before": 0,
+     "change": 8
+    },
+    {
+     "name": "build",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "free",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "agent",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "automation",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "minutes",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    },
+    {
+     "name": "beginner",
+     "now": 7,
+     "before": 0,
+     "change": 7
+    }
+   ]
+  },
+  "brands": {
+   "rising": [
+    {
+     "name": "google",
+     "now": 1,
+     "before": 0,
+     "change": 1
+    }
+   ],
+   "falling": [],
+   "steady": []
+  }
+ },
+ "patterns": {
+  "shorts": {
+   "count": 25,
+   "question": 0.0,
+   "why_how": 0.12,
+   "number": 0.52,
+   "money": 0.04,
+   "caps_word": 0.24,
+   "emoji": 0.48,
+   "brand": 0.04,
+   "median_seconds": 36,
+   "median_words": 9
+  },
+  "long": {
+   "count": 60,
+   "question": 0.05,
+   "why_how": 0.27,
+   "number": 0.53,
+   "money": 0.0,
+   "caps_word": 0.25,
+   "emoji": 0.03,
+   "brand": 0.0,
+   "median_seconds": 1265,
+   "median_words": 10
+  }
+ },
+ "days_of_memory": 1,
+ "updated": "2026-11-21T08:02:16Z"
+}
