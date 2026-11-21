@@ -43,9 +43,13 @@
         {
           "t": "2026-11-20T22:52:59Z",
           "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
+        },
+        {
+          "t": "2026-11-21T00:42:52Z",
+          "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
         }
       ],
-      "progress_count": 1
+      "progress_count": 2
     }
   },
   "ideas": [],
