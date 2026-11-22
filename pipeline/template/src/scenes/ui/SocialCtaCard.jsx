@@ -1,8 +1,10 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {FileText, CheckCircle2} from 'lucide-react';
 import {F, tone, resolveTone} from '../../theme.js';
 import {prog, ease} from '../../util.js';
 import {GridBg, GlassPanel, springPop} from '../common.jsx';
+import {HostAvatar} from './HostAvatar.jsx';
 
 // Animated Comment-to-DM outro: a generic profile card (name/handle/bio — NEVER a real photo; a simple
 // initial-letter avatar, trademark/privacy-safe by the same rule as ToolBadge's generic glyphs), a
@@ -13,16 +15,25 @@ import {GridBg, GlassPanel, springPop} from '../common.jsx';
 //   commentWord        — the word/phrase a viewer is asked to comment, e.g. "GUIDE"
 //   dmPreview          — short text shown inside the sliding notification banner
 //   notifBanner        — bool, default true — show the top slide-down "Sent!" banner
+//   guide              — optional {badge, title, bullets:[...]} — renders a 3D-tilted frosted-glass
+//                         preview of the companion PDF guide alongside the comment card, e.g.
+//                         {badge:'FREE 6-PAGE BLUEPRINT', title:'The Agent Setup Guide', bullets:[...]}
+//   avatar             — bool, default true — HostAvatar in 'pointing' pose aimed at the comment box
 //   polarity           — 'dark' (default) | 'light'
-export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', bio = '', commentWord = 'GUIDE', dmPreview, notifBanner = true, polarity, tone: tn}) => {
+export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', bio = '', commentWord = 'GUIDE', dmPreview, notifBanner = true, guide, avatar = true, polarity, tone: tn}) => {
   const f = useCurrentFrame(); const tName = resolveTone(tn, polarity); const t = tone(tName); const {width: w, height: h} = useVideoConfig();
   const narrow = w < 1600;
   const light = t.card === '#FFFFFF';
   // narrow (Shorts) canvas: the profile card + comment card together fill the middle ~55-65% vertical
   // hero stage (~1050px of 1920), with 2x-scaled typography, instead of one small card floating in
-  // dead space.
-  const profileMinH = narrow ? Math.round(h * 0.2) : undefined;
-  const commentMinH = narrow ? Math.round(h * 0.32) : undefined;
+  // dead space. When a `guide` panel is also present, that panel shares the fill job, so the
+  // comment card itself must NOT be stretched tall too — otherwise it reproduces the exact
+  // large-empty-box problem this upgrade exists to kill. Row layout (profile+comment column next to
+  // the guide column) is used whenever `guide` is set, even on the narrow Shorts canvas, so nothing
+  // is ever alone in the middle of the frame.
+  const rowLayout = guide || !narrow;
+  const profileMinH = narrow && !guide ? Math.round(h * 0.2) : undefined;
+  const commentMinH = narrow && !guide ? Math.round(h * 0.32) : undefined;
   const profileK = springPop(f, 0, {damping: 16});
   const typeK = prog(f, 20, Math.max(10, commentWord.length * 3), ease);
   const typed = commentWord.slice(0, Math.round(commentWord.length * typeK));
@@ -45,8 +56,9 @@ export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', 
           </GlassPanel>
         </div>
       )}
-      <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', padding: narrow ? '0 46px' : '0 120px'}}>
-        <div style={{width: narrow ? '100%' : 640, maxWidth: 640, opacity: Math.min(1, profileK * 1.3), transform: `translateY(${(1 - Math.min(1, profileK)) * 24}px)`}}>
+      <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', padding: narrow ? (guide ? '0 36px' : '0 46px') : '0 90px'}}>
+       <div style={{display: 'flex', flexDirection: rowLayout ? 'row' : 'column', alignItems: 'center', gap: narrow ? (guide ? 18 : 26) : 56}}>
+        <div style={{width: narrow ? (guide ? '58%' : '100%') : 560, maxWidth: 640, flex: narrow && guide ? '1 1 58%' : undefined, opacity: Math.min(1, profileK * 1.3), transform: `translateY(${(1 - Math.min(1, profileK)) * 24}px)`, position: 'relative'}}>
           <GlassPanel radius={22} pad={narrow ? '34px 30px' : '26px 32px'} glow={t.accent} tn={tName}
             style={{minHeight: profileMinH, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
             <div style={{display: 'flex', alignItems: 'center', gap: narrow ? 24 : 16}}>
@@ -90,7 +102,39 @@ export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', 
               )}
             </GlassPanel>
           </div>
+          {avatar && (
+            <div style={{position: 'absolute', right: guide ? -36 : (narrow ? -20 : -70), bottom: guide ? -24 : (narrow ? -30 : -40), opacity: prog(f, 10, 14), zIndex: 5}}>
+              <HostAvatar pose="pointing" size={guide ? (narrow ? 96 : 130) : (narrow ? 150 : 170)} delay={10} />
+            </div>
+          )}
         </div>
+        {guide && (
+          <div style={{
+            width: narrow ? '38%' : 340, flex: narrow ? '1 1 38%' : undefined, opacity: prog(f, 14, 16, ease),
+            transform: `perspective(1000px) rotateY(${narrow ? -6 : -10}deg) rotateX(4deg) translateY(${(1 - prog(f, 14, 16, ease)) * 20}px)`,
+          }}>
+            <GlassPanel radius={18} pad={narrow ? '18px 16px' : '22px 24px'} glow={t.gold || t.accent2 || t.accent} tn={tName}>
+              <div style={{display: 'inline-block', background: t.gold || '#F59E0B', color: '#1a1203', fontFamily: F.display,
+                fontSize: narrow ? 12 : 14, letterSpacing: 0.5, padding: '5px 10px', borderRadius: 7, marginBottom: 12}}>
+                {guide.badge || 'FREE GUIDE'}
+              </div>
+              <div style={{display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12}}>
+                <FileText size={narrow ? 18 : 22} color={t.accent} />
+                <div style={{fontFamily: F.sans, fontWeight: 800, fontSize: narrow ? 17 : 19, color: t.fg, lineHeight: 1.15}}>{guide.title || 'The Setup Guide'}</div>
+              </div>
+              {(guide.bullets || []).slice(0, 3).map((b, i) => {
+                const k = prog(f, 24 + i * 6, 10, ease);
+                return (
+                  <div key={i} style={{opacity: k, display: 'flex', alignItems: 'flex-start', gap: 8, marginBottom: 9}}>
+                    <CheckCircle2 size={narrow ? 15 : 18} color={'#34d399'} style={{flexShrink: 0, marginTop: 2}} />
+                    <div style={{fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 13.5 : 15, color: t.sub, lineHeight: 1.25}}>{b}</div>
+                  </div>
+                );
+              })}
+            </GlassPanel>
+          </div>
+        )}
+       </div>
       </AbsoluteFill>
     </AbsoluteFill>
   );

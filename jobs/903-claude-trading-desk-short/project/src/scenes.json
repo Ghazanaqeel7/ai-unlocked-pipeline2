@@ -1,8 +1,10 @@
 {
   "scenes": [
     {"id": "s1", "text": "Developers turned Claude into a trading desk.",
-     "visual": {"type": "hookcard", "kicker": "THE SHIFT", "text": "Developers turned Claude into a 24/7 trading desk",
-       "accent": ["24/7", "trading"], "pills": ["AUTONOMOUS AGENTS"], "polarity": "dark"}},
+     "visual": {"type": "hookcard",
+       "pain": "Manually watching charts all day, every day.",
+       "text": "Claude now runs the trading desk, 24/7",
+       "accent": ["Claude", "24/7"], "polarity": "dark"}},
     {"id": "s2", "text": "It connects to market data, a broker, and a journal.",
      "visual": {"type": "tradingdeskhero", "polarity": "dark"}},
     {"id": "s3", "text": "Its own folder holds the plan and the journal.",
@@ -45,6 +47,9 @@
     {"id": "s14", "text": "Comment DESK and we will send the breakdown.",
      "visual": {"type": "socialctacard", "handle": "@AIGraphicTV", "name": "AI Graphic TV",
        "bio": "Practical AI tool breakdowns", "commentWord": "DESK",
-       "dmPreview": "Sent! Check your DMs", "polarity": "dark"}}
+       "dmPreview": "Sent! Check your DMs",
+       "guide": {"badge": "FREE 6-PAGE BLUEPRINT", "title": "The Agent Setup Guide",
+         "bullets": ["CLAUDE.md persona template", "3-tier broker access map", "Daily loss-limit snippet"]},
+       "polarity": "dark"}}
   ]
 }

@@ -1,5 +1,9 @@
 import React from 'react';
 import {AbsoluteFill, Img, Audio, staticFile, useCurrentFrame, useVideoConfig, spring, Sequence} from 'remotion';
+import {
+  Bolt, Shield, Terminal, Cpu, Database, Globe, Rocket, Sparkles, Layers, Workflow,
+  Puzzle, Boxes, Wrench, Brain, LineChart, MessageSquare, Camera, Mic, Code2, Palette,
+} from 'lucide-react';
 import {C, F, tone} from '../theme.js';
 import {prog, ease, rnd, lerp} from '../util.js';
 
@@ -153,7 +157,7 @@ export const ToolBadge = ({name, role, glyph, color = C.skyBlue, size = 150, del
   return (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 14, opacity: Math.min(1, k * 1.4), transform: `scale(${Math.min(1.08, k)}) translateY(${(1 - Math.min(1, k)) * 40}px)`}}>
       <div style={{width: size, height: size, borderRadius: size * 0.22, background: bg, border, backdropFilter: light ? 'none' : 'blur(14px)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: shadow}}>
-        <GlyphDot name={glyph || name} color={color} size={size * 0.46} />
+        <ToolGlyph name={glyph || name} color={color} size={size * 0.46} />
       </div>
       {name && <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: size * 0.17, color: light ? '#0F172A' : '#fff', textAlign: 'center', maxWidth: size * 1.3}}>{name}</div>}
       {role && <div style={{fontFamily: F.sans, fontWeight: 600, fontSize: size * 0.11, color: light ? 'rgba(15,23,42,.55)' : 'rgba(255,255,255,.5)', textAlign: 'center', maxWidth: size * 1.3, textTransform: 'uppercase', letterSpacing: 0.5}}>{role}</div>}
@@ -161,19 +165,30 @@ export const ToolBadge = ({name, role, glyph, color = C.skyBlue, size = 150, del
   );
 };
 
-// minimal abstract glyph (circle + mark) so ToolBadge never needs a real icon library entry per product.
-const GlyphDot = ({name, color, size}) => {
-  const seed = rnd(name || 'x');
-  const pts = 3 + Math.floor(seed * 3); // 3-5 sided abstract mark, stable per name
-  return (
-    <svg width={size} height={size} viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="10" fill="none" stroke={color} strokeWidth="1.6" opacity="0.5" />
-      {Array.from({length: pts}, (_, i) => {
-        const a = (i / pts) * Math.PI * 2 - Math.PI / 2;
-        return <circle key={i} cx={12 + Math.cos(a) * 6.5} cy={12 + Math.sin(a) * 6.5} r="2.1" fill={color} />;
-      })}
-    </svg>
-  );
+// Real lucide-react icon for a named tool/product — trademark-safe (no brand logo, just a generic tech
+// glyph) AND never the old abstract "N dots around a circle" placeholder, which read as a broken/empty
+// icon on dense topics (render_guide.md "permanently eliminate the 5-dot wheel"). `name` is matched by
+// keyword against a curated semantic map (chart/trading, shield/security, terminal/code, brain/AI, etc.);
+// unmatched names fall back to one of a small set of distinct, legible generic-tech icons chosen
+// deterministically (by name hash) from ICON_FALLBACKS — never dots, never the same icon for every tile.
+const ICON_MAP = [
+  [/bolt|fast|speed|robinhood/i, Bolt], [/shield|secur|risk|guard/i, Shield],
+  [/terminal|code|cli|claude code/i, Terminal], [/chip|cpu|compute|processor/i, Cpu],
+  [/data|database|storage/i, Database], [/web|globe|browser|internet/i, Globe],
+  [/rocket|launch|ship|deploy/i, Rocket], [/spark|ai|magic|generat/i, Sparkles],
+  [/layer|stack/i, Layers], [/flow|workflow|pipeline|loop/i, Workflow],
+  [/puzzle|plugin|integrat/i, Puzzle], [/box|package|module/i, Boxes],
+  [/tool|wrench|config|settings/i, Wrench], [/brain|think|model|llm/i, Brain],
+  [/chart|trading|market|invest|stat/i, LineChart], [/chat|message|comment|dm/i, MessageSquare],
+  [/camera|record|video|screen/i, Camera], [/mic|voice|audio|sound/i, Mic],
+  [/dev|engineer|build/i, Code2], [/design|palette|brand|ui/i, Palette],
+];
+const ICON_FALLBACKS = [Sparkles, Boxes, Layers, Workflow, Puzzle, Cpu, Globe, Rocket];
+export const ToolGlyph = ({name, color, size}) => {
+  const key = name || 'tool';
+  const matched = ICON_MAP.find(([re]) => re.test(key));
+  const Icon = matched ? matched[1] : ICON_FALLBACKS[Math.floor(rnd(key) * ICON_FALLBACKS.length)];
+  return <Icon width={size} height={size} color={color} strokeWidth={1.8} />;
 };
 
 // ---- micro-SFX (placeholder CC0-style tones synthesized locally — swap public/assets/sfx/*.mp3 for a
@@ -276,6 +291,33 @@ export const Cursor = ({frame, keyframes, color = '#fff'}) => {
         }} />
       )}
     </div>
+  );
+};
+
+// Floating ambient light orbs — soft, large, blurred glow blobs drifting slowly (distinct from `Dust`'s
+// small fast specks): adds a premium "alive" depth layer behind dark-polarity UI-card beats without
+// competing with the card content in front of it. `active` (bool) lets the caller fade it in/out per
+// current beat's polarity (e.g. only on 'dark'/'glass' beats, never on light 'alabaster' editorial cards).
+export const AmbientOrbs = ({n = 5, color = '#22D3EE', active = true, opacity = 0.16}) => {
+  const f = useCurrentFrame(); const {width: w, height: h} = useVideoConfig();
+  const fade = active ? opacity : 0;
+  return (
+    <AbsoluteFill style={{pointerEvents: 'none', overflow: 'hidden', opacity: fade, transition: 'none'}}>
+      {Array.from({length: n}, (_, i) => {
+        const seed = rnd(`orb${i}`); const seed2 = rnd(`orb2${i}`);
+        const baseX = seed * w, baseY = seed2 * h;
+        const speed = 0.15 + rnd(`orbspeed${i}`) * 0.25;
+        const x = baseX + Math.sin(f * speed / 40 + i) * (w * 0.08);
+        const y = baseY + Math.cos(f * speed / 55 + i * 2) * (h * 0.08);
+        const s = (0.5 + rnd(`orbsize${i}`) * 0.9) * (w * 0.22);
+        return (
+          <div key={i} style={{
+            position: 'absolute', left: x - s / 2, top: y - s / 2, width: s, height: s, borderRadius: '50%',
+            background: `radial-gradient(circle, ${color}bb 0%, ${color}00 70%)`, filter: 'blur(18px)',
+          }} />
+        );
+      })}
+    </AbsoluteFill>
   );
 };
 

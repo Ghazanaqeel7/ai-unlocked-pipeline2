@@ -15,7 +15,7 @@ import {ListScene} from './scenes/ListScene.jsx';
 import {Quote} from './scenes/Quote.jsx';
 import {Illustration} from './scenes/Illustration.jsx';
 import {EndCard} from './scenes/EndCard.jsx';
-import {Grain, Sfx} from './scenes/common.jsx';
+import {Grain, Sfx, AmbientOrbs} from './scenes/common.jsx';
 import {HookCard} from './scenes/ui/HookCard.jsx';
 import {ToolGrid} from './scenes/ui/ToolGrid.jsx';
 import {BrowserSim} from './scenes/ui/BrowserSim.jsx';
@@ -48,20 +48,32 @@ export const REGISTRY = {
 // the shared REGISTRY above. customScenes defaults to {} for any job that hasn't written one; Doc.jsx
 // always imports this same file path so the import itself never fails even when a job has nothing here.
 const FULL_REGISTRY = {...REGISTRY, ...customScenes};
-const OVERLAP = 9;   // frames: a beat keeps showing this long after its end so the next one cross-fades in
+const OVERLAP = 11;   // frames: a beat keeps showing this long after its end so the next one cross-fades in
+                       // (render_guide.md "cinematic scene transitions": 10-12 frame spring slide/zoom/blur-dissolve)
 
 // `dur` is this beat's OWN Sequence duration (passed explicitly rather than read off useVideoConfig,
-// which reflects the whole composition, not the current Sequence).
+// which reflects the whole composition, not the current Sequence). Cinematic transition: entrance is a
+// combined spring slide (from below) + scale-down-into-place + a short blur-dissolve (blur clears as
+// opacity rises), exit is the mirror (slides up slightly, re-blurs) so cuts never feel hard.
 const Fade = ({children, first, last, dur}) => {
   const f = useCurrentFrame();
   const a = first ? 1 : interpolate(f, [0, OVERLAP], [0, 1], {extrapolateRight: 'clamp'});
   const b = last ? 1 : interpolate(f, [dur - OVERLAP, dur], [1, 0], {extrapolateLeft: 'clamp'});
+  const entranceY = first ? 0 : (1 - a) * 26;
+  const exitY = last ? 0 : (1 - b) * -18;
   const entrance = first ? 1 : 1 + 0.08 * (1 - a);
+  const blurIn = first ? 0 : (1 - a) * 8;
+  const blurOut = last ? 0 : (1 - b) * 6;
   // render_guide.md pacing rule: a subtle continuous zoom across the WHOLE beat (not just the entrance)
   // so nothing ever sits fully static for its 2-4s on screen.
   const zoom = interpolate(f, [0, Math.max(1, dur)], [1.0, 1.04], {extrapolateRight: 'clamp'});
   const s = entrance * zoom;
-  return <AbsoluteFill style={{opacity: Math.min(a, b), transform: `scale(${s})`}}>{children}</AbsoluteFill>;
+  return (
+    <AbsoluteFill style={{
+      opacity: Math.min(a, b), transform: `translateY(${entranceY + exitY}px) scale(${s})`,
+      filter: `blur(${(blurIn + blurOut).toFixed(1)}px)`,
+    }}>{children}</AbsoluteFill>
+  );
 };
 
 // A beat's effective light/dark polarity, for the Captions overlay: explicit `polarity` wins; else an
@@ -109,8 +121,13 @@ export const Doc = () => {
     [beats]
   );
   const lastIdx = beats.length - 1;
+  const f = useCurrentFrame();
+  // render_guide.md "ambient light orbs on dark grid beats": active only while the current frame sits
+  // inside a 'dark' polarity segment, so light/alabaster editorial beats stay clean.
+  const currentPolarity = (polaritySegments.find((seg) => f >= seg.from && f < seg.from + seg.dur) || {}).polarity;
   return (
     <AbsoluteFill style={{backgroundColor: '#000'}}>
+      <AmbientOrbs active={currentPolarity !== 'light'} />
       {beats.map((b, i) => {
         const Comp = FULL_REGISTRY[b.visual.type] || Title;
         const isLast = i === lastIdx;

@@ -78,6 +78,40 @@ of (or alongside) the older `tone` prop — prefer `polarity` in new jobs.
   turning a ~1min Short into a 2h+ render; `OffthreadVideo` extracts frames via ffmpeg out-of-band
   instead and renders at the normal speed.
 
+### High-budget SaaS-launch polish pass (HostAvatar, Pain/Shift hooks, cinematic transitions, real icons)
+
+Four upgrades landed together to push the look from "clean kinetic-typography" toward a true
+high-budget SaaS-launch / editorial motion-graphics standard. All four are **additive** — every existing
+job's `scenes.json` keeps rendering exactly as before; these are new optional props/behavior, not schema
+breaks.
+
+1. **`HostAvatar` (`src/scenes/ui/HostAvatar.jsx`)** — the channel's original, invented 2D flat-vector
+   tech-analyst host character, pure SVG (dark-navy `#0A1220` / electric cyan `#06B6D4` / warm gold
+   `#FF7A1A`). `pose: "alert"|"explaining"|"pointing"|"celebrate"`, `size` (px height), `delay` (frame
+   offset). Runs continuous idle motion on its own (blink, breathing, head micro-bob) — never pass it a
+   static single frame. It's wired into two places already: `HookCard`'s `pain`/`shift` layout (`alert`
+   pose) and `SocialCtaCard` (`pointing` pose, `avatar` prop to suppress). Drop it into any other beat as
+   a floating corner PiP (`position:absolute` + a pose that matches the beat's tone) — never recreate a
+   real person or a licensed mascot; this is an original character.
+2. **`HookCard`'s Pain/Shift hook architecture** — pass `pain` (the "old way"/FOMO line) alongside the
+   existing `text` (now "the shift") to switch `HookCard` from its classic single-headline layout to the
+   new split-contrast one: a red `#f0506e` alert card ("THE OLD WAY", warning-pulse glow + brief shake)
+   on top, an emerald/cyan `#34d399` glowing card ("THE SHIFT") below, `HostAvatar` in `alert` pose
+   docked bottom-corner. **Every Short/Long should open its first 0:00-0:03 on this**, not a flat
+   statement — e.g. `{"type":"hookcard","pain":"Developers were drowning in manual chart-watching.","text":"Claude now runs the whole desk.","accent":["Claude"]}`. Omit `pain` to keep the original
+   single-card layout (still fine for a mid-video beat, just not the cold open anymore).
+3. **Cinematic scene transitions + ambient depth (`Doc.jsx`, `common.jsx`)** — the global beat-to-beat
+   cross-fade is now a combined spring slide + scale + **blur-dissolve** over an 11-frame overlap (never
+   a hard cut), and an `AmbientOrbs` layer (soft, large, slowly-drifting blurred glow blobs — distinct
+   from the small-speck `Dust`) now runs behind every dark-polarity beat automatically, fading off on
+   light/`alabaster` beats. Neither needs any per-job wiring — both are global in `Doc.jsx`.
+4. **Real icons everywhere, zero abstract dot-wheels (`common.jsx`'s `ToolGlyph`)** — `ToolBadge`/
+   `toolgrid`'s glyph renderer is now backed by real `lucide-react` icons (a keyword map from `glyph`/
+   `name` to a matching icon — "chart"/"trading" → `LineChart`, "shield"/"risk" → `Shield`, "terminal"/
+   "code" → `Terminal`, etc.) with a small curated **non-dot** fallback set (`Sparkles`/`Boxes`/`Layers`/
+   `Workflow`/etc., chosen deterministically per name) for anything unmatched. The old "3-5 dots seeded
+   around a circle" placeholder is gone — a tile can never render as an empty-looking dot wheel again.
+
 ### Legacy aliases (do not use in new jobs, kept only so older jobs never break)
 
 `mockup` → `browsersim` (mode:`"app"`), `statcounter`/`comparecard` → `datavizcard`, `stepflow` →

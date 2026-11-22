@@ -1,8 +1,10 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AlertTriangle, Sparkles} from 'lucide-react';
 import {F, tone, resolveTone} from '../../theme.js';
 import {prog, ease, wordsWithAccent} from '../../util.js';
-import {GridBg, Pill, springPop} from '../common.jsx';
+import {GridBg, Pill, springPop, GlassPanel} from '../common.jsx';
+import {HostAvatar} from './HostAvatar.jsx';
 
 // The core kinetic-typography beat: a bold split headline with one or more highlighted keyword pills.
 // params:
@@ -18,8 +20,16 @@ import {GridBg, Pill, springPop} from '../common.jsx';
 //   sub      — one short supporting line under the pills/stack
 //   polarity — 'dark' (default) | 'light' — per-beat Obsidian-Grid/Alabaster theme switch
 //   tone     — explicit tone name override (back-compat); wins over `polarity` if both are given
-export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = [], sub, polarity, tone: tn}) => {
+//   pain     — (optional) the "old way"/FOMO line for the new split-contrast Pain/Shift hook
+//              architecture (render_guide.md "Scroll-Stopping Pain-Point Hook"); when set, HookCard
+//              renders the new two-card layout (red alert card on top, `text` becomes the emerald/cyan
+//              "THE SHIFT" card below) with HostAvatar in 'alert' pose, INSTEAD of the classic single
+//              kinetic-headline layout. Omit `pain` to keep the original layout unchanged (back-compat
+//              for every job already using HookCard without it).
+//   avatar   — set false to suppress the HostAvatar PiP on the pain/shift layout (default true)
+export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = [], sub, pain, avatar = true, polarity, tone: tn}) => {
   const f = useCurrentFrame(); const tName = resolveTone(tn, polarity); const t = tone(tName); const {width: w} = useVideoConfig();
+  if (pain) return <PainShiftHook {...{kicker, text, accent, sub, pain, avatar, f, t, tName, w}} />;
   const ws = wordsWithAccent(text, accent);
   const narrow = w < 1600; // vertical/Shorts canvas gets a smaller, tighter type size
   const fs = (ws.length > 9 ? 0.6 : ws.length > 5 ? 0.78 : 0.95) * (narrow ? 72 : 118);
@@ -92,6 +102,80 @@ export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = []
           <div style={{marginTop: 30, fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 30 : 42, color: t.sub, opacity: prog(f, lastHit + 14, 14), textAlign: 'center', maxWidth: narrow ? 820 : 1300}}>{sub}</div>
         )}
       </AbsoluteFill>
+    </AbsoluteFill>
+  );
+};
+
+// High-tension split-contrast "Pain-Point / FOMO" hook (render_guide.md): top red-alert card ("THE PAIN
+// / OLD WAY") with a warning pulse + brief shake micro-motion, bottom glowing emerald/cyan card ("THE
+// SHIFT") — paired with HostAvatar in 'alert' pose. Every Short/Long should open on this for the first
+// 0:00-0:03, instead of a single flat headline card.
+const RED = '#f0506e', EMERALD = '#34d399';
+const PainShiftHook = ({kicker, text, accent, sub, pain, avatar, f, t, tName, w}) => {
+  const narrow = w < 1600;
+  const painK = springPop(f, 0, {damping: 13});
+  const shiftK = springPop(f, 16, {damping: 14});
+  // brief shake on the pain card during its entrance (settles by ~frame 20)
+  const shakeT = f; const shake = Math.sin(shakeT * 2.4) * Math.max(0, 6 - shakeT * 0.4);
+  // slow warning-pulse glow (continuous, not just on entrance)
+  const pulse = 0.55 + Math.sin(f / 9) * 0.35;
+  const ws = wordsWithAccent(text, accent);
+  const fs = (ws.length > 7 ? 0.62 : 0.8) * (narrow ? 50 : 76);
+  return (
+    <AbsoluteFill>
+      <GridBg tn={tName} />
+      <AbsoluteFill style={{flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: narrow ? 26 : 30, padding: narrow ? '0 50px' : '0 140px'}}>
+        {kicker && (
+          <div style={{opacity: prog(f, 0, 10, ease), marginBottom: -4}}>
+            <Pill text={kicker} color={t.gold || t.accent} size={narrow ? 22 : 28} />
+          </div>
+        )}
+        <div style={{opacity: Math.min(1, painK * 1.4), transform: `translate(${shake}px, ${(1 - Math.min(1, painK)) * -24}px)`, width: '100%', maxWidth: narrow ? 900 : 1300}}>
+          <GlassPanel radius={22} pad={narrow ? '22px 28px' : '20px 36px'}
+            style={{border: `2px solid ${RED}`, boxShadow: `0 0 ${30 + pulse * 30}px ${RED}${Math.round(30 + pulse * 25).toString(16)}`}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 14}}>
+              <AlertTriangle size={narrow ? 34 : 30} color={RED} strokeWidth={2.4} style={{flexShrink: 0}} />
+              <div>
+                <div style={{fontFamily: F.display, fontSize: narrow ? 17 : 15, letterSpacing: 2, color: RED, marginBottom: 4}}>THE OLD WAY</div>
+                <div style={{fontFamily: F.sans, fontWeight: 800, fontSize: narrow ? 26 : 24, color: t.fg, lineHeight: 1.25}}>{pain}</div>
+              </div>
+            </div>
+          </GlassPanel>
+        </div>
+
+        <div style={{opacity: Math.min(1, shiftK * 1.4), transform: `translateY(${(1 - Math.min(1, shiftK)) * 24}px)`, width: '100%', maxWidth: narrow ? 900 : 1300}}>
+          <GlassPanel radius={22} pad={narrow ? '26px 28px' : '24px 40px'}
+            style={{border: `2px solid ${EMERALD}`, boxShadow: `0 0 50px ${EMERALD}44`}}>
+            <div style={{display: 'flex', alignItems: 'center', gap: 16}}>
+              <Sparkles size={narrow ? 36 : 32} color={EMERALD} strokeWidth={2.2} style={{flexShrink: 0}} />
+              <div>
+                <div style={{fontFamily: F.display, fontSize: narrow ? 18 : 16, letterSpacing: 2, color: EMERALD, marginBottom: 6}}>THE SHIFT</div>
+                <div style={{display: 'flex', flexWrap: 'wrap', gap: `0 ${fs * 0.2}px`}}>
+                  {ws.map((x, i) => {
+                    const at = 22 + i * 3; const k = prog(f, at, 6, ease);
+                    return (
+                      <span key={i} style={{
+                        fontFamily: F.display, fontSize: fs, lineHeight: 1.1, color: x.a ? EMERALD : t.fg,
+                        textTransform: 'uppercase', opacity: k, transform: `scale(${1 + (1 - k) * 1.2})`,
+                        textShadow: x.a ? `0 0 24px ${EMERALD}99` : 'none',
+                      }}>{x.w}</span>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </GlassPanel>
+        </div>
+
+        {sub && (
+          <div style={{opacity: prog(f, 40, 14), fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 26 : 32, color: t.sub, textAlign: 'center', maxWidth: narrow ? 800 : 1200}}>{sub}</div>
+        )}
+      </AbsoluteFill>
+      {avatar && (
+        <div style={{position: 'absolute', right: narrow ? 20 : 40, bottom: narrow ? 20 : 40, opacity: prog(f, 8, 14)}}>
+          <HostAvatar pose="alert" size={narrow ? 150 : 190} delay={8} />
+        </div>
+      )}
     </AbsoluteFill>
   );
 };
