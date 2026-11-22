@@ -91,9 +91,13 @@
         {
           "t": "2026-11-22T13:03:53Z",
           "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
+        },
+        {
+          "t": "2026-11-22T18:10:29Z",
+          "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
         }
       ],
-      "progress_count": 1,
+      "progress_count": 2,
       "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-903-claude-trading-desk-short/final.mp4",
       "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-903-claude-trading-desk-short/preview.mp4",
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-903-claude-trading-desk-short/upload.mp4"
