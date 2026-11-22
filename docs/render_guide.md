@@ -268,11 +268,58 @@ change the content, keep the required-prop shape — the validators enforce exac
  "polarity": "light"}
 ```
 
-## Custom per-job scenes (`src/custom_scenes/`)
+## Bespoke per-job scenes are now the DEFAULT for new jobs (not an exception)
 
-For a one-off, job-specific visual that isn't worth adding to the shared `REGISTRY` above, a job can
-write its own bespoke React component into its own `project/src/custom_scenes/` folder and register it
-there instead of in `Doc.jsx`:
+**Why:** job `902-hybrid-engine-short` proved the engine (real screen recording + custom scenes work),
+but it also surfaced a content problem, not a rendering one: the generic `REGISTRY` templates
+(`browsersim`, `toolgrid`, `hookcard`) are rigid JSON-driven boxes. Fed a topic they weren't shaped for,
+they render oversized empty white space (a `browsersim` window with nothing inside it, a `toolgrid` with
+few tiles rattling around a huge frame), fall back to a generic 5-dot abstract glyph for every tool
+because `toolgrid`'s `glyph` has no real icon behind it, and — because the shared templates don't know
+the video's actual subject — a script can drift into describing the pipeline/repo itself (meta content)
+instead of the viral AI-tool topic the video is supposed to be about. None of that is a bug in the
+components; it's what happens when a one-size-fits-all card is asked to carry a specific, dense idea.
+
+**The fix:** for every new `type:short`/`type:long` job, write **bespoke per-job React components** in
+that job's own `project/src/custom_scenes/` (see the mechanism below — this isn't new plumbing, `902`
+already used it for one scene) for the bulk of the video's primary beats, instead of reaching for
+`browsersim`/`toolgrid`/`hookcard` as the default. A bespoke scene is written for the beat's actual
+content — the real icon set via `lucide-react` (never an abstract glyph placeholder), a dense multi-card
+bento layout instead of one card floating in a big empty frame, a real metric/line/candlestick chart via
+simple inline SVG, an animated code/prompt diff — so every frame is full and specific to that beat, never
+a rigid box with blank space in it.
+
+- **Full-bleed dark canvas by default:** `#060B14` (the `glass` tone background, same hex as today —
+  reuse `GridBg`/the `tone('glass')` palette from `common.jsx`/`theme.js`, don't invent a new background
+  color) with **zero empty white boxes** — every custom scene's content should fill the canvas-fill
+  target already set out above (82-90% long-form / the ~55-65% vertical hero-stage band on Shorts), the
+  same rule the primary `REGISTRY` components follow, just satisfied by bespoke layout instead of a
+  generic card.
+- **Real icons, not placeholder glyphs:** pull the actual `lucide-react` icon that matches the beat's
+  real-world object (a chart icon for a metrics beat, a terminal icon for a CLI beat, a brain/sparkle icon
+  for an AI-model beat) — never the abstract seeded-dot glyph `ToolBadge`/`toolgrid` falls back to when a
+  job has no real icon for something. `902-hybrid-engine-short/project/src/custom_scenes/HybridBadge.jsx`
+  is the worked example (three `lucide-react` icons in a row) — keep using that pattern, just apply it to
+  most of a job's beats, not one.
+- **Dense layouts, never one card in a big empty frame:** multi-card bento grids, stacked metric panels,
+  inline SVG line/candlestick charts, animated diff/code blocks — build the specific picture the beat
+  needs rather than fitting the beat into whichever generic card type is closest.
+- **Stay on-topic — never describe this repo/pipeline itself** as the video's subject matter (that was a
+  symptom of the generic templates having nothing specific to say): every beat's content must be about the
+  real AI tool/trick the script is teaching, sourced and fact-checked per `PIPELINE.md`, not about how the
+  video itself was produced.
+- **Legacy templates stay registered, kept only for back-compat and genuine variety:** `hookcard`,
+  `toolgrid`, `browsersim`, `dochighlighter`, `workflowstepper`, `datavizcard`, `socialctacard`,
+  `liveclipcard` and the secondary family are all still fully working — older jobs that already use them
+  keep rendering exactly as before, and a new job may still drop in one of them occasionally for the
+  closing `socialctacard` beat (every Short still needs this one), a `liveclipcard` real-recording beat, or
+  deliberate rhythm/variety — just don't reach for them as the first/default choice for a new job's
+  primary content beats anymore.
+
+## Custom per-job scenes (`src/custom_scenes/` mechanism)
+
+For a one-off, job-specific visual, a job writes its own bespoke React component into its own
+`project/src/custom_scenes/` folder and registers it there instead of in `Doc.jsx`:
 
 ```jsx
 // jobs/<id>/project/src/custom_scenes/MyBespokeScene.jsx

@@ -1,0 +1,32 @@
+{
+  "title": "Developers Turned Claude Into a 24/7 Trading Desk",
+  "tldr": [
+    "Developers now run Claude as a scheduled agent that researches markets, trades through a broker, and logs every decision without being clicked.",
+    "Broker access comes in three graded tiers — read-only, human-approved, or a walled autonomous sub-account — and a hard-coded daily loss limit halts it automatically."
+  ],
+  "tools": [
+    {"name": "Claude Code", "link": "[TOOL_LINK]", "note": "runs the scheduled research → decide → log → sleep loop"},
+    {"name": "Robinhood Agentic Trading (beta)", "link": "[TOOL_LINK]", "note": "exposes the brokerage as MCP tools an agent can call"},
+    {"name": "Interactive Brokers + Claude", "link": "[TOOL_LINK]", "note": "Claude drafts orders, a human signs off on every one"}
+  ],
+  "steps": [
+    {"title": "Give the agent a persona file", "detail": "A CLAUDE.md that sets its mandate, risk limits, and tone"},
+    {"title": "Build the research skill", "detail": "A script that outputs one clean JSON object of account + market data"},
+    {"title": "Pick the broker access tier", "detail": "Read-only, human-approved, or a walled autonomous sub-account"},
+    {"title": "Hard-code a daily loss limit", "detail": "A rule that halts trading automatically once losses hit it"},
+    {"title": "Schedule the loop", "detail": "Research → decide → log → sleep, running on a timer, not a click"},
+    {"title": "Log every decision to a journal", "detail": "A persistent record you can actually review and learn from"}
+  ],
+  "snippets": [
+    {"label": "Agent folder structure", "lang": "text", "code": "/trading-agent\n  CLAUDE.md\n  watchlist.json\n  journal/\n  scripts/\n    research.py\n    trade.py"}
+  ],
+  "tips": [
+    "Start on the read-only or human-approved tier before ever granting an autonomous sub-account."],
+  "mistakes": [
+    "Skipping the daily loss limit — that single guardrail is what separates an agent from a liability."
+  ],
+  "cta": {
+    "comment_word": "DESK",
+    "affiliate_link": "[AFFILIATE_LINK]"
+  }
+}

@@ -1,0 +1,688 @@
+{
+ "duration": 52.325,
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0.0,
+   "end": 4.643,
+   "text": "Developers turned Claude into a trading desk.",
+   "words": [
+    {
+     "w": "Developers",
+     "start": 1.2,
+     "end": 1.993
+    },
+    {
+     "w": "turned",
+     "start": 1.993,
+     "end": 2.469
+    },
+    {
+     "w": "Claude",
+     "start": 2.469,
+     "end": 2.945
+    },
+    {
+     "w": "into",
+     "start": 2.945,
+     "end": 3.262
+    },
+    {
+     "w": "a",
+     "start": 3.262,
+     "end": 3.342
+    },
+    {
+     "w": "trading",
+     "start": 3.342,
+     "end": 3.897
+    },
+    {
+     "w": "desk.",
+     "start": 3.897,
+     "end": 4.293
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "start": 4.643,
+   "end": 8.407,
+   "text": "It connects to market data, a broker, and a journal.",
+   "words": [
+    {
+     "w": "It",
+     "start": 4.643,
+     "end": 4.802
+    },
+    {
+     "w": "connects",
+     "start": 4.802,
+     "end": 5.437
+    },
+    {
+     "w": "to",
+     "start": 5.437,
+     "end": 5.596
+    },
+    {
+     "w": "market",
+     "start": 5.596,
+     "end": 6.072
+    },
+    {
+     "w": "data,",
+     "start": 6.072,
+     "end": 6.469
+    },
+    {
+     "w": "a",
+     "start": 6.469,
+     "end": 6.548
+    },
+    {
+     "w": "broker,",
+     "start": 6.548,
+     "end": 7.104
+    },
+    {
+     "w": "and",
+     "start": 7.104,
+     "end": 7.342
+    },
+    {
+     "w": "a",
+     "start": 7.342,
+     "end": 7.422
+    },
+    {
+     "w": "journal.",
+     "start": 7.422,
+     "end": 8.057
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "start": 8.407,
+   "end": 12.021,
+   "text": "Its own folder holds the plan and the journal.",
+   "words": [
+    {
+     "w": "Its",
+     "start": 8.407,
+     "end": 8.664
+    },
+    {
+     "w": "own",
+     "start": 8.664,
+     "end": 8.922
+    },
+    {
+     "w": "folder",
+     "start": 8.922,
+     "end": 9.437
+    },
+    {
+     "w": "holds",
+     "start": 9.437,
+     "end": 9.867
+    },
+    {
+     "w": "the",
+     "start": 9.867,
+     "end": 10.125
+    },
+    {
+     "w": "plan",
+     "start": 10.125,
+     "end": 10.468
+    },
+    {
+     "w": "and",
+     "start": 10.468,
+     "end": 10.726
+    },
+    {
+     "w": "the",
+     "start": 10.726,
+     "end": 10.984
+    },
+    {
+     "w": "journal.",
+     "start": 10.984,
+     "end": 11.671
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "start": 12.021,
+   "end": 15.379,
+   "text": "Research, decide, log the result, then sleep.",
+   "words": [
+    {
+     "w": "Research,",
+     "start": 12.021,
+     "end": 12.715
+    },
+    {
+     "w": "decide,",
+     "start": 12.715,
+     "end": 13.255
+    },
+    {
+     "w": "log",
+     "start": 13.255,
+     "end": 13.486
+    },
+    {
+     "w": "the",
+     "start": 13.486,
+     "end": 13.717
+    },
+    {
+     "w": "result,",
+     "start": 13.717,
+     "end": 14.257
+    },
+    {
+     "w": "then",
+     "start": 14.257,
+     "end": 14.566
+    },
+    {
+     "w": "sleep.",
+     "start": 14.566,
+     "end": 15.029
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "start": 15.379,
+   "end": 18.843,
+   "text": "A live feed decides what it watches next.",
+   "words": [
+    {
+     "w": "A",
+     "start": 15.379,
+     "end": 15.47
+    },
+    {
+     "w": "live",
+     "start": 15.47,
+     "end": 15.837
+    },
+    {
+     "w": "feed",
+     "start": 15.837,
+     "end": 16.203
+    },
+    {
+     "w": "decides",
+     "start": 16.203,
+     "end": 16.844
+    },
+    {
+     "w": "what",
+     "start": 16.844,
+     "end": 17.211
+    },
+    {
+     "w": "it",
+     "start": 17.211,
+     "end": 17.394
+    },
+    {
+     "w": "watches",
+     "start": 17.394,
+     "end": 18.035
+    },
+    {
+     "w": "next.",
+     "start": 18.035,
+     "end": 18.493
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "start": 18.843,
+   "end": 22.649,
+   "text": "Here is the real open source framework behind it.",
+   "words": [
+    {
+     "w": "Here",
+     "start": 18.843,
+     "end": 19.181
+    },
+    {
+     "w": "is",
+     "start": 19.181,
+     "end": 19.349
+    },
+    {
+     "w": "the",
+     "start": 19.349,
+     "end": 19.602
+    },
+    {
+     "w": "real",
+     "start": 19.602,
+     "end": 19.939
+    },
+    {
+     "w": "open",
+     "start": 19.939,
+     "end": 20.276
+    },
+    {
+     "w": "source",
+     "start": 20.276,
+     "end": 20.782
+    },
+    {
+     "w": "framework",
+     "start": 20.782,
+     "end": 21.541
+    },
+    {
+     "w": "behind",
+     "start": 21.541,
+     "end": 22.046
+    },
+    {
+     "w": "it.",
+     "start": 22.046,
+     "end": 22.299
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "start": 22.649,
+   "end": 26.263,
+   "text": "Brokers grade agent access into three tiers.",
+   "words": [
+    {
+     "w": "Brokers",
+     "start": 22.649,
+     "end": 23.251
+    },
+    {
+     "w": "grade",
+     "start": 23.251,
+     "end": 23.68
+    },
+    {
+     "w": "agent",
+     "start": 23.68,
+     "end": 24.11
+    },
+    {
+     "w": "access",
+     "start": 24.11,
+     "end": 24.625
+    },
+    {
+     "w": "into",
+     "start": 24.625,
+     "end": 24.968
+    },
+    {
+     "w": "three",
+     "start": 24.968,
+     "end": 25.398
+    },
+    {
+     "w": "tiers.",
+     "start": 25.398,
+     "end": 25.913
+    }
+   ]
+  },
+  {
+   "id": "s8",
+   "start": 26.263,
+   "end": 29.557,
+   "text": "Connect the account, approve the order, log it.",
+   "words": [
+    {
+     "w": "Connect",
+     "start": 26.263,
+     "end": 26.779
+    },
+    {
+     "w": "the",
+     "start": 26.779,
+     "end": 26.999
+    },
+    {
+     "w": "account,",
+     "start": 26.999,
+     "end": 27.588
+    },
+    {
+     "w": "approve",
+     "start": 27.588,
+     "end": 28.103
+    },
+    {
+     "w": "the",
+     "start": 28.103,
+     "end": 28.324
+    },
+    {
+     "w": "order,",
+     "start": 28.324,
+     "end": 28.766
+    },
+    {
+     "w": "log",
+     "start": 28.766,
+     "end": 28.987
+    },
+    {
+     "w": "it.",
+     "start": 28.987,
+     "end": 29.207
+    }
+   ]
+  },
+  {
+   "id": "s9",
+   "start": 29.557,
+   "end": 32.873,
+   "text": "One rule halts it the moment losses spike.",
+   "words": [
+    {
+     "w": "One",
+     "start": 29.557,
+     "end": 29.812
+    },
+    {
+     "w": "rule",
+     "start": 29.812,
+     "end": 30.15
+    },
+    {
+     "w": "halts",
+     "start": 30.15,
+     "end": 30.574
+    },
+    {
+     "w": "it",
+     "start": 30.574,
+     "end": 30.743
+    },
+    {
+     "w": "the",
+     "start": 30.743,
+     "end": 30.998
+    },
+    {
+     "w": "moment",
+     "start": 30.998,
+     "end": 31.506
+    },
+    {
+     "w": "losses",
+     "start": 31.506,
+     "end": 32.014
+    },
+    {
+     "w": "spike.",
+     "start": 32.014,
+     "end": 32.523
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 32.873,
+   "end": 37.553,
+   "text": "Robinhood, Interactive Brokers, and independent builds run this.",
+   "words": [
+    {
+     "w": "Robinhood,",
+     "start": 32.873,
+     "end": 33.632
+    },
+    {
+     "w": "Interactive",
+     "start": 33.632,
+     "end": 34.468
+    },
+    {
+     "w": "Brokers,",
+     "start": 34.468,
+     "end": 35.076
+    },
+    {
+     "w": "and",
+     "start": 35.076,
+     "end": 35.304
+    },
+    {
+     "w": "independent",
+     "start": 35.304,
+     "end": 36.14
+    },
+    {
+     "w": "builds",
+     "start": 36.14,
+     "end": 36.596
+    },
+    {
+     "w": "run",
+     "start": 36.596,
+     "end": 36.823
+    },
+    {
+     "w": "this.",
+     "start": 36.823,
+     "end": 37.203
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 37.553,
+   "end": 40.783,
+   "text": "Every decision gets written to the journal.",
+   "words": [
+    {
+     "w": "Every",
+     "start": 37.553,
+     "end": 37.943
+    },
+    {
+     "w": "decision",
+     "start": 37.943,
+     "end": 38.565
+    },
+    {
+     "w": "gets",
+     "start": 38.565,
+     "end": 38.877
+    },
+    {
+     "w": "written",
+     "start": 38.877,
+     "end": 39.421
+    },
+    {
+     "w": "to",
+     "start": 39.421,
+     "end": 39.577
+    },
+    {
+     "w": "the",
+     "start": 39.577,
+     "end": 39.811
+    },
+    {
+     "w": "journal.",
+     "start": 39.811,
+     "end": 40.433
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 40.783,
+   "end": 44.205,
+   "text": "The loop that ships your code can watch your money.",
+   "words": [
+    {
+     "w": "The",
+     "start": 40.783,
+     "end": 41.003
+    },
+    {
+     "w": "loop",
+     "start": 41.003,
+     "end": 41.295
+    },
+    {
+     "w": "that",
+     "start": 41.295,
+     "end": 41.588
+    },
+    {
+     "w": "ships",
+     "start": 41.588,
+     "end": 41.954
+    },
+    {
+     "w": "your",
+     "start": 41.954,
+     "end": 42.246
+    },
+    {
+     "w": "code",
+     "start": 42.246,
+     "end": 42.539
+    },
+    {
+     "w": "can",
+     "start": 42.539,
+     "end": 42.758
+    },
+    {
+     "w": "watch",
+     "start": 42.758,
+     "end": 43.124
+    },
+    {
+     "w": "your",
+     "start": 43.124,
+     "end": 43.416
+    },
+    {
+     "w": "money.",
+     "start": 43.416,
+     "end": 43.855
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 44.205,
+   "end": 47.03,
+   "text": "It keeps watching after you log off.",
+   "words": [
+    {
+     "w": "It",
+     "start": 44.205,
+     "end": 44.37
+    },
+    {
+     "w": "keeps",
+     "start": 44.37,
+     "end": 44.783
+    },
+    {
+     "w": "watching",
+     "start": 44.783,
+     "end": 45.443
+    },
+    {
+     "w": "after",
+     "start": 45.443,
+     "end": 45.855
+    },
+    {
+     "w": "you",
+     "start": 45.855,
+     "end": 46.103
+    },
+    {
+     "w": "log",
+     "start": 46.103,
+     "end": 46.35
+    },
+    {
+     "w": "off.",
+     "start": 46.35,
+     "end": 46.68
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 47.03,
+   "end": 52.325,
+   "text": "Comment DESK and we will send the breakdown.",
+   "words": [
+    {
+     "w": "Comment",
+     "start": 47.03,
+     "end": 47.559
+    },
+    {
+     "w": "DESK",
+     "start": 47.559,
+     "end": 47.861
+    },
+    {
+     "w": "and",
+     "start": 47.861,
+     "end": 48.087
+    },
+    {
+     "w": "we",
+     "start": 48.087,
+     "end": 48.239
+    },
+    {
+     "w": "will",
+     "start": 48.239,
+     "end": 48.541
+    },
+    {
+     "w": "send",
+     "start": 48.541,
+     "end": 48.843
+    },
+    {
+     "w": "the",
+     "start": 48.843,
+     "end": 49.069
+    },
+    {
+     "w": "breakdown.",
+     "start": 49.069,
+     "end": 49.825
+    }
+   ]
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Intro",
+   "start": 0
+  }
+ ]
+}
