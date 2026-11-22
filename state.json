@@ -81,6 +81,11 @@
       "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-902-hybrid-engine-short/final.mp4",
       "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-902-hybrid-engine-short/preview.mp4",
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-902-hybrid-engine-short/upload.mp4"
+    },
+    "903-claude-trading-desk-short": {
+      "status": "render_queued",
+      "updated": "2026-11-22T13:03:03Z",
+      "title": "Developers Turned Claude Into a 24/7 Trading Desk"
     }
   },
   "ideas": [],
