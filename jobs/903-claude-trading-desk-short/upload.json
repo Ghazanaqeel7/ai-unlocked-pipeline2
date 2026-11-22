@@ -1,0 +1,17 @@
+{
+ "title": "Developers Turned Claude Into a 24/7 Trading Desk",
+ "description": "Developers are wiring Claude up to run as an always-on market research and trading desk: a scheduled agent loop, a broker connection graded into one of three access tiers, and a hard-coded daily loss limit that halts it automatically.\n\nThis isn't one company's product — it's a pattern now showing up across Robinhood's new agentic-trading beta, Interactive Brokers' Claude integration, and dozens of independent builds using Claude Code's scheduled routines.\n\nSources: MindStudio \"Build a 24/7 AI Trading Agent with Claude Code and Alpaca\"; Finance Magnates — broker AI agent tiers and Interactive Brokers sign-off coverage; AnalyticsInsight — Claude Code trading-strategy guardrails (2026).\n\nSubscribe to AI Graphic TV for more real AI-tool breakdowns.\n\n#ai #claude #aiagents #trading #automation #aitools #shorts",
+ "tags": [
+  "claude ai",
+  "ai agents",
+  "ai trading",
+  "claude code",
+  "automation",
+  "ai tools",
+  "fintech ai",
+  "shorts"
+ ],
+ "chapters": [],
+ "credits": "",
+ "pinned_comment": "Would you let an AI agent trade with real money, or only draft orders for you to approve? Comment DESK for the full breakdown."
+}
