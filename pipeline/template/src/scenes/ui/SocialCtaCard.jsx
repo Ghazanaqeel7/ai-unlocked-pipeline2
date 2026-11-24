@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
+import {AbsoluteFill, Img, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {FileText, CheckCircle2} from 'lucide-react';
 import {F, tone, resolveTone} from '../../theme.js';
 import {prog, ease} from '../../util.js';
@@ -51,6 +51,12 @@ export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', 
   return (
     <AbsoluteFill>
       <GridBg tn={tName} />
+      {/* Exact unaltered brand logo (no tint/crop/distortion — object-fit:contain), top-left safe
+          zone, every CTA/closing beat. Opacity-only fade-in; never recolored or cropped to the
+          channel's accent palette so the brand mark stays pixel-authentic to the source file. */}
+      <div style={{position: 'absolute', top: narrow ? 28 : 36, left: narrow ? 28 : 36, width: narrow ? 72 : 64, height: narrow ? 72 : 64, opacity: prog(f, 0, 14, ease), zIndex: 6}}>
+        <Img src={staticFile('brand_logo.png')} style={{width: '100%', height: '100%', objectFit: 'contain'}} />
+      </div>
       {notifBanner && (
         <div style={{position: 'absolute', left: '50%', top: narrow ? 90 - (1 - bannerK) * 140 : 60 - (1 - bannerK) * 140, transform: 'translateX(-50%)', opacity: bannerK, width: narrow ? '82%' : 520, maxWidth: 560}}>
           <GlassPanel radius={14} pad={narrow ? '18px 24px' : '14px 20px'} glow={t.accent} tn={tName}>

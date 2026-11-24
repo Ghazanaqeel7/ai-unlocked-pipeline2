@@ -101,6 +101,12 @@ def render_pdf(guide, meta, out_path):
     code_style = ParagraphStyle('code', fontName='Courier', fontSize=9, leading=12, textColor=HexColor('#0b1526'),
                                  backColor=HexColor('#eef3f8'), borderPadding=8, alignment=TA_LEFT)
 
+    # exact, unaltered brand logo (no recolor/crop/distortion) on the cover banner — drawImage with
+    # preserveAspectRatio + mask='auto' keeps the source PNG's own pixels and alpha untouched.
+    _logo_path = os.path.join(os.path.dirname(__file__), '..', 'template', 'public', 'brand_logo.png')
+    _logo_path = os.path.abspath(_logo_path)
+    _has_logo = os.path.exists(_logo_path)
+
     def banner(canvas, doc):
         canvas.saveState()
         w, h = A4
@@ -108,12 +114,18 @@ def render_pdf(guide, meta, out_path):
         canvas.rect(0, h - 28 * mm, w, 28 * mm, fill=1, stroke=0)
         canvas.setFillColor(HexColor(GOLD))
         canvas.rect(0, h - 28 * mm, w, 1.2 * mm, fill=1, stroke=0)
+        text_x = 18 * mm
+        if _has_logo:
+            logo_size = 18 * mm
+            canvas.drawImage(_logo_path, 18 * mm, h - 25 * mm, width=logo_size, height=logo_size,
+                              preserveAspectRatio=True, mask='auto')
+            text_x = 18 * mm + logo_size + 5 * mm
         canvas.setFillColor(HexColor(CYAN))
         canvas.setFont('Helvetica-Bold', 9)
-        canvas.drawString(18 * mm, h - 10 * mm, 'AI GRAPHIC TV')
+        canvas.drawString(text_x, h - 10 * mm, 'AI GRAPHIC TV')
         canvas.setFillColor(HexColor(WHITE))
         canvas.setFont('Helvetica-Bold', 15)
-        canvas.drawString(18 * mm, h - 20 * mm, _wrap_one_line(title, 70))
+        canvas.drawString(text_x, h - 20 * mm, _wrap_one_line(title, 70))
         canvas.setFillColor(HexColor(MUTE))
         canvas.setFont('Helvetica', 8)
         canvas.drawRightString(w - 18 * mm, 10 * mm, '@AIGraphicTV — youtube.com/@AIGraphicTV')
