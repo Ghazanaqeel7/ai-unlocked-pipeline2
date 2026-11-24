@@ -132,8 +132,8 @@
       "progress_count": 6
     },
     "001-launch-ai-workflow-short": {
-      "status": "building",
-      "updated": "2026-11-24T22:37:49Z",
+      "status": "render_queued",
+      "updated": "2026-11-24T22:38:26Z",
       "title": "1 PDF -> Podcast, Slide Deck & Mind Map (Day 1/7)",
       "progress": [
         {
