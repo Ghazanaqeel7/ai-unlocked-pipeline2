@@ -15,8 +15,8 @@
   },
   "jobs": {
     "900-test-short": {
-      "status": "video_ready",
-      "updated": "2026-11-20T22:31:50Z",
+      "status": "dropped",
+      "updated": "2026-11-24T23:08:05Z",
       "title": "3 AI Tools That Build Your Video in 1 Line (v2 visuals)",
       "run": "44824080870",
       "progress": [
