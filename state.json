@@ -139,9 +139,13 @@
         {
           "t": "2026-11-24T22:36:44Z",
           "msg": "✅ You approved the script on the dashboard. Claude starts the video in the next run."
+        },
+        {
+          "t": "2026-11-24T22:37:54Z",
+          "msg": "🎬 Approved! Picking up where we left off — scenes, voice and visuals are already built, now finishing the thumbnail and a final check pass before sending it to render. ~5-10 min"
         }
       ],
-      "progress_count": 1,
+      "progress_count": 2,
       "decided_via": "dashboard",
       "decided_at": "2026-11-24T22:36:44Z"
     }
