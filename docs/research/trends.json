@@ -98,6 +98,39 @@
    "brands": {
     "google": 2
    }
+  },
+  {
+   "date": "2026-11-24",
+   "words": {
+    "chatgpt": 27,
+    "claude": 12,
+    "tutorial": 11,
+    "create": 9,
+    "full": 9,
+    "beginner": 9,
+    "tools": 8,
+    "learn": 8,
+    "automation": 8,
+    "codes": 7,
+    "guide": 7,
+    "build": 7,
+    "prompts": 6,
+    "using": 6,
+    "use": 6,
+    "coding": 6,
+    "complete": 6,
+    "minutes": 6,
+    "course": 6,
+    "free": 6,
+    "agent": 6,
+    "need": 5,
+    "know": 5,
+    "explained": 5,
+    "beginners": 5
+   },
+   "brands": {
+    "google": 2
+   }
   }
  ],
  "rising": {
@@ -105,150 +138,150 @@
    "rising": [
     {
      "name": "chatgpt",
-     "now": 51,
+     "now": 78,
      "before": 0,
-     "change": 51
-    },
-    {
-     "name": "full",
-     "now": 38,
-     "before": 0,
-     "change": 38
+     "change": 78
     },
     {
      "name": "claude",
-     "now": 35,
+     "now": 47,
      "before": 0,
-     "change": 35
+     "change": 47
+    },
+    {
+     "name": "full",
+     "now": 47,
+     "before": 0,
+     "change": 47
     },
     {
      "name": "tutorial",
+     "now": 43,
+     "before": 0,
+     "change": 43
+    },
+    {
+     "name": "learn",
+     "now": 33,
+     "before": 0,
+     "change": 33
+    },
+    {
+     "name": "create",
      "now": 32,
      "before": 0,
      "change": 32
     },
     {
-     "name": "learn",
-     "now": 25,
+     "name": "beginner",
+     "now": 31,
      "before": 0,
-     "change": 25
-    },
-    {
-     "name": "create",
-     "now": 23,
-     "before": 0,
-     "change": 23
-    },
-    {
-     "name": "free",
-     "now": 23,
-     "before": 0,
-     "change": 23
+     "change": 31
     },
     {
      "name": "guide",
-     "now": 22,
+     "now": 29,
      "before": 0,
-     "change": 22
+     "change": 29
     },
     {
-     "name": "course",
-     "now": 22,
+     "name": "free",
+     "now": 29,
      "before": 0,
-     "change": 22
-    },
-    {
-     "name": "beginner",
-     "now": 22,
-     "before": 0,
-     "change": 22
+     "change": 29
     },
     {
      "name": "tools",
-     "now": 21,
+     "now": 29,
      "before": 0,
-     "change": 21
+     "change": 29
     },
     {
-     "name": "minutes",
-     "now": 20,
+     "name": "course",
+     "now": 28,
      "before": 0,
-     "change": 20
+     "change": 28
+    },
+    {
+     "name": "automation",
+     "now": 28,
+     "before": 0,
+     "change": 28
     }
    ],
    "falling": [],
    "steady": [
     {
      "name": "chatgpt",
-     "now": 51,
+     "now": 78,
      "before": 0,
-     "change": 51
-    },
-    {
-     "name": "full",
-     "now": 38,
-     "before": 0,
-     "change": 38
+     "change": 78
     },
     {
      "name": "claude",
-     "now": 35,
+     "now": 47,
      "before": 0,
-     "change": 35
+     "change": 47
+    },
+    {
+     "name": "full",
+     "now": 47,
+     "before": 0,
+     "change": 47
     },
     {
      "name": "tutorial",
+     "now": 43,
+     "before": 0,
+     "change": 43
+    },
+    {
+     "name": "learn",
+     "now": 33,
+     "before": 0,
+     "change": 33
+    },
+    {
+     "name": "create",
      "now": 32,
      "before": 0,
      "change": 32
     },
     {
-     "name": "learn",
-     "now": 25,
+     "name": "beginner",
+     "now": 31,
      "before": 0,
-     "change": 25
-    },
-    {
-     "name": "create",
-     "now": 23,
-     "before": 0,
-     "change": 23
-    },
-    {
-     "name": "free",
-     "now": 23,
-     "before": 0,
-     "change": 23
+     "change": 31
     },
     {
      "name": "guide",
-     "now": 22,
+     "now": 29,
      "before": 0,
-     "change": 22
+     "change": 29
     },
     {
-     "name": "course",
-     "now": 22,
+     "name": "free",
+     "now": 29,
      "before": 0,
-     "change": 22
-    },
-    {
-     "name": "beginner",
-     "now": 22,
-     "before": 0,
-     "change": 22
+     "change": 29
     },
     {
      "name": "tools",
-     "now": 21,
+     "now": 29,
      "before": 0,
-     "change": 21
+     "change": 29
     },
     {
-     "name": "minutes",
-     "now": 20,
+     "name": "course",
+     "now": 28,
      "before": 0,
-     "change": 20
+     "change": 28
+    },
+    {
+     "name": "automation",
+     "now": 28,
+     "before": 0,
+     "change": 28
     }
    ]
   },
@@ -256,48 +289,48 @@
    "rising": [
     {
      "name": "google",
-     "now": 4,
+     "now": 6,
      "before": 0,
-     "change": 4
+     "change": 6
     }
    ],
    "falling": [],
    "steady": [
     {
      "name": "google",
-     "now": 4,
+     "now": 6,
      "before": 0,
-     "change": 4
+     "change": 6
     }
    ]
   }
  },
  "patterns": {
   "shorts": {
-   "count": 29,
+   "count": 36,
    "question": 0.0,
-   "why_how": 0.1,
-   "number": 0.55,
+   "why_how": 0.06,
+   "number": 0.44,
    "money": 0.03,
-   "caps_word": 0.21,
-   "emoji": 0.48,
+   "caps_word": 0.17,
+   "emoji": 0.67,
    "brand": 0.03,
-   "median_seconds": 34,
-   "median_words": 9
+   "median_seconds": 40,
+   "median_words": 10
   },
   "long": {
    "count": 60,
    "question": 0.05,
    "why_how": 0.27,
-   "number": 0.53,
+   "number": 0.52,
    "money": 0.0,
-   "caps_word": 0.3,
-   "emoji": 0.07,
+   "caps_word": 0.28,
+   "emoji": 0.05,
    "brand": 0.02,
    "median_seconds": 1233,
    "median_words": 10
   }
  },
- "days_of_memory": 3,
- "updated": "2026-11-23T08:39:03Z"
+ "days_of_memory": 4,
+ "updated": "2026-11-24T10:42:25Z"
 }
