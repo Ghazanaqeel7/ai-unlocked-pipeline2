@@ -41,7 +41,37 @@
     "@NetworkChuck",
     "@MattWolfe",
     "@SkillLeapAI",
-    "@matthew_berman"
+    "@matthew_berman",
+    "@princegupta.ai",
+    "@engineeringwithmohit",
+    "@automationmentor2",
+    "@qodemaker",
+    "@aiseekhoai2026",
+    "@theromanknox"
+  ],
+  "_viral_angle_engine_note": "Global-English viral angle families this channel should keep drawing from (benchmarked against @princegupta.ai, @engineeringwithmohit, @automationmentor2, @qodemaker, @aiseekhoai2026, @theromanknox and the other competitors above) — always told our own way, never a copied script/title/angle (PIPELINE.md 'Never' list).",
+  "viral_angle_families": [
+    {
+      "name": "7-Day AI Workflow Series",
+      "pattern": "Day N / 7: <one prompt/workflow> turns <messy input> into <N concrete outputs>",
+      "example": "Day 1 / 7: How One Prompt Turns Any Messy PDF Into a Podcast, Slide Deck & Mind Map",
+      "retention_hook": "numbered-series binge structure (locked Day 2-7 teaser) + '1 Input -> 3 Real Outputs' payoff shown on-screen"
+    },
+    {
+      "name": "Real GitHub/AI Tool Breakdown",
+      "pattern": "Here's the real open-source repo/tool behind <trending result> and how to run it",
+      "retention_hook": "liveclipcard real screen recording of the actual repo/README + star count + one-line setup"
+    },
+    {
+      "name": "Before-vs-After AI Benchmark",
+      "pattern": "<task> took <X> manually, this AI workflow does it in <Y>",
+      "retention_hook": "datavizcard bars mode, real sourced numbers only, never an invented benchmark"
+    },
+    {
+      "name": "Copy-Paste Prompt/Agent Blueprint",
+      "pattern": "The exact prompt/agent config that does <specific job>, copy-paste ready",
+      "retention_hook": "dochighlighter or codecard-style scanning reveal of the literal prompt text, guide.json snippets[] carries the copy-paste block"
+    }
   ],
   "suggest_seeds": [
     "chatgpt",
@@ -61,7 +91,12 @@
     "how to use ai",
     "ai tools 2026",
     "free ai tools",
-    "ai workflow"
+    "ai workflow",
+    "7 day ai workflow",
+    "ai agent blueprint",
+    "github ai tool",
+    "before after ai benchmark",
+    "copy paste prompt"
   ],
   "exclude_countries": [],
   "exclude_words": [

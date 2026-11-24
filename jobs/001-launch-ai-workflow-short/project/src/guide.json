@@ -1,0 +1,34 @@
+{
+  "title": "1 PDF -> Podcast, Slide Deck & Mind Map with NotebookLM's Studio Panel",
+  "tldr": [
+    "Upload one PDF to NotebookLM and the Studio panel can turn it into a two-host podcast, a slide deck, and an interactive mind map.",
+    "Each output comes from the same uploaded sources -- no separate podcast editor, slide app, or mind-mapping tool needed."
+  ],
+  "tools": [
+    {"name": "NotebookLM", "link": "[TOOL_LINK]", "note": "where you upload sources and open the Studio panel"},
+    {"name": "Audio Overview", "link": "[TOOL_LINK]", "note": "Studio output: a two-host podcast-style discussion of your sources"},
+    {"name": "Slide Deck", "link": "[TOOL_LINK]", "note": "Studio output: a presentation-ready deck, revisable slide by slide"},
+    {"name": "Mind Map", "link": "[TOOL_LINK]", "note": "Studio output: an interactive branch diagram of your sources' key ideas"}
+  ],
+  "steps": [
+    {"title": "Upload your source", "detail": "A PDF, doc, or link into a NotebookLM notebook"},
+    {"title": "Open the Studio panel", "detail": "The right-hand panel lists every available output"},
+    {"title": "Generate Audio Overview", "detail": "For a podcast-style summary you can listen to"},
+    {"title": "Generate Slide Deck", "detail": "Pick a style and length, then revise individual slides"},
+    {"title": "Generate Mind Map", "detail": "Select the Mind Map chip in chat to visualize key ideas"}
+  ],
+  "snippets": [
+    {"label": "What to upload first", "lang": "text", "code": "Any single PDF, report, or long article you already have sitting in a folder."}
+  ],
+  "tips": [
+    "Start with one source before adding more -- it's faster to sanity-check a single Audio Overview or Mind Map.",
+    "Use the Slide Deck revision option to fix any slide instead of regenerating the whole deck."
+  ],
+  "mistakes": [
+    "Expecting one single prompt to generate all three outputs at once -- each is its own Studio panel action on the same upload."
+  ],
+  "cta": {
+    "comment_word": "GUIDE",
+    "affiliate_link": "[AFFILIATE_LINK]"
+  }
+}

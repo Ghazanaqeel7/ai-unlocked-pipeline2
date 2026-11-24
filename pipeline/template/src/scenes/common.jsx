@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import {C, F, tone} from '../theme.js';
 import {prog, ease, rnd, lerp} from '../util.js';
+import {HostAvatar} from './ui/HostAvatar.jsx';
 
 // full-frame background of a scene (tone decides colour); soft moving glow so flat scenes are never static
 export const Bg = ({tn = 'dark', glow = true}) => {
@@ -332,5 +333,21 @@ export const Stamp = ({text, color = '#f0506e', at = 0, frame, rotate = -14}) =>
       padding: '10px 22px', color, fontFamily: F.display, fontSize: 40, letterSpacing: 3,
       textTransform: 'uppercase', boxShadow: `0 0 30px ${color}55`, mixBlendMode: 'normal',
     }}>{text}</div>
+  );
+};
+
+
+// Reusable floating bottom-right HostAvatar PiP for a bespoke custom scene's mid-video "key twist" /
+// technical beat (render_guide.md: HostAvatar should show up on Hook, Key Twist, and CTA beats, not
+// just the hook/CTA templates that already wire it in). Drop into any custom scene:
+//   import {HostAvatarPiP} from '../../scenes/common.jsx';
+//   <HostAvatarPiP frame={frame} narrow={narrow} pose="explaining" at={10} />
+export const HostAvatarPiP = ({frame, narrow, pose = 'explaining', at = 0, size}) => {
+  const k = prog(frame, at, 14);
+  const s = size || (narrow ? 170 : 200);
+  return (
+    <div style={{position: 'absolute', right: narrow ? 18 : 36, bottom: narrow ? 18 : 36, opacity: k, zIndex: 6}}>
+      <HostAvatar pose={pose} size={s} delay={at} />
+    </div>
   );
 };

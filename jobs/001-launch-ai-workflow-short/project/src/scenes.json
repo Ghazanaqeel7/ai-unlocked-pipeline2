@@ -1,0 +1,274 @@
+{
+ "scenes": [
+  {
+   "id": "s1",
+   "text": "You're exporting one PDF into three apps for a podcast, deck, and map.",
+   "visual": {
+    "type": "hookcard",
+    "pain": "Exporting one PDF into three different apps, by hand.",
+    "text": "One free AI tool now builds all three for you",
+    "accent": [
+     "all three"
+    ],
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s2",
+   "text": "Day 1 of 7. Upload one PDF into NotebookLM's Studio panel.",
+   "visual": {
+    "type": "browsersim",
+    "mode": "app",
+    "prompt": "Upload: quarterly-report.pdf",
+    "chips": [
+     "Studio panel",
+     "Sources: 1"
+    ],
+    "responseLines": [
+     "Reading sources...",
+     "Studio outputs ready"
+    ],
+    "cursor": [
+     {
+      "x": 50,
+      "y": 60,
+      "at": 24
+     }
+    ],
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s3",
+   "text": "That upload builds three finished outputs.",
+   "visual": {
+    "type": "threeoutputscard",
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s4",
+   "text": "Audio Overview turns it into a two-host podcast.",
+   "visual": {
+    "type": "audiowavecard",
+    "polarity": "light"
+   }
+  },
+  {
+   "id": "s5",
+   "text": "Slide Deck turns it into a ready deck.",
+   "visual": {
+    "type": "slidestackcard",
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s6",
+   "text": "Mind Map lays out every key idea.",
+   "visual": {
+    "type": "mindmapcard",
+    "polarity": "light"
+   }
+  },
+  {
+   "id": "s7",
+   "text": "Google confirms: all three, one Studio panel.",
+   "visual": {
+    "type": "dochighlighter",
+    "kind": "article",
+    "content": "The Studio panel turns your sources into finished outputs: slide decks, mind maps, flashcards, and Audio Overviews.",
+    "highlights": [
+     {
+      "text": "slide decks, mind maps, flashcards, and Audio Overviews",
+      "color": "#22D3EE"
+     }
+    ],
+    "scanLine": true,
+    "stamp": "VERIFIED",
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s8",
+   "text": "An hour of exporting now takes minutes.",
+   "visual": {
+    "type": "datavizcard",
+    "mode": "bars",
+    "label": "Manual exporting vs Studio panel",
+    "values": [
+     {
+      "name": "Manual · minutes",
+      "value": 55,
+      "max": 60,
+      "color": "#64748b"
+     },
+     {
+      "name": "Studio panel · minutes",
+      "value": 6,
+      "max": 60,
+      "color": "#22D3EE"
+     }
+    ],
+    "polarity": "light"
+   }
+  },
+  {
+   "id": "s9",
+   "text": "Upload, open Studio, pick output.",
+   "visual": {
+    "type": "workflowstepper",
+    "steps": [
+     {
+      "icon": "1",
+      "label": "Upload source"
+     },
+     {
+      "icon": "2",
+      "label": "Open Studio"
+     },
+     {
+      "icon": "3",
+      "label": "Pick output"
+     }
+    ],
+    "body": {
+     "type": "checklist",
+     "items": [
+      {
+       "text": "Add your PDF, doc, or link"
+      },
+      {
+       "text": "Open the Studio panel"
+      },
+      {
+       "text": "Generate podcast, deck, or map"
+      }
+     ]
+    },
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s10",
+   "text": "No separate podcast or slide tool needed.",
+   "visual": {
+    "type": "toolgrid",
+    "tools": [
+     {
+      "name": "NotebookLM",
+      "role": "Source hub",
+      "glyph": "sparkles"
+     },
+     {
+      "name": "Audio Overview",
+      "role": "Podcast",
+      "glyph": "headphones"
+     },
+     {
+      "name": "Slide Deck",
+      "role": "Presentation",
+      "glyph": "presentation"
+     }
+    ],
+    "polarity": "light"
+   }
+  },
+  {
+   "id": "s11",
+   "text": "That's hours given back every week.",
+   "visual": {
+    "type": "datavizcard",
+    "mode": "gauge",
+    "label": "Time given back",
+    "sub": "per week, light use",
+    "values": [
+     {
+      "name": "hours",
+      "value": 4,
+      "max": 10,
+      "color": "#22D3EE"
+     }
+    ],
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s12",
+   "text": "Day 2: that mind map becomes a quiz.",
+   "visual": {
+    "type": "hookcard",
+    "text": "Day 2 of 7: the mind map becomes a quiz",
+    "accent": [
+     "Day 2 of 7"
+    ],
+    "sub": "Same source, one more free output.",
+    "polarity": "dark"
+   }
+  },
+  {
+   "id": "s13",
+   "text": "Seven days, seven ways to reuse one doc.",
+   "visual": {
+    "type": "workflowstepper",
+    "steps": [
+     {
+      "icon": "1",
+      "label": "DAY 01"
+     },
+     {
+      "icon": "2",
+      "label": "DAY 02"
+     },
+     {
+      "icon": "3",
+      "label": "DAY 03"
+     },
+     {
+      "icon": "4",
+      "label": "DAY 04"
+     }
+    ],
+    "body": {
+     "type": "checklist",
+     "items": [
+      {
+       "text": "DAY 01 · Podcast, deck & mind map (today)"
+      },
+      {
+       "text": "DAY 02 · Auto-quiz from your mind map (locked)"
+      },
+      {
+       "text": "DAY 03 · Study guide from 10 sources (locked)"
+      },
+      {
+       "text": "DAY 04-07 · unlocks all week (locked)"
+      }
+     ]
+    },
+    "polarity": "light"
+   }
+  },
+  {
+   "id": "s14",
+   "text": "Comment GUIDE for the full walkthrough.",
+   "visual": {
+    "type": "socialctacard",
+    "handle": "@AIGraphicTV",
+    "name": "AI Graphic TV",
+    "bio": "Practical AI tool breakdowns",
+    "commentWord": "GUIDE",
+    "dmPreview": "Sent! Check your DMs",
+    "guide": {
+     "badge": "FREE WALKTHROUGH",
+     "title": "The Studio Panel Guide",
+     "bullets": [
+      "Where Audio Overview lives",
+      "How to generate a Slide Deck",
+      "The Mind Map chip, step by step"
+     ]
+    },
+    "polarity": "dark"
+   }
+  }
+ ]
+}

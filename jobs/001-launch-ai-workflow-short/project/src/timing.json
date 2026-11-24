@@ -1,0 +1,658 @@
+{
+ "duration": 52.943,
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0.0,
+   "end": 6.414,
+   "text": "You're exporting one PDF into three apps for a podcast, deck, and map.",
+   "words": [
+    {
+     "w": "You're",
+     "start": 1.2,
+     "end": 1.703
+    },
+    {
+     "w": "exporting",
+     "start": 1.703,
+     "end": 2.458
+    },
+    {
+     "w": "one",
+     "start": 2.458,
+     "end": 2.71
+    },
+    {
+     "w": "PDF",
+     "start": 2.71,
+     "end": 2.961
+    },
+    {
+     "w": "into",
+     "start": 2.961,
+     "end": 3.297
+    },
+    {
+     "w": "three",
+     "start": 3.297,
+     "end": 3.716
+    },
+    {
+     "w": "apps",
+     "start": 3.716,
+     "end": 4.051
+    },
+    {
+     "w": "for",
+     "start": 4.051,
+     "end": 4.303
+    },
+    {
+     "w": "a",
+     "start": 4.303,
+     "end": 4.387
+    },
+    {
+     "w": "podcast,",
+     "start": 4.387,
+     "end": 5.058
+    },
+    {
+     "w": "deck,",
+     "start": 5.058,
+     "end": 5.477
+    },
+    {
+     "w": "and",
+     "start": 5.477,
+     "end": 5.729
+    },
+    {
+     "w": "map.",
+     "start": 5.729,
+     "end": 6.064
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "start": 6.414,
+   "end": 12.012,
+   "text": "Day 1 of 7. Upload one PDF into NotebookLM's Studio panel.",
+   "words": [
+    {
+     "w": "Day",
+     "start": 6.414,
+     "end": 6.742
+    },
+    {
+     "w": "1",
+     "start": 6.742,
+     "end": 6.851
+    },
+    {
+     "w": "of",
+     "start": 6.851,
+     "end": 7.07
+    },
+    {
+     "w": "7.",
+     "start": 7.07,
+     "end": 7.289
+    },
+    {
+     "w": "Upload",
+     "start": 7.289,
+     "end": 7.945
+    },
+    {
+     "w": "one",
+     "start": 7.945,
+     "end": 8.273
+    },
+    {
+     "w": "PDF",
+     "start": 8.273,
+     "end": 8.601
+    },
+    {
+     "w": "into",
+     "start": 8.601,
+     "end": 9.038
+    },
+    {
+     "w": "NotebookLM's",
+     "start": 9.038,
+     "end": 10.35
+    },
+    {
+     "w": "Studio",
+     "start": 10.35,
+     "end": 11.006
+    },
+    {
+     "w": "panel.",
+     "start": 11.006,
+     "end": 11.662
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "start": 12.012,
+   "end": 15.093,
+   "text": "That upload builds three finished outputs.",
+   "words": [
+    {
+     "w": "That",
+     "start": 12.012,
+     "end": 12.307
+    },
+    {
+     "w": "upload",
+     "start": 12.307,
+     "end": 12.75
+    },
+    {
+     "w": "builds",
+     "start": 12.75,
+     "end": 13.193
+    },
+    {
+     "w": "three",
+     "start": 13.193,
+     "end": 13.562
+    },
+    {
+     "w": "finished",
+     "start": 13.562,
+     "end": 14.152
+    },
+    {
+     "w": "outputs.",
+     "start": 14.152,
+     "end": 14.743
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "start": 15.093,
+   "end": 18.963,
+   "text": "Audio Overview turns it into a two-host podcast.",
+   "words": [
+    {
+     "w": "Audio",
+     "start": 15.093,
+     "end": 15.522
+    },
+    {
+     "w": "Overview",
+     "start": 15.522,
+     "end": 16.209
+    },
+    {
+     "w": "turns",
+     "start": 16.209,
+     "end": 16.638
+    },
+    {
+     "w": "it",
+     "start": 16.638,
+     "end": 16.81
+    },
+    {
+     "w": "into",
+     "start": 16.81,
+     "end": 17.153
+    },
+    {
+     "w": "a",
+     "start": 17.153,
+     "end": 17.239
+    },
+    {
+     "w": "two-host",
+     "start": 17.239,
+     "end": 17.926
+    },
+    {
+     "w": "podcast.",
+     "start": 17.926,
+     "end": 18.613
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "start": 18.963,
+   "end": 22.001,
+   "text": "Slide Deck turns it into a ready deck.",
+   "words": [
+    {
+     "w": "Slide",
+     "start": 18.963,
+     "end": 19.396
+    },
+    {
+     "w": "Deck",
+     "start": 19.396,
+     "end": 19.743
+    },
+    {
+     "w": "turns",
+     "start": 19.743,
+     "end": 20.177
+    },
+    {
+     "w": "it",
+     "start": 20.177,
+     "end": 20.35
+    },
+    {
+     "w": "into",
+     "start": 20.35,
+     "end": 20.697
+    },
+    {
+     "w": "a",
+     "start": 20.697,
+     "end": 20.784
+    },
+    {
+     "w": "ready",
+     "start": 20.784,
+     "end": 21.217
+    },
+    {
+     "w": "deck.",
+     "start": 21.217,
+     "end": 21.651
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "start": 22.001,
+   "end": 25.124,
+   "text": "Mind Map lays out every key idea.",
+   "words": [
+    {
+     "w": "Mind",
+     "start": 22.001,
+     "end": 22.412
+    },
+    {
+     "w": "Map",
+     "start": 22.412,
+     "end": 22.72
+    },
+    {
+     "w": "lays",
+     "start": 22.72,
+     "end": 23.131
+    },
+    {
+     "w": "out",
+     "start": 23.131,
+     "end": 23.439
+    },
+    {
+     "w": "every",
+     "start": 23.439,
+     "end": 23.952
+    },
+    {
+     "w": "key",
+     "start": 23.952,
+     "end": 24.26
+    },
+    {
+     "w": "idea.",
+     "start": 24.26,
+     "end": 24.774
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "start": 25.124,
+   "end": 28.887,
+   "text": "Google confirms: all three, one Studio panel.",
+   "words": [
+    {
+     "w": "Google",
+     "start": 25.124,
+     "end": 25.649
+    },
+    {
+     "w": "confirms:",
+     "start": 25.649,
+     "end": 26.437
+    },
+    {
+     "w": "all",
+     "start": 26.437,
+     "end": 26.699
+    },
+    {
+     "w": "three,",
+     "start": 26.699,
+     "end": 27.225
+    },
+    {
+     "w": "one",
+     "start": 27.225,
+     "end": 27.487
+    },
+    {
+     "w": "Studio",
+     "start": 27.487,
+     "end": 28.012
+    },
+    {
+     "w": "panel.",
+     "start": 28.012,
+     "end": 28.537
+    }
+   ]
+  },
+  {
+   "id": "s8",
+   "start": 28.887,
+   "end": 31.904,
+   "text": "An hour of exporting now takes minutes.",
+   "words": [
+    {
+     "w": "An",
+     "start": 28.887,
+     "end": 29.049
+    },
+    {
+     "w": "hour",
+     "start": 29.049,
+     "end": 29.372
+    },
+    {
+     "w": "of",
+     "start": 29.372,
+     "end": 29.534
+    },
+    {
+     "w": "exporting",
+     "start": 29.534,
+     "end": 30.261
+    },
+    {
+     "w": "now",
+     "start": 30.261,
+     "end": 30.503
+    },
+    {
+     "w": "takes",
+     "start": 30.503,
+     "end": 30.908
+    },
+    {
+     "w": "minutes.",
+     "start": 30.908,
+     "end": 31.554
+    }
+   ]
+  },
+  {
+   "id": "s9",
+   "start": 31.904,
+   "end": 34.942,
+   "text": "Upload, open Studio, pick output.",
+   "words": [
+    {
+     "w": "Upload,",
+     "start": 31.904,
+     "end": 32.553
+    },
+    {
+     "w": "open",
+     "start": 32.553,
+     "end": 32.924
+    },
+    {
+     "w": "Studio,",
+     "start": 32.924,
+     "end": 33.572
+    },
+    {
+     "w": "pick",
+     "start": 33.572,
+     "end": 33.943
+    },
+    {
+     "w": "output.",
+     "start": 33.943,
+     "end": 34.592
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 34.942,
+   "end": 38.407,
+   "text": "No separate podcast or slide tool needed.",
+   "words": [
+    {
+     "w": "No",
+     "start": 34.942,
+     "end": 35.12
+    },
+    {
+     "w": "separate",
+     "start": 35.12,
+     "end": 35.832
+    },
+    {
+     "w": "podcast",
+     "start": 35.832,
+     "end": 36.455
+    },
+    {
+     "w": "or",
+     "start": 36.455,
+     "end": 36.633
+    },
+    {
+     "w": "slide",
+     "start": 36.633,
+     "end": 37.078
+    },
+    {
+     "w": "tool",
+     "start": 37.078,
+     "end": 37.434
+    },
+    {
+     "w": "needed.",
+     "start": 37.434,
+     "end": 38.057
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 38.407,
+   "end": 41.317,
+   "text": "That's hours given back every week.",
+   "words": [
+    {
+     "w": "That's",
+     "start": 38.407,
+     "end": 38.919
+    },
+    {
+     "w": "hours",
+     "start": 38.919,
+     "end": 39.345
+    },
+    {
+     "w": "given",
+     "start": 39.345,
+     "end": 39.772
+    },
+    {
+     "w": "back",
+     "start": 39.772,
+     "end": 40.113
+    },
+    {
+     "w": "every",
+     "start": 40.113,
+     "end": 40.54
+    },
+    {
+     "w": "week.",
+     "start": 40.54,
+     "end": 40.967
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 41.317,
+   "end": 44.632,
+   "text": "Day 2: that mind map becomes a quiz.",
+   "words": [
+    {
+     "w": "Day",
+     "start": 41.317,
+     "end": 41.623
+    },
+    {
+     "w": "2:",
+     "start": 41.623,
+     "end": 41.828
+    },
+    {
+     "w": "that",
+     "start": 41.828,
+     "end": 42.237
+    },
+    {
+     "w": "mind",
+     "start": 42.237,
+     "end": 42.646
+    },
+    {
+     "w": "map",
+     "start": 42.646,
+     "end": 42.953
+    },
+    {
+     "w": "becomes",
+     "start": 42.953,
+     "end": 43.668
+    },
+    {
+     "w": "a",
+     "start": 43.668,
+     "end": 43.771
+    },
+    {
+     "w": "quiz.",
+     "start": 43.771,
+     "end": 44.282
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 44.632,
+   "end": 48.139,
+   "text": "Seven days, seven ways to reuse one doc.",
+   "words": [
+    {
+     "w": "Seven",
+     "start": 44.632,
+     "end": 45.11
+    },
+    {
+     "w": "days,",
+     "start": 45.11,
+     "end": 45.589
+    },
+    {
+     "w": "seven",
+     "start": 45.589,
+     "end": 46.067
+    },
+    {
+     "w": "ways",
+     "start": 46.067,
+     "end": 46.45
+    },
+    {
+     "w": "to",
+     "start": 46.45,
+     "end": 46.641
+    },
+    {
+     "w": "reuse",
+     "start": 46.641,
+     "end": 47.12
+    },
+    {
+     "w": "one",
+     "start": 47.12,
+     "end": 47.407
+    },
+    {
+     "w": "doc.",
+     "start": 47.407,
+     "end": 47.789
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 48.139,
+   "end": 52.943,
+   "text": "Comment GUIDE for the full walkthrough.",
+   "words": [
+    {
+     "w": "Comment",
+     "start": 48.139,
+     "end": 48.614
+    },
+    {
+     "w": "GUIDE",
+     "start": 48.614,
+     "end": 48.953
+    },
+    {
+     "w": "for",
+     "start": 48.953,
+     "end": 49.156
+    },
+    {
+     "w": "the",
+     "start": 49.156,
+     "end": 49.359
+    },
+    {
+     "w": "full",
+     "start": 49.359,
+     "end": 49.63
+    },
+    {
+     "w": "walkthrough.",
+     "start": 49.63,
+     "end": 50.443
+    }
+   ]
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Intro",
+   "start": 0
+  }
+ ]
+}

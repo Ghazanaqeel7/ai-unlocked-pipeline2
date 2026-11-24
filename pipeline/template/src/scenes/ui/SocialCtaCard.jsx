@@ -32,8 +32,15 @@ export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', 
   // the guide column) is used whenever `guide` is set, even on the narrow Shorts canvas, so nothing
   // is ever alone in the middle of the frame.
   const rowLayout = guide || !narrow;
-  const profileMinH = narrow && !guide ? Math.round(h * 0.2) : undefined;
-  const commentMinH = narrow && !guide ? Math.round(h * 0.32) : undefined;
+  // BUGFIX (high-budget SaaS-launch polish pass): these used to fall back to `undefined` whenever
+  // `guide` was set, which silently dropped the vertical-hero-stage fill for every guide-variant CTA —
+  // the exact "empty vertical margins" problem this upgrade exists to kill (seen in video_1.mp4 at
+  // its closing beat). Both branches now always get a real minHeight on narrow canvases; the guide
+  // branch uses smaller per-card numbers because the comment column now shares the stage with the
+  // guide-preview column, but the two together (plus guideMinH below) still reach the 55-65% band.
+  const profileMinH = narrow ? Math.round(h * (guide ? 0.16 : 0.2)) : undefined;
+  const commentMinH = narrow ? Math.round(h * (guide ? 0.30 : 0.32)) : undefined;
+  const guideMinH = guide ? Math.round(h * (narrow ? 0.46 : 0.5)) : undefined;
   const profileK = springPop(f, 0, {damping: 16});
   const typeK = prog(f, 20, Math.max(10, commentWord.length * 3), ease);
   const typed = commentWord.slice(0, Math.round(commentWord.length * typeK));
@@ -104,7 +111,7 @@ export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', 
           </div>
           {avatar && (
             <div style={{position: 'absolute', right: guide ? -36 : (narrow ? -20 : -70), bottom: guide ? -24 : (narrow ? -30 : -40), opacity: prog(f, 10, 14), zIndex: 5}}>
-              <HostAvatar pose="pointing" size={guide ? (narrow ? 96 : 130) : (narrow ? 150 : 170)} delay={10} />
+              <HostAvatar pose="pointing" size={guide ? (narrow ? 160 : 180) : (narrow ? 180 : 200)} delay={10} />
             </div>
           )}
         </div>
@@ -113,7 +120,8 @@ export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', 
             width: narrow ? '38%' : 340, flex: narrow ? '1 1 38%' : undefined, opacity: prog(f, 14, 16, ease),
             transform: `perspective(1000px) rotateY(${narrow ? -6 : -10}deg) rotateX(4deg) translateY(${(1 - prog(f, 14, 16, ease)) * 20}px)`,
           }}>
-            <GlassPanel radius={18} pad={narrow ? '18px 16px' : '22px 24px'} glow={t.gold || t.accent2 || t.accent} tn={tName}>
+            <GlassPanel radius={18} pad={narrow ? '18px 16px' : '22px 24px'} glow={t.gold || t.accent2 || t.accent} tn={tName}
+              style={{minHeight: guideMinH, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
               <div style={{display: 'inline-block', background: t.gold || '#F59E0B', color: '#1a1203', fontFamily: F.display,
                 fontSize: narrow ? 12 : 14, letterSpacing: 0.5, padding: '5px 10px', borderRadius: 7, marginBottom: 12}}>
                 {guide.badge || 'FREE GUIDE'}

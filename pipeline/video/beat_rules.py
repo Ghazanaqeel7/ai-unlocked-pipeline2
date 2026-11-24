@@ -104,3 +104,37 @@ def check_no_repeat(types, max_run=2):
         if run_len == max_run + 1:  # report once, right when the run first crosses the limit
             warns.append(f'"{t}" repeats more than {max_run}x in a row starting at beat {run_start + 1}; vary the visual type (render_guide.md no-repeat rule)')
     return warns
+
+
+def check_no_identical_beats(scenes):
+    """render_guide.md "No Repeated Scenes" rule: every beat must introduce a distinct visual layout
+    or data state. check_no_repeat above only catches the same *type* running back-to-back; it does
+    not catch the real failure mode this rule targets -- the exact same chart/card (identical content,
+    same type) showing up again much later in the video (e.g. a Short's Beat 13 silently reusing Beat
+    5's candlestick chart verbatim). That is never deliberate variety, so it is a hard ERROR, not a
+    warning, and it is checked across the WHOLE video, not just consecutive beats.
+
+    Hashes each beat's full visual dict (type + every content prop) and flags any beat that is
+    byte-for-byte identical to an earlier one. Returns a list of error strings (empty if every beat is
+    distinct)."""
+    import json as _json
+    errs = []
+    seen = {}  # signature -> first beat index (1-based, narration order)
+    idx = 0
+    for s in scenes:
+        beats = s['visual'] if isinstance(s.get('visual'), list) else [s.get('visual')]
+        for b in beats:
+            idx += 1
+            if not isinstance(b, dict):
+                continue
+            sig = _json.dumps(b, sort_keys=True)
+            if sig in seen:
+                errs.append(
+                    f'beat {idx} ("{b.get("type")}") is an exact duplicate of beat {seen[sig]} -- '
+                    'every beat must introduce a distinct visual layout or data state; never reuse an '
+                    'identical visual back-to-back or later in the same video (render_guide.md '
+                    'no-repeated-scenes rule)'
+                )
+            else:
+                seen[sig] = idx
+    return errs

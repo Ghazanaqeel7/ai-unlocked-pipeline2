@@ -6,8 +6,8 @@
       "Fri"
     ],
     "pipeline_buffer": 2,
-    "longform_enabled": false,
-    "reels": false,
+    "longform_enabled": true,
+    "reels": true,
     "social_windows_pkt": [
       "05:00-09:00",
       "19:00-23:00"

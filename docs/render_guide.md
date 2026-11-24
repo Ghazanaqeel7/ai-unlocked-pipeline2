@@ -87,12 +87,19 @@ breaks.
 
 1. **`HostAvatar` (`src/scenes/ui/HostAvatar.jsx`)** — the channel's original, invented 2D flat-vector
    tech-analyst host character, pure SVG (dark-navy `#0A1220` / electric cyan `#06B6D4` / warm gold
-   `#FF7A1A`). `pose: "alert"|"explaining"|"pointing"|"celebrate"`, `size` (px height), `delay` (frame
-   offset). Runs continuous idle motion on its own (blink, breathing, head micro-bob) — never pass it a
-   static single frame. It's wired into two places already: `HookCard`'s `pain`/`shift` layout (`alert`
-   pose) and `SocialCtaCard` (`pointing` pose, `avatar` prop to suppress). Drop it into any other beat as
-   a floating corner PiP (`position:absolute` + a pose that matches the beat's tone) — never recreate a
-   real person or a licensed mascot; this is an original character.
+   `#FF7A1A`). `pose: "alert"|"explaining"|"pointing"|"celebrate"`, `size` (px height, **160-200px is
+   the standard PiP size** on both Hook and CTA beats — don't render it small/incidental; it should
+   read clearly in the corner), `delay` (frame offset), `sticker` (default `true` — a crisp white
+   die-cut outline + layered drop-shadow around the character, like a printed sticker peeled off a
+   sheet; pass `false` only if a beat's own background would clash with the white outline). Runs
+   continuous idle motion on its own (blink, breathing, head micro-bob) — never pass it a static single
+   frame. It's wired into `HookCard`'s `pain`/`shift` layout (`alert` pose, 180-220px) and
+   `SocialCtaCard` (`pointing` pose, 150-200px, `avatar` prop to suppress) already. For a mid-video "key
+   twist"/technical beat in a bespoke `custom_scenes/` component, use the reusable
+   `HostAvatarPiP` helper (`src/scenes/common.jsx`) instead of wiring the floating-corner `position:
+   absolute` div by hand: `import {HostAvatarPiP} from '../../scenes/common.jsx'; <HostAvatarPiP
+   frame={frame} narrow={narrow} pose="explaining" at={10} />` — it defaults to the same 170-200px
+   sticker look. Never recreate a real person or a licensed mascot; this is an original character.
 2. **`HookCard`'s Pain/Shift hook architecture** — pass `pain` (the "old way"/FOMO line) alongside the
    existing `text` (now "the shift") to switch `HookCard` from its classic single-headline layout to the
    new split-contrast one: a red `#f0506e` alert card ("THE OLD WAY", warning-pulse glow + brief shake)
@@ -181,6 +188,16 @@ examples below), never the old ones.
   `short` jobs) — rotate through the primary family (and drop in a secondary type occasionally) so the
   video doesn't feel templated. `validate_long.py`/`validate_short.py` enforce this; don't rely on
   memory alone.
+- **No Repeated Scenes (hard rule, whole-video, not just back-to-back):** every beat must introduce a
+  **distinct visual layout or data state** — never reuse an identical visual (same component, same
+  content — e.g. the exact same candlestick chart, the exact same bento layout with the same numbers)
+  back-to-back **or later in the same video**. This is stricter than the no-repeat rule above, which
+  only catches the same *type* running back-to-back; a beat can pass that check and still be an
+  accidental byte-for-byte duplicate of an earlier beat (how job `903`'s Beat 13 silently repeated
+  Beat 5's chart). `beat_rules.py`'s `check_no_identical_beats` hashes every beat's full content and
+  fails validation with a hard **ERROR** (not a warning) the moment any two beats — anywhere in the
+  video — are identical. If a beat genuinely needs to revisit an earlier idea (a recap, a "remember
+  this?" callback), change the data/labels/layout so it is not a literal duplicate.
 - **Never fabricate a statistic, benchmark, or quote.** If a number can't be verified from the research
   step, cut it or phrase it qualitatively ("noticeably faster" instead of an invented %). For
   `datavizcard`, that also means never inventing a `max` just to make a bar look fuller — use the real

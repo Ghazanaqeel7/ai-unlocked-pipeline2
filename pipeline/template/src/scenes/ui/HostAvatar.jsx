@@ -12,7 +12,7 @@ import {useCurrentFrame} from 'remotion';
 // continuously off useCurrentFrame so the character never looks like a frozen sticker.
 const NAVY = '#0A1220', CYAN = '#06B6D4', GOLD = '#FF7A1A', SKIN = '#E8B894', SKIN_SH = '#D29E72';
 
-export const HostAvatar = ({pose = 'explaining', size = 220, delay = 0, style}) => {
+export const HostAvatar = ({pose = 'explaining', size = 220, delay = 0, style, sticker = true}) => {
   const f = Math.max(0, useCurrentFrame() - delay);
   // idle breathing: slow torso scale
   const breathe = 1 + Math.sin(f / 22) * 0.012;
@@ -63,7 +63,15 @@ export const HostAvatar = ({pose = 'explaining', size = 220, delay = 0, style}) 
   }[pose];
 
   return (
-    <div style={{width: size * 0.72, height: size, position: 'relative', ...style}}>
+    <div style={{
+      width: size * 0.72, height: size, position: 'relative', ...style,
+      // crisp white die-cut sticker border + drop shadow (high-budget SaaS-launch finish): a thin
+      // white outline "cut" around the character plus a soft multi-layer shadow, same look as a
+      // printed sticker peeled off a sheet — never a flat floating SVG with no ground beneath it.
+      filter: sticker
+        ? 'drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff) drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 10px 18px rgba(0,0,0,.35)) drop-shadow(0 2px 4px rgba(0,0,0,.25))'
+        : undefined,
+    }}>
       <svg viewBox="0 0 300 400" width="100%" height="100%" style={{overflow: 'visible'}}>
         <g transform={`translate(${shakeX},0)`}>
           {/* soft ambient glow behind the character */}

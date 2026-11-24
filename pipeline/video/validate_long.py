@@ -4,13 +4,14 @@ Checks scenes.json, thumb.json, meta.json, script length, visual variety. Exit 1
 Shared logic (TYPES, PRIMARY, no-repeat check) lives in beat_rules.py so validate_short.py stays in sync."""
 import json, os, sys, re
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from beat_rules import TYPES, PRIMARY, flatten_beats, check_no_repeat, check_required_props, load_custom_types
+from beat_rules import TYPES, PRIMARY, flatten_beats, check_no_repeat, check_no_identical_beats, check_required_props, load_custom_types
 
 def main():
     job = sys.argv[1].rstrip('/'); errs = []; warns = []
     P = os.path.join(job, 'project', 'src')
     try: sc = json.load(open(os.path.join(P, 'scenes.json'), encoding='utf-8'))['scenes']
     except Exception as e: print('ERROR scenes.json unreadable:', e); sys.exit(1)
+    errs.extend(check_no_identical_beats(sc))  # render_guide.md no-repeated-scenes rule
     try: meta = json.load(open(os.path.join(job, 'meta.json'), encoding='utf-8'))
     except Exception as e: print('ERROR meta.json unreadable:', e); sys.exit(1)
     allowed_types = TYPES | load_custom_types(job)

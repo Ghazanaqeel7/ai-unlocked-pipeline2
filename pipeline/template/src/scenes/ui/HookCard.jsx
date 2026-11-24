@@ -173,7 +173,7 @@ const PainShiftHook = ({kicker, text, accent, sub, pain, avatar, f, t, tName, w}
       </AbsoluteFill>
       {avatar && (
         <div style={{position: 'absolute', right: narrow ? 20 : 40, bottom: narrow ? 20 : 40, opacity: prog(f, 8, 14)}}>
-          <HostAvatar pose="alert" size={narrow ? 150 : 190} delay={8} />
+          <HostAvatar pose="alert" size={narrow ? 180 : 220} delay={8} />
         </div>
       )}
     </AbsoluteFill>
