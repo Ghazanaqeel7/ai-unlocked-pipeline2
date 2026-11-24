@@ -132,9 +132,18 @@
       "progress_count": 6
     },
     "001-launch-ai-workflow-short": {
-      "status": "script_ready",
-      "updated": "2026-11-24T22:18:59Z",
-      "title": "1 PDF -> Podcast, Slide Deck & Mind Map (Day 1/7)"
+      "status": "script_approved",
+      "updated": "2026-11-24T22:36:44Z",
+      "title": "1 PDF -> Podcast, Slide Deck & Mind Map (Day 1/7)",
+      "progress": [
+        {
+          "t": "2026-11-24T22:36:44Z",
+          "msg": "✅ You approved the script on the dashboard. Claude starts the video in the next run."
+        }
+      ],
+      "progress_count": 1,
+      "decided_via": "dashboard",
+      "decided_at": "2026-11-24T22:36:44Z"
     }
   },
   "ideas": [],
