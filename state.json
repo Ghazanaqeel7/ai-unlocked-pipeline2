@@ -132,8 +132,8 @@
       "progress_count": 6
     },
     "001-launch-ai-workflow-short": {
-      "status": "rendering",
-      "updated": "2026-11-24T22:39:20Z",
+      "status": "video_ready",
+      "updated": "2026-11-25T00:10:14Z",
       "title": "1 PDF -> Podcast, Slide Deck & Mind Map (Day 1/7)",
       "progress": [
         {
@@ -152,7 +152,10 @@
       "progress_count": 3,
       "decided_via": "dashboard",
       "decided_at": "2026-11-24T22:36:44Z",
-      "run": "45502818121"
+      "run": "45502818121",
+      "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-001-launch-ai-workflow-short/final.mp4",
+      "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-001-launch-ai-workflow-short/preview.mp4",
+      "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-001-launch-ai-workflow-short/upload.mp4"
     }
   },
   "ideas": [],
