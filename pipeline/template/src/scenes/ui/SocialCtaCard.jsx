@@ -4,7 +4,6 @@ import {FileText, CheckCircle2} from 'lucide-react';
 import {F, tone, resolveTone} from '../../theme.js';
 import {prog, ease} from '../../util.js';
 import {GridBg, GlassPanel, springPop} from '../common.jsx';
-import {HostAvatar} from './HostAvatar.jsx';
 
 // Animated Comment-to-DM outro: a generic profile card (name/handle/bio — NEVER a real photo; a simple
 // initial-letter avatar, trademark/privacy-safe by the same rule as ToolBadge's generic glyphs), a
@@ -18,7 +17,9 @@ import {HostAvatar} from './HostAvatar.jsx';
 //   guide              — optional {badge, title, bullets:[...]} — renders a 3D-tilted frosted-glass
 //                         preview of the companion PDF guide alongside the comment card, e.g.
 //                         {badge:'FREE 6-PAGE BLUEPRINT', title:'The Agent Setup Guide', bullets:[...]}
-//   avatar             — bool, default true — HostAvatar in 'pointing' pose aimed at the comment box
+//   avatar             — DEPRECATED, ignored. HostAvatar was permanently removed (docs/style_reference.md
+//                         — zero cartoon characters/mascots anywhere); kept as a no-op prop so older
+//                         scenes.json files that still pass it never fail validation.
 //   polarity           — 'dark' (default) | 'light'
 export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', bio = '', commentWord = 'GUIDE', dmPreview, notifBanner = true, guide, avatar = true, polarity, tone: tn}) => {
   const f = useCurrentFrame(); const tName = resolveTone(tn, polarity); const t = tone(tName); const {width: w, height: h} = useVideoConfig();
@@ -115,11 +116,6 @@ export const SocialCtaCard = ({handle = '@AIGraphicTV', name = 'AI Graphic TV', 
               )}
             </GlassPanel>
           </div>
-          {avatar && (
-            <div style={{position: 'absolute', right: guide ? -36 : (narrow ? -20 : -70), bottom: guide ? -24 : (narrow ? -30 : -40), opacity: prog(f, 10, 14), zIndex: 5}}>
-              <HostAvatar pose="pointing" size={guide ? (narrow ? 160 : 180) : (narrow ? 180 : 200)} delay={10} />
-            </div>
-          )}
         </div>
         {guide && (
           <div style={{

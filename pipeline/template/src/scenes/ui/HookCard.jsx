@@ -1,10 +1,9 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig} from 'remotion';
 import {AlertTriangle, Sparkles} from 'lucide-react';
-import {F, tone, resolveTone} from '../../theme.js';
+import {F, tone, resolveTone, STUDIO_THEMES} from '../../theme.js';
 import {prog, ease, wordsWithAccent} from '../../util.js';
 import {GridBg, Pill, springPop, GlassPanel} from '../common.jsx';
-import {HostAvatar} from './HostAvatar.jsx';
 
 // The core kinetic-typography beat: a bold split headline with one or more highlighted keyword pills.
 // params:
@@ -23,12 +22,18 @@ import {HostAvatar} from './HostAvatar.jsx';
 //   pain     — (optional) the "old way"/FOMO line for the new split-contrast Pain/Shift hook
 //              architecture (render_guide.md "Scroll-Stopping Pain-Point Hook"); when set, HookCard
 //              renders the new two-card layout (red alert card on top, `text` becomes the emerald/cyan
-//              "THE SHIFT" card below) with HostAvatar in 'alert' pose, INSTEAD of the classic single
-//              kinetic-headline layout. Omit `pain` to keep the original layout unchanged (back-compat
-//              for every job already using HookCard without it).
-//   avatar   — set false to suppress the HostAvatar PiP on the pain/shift layout (default true)
-export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = [], sub, pain, avatar = true, polarity, tone: tn}) => {
-  const f = useCurrentFrame(); const tName = resolveTone(tn, polarity); const t = tone(tName); const {width: w} = useVideoConfig();
+//              "THE SHIFT" card below), INSTEAD of the classic single kinetic-headline layout. Omit
+//              `pain` to keep the original layout unchanged (back-compat for every job already using
+//              HookCard without it).
+//   avatar   — DEPRECATED, ignored. HostAvatar was permanently removed (docs/style_reference.md —
+//              zero cartoon characters/mascots anywhere); kept as a no-op prop so older scenes.json
+//              files that still pass it never fail validation.
+//   theme    — 'sand' | 'studio' | 'obsidian' — docs/style_reference.md's 3 signature themes. Wins
+//              over `tone`/`polarity` when given; new jobs should use this instead of the legacy pair.
+export const HookCard = ({kicker, text = '', accent = [], pills = [], stack = [], sub, pain, avatar = true, polarity, tone: tn, theme}) => {
+  const f = useCurrentFrame();
+  const tName = STUDIO_THEMES.includes(theme) ? theme : resolveTone(tn, polarity);
+  const t = tone(tName); const {width: w} = useVideoConfig();
   if (pain) return <PainShiftHook {...{kicker, text, accent, sub, pain, avatar, f, t, tName, w}} />;
   const ws = wordsWithAccent(text, accent);
   const narrow = w < 1600; // vertical/Shorts canvas gets a smaller, tighter type size
@@ -171,11 +176,6 @@ const PainShiftHook = ({kicker, text, accent, sub, pain, avatar, f, t, tName, w}
           <div style={{opacity: prog(f, 40, 14), fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 26 : 32, color: t.sub, textAlign: 'center', maxWidth: narrow ? 800 : 1200}}>{sub}</div>
         )}
       </AbsoluteFill>
-      {avatar && (
-        <div style={{position: 'absolute', right: narrow ? 20 : 40, bottom: narrow ? 20 : 40, opacity: prog(f, 8, 14)}}>
-          <HostAvatar pose="alert" size={narrow ? 180 : 220} delay={8} />
-        </div>
-      )}
     </AbsoluteFill>
   );
 };

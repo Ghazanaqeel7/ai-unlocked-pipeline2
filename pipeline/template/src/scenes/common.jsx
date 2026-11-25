@@ -6,7 +6,8 @@ import {
 } from 'lucide-react';
 import {C, F, tone} from '../theme.js';
 import {prog, ease, rnd, lerp} from '../util.js';
-import {HostAvatar} from './ui/HostAvatar.jsx';
+// HostAvatar (the channel's 2D cartoon tech-analyst mascot) was PERMANENTLY REMOVED — see
+// docs/style_reference.md "Zero mascots, ever". Do not re-add an import of it here.
 
 // full-frame background of a scene (tone decides colour); soft moving glow so flat scenes are never static
 export const Bg = ({tn = 'dark', glow = true}) => {
@@ -92,22 +93,35 @@ export const springPop = (frame, at, config) => {
   return spring({frame: Math.max(0, frame - at), fps, config: {damping: 14, mass: 0.6, stiffness: 140, ...config}});
 };
 
-// subtle moving tech-grid + radial glow, used instead of Bg for 'glass'-tone UI-card scenes.
-// reads the live canvas size so it works on both the 16:9 Doc and the 9:16 ShortDoc compositions.
+// subtle moving tech-grid + radial glow, used instead of Bg for 'glass'-tone UI-card scenes. Reads the
+// resolved tone's own `pattern` field when set ('lines'/'dots'/'none' — the 3 Studio Editorial themes,
+// see StudioBg below) so a component that still calls GridBg (e.g. HookCard) gets the CORRECT texture
+// for 'sand'/'studio'/'obsidian' too, instead of always drawing the old always-on grid lines. Legacy
+// tones (glass/dark/paper/alabaster/...) don't set `pattern`, so they default to 'lines' — unchanged
+// behavior. Reads the live canvas size so it works on both the 16:9 Doc and the 9:16 ShortDoc compositions.
 export const GridBg = ({tn = 'glass'}) => {
   const t = tone(tn); const f = useCurrentFrame(); const {width: w, height: h} = useVideoConfig();
   const x = 50 + Math.sin(f / 160) * 10, y = 45 + Math.cos(f / 190) * 8;
   const cell = Math.round(w / 24);
   const line = t.line || C.glassLine;
   const vignette = t.vignette || t.bg;
+  const pattern = t.pattern || 'lines';
   return (
     <AbsoluteFill style={{background: t.bg}}>
-      <AbsoluteFill style={{
-        backgroundImage: `linear-gradient(${line} 1px, transparent 1px), linear-gradient(90deg, ${line} 1px, transparent 1px)`,
-        backgroundSize: `${cell}px ${cell}px`, opacity: 0.5,
-      }} />
-      <AbsoluteFill style={{background: `radial-gradient(ellipse 65% 55% at ${x}% ${y}%, ${t.accent}26 0%, rgba(0,0,0,0) 70%)`}} />
-      <AbsoluteFill style={{background: `radial-gradient(ellipse 120% 90% at 50% 100%, ${vignette}cc 0%, rgba(0,0,0,0) 45%)`}} />
+      {pattern === 'lines' && (
+        <AbsoluteFill style={{
+          backgroundImage: `linear-gradient(${line} 1px, transparent 1px), linear-gradient(90deg, ${line} 1px, transparent 1px)`,
+          backgroundSize: `${cell}px ${cell}px`, opacity: 0.5,
+        }} />
+      )}
+      {pattern === 'dots' && (
+        <AbsoluteFill style={{
+          backgroundImage: `radial-gradient(${line} 1.5px, transparent 1.5px)`,
+          backgroundSize: `${cell}px ${cell}px`, opacity: 0.6,
+        }} />
+      )}
+      {!t.light && <AbsoluteFill style={{background: `radial-gradient(ellipse 65% 55% at ${x}% ${y}%, ${t.accent}26 0%, rgba(0,0,0,0) 70%)`}} />}
+      <AbsoluteFill style={{background: `radial-gradient(ellipse 120% 90% at 50% 100%, ${vignette}${t.light ? '66' : 'cc'} 0%, rgba(0,0,0,0) 45%)`}} />
     </AbsoluteFill>
   );
 };
@@ -322,6 +336,69 @@ export const AmbientOrbs = ({n = 5, color = '#22D3EE', active = true, opacity = 
   );
 };
 
+// ---- Studio Editorial background + card (docs/style_reference.md) — used by every `scenes/studio/`
+// primitive in place of the legacy GridBg/GlassPanel pair. Reads the tone's own `pattern` field
+// ('lines' = sand graph-paper grid, 'dots' = obsidian dot-matrix texture, 'none' = flat studio white)
+// instead of hardcoding one grid style for every tone, so the 3 signature themes each get their own
+// correct texture from a single shared component.
+export const StudioBg = ({tn = 'obsidian'}) => {
+  const t = tone(tn); const f = useCurrentFrame(); const {width: w, height: h} = useVideoConfig();
+  const x = 50 + Math.sin(f / 170) * 8, y = 42 + Math.cos(f / 200) * 7;
+  const cell = Math.round(w / 26);
+  const pattern = t.pattern || 'none';
+  return (
+    <AbsoluteFill style={{background: t.bg}}>
+      {pattern === 'lines' && (
+        <AbsoluteFill style={{
+          backgroundImage: `linear-gradient(${t.line} 1px, transparent 1px), linear-gradient(90deg, ${t.line} 1px, transparent 1px)`,
+          backgroundSize: `${cell}px ${cell}px`,
+        }} />
+      )}
+      {pattern === 'dots' && (
+        <AbsoluteFill style={{
+          backgroundImage: `radial-gradient(${t.line} 1.5px, transparent 1.5px)`,
+          backgroundSize: `${cell}px ${cell}px`, opacity: 0.6,
+        }} />
+      )}
+      {!t.light && (
+        <AbsoluteFill style={{background: `radial-gradient(ellipse 65% 55% at ${x}% ${y}%, ${t.accent}1f 0%, rgba(0,0,0,0) 70%)`}} />
+      )}
+      <AbsoluteFill style={{background: `radial-gradient(ellipse 120% 90% at 50% 100%, ${t.vignette}${t.light ? '66' : 'cc'} 0%, rgba(0,0,0,0) 45%)`}} />
+    </AbsoluteFill>
+  );
+};
+
+// Studio Editorial elevated card: pure white floating card (sand/studio themes) or a soft dark glass
+// panel with a glow (obsidian) — picked automatically from the resolved tone's own `light`/`shadow`
+// fields, so a studio primitive never needs its own per-theme card branching.
+export const StudioCard = ({children, style, radius = 20, pad = '30px 38px', glow, tn}) => {
+  const t = tone(tn);
+  const boxShadow = t.light
+    ? `${t.shadow || '0 20px 50px rgba(0,0,0,.08)'}${glow ? `, 0 0 36px ${glow}26` : ''}`
+    : `${t.shadow || '0 24px 60px rgba(0,0,0,.6)'}${glow ? `, 0 0 40px ${glow}33` : ''}`;
+  return (
+    <div style={{
+      position: 'relative', background: t.card, border: `1px solid ${t.line}`, borderRadius: radius,
+      padding: pad, backdropFilter: t.light ? 'none' : 'blur(20px)', WebkitBackdropFilter: t.light ? 'none' : 'blur(20px)',
+      boxShadow, ...style,
+    }}>{children}</div>
+  );
+};
+
+// Kinetic highlight sweep behind a headline power-phrase (style_reference.md "Top Stage" — the word/
+// phrase sits inside an animated solid block): a colored rectangle that wipes in left->right behind the
+// text, e.g. wrap `{text}` in `<span style={{position:'relative', zIndex:1}}>` with this positioned
+// behind it (see StudioHeadline in scenes/studio/).
+export const HighlightSweep = ({frame, at = 0, color, style}) => {
+  const k = prog(frame, at, 10, ease);
+  return (
+    <div style={{
+      position: 'absolute', inset: 0, background: color, transformOrigin: 'left center',
+      transform: `scaleX(${k})`, borderRadius: 6, zIndex: 0, ...style,
+    }} />
+  );
+};
+
 // slam-down verdict stamp (DocHighlighter): rotated, scales in with a hard spring, e.g. "VERIFIED"/"REFUSED".
 export const Stamp = ({text, color = '#f0506e', at = 0, frame, rotate = -14}) => {
   const k = springPop(frame, at, {damping: 10, stiffness: 220});
@@ -337,17 +414,7 @@ export const Stamp = ({text, color = '#f0506e', at = 0, frame, rotate = -14}) =>
 };
 
 
-// Reusable floating bottom-right HostAvatar PiP for a bespoke custom scene's mid-video "key twist" /
-// technical beat (render_guide.md: HostAvatar should show up on Hook, Key Twist, and CTA beats, not
-// just the hook/CTA templates that already wire it in). Drop into any custom scene:
-//   import {HostAvatarPiP} from '../../scenes/common.jsx';
-//   <HostAvatarPiP frame={frame} narrow={narrow} pose="explaining" at={10} />
-export const HostAvatarPiP = ({frame, narrow, pose = 'explaining', at = 0, size}) => {
-  const k = prog(frame, at, 14);
-  const s = size || (narrow ? 170 : 200);
-  return (
-    <div style={{position: 'absolute', right: narrow ? 18 : 36, bottom: narrow ? 18 : 36, opacity: k, zIndex: 6}}>
-      <HostAvatar pose={pose} size={s} delay={at} />
-    </div>
-  );
-};
+// HostAvatarPiP was PERMANENTLY REMOVED along with HostAvatar.jsx (docs/style_reference.md — zero
+// cartoon characters/mascots anywhere, in any scene, hook, or CTA). Do not reintroduce a floating
+// character PiP helper; use a `scenes/studio/` primitive (e.g. MetricOdometer, InteractiveUiCard) for
+// a mid-video "key twist" beat instead.

@@ -1,8 +1,19 @@
 # AI Graphic TV — render guide (for Claude, writing `scenes.json`)
 
-Adapted for AI Graphic TV's **UI-Card Kinetic Motion Graphics** look: a high-end broadcast-documentary
-take on the viral AI-tool-explainer style (glass panels, tech grid, cyan/gold accents). Two formats now
-exist — read the one that matches the job's `meta.json type`:
+**Read `docs/style_reference.md` FIRST.** It is the permanently-locked visual standard — 3 signature
+themes (Warm Cream Sand / Pure Studio White / Matte Obsidian Dark), the kinetic headline + bottom
+floating-subtitle system, and the 6 `scenes/studio/` primitives (`tiltedagentstage`, `metricodometer`,
+`retentiongraph`, `perspectivewall`, `interactiveuicard`, `commenttriggeroutro`). **`HostAvatar` (the
+channel's old 2D cartoon tech-analyst mascot) has been PERMANENTLY DELETED — zero cartoon
+characters/mascots in any scene, hook, or CTA, no exceptions.** Everything below this point that still
+describes the old navy/"glass" UI-card family (`toolgrid`, `browsersim`, `dochighlighter`,
+`workflowstepper`, `datavizcard`, `socialctacard`, `liveclipcard`, the `mockup`/`statcounter`/
+`comparecard`/`stepflow` aliases, and any mention of HostAvatar) is **LEGACY, kept registered only so
+already-rendered/already-approved jobs never break on a re-render** — never reach for any of it as the
+default in a new job. `hookcard` is the one exception: it's still primary, just pass it
+`theme: 'sand'|'studio'|'obsidian'` instead of the old `tone`/`polarity` pair.
+
+Two formats exist — read the one that matches the job's `meta.json type`:
 
 - **`long`** — 6-10 minute deep-dive explainers.
 - **`short`** — 35-55 second YouTube Shorts (9:16). Same engine, same `REGISTRY`, same `scenes.json`
@@ -17,6 +28,25 @@ file's `ShortDoc` export (1080×1920) both read `scenes.json` (the content) and 
 a React component in `src/scenes/`. A scene can have one `visual` or an array of beats (see
 `buildBeats` in `Doc.jsx`) — use the array form whenever ~3-5s of narration should show more than one
 picture.
+
+## Studio Editorial primitives (PRIMARY — `src/scenes/studio/`)
+
+Full details, rotation rules and copy-paste JSON for all 6 in `docs/style_reference.md`. Quick reference:
+
+- `hookcard` (`src/scenes/ui/HookCard.jsx`, theme-aware) — the kinetic-typography opening beat.
+- `tiltedagentstage` — 3D-perspective multi-pane agent/dashboard workspace with camera drift (long-form
+  retention beats, GitHub/AI-tool breakdowns).
+- `metricodometer` — rolling-number or flip-clock counter with spring overshoot (the "big number" payoff).
+- `retentiongraph` — animated SVG line/curve chart with pulsing problem callouts + good-vs-bad comparison.
+- `perspectivewall` — 3D-tilted multi-card showcase wall (15-30 cards), smooth drift/zoom.
+- `interactiveuicard` — one generic app-UI card animating a dropdown pick / live-typed search / ticking
+  checklist (never a frozen screenshot).
+- `commenttriggeroutro` — the comment-to-DM closing beat + exact unaltered `brand_logo.png` + optional
+  PDF-guide preview. **Sole closing beat on a Short** — don't follow it with an `endcard`.
+
+Every one of these takes `theme: 'sand' | 'studio' | 'obsidian'` (default `'obsidian'`) — alternate
+themes roughly every 2-4 beats per `docs/style_reference.md`'s rotation rule, same spirit as the old
+dark↔light polarity switch but across 3 themes instead of 2.
 
 ## Scene types (REGISTRY)
 
@@ -78,41 +108,33 @@ of (or alongside) the older `tone` prop — prefer `polarity` in new jobs.
   turning a ~1min Short into a 2h+ render; `OffthreadVideo` extracts frames via ffmpeg out-of-band
   instead and renders at the normal speed.
 
-### High-budget SaaS-launch polish pass (HostAvatar, Pain/Shift hooks, cinematic transitions, real icons)
+### High-budget SaaS-launch polish pass (Pain/Shift hooks, cinematic transitions, real icons)
 
-Four upgrades landed together to push the look from "clean kinetic-typography" toward a true
-high-budget SaaS-launch / editorial motion-graphics standard. All four are **additive** — every existing
-job's `scenes.json` keeps rendering exactly as before; these are new optional props/behavior, not schema
-breaks.
+**`HostAvatar` — PERMANENTLY REMOVED.** The channel's old 2D flat-vector tech-analyst mascot (and its
+`HostAvatarPiP` helper) has been deleted from `src/scenes/` entirely, per `docs/style_reference.md`:
+zero cartoon characters or mascots anywhere, in any scene, hook, or CTA, no exceptions. `HookCard`'s
+`avatar` prop and `SocialCtaCard`'s `avatar` prop are now no-ops kept only so an older job's
+`scenes.json` never fails validation — do not pass them in a new job, and never reintroduce a floating
+character PiP. Use `commenttriggeroutro` (replaces the avatar-bearing `SocialCtaCard` for new jobs) and
+`metricodometer`/`interactiveuicard` for a mid-video "key twist" beat instead.
 
-1. **`HostAvatar` (`src/scenes/ui/HostAvatar.jsx`)** — the channel's original, invented 2D flat-vector
-   tech-analyst host character, pure SVG (dark-navy `#0A1220` / electric cyan `#06B6D4` / warm gold
-   `#FF7A1A`). `pose: "alert"|"explaining"|"pointing"|"celebrate"`, `size` (px height, **160-200px is
-   the standard PiP size** on both Hook and CTA beats — don't render it small/incidental; it should
-   read clearly in the corner), `delay` (frame offset), `sticker` (default `true` — a crisp white
-   die-cut outline + layered drop-shadow around the character, like a printed sticker peeled off a
-   sheet; pass `false` only if a beat's own background would clash with the white outline). Runs
-   continuous idle motion on its own (blink, breathing, head micro-bob) — never pass it a static single
-   frame. It's wired into `HookCard`'s `pain`/`shift` layout (`alert` pose, 180-220px) and
-   `SocialCtaCard` (`pointing` pose, 150-200px, `avatar` prop to suppress) already. For a mid-video "key
-   twist"/technical beat in a bespoke `custom_scenes/` component, use the reusable
-   `HostAvatarPiP` helper (`src/scenes/common.jsx`) instead of wiring the floating-corner `position:
-   absolute` div by hand: `import {HostAvatarPiP} from '../../scenes/common.jsx'; <HostAvatarPiP
-   frame={frame} narrow={narrow} pose="explaining" at={10} />` — it defaults to the same 170-200px
-   sticker look. Never recreate a real person or a licensed mascot; this is an original character.
-2. **`HookCard`'s Pain/Shift hook architecture** — pass `pain` (the "old way"/FOMO line) alongside the
+Three further upgrades remain in effect (additive — every existing job's `scenes.json` keeps rendering
+exactly as before):
+
+1. **`HookCard`'s Pain/Shift hook architecture** — pass `pain` (the "old way"/FOMO line) alongside the
    existing `text` (now "the shift") to switch `HookCard` from its classic single-headline layout to the
    new split-contrast one: a red `#f0506e` alert card ("THE OLD WAY", warning-pulse glow + brief shake)
-   on top, an emerald/cyan `#34d399` glowing card ("THE SHIFT") below, `HostAvatar` in `alert` pose
-   docked bottom-corner. **Every Short/Long should open its first 0:00-0:03 on this**, not a flat
-   statement — e.g. `{"type":"hookcard","pain":"Developers were drowning in manual chart-watching.","text":"Claude now runs the whole desk.","accent":["Claude"]}`. Omit `pain` to keep the original
-   single-card layout (still fine for a mid-video beat, just not the cold open anymore).
-3. **Cinematic scene transitions + ambient depth (`Doc.jsx`, `common.jsx`)** — the global beat-to-beat
+   on top, an emerald/cyan `#34d399` glowing card ("THE SHIFT") below. **Every Short/Long should open its
+   first 0:00-0:03 on this**, not a flat statement — e.g.
+   `{"type":"hookcard","theme":"obsidian","pain":"Developers were drowning in manual chart-watching.","text":"Claude now runs the whole desk.","accent":["Claude"]}`.
+   Omit `pain` to keep the original single-card layout (still fine for a mid-video beat, just not the
+   cold open anymore).
+2. **Cinematic scene transitions + ambient depth (`Doc.jsx`, `common.jsx`)** — the global beat-to-beat
    cross-fade is now a combined spring slide + scale + **blur-dissolve** over an 11-frame overlap (never
    a hard cut), and an `AmbientOrbs` layer (soft, large, slowly-drifting blurred glow blobs — distinct
    from the small-speck `Dust`) now runs behind every dark-polarity beat automatically, fading off on
    light/`alabaster` beats. Neither needs any per-job wiring — both are global in `Doc.jsx`.
-4. **Real icons everywhere, zero abstract dot-wheels (`common.jsx`'s `ToolGlyph`)** — `ToolBadge`/
+3. **Real icons everywhere, zero abstract dot-wheels (`common.jsx`'s `ToolGlyph`)** — `ToolBadge`/
    `toolgrid`'s glyph renderer is now backed by real `lucide-react` icons (a keyword map from `glyph`/
    `name` to a matching icon — "chart"/"trading" → `LineChart`, "shield"/"risk" → `Shield`, "terminal"/
    "code" → `Terminal`, etc.) with a small curated **non-dot** fallback set (`Sparkles`/`Boxes`/`Layers`/
@@ -227,21 +249,80 @@ resolved tone (`tn`) through to them, it never needs its own light/dark card log
 Captions (below) also flip to the same dark-ink `#0F172A` on a light-polarity beat instead of staying
 white-on-white.
 
-## Top Kinetic Captions
+## Bottom Floating Subtitle (PERMANENTLY replaces the old Top Kinetic Captions)
 
-`Captions.jsx` now renders at the **top** safe zone (not the lower third): the active word is wrapped in
-an italic serif box with a blue (`#3B82F6`) corner-handle frame (this is the channel's signature caption
-look from the reference videos), context words around it are plain sans-serif with no background panel,
-and a small `@AIGraphicTV` watermark sits in the bottom-safe-zone at all times. This is driven entirely by
-the same `timing.json → scenes[].words` data as before — nothing in `scenes.json` changes for this; it's
-automatic on every job.
+`Captions.jsx` now renders a clean, centered **floating pill in the lower-third safe zone** —
+PERMANENTLY replacing the old top-safe-zone blue-selection-box caption look (no more corner handles, no
+more italic-serif "design tool picked this word" frame). The whole pill flips color with the beat
+underneath it: a white card with bold dark text over a dark/grid (obsidian) beat, or a dark-ink pill with
+crisp white text over a light (sand/studio) beat. The currently-spoken word is bold and highlighted in
+that beat's own accent color (read from the beat's `theme`, or `#C8F938`/`#D96B43` as a dark/light
+fallback for legacy beats). A small `@AIGraphicTV` watermark sits in the top-safe-zone at all times. This
+is driven entirely by the same `timing.json → scenes[].words` data as before, plus each beat's `theme`
+(or legacy `polarity`/`tone`) — nothing else in `scenes.json` changes for this; it's automatic on every job.
 
-## Copy-paste JSON examples — the 6 primary components
+## Copy-paste JSON examples — the 6 Studio Editorial primitives (PRIMARY, use these in new jobs)
 
-Every example below is a single valid `visual` beat object (or array entry) for `scenes.json`. Copy one,
-change the content, keep the required-prop shape — the validators enforce exactly these shapes.
+Every example below is a single valid `visual` beat object for `scenes.json`. All 6 (plus `hookcard`)
+take `theme: 'sand'|'studio'|'obsidian'` — full prop reference in `docs/style_reference.md`.
 
 **`hookcard`** (required: `text`):
+```json
+{"type": "hookcard", "theme": "obsidian", "kicker": "THE PROBLEM", "text": "You're wasting 10 hours a week on this",
+ "accent": ["wasting", "hours"], "pills": ["1 LINE = FULL VIDEO"], "sub": "Here's the fix.",
+ "stack": [{"label": "Tool A", "value": "Slow"}, {"label": "Tool B", "value": "Manual"}]}
+```
+
+**`tiltedagentstage`** (optional `steps`, `output`, `terminal`, `focus`):
+```json
+{"type": "tiltedagentstage", "theme": "obsidian", "kicker": "HOW THE AGENT RUNS", "headline": "One Agent, Three Live Panes",
+ "accent": ["Agent"], "steps": [{"label": "Read task", "active": true}, {"label": "Plan steps"}, {"label": "Call tools"}],
+ "output": {"title": "LIVE REASONING", "lines": ["Reading repo structure...", "Found 3 failing tests", "Writing a fix..."]},
+ "terminal": {"title": "TERMINAL", "lines": [{"text": "npm test", "status": "running"}, {"text": "3 passed", "status": "ok"}]},
+ "focus": ["left", "center", "right", "center"]}
+```
+
+**`metricodometer`** (required: `value`):
+```json
+{"type": "metricodometer", "theme": "sand", "kicker": "THIS MONTH", "label": "Views if you post daily",
+ "value": 1000000, "suffix": "+", "sub": "100 posts x 10,000 views", "mode": "roll", "duration": 60}
+```
+
+**`retentiongraph`** (optional `good`, `bad`, `callouts`):
+```json
+{"type": "retentiongraph", "theme": "studio", "kicker": "THE FIX", "headline": "Watch Time Beats Skip Rate",
+ "accent": ["Watch Time"], "good": [0.9,0.85,0.8,0.78,0.75,0.74,0.72], "bad": [0.9,0.5,0.3,0.22,0.18,0.15,0.12],
+ "callouts": [{"pct": 0.28, "label": "Old hook: viewers leave by 0:02"}]}
+```
+
+**`perspectivewall`** (required: `cards` — 12-30 entries recommended):
+```json
+{"type": "perspectivewall", "theme": "obsidian", "kicker": "7 DAYS", "headline": "One Formula, Every Day",
+ "cards": [{"label": "Day 1", "sub": "PDF -> Podcast", "glyph": "workflow"}, {"label": "Day 2", "sub": "Agent Loop", "glyph": "brain"}]}
+```
+
+**`interactiveuicard`** (required: `kind`; `dropdown`/`query`/`items` match the kind):
+```json
+{"type": "interactiveuicard", "theme": "studio", "kicker": "STEP 1", "headline": "Tell It Your Niche",
+ "kind": "dropdown", "dropdown": {"label": "Your niche", "options": ["Fitness", "Real estate", "AI tools", "Finance"], "picked": 2}}
+```
+```json
+{"type": "interactiveuicard", "theme": "sand", "kind": "checklist",
+ "items": [{"text": "Pick a model"}, {"text": "Add your script"}, {"text": "Hit render"}]}
+```
+
+**`commenttriggeroutro`** (no required props — every value has a sane default; sole closing beat on a Short):
+```json
+{"type": "commenttriggeroutro", "theme": "obsidian", "handle": "@AIGraphicTV", "name": "AI Graphic TV",
+ "bio": "Practical AI tool breakdowns", "commentWord": "GUIDE", "dmPreview": "Sent! Check your DMs"}
+```
+
+## Legacy UI-card JSON examples (back-compat only — do not use these types in a new job)
+
+Every example below is a single valid `visual` beat object (or array entry) for `scenes.json`. These are
+the old navy/"glass" family — kept only so an already-approved job never breaks on a re-render.
+
+**`hookcard`** (required: `text`, legacy `polarity` prop):
 ```json
 {"type": "hookcard", "kicker": "THE PROBLEM", "text": "You're wasting 10 hours a week on this",
  "accent": ["wasting", "hours"], "pills": ["1 LINE = FULL VIDEO"], "sub": "Here's the fix.",
@@ -394,22 +475,34 @@ channel's dark/light-polarity card look from scratch.
 
 ## Tone names (theme.js)
 
-- `glass` — **default.** Deep navy (`#060B14`) background, tech grid, cyan/royal-blue accent, gold for
-  secondary highlights (pills, `datavizcard` bar color `'gold'`). This is what `polarity: "dark"`
-  resolves to, and every primary UI-card component's default if both `tone` and `polarity` are omitted.
-- `alabaster` — new light tone. Warm off-white (`#F4F2EC`) background, near-black text, same royal-blue
-  accent + amber secondary. This is what `polarity: "light"` resolves to.
-- `dark` / `cyan` / `amber` / `paper` — the older tones, still available (via the explicit `tone` prop,
-  not `polarity`) on the secondary scene family for visual variety or a deliberate mood shift (e.g.
-  `amber` for a caveat/warning beat).
+**PRIMARY — the 3 Studio Editorial themes (`theme` prop, every `scenes/studio/` primitive + `hookcard`):**
+
+- `sand` — Warm Cream Graph-Paper (`#F7F3EB`, subtle grid lines). Ink-black (`#111315`) headlines,
+  terracotta (`#D96B43`) + marker-yellow (`#FACC15`) highlight sweeps, white floating cards (20px radius,
+  soft ambient shadow).
+- `studio` — Pure Crisp Studio White (`#FFFFFF`/`#F8FAFC`). Dark-slate (`#0F172A`) typography, coral/
+  terracotta (`#E06D53`) data curves and accents, flat — no grid texture.
+- `obsidian` — Matte Obsidian Dark (`#0B0C0E`, dot-matrix texture). White headlines, electric volt-lime
+  (`#C8F938`) + cyan (`#06B6D4`) + terracotta accents, glowing metric counters. **Default** when `theme`
+  is omitted.
+
+Rotate themes roughly every 2-4 beats (`docs/style_reference.md`) so a video doesn't sit on one canvas
+look for its whole runtime.
+
+**LEGACY (back-compat only, via `tone`/`polarity`):** `glass` (old default, deep navy), `alabaster` (old
+light tone), `dark`/`cyan`/`amber`/`paper` (older secondary-family tones). Never pick these in a new job.
 
 ## Palette reference (`src/theme.js`)
 
-Primary (`glass` tone): background `#060B14`, card glass `rgba(16,26,46,.55)` with 1px
+**Studio Editorial (primary):** sand `#F7F3EB`/ink `#111315`/terracotta `#D96B43`/marker-yellow
+`#FACC15`; studio `#FFFFFF`/`#F8FAFC`/slate-ink `#0F172A`/coral `#E06D53`; obsidian `#0B0C0E`/volt-lime
+`#C8F938`/cyan `#06B6D4`. Display font: Anton (headlines). Sans: Inter (body/UI text). Mono: Space Mono
+(chips, labels, stats, terminal panes).
+
+Legacy (`glass` tone, back-compat only): background `#060B14`, card glass `rgba(16,26,46,.55)` with 1px
 `rgba(255,255,255,.08)` border + `backdrop-filter: blur(20px)`, sky-blue/cyan accent `#22D3EE`, royal
-blue `#3B82F6`, gold `#F59E0B`, white text. Legacy tones keep their old hexes (see `TONES` in
-`theme.js`). Display font: Anton (headlines). Sans: Inter (body/mockup text). Mono: Space Mono (chips,
-labels, stats).
+blue `#3B82F6`, gold `#F59E0B`, white text. Other legacy tones keep their old hexes (see `TONES` in
+`theme.js`).
 
 ## Thumbnail (`src/thumb.json` → `Thumb.jsx`)
 

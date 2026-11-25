@@ -1,0 +1,540 @@
+{
+ "duration": 38.726,
+ "scenes": [
+  {
+   "id": "s1",
+   "start": 0.0,
+   "end": 5.091,
+   "text": "You were still clicking through five tools to ship one feature.",
+   "words": [
+    {
+     "w": "You",
+     "start": 1.2,
+     "end": 1.4
+    },
+    {
+     "w": "were",
+     "start": 1.4,
+     "end": 1.668
+    },
+    {
+     "w": "still",
+     "start": 1.668,
+     "end": 2.002
+    },
+    {
+     "w": "clicking",
+     "start": 2.002,
+     "end": 2.536
+    },
+    {
+     "w": "through",
+     "start": 2.536,
+     "end": 3.004
+    },
+    {
+     "w": "five",
+     "start": 3.004,
+     "end": 3.271
+    },
+    {
+     "w": "tools",
+     "start": 3.271,
+     "end": 3.605
+    },
+    {
+     "w": "to",
+     "start": 3.605,
+     "end": 3.739
+    },
+    {
+     "w": "ship",
+     "start": 3.739,
+     "end": 4.006
+    },
+    {
+     "w": "one",
+     "start": 4.006,
+     "end": 4.207
+    },
+    {
+     "w": "feature.",
+     "start": 4.207,
+     "end": 4.741
+    }
+   ]
+  },
+  {
+   "id": "s2",
+   "start": 5.091,
+   "end": 10.199,
+   "text": "Watch it read the task, plan its steps, and call the tools, live in three panes.",
+   "words": [
+    {
+     "w": "Watch",
+     "start": 5.091,
+     "end": 5.457
+    },
+    {
+     "w": "it",
+     "start": 5.457,
+     "end": 5.604
+    },
+    {
+     "w": "read",
+     "start": 5.604,
+     "end": 5.896
+    },
+    {
+     "w": "the",
+     "start": 5.896,
+     "end": 6.116
+    },
+    {
+     "w": "task,",
+     "start": 6.116,
+     "end": 6.482
+    },
+    {
+     "w": "plan",
+     "start": 6.482,
+     "end": 6.775
+    },
+    {
+     "w": "its",
+     "start": 6.775,
+     "end": 6.994
+    },
+    {
+     "w": "steps,",
+     "start": 6.994,
+     "end": 7.433
+    },
+    {
+     "w": "and",
+     "start": 7.433,
+     "end": 7.653
+    },
+    {
+     "w": "call",
+     "start": 7.653,
+     "end": 7.946
+    },
+    {
+     "w": "the",
+     "start": 7.946,
+     "end": 8.165
+    },
+    {
+     "w": "tools,",
+     "start": 8.165,
+     "end": 8.604
+    },
+    {
+     "w": "live",
+     "start": 8.604,
+     "end": 8.897
+    },
+    {
+     "w": "in",
+     "start": 8.897,
+     "end": 9.044
+    },
+    {
+     "w": "three",
+     "start": 9.044,
+     "end": 9.41
+    },
+    {
+     "w": "panes.",
+     "start": 9.41,
+     "end": 9.849
+    }
+   ]
+  },
+  {
+   "id": "s3",
+   "start": 10.199,
+   "end": 16.373,
+   "text": "Post a hundred times at ten thousand views each and that is one million views this month.",
+   "words": [
+    {
+     "w": "Post",
+     "start": 10.199,
+     "end": 10.518
+    },
+    {
+     "w": "a",
+     "start": 10.518,
+     "end": 10.598
+    },
+    {
+     "w": "hundred",
+     "start": 10.598,
+     "end": 11.156
+    },
+    {
+     "w": "times",
+     "start": 11.156,
+     "end": 11.555
+    },
+    {
+     "w": "at",
+     "start": 11.555,
+     "end": 11.715
+    },
+    {
+     "w": "ten",
+     "start": 11.715,
+     "end": 11.954
+    },
+    {
+     "w": "thousand",
+     "start": 11.954,
+     "end": 12.592
+    },
+    {
+     "w": "views",
+     "start": 12.592,
+     "end": 12.991
+    },
+    {
+     "w": "each",
+     "start": 12.991,
+     "end": 13.31
+    },
+    {
+     "w": "and",
+     "start": 13.31,
+     "end": 13.549
+    },
+    {
+     "w": "that",
+     "start": 13.549,
+     "end": 13.869
+    },
+    {
+     "w": "is",
+     "start": 13.869,
+     "end": 14.028
+    },
+    {
+     "w": "one",
+     "start": 14.028,
+     "end": 14.267
+    },
+    {
+     "w": "million",
+     "start": 14.267,
+     "end": 14.826
+    },
+    {
+     "w": "views",
+     "start": 14.826,
+     "end": 15.225
+    },
+    {
+     "w": "this",
+     "start": 15.225,
+     "end": 15.544
+    },
+    {
+     "w": "month.",
+     "start": 15.544,
+     "end": 16.023
+    }
+   ]
+  },
+  {
+   "id": "s4",
+   "start": 16.373,
+   "end": 22.163,
+   "text": "Old hooks lost viewers by the second second. The fix keeps them past the first ten.",
+   "words": [
+    {
+     "w": "Old",
+     "start": 16.373,
+     "end": 16.613
+    },
+    {
+     "w": "hooks",
+     "start": 16.613,
+     "end": 17.013
+    },
+    {
+     "w": "lost",
+     "start": 17.013,
+     "end": 17.333
+    },
+    {
+     "w": "viewers",
+     "start": 17.333,
+     "end": 17.893
+    },
+    {
+     "w": "by",
+     "start": 17.893,
+     "end": 18.053
+    },
+    {
+     "w": "the",
+     "start": 18.053,
+     "end": 18.293
+    },
+    {
+     "w": "second",
+     "start": 18.293,
+     "end": 18.773
+    },
+    {
+     "w": "second.",
+     "start": 18.773,
+     "end": 19.333
+    },
+    {
+     "w": "The",
+     "start": 19.333,
+     "end": 19.573
+    },
+    {
+     "w": "fix",
+     "start": 19.573,
+     "end": 19.813
+    },
+    {
+     "w": "keeps",
+     "start": 19.813,
+     "end": 20.213
+    },
+    {
+     "w": "them",
+     "start": 20.213,
+     "end": 20.533
+    },
+    {
+     "w": "past",
+     "start": 20.533,
+     "end": 20.853
+    },
+    {
+     "w": "the",
+     "start": 20.853,
+     "end": 21.093
+    },
+    {
+     "w": "first",
+     "start": 21.093,
+     "end": 21.493
+    },
+    {
+     "w": "ten.",
+     "start": 21.493,
+     "end": 21.813
+    }
+   ]
+  },
+  {
+   "id": "s5",
+   "start": 22.163,
+   "end": 26.587,
+   "text": "Seven days, seven workflows, same agent, same formula.",
+   "words": [
+    {
+     "w": "Seven",
+     "start": 22.163,
+     "end": 22.596
+    },
+    {
+     "w": "days,",
+     "start": 22.596,
+     "end": 23.03
+    },
+    {
+     "w": "seven",
+     "start": 23.03,
+     "end": 23.463
+    },
+    {
+     "w": "workflows,",
+     "start": 23.463,
+     "end": 24.33
+    },
+    {
+     "w": "same",
+     "start": 24.33,
+     "end": 24.677
+    },
+    {
+     "w": "agent,",
+     "start": 24.677,
+     "end": 25.197
+    },
+    {
+     "w": "same",
+     "start": 25.197,
+     "end": 25.544
+    },
+    {
+     "w": "formula.",
+     "start": 25.544,
+     "end": 26.237
+    }
+   ]
+  },
+  {
+   "id": "s6",
+   "start": 26.587,
+   "end": 29.177,
+   "text": "First, tell the agent your niche.",
+   "words": [
+    {
+     "w": "First,",
+     "start": 26.587,
+     "end": 27.067
+    },
+    {
+     "w": "tell",
+     "start": 27.067,
+     "end": 27.387
+    },
+    {
+     "w": "the",
+     "start": 27.387,
+     "end": 27.627
+    },
+    {
+     "w": "agent",
+     "start": 27.627,
+     "end": 28.027
+    },
+    {
+     "w": "your",
+     "start": 28.027,
+     "end": 28.347
+    },
+    {
+     "w": "niche.",
+     "start": 28.347,
+     "end": 28.827
+    }
+   ]
+  },
+  {
+   "id": "s7",
+   "start": 29.177,
+   "end": 32.087,
+   "text": "Then approve each step before it ships.",
+   "words": [
+    {
+     "w": "Then",
+     "start": 29.177,
+     "end": 29.488
+    },
+    {
+     "w": "approve",
+     "start": 29.488,
+     "end": 30.031
+    },
+    {
+     "w": "each",
+     "start": 30.031,
+     "end": 30.341
+    },
+    {
+     "w": "step",
+     "start": 30.341,
+     "end": 30.651
+    },
+    {
+     "w": "before",
+     "start": 30.651,
+     "end": 31.117
+    },
+    {
+     "w": "it",
+     "start": 31.117,
+     "end": 31.272
+    },
+    {
+     "w": "ships.",
+     "start": 31.272,
+     "end": 31.737
+    }
+   ]
+  },
+  {
+   "id": "s8",
+   "start": 32.087,
+   "end": 38.726,
+   "text": "Comment GUIDE and we will send you the full agent setup breakdown.",
+   "words": [
+    {
+     "w": "Comment",
+     "start": 32.087,
+     "end": 32.614
+    },
+    {
+     "w": "GUIDE",
+     "start": 32.614,
+     "end": 32.99
+    },
+    {
+     "w": "and",
+     "start": 32.99,
+     "end": 33.216
+    },
+    {
+     "w": "we",
+     "start": 33.216,
+     "end": 33.367
+    },
+    {
+     "w": "will",
+     "start": 33.367,
+     "end": 33.668
+    },
+    {
+     "w": "send",
+     "start": 33.668,
+     "end": 33.969
+    },
+    {
+     "w": "you",
+     "start": 33.969,
+     "end": 34.194
+    },
+    {
+     "w": "the",
+     "start": 34.194,
+     "end": 34.42
+    },
+    {
+     "w": "full",
+     "start": 34.42,
+     "end": 34.721
+    },
+    {
+     "w": "agent",
+     "start": 34.721,
+     "end": 35.097
+    },
+    {
+     "w": "setup",
+     "start": 35.097,
+     "end": 35.474
+    },
+    {
+     "w": "breakdown.",
+     "start": 35.474,
+     "end": 36.226
+    }
+   ]
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Intro",
+   "start": 0
+  }
+ ]
+}

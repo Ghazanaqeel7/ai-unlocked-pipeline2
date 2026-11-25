@@ -2,7 +2,7 @@ import React from 'react';
 import {AbsoluteFill, Sequence, useCurrentFrame, useVideoConfig, interpolate} from 'remotion';
 import scenesData from './scenes.json';
 import timing from './timing.json';
-import {FPS} from './theme.js';
+import {FPS, tone, STUDIO_THEMES} from './theme.js';
 import {Title, Chapter} from './scenes/Title.jsx';
 import {Photo} from './scenes/Photo.jsx';
 import {Stat} from './scenes/Stat.jsx';
@@ -26,21 +26,33 @@ import {SocialCtaCard} from './scenes/ui/SocialCtaCard.jsx';
 import {LiveClipCard} from './scenes/ui/LiveClipCard.jsx';
 import {MockupLegacy, StatCounterLegacy, ComparisonCardLegacy, StepFlowLegacy} from './scenes/ui/legacyAdapters.jsx';
 import {Captions} from './scenes/ui/Captions.jsx';
+import {TiltedAgentStage} from './scenes/studio/TiltedAgentStage.jsx';
+import {MetricOdometer} from './scenes/studio/MetricOdometer.jsx';
+import {RetentionGraph} from './scenes/studio/RetentionGraph.jsx';
+import {PerspectiveWall} from './scenes/studio/PerspectiveWall.jsx';
+import {InteractiveUiCard} from './scenes/studio/InteractiveUiCard.jsx';
+import {CommentTriggerOutro} from './scenes/studio/CommentTriggerOutro.jsx';
 import customScenes from './custom_scenes/index.js';
 
-// Primary UI-card types are this channel's main visual language (see docs/render_guide.md):
-// hookcard, toolgrid, browsersim, dochighlighter, workflowstepper, datavizcard, socialctacard,
-// liveclipcard. Old type strings (mockup/statcounter/comparecard/stepflow) are kept as safe legacy
-// aliases, each routed through a prop-adapting wrapper to the new component — so older jobs'
-// scenes.json keep rendering unchanged even though the underlying component is new (see
-// legacyAdapters.jsx). The rest (photo/stat/chart/timeline/map/headline/compare/list/illustration)
-// stay registered for variety/legacy jobs but are secondary now.
+// PRIMARY identity (docs/style_reference.md "Studio Editorial" standard — permanently locked):
+// tiltedagentstage, metricodometer, retentiongraph, perspectivewall, interactiveuicard,
+// commenttriggeroutro, plus `hookcard` (now theme-aware — pass `theme: 'sand'|'studio'|'obsidian'`).
+// ZERO cartoon characters/mascots in any of these — HostAvatar was permanently deleted.
+//
+// Legacy UI-card types (toolgrid, browsersim, dochighlighter, workflowstepper, datavizcard,
+// socialctacard, liveclipcard, the old mockup/statcounter/comparecard/stepflow aliases, and the
+// secondary photo/stat/chart/... family) are kept registered ONLY so already-rendered or
+// already-approved jobs (e.g. 001-launch-ai-workflow-short) never break on a future re-render —
+// never reach for them as the default in a new job's scenes.json.
 export const REGISTRY = {
   title: Title, chapter: Chapter, endcard: EndCard, quote: Quote,
-  hookcard: HookCard, toolgrid: ToolGrid,
-  browsersim: BrowserSim, dochighlighter: DocHighlighter, workflowstepper: WorkflowStepper, datavizcard: DataVizCard, socialctacard: SocialCtaCard,
-  liveclipcard: LiveClipCard,
-  // legacy aliases — safeguard #2: never break an older job
+  hookcard: HookCard,
+  // Studio Editorial primary components (docs/style_reference.md)
+  tiltedagentstage: TiltedAgentStage, metricodometer: MetricOdometer, retentiongraph: RetentionGraph,
+  perspectivewall: PerspectiveWall, interactiveuicard: InteractiveUiCard, commenttriggeroutro: CommentTriggerOutro,
+  // legacy UI-card family — back-compat only, see note above
+  toolgrid: ToolGrid, browsersim: BrowserSim, dochighlighter: DocHighlighter, workflowstepper: WorkflowStepper,
+  datavizcard: DataVizCard, socialctacard: SocialCtaCard, liveclipcard: LiveClipCard,
   mockup: MockupLegacy, statcounter: StatCounterLegacy, comparecard: ComparisonCardLegacy, stepflow: StepFlowLegacy,
   photo: Photo, stat: Stat, chart: Chart, timeline: Timeline, map: MapScene, headline: Headline, compare: Compare, list: ListScene, illustration: Illustration,
 };
@@ -76,9 +88,19 @@ const Fade = ({children, first, last, dur}) => {
   );
 };
 
-// A beat's effective light/dark polarity, for the Captions overlay: explicit `polarity` wins; else an
-// explicit legacy `tone` of 'alabaster' counts as light; everything else defaults dark.
-const resolvePolarity = (visual) => (visual.polarity || (visual.tone === 'alabaster' ? 'light' : 'dark'));
+// A beat's effective light/dark polarity + accent color, for the bottom Captions pill
+// (docs/style_reference.md "Bottom Stage" — the pill flips color with whichever of the 3 signature
+// themes the beat is on, and the active word is highlighted in that theme's own accent color):
+// a `theme` prop (sand|studio|obsidian) wins; else explicit `polarity`; else a legacy `tone` of
+// 'alabaster' counts as light; everything else defaults dark (obsidian-equivalent).
+const resolvePolarity = (visual) => {
+  if (STUDIO_THEMES.includes(visual.theme)) {
+    const t = tone(visual.theme);
+    return {polarity: t.light ? 'light' : 'dark', accent: t.accent};
+  }
+  const polarity = visual.polarity || (visual.tone === 'alabaster' ? 'light' : 'dark');
+  return {polarity, accent: polarity === 'light' ? '#D96B43' : '#C8F938'};
+};
 
 // scene -> list of beats [{from, dur, visual, scene}] in frames
 export const buildBeats = () => {
@@ -117,7 +139,7 @@ export const Doc = () => {
   const beats = React.useMemo(buildBeats, []);
   const words = React.useMemo(buildWords, []);
   const polaritySegments = React.useMemo(
-    () => beats.map((b) => ({from: b.from, dur: b.dur, polarity: resolvePolarity(b.visual)})),
+    () => beats.map((b) => ({from: b.from, dur: b.dur, ...resolvePolarity(b.visual)})),
     [beats]
   );
   const lastIdx = beats.length - 1;
