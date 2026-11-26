@@ -263,8 +263,8 @@
       "decided_at": "2026-11-26T09:44:38Z"
     },
     "012-n8n-workflow-day1-short": {
-      "status": "script_approved",
-      "updated": "2026-11-26T09:44:51Z",
+      "status": "building",
+      "updated": "2026-11-26T15:51:15Z",
       "title": "n8n workflow, day 1/7: the trigger",
       "progress": [
         {
