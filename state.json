@@ -245,8 +245,8 @@
       "run": "45852823996"
     },
     "011-n8n-copy-paste-pain-short": {
-      "status": "script_approved",
-      "updated": "2026-11-26T09:44:38Z",
+      "status": "building",
+      "updated": "2026-11-26T15:51:12Z",
       "title": "Stop copy-pasting between apps (n8n)",
       "progress": [
         {
