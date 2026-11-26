@@ -278,9 +278,13 @@
         {
           "t": "2026-11-26T15:51:04Z",
           "msg": "🎙 Voice ready. Checking frames next. About 15 min left."
+        },
+        {
+          "t": "2026-11-26T15:52:29Z",
+          "msg": "✅ Frames checked, thumbnail ready. Queued for render, about 15 min."
         }
       ],
-      "progress_count": 2,
+      "progress_count": 3,
       "decided_via": "dashboard",
       "decided_at": "2026-11-26T09:44:51Z"
     }
