@@ -214,8 +214,8 @@
       "progress_count": 6
     },
     "010-n8n-first-ai-automation-long": {
-      "status": "rendering",
-      "updated": "2026-11-26T15:50:11Z",
+      "status": "render_queued",
+      "updated": "2026-11-26T17:57:57Z",
       "title": "Build Your First AI Automation in n8n (No Code)",
       "progress": [
         {
