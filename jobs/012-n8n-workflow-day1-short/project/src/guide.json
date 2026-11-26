@@ -1,0 +1,60 @@
+{
+ "title": "n8n Triggers Cheat Sheet (Day 1 of 7)",
+ "tldr": [
+  "Every workflow starts with a trigger: Chat Trigger for messages, Schedule Trigger for a clock.",
+  "A scheduled workflow only runs after you publish it."
+ ],
+ "tools": [
+  {
+   "name": "n8n",
+   "link": "n8n.io",
+   "note": "Cloud free trial, or self-host the free Community Edition"
+  }
+ ],
+ "steps": [
+  {
+   "title": "Chat Trigger",
+   "detail": "Runs on each chat message; hosted chat is built in."
+  },
+  {
+   "title": "Schedule Trigger",
+   "detail": "Seconds to months, or a cron expression."
+  },
+  {
+   "title": "Timezone",
+   "detail": "Workflow timezone if set, else the instance timezone."
+  },
+  {
+   "title": "Publish",
+   "detail": "Saving alone is not enough."
+  },
+  {
+   "title": "Manual vs production",
+   "detail": "Only production runs count toward quota."
+  }
+ ],
+ "snippets": [
+  {
+   "label": "Cron examples",
+   "code": "0 9 * * *      daily 09:00\n*/15 * * * *   every 15 minutes\n0 8 * * 1-5   weekdays 08:00"
+  }
+ ],
+ "tips": [
+  "Pick the trigger before you pick the nodes."
+ ],
+ "mistakes": [
+  "Forgetting to publish a scheduled workflow."
+ ],
+ "action_plan": [
+  "Day 1: triggers.",
+  "Day 2: the AI Agent.",
+  "Day 3: models and credentials.",
+  "Day 4: tools.",
+  "Day 5: testing.",
+  "Day 6: publishing.",
+  "Day 7: your own automation."
+ ],
+ "cta": {
+  "comment_word": "GUIDE"
+ }
+}

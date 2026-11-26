@@ -7,7 +7,7 @@
     {
       "day": "Fri 27 Nov",
       "date": "2026-11-27",
-      "status": "planned",
+      "status": "scripted",
       "package": "d1",
       "backlog_key": "build your first ai automation in n8n",
       "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
@@ -28,12 +28,13 @@
       },
       "topic": "Build your first AI automation in n8n",
       "angle": "Full walkthrough: from the pain ('Copy-pasting between apps all day') to a working result",
-      "title": "Build your first AI automation in n8n"
+      "title": "Build your first AI automation in n8n",
+      "job": "010-n8n-first-ai-automation-long"
     },
     {
       "day": "Fri 27 Nov",
       "date": "2026-11-27",
-      "status": "planned",
+      "status": "scripted",
       "package": "d1",
       "backlog_key": "build your first ai automation in n8n",
       "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
@@ -51,12 +52,13 @@
       "topic": "Build your first AI automation in n8n",
       "angle": "Pain-point hook: Copy-pasting between apps all day",
       "title": "Copy-pasting between apps all day",
-      "related_video_title": "Build your first AI automation in n8n"
+      "related_video_title": "Build your first AI automation in n8n",
+      "job": "011-n8n-copy-paste-pain-short"
     },
     {
       "day": "Fri 27 Nov",
       "date": "2026-11-27",
-      "status": "planned",
+      "status": "scripted",
       "package": "d1",
       "backlog_key": "build your first ai automation in n8n",
       "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
@@ -74,7 +76,8 @@
       "topic": "n8n 7-day workflow: day 1/7 of the series",
       "angle": "One repeatable n8n workflow step, day 1 of 7",
       "title": "n8n workflow, day 1/7",
-      "related_video_title": "Build your first AI automation in n8n"
+      "related_video_title": "Build your first AI automation in n8n",
+      "job": "012-n8n-workflow-day1-short"
     },
     {
       "day": "Sat 28 Nov",

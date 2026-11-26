@@ -1,0 +1,99 @@
+{
+ "title": "Your First n8n AI Automation: Step-by-Step Playbook",
+ "tldr": [
+  "Build a chat-triggered AI agent in n8n, test it, then publish it to run on its own.",
+  "You need an n8n account (cloud trial or self-hosted) and one chat-model API key."
+ ],
+ "tools": [
+  {
+   "name": "n8n",
+   "link": "n8n.io",
+   "note": "Cloud free trial, or self-host the free Community Edition"
+  },
+  {
+   "name": "A chat model API key",
+   "link": "OpenAI or Google AI Studio",
+   "note": "Create a key, keep it private, add it as an n8n credential"
+  }
+ ],
+ "steps": [
+  {
+   "title": "Open n8n and create a workflow",
+   "detail": "Cloud trial or self-hosted Community Edition. Click Create Workflow and name it."
+  },
+  {
+   "title": "Add the On chat message trigger",
+   "detail": "Click Add first step and choose On chat message (the Chat Trigger node)."
+  },
+  {
+   "title": "Add the AI Agent node",
+   "detail": "Click the plus after the trigger and add AI Agent."
+  },
+  {
+   "title": "Connect a chat model",
+   "detail": "Under Chat Model add OpenAI Chat Model or a Google Gemini chat model."
+  },
+  {
+   "title": "Create the credential",
+   "detail": "Open the credential dropdown, Create New Credential, paste your API key, save."
+  },
+  {
+   "title": "Attach one tool",
+   "detail": "Click plus under Tool and add the Date and Time tool."
+  },
+  {
+   "title": "Write the agent instructions",
+   "detail": "In the agent options give it a job, a tone and one rule it must never break."
+  },
+  {
+   "title": "Test by hand",
+   "detail": "Click Execute Workflow or use the chat. Read each node output panel."
+  },
+  {
+   "title": "Swap in a Schedule Trigger (optional)",
+   "detail": "Pick an interval or type a cron expression."
+  },
+  {
+   "title": "Publish",
+   "detail": "Saving is not enough: publish so triggers and schedules run on their own."
+  }
+ ],
+ "snippets": [
+  {
+   "label": "Starter agent instructions",
+   "code": "You are an assistant for my small business.\nAnswer in two sentences.\nIf you do not know, say so.\nNever invent prices or dates: use the tools."
+  },
+  {
+   "label": "Five test questions (run each one)",
+   "code": "What is the date three days from now?\nSummarise this in one sentence: <paste text>\nWrite a polite two-line reply to: <paste email>\nWhat should I do first today? (I have 3 tasks: <list>)\nExplain n8n triggers to a beginner in two sentences."
+  },
+  {
+   "label": "Cron examples for the Schedule Trigger",
+   "code": "0 9 * * *      every day at 09:00\n*/15 * * * *   every 15 minutes\n0 8 * * 1-5   weekdays at 08:00"
+  }
+ ],
+ "tips": [
+  "Keep your first automation tiny: one trigger, one agent, one output.",
+  "Rename nodes so a stranger can read the workflow.",
+  "Change the question five times before you trust an agent.",
+  "Open n8n's template library and study the Build your first AI agent template."
+ ],
+ "mistakes": [
+  "Skipping the credential: the model node fails with no key.",
+  "Testing forever on schedule: test by hand, publish when ready.",
+  "Pasting your API key into chats or screenshots.",
+  "Building five automations before one works end to end."
+ ],
+ "action_plan": [
+  "Day 1: build the Chat Trigger + AI Agent from this guide.",
+  "Day 2: add the model credential and run five test questions.",
+  "Day 3: add the Date and Time tool and re-test.",
+  "Day 4: write your agent instructions and rerun the five questions.",
+  "Day 5: swap in the Schedule Trigger (daily, 09:00).",
+  "Day 6: publish and watch one production run.",
+  "Day 7: write down what saved you time and pick the next automation."
+ ],
+ "cta": {
+  "comment_word": "GUIDE"
+ }
+}

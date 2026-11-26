@@ -1,0 +1,33 @@
+{
+  "type": "short",
+  "title": "Stop copy-pasting between apps (n8n)",
+  "title_options": [
+    "Stop copy-pasting between apps (n8n)",
+    "This free tool ends copy-paste work",
+    "Build an AI workflow in n8n, no code"
+  ],
+  "thumb_spec": {
+    "text": "STOP COPY-PASTE",
+    "layout": "Big text top, a 3-node chain below, volt-lime highlight."
+  },
+  "description": "Stop copy-pasting between apps: build a no-code AI workflow in n8n with a trigger, an AI Agent and a chat model.\n\nSources: n8n Docs, AI Agent node; n8n Docs, Chat Trigger node; n8n Docs, Schedule Trigger node; n8n Docs, Executions; n8n Docs, Community Edition features; n8n pricing page; n8n template library (Build your first AI agent).\n\nFull video: {LONG_URL}\n\nSubscribe: https://youtube.com/@AIGraphicTV\n\n#n8n #AIAutomation #AIAgent #NoCode #Shorts",
+  "tags": [
+    "n8n",
+    "ai automation",
+    "ai agent",
+    "no code automation",
+    "workflow automation",
+    "ai tools",
+    "beginner tutorial",
+    "automate with ai",
+    "shorts"
+  ],
+  "related_video_title": "Build Your First AI Automation in n8n (No Code)",
+  "pinned_comment": "Full step-by-step build (9 min): {LONG_URL}\nWhat would you automate first? Comment GUIDE for the PDF.",
+  "target_seconds": 49,
+  "package": {
+    "id": "d1",
+    "slot": "short_pain",
+    "date": "2026-11-27"
+  }
+}

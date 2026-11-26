@@ -1,0 +1,48 @@
+{
+ "plan": true,
+ "note": "Script-stage plan. The build step replaces this with the full beat list.",
+ "scenes": [
+  {
+   "id": "s01",
+   "kind": "H",
+   "chapter": null,
+   "text": "Day one of seven: every n8n workflow starts with a trigger."
+  },
+  {
+   "id": "s02",
+   "kind": "R",
+   "chapter": null,
+   "text": "A trigger is the event that starts everything. The Chat Trigger runs your workflow whenever someone sends a message."
+  },
+  {
+   "id": "s03",
+   "kind": "R",
+   "chapter": null,
+   "text": "The Schedule Trigger runs on a clock. Choose seconds up to months, or paste a custom cron expression."
+  },
+  {
+   "id": "s04",
+   "kind": "R",
+   "chapter": null,
+   "text": "The catch: a scheduled workflow only runs once you publish it. Saving alone does nothing."
+  },
+  {
+   "id": "s05",
+   "kind": "R",
+   "chapter": null,
+   "text": "Testing by hand is a manual execution. Only production runs count toward your plan quota."
+  },
+  {
+   "id": "s06",
+   "kind": "R",
+   "chapter": null,
+   "text": "Pick the trigger first, then the nodes. Everything else in the workflow depends on how it starts."
+  },
+  {
+   "id": "s07",
+   "kind": "O",
+   "chapter": null,
+   "text": "Day two adds the AI Agent. Follow so you do not miss it, and comment GUIDE for the PDF."
+  }
+ ]
+}

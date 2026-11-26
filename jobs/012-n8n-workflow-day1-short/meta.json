@@ -1,0 +1,34 @@
+{
+  "type": "short",
+  "title": "n8n workflow, day 1/7: the trigger",
+  "title_options": [
+    "n8n workflow, day 1/7: the trigger",
+    "n8n Day 1/7: every workflow starts here",
+    "Day 1/7: n8n triggers explained fast"
+  ],
+  "thumb_spec": {
+    "text": "DAY 1 / 7",
+    "layout": "Huge DAY 1/7 on a yellow pill, a single trigger node glowing."
+  },
+  "description": "Day 1 of the 7-day n8n workflow series: every workflow starts with a trigger. Chat Trigger vs Schedule Trigger, and why you must publish.\n\nSources: n8n Docs, AI Agent node; n8n Docs, Chat Trigger node; n8n Docs, Schedule Trigger node; n8n Docs, Executions; n8n Docs, Community Edition features; n8n pricing page; n8n template library (Build your first AI agent).\n\nFull video: {LONG_URL}\n\nSubscribe: https://youtube.com/@AIGraphicTV\n\n#n8n #AIAutomation #AIAgent #NoCode #Shorts",
+  "tags": [
+    "n8n",
+    "ai automation",
+    "ai agent",
+    "no code automation",
+    "workflow automation",
+    "ai tools",
+    "beginner tutorial",
+    "automate with ai",
+    "shorts",
+    "day 1"
+  ],
+  "related_video_title": "Build Your First AI Automation in n8n (No Code)",
+  "pinned_comment": "Build the whole thing step by step: {LONG_URL}\nDay 2 tomorrow. Comment GUIDE for the PDF.",
+  "target_seconds": 41,
+  "package": {
+    "id": "d1",
+    "slot": "short_series",
+    "date": "2026-11-27"
+  }
+}

@@ -1,0 +1,71 @@
+{
+ "title": "n8n AI Agent Quick-Start Checklist",
+ "tldr": [
+  "One trigger, one AI Agent, one model, one tool, tested then published.",
+  "The beginner mistake is the missing API key credential."
+ ],
+ "tools": [
+  {
+   "name": "n8n",
+   "link": "n8n.io",
+   "note": "Cloud free trial, or self-host the free Community Edition"
+  },
+  {
+   "name": "A chat model API key",
+   "link": "OpenAI or Google AI Studio",
+   "note": "Create a key, keep it private, add it as an n8n credential"
+  }
+ ],
+ "steps": [
+  {
+   "title": "Create a workflow",
+   "detail": "n8n Cloud trial or Community Edition."
+  },
+  {
+   "title": "Trigger: On chat message",
+   "detail": "Starts the workflow on every message."
+  },
+  {
+   "title": "AI Agent node",
+   "detail": "The brain: connect a chat model and a tool."
+  },
+  {
+   "title": "Credential first",
+   "detail": "Create New Credential, paste the key."
+  },
+  {
+   "title": "Execute Workflow",
+   "detail": "Read each node output panel."
+  },
+  {
+   "title": "Publish",
+   "detail": "Run automatically; production runs count toward your quota."
+  }
+ ],
+ "snippets": [
+  {
+   "label": "Agent instructions",
+   "code": "You are a helpful assistant. Answer in two sentences. If unsure, say so."
+  }
+ ],
+ "tips": [
+  "Test by hand first (manual runs do not count toward quota).",
+  "Keep API keys private."
+ ],
+ "mistakes": [
+  "No credential, no run.",
+  "Publishing before testing."
+ ],
+ "action_plan": [
+  "Day 1: build the 4 nodes.",
+  "Day 2: add a tool.",
+  "Day 3: write instructions.",
+  "Day 4: test 5 questions.",
+  "Day 5: publish.",
+  "Day 6: review the run.",
+  "Day 7: plan the next automation."
+ ],
+ "cta": {
+  "comment_word": "GUIDE"
+ }
+}

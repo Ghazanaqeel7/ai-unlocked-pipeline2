@@ -1,0 +1,48 @@
+{
+ "plan": true,
+ "note": "Script-stage plan. The build step replaces this with the full beat list.",
+ "scenes": [
+  {
+   "id": "s01",
+   "kind": "H",
+   "chapter": null,
+   "text": "You copy and paste between apps all day. There is a free way to stop."
+  },
+  {
+   "id": "s02",
+   "kind": "R",
+   "chapter": null,
+   "text": "It is called n8n. You build a workflow: one trigger, then nodes that pass data along automatically."
+  },
+  {
+   "id": "s03",
+   "kind": "R",
+   "chapter": null,
+   "text": "The AI Agent node is the brain. You connect a chat model, add a tool, and the agent decides what to do."
+  },
+  {
+   "id": "s04",
+   "kind": "R",
+   "chapter": null,
+   "text": "The beginner mistake is the missing API key. Create a credential first, or the node fails. Skip it and the whole run stops on the first step."
+  },
+  {
+   "id": "s05",
+   "kind": "R",
+   "chapter": null,
+   "text": "Test with Execute Workflow, read each node's output, then publish it so it runs on its own. Manual test runs do not count toward your quota."
+  },
+  {
+   "id": "s06",
+   "kind": "R",
+   "chapter": null,
+   "text": "Start tiny: one trigger, one agent, one output. Get that working before you add anything else."
+  },
+  {
+   "id": "s07",
+   "kind": "O",
+   "chapter": null,
+   "text": "The full walkthrough is on the channel. Comment GUIDE for the step-by-step PDF."
+  }
+ ]
+}

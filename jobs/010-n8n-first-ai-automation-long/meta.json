@@ -1,0 +1,31 @@
+{
+  "type": "long",
+  "title": "Build Your First AI Automation in n8n (No Code)",
+  "title_options": [
+    "Build Your First AI Automation in n8n (No Code)",
+    "n8n for Beginners: Build an AI Agent Step by Step",
+    "Stop Copy-Pasting: Your First n8n AI Automation"
+  ],
+  "thumb_spec": {
+    "text": "STOP COPY-PASTING",
+    "layout": "Left: huge 2-line text on a terracotta pill. Right: a generic 4-node chain (trigger, agent, model, tool) with glowing connectors on the dark studio background. No real logos."
+  },
+  "description": "Build your first AI automation in n8n, step by step: a Chat Trigger, an AI Agent node, a chat model, a tool, a manual test, then publish it so it runs on its own. No code needed.\n\nChapters: what n8n is, build the brain, give it hands, test it, make it run on its own. Comment GUIDE for the free step-by-step PDF with the checklist, prompts and a 7-day action plan.\n\nSources: n8n Docs, AI Agent node; n8n Docs, Chat Trigger node; n8n Docs, Schedule Trigger node; n8n Docs, Executions; n8n Docs, Community Edition features; n8n pricing page; n8n template library (Build your first AI agent).\n\nSubscribe for a new AI workflow every day: https://youtube.com/@AIGraphicTV\n\n#n8n #AIAutomation #AIAgent #NoCode #AITools #Automation",
+  "tags": [
+    "n8n",
+    "ai automation",
+    "ai agent",
+    "no code automation",
+    "workflow automation",
+    "ai tools",
+    "beginner tutorial",
+    "automate with ai"
+  ],
+  "pinned_comment": "What is the one copy-paste task you would automate first? Comment GUIDE for the free step-by-step PDF.",
+  "target_seconds": 490,
+  "package": {
+    "id": "d1",
+    "slot": "long",
+    "date": "2026-11-27"
+  }
+}

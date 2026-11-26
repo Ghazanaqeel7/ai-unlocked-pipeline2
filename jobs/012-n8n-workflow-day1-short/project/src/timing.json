@@ -1,0 +1,17 @@
+{
+ "duration": 16.0,
+ "scenes": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 8.0,
+   "text": "Most people use ChatGPT wrong. Here is the one setting that changes everything."
+  },
+  {
+   "id": "s02",
+   "start": 8.0,
+   "end": 16.0,
+   "text": "This single trick saves hours every week."
+  }
+ ]
+}
