@@ -242,9 +242,18 @@
       "decided_at": "2026-11-26T09:44:38Z"
     },
     "012-n8n-workflow-day1-short": {
-      "status": "script_ready",
-      "updated": "2026-11-26T08:54:14Z",
-      "title": "n8n workflow, day 1/7: the trigger"
+      "status": "script_approved",
+      "updated": "2026-11-26T09:44:51Z",
+      "title": "n8n workflow, day 1/7: the trigger",
+      "progress": [
+        {
+          "t": "2026-11-26T09:44:51Z",
+          "msg": "✅ You approved the script on the dashboard. Claude starts the video in the next run."
+        }
+      ],
+      "progress_count": 1,
+      "decided_via": "dashboard",
+      "decided_at": "2026-11-26T09:44:51Z"
     }
   },
   "ideas": [],
