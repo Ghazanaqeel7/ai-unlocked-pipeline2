@@ -8,7 +8,7 @@ import datetime, json, os, sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'scripts'))
 from slack import post
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
-DASH = 'https://ghazanaqeel7.github.io/ai-unlocked-pipeline2/'
+DASH = 'https://aigraphictv.vercel.app/dashboard.html'
 NF = os.path.join(ROOT, 'data', 'gates_notified.json')
 
 def J(p, d=None):

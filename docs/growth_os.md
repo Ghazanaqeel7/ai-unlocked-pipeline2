@@ -13,7 +13,7 @@
 | Weekly review | `pipeline/analytics/weekly_review.py` | analytics.yml Mondays 09:00 PKT |
 
 Publishing and replies are **dry-run** until the repo variable `PUBLISH_LIVE` is `1` (Settings, Secrets and variables, Variables).
-Vault link for viewers: `https://ghazanaqeel7.github.io/ai-unlocked-pipeline2/vault.html` (change `vault_url` in `monetization.json` if you use a Vercel domain).
+Vault link for viewers: `https://aigraphictv.vercel.app/vault.html` (change `vault_url` in `monetization.json` if you use a Vercel domain).
 Offers/affiliates appear nowhere until you fill `url` and set `live: true` in `monetization.json`.
 
 ## GitHub Secrets

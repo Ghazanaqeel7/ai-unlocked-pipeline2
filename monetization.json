@@ -1,7 +1,7 @@
 {
   "_help": "Owner fills the url fields, then flips live to true. Only live offers are shown in guide.pdf, social_copy.txt and the Vault; placeholders never leak to viewers.",
   "brand": "AI Graphic TV",
-  "vault_url": "https://ghazanaqeel7.github.io/ai-unlocked-pipeline2/vault.html",
+  "vault_url": "https://aigraphictv.vercel.app/vault.html",
   "comment_word_default": "GUIDE",
   "offers": [
     {
