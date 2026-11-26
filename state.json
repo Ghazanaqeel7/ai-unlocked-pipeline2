@@ -279,8 +279,8 @@
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-011-n8n-copy-paste-pain-short/upload.mp4"
     },
     "012-n8n-workflow-day1-short": {
-      "status": "rendering",
-      "updated": "2026-11-26T19:21:10Z",
+      "status": "video_ready",
+      "updated": "2026-11-26T20:08:16Z",
       "title": "n8n workflow, day 1/7: the trigger",
       "progress": [
         {
@@ -303,7 +303,10 @@
       "progress_count": 4,
       "decided_via": "dashboard",
       "decided_at": "2026-11-26T09:44:51Z",
-      "run": "45872089585"
+      "run": "45872089585",
+      "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-012-n8n-workflow-day1-short/final.mp4",
+      "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-012-n8n-workflow-day1-short/preview.mp4",
+      "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-012-n8n-workflow-day1-short/upload.mp4"
     }
   },
   "ideas": [],
