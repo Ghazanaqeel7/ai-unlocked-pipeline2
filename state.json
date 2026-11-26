@@ -222,6 +222,11 @@
       "status": "script_ready",
       "updated": "2026-11-26T08:54:11Z",
       "title": "Stop copy-pasting between apps (n8n)"
+    },
+    "012-n8n-workflow-day1-short": {
+      "status": "script_ready",
+      "updated": "2026-11-26T08:54:14Z",
+      "title": "n8n workflow, day 1/7: the trigger"
     }
   },
   "ideas": [],
