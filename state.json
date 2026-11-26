@@ -205,9 +205,13 @@
         {
           "t": "2026-11-26T08:37:46Z",
           "msg": "Each day: pain-point Short, then the long, then a 7-day-series Short. Shorts link to the long."
+        },
+        {
+          "t": "2026-11-26T08:37:48Z",
+          "msg": "Next: after you approve the calendar, Claude writes the Slot #1 script (hook in 3 s, re-hooks, 3 titles, thumbnail spec) for your Gate 1 approval."
         }
       ],
-      "progress_count": 5
+      "progress_count": 6
     }
   },
   "ideas": [],
