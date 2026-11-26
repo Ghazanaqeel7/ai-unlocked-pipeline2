@@ -228,9 +228,18 @@
       "decided_at": "2026-11-26T09:44:27Z"
     },
     "011-n8n-copy-paste-pain-short": {
-      "status": "script_ready",
-      "updated": "2026-11-26T08:54:11Z",
-      "title": "Stop copy-pasting between apps (n8n)"
+      "status": "script_approved",
+      "updated": "2026-11-26T09:44:38Z",
+      "title": "Stop copy-pasting between apps (n8n)",
+      "progress": [
+        {
+          "t": "2026-11-26T09:44:38Z",
+          "msg": "✅ You approved the script on the dashboard. Claude starts the video in the next run."
+        }
+      ],
+      "progress_count": 1,
+      "decided_via": "dashboard",
+      "decided_at": "2026-11-26T09:44:38Z"
     },
     "012-n8n-workflow-day1-short": {
       "status": "script_ready",
