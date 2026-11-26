@@ -1,0 +1,18 @@
+{
+ "title": "Stop copy-pasting between apps (n8n)",
+ "description": "Stop copy-pasting between apps: build a no-code AI workflow in n8n with a trigger, an AI Agent and a chat model.\n\nSources: n8n Docs, AI Agent node; n8n Docs, Chat Trigger node; n8n Docs, Schedule Trigger node; n8n Docs, Executions; n8n Docs, Community Edition features; n8n pricing page; n8n template library (Build your first AI agent).\n\nFull video: {LONG_URL}\n\nSubscribe: https://youtube.com/@AIGraphicTV\n\n#n8n #AIAutomation #AIAgent #NoCode #Shorts\n\nImage credits:\nNeural network - Midjourney and Grok.png - Midjourney; prompt suggested by Grok - Public domain - https://commons.wikimedia.org/wiki/File:Neural_network_-_Midjourney_and_Grok.png",
+ "tags": [
+  "n8n",
+  "ai automation",
+  "ai agent",
+  "no code automation",
+  "workflow automation",
+  "ai tools",
+  "beginner tutorial",
+  "automate with ai",
+  "shorts"
+ ],
+ "chapters": [],
+ "credits": "Image credits:\nNeural network - Midjourney and Grok.png - Midjourney; prompt suggested by Grok - Public domain - https://commons.wikimedia.org/wiki/File:Neural_network_-_Midjourney_and_Grok.png",
+ "pinned_comment": "Full step-by-step build (9 min): {LONG_URL}\nWhat would you automate first? Comment GUIDE for the PDF."
+}
