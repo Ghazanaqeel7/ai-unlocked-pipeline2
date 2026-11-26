@@ -27,5 +27,6 @@
     "id": "d1",
     "slot": "long",
     "date": "2026-11-27"
-  }
+  },
+  "evergreen_only": true
 }

@@ -1,17 +1,7243 @@
 {
- "duration": 16.0,
+ "duration": 478.825,
  "scenes": [
   {
    "id": "s01",
    "start": 0.0,
-   "end": 8.0,
-   "text": "Most people use ChatGPT wrong. Here is the one setting that changes everything."
+   "end": 12.793,
+   "text": "You copy and paste between apps all day. In the next nine minutes you will build an AI automation in n8n that does that work for you, and you will not write a single line of code.",
+   "words": [
+    {
+     "w": "You",
+     "start": 1.2,
+     "end": 1.436
+    },
+    {
+     "w": "copy",
+     "start": 1.436,
+     "end": 1.75
+    },
+    {
+     "w": "and",
+     "start": 1.75,
+     "end": 1.986
+    },
+    {
+     "w": "paste",
+     "start": 1.986,
+     "end": 2.379
+    },
+    {
+     "w": "between",
+     "start": 2.379,
+     "end": 2.93
+    },
+    {
+     "w": "apps",
+     "start": 2.93,
+     "end": 3.244
+    },
+    {
+     "w": "all",
+     "start": 3.244,
+     "end": 3.48
+    },
+    {
+     "w": "day.",
+     "start": 3.48,
+     "end": 3.794
+    },
+    {
+     "w": "In",
+     "start": 3.794,
+     "end": 3.952
+    },
+    {
+     "w": "the",
+     "start": 3.952,
+     "end": 4.188
+    },
+    {
+     "w": "next",
+     "start": 4.188,
+     "end": 4.502
+    },
+    {
+     "w": "nine",
+     "start": 4.502,
+     "end": 4.817
+    },
+    {
+     "w": "minutes",
+     "start": 4.817,
+     "end": 5.367
+    },
+    {
+     "w": "you",
+     "start": 5.367,
+     "end": 5.603
+    },
+    {
+     "w": "will",
+     "start": 5.603,
+     "end": 5.917
+    },
+    {
+     "w": "build",
+     "start": 5.917,
+     "end": 6.31
+    },
+    {
+     "w": "an",
+     "start": 6.31,
+     "end": 6.468
+    },
+    {
+     "w": "AI",
+     "start": 6.468,
+     "end": 6.625
+    },
+    {
+     "w": "automation",
+     "start": 6.625,
+     "end": 7.411
+    },
+    {
+     "w": "in",
+     "start": 7.411,
+     "end": 7.568
+    },
+    {
+     "w": "n8n",
+     "start": 7.568,
+     "end": 7.804
+    },
+    {
+     "w": "that",
+     "start": 7.804,
+     "end": 8.119
+    },
+    {
+     "w": "does",
+     "start": 8.119,
+     "end": 8.433
+    },
+    {
+     "w": "that",
+     "start": 8.433,
+     "end": 8.748
+    },
+    {
+     "w": "work",
+     "start": 8.748,
+     "end": 9.062
+    },
+    {
+     "w": "for",
+     "start": 9.062,
+     "end": 9.298
+    },
+    {
+     "w": "you,",
+     "start": 9.298,
+     "end": 9.612
+    },
+    {
+     "w": "and",
+     "start": 9.612,
+     "end": 9.848
+    },
+    {
+     "w": "you",
+     "start": 9.848,
+     "end": 10.084
+    },
+    {
+     "w": "will",
+     "start": 10.084,
+     "end": 10.399
+    },
+    {
+     "w": "not",
+     "start": 10.399,
+     "end": 10.634
+    },
+    {
+     "w": "write",
+     "start": 10.634,
+     "end": 11.028
+    },
+    {
+     "w": "a",
+     "start": 11.028,
+     "end": 11.106
+    },
+    {
+     "w": "single",
+     "start": 11.106,
+     "end": 11.578
+    },
+    {
+     "w": "line",
+     "start": 11.578,
+     "end": 11.892
+    },
+    {
+     "w": "of",
+     "start": 11.892,
+     "end": 12.05
+    },
+    {
+     "w": "code.",
+     "start": 12.05,
+     "end": 12.443
+    }
+   ]
   },
   {
    "id": "s02",
-   "start": 8.0,
-   "end": 16.0,
-   "text": "This single trick saves hours every week."
+   "start": 12.793,
+   "end": 20.545,
+   "text": "But first, the one mistake that makes most beginners quit in the first ten minutes. I will show you exactly where it hides.",
+   "words": [
+    {
+     "w": "But",
+     "start": 12.793,
+     "end": 13.013
+    },
+    {
+     "w": "first,",
+     "start": 13.013,
+     "end": 13.452
+    },
+    {
+     "w": "the",
+     "start": 13.452,
+     "end": 13.672
+    },
+    {
+     "w": "one",
+     "start": 13.672,
+     "end": 13.892
+    },
+    {
+     "w": "mistake",
+     "start": 13.892,
+     "end": 14.405
+    },
+    {
+     "w": "that",
+     "start": 14.405,
+     "end": 14.698
+    },
+    {
+     "w": "makes",
+     "start": 14.698,
+     "end": 15.065
+    },
+    {
+     "w": "most",
+     "start": 15.065,
+     "end": 15.358
+    },
+    {
+     "w": "beginners",
+     "start": 15.358,
+     "end": 16.018
+    },
+    {
+     "w": "quit",
+     "start": 16.018,
+     "end": 16.311
+    },
+    {
+     "w": "in",
+     "start": 16.311,
+     "end": 16.457
+    },
+    {
+     "w": "the",
+     "start": 16.457,
+     "end": 16.677
+    },
+    {
+     "w": "first",
+     "start": 16.677,
+     "end": 17.044
+    },
+    {
+     "w": "ten",
+     "start": 17.044,
+     "end": 17.264
+    },
+    {
+     "w": "minutes.",
+     "start": 17.264,
+     "end": 17.85
+    },
+    {
+     "w": "I",
+     "start": 17.85,
+     "end": 17.923
+    },
+    {
+     "w": "will",
+     "start": 17.923,
+     "end": 18.216
+    },
+    {
+     "w": "show",
+     "start": 18.216,
+     "end": 18.51
+    },
+    {
+     "w": "you",
+     "start": 18.51,
+     "end": 18.729
+    },
+    {
+     "w": "exactly",
+     "start": 18.729,
+     "end": 19.243
+    },
+    {
+     "w": "where",
+     "start": 19.243,
+     "end": 19.609
+    },
+    {
+     "w": "it",
+     "start": 19.609,
+     "end": 19.756
+    },
+    {
+     "w": "hides.",
+     "start": 19.756,
+     "end": 20.195
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 20.545,
+   "end": 34.805,
+   "text": "n8n is a workflow automation tool. A workflow is a chain of nodes. A trigger node starts it, the other nodes each do one job, and the output of one node becomes the input of the next. That is the whole idea.",
+   "words": [
+    {
+     "w": "n8n",
+     "start": 20.545,
+     "end": 20.797
+    },
+    {
+     "w": "is",
+     "start": 20.797,
+     "end": 20.964
+    },
+    {
+     "w": "a",
+     "start": 20.964,
+     "end": 21.048
+    },
+    {
+     "w": "workflow",
+     "start": 21.048,
+     "end": 21.718
+    },
+    {
+     "w": "automation",
+     "start": 21.718,
+     "end": 22.556
+    },
+    {
+     "w": "tool.",
+     "start": 22.556,
+     "end": 22.975
+    },
+    {
+     "w": "A",
+     "start": 22.975,
+     "end": 23.059
+    },
+    {
+     "w": "workflow",
+     "start": 23.059,
+     "end": 23.729
+    },
+    {
+     "w": "is",
+     "start": 23.729,
+     "end": 23.897
+    },
+    {
+     "w": "a",
+     "start": 23.897,
+     "end": 23.981
+    },
+    {
+     "w": "chain",
+     "start": 23.981,
+     "end": 24.4
+    },
+    {
+     "w": "of",
+     "start": 24.4,
+     "end": 24.567
+    },
+    {
+     "w": "nodes.",
+     "start": 24.567,
+     "end": 25.07
+    },
+    {
+     "w": "A",
+     "start": 25.07,
+     "end": 25.154
+    },
+    {
+     "w": "trigger",
+     "start": 25.154,
+     "end": 25.74
+    },
+    {
+     "w": "node",
+     "start": 25.74,
+     "end": 26.076
+    },
+    {
+     "w": "starts",
+     "start": 26.076,
+     "end": 26.578
+    },
+    {
+     "w": "it,",
+     "start": 26.578,
+     "end": 26.83
+    },
+    {
+     "w": "the",
+     "start": 26.83,
+     "end": 27.081
+    },
+    {
+     "w": "other",
+     "start": 27.081,
+     "end": 27.5
+    },
+    {
+     "w": "nodes",
+     "start": 27.5,
+     "end": 27.919
+    },
+    {
+     "w": "each",
+     "start": 27.919,
+     "end": 28.254
+    },
+    {
+     "w": "do",
+     "start": 28.254,
+     "end": 28.422
+    },
+    {
+     "w": "one",
+     "start": 28.422,
+     "end": 28.673
+    },
+    {
+     "w": "job,",
+     "start": 28.673,
+     "end": 29.008
+    },
+    {
+     "w": "and",
+     "start": 29.008,
+     "end": 29.26
+    },
+    {
+     "w": "the",
+     "start": 29.26,
+     "end": 29.511
+    },
+    {
+     "w": "output",
+     "start": 29.511,
+     "end": 30.014
+    },
+    {
+     "w": "of",
+     "start": 30.014,
+     "end": 30.181
+    },
+    {
+     "w": "one",
+     "start": 30.181,
+     "end": 30.433
+    },
+    {
+     "w": "node",
+     "start": 30.433,
+     "end": 30.768
+    },
+    {
+     "w": "becomes",
+     "start": 30.768,
+     "end": 31.354
+    },
+    {
+     "w": "the",
+     "start": 31.354,
+     "end": 31.606
+    },
+    {
+     "w": "input",
+     "start": 31.606,
+     "end": 32.025
+    },
+    {
+     "w": "of",
+     "start": 32.025,
+     "end": 32.192
+    },
+    {
+     "w": "the",
+     "start": 32.192,
+     "end": 32.444
+    },
+    {
+     "w": "next.",
+     "start": 32.444,
+     "end": 32.863
+    },
+    {
+     "w": "That",
+     "start": 32.863,
+     "end": 33.198
+    },
+    {
+     "w": "is",
+     "start": 33.198,
+     "end": 33.365
+    },
+    {
+     "w": "the",
+     "start": 33.365,
+     "end": 33.617
+    },
+    {
+     "w": "whole",
+     "start": 33.617,
+     "end": 34.036
+    },
+    {
+     "w": "idea.",
+     "start": 34.036,
+     "end": 34.455
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 34.805,
+   "end": 37.757,
+   "text": "Here is a way to picture it so it sticks.",
+   "words": [
+    {
+     "w": "Here",
+     "start": 34.805,
+     "end": 35.13
+    },
+    {
+     "w": "is",
+     "start": 35.13,
+     "end": 35.293
+    },
+    {
+     "w": "a",
+     "start": 35.293,
+     "end": 35.374
+    },
+    {
+     "w": "way",
+     "start": 35.374,
+     "end": 35.618
+    },
+    {
+     "w": "to",
+     "start": 35.618,
+     "end": 35.781
+    },
+    {
+     "w": "picture",
+     "start": 35.781,
+     "end": 36.35
+    },
+    {
+     "w": "it",
+     "start": 36.35,
+     "end": 36.513
+    },
+    {
+     "w": "so",
+     "start": 36.513,
+     "end": 36.675
+    },
+    {
+     "w": "it",
+     "start": 36.675,
+     "end": 36.838
+    },
+    {
+     "w": "sticks.",
+     "start": 36.838,
+     "end": 37.407
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 37.757,
+   "end": 57.329,
+   "text": "Think of a recipe. The trigger is you walking into the kitchen. Each node is one step, chop, mix, bake, and each step hands its result to the next one. If the cake goes wrong, you do not throw out the kitchen. You find the one step that failed. Workflows in n8n work the same way, and you can open any node to see what it did.",
+   "words": [
+    {
+     "w": "Think",
+     "start": 37.757,
+     "end": 38.127
+    },
+    {
+     "w": "of",
+     "start": 38.127,
+     "end": 38.275
+    },
+    {
+     "w": "a",
+     "start": 38.275,
+     "end": 38.349
+    },
+    {
+     "w": "recipe.",
+     "start": 38.349,
+     "end": 38.866
+    },
+    {
+     "w": "The",
+     "start": 38.866,
+     "end": 39.088
+    },
+    {
+     "w": "trigger",
+     "start": 39.088,
+     "end": 39.606
+    },
+    {
+     "w": "is",
+     "start": 39.606,
+     "end": 39.753
+    },
+    {
+     "w": "you",
+     "start": 39.753,
+     "end": 39.975
+    },
+    {
+     "w": "walking",
+     "start": 39.975,
+     "end": 40.493
+    },
+    {
+     "w": "into",
+     "start": 40.493,
+     "end": 40.788
+    },
+    {
+     "w": "the",
+     "start": 40.788,
+     "end": 41.01
+    },
+    {
+     "w": "kitchen.",
+     "start": 41.01,
+     "end": 41.602
+    },
+    {
+     "w": "Each",
+     "start": 41.602,
+     "end": 41.897
+    },
+    {
+     "w": "node",
+     "start": 41.897,
+     "end": 42.193
+    },
+    {
+     "w": "is",
+     "start": 42.193,
+     "end": 42.341
+    },
+    {
+     "w": "one",
+     "start": 42.341,
+     "end": 42.563
+    },
+    {
+     "w": "step,",
+     "start": 42.563,
+     "end": 42.932
+    },
+    {
+     "w": "chop,",
+     "start": 42.932,
+     "end": 43.302
+    },
+    {
+     "w": "mix,",
+     "start": 43.302,
+     "end": 43.598
+    },
+    {
+     "w": "bake,",
+     "start": 43.598,
+     "end": 43.967
+    },
+    {
+     "w": "and",
+     "start": 43.967,
+     "end": 44.189
+    },
+    {
+     "w": "each",
+     "start": 44.189,
+     "end": 44.485
+    },
+    {
+     "w": "step",
+     "start": 44.485,
+     "end": 44.781
+    },
+    {
+     "w": "hands",
+     "start": 44.781,
+     "end": 45.15
+    },
+    {
+     "w": "its",
+     "start": 45.15,
+     "end": 45.372
+    },
+    {
+     "w": "result",
+     "start": 45.372,
+     "end": 45.816
+    },
+    {
+     "w": "to",
+     "start": 45.816,
+     "end": 45.963
+    },
+    {
+     "w": "the",
+     "start": 45.963,
+     "end": 46.185
+    },
+    {
+     "w": "next",
+     "start": 46.185,
+     "end": 46.481
+    },
+    {
+     "w": "one.",
+     "start": 46.481,
+     "end": 46.777
+    },
+    {
+     "w": "If",
+     "start": 46.777,
+     "end": 46.924
+    },
+    {
+     "w": "the",
+     "start": 46.924,
+     "end": 47.146
+    },
+    {
+     "w": "cake",
+     "start": 47.146,
+     "end": 47.442
+    },
+    {
+     "w": "goes",
+     "start": 47.442,
+     "end": 47.738
+    },
+    {
+     "w": "wrong,",
+     "start": 47.738,
+     "end": 48.181
+    },
+    {
+     "w": "you",
+     "start": 48.181,
+     "end": 48.403
+    },
+    {
+     "w": "do",
+     "start": 48.403,
+     "end": 48.551
+    },
+    {
+     "w": "not",
+     "start": 48.551,
+     "end": 48.773
+    },
+    {
+     "w": "throw",
+     "start": 48.773,
+     "end": 49.142
+    },
+    {
+     "w": "out",
+     "start": 49.142,
+     "end": 49.364
+    },
+    {
+     "w": "the",
+     "start": 49.364,
+     "end": 49.586
+    },
+    {
+     "w": "kitchen.",
+     "start": 49.586,
+     "end": 50.177
+    },
+    {
+     "w": "You",
+     "start": 50.177,
+     "end": 50.399
+    },
+    {
+     "w": "find",
+     "start": 50.399,
+     "end": 50.695
+    },
+    {
+     "w": "the",
+     "start": 50.695,
+     "end": 50.917
+    },
+    {
+     "w": "one",
+     "start": 50.917,
+     "end": 51.138
+    },
+    {
+     "w": "step",
+     "start": 51.138,
+     "end": 51.434
+    },
+    {
+     "w": "that",
+     "start": 51.434,
+     "end": 51.73
+    },
+    {
+     "w": "failed.",
+     "start": 51.73,
+     "end": 52.247
+    },
+    {
+     "w": "Workflows",
+     "start": 52.247,
+     "end": 52.913
+    },
+    {
+     "w": "in",
+     "start": 52.913,
+     "end": 53.06
+    },
+    {
+     "w": "n8n",
+     "start": 53.06,
+     "end": 53.282
+    },
+    {
+     "w": "work",
+     "start": 53.282,
+     "end": 53.578
+    },
+    {
+     "w": "the",
+     "start": 53.578,
+     "end": 53.8
+    },
+    {
+     "w": "same",
+     "start": 53.8,
+     "end": 54.095
+    },
+    {
+     "w": "way,",
+     "start": 54.095,
+     "end": 54.391
+    },
+    {
+     "w": "and",
+     "start": 54.391,
+     "end": 54.613
+    },
+    {
+     "w": "you",
+     "start": 54.613,
+     "end": 54.835
+    },
+    {
+     "w": "can",
+     "start": 54.835,
+     "end": 55.057
+    },
+    {
+     "w": "open",
+     "start": 55.057,
+     "end": 55.352
+    },
+    {
+     "w": "any",
+     "start": 55.352,
+     "end": 55.574
+    },
+    {
+     "w": "node",
+     "start": 55.574,
+     "end": 55.87
+    },
+    {
+     "w": "to",
+     "start": 55.87,
+     "end": 56.018
+    },
+    {
+     "w": "see",
+     "start": 56.018,
+     "end": 56.239
+    },
+    {
+     "w": "what",
+     "start": 56.239,
+     "end": 56.535
+    },
+    {
+     "w": "it",
+     "start": 56.535,
+     "end": 56.683
+    },
+    {
+     "w": "did.",
+     "start": 56.683,
+     "end": 56.979
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 57.329,
+   "end": 62.287,
+   "text": "You can run it two ways, and one of them costs nothing. Here is the choice.",
+   "words": [
+    {
+     "w": "You",
+     "start": 57.329,
+     "end": 57.559
+    },
+    {
+     "w": "can",
+     "start": 57.559,
+     "end": 57.789
+    },
+    {
+     "w": "run",
+     "start": 57.789,
+     "end": 58.02
+    },
+    {
+     "w": "it",
+     "start": 58.02,
+     "end": 58.173
+    },
+    {
+     "w": "two",
+     "start": 58.173,
+     "end": 58.404
+    },
+    {
+     "w": "ways,",
+     "start": 58.404,
+     "end": 58.788
+    },
+    {
+     "w": "and",
+     "start": 58.788,
+     "end": 59.018
+    },
+    {
+     "w": "one",
+     "start": 59.018,
+     "end": 59.249
+    },
+    {
+     "w": "of",
+     "start": 59.249,
+     "end": 59.402
+    },
+    {
+     "w": "them",
+     "start": 59.402,
+     "end": 59.709
+    },
+    {
+     "w": "costs",
+     "start": 59.709,
+     "end": 60.093
+    },
+    {
+     "w": "nothing.",
+     "start": 60.093,
+     "end": 60.708
+    },
+    {
+     "w": "Here",
+     "start": 60.708,
+     "end": 61.015
+    },
+    {
+     "w": "is",
+     "start": 61.015,
+     "end": 61.169
+    },
+    {
+     "w": "the",
+     "start": 61.169,
+     "end": 61.399
+    },
+    {
+     "w": "choice.",
+     "start": 61.399,
+     "end": 61.937
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 62.287,
+   "end": 81.09,
+   "text": "You can use n8n Cloud, which has a free trial that, at the time of recording, needs no credit card. Or you can self-host the Community Edition, which n8n describes as free and running without a license key. For your first build, cloud is faster, so open your dashboard and click Create Workflow.",
+   "words": [
+    {
+     "w": "You",
+     "start": 62.287,
+     "end": 62.514
+    },
+    {
+     "w": "can",
+     "start": 62.514,
+     "end": 62.742
+    },
+    {
+     "w": "use",
+     "start": 62.742,
+     "end": 62.97
+    },
+    {
+     "w": "n8n",
+     "start": 62.97,
+     "end": 63.198
+    },
+    {
+     "w": "Cloud,",
+     "start": 63.198,
+     "end": 63.654
+    },
+    {
+     "w": "which",
+     "start": 63.654,
+     "end": 64.033
+    },
+    {
+     "w": "has",
+     "start": 64.033,
+     "end": 64.261
+    },
+    {
+     "w": "a",
+     "start": 64.261,
+     "end": 64.337
+    },
+    {
+     "w": "free",
+     "start": 64.337,
+     "end": 64.641
+    },
+    {
+     "w": "trial",
+     "start": 64.641,
+     "end": 65.02
+    },
+    {
+     "w": "that,",
+     "start": 65.02,
+     "end": 65.4
+    },
+    {
+     "w": "at",
+     "start": 65.4,
+     "end": 65.552
+    },
+    {
+     "w": "the",
+     "start": 65.552,
+     "end": 65.78
+    },
+    {
+     "w": "time",
+     "start": 65.78,
+     "end": 66.084
+    },
+    {
+     "w": "of",
+     "start": 66.084,
+     "end": 66.236
+    },
+    {
+     "w": "recording,",
+     "start": 66.236,
+     "end": 66.995
+    },
+    {
+     "w": "needs",
+     "start": 66.995,
+     "end": 67.375
+    },
+    {
+     "w": "no",
+     "start": 67.375,
+     "end": 67.527
+    },
+    {
+     "w": "credit",
+     "start": 67.527,
+     "end": 67.982
+    },
+    {
+     "w": "card.",
+     "start": 67.982,
+     "end": 68.362
+    },
+    {
+     "w": "Or",
+     "start": 68.362,
+     "end": 68.514
+    },
+    {
+     "w": "you",
+     "start": 68.514,
+     "end": 68.742
+    },
+    {
+     "w": "can",
+     "start": 68.742,
+     "end": 68.969
+    },
+    {
+     "w": "self-host",
+     "start": 68.969,
+     "end": 69.653
+    },
+    {
+     "w": "the",
+     "start": 69.653,
+     "end": 69.881
+    },
+    {
+     "w": "Community",
+     "start": 69.881,
+     "end": 70.564
+    },
+    {
+     "w": "Edition,",
+     "start": 70.564,
+     "end": 71.172
+    },
+    {
+     "w": "which",
+     "start": 71.172,
+     "end": 71.551
+    },
+    {
+     "w": "n8n",
+     "start": 71.551,
+     "end": 71.779
+    },
+    {
+     "w": "describes",
+     "start": 71.779,
+     "end": 72.463
+    },
+    {
+     "w": "as",
+     "start": 72.463,
+     "end": 72.614
+    },
+    {
+     "w": "free",
+     "start": 72.614,
+     "end": 72.918
+    },
+    {
+     "w": "and",
+     "start": 72.918,
+     "end": 73.146
+    },
+    {
+     "w": "running",
+     "start": 73.146,
+     "end": 73.678
+    },
+    {
+     "w": "without",
+     "start": 73.678,
+     "end": 74.209
+    },
+    {
+     "w": "a",
+     "start": 74.209,
+     "end": 74.285
+    },
+    {
+     "w": "license",
+     "start": 74.285,
+     "end": 74.817
+    },
+    {
+     "w": "key.",
+     "start": 74.817,
+     "end": 75.12
+    },
+    {
+     "w": "For",
+     "start": 75.12,
+     "end": 75.348
+    },
+    {
+     "w": "your",
+     "start": 75.348,
+     "end": 75.652
+    },
+    {
+     "w": "first",
+     "start": 75.652,
+     "end": 76.032
+    },
+    {
+     "w": "build,",
+     "start": 76.032,
+     "end": 76.487
+    },
+    {
+     "w": "cloud",
+     "start": 76.487,
+     "end": 76.867
+    },
+    {
+     "w": "is",
+     "start": 76.867,
+     "end": 77.019
+    },
+    {
+     "w": "faster,",
+     "start": 77.019,
+     "end": 77.551
+    },
+    {
+     "w": "so",
+     "start": 77.551,
+     "end": 77.702
+    },
+    {
+     "w": "open",
+     "start": 77.702,
+     "end": 78.006
+    },
+    {
+     "w": "your",
+     "start": 78.006,
+     "end": 78.31
+    },
+    {
+     "w": "dashboard",
+     "start": 78.31,
+     "end": 78.993
+    },
+    {
+     "w": "and",
+     "start": 78.993,
+     "end": 79.221
+    },
+    {
+     "w": "click",
+     "start": 79.221,
+     "end": 79.601
+    },
+    {
+     "w": "Create",
+     "start": 79.601,
+     "end": 80.057
+    },
+    {
+     "w": "Workflow.",
+     "start": 80.057,
+     "end": 80.74
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 81.09,
+   "end": 86.709,
+   "text": "Before we build anything, learn one word, because it controls your bill. Execution.",
+   "words": [
+    {
+     "w": "Before",
+     "start": 81.09,
+     "end": 81.535
+    },
+    {
+     "w": "we",
+     "start": 81.535,
+     "end": 81.684
+    },
+    {
+     "w": "build",
+     "start": 81.684,
+     "end": 82.055
+    },
+    {
+     "w": "anything,",
+     "start": 82.055,
+     "end": 82.723
+    },
+    {
+     "w": "learn",
+     "start": 82.723,
+     "end": 83.094
+    },
+    {
+     "w": "one",
+     "start": 83.094,
+     "end": 83.316
+    },
+    {
+     "w": "word,",
+     "start": 83.316,
+     "end": 83.688
+    },
+    {
+     "w": "because",
+     "start": 83.688,
+     "end": 84.207
+    },
+    {
+     "w": "it",
+     "start": 84.207,
+     "end": 84.356
+    },
+    {
+     "w": "controls",
+     "start": 84.356,
+     "end": 84.949
+    },
+    {
+     "w": "your",
+     "start": 84.949,
+     "end": 85.246
+    },
+    {
+     "w": "bill.",
+     "start": 85.246,
+     "end": 85.617
+    },
+    {
+     "w": "Execution.",
+     "start": 85.617,
+     "end": 86.359
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 86.709,
+   "end": 101.715,
+   "text": "An execution is one run of your whole workflow, no matter how many steps it has. And only production runs, the automatic ones, count toward your plan's quota. When you test by hand, that is a manual execution, and it does not count.",
+   "words": [
+    {
+     "w": "An",
+     "start": 86.709,
+     "end": 86.864
+    },
+    {
+     "w": "execution",
+     "start": 86.864,
+     "end": 87.558
+    },
+    {
+     "w": "is",
+     "start": 87.558,
+     "end": 87.712
+    },
+    {
+     "w": "one",
+     "start": 87.712,
+     "end": 87.944
+    },
+    {
+     "w": "run",
+     "start": 87.944,
+     "end": 88.175
+    },
+    {
+     "w": "of",
+     "start": 88.175,
+     "end": 88.329
+    },
+    {
+     "w": "your",
+     "start": 88.329,
+     "end": 88.638
+    },
+    {
+     "w": "whole",
+     "start": 88.638,
+     "end": 89.023
+    },
+    {
+     "w": "workflow,",
+     "start": 89.023,
+     "end": 89.718
+    },
+    {
+     "w": "no",
+     "start": 89.718,
+     "end": 89.872
+    },
+    {
+     "w": "matter",
+     "start": 89.872,
+     "end": 90.335
+    },
+    {
+     "w": "how",
+     "start": 90.335,
+     "end": 90.566
+    },
+    {
+     "w": "many",
+     "start": 90.566,
+     "end": 90.875
+    },
+    {
+     "w": "steps",
+     "start": 90.875,
+     "end": 91.26
+    },
+    {
+     "w": "it",
+     "start": 91.26,
+     "end": 91.415
+    },
+    {
+     "w": "has.",
+     "start": 91.415,
+     "end": 91.723
+    },
+    {
+     "w": "And",
+     "start": 91.723,
+     "end": 91.955
+    },
+    {
+     "w": "only",
+     "start": 91.955,
+     "end": 92.263
+    },
+    {
+     "w": "production",
+     "start": 92.263,
+     "end": 93.035
+    },
+    {
+     "w": "runs,",
+     "start": 93.035,
+     "end": 93.42
+    },
+    {
+     "w": "the",
+     "start": 93.42,
+     "end": 93.652
+    },
+    {
+     "w": "automatic",
+     "start": 93.652,
+     "end": 94.346
+    },
+    {
+     "w": "ones,",
+     "start": 94.346,
+     "end": 94.732
+    },
+    {
+     "w": "count",
+     "start": 94.732,
+     "end": 95.117
+    },
+    {
+     "w": "toward",
+     "start": 95.117,
+     "end": 95.58
+    },
+    {
+     "w": "your",
+     "start": 95.58,
+     "end": 95.889
+    },
+    {
+     "w": "plan's",
+     "start": 95.889,
+     "end": 96.351
+    },
+    {
+     "w": "quota.",
+     "start": 96.351,
+     "end": 96.814
+    },
+    {
+     "w": "When",
+     "start": 96.814,
+     "end": 97.123
+    },
+    {
+     "w": "you",
+     "start": 97.123,
+     "end": 97.354
+    },
+    {
+     "w": "test",
+     "start": 97.354,
+     "end": 97.663
+    },
+    {
+     "w": "by",
+     "start": 97.663,
+     "end": 97.817
+    },
+    {
+     "w": "hand,",
+     "start": 97.817,
+     "end": 98.203
+    },
+    {
+     "w": "that",
+     "start": 98.203,
+     "end": 98.511
+    },
+    {
+     "w": "is",
+     "start": 98.511,
+     "end": 98.666
+    },
+    {
+     "w": "a",
+     "start": 98.666,
+     "end": 98.743
+    },
+    {
+     "w": "manual",
+     "start": 98.743,
+     "end": 99.206
+    },
+    {
+     "w": "execution,",
+     "start": 99.206,
+     "end": 99.977
+    },
+    {
+     "w": "and",
+     "start": 99.977,
+     "end": 100.208
+    },
+    {
+     "w": "it",
+     "start": 100.208,
+     "end": 100.363
+    },
+    {
+     "w": "does",
+     "start": 100.363,
+     "end": 100.671
+    },
+    {
+     "w": "not",
+     "start": 100.671,
+     "end": 100.903
+    },
+    {
+     "w": "count.",
+     "start": 100.903,
+     "end": 101.365
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 101.715,
+   "end": 118.428,
+   "text": "Click Add first step and choose the trigger called On chat message. This is the Chat Trigger node. Every time someone sends a message, your workflow runs. n8n even gives you a hosted chat window for it, so you can talk to your workflow without building any interface.",
+   "words": [
+    {
+     "w": "Click",
+     "start": 101.715,
+     "end": 102.087
+    },
+    {
+     "w": "Add",
+     "start": 102.087,
+     "end": 102.31
+    },
+    {
+     "w": "first",
+     "start": 102.31,
+     "end": 102.682
+    },
+    {
+     "w": "step",
+     "start": 102.682,
+     "end": 102.98
+    },
+    {
+     "w": "and",
+     "start": 102.98,
+     "end": 103.203
+    },
+    {
+     "w": "choose",
+     "start": 103.203,
+     "end": 103.649
+    },
+    {
+     "w": "the",
+     "start": 103.649,
+     "end": 103.872
+    },
+    {
+     "w": "trigger",
+     "start": 103.872,
+     "end": 104.393
+    },
+    {
+     "w": "called",
+     "start": 104.393,
+     "end": 104.839
+    },
+    {
+     "w": "On",
+     "start": 104.839,
+     "end": 104.988
+    },
+    {
+     "w": "chat",
+     "start": 104.988,
+     "end": 105.285
+    },
+    {
+     "w": "message.",
+     "start": 105.285,
+     "end": 105.88
+    },
+    {
+     "w": "This",
+     "start": 105.88,
+     "end": 106.178
+    },
+    {
+     "w": "is",
+     "start": 106.178,
+     "end": 106.327
+    },
+    {
+     "w": "the",
+     "start": 106.327,
+     "end": 106.55
+    },
+    {
+     "w": "Chat",
+     "start": 106.55,
+     "end": 106.847
+    },
+    {
+     "w": "Trigger",
+     "start": 106.847,
+     "end": 107.368
+    },
+    {
+     "w": "node.",
+     "start": 107.368,
+     "end": 107.74
+    },
+    {
+     "w": "Every",
+     "start": 107.74,
+     "end": 108.112
+    },
+    {
+     "w": "time",
+     "start": 108.112,
+     "end": 108.409
+    },
+    {
+     "w": "someone",
+     "start": 108.409,
+     "end": 108.93
+    },
+    {
+     "w": "sends",
+     "start": 108.93,
+     "end": 109.302
+    },
+    {
+     "w": "a",
+     "start": 109.302,
+     "end": 109.376
+    },
+    {
+     "w": "message,",
+     "start": 109.376,
+     "end": 109.971
+    },
+    {
+     "w": "your",
+     "start": 109.971,
+     "end": 110.269
+    },
+    {
+     "w": "workflow",
+     "start": 110.269,
+     "end": 110.864
+    },
+    {
+     "w": "runs.",
+     "start": 110.864,
+     "end": 111.235
+    },
+    {
+     "w": "n8n",
+     "start": 111.235,
+     "end": 111.459
+    },
+    {
+     "w": "even",
+     "start": 111.459,
+     "end": 111.756
+    },
+    {
+     "w": "gives",
+     "start": 111.756,
+     "end": 112.128
+    },
+    {
+     "w": "you",
+     "start": 112.128,
+     "end": 112.351
+    },
+    {
+     "w": "a",
+     "start": 112.351,
+     "end": 112.425
+    },
+    {
+     "w": "hosted",
+     "start": 112.425,
+     "end": 112.872
+    },
+    {
+     "w": "chat",
+     "start": 112.872,
+     "end": 113.169
+    },
+    {
+     "w": "window",
+     "start": 113.169,
+     "end": 113.615
+    },
+    {
+     "w": "for",
+     "start": 113.615,
+     "end": 113.839
+    },
+    {
+     "w": "it,",
+     "start": 113.839,
+     "end": 114.062
+    },
+    {
+     "w": "so",
+     "start": 114.062,
+     "end": 114.21
+    },
+    {
+     "w": "you",
+     "start": 114.21,
+     "end": 114.434
+    },
+    {
+     "w": "can",
+     "start": 114.434,
+     "end": 114.657
+    },
+    {
+     "w": "talk",
+     "start": 114.657,
+     "end": 114.954
+    },
+    {
+     "w": "to",
+     "start": 114.954,
+     "end": 115.103
+    },
+    {
+     "w": "your",
+     "start": 115.103,
+     "end": 115.4
+    },
+    {
+     "w": "workflow",
+     "start": 115.4,
+     "end": 115.995
+    },
+    {
+     "w": "without",
+     "start": 115.995,
+     "end": 116.516
+    },
+    {
+     "w": "building",
+     "start": 116.516,
+     "end": 117.111
+    },
+    {
+     "w": "any",
+     "start": 117.111,
+     "end": 117.334
+    },
+    {
+     "w": "interface.",
+     "start": 117.334,
+     "end": 118.078
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 118.428,
+   "end": 123.066,
+   "text": "Now the part that turns a plain workflow into an AI automation.",
+   "words": [
+    {
+     "w": "Now",
+     "start": 118.428,
+     "end": 118.675
+    },
+    {
+     "w": "the",
+     "start": 118.675,
+     "end": 118.923
+    },
+    {
+     "w": "part",
+     "start": 118.923,
+     "end": 119.253
+    },
+    {
+     "w": "that",
+     "start": 119.253,
+     "end": 119.582
+    },
+    {
+     "w": "turns",
+     "start": 119.582,
+     "end": 119.995
+    },
+    {
+     "w": "a",
+     "start": 119.995,
+     "end": 120.077
+    },
+    {
+     "w": "plain",
+     "start": 120.077,
+     "end": 120.49
+    },
+    {
+     "w": "workflow",
+     "start": 120.49,
+     "end": 121.149
+    },
+    {
+     "w": "into",
+     "start": 121.149,
+     "end": 121.479
+    },
+    {
+     "w": "an",
+     "start": 121.479,
+     "end": 121.644
+    },
+    {
+     "w": "AI",
+     "start": 121.644,
+     "end": 121.809
+    },
+    {
+     "w": "automation.",
+     "start": 121.809,
+     "end": 122.716
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 123.066,
+   "end": 135.128,
+   "text": "Click the plus after the trigger and add the AI Agent node. The agent is the brain. You connect a chat model to it, and it decides which tools to use to finish the task you give it.",
+   "words": [
+    {
+     "w": "Click",
+     "start": 123.066,
+     "end": 123.473
+    },
+    {
+     "w": "the",
+     "start": 123.473,
+     "end": 123.717
+    },
+    {
+     "w": "plus",
+     "start": 123.717,
+     "end": 124.042
+    },
+    {
+     "w": "after",
+     "start": 124.042,
+     "end": 124.449
+    },
+    {
+     "w": "the",
+     "start": 124.449,
+     "end": 124.693
+    },
+    {
+     "w": "trigger",
+     "start": 124.693,
+     "end": 125.262
+    },
+    {
+     "w": "and",
+     "start": 125.262,
+     "end": 125.506
+    },
+    {
+     "w": "add",
+     "start": 125.506,
+     "end": 125.75
+    },
+    {
+     "w": "the",
+     "start": 125.75,
+     "end": 125.994
+    },
+    {
+     "w": "AI",
+     "start": 125.994,
+     "end": 126.157
+    },
+    {
+     "w": "Agent",
+     "start": 126.157,
+     "end": 126.563
+    },
+    {
+     "w": "node.",
+     "start": 126.563,
+     "end": 126.97
+    },
+    {
+     "w": "The",
+     "start": 126.97,
+     "end": 127.214
+    },
+    {
+     "w": "agent",
+     "start": 127.214,
+     "end": 127.621
+    },
+    {
+     "w": "is",
+     "start": 127.621,
+     "end": 127.783
+    },
+    {
+     "w": "the",
+     "start": 127.783,
+     "end": 128.027
+    },
+    {
+     "w": "brain.",
+     "start": 128.027,
+     "end": 128.515
+    },
+    {
+     "w": "You",
+     "start": 128.515,
+     "end": 128.759
+    },
+    {
+     "w": "connect",
+     "start": 128.759,
+     "end": 129.329
+    },
+    {
+     "w": "a",
+     "start": 129.329,
+     "end": 129.41
+    },
+    {
+     "w": "chat",
+     "start": 129.41,
+     "end": 129.735
+    },
+    {
+     "w": "model",
+     "start": 129.735,
+     "end": 130.142
+    },
+    {
+     "w": "to",
+     "start": 130.142,
+     "end": 130.305
+    },
+    {
+     "w": "it,",
+     "start": 130.305,
+     "end": 130.549
+    },
+    {
+     "w": "and",
+     "start": 130.549,
+     "end": 130.793
+    },
+    {
+     "w": "it",
+     "start": 130.793,
+     "end": 130.955
+    },
+    {
+     "w": "decides",
+     "start": 130.955,
+     "end": 131.525
+    },
+    {
+     "w": "which",
+     "start": 131.525,
+     "end": 131.931
+    },
+    {
+     "w": "tools",
+     "start": 131.931,
+     "end": 132.338
+    },
+    {
+     "w": "to",
+     "start": 132.338,
+     "end": 132.501
+    },
+    {
+     "w": "use",
+     "start": 132.501,
+     "end": 132.745
+    },
+    {
+     "w": "to",
+     "start": 132.745,
+     "end": 132.907
+    },
+    {
+     "w": "finish",
+     "start": 132.907,
+     "end": 133.395
+    },
+    {
+     "w": "the",
+     "start": 133.395,
+     "end": 133.639
+    },
+    {
+     "w": "task",
+     "start": 133.639,
+     "end": 133.965
+    },
+    {
+     "w": "you",
+     "start": 133.965,
+     "end": 134.209
+    },
+    {
+     "w": "give",
+     "start": 134.209,
+     "end": 134.534
+    },
+    {
+     "w": "it.",
+     "start": 134.534,
+     "end": 134.778
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 135.128,
+   "end": 140.129,
+   "text": "But right now the brain has nothing to think with, because it has no model.",
+   "words": [
+    {
+     "w": "But",
+     "start": 135.128,
+     "end": 135.357
+    },
+    {
+     "w": "right",
+     "start": 135.357,
+     "end": 135.738
+    },
+    {
+     "w": "now",
+     "start": 135.738,
+     "end": 135.967
+    },
+    {
+     "w": "the",
+     "start": 135.967,
+     "end": 136.195
+    },
+    {
+     "w": "brain",
+     "start": 136.195,
+     "end": 136.577
+    },
+    {
+     "w": "has",
+     "start": 136.577,
+     "end": 136.805
+    },
+    {
+     "w": "nothing",
+     "start": 136.805,
+     "end": 137.339
+    },
+    {
+     "w": "to",
+     "start": 137.339,
+     "end": 137.491
+    },
+    {
+     "w": "think",
+     "start": 137.491,
+     "end": 137.873
+    },
+    {
+     "w": "with,",
+     "start": 137.873,
+     "end": 138.254
+    },
+    {
+     "w": "because",
+     "start": 138.254,
+     "end": 138.788
+    },
+    {
+     "w": "it",
+     "start": 138.788,
+     "end": 138.94
+    },
+    {
+     "w": "has",
+     "start": 138.94,
+     "end": 139.169
+    },
+    {
+     "w": "no",
+     "start": 139.169,
+     "end": 139.321
+    },
+    {
+     "w": "model.",
+     "start": 139.321,
+     "end": 139.779
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 140.129,
+   "end": 156.116,
+   "text": "Under Chat Model, add the OpenAI Chat Model node, or a Google Gemini chat model if you want to start with a free Google AI key. n8n's own beginner template uses a free Google AI key for exactly that reason.",
+   "words": [
+    {
+     "w": "Under",
+     "start": 140.129,
+     "end": 140.597
+    },
+    {
+     "w": "Chat",
+     "start": 140.597,
+     "end": 140.971
+    },
+    {
+     "w": "Model,",
+     "start": 140.971,
+     "end": 141.533
+    },
+    {
+     "w": "add",
+     "start": 141.533,
+     "end": 141.814
+    },
+    {
+     "w": "the",
+     "start": 141.814,
+     "end": 142.095
+    },
+    {
+     "w": "OpenAI",
+     "start": 142.095,
+     "end": 142.657
+    },
+    {
+     "w": "Chat",
+     "start": 142.657,
+     "end": 143.031
+    },
+    {
+     "w": "Model",
+     "start": 143.031,
+     "end": 143.5
+    },
+    {
+     "w": "node,",
+     "start": 143.5,
+     "end": 143.968
+    },
+    {
+     "w": "or",
+     "start": 143.968,
+     "end": 144.155
+    },
+    {
+     "w": "a",
+     "start": 144.155,
+     "end": 144.249
+    },
+    {
+     "w": "Google",
+     "start": 144.249,
+     "end": 144.811
+    },
+    {
+     "w": "Gemini",
+     "start": 144.811,
+     "end": 145.372
+    },
+    {
+     "w": "chat",
+     "start": 145.372,
+     "end": 145.747
+    },
+    {
+     "w": "model",
+     "start": 145.747,
+     "end": 146.215
+    },
+    {
+     "w": "if",
+     "start": 146.215,
+     "end": 146.402
+    },
+    {
+     "w": "you",
+     "start": 146.402,
+     "end": 146.683
+    },
+    {
+     "w": "want",
+     "start": 146.683,
+     "end": 147.058
+    },
+    {
+     "w": "to",
+     "start": 147.058,
+     "end": 147.245
+    },
+    {
+     "w": "start",
+     "start": 147.245,
+     "end": 147.713
+    },
+    {
+     "w": "with",
+     "start": 147.713,
+     "end": 148.088
+    },
+    {
+     "w": "a",
+     "start": 148.088,
+     "end": 148.181
+    },
+    {
+     "w": "free",
+     "start": 148.181,
+     "end": 148.556
+    },
+    {
+     "w": "Google",
+     "start": 148.556,
+     "end": 149.118
+    },
+    {
+     "w": "AI",
+     "start": 149.118,
+     "end": 149.305
+    },
+    {
+     "w": "key.",
+     "start": 149.305,
+     "end": 149.68
+    },
+    {
+     "w": "n8n's",
+     "start": 149.68,
+     "end": 150.148
+    },
+    {
+     "w": "own",
+     "start": 150.148,
+     "end": 150.429
+    },
+    {
+     "w": "beginner",
+     "start": 150.429,
+     "end": 151.178
+    },
+    {
+     "w": "template",
+     "start": 151.178,
+     "end": 151.927
+    },
+    {
+     "w": "uses",
+     "start": 151.927,
+     "end": 152.301
+    },
+    {
+     "w": "a",
+     "start": 152.301,
+     "end": 152.395
+    },
+    {
+     "w": "free",
+     "start": 152.395,
+     "end": 152.77
+    },
+    {
+     "w": "Google",
+     "start": 152.77,
+     "end": 153.331
+    },
+    {
+     "w": "AI",
+     "start": 153.331,
+     "end": 153.519
+    },
+    {
+     "w": "key",
+     "start": 153.519,
+     "end": 153.8
+    },
+    {
+     "w": "for",
+     "start": 153.8,
+     "end": 154.081
+    },
+    {
+     "w": "exactly",
+     "start": 154.081,
+     "end": 154.736
+    },
+    {
+     "w": "that",
+     "start": 154.736,
+     "end": 155.111
+    },
+    {
+     "w": "reason.",
+     "start": 155.111,
+     "end": 155.766
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 156.116,
+   "end": 161.031,
+   "text": "Here is the mistake I promised, and it takes five seconds to avoid.",
+   "words": [
+    {
+     "w": "Here",
+     "start": 156.116,
+     "end": 156.448
+    },
+    {
+     "w": "is",
+     "start": 156.448,
+     "end": 156.614
+    },
+    {
+     "w": "the",
+     "start": 156.614,
+     "end": 156.863
+    },
+    {
+     "w": "mistake",
+     "start": 156.863,
+     "end": 157.444
+    },
+    {
+     "w": "I",
+     "start": 157.444,
+     "end": 157.527
+    },
+    {
+     "w": "promised,",
+     "start": 157.527,
+     "end": 158.274
+    },
+    {
+     "w": "and",
+     "start": 158.274,
+     "end": 158.523
+    },
+    {
+     "w": "it",
+     "start": 158.523,
+     "end": 158.689
+    },
+    {
+     "w": "takes",
+     "start": 158.689,
+     "end": 159.104
+    },
+    {
+     "w": "five",
+     "start": 159.104,
+     "end": 159.436
+    },
+    {
+     "w": "seconds",
+     "start": 159.436,
+     "end": 160.017
+    },
+    {
+     "w": "to",
+     "start": 160.017,
+     "end": 160.183
+    },
+    {
+     "w": "avoid.",
+     "start": 160.183,
+     "end": 160.681
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 161.031,
+   "end": 179.451,
+   "text": "In the model node, open the credential dropdown, choose Create New Credential, and paste your API key. Skip this and the node fails on its first run, and it looks like n8n is broken when it is only missing a key. Keep that key private. Never paste it into a chat or a public screenshot.",
+   "words": [
+    {
+     "w": "In",
+     "start": 161.031,
+     "end": 161.187
+    },
+    {
+     "w": "the",
+     "start": 161.187,
+     "end": 161.421
+    },
+    {
+     "w": "model",
+     "start": 161.421,
+     "end": 161.81
+    },
+    {
+     "w": "node,",
+     "start": 161.81,
+     "end": 162.2
+    },
+    {
+     "w": "open",
+     "start": 162.2,
+     "end": 162.511
+    },
+    {
+     "w": "the",
+     "start": 162.511,
+     "end": 162.745
+    },
+    {
+     "w": "credential",
+     "start": 162.745,
+     "end": 163.524
+    },
+    {
+     "w": "dropdown,",
+     "start": 163.524,
+     "end": 164.225
+    },
+    {
+     "w": "choose",
+     "start": 164.225,
+     "end": 164.692
+    },
+    {
+     "w": "Create",
+     "start": 164.692,
+     "end": 165.159
+    },
+    {
+     "w": "New",
+     "start": 165.159,
+     "end": 165.393
+    },
+    {
+     "w": "Credential,",
+     "start": 165.393,
+     "end": 166.25
+    },
+    {
+     "w": "and",
+     "start": 166.25,
+     "end": 166.483
+    },
+    {
+     "w": "paste",
+     "start": 166.483,
+     "end": 166.873
+    },
+    {
+     "w": "your",
+     "start": 166.873,
+     "end": 167.184
+    },
+    {
+     "w": "API",
+     "start": 167.184,
+     "end": 167.418
+    },
+    {
+     "w": "key.",
+     "start": 167.418,
+     "end": 167.729
+    },
+    {
+     "w": "Skip",
+     "start": 167.729,
+     "end": 168.041
+    },
+    {
+     "w": "this",
+     "start": 168.041,
+     "end": 168.353
+    },
+    {
+     "w": "and",
+     "start": 168.353,
+     "end": 168.586
+    },
+    {
+     "w": "the",
+     "start": 168.586,
+     "end": 168.82
+    },
+    {
+     "w": "node",
+     "start": 168.82,
+     "end": 169.131
+    },
+    {
+     "w": "fails",
+     "start": 169.131,
+     "end": 169.521
+    },
+    {
+     "w": "on",
+     "start": 169.521,
+     "end": 169.677
+    },
+    {
+     "w": "its",
+     "start": 169.677,
+     "end": 169.91
+    },
+    {
+     "w": "first",
+     "start": 169.91,
+     "end": 170.3
+    },
+    {
+     "w": "run,",
+     "start": 170.3,
+     "end": 170.611
+    },
+    {
+     "w": "and",
+     "start": 170.611,
+     "end": 170.845
+    },
+    {
+     "w": "it",
+     "start": 170.845,
+     "end": 171.001
+    },
+    {
+     "w": "looks",
+     "start": 171.001,
+     "end": 171.39
+    },
+    {
+     "w": "like",
+     "start": 171.39,
+     "end": 171.702
+    },
+    {
+     "w": "n8n",
+     "start": 171.702,
+     "end": 171.935
+    },
+    {
+     "w": "is",
+     "start": 171.935,
+     "end": 172.091
+    },
+    {
+     "w": "broken",
+     "start": 172.091,
+     "end": 172.558
+    },
+    {
+     "w": "when",
+     "start": 172.558,
+     "end": 172.87
+    },
+    {
+     "w": "it",
+     "start": 172.87,
+     "end": 173.026
+    },
+    {
+     "w": "is",
+     "start": 173.026,
+     "end": 173.181
+    },
+    {
+     "w": "only",
+     "start": 173.181,
+     "end": 173.493
+    },
+    {
+     "w": "missing",
+     "start": 173.493,
+     "end": 174.038
+    },
+    {
+     "w": "a",
+     "start": 174.038,
+     "end": 174.116
+    },
+    {
+     "w": "key.",
+     "start": 174.116,
+     "end": 174.428
+    },
+    {
+     "w": "Keep",
+     "start": 174.428,
+     "end": 174.739
+    },
+    {
+     "w": "that",
+     "start": 174.739,
+     "end": 175.051
+    },
+    {
+     "w": "key",
+     "start": 175.051,
+     "end": 175.284
+    },
+    {
+     "w": "private.",
+     "start": 175.284,
+     "end": 175.907
+    },
+    {
+     "w": "Never",
+     "start": 175.907,
+     "end": 176.297
+    },
+    {
+     "w": "paste",
+     "start": 176.297,
+     "end": 176.686
+    },
+    {
+     "w": "it",
+     "start": 176.686,
+     "end": 176.842
+    },
+    {
+     "w": "into",
+     "start": 176.842,
+     "end": 177.154
+    },
+    {
+     "w": "a",
+     "start": 177.154,
+     "end": 177.231
+    },
+    {
+     "w": "chat",
+     "start": 177.231,
+     "end": 177.543
+    },
+    {
+     "w": "or",
+     "start": 177.543,
+     "end": 177.699
+    },
+    {
+     "w": "a",
+     "start": 177.699,
+     "end": 177.777
+    },
+    {
+     "w": "public",
+     "start": 177.777,
+     "end": 178.244
+    },
+    {
+     "w": "screenshot.",
+     "start": 178.244,
+     "end": 179.101
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 179.451,
+   "end": 185.049,
+   "text": "Now you have a trigger, a brain and a model. Here is what each one is really doing.",
+   "words": [
+    {
+     "w": "Now",
+     "start": 179.451,
+     "end": 179.689
+    },
+    {
+     "w": "you",
+     "start": 179.689,
+     "end": 179.928
+    },
+    {
+     "w": "have",
+     "start": 179.928,
+     "end": 180.246
+    },
+    {
+     "w": "a",
+     "start": 180.246,
+     "end": 180.325
+    },
+    {
+     "w": "trigger,",
+     "start": 180.325,
+     "end": 180.961
+    },
+    {
+     "w": "a",
+     "start": 180.961,
+     "end": 181.041
+    },
+    {
+     "w": "brain",
+     "start": 181.041,
+     "end": 181.439
+    },
+    {
+     "w": "and",
+     "start": 181.439,
+     "end": 181.677
+    },
+    {
+     "w": "a",
+     "start": 181.677,
+     "end": 181.757
+    },
+    {
+     "w": "model.",
+     "start": 181.757,
+     "end": 182.234
+    },
+    {
+     "w": "Here",
+     "start": 182.234,
+     "end": 182.552
+    },
+    {
+     "w": "is",
+     "start": 182.552,
+     "end": 182.711
+    },
+    {
+     "w": "what",
+     "start": 182.711,
+     "end": 183.029
+    },
+    {
+     "w": "each",
+     "start": 183.029,
+     "end": 183.347
+    },
+    {
+     "w": "one",
+     "start": 183.347,
+     "end": 183.585
+    },
+    {
+     "w": "is",
+     "start": 183.585,
+     "end": 183.744
+    },
+    {
+     "w": "really",
+     "start": 183.744,
+     "end": 184.222
+    },
+    {
+     "w": "doing.",
+     "start": 184.222,
+     "end": 184.699
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 185.049,
+   "end": 202.828,
+   "text": "The Chat Trigger listens and passes the message along. The model reads it and writes language. The agent sits in the middle and decides what happens next. Three nodes, three jobs. When you build bigger automations later, you will keep asking the same question: which node owns this job?",
+   "words": [
+    {
+     "w": "The",
+     "start": 185.049,
+     "end": 185.268
+    },
+    {
+     "w": "Chat",
+     "start": 185.268,
+     "end": 185.561
+    },
+    {
+     "w": "Trigger",
+     "start": 185.561,
+     "end": 186.074
+    },
+    {
+     "w": "listens",
+     "start": 186.074,
+     "end": 186.587
+    },
+    {
+     "w": "and",
+     "start": 186.587,
+     "end": 186.806
+    },
+    {
+     "w": "passes",
+     "start": 186.806,
+     "end": 187.246
+    },
+    {
+     "w": "the",
+     "start": 187.246,
+     "end": 187.465
+    },
+    {
+     "w": "message",
+     "start": 187.465,
+     "end": 187.978
+    },
+    {
+     "w": "along.",
+     "start": 187.978,
+     "end": 188.417
+    },
+    {
+     "w": "The",
+     "start": 188.417,
+     "end": 188.637
+    },
+    {
+     "w": "model",
+     "start": 188.637,
+     "end": 189.003
+    },
+    {
+     "w": "reads",
+     "start": 189.003,
+     "end": 189.369
+    },
+    {
+     "w": "it",
+     "start": 189.369,
+     "end": 189.516
+    },
+    {
+     "w": "and",
+     "start": 189.516,
+     "end": 189.736
+    },
+    {
+     "w": "writes",
+     "start": 189.736,
+     "end": 190.175
+    },
+    {
+     "w": "language.",
+     "start": 190.175,
+     "end": 190.834
+    },
+    {
+     "w": "The",
+     "start": 190.834,
+     "end": 191.054
+    },
+    {
+     "w": "agent",
+     "start": 191.054,
+     "end": 191.42
+    },
+    {
+     "w": "sits",
+     "start": 191.42,
+     "end": 191.713
+    },
+    {
+     "w": "in",
+     "start": 191.713,
+     "end": 191.859
+    },
+    {
+     "w": "the",
+     "start": 191.859,
+     "end": 192.079
+    },
+    {
+     "w": "middle",
+     "start": 192.079,
+     "end": 192.518
+    },
+    {
+     "w": "and",
+     "start": 192.518,
+     "end": 192.738
+    },
+    {
+     "w": "decides",
+     "start": 192.738,
+     "end": 193.251
+    },
+    {
+     "w": "what",
+     "start": 193.251,
+     "end": 193.544
+    },
+    {
+     "w": "happens",
+     "start": 193.544,
+     "end": 194.056
+    },
+    {
+     "w": "next.",
+     "start": 194.056,
+     "end": 194.422
+    },
+    {
+     "w": "Three",
+     "start": 194.422,
+     "end": 194.789
+    },
+    {
+     "w": "nodes,",
+     "start": 194.789,
+     "end": 195.228
+    },
+    {
+     "w": "three",
+     "start": 195.228,
+     "end": 195.594
+    },
+    {
+     "w": "jobs.",
+     "start": 195.594,
+     "end": 195.96
+    },
+    {
+     "w": "When",
+     "start": 195.96,
+     "end": 196.253
+    },
+    {
+     "w": "you",
+     "start": 196.253,
+     "end": 196.473
+    },
+    {
+     "w": "build",
+     "start": 196.473,
+     "end": 196.839
+    },
+    {
+     "w": "bigger",
+     "start": 196.839,
+     "end": 197.278
+    },
+    {
+     "w": "automations",
+     "start": 197.278,
+     "end": 198.084
+    },
+    {
+     "w": "later,",
+     "start": 198.084,
+     "end": 198.523
+    },
+    {
+     "w": "you",
+     "start": 198.523,
+     "end": 198.743
+    },
+    {
+     "w": "will",
+     "start": 198.743,
+     "end": 199.036
+    },
+    {
+     "w": "keep",
+     "start": 199.036,
+     "end": 199.329
+    },
+    {
+     "w": "asking",
+     "start": 199.329,
+     "end": 199.768
+    },
+    {
+     "w": "the",
+     "start": 199.768,
+     "end": 199.988
+    },
+    {
+     "w": "same",
+     "start": 199.988,
+     "end": 200.281
+    },
+    {
+     "w": "question:",
+     "start": 200.281,
+     "end": 200.94
+    },
+    {
+     "w": "which",
+     "start": 200.94,
+     "end": 201.306
+    },
+    {
+     "w": "node",
+     "start": 201.306,
+     "end": 201.599
+    },
+    {
+     "w": "owns",
+     "start": 201.599,
+     "end": 201.892
+    },
+    {
+     "w": "this",
+     "start": 201.892,
+     "end": 202.185
+    },
+    {
+     "w": "job?",
+     "start": 202.185,
+     "end": 202.478
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 202.828,
+   "end": 215.253,
+   "text": "A chatbot only talks. An agent acts. To make that happen you attach tools. Click the plus under Tool on the AI Agent node and add something simple first, like the Date and Time tool.",
+   "words": [
+    {
+     "w": "A",
+     "start": 202.828,
+     "end": 202.91
+    },
+    {
+     "w": "chatbot",
+     "start": 202.91,
+     "end": 203.481
+    },
+    {
+     "w": "only",
+     "start": 203.481,
+     "end": 203.807
+    },
+    {
+     "w": "talks.",
+     "start": 203.807,
+     "end": 204.297
+    },
+    {
+     "w": "An",
+     "start": 204.297,
+     "end": 204.46
+    },
+    {
+     "w": "agent",
+     "start": 204.46,
+     "end": 204.868
+    },
+    {
+     "w": "acts.",
+     "start": 204.868,
+     "end": 205.276
+    },
+    {
+     "w": "To",
+     "start": 205.276,
+     "end": 205.439
+    },
+    {
+     "w": "make",
+     "start": 205.439,
+     "end": 205.765
+    },
+    {
+     "w": "that",
+     "start": 205.765,
+     "end": 206.091
+    },
+    {
+     "w": "happen",
+     "start": 206.091,
+     "end": 206.581
+    },
+    {
+     "w": "you",
+     "start": 206.581,
+     "end": 206.826
+    },
+    {
+     "w": "attach",
+     "start": 206.826,
+     "end": 207.315
+    },
+    {
+     "w": "tools.",
+     "start": 207.315,
+     "end": 207.805
+    },
+    {
+     "w": "Click",
+     "start": 207.805,
+     "end": 208.213
+    },
+    {
+     "w": "the",
+     "start": 208.213,
+     "end": 208.457
+    },
+    {
+     "w": "plus",
+     "start": 208.457,
+     "end": 208.784
+    },
+    {
+     "w": "under",
+     "start": 208.784,
+     "end": 209.192
+    },
+    {
+     "w": "Tool",
+     "start": 209.192,
+     "end": 209.518
+    },
+    {
+     "w": "on",
+     "start": 209.518,
+     "end": 209.681
+    },
+    {
+     "w": "the",
+     "start": 209.681,
+     "end": 209.926
+    },
+    {
+     "w": "AI",
+     "start": 209.926,
+     "end": 210.089
+    },
+    {
+     "w": "Agent",
+     "start": 210.089,
+     "end": 210.497
+    },
+    {
+     "w": "node",
+     "start": 210.497,
+     "end": 210.823
+    },
+    {
+     "w": "and",
+     "start": 210.823,
+     "end": 211.068
+    },
+    {
+     "w": "add",
+     "start": 211.068,
+     "end": 211.313
+    },
+    {
+     "w": "something",
+     "start": 211.313,
+     "end": 212.047
+    },
+    {
+     "w": "simple",
+     "start": 212.047,
+     "end": 212.537
+    },
+    {
+     "w": "first,",
+     "start": 212.537,
+     "end": 213.026
+    },
+    {
+     "w": "like",
+     "start": 213.026,
+     "end": 213.353
+    },
+    {
+     "w": "the",
+     "start": 213.353,
+     "end": 213.597
+    },
+    {
+     "w": "Date",
+     "start": 213.597,
+     "end": 213.924
+    },
+    {
+     "w": "and",
+     "start": 213.924,
+     "end": 214.168
+    },
+    {
+     "w": "Time",
+     "start": 214.168,
+     "end": 214.495
+    },
+    {
+     "w": "tool.",
+     "start": 214.495,
+     "end": 214.903
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 215.253,
+   "end": 218.611,
+   "text": "Watch what changes when you add that one tool.",
+   "words": [
+    {
+     "w": "Watch",
+     "start": 215.253,
+     "end": 215.648
+    },
+    {
+     "w": "what",
+     "start": 215.648,
+     "end": 215.965
+    },
+    {
+     "w": "changes",
+     "start": 215.965,
+     "end": 216.519
+    },
+    {
+     "w": "when",
+     "start": 216.519,
+     "end": 216.836
+    },
+    {
+     "w": "you",
+     "start": 216.836,
+     "end": 217.073
+    },
+    {
+     "w": "add",
+     "start": 217.073,
+     "end": 217.311
+    },
+    {
+     "w": "that",
+     "start": 217.311,
+     "end": 217.627
+    },
+    {
+     "w": "one",
+     "start": 217.627,
+     "end": 217.865
+    },
+    {
+     "w": "tool.",
+     "start": 217.865,
+     "end": 218.261
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 218.611,
+   "end": 232.678,
+   "text": "Ask the agent: what is the date three days from now? Without a tool, a language model has to guess. With the tool, the agent decides to call it, gets the real date, and answers from that. That decision is what makes it an agent.",
+   "words": [
+    {
+     "w": "Ask",
+     "start": 218.611,
+     "end": 218.834
+    },
+    {
+     "w": "the",
+     "start": 218.834,
+     "end": 219.058
+    },
+    {
+     "w": "agent:",
+     "start": 219.058,
+     "end": 219.505
+    },
+    {
+     "w": "what",
+     "start": 219.505,
+     "end": 219.803
+    },
+    {
+     "w": "is",
+     "start": 219.803,
+     "end": 219.953
+    },
+    {
+     "w": "the",
+     "start": 219.953,
+     "end": 220.176
+    },
+    {
+     "w": "date",
+     "start": 220.176,
+     "end": 220.474
+    },
+    {
+     "w": "three",
+     "start": 220.474,
+     "end": 220.847
+    },
+    {
+     "w": "days",
+     "start": 220.847,
+     "end": 221.145
+    },
+    {
+     "w": "from",
+     "start": 221.145,
+     "end": 221.444
+    },
+    {
+     "w": "now?",
+     "start": 221.444,
+     "end": 221.742
+    },
+    {
+     "w": "Without",
+     "start": 221.742,
+     "end": 222.264
+    },
+    {
+     "w": "a",
+     "start": 222.264,
+     "end": 222.338
+    },
+    {
+     "w": "tool,",
+     "start": 222.338,
+     "end": 222.711
+    },
+    {
+     "w": "a",
+     "start": 222.711,
+     "end": 222.786
+    },
+    {
+     "w": "language",
+     "start": 222.786,
+     "end": 223.382
+    },
+    {
+     "w": "model",
+     "start": 223.382,
+     "end": 223.755
+    },
+    {
+     "w": "has",
+     "start": 223.755,
+     "end": 223.978
+    },
+    {
+     "w": "to",
+     "start": 223.978,
+     "end": 224.127
+    },
+    {
+     "w": "guess.",
+     "start": 224.127,
+     "end": 224.575
+    },
+    {
+     "w": "With",
+     "start": 224.575,
+     "end": 224.873
+    },
+    {
+     "w": "the",
+     "start": 224.873,
+     "end": 225.097
+    },
+    {
+     "w": "tool,",
+     "start": 225.097,
+     "end": 225.469
+    },
+    {
+     "w": "the",
+     "start": 225.469,
+     "end": 225.693
+    },
+    {
+     "w": "agent",
+     "start": 225.693,
+     "end": 226.066
+    },
+    {
+     "w": "decides",
+     "start": 226.066,
+     "end": 226.588
+    },
+    {
+     "w": "to",
+     "start": 226.588,
+     "end": 226.737
+    },
+    {
+     "w": "call",
+     "start": 226.737,
+     "end": 227.035
+    },
+    {
+     "w": "it,",
+     "start": 227.035,
+     "end": 227.259
+    },
+    {
+     "w": "gets",
+     "start": 227.259,
+     "end": 227.557
+    },
+    {
+     "w": "the",
+     "start": 227.557,
+     "end": 227.78
+    },
+    {
+     "w": "real",
+     "start": 227.78,
+     "end": 228.079
+    },
+    {
+     "w": "date,",
+     "start": 228.079,
+     "end": 228.451
+    },
+    {
+     "w": "and",
+     "start": 228.451,
+     "end": 228.675
+    },
+    {
+     "w": "answers",
+     "start": 228.675,
+     "end": 229.197
+    },
+    {
+     "w": "from",
+     "start": 229.197,
+     "end": 229.495
+    },
+    {
+     "w": "that.",
+     "start": 229.495,
+     "end": 229.868
+    },
+    {
+     "w": "That",
+     "start": 229.868,
+     "end": 230.166
+    },
+    {
+     "w": "decision",
+     "start": 230.166,
+     "end": 230.762
+    },
+    {
+     "w": "is",
+     "start": 230.762,
+     "end": 230.912
+    },
+    {
+     "w": "what",
+     "start": 230.912,
+     "end": 231.21
+    },
+    {
+     "w": "makes",
+     "start": 231.21,
+     "end": 231.582
+    },
+    {
+     "w": "it",
+     "start": 231.582,
+     "end": 231.732
+    },
+    {
+     "w": "an",
+     "start": 231.732,
+     "end": 231.881
+    },
+    {
+     "w": "agent.",
+     "start": 231.881,
+     "end": 232.328
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 232.678,
+   "end": 237.935,
+   "text": "Next, tell the agent who it is, because a vague agent gives vague answers.",
+   "words": [
+    {
+     "w": "Next,",
+     "start": 232.678,
+     "end": 233.08
+    },
+    {
+     "w": "tell",
+     "start": 233.08,
+     "end": 233.402
+    },
+    {
+     "w": "the",
+     "start": 233.402,
+     "end": 233.643
+    },
+    {
+     "w": "agent",
+     "start": 233.643,
+     "end": 234.045
+    },
+    {
+     "w": "who",
+     "start": 234.045,
+     "end": 234.287
+    },
+    {
+     "w": "it",
+     "start": 234.287,
+     "end": 234.448
+    },
+    {
+     "w": "is,",
+     "start": 234.448,
+     "end": 234.689
+    },
+    {
+     "w": "because",
+     "start": 234.689,
+     "end": 235.252
+    },
+    {
+     "w": "a",
+     "start": 235.252,
+     "end": 235.332
+    },
+    {
+     "w": "vague",
+     "start": 235.332,
+     "end": 235.735
+    },
+    {
+     "w": "agent",
+     "start": 235.735,
+     "end": 236.137
+    },
+    {
+     "w": "gives",
+     "start": 236.137,
+     "end": 236.539
+    },
+    {
+     "w": "vague",
+     "start": 236.539,
+     "end": 236.941
+    },
+    {
+     "w": "answers.",
+     "start": 236.941,
+     "end": 237.585
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "start": 237.935,
+   "end": 253.773,
+   "text": "In the agent's options, add instructions: its job, its tone, and what it must never do. One clear sentence beats a long paragraph. For example: you are an assistant for my small business, answer in two sentences, and if you do not know, say so.",
+   "words": [
+    {
+     "w": "In",
+     "start": 237.935,
+     "end": 238.09
+    },
+    {
+     "w": "the",
+     "start": 238.09,
+     "end": 238.322
+    },
+    {
+     "w": "agent's",
+     "start": 238.322,
+     "end": 238.864
+    },
+    {
+     "w": "options,",
+     "start": 238.864,
+     "end": 239.483
+    },
+    {
+     "w": "add",
+     "start": 239.483,
+     "end": 239.716
+    },
+    {
+     "w": "instructions:",
+     "start": 239.716,
+     "end": 240.723
+    },
+    {
+     "w": "its",
+     "start": 240.723,
+     "end": 240.955
+    },
+    {
+     "w": "job,",
+     "start": 240.955,
+     "end": 241.265
+    },
+    {
+     "w": "its",
+     "start": 241.265,
+     "end": 241.497
+    },
+    {
+     "w": "tone,",
+     "start": 241.497,
+     "end": 241.884
+    },
+    {
+     "w": "and",
+     "start": 241.884,
+     "end": 242.116
+    },
+    {
+     "w": "what",
+     "start": 242.116,
+     "end": 242.426
+    },
+    {
+     "w": "it",
+     "start": 242.426,
+     "end": 242.581
+    },
+    {
+     "w": "must",
+     "start": 242.581,
+     "end": 242.891
+    },
+    {
+     "w": "never",
+     "start": 242.891,
+     "end": 243.278
+    },
+    {
+     "w": "do.",
+     "start": 243.278,
+     "end": 243.51
+    },
+    {
+     "w": "One",
+     "start": 243.51,
+     "end": 243.743
+    },
+    {
+     "w": "clear",
+     "start": 243.743,
+     "end": 244.13
+    },
+    {
+     "w": "sentence",
+     "start": 244.13,
+     "end": 244.749
+    },
+    {
+     "w": "beats",
+     "start": 244.749,
+     "end": 245.137
+    },
+    {
+     "w": "a",
+     "start": 245.137,
+     "end": 245.214
+    },
+    {
+     "w": "long",
+     "start": 245.214,
+     "end": 245.524
+    },
+    {
+     "w": "paragraph.",
+     "start": 245.524,
+     "end": 246.298
+    },
+    {
+     "w": "For",
+     "start": 246.298,
+     "end": 246.531
+    },
+    {
+     "w": "example:",
+     "start": 246.531,
+     "end": 247.15
+    },
+    {
+     "w": "you",
+     "start": 247.15,
+     "end": 247.382
+    },
+    {
+     "w": "are",
+     "start": 247.382,
+     "end": 247.615
+    },
+    {
+     "w": "an",
+     "start": 247.615,
+     "end": 247.77
+    },
+    {
+     "w": "assistant",
+     "start": 247.77,
+     "end": 248.467
+    },
+    {
+     "w": "for",
+     "start": 248.467,
+     "end": 248.699
+    },
+    {
+     "w": "my",
+     "start": 248.699,
+     "end": 248.854
+    },
+    {
+     "w": "small",
+     "start": 248.854,
+     "end": 249.241
+    },
+    {
+     "w": "business,",
+     "start": 249.241,
+     "end": 249.938
+    },
+    {
+     "w": "answer",
+     "start": 249.938,
+     "end": 250.403
+    },
+    {
+     "w": "in",
+     "start": 250.403,
+     "end": 250.557
+    },
+    {
+     "w": "two",
+     "start": 250.557,
+     "end": 250.79
+    },
+    {
+     "w": "sentences,",
+     "start": 250.79,
+     "end": 251.564
+    },
+    {
+     "w": "and",
+     "start": 251.564,
+     "end": 251.796
+    },
+    {
+     "w": "if",
+     "start": 251.796,
+     "end": 251.951
+    },
+    {
+     "w": "you",
+     "start": 251.951,
+     "end": 252.184
+    },
+    {
+     "w": "do",
+     "start": 252.184,
+     "end": 252.339
+    },
+    {
+     "w": "not",
+     "start": 252.339,
+     "end": 252.571
+    },
+    {
+     "w": "know,",
+     "start": 252.571,
+     "end": 252.958
+    },
+    {
+     "w": "say",
+     "start": 252.958,
+     "end": 253.19
+    },
+    {
+     "w": "so.",
+     "start": 253.19,
+     "end": 253.423
+    }
+   ]
+  },
+  {
+   "id": "s24",
+   "start": 253.773,
+   "end": 269.696,
+   "text": "Click Execute Workflow, or open the chat and send a message. That is a manual execution, made for testing. Open each node and read its output panel. You see exactly what went in and what came out, so debugging becomes reading instead of guessing.",
+   "words": [
+    {
+     "w": "Click",
+     "start": 253.773,
+     "end": 254.156
+    },
+    {
+     "w": "Execute",
+     "start": 254.156,
+     "end": 254.693
+    },
+    {
+     "w": "Workflow,",
+     "start": 254.693,
+     "end": 255.384
+    },
+    {
+     "w": "or",
+     "start": 255.384,
+     "end": 255.537
+    },
+    {
+     "w": "open",
+     "start": 255.537,
+     "end": 255.844
+    },
+    {
+     "w": "the",
+     "start": 255.844,
+     "end": 256.074
+    },
+    {
+     "w": "chat",
+     "start": 256.074,
+     "end": 256.381
+    },
+    {
+     "w": "and",
+     "start": 256.381,
+     "end": 256.611
+    },
+    {
+     "w": "send",
+     "start": 256.611,
+     "end": 256.918
+    },
+    {
+     "w": "a",
+     "start": 256.918,
+     "end": 256.995
+    },
+    {
+     "w": "message.",
+     "start": 256.995,
+     "end": 257.608
+    },
+    {
+     "w": "That",
+     "start": 257.608,
+     "end": 257.915
+    },
+    {
+     "w": "is",
+     "start": 257.915,
+     "end": 258.069
+    },
+    {
+     "w": "a",
+     "start": 258.069,
+     "end": 258.145
+    },
+    {
+     "w": "manual",
+     "start": 258.145,
+     "end": 258.606
+    },
+    {
+     "w": "execution,",
+     "start": 258.606,
+     "end": 259.373
+    },
+    {
+     "w": "made",
+     "start": 259.373,
+     "end": 259.68
+    },
+    {
+     "w": "for",
+     "start": 259.68,
+     "end": 259.91
+    },
+    {
+     "w": "testing.",
+     "start": 259.91,
+     "end": 260.524
+    },
+    {
+     "w": "Open",
+     "start": 260.524,
+     "end": 260.831
+    },
+    {
+     "w": "each",
+     "start": 260.831,
+     "end": 261.137
+    },
+    {
+     "w": "node",
+     "start": 261.137,
+     "end": 261.444
+    },
+    {
+     "w": "and",
+     "start": 261.444,
+     "end": 261.674
+    },
+    {
+     "w": "read",
+     "start": 261.674,
+     "end": 261.981
+    },
+    {
+     "w": "its",
+     "start": 261.981,
+     "end": 262.211
+    },
+    {
+     "w": "output",
+     "start": 262.211,
+     "end": 262.672
+    },
+    {
+     "w": "panel.",
+     "start": 262.672,
+     "end": 263.132
+    },
+    {
+     "w": "You",
+     "start": 263.132,
+     "end": 263.362
+    },
+    {
+     "w": "see",
+     "start": 263.362,
+     "end": 263.592
+    },
+    {
+     "w": "exactly",
+     "start": 263.592,
+     "end": 264.129
+    },
+    {
+     "w": "what",
+     "start": 264.129,
+     "end": 264.436
+    },
+    {
+     "w": "went",
+     "start": 264.436,
+     "end": 264.743
+    },
+    {
+     "w": "in",
+     "start": 264.743,
+     "end": 264.896
+    },
+    {
+     "w": "and",
+     "start": 264.896,
+     "end": 265.127
+    },
+    {
+     "w": "what",
+     "start": 265.127,
+     "end": 265.433
+    },
+    {
+     "w": "came",
+     "start": 265.433,
+     "end": 265.74
+    },
+    {
+     "w": "out,",
+     "start": 265.74,
+     "end": 266.047
+    },
+    {
+     "w": "so",
+     "start": 266.047,
+     "end": 266.201
+    },
+    {
+     "w": "debugging",
+     "start": 266.201,
+     "end": 266.891
+    },
+    {
+     "w": "becomes",
+     "start": 266.891,
+     "end": 267.428
+    },
+    {
+     "w": "reading",
+     "start": 267.428,
+     "end": 267.965
+    },
+    {
+     "w": "instead",
+     "start": 267.965,
+     "end": 268.502
+    },
+    {
+     "w": "of",
+     "start": 268.502,
+     "end": 268.656
+    },
+    {
+     "w": "guessing.",
+     "start": 268.656,
+     "end": 269.346
+    }
+   ]
+  },
+  {
+   "id": "s25",
+   "start": 269.696,
+   "end": 274.057,
+   "text": "This is the habit that separates beginners from people who ship.",
+   "words": [
+    {
+     "w": "This",
+     "start": 269.696,
+     "end": 269.993
+    },
+    {
+     "w": "is",
+     "start": 269.993,
+     "end": 270.142
+    },
+    {
+     "w": "the",
+     "start": 270.142,
+     "end": 270.364
+    },
+    {
+     "w": "habit",
+     "start": 270.364,
+     "end": 270.736
+    },
+    {
+     "w": "that",
+     "start": 270.736,
+     "end": 271.033
+    },
+    {
+     "w": "separates",
+     "start": 271.033,
+     "end": 271.701
+    },
+    {
+     "w": "beginners",
+     "start": 271.701,
+     "end": 272.37
+    },
+    {
+     "w": "from",
+     "start": 272.37,
+     "end": 272.667
+    },
+    {
+     "w": "people",
+     "start": 272.667,
+     "end": 273.112
+    },
+    {
+     "w": "who",
+     "start": 273.112,
+     "end": 273.335
+    },
+    {
+     "w": "ship.",
+     "start": 273.335,
+     "end": 273.707
+    }
+   ]
+  },
+  {
+   "id": "s26",
+   "start": 274.057,
+   "end": 292.967,
+   "text": "Before you change anything, read the output of the node before the problem. Most mistakes are not clever. A field is empty, a connection is missing, or the wrong thing was passed in. Check what went in, check what came out, then change one thing at a time. If you change three things at once, you will never know which one fixed it.",
+   "words": [
+    {
+     "w": "Before",
+     "start": 274.057,
+     "end": 274.469
+    },
+    {
+     "w": "you",
+     "start": 274.469,
+     "end": 274.675
+    },
+    {
+     "w": "change",
+     "start": 274.675,
+     "end": 275.088
+    },
+    {
+     "w": "anything,",
+     "start": 275.088,
+     "end": 275.706
+    },
+    {
+     "w": "read",
+     "start": 275.706,
+     "end": 275.981
+    },
+    {
+     "w": "the",
+     "start": 275.981,
+     "end": 276.188
+    },
+    {
+     "w": "output",
+     "start": 276.188,
+     "end": 276.6
+    },
+    {
+     "w": "of",
+     "start": 276.6,
+     "end": 276.738
+    },
+    {
+     "w": "the",
+     "start": 276.738,
+     "end": 276.944
+    },
+    {
+     "w": "node",
+     "start": 276.944,
+     "end": 277.219
+    },
+    {
+     "w": "before",
+     "start": 277.219,
+     "end": 277.631
+    },
+    {
+     "w": "the",
+     "start": 277.631,
+     "end": 277.837
+    },
+    {
+     "w": "problem.",
+     "start": 277.837,
+     "end": 278.387
+    },
+    {
+     "w": "Most",
+     "start": 278.387,
+     "end": 278.662
+    },
+    {
+     "w": "mistakes",
+     "start": 278.662,
+     "end": 279.212
+    },
+    {
+     "w": "are",
+     "start": 279.212,
+     "end": 279.418
+    },
+    {
+     "w": "not",
+     "start": 279.418,
+     "end": 279.625
+    },
+    {
+     "w": "clever.",
+     "start": 279.625,
+     "end": 280.106
+    },
+    {
+     "w": "A",
+     "start": 280.106,
+     "end": 280.175
+    },
+    {
+     "w": "field",
+     "start": 280.175,
+     "end": 280.518
+    },
+    {
+     "w": "is",
+     "start": 280.518,
+     "end": 280.656
+    },
+    {
+     "w": "empty,",
+     "start": 280.656,
+     "end": 281.068
+    },
+    {
+     "w": "a",
+     "start": 281.068,
+     "end": 281.137
+    },
+    {
+     "w": "connection",
+     "start": 281.137,
+     "end": 281.824
+    },
+    {
+     "w": "is",
+     "start": 281.824,
+     "end": 281.962
+    },
+    {
+     "w": "missing,",
+     "start": 281.962,
+     "end": 282.512
+    },
+    {
+     "w": "or",
+     "start": 282.512,
+     "end": 282.649
+    },
+    {
+     "w": "the",
+     "start": 282.649,
+     "end": 282.855
+    },
+    {
+     "w": "wrong",
+     "start": 282.855,
+     "end": 283.199
+    },
+    {
+     "w": "thing",
+     "start": 283.199,
+     "end": 283.543
+    },
+    {
+     "w": "was",
+     "start": 283.543,
+     "end": 283.749
+    },
+    {
+     "w": "passed",
+     "start": 283.749,
+     "end": 284.162
+    },
+    {
+     "w": "in.",
+     "start": 284.162,
+     "end": 284.368
+    },
+    {
+     "w": "Check",
+     "start": 284.368,
+     "end": 284.711
+    },
+    {
+     "w": "what",
+     "start": 284.711,
+     "end": 284.986
+    },
+    {
+     "w": "went",
+     "start": 284.986,
+     "end": 285.261
+    },
+    {
+     "w": "in,",
+     "start": 285.261,
+     "end": 285.468
+    },
+    {
+     "w": "check",
+     "start": 285.468,
+     "end": 285.811
+    },
+    {
+     "w": "what",
+     "start": 285.811,
+     "end": 286.086
+    },
+    {
+     "w": "came",
+     "start": 286.086,
+     "end": 286.361
+    },
+    {
+     "w": "out,",
+     "start": 286.361,
+     "end": 286.636
+    },
+    {
+     "w": "then",
+     "start": 286.636,
+     "end": 286.911
+    },
+    {
+     "w": "change",
+     "start": 286.911,
+     "end": 287.324
+    },
+    {
+     "w": "one",
+     "start": 287.324,
+     "end": 287.53
+    },
+    {
+     "w": "thing",
+     "start": 287.53,
+     "end": 287.874
+    },
+    {
+     "w": "at",
+     "start": 287.874,
+     "end": 288.011
+    },
+    {
+     "w": "a",
+     "start": 288.011,
+     "end": 288.08
+    },
+    {
+     "w": "time.",
+     "start": 288.08,
+     "end": 288.423
+    },
+    {
+     "w": "If",
+     "start": 288.423,
+     "end": 288.561
+    },
+    {
+     "w": "you",
+     "start": 288.561,
+     "end": 288.767
+    },
+    {
+     "w": "change",
+     "start": 288.767,
+     "end": 289.18
+    },
+    {
+     "w": "three",
+     "start": 289.18,
+     "end": 289.523
+    },
+    {
+     "w": "things",
+     "start": 289.523,
+     "end": 289.936
+    },
+    {
+     "w": "at",
+     "start": 289.936,
+     "end": 290.073
+    },
+    {
+     "w": "once,",
+     "start": 290.073,
+     "end": 290.417
+    },
+    {
+     "w": "you",
+     "start": 290.417,
+     "end": 290.623
+    },
+    {
+     "w": "will",
+     "start": 290.623,
+     "end": 290.898
+    },
+    {
+     "w": "never",
+     "start": 290.898,
+     "end": 291.242
+    },
+    {
+     "w": "know",
+     "start": 291.242,
+     "end": 291.517
+    },
+    {
+     "w": "which",
+     "start": 291.517,
+     "end": 291.861
+    },
+    {
+     "w": "one",
+     "start": 291.861,
+     "end": 292.067
+    },
+    {
+     "w": "fixed",
+     "start": 292.067,
+     "end": 292.41
+    },
+    {
+     "w": "it.",
+     "start": 292.41,
+     "end": 292.617
+    }
+   ]
+  },
+  {
+   "id": "s27",
+   "start": 292.967,
+   "end": 298.117,
+   "text": "When something breaks, it breaks in one node, and n8n shows you which one.",
+   "words": [
+    {
+     "w": "When",
+     "start": 292.967,
+     "end": 293.281
+    },
+    {
+     "w": "something",
+     "start": 293.281,
+     "end": 293.99
+    },
+    {
+     "w": "breaks,",
+     "start": 293.99,
+     "end": 294.54
+    },
+    {
+     "w": "it",
+     "start": 294.54,
+     "end": 294.698
+    },
+    {
+     "w": "breaks",
+     "start": 294.698,
+     "end": 295.17
+    },
+    {
+     "w": "in",
+     "start": 295.17,
+     "end": 295.327
+    },
+    {
+     "w": "one",
+     "start": 295.327,
+     "end": 295.563
+    },
+    {
+     "w": "node,",
+     "start": 295.563,
+     "end": 295.957
+    },
+    {
+     "w": "and",
+     "start": 295.957,
+     "end": 296.193
+    },
+    {
+     "w": "n8n",
+     "start": 296.193,
+     "end": 296.429
+    },
+    {
+     "w": "shows",
+     "start": 296.429,
+     "end": 296.822
+    },
+    {
+     "w": "you",
+     "start": 296.822,
+     "end": 297.058
+    },
+    {
+     "w": "which",
+     "start": 297.058,
+     "end": 297.452
+    },
+    {
+     "w": "one.",
+     "start": 297.452,
+     "end": 297.767
+    }
+   ]
+  },
+  {
+   "id": "s28",
+   "start": 298.117,
+   "end": 309.624,
+   "text": "A red node means open it and read the error. Start with the basics: credentials, missing connections, and empty fields. Fix one thing, run it again, and watch the output change.",
+   "words": [
+    {
+     "w": "A",
+     "start": 298.117,
+     "end": 298.193
+    },
+    {
+     "w": "red",
+     "start": 298.193,
+     "end": 298.42
+    },
+    {
+     "w": "node",
+     "start": 298.42,
+     "end": 298.724
+    },
+    {
+     "w": "means",
+     "start": 298.724,
+     "end": 299.103
+    },
+    {
+     "w": "open",
+     "start": 299.103,
+     "end": 299.407
+    },
+    {
+     "w": "it",
+     "start": 299.407,
+     "end": 299.559
+    },
+    {
+     "w": "and",
+     "start": 299.559,
+     "end": 299.786
+    },
+    {
+     "w": "read",
+     "start": 299.786,
+     "end": 300.09
+    },
+    {
+     "w": "the",
+     "start": 300.09,
+     "end": 300.318
+    },
+    {
+     "w": "error.",
+     "start": 300.318,
+     "end": 300.773
+    },
+    {
+     "w": "Start",
+     "start": 300.773,
+     "end": 301.153
+    },
+    {
+     "w": "with",
+     "start": 301.153,
+     "end": 301.456
+    },
+    {
+     "w": "the",
+     "start": 301.456,
+     "end": 301.684
+    },
+    {
+     "w": "basics:",
+     "start": 301.684,
+     "end": 302.215
+    },
+    {
+     "w": "credentials,",
+     "start": 302.215,
+     "end": 303.126
+    },
+    {
+     "w": "missing",
+     "start": 303.126,
+     "end": 303.657
+    },
+    {
+     "w": "connections,",
+     "start": 303.657,
+     "end": 304.568
+    },
+    {
+     "w": "and",
+     "start": 304.568,
+     "end": 304.796
+    },
+    {
+     "w": "empty",
+     "start": 304.796,
+     "end": 305.175
+    },
+    {
+     "w": "fields.",
+     "start": 305.175,
+     "end": 305.707
+    },
+    {
+     "w": "Fix",
+     "start": 305.707,
+     "end": 305.934
+    },
+    {
+     "w": "one",
+     "start": 305.934,
+     "end": 306.162
+    },
+    {
+     "w": "thing,",
+     "start": 306.162,
+     "end": 306.617
+    },
+    {
+     "w": "run",
+     "start": 306.617,
+     "end": 306.845
+    },
+    {
+     "w": "it",
+     "start": 306.845,
+     "end": 306.997
+    },
+    {
+     "w": "again,",
+     "start": 306.997,
+     "end": 307.452
+    },
+    {
+     "w": "and",
+     "start": 307.452,
+     "end": 307.68
+    },
+    {
+     "w": "watch",
+     "start": 307.68,
+     "end": 308.06
+    },
+    {
+     "w": "the",
+     "start": 308.06,
+     "end": 308.287
+    },
+    {
+     "w": "output",
+     "start": 308.287,
+     "end": 308.743
+    },
+    {
+     "w": "change.",
+     "start": 308.743,
+     "end": 309.274
+    }
+   ]
+  },
+  {
+   "id": "s29",
+   "start": 309.624,
+   "end": 313.302,
+   "text": "One more habit before we make this run on its own.",
+   "words": [
+    {
+     "w": "One",
+     "start": 309.624,
+     "end": 309.874
+    },
+    {
+     "w": "more",
+     "start": 309.874,
+     "end": 310.206
+    },
+    {
+     "w": "habit",
+     "start": 310.206,
+     "end": 310.622
+    },
+    {
+     "w": "before",
+     "start": 310.622,
+     "end": 311.122
+    },
+    {
+     "w": "we",
+     "start": 311.122,
+     "end": 311.288
+    },
+    {
+     "w": "make",
+     "start": 311.288,
+     "end": 311.621
+    },
+    {
+     "w": "this",
+     "start": 311.621,
+     "end": 311.954
+    },
+    {
+     "w": "run",
+     "start": 311.954,
+     "end": 312.203
+    },
+    {
+     "w": "on",
+     "start": 312.203,
+     "end": 312.37
+    },
+    {
+     "w": "its",
+     "start": 312.37,
+     "end": 312.619
+    },
+    {
+     "w": "own.",
+     "start": 312.619,
+     "end": 312.952
+    }
+   ]
+  },
+  {
+   "id": "s30",
+   "start": 313.302,
+   "end": 326.324,
+   "text": "Change the question and run it again. Try five very different questions. If the answers stay useful across all five, your agent is ready. If one answer is wrong, fix the instructions, not the model.",
+   "words": [
+    {
+     "w": "Change",
+     "start": 313.302,
+     "end": 313.766
+    },
+    {
+     "w": "the",
+     "start": 313.766,
+     "end": 313.997
+    },
+    {
+     "w": "question",
+     "start": 313.997,
+     "end": 314.616
+    },
+    {
+     "w": "and",
+     "start": 314.616,
+     "end": 314.847
+    },
+    {
+     "w": "run",
+     "start": 314.847,
+     "end": 315.079
+    },
+    {
+     "w": "it",
+     "start": 315.079,
+     "end": 315.234
+    },
+    {
+     "w": "again.",
+     "start": 315.234,
+     "end": 315.697
+    },
+    {
+     "w": "Try",
+     "start": 315.697,
+     "end": 315.929
+    },
+    {
+     "w": "five",
+     "start": 315.929,
+     "end": 316.238
+    },
+    {
+     "w": "very",
+     "start": 316.238,
+     "end": 316.547
+    },
+    {
+     "w": "different",
+     "start": 316.547,
+     "end": 317.243
+    },
+    {
+     "w": "questions.",
+     "start": 317.243,
+     "end": 318.015
+    },
+    {
+     "w": "If",
+     "start": 318.015,
+     "end": 318.17
+    },
+    {
+     "w": "the",
+     "start": 318.17,
+     "end": 318.402
+    },
+    {
+     "w": "answers",
+     "start": 318.402,
+     "end": 318.943
+    },
+    {
+     "w": "stay",
+     "start": 318.943,
+     "end": 319.252
+    },
+    {
+     "w": "useful",
+     "start": 319.252,
+     "end": 319.715
+    },
+    {
+     "w": "across",
+     "start": 319.715,
+     "end": 320.179
+    },
+    {
+     "w": "all",
+     "start": 320.179,
+     "end": 320.411
+    },
+    {
+     "w": "five,",
+     "start": 320.411,
+     "end": 320.797
+    },
+    {
+     "w": "your",
+     "start": 320.797,
+     "end": 321.106
+    },
+    {
+     "w": "agent",
+     "start": 321.106,
+     "end": 321.492
+    },
+    {
+     "w": "is",
+     "start": 321.492,
+     "end": 321.647
+    },
+    {
+     "w": "ready.",
+     "start": 321.647,
+     "end": 322.111
+    },
+    {
+     "w": "If",
+     "start": 322.111,
+     "end": 322.265
+    },
+    {
+     "w": "one",
+     "start": 322.265,
+     "end": 322.497
+    },
+    {
+     "w": "answer",
+     "start": 322.497,
+     "end": 322.961
+    },
+    {
+     "w": "is",
+     "start": 322.961,
+     "end": 323.115
+    },
+    {
+     "w": "wrong,",
+     "start": 323.115,
+     "end": 323.579
+    },
+    {
+     "w": "fix",
+     "start": 323.579,
+     "end": 323.81
+    },
+    {
+     "w": "the",
+     "start": 323.81,
+     "end": 324.042
+    },
+    {
+     "w": "instructions,",
+     "start": 324.042,
+     "end": 325.047
+    },
+    {
+     "w": "not",
+     "start": 325.047,
+     "end": 325.279
+    },
+    {
+     "w": "the",
+     "start": 325.279,
+     "end": 325.51
+    },
+    {
+     "w": "model.",
+     "start": 325.51,
+     "end": 325.974
+    }
+   ]
+  },
+  {
+   "id": "s31",
+   "start": 326.324,
+   "end": 329.831,
+   "text": "Pause here, because this is where people over-build.",
+   "words": [
+    {
+     "w": "Pause",
+     "start": 326.324,
+     "end": 326.675
+    },
+    {
+     "w": "here,",
+     "start": 326.675,
+     "end": 327.026
+    },
+    {
+     "w": "because",
+     "start": 327.026,
+     "end": 327.517
+    },
+    {
+     "w": "this",
+     "start": 327.517,
+     "end": 327.797
+    },
+    {
+     "w": "is",
+     "start": 327.797,
+     "end": 327.938
+    },
+    {
+     "w": "where",
+     "start": 327.938,
+     "end": 328.289
+    },
+    {
+     "w": "people",
+     "start": 328.289,
+     "end": 328.71
+    },
+    {
+     "w": "over-build.",
+     "start": 328.71,
+     "end": 329.481
+    }
+   ]
+  },
+  {
+   "id": "s32",
+   "start": 329.831,
+   "end": 347.845,
+   "text": "You do not need ten nodes. You need one workflow that works from start to finish. A small automation that runs every day beats a giant one that never leaves your screen. Finish the loop first: message in, thought, tool call, answer out. Then, and only then, add the next idea on top of it.",
+   "words": [
+    {
+     "w": "You",
+     "start": 329.831,
+     "end": 330.057
+    },
+    {
+     "w": "do",
+     "start": 330.057,
+     "end": 330.207
+    },
+    {
+     "w": "not",
+     "start": 330.207,
+     "end": 330.433
+    },
+    {
+     "w": "need",
+     "start": 330.433,
+     "end": 330.733
+    },
+    {
+     "w": "ten",
+     "start": 330.733,
+     "end": 330.959
+    },
+    {
+     "w": "nodes.",
+     "start": 330.959,
+     "end": 331.41
+    },
+    {
+     "w": "You",
+     "start": 331.41,
+     "end": 331.635
+    },
+    {
+     "w": "need",
+     "start": 331.635,
+     "end": 331.936
+    },
+    {
+     "w": "one",
+     "start": 331.936,
+     "end": 332.161
+    },
+    {
+     "w": "workflow",
+     "start": 332.161,
+     "end": 332.763
+    },
+    {
+     "w": "that",
+     "start": 332.763,
+     "end": 333.063
+    },
+    {
+     "w": "works",
+     "start": 333.063,
+     "end": 333.439
+    },
+    {
+     "w": "from",
+     "start": 333.439,
+     "end": 333.74
+    },
+    {
+     "w": "start",
+     "start": 333.74,
+     "end": 334.116
+    },
+    {
+     "w": "to",
+     "start": 334.116,
+     "end": 334.266
+    },
+    {
+     "w": "finish.",
+     "start": 334.266,
+     "end": 334.792
+    },
+    {
+     "w": "A",
+     "start": 334.792,
+     "end": 334.867
+    },
+    {
+     "w": "small",
+     "start": 334.867,
+     "end": 335.243
+    },
+    {
+     "w": "automation",
+     "start": 335.243,
+     "end": 335.995
+    },
+    {
+     "w": "that",
+     "start": 335.995,
+     "end": 336.296
+    },
+    {
+     "w": "runs",
+     "start": 336.296,
+     "end": 336.596
+    },
+    {
+     "w": "every",
+     "start": 336.596,
+     "end": 336.972
+    },
+    {
+     "w": "day",
+     "start": 336.972,
+     "end": 337.198
+    },
+    {
+     "w": "beats",
+     "start": 337.198,
+     "end": 337.573
+    },
+    {
+     "w": "a",
+     "start": 337.573,
+     "end": 337.649
+    },
+    {
+     "w": "giant",
+     "start": 337.649,
+     "end": 338.024
+    },
+    {
+     "w": "one",
+     "start": 338.024,
+     "end": 338.25
+    },
+    {
+     "w": "that",
+     "start": 338.25,
+     "end": 338.551
+    },
+    {
+     "w": "never",
+     "start": 338.551,
+     "end": 338.926
+    },
+    {
+     "w": "leaves",
+     "start": 338.926,
+     "end": 339.377
+    },
+    {
+     "w": "your",
+     "start": 339.377,
+     "end": 339.678
+    },
+    {
+     "w": "screen.",
+     "start": 339.678,
+     "end": 340.204
+    },
+    {
+     "w": "Finish",
+     "start": 340.204,
+     "end": 340.655
+    },
+    {
+     "w": "the",
+     "start": 340.655,
+     "end": 340.881
+    },
+    {
+     "w": "loop",
+     "start": 340.881,
+     "end": 341.181
+    },
+    {
+     "w": "first:",
+     "start": 341.181,
+     "end": 341.632
+    },
+    {
+     "w": "message",
+     "start": 341.632,
+     "end": 342.159
+    },
+    {
+     "w": "in,",
+     "start": 342.159,
+     "end": 342.384
+    },
+    {
+     "w": "thought,",
+     "start": 342.384,
+     "end": 342.985
+    },
+    {
+     "w": "tool",
+     "start": 342.985,
+     "end": 343.286
+    },
+    {
+     "w": "call,",
+     "start": 343.286,
+     "end": 343.662
+    },
+    {
+     "w": "answer",
+     "start": 343.662,
+     "end": 344.113
+    },
+    {
+     "w": "out.",
+     "start": 344.113,
+     "end": 344.414
+    },
+    {
+     "w": "Then,",
+     "start": 344.414,
+     "end": 344.789
+    },
+    {
+     "w": "and",
+     "start": 344.789,
+     "end": 345.015
+    },
+    {
+     "w": "only",
+     "start": 345.015,
+     "end": 345.316
+    },
+    {
+     "w": "then,",
+     "start": 345.316,
+     "end": 345.691
+    },
+    {
+     "w": "add",
+     "start": 345.691,
+     "end": 345.917
+    },
+    {
+     "w": "the",
+     "start": 345.917,
+     "end": 346.142
+    },
+    {
+     "w": "next",
+     "start": 346.142,
+     "end": 346.443
+    },
+    {
+     "w": "idea",
+     "start": 346.443,
+     "end": 346.744
+    },
+    {
+     "w": "on",
+     "start": 346.744,
+     "end": 346.894
+    },
+    {
+     "w": "top",
+     "start": 346.894,
+     "end": 347.12
+    },
+    {
+     "w": "of",
+     "start": 347.12,
+     "end": 347.27
+    },
+    {
+     "w": "it.",
+     "start": 347.27,
+     "end": 347.495
+    }
+   ]
+  },
+  {
+   "id": "s33",
+   "start": 347.845,
+   "end": 364.899,
+   "text": "A chat workflow waits for you. To run on a clock, use the Schedule Trigger node. Pick seconds, minutes, hours, days, weeks or months, or type a custom cron expression. It uses the workflow's timezone if one is set, and otherwise the n8n instance timezone.",
+   "words": [
+    {
+     "w": "A",
+     "start": 347.845,
+     "end": 347.924
+    },
+    {
+     "w": "chat",
+     "start": 347.924,
+     "end": 348.241
+    },
+    {
+     "w": "workflow",
+     "start": 348.241,
+     "end": 348.874
+    },
+    {
+     "w": "waits",
+     "start": 348.874,
+     "end": 349.27
+    },
+    {
+     "w": "for",
+     "start": 349.27,
+     "end": 349.508
+    },
+    {
+     "w": "you.",
+     "start": 349.508,
+     "end": 349.824
+    },
+    {
+     "w": "To",
+     "start": 349.824,
+     "end": 349.983
+    },
+    {
+     "w": "run",
+     "start": 349.983,
+     "end": 350.22
+    },
+    {
+     "w": "on",
+     "start": 350.22,
+     "end": 350.379
+    },
+    {
+     "w": "a",
+     "start": 350.379,
+     "end": 350.458
+    },
+    {
+     "w": "clock,",
+     "start": 350.458,
+     "end": 350.933
+    },
+    {
+     "w": "use",
+     "start": 350.933,
+     "end": 351.17
+    },
+    {
+     "w": "the",
+     "start": 351.17,
+     "end": 351.408
+    },
+    {
+     "w": "Schedule",
+     "start": 351.408,
+     "end": 352.041
+    },
+    {
+     "w": "Trigger",
+     "start": 352.041,
+     "end": 352.595
+    },
+    {
+     "w": "node.",
+     "start": 352.595,
+     "end": 352.991
+    },
+    {
+     "w": "Pick",
+     "start": 352.991,
+     "end": 353.308
+    },
+    {
+     "w": "seconds,",
+     "start": 353.308,
+     "end": 353.941
+    },
+    {
+     "w": "minutes,",
+     "start": 353.941,
+     "end": 354.574
+    },
+    {
+     "w": "hours,",
+     "start": 354.574,
+     "end": 355.049
+    },
+    {
+     "w": "days,",
+     "start": 355.049,
+     "end": 355.445
+    },
+    {
+     "w": "weeks",
+     "start": 355.445,
+     "end": 355.841
+    },
+    {
+     "w": "or",
+     "start": 355.841,
+     "end": 355.999
+    },
+    {
+     "w": "months,",
+     "start": 355.999,
+     "end": 356.554
+    },
+    {
+     "w": "or",
+     "start": 356.554,
+     "end": 356.712
+    },
+    {
+     "w": "type",
+     "start": 356.712,
+     "end": 357.029
+    },
+    {
+     "w": "a",
+     "start": 357.029,
+     "end": 357.108
+    },
+    {
+     "w": "custom",
+     "start": 357.108,
+     "end": 357.583
+    },
+    {
+     "w": "cron",
+     "start": 357.583,
+     "end": 357.899
+    },
+    {
+     "w": "expression.",
+     "start": 357.899,
+     "end": 358.77
+    },
+    {
+     "w": "It",
+     "start": 358.77,
+     "end": 358.929
+    },
+    {
+     "w": "uses",
+     "start": 358.929,
+     "end": 359.245
+    },
+    {
+     "w": "the",
+     "start": 359.245,
+     "end": 359.483
+    },
+    {
+     "w": "workflow's",
+     "start": 359.483,
+     "end": 360.274
+    },
+    {
+     "w": "timezone",
+     "start": 360.274,
+     "end": 360.908
+    },
+    {
+     "w": "if",
+     "start": 360.908,
+     "end": 361.066
+    },
+    {
+     "w": "one",
+     "start": 361.066,
+     "end": 361.304
+    },
+    {
+     "w": "is",
+     "start": 361.304,
+     "end": 361.462
+    },
+    {
+     "w": "set,",
+     "start": 361.462,
+     "end": 361.779
+    },
+    {
+     "w": "and",
+     "start": 361.779,
+     "end": 362.016
+    },
+    {
+     "w": "otherwise",
+     "start": 362.016,
+     "end": 362.729
+    },
+    {
+     "w": "the",
+     "start": 362.729,
+     "end": 362.966
+    },
+    {
+     "w": "n8n",
+     "start": 362.966,
+     "end": 363.204
+    },
+    {
+     "w": "instance",
+     "start": 363.204,
+     "end": 363.837
+    },
+    {
+     "w": "timezone.",
+     "start": 363.837,
+     "end": 364.549
+    }
+   ]
+  },
+  {
+   "id": "s34",
+   "start": 364.899,
+   "end": 369.068,
+   "text": "Two details here save you from a very annoying surprise.",
+   "words": [
+    {
+     "w": "Two",
+     "start": 364.899,
+     "end": 365.143
+    },
+    {
+     "w": "details",
+     "start": 365.143,
+     "end": 365.712
+    },
+    {
+     "w": "here",
+     "start": 365.712,
+     "end": 366.037
+    },
+    {
+     "w": "save",
+     "start": 366.037,
+     "end": 366.362
+    },
+    {
+     "w": "you",
+     "start": 366.362,
+     "end": 366.606
+    },
+    {
+     "w": "from",
+     "start": 366.606,
+     "end": 366.931
+    },
+    {
+     "w": "a",
+     "start": 366.931,
+     "end": 367.012
+    },
+    {
+     "w": "very",
+     "start": 367.012,
+     "end": 367.337
+    },
+    {
+     "w": "annoying",
+     "start": 367.337,
+     "end": 367.987
+    },
+    {
+     "w": "surprise.",
+     "start": 367.987,
+     "end": 368.718
+    }
+   ]
+  },
+  {
+   "id": "s35",
+   "start": 369.068,
+   "end": 389.237,
+   "text": "First, check the timezone, because a nine in the morning schedule means nothing if the workflow thinks it is somewhere else. Second, use a cron expression when the preset options are not enough. For example, zero nine star star star means every day at nine, and star slash fifteen means every fifteen minutes. The guide has a cheat sheet.",
+   "words": [
+    {
+     "w": "First,",
+     "start": 369.068,
+     "end": 369.493
+    },
+    {
+     "w": "check",
+     "start": 369.493,
+     "end": 369.847
+    },
+    {
+     "w": "the",
+     "start": 369.847,
+     "end": 370.059
+    },
+    {
+     "w": "timezone,",
+     "start": 370.059,
+     "end": 370.696
+    },
+    {
+     "w": "because",
+     "start": 370.696,
+     "end": 371.191
+    },
+    {
+     "w": "a",
+     "start": 371.191,
+     "end": 371.262
+    },
+    {
+     "w": "nine",
+     "start": 371.262,
+     "end": 371.545
+    },
+    {
+     "w": "in",
+     "start": 371.545,
+     "end": 371.687
+    },
+    {
+     "w": "the",
+     "start": 371.687,
+     "end": 371.899
+    },
+    {
+     "w": "morning",
+     "start": 371.899,
+     "end": 372.395
+    },
+    {
+     "w": "schedule",
+     "start": 372.395,
+     "end": 372.961
+    },
+    {
+     "w": "means",
+     "start": 372.961,
+     "end": 373.315
+    },
+    {
+     "w": "nothing",
+     "start": 373.315,
+     "end": 373.81
+    },
+    {
+     "w": "if",
+     "start": 373.81,
+     "end": 373.952
+    },
+    {
+     "w": "the",
+     "start": 373.952,
+     "end": 374.164
+    },
+    {
+     "w": "workflow",
+     "start": 374.164,
+     "end": 374.73
+    },
+    {
+     "w": "thinks",
+     "start": 374.73,
+     "end": 375.155
+    },
+    {
+     "w": "it",
+     "start": 375.155,
+     "end": 375.297
+    },
+    {
+     "w": "is",
+     "start": 375.297,
+     "end": 375.438
+    },
+    {
+     "w": "somewhere",
+     "start": 375.438,
+     "end": 376.075
+    },
+    {
+     "w": "else.",
+     "start": 376.075,
+     "end": 376.429
+    },
+    {
+     "w": "Second,",
+     "start": 376.429,
+     "end": 376.925
+    },
+    {
+     "w": "use",
+     "start": 376.925,
+     "end": 377.137
+    },
+    {
+     "w": "a",
+     "start": 377.137,
+     "end": 377.208
+    },
+    {
+     "w": "cron",
+     "start": 377.208,
+     "end": 377.491
+    },
+    {
+     "w": "expression",
+     "start": 377.491,
+     "end": 378.199
+    },
+    {
+     "w": "when",
+     "start": 378.199,
+     "end": 378.482
+    },
+    {
+     "w": "the",
+     "start": 378.482,
+     "end": 378.694
+    },
+    {
+     "w": "preset",
+     "start": 378.694,
+     "end": 379.119
+    },
+    {
+     "w": "options",
+     "start": 379.119,
+     "end": 379.614
+    },
+    {
+     "w": "are",
+     "start": 379.614,
+     "end": 379.827
+    },
+    {
+     "w": "not",
+     "start": 379.827,
+     "end": 380.039
+    },
+    {
+     "w": "enough.",
+     "start": 380.039,
+     "end": 380.535
+    },
+    {
+     "w": "For",
+     "start": 380.535,
+     "end": 380.747
+    },
+    {
+     "w": "example,",
+     "start": 380.747,
+     "end": 381.313
+    },
+    {
+     "w": "zero",
+     "start": 381.313,
+     "end": 381.596
+    },
+    {
+     "w": "nine",
+     "start": 381.596,
+     "end": 381.879
+    },
+    {
+     "w": "star",
+     "start": 381.879,
+     "end": 382.162
+    },
+    {
+     "w": "star",
+     "start": 382.162,
+     "end": 382.446
+    },
+    {
+     "w": "star",
+     "start": 382.446,
+     "end": 382.729
+    },
+    {
+     "w": "means",
+     "start": 382.729,
+     "end": 383.083
+    },
+    {
+     "w": "every",
+     "start": 383.083,
+     "end": 383.437
+    },
+    {
+     "w": "day",
+     "start": 383.437,
+     "end": 383.649
+    },
+    {
+     "w": "at",
+     "start": 383.649,
+     "end": 383.79
+    },
+    {
+     "w": "nine,",
+     "start": 383.79,
+     "end": 384.144
+    },
+    {
+     "w": "and",
+     "start": 384.144,
+     "end": 384.357
+    },
+    {
+     "w": "star",
+     "start": 384.357,
+     "end": 384.64
+    },
+    {
+     "w": "slash",
+     "start": 384.64,
+     "end": 384.994
+    },
+    {
+     "w": "fifteen",
+     "start": 384.994,
+     "end": 385.489
+    },
+    {
+     "w": "means",
+     "start": 385.489,
+     "end": 385.843
+    },
+    {
+     "w": "every",
+     "start": 385.843,
+     "end": 386.197
+    },
+    {
+     "w": "fifteen",
+     "start": 386.197,
+     "end": 386.692
+    },
+    {
+     "w": "minutes.",
+     "start": 386.692,
+     "end": 387.259
+    },
+    {
+     "w": "The",
+     "start": 387.259,
+     "end": 387.471
+    },
+    {
+     "w": "guide",
+     "start": 387.471,
+     "end": 387.825
+    },
+    {
+     "w": "has",
+     "start": 387.825,
+     "end": 388.037
+    },
+    {
+     "w": "a",
+     "start": 388.037,
+     "end": 388.108
+    },
+    {
+     "w": "cheat",
+     "start": 388.108,
+     "end": 388.462
+    },
+    {
+     "w": "sheet.",
+     "start": 388.462,
+     "end": 388.887
+    }
+   ]
+  },
+  {
+   "id": "s36",
+   "start": 389.237,
+   "end": 393.213,
+   "text": "But a schedule does nothing until you do one last thing.",
+   "words": [
+    {
+     "w": "But",
+     "start": 389.237,
+     "end": 389.473
+    },
+    {
+     "w": "a",
+     "start": 389.473,
+     "end": 389.552
+    },
+    {
+     "w": "schedule",
+     "start": 389.552,
+     "end": 390.183
+    },
+    {
+     "w": "does",
+     "start": 390.183,
+     "end": 390.498
+    },
+    {
+     "w": "nothing",
+     "start": 390.498,
+     "end": 391.05
+    },
+    {
+     "w": "until",
+     "start": 391.05,
+     "end": 391.444
+    },
+    {
+     "w": "you",
+     "start": 391.444,
+     "end": 391.681
+    },
+    {
+     "w": "do",
+     "start": 391.681,
+     "end": 391.838
+    },
+    {
+     "w": "one",
+     "start": 391.838,
+     "end": 392.075
+    },
+    {
+     "w": "last",
+     "start": 392.075,
+     "end": 392.39
+    },
+    {
+     "w": "thing.",
+     "start": 392.39,
+     "end": 392.863
+    }
+   ]
+  },
+  {
+   "id": "s37",
+   "start": 393.213,
+   "end": 406.299,
+   "text": "You must publish the workflow. Saving alone is not enough. Published workflows run automatically from their triggers and schedules, and those production runs are the ones that count toward your execution quota.",
+   "words": [
+    {
+     "w": "You",
+     "start": 393.213,
+     "end": 393.427
+    },
+    {
+     "w": "must",
+     "start": 393.427,
+     "end": 393.711
+    },
+    {
+     "w": "publish",
+     "start": 393.711,
+     "end": 394.209
+    },
+    {
+     "w": "the",
+     "start": 394.209,
+     "end": 394.423
+    },
+    {
+     "w": "workflow.",
+     "start": 394.423,
+     "end": 395.063
+    },
+    {
+     "w": "Saving",
+     "start": 395.063,
+     "end": 395.49
+    },
+    {
+     "w": "alone",
+     "start": 395.49,
+     "end": 395.846
+    },
+    {
+     "w": "is",
+     "start": 395.846,
+     "end": 395.988
+    },
+    {
+     "w": "not",
+     "start": 395.988,
+     "end": 396.202
+    },
+    {
+     "w": "enough.",
+     "start": 396.202,
+     "end": 396.7
+    },
+    {
+     "w": "Published",
+     "start": 396.7,
+     "end": 397.34
+    },
+    {
+     "w": "workflows",
+     "start": 397.34,
+     "end": 397.98
+    },
+    {
+     "w": "run",
+     "start": 397.98,
+     "end": 398.194
+    },
+    {
+     "w": "automatically",
+     "start": 398.194,
+     "end": 399.119
+    },
+    {
+     "w": "from",
+     "start": 399.119,
+     "end": 399.403
+    },
+    {
+     "w": "their",
+     "start": 399.403,
+     "end": 399.759
+    },
+    {
+     "w": "triggers",
+     "start": 399.759,
+     "end": 400.328
+    },
+    {
+     "w": "and",
+     "start": 400.328,
+     "end": 400.542
+    },
+    {
+     "w": "schedules,",
+     "start": 400.542,
+     "end": 401.253
+    },
+    {
+     "w": "and",
+     "start": 401.253,
+     "end": 401.467
+    },
+    {
+     "w": "those",
+     "start": 401.467,
+     "end": 401.823
+    },
+    {
+     "w": "production",
+     "start": 401.823,
+     "end": 402.534
+    },
+    {
+     "w": "runs",
+     "start": 402.534,
+     "end": 402.819
+    },
+    {
+     "w": "are",
+     "start": 402.819,
+     "end": 403.032
+    },
+    {
+     "w": "the",
+     "start": 403.032,
+     "end": 403.246
+    },
+    {
+     "w": "ones",
+     "start": 403.246,
+     "end": 403.53
+    },
+    {
+     "w": "that",
+     "start": 403.53,
+     "end": 403.815
+    },
+    {
+     "w": "count",
+     "start": 403.815,
+     "end": 404.171
+    },
+    {
+     "w": "toward",
+     "start": 404.171,
+     "end": 404.597
+    },
+    {
+     "w": "your",
+     "start": 404.597,
+     "end": 404.882
+    },
+    {
+     "w": "execution",
+     "start": 404.882,
+     "end": 405.522
+    },
+    {
+     "w": "quota.",
+     "start": 405.522,
+     "end": 405.949
+    }
+   ]
+  },
+  {
+   "id": "s38",
+   "start": 406.299,
+   "end": 410.895,
+   "text": "Here is the safest way to start, and it is smaller than you think.",
+   "words": [
+    {
+     "w": "Here",
+     "start": 406.299,
+     "end": 406.62
+    },
+    {
+     "w": "is",
+     "start": 406.62,
+     "end": 406.78
+    },
+    {
+     "w": "the",
+     "start": 406.78,
+     "end": 407.02
+    },
+    {
+     "w": "safest",
+     "start": 407.02,
+     "end": 407.501
+    },
+    {
+     "w": "way",
+     "start": 407.501,
+     "end": 407.741
+    },
+    {
+     "w": "to",
+     "start": 407.741,
+     "end": 407.901
+    },
+    {
+     "w": "start,",
+     "start": 407.901,
+     "end": 408.382
+    },
+    {
+     "w": "and",
+     "start": 408.382,
+     "end": 408.622
+    },
+    {
+     "w": "it",
+     "start": 408.622,
+     "end": 408.782
+    },
+    {
+     "w": "is",
+     "start": 408.782,
+     "end": 408.943
+    },
+    {
+     "w": "smaller",
+     "start": 408.943,
+     "end": 409.503
+    },
+    {
+     "w": "than",
+     "start": 409.503,
+     "end": 409.824
+    },
+    {
+     "w": "you",
+     "start": 409.824,
+     "end": 410.064
+    },
+    {
+     "w": "think.",
+     "start": 410.064,
+     "end": 410.545
+    }
+   ]
+  },
+  {
+   "id": "s39",
+   "start": 410.895,
+   "end": 428.141,
+   "text": "Keep your first scheduled automation tiny: one trigger, one agent, one output, running once a day. You learn how it behaves before you scale it. And if you want a head start, n8n's template library has a build your first AI agent template you can open and study.",
+   "words": [
+    {
+     "w": "Keep",
+     "start": 410.895,
+     "end": 411.209
+    },
+    {
+     "w": "your",
+     "start": 411.209,
+     "end": 411.523
+    },
+    {
+     "w": "first",
+     "start": 411.523,
+     "end": 411.916
+    },
+    {
+     "w": "scheduled",
+     "start": 411.916,
+     "end": 412.624
+    },
+    {
+     "w": "automation",
+     "start": 412.624,
+     "end": 413.409
+    },
+    {
+     "w": "tiny:",
+     "start": 413.409,
+     "end": 413.802
+    },
+    {
+     "w": "one",
+     "start": 413.802,
+     "end": 414.038
+    },
+    {
+     "w": "trigger,",
+     "start": 414.038,
+     "end": 414.667
+    },
+    {
+     "w": "one",
+     "start": 414.667,
+     "end": 414.903
+    },
+    {
+     "w": "agent,",
+     "start": 414.903,
+     "end": 415.374
+    },
+    {
+     "w": "one",
+     "start": 415.374,
+     "end": 415.61
+    },
+    {
+     "w": "output,",
+     "start": 415.61,
+     "end": 416.16
+    },
+    {
+     "w": "running",
+     "start": 416.16,
+     "end": 416.71
+    },
+    {
+     "w": "once",
+     "start": 416.71,
+     "end": 417.024
+    },
+    {
+     "w": "a",
+     "start": 417.024,
+     "end": 417.103
+    },
+    {
+     "w": "day.",
+     "start": 417.103,
+     "end": 417.417
+    },
+    {
+     "w": "You",
+     "start": 417.417,
+     "end": 417.653
+    },
+    {
+     "w": "learn",
+     "start": 417.653,
+     "end": 418.046
+    },
+    {
+     "w": "how",
+     "start": 418.046,
+     "end": 418.282
+    },
+    {
+     "w": "it",
+     "start": 418.282,
+     "end": 418.439
+    },
+    {
+     "w": "behaves",
+     "start": 418.439,
+     "end": 418.989
+    },
+    {
+     "w": "before",
+     "start": 418.989,
+     "end": 419.461
+    },
+    {
+     "w": "you",
+     "start": 419.461,
+     "end": 419.696
+    },
+    {
+     "w": "scale",
+     "start": 419.696,
+     "end": 420.089
+    },
+    {
+     "w": "it.",
+     "start": 420.089,
+     "end": 420.325
+    },
+    {
+     "w": "And",
+     "start": 420.325,
+     "end": 420.561
+    },
+    {
+     "w": "if",
+     "start": 420.561,
+     "end": 420.718
+    },
+    {
+     "w": "you",
+     "start": 420.718,
+     "end": 420.954
+    },
+    {
+     "w": "want",
+     "start": 420.954,
+     "end": 421.268
+    },
+    {
+     "w": "a",
+     "start": 421.268,
+     "end": 421.347
+    },
+    {
+     "w": "head",
+     "start": 421.347,
+     "end": 421.661
+    },
+    {
+     "w": "start,",
+     "start": 421.661,
+     "end": 422.132
+    },
+    {
+     "w": "n8n's",
+     "start": 422.132,
+     "end": 422.525
+    },
+    {
+     "w": "template",
+     "start": 422.525,
+     "end": 423.154
+    },
+    {
+     "w": "library",
+     "start": 423.154,
+     "end": 423.704
+    },
+    {
+     "w": "has",
+     "start": 423.704,
+     "end": 423.94
+    },
+    {
+     "w": "a",
+     "start": 423.94,
+     "end": 424.019
+    },
+    {
+     "w": "build",
+     "start": 424.019,
+     "end": 424.411
+    },
+    {
+     "w": "your",
+     "start": 424.411,
+     "end": 424.726
+    },
+    {
+     "w": "first",
+     "start": 424.726,
+     "end": 425.119
+    },
+    {
+     "w": "AI",
+     "start": 425.119,
+     "end": 425.276
+    },
+    {
+     "w": "agent",
+     "start": 425.276,
+     "end": 425.669
+    },
+    {
+     "w": "template",
+     "start": 425.669,
+     "end": 426.298
+    },
+    {
+     "w": "you",
+     "start": 426.298,
+     "end": 426.533
+    },
+    {
+     "w": "can",
+     "start": 426.533,
+     "end": 426.769
+    },
+    {
+     "w": "open",
+     "start": 426.769,
+     "end": 427.083
+    },
+    {
+     "w": "and",
+     "start": 427.083,
+     "end": 427.319
+    },
+    {
+     "w": "study.",
+     "start": 427.319,
+     "end": 427.791
+    }
+   ]
+  },
+  {
+   "id": "s40",
+   "start": 428.141,
+   "end": 431.605,
+   "text": "And here is how to keep this going after today.",
+   "words": [
+    {
+     "w": "And",
+     "start": 428.141,
+     "end": 428.387
+    },
+    {
+     "w": "here",
+     "start": 428.387,
+     "end": 428.714
+    },
+    {
+     "w": "is",
+     "start": 428.714,
+     "end": 428.878
+    },
+    {
+     "w": "how",
+     "start": 428.878,
+     "end": 429.124
+    },
+    {
+     "w": "to",
+     "start": 429.124,
+     "end": 429.288
+    },
+    {
+     "w": "keep",
+     "start": 429.288,
+     "end": 429.616
+    },
+    {
+     "w": "this",
+     "start": 429.616,
+     "end": 429.944
+    },
+    {
+     "w": "going",
+     "start": 429.944,
+     "end": 430.354
+    },
+    {
+     "w": "after",
+     "start": 430.354,
+     "end": 430.764
+    },
+    {
+     "w": "today.",
+     "start": 430.764,
+     "end": 431.255
+    }
+   ]
+  },
+  {
+   "id": "s41",
+   "start": 431.605,
+   "end": 448.339,
+   "text": "Pick one boring task you repeat every week. Write it as a sentence: when this happens, do that. The first half is your trigger and the second half is your agent and tools. If you can say it as one sentence, you can almost certainly build it as a workflow. Start there, and keep it small.",
+   "words": [
+    {
+     "w": "Pick",
+     "start": 431.605,
+     "end": 431.888
+    },
+    {
+     "w": "one",
+     "start": 431.888,
+     "end": 432.1
+    },
+    {
+     "w": "boring",
+     "start": 432.1,
+     "end": 432.523
+    },
+    {
+     "w": "task",
+     "start": 432.523,
+     "end": 432.806
+    },
+    {
+     "w": "you",
+     "start": 432.806,
+     "end": 433.018
+    },
+    {
+     "w": "repeat",
+     "start": 433.018,
+     "end": 433.441
+    },
+    {
+     "w": "every",
+     "start": 433.441,
+     "end": 433.795
+    },
+    {
+     "w": "week.",
+     "start": 433.795,
+     "end": 434.148
+    },
+    {
+     "w": "Write",
+     "start": 434.148,
+     "end": 434.501
+    },
+    {
+     "w": "it",
+     "start": 434.501,
+     "end": 434.642
+    },
+    {
+     "w": "as",
+     "start": 434.642,
+     "end": 434.783
+    },
+    {
+     "w": "a",
+     "start": 434.783,
+     "end": 434.854
+    },
+    {
+     "w": "sentence:",
+     "start": 434.854,
+     "end": 435.489
+    },
+    {
+     "w": "when",
+     "start": 435.489,
+     "end": 435.772
+    },
+    {
+     "w": "this",
+     "start": 435.772,
+     "end": 436.054
+    },
+    {
+     "w": "happens,",
+     "start": 436.054,
+     "end": 436.619
+    },
+    {
+     "w": "do",
+     "start": 436.619,
+     "end": 436.761
+    },
+    {
+     "w": "that.",
+     "start": 436.761,
+     "end": 437.114
+    },
+    {
+     "w": "The",
+     "start": 437.114,
+     "end": 437.326
+    },
+    {
+     "w": "first",
+     "start": 437.326,
+     "end": 437.679
+    },
+    {
+     "w": "half",
+     "start": 437.679,
+     "end": 437.961
+    },
+    {
+     "w": "is",
+     "start": 437.961,
+     "end": 438.102
+    },
+    {
+     "w": "your",
+     "start": 438.102,
+     "end": 438.385
+    },
+    {
+     "w": "trigger",
+     "start": 438.385,
+     "end": 438.879
+    },
+    {
+     "w": "and",
+     "start": 438.879,
+     "end": 439.091
+    },
+    {
+     "w": "the",
+     "start": 439.091,
+     "end": 439.303
+    },
+    {
+     "w": "second",
+     "start": 439.303,
+     "end": 439.727
+    },
+    {
+     "w": "half",
+     "start": 439.727,
+     "end": 440.009
+    },
+    {
+     "w": "is",
+     "start": 440.009,
+     "end": 440.15
+    },
+    {
+     "w": "your",
+     "start": 440.15,
+     "end": 440.433
+    },
+    {
+     "w": "agent",
+     "start": 440.433,
+     "end": 440.786
+    },
+    {
+     "w": "and",
+     "start": 440.786,
+     "end": 440.998
+    },
+    {
+     "w": "tools.",
+     "start": 440.998,
+     "end": 441.422
+    },
+    {
+     "w": "If",
+     "start": 441.422,
+     "end": 441.563
+    },
+    {
+     "w": "you",
+     "start": 441.563,
+     "end": 441.775
+    },
+    {
+     "w": "can",
+     "start": 441.775,
+     "end": 441.987
+    },
+    {
+     "w": "say",
+     "start": 441.987,
+     "end": 442.198
+    },
+    {
+     "w": "it",
+     "start": 442.198,
+     "end": 442.34
+    },
+    {
+     "w": "as",
+     "start": 442.34,
+     "end": 442.481
+    },
+    {
+     "w": "one",
+     "start": 442.481,
+     "end": 442.693
+    },
+    {
+     "w": "sentence,",
+     "start": 442.693,
+     "end": 443.328
+    },
+    {
+     "w": "you",
+     "start": 443.328,
+     "end": 443.54
+    },
+    {
+     "w": "can",
+     "start": 443.54,
+     "end": 443.752
+    },
+    {
+     "w": "almost",
+     "start": 443.752,
+     "end": 444.176
+    },
+    {
+     "w": "certainly",
+     "start": 444.176,
+     "end": 444.811
+    },
+    {
+     "w": "build",
+     "start": 444.811,
+     "end": 445.165
+    },
+    {
+     "w": "it",
+     "start": 445.165,
+     "end": 445.306
+    },
+    {
+     "w": "as",
+     "start": 445.306,
+     "end": 445.447
+    },
+    {
+     "w": "a",
+     "start": 445.447,
+     "end": 445.518
+    },
+    {
+     "w": "workflow.",
+     "start": 445.518,
+     "end": 446.153
+    },
+    {
+     "w": "Start",
+     "start": 446.153,
+     "end": 446.506
+    },
+    {
+     "w": "there,",
+     "start": 446.506,
+     "end": 446.93
+    },
+    {
+     "w": "and",
+     "start": 446.93,
+     "end": 447.142
+    },
+    {
+     "w": "keep",
+     "start": 447.142,
+     "end": 447.424
+    },
+    {
+     "w": "it",
+     "start": 447.424,
+     "end": 447.566
+    },
+    {
+     "w": "small.",
+     "start": 447.566,
+     "end": 447.989
+    }
+   ]
+  },
+  {
+   "id": "s42",
+   "start": 448.339,
+   "end": 450.673,
+   "text": "So what did you just build?",
+   "words": [
+    {
+     "w": "So",
+     "start": 448.339,
+     "end": 448.52
+    },
+    {
+     "w": "what",
+     "start": 448.52,
+     "end": 448.88
+    },
+    {
+     "w": "did",
+     "start": 448.88,
+     "end": 449.151
+    },
+    {
+     "w": "you",
+     "start": 449.151,
+     "end": 449.422
+    },
+    {
+     "w": "just",
+     "start": 449.422,
+     "end": 449.782
+    },
+    {
+     "w": "build?",
+     "start": 449.782,
+     "end": 450.323
+    }
+   ]
+  },
+  {
+   "id": "s43",
+   "start": 450.673,
+   "end": 464.655,
+   "text": "A trigger that listens, an agent that thinks, a model that powers it, a tool that lets it act, tested by hand, then published to run alone. That is the pattern behind almost every AI automation you will see.",
+   "words": [
+    {
+     "w": "A",
+     "start": 450.673,
+     "end": 450.754
+    },
+    {
+     "w": "trigger",
+     "start": 450.754,
+     "end": 451.319
+    },
+    {
+     "w": "that",
+     "start": 451.319,
+     "end": 451.641
+    },
+    {
+     "w": "listens,",
+     "start": 451.641,
+     "end": 452.287
+    },
+    {
+     "w": "an",
+     "start": 452.287,
+     "end": 452.448
+    },
+    {
+     "w": "agent",
+     "start": 452.448,
+     "end": 452.851
+    },
+    {
+     "w": "that",
+     "start": 452.851,
+     "end": 453.174
+    },
+    {
+     "w": "thinks,",
+     "start": 453.174,
+     "end": 453.739
+    },
+    {
+     "w": "a",
+     "start": 453.739,
+     "end": 453.819
+    },
+    {
+     "w": "model",
+     "start": 453.819,
+     "end": 454.222
+    },
+    {
+     "w": "that",
+     "start": 454.222,
+     "end": 454.545
+    },
+    {
+     "w": "powers",
+     "start": 454.545,
+     "end": 455.029
+    },
+    {
+     "w": "it,",
+     "start": 455.029,
+     "end": 455.271
+    },
+    {
+     "w": "a",
+     "start": 455.271,
+     "end": 455.352
+    },
+    {
+     "w": "tool",
+     "start": 455.352,
+     "end": 455.674
+    },
+    {
+     "w": "that",
+     "start": 455.674,
+     "end": 455.997
+    },
+    {
+     "w": "lets",
+     "start": 455.997,
+     "end": 456.32
+    },
+    {
+     "w": "it",
+     "start": 456.32,
+     "end": 456.481
+    },
+    {
+     "w": "act,",
+     "start": 456.481,
+     "end": 456.804
+    },
+    {
+     "w": "tested",
+     "start": 456.804,
+     "end": 457.288
+    },
+    {
+     "w": "by",
+     "start": 457.288,
+     "end": 457.449
+    },
+    {
+     "w": "hand,",
+     "start": 457.449,
+     "end": 457.852
+    },
+    {
+     "w": "then",
+     "start": 457.852,
+     "end": 458.175
+    },
+    {
+     "w": "published",
+     "start": 458.175,
+     "end": 458.901
+    },
+    {
+     "w": "to",
+     "start": 458.901,
+     "end": 459.062
+    },
+    {
+     "w": "run",
+     "start": 459.062,
+     "end": 459.304
+    },
+    {
+     "w": "alone.",
+     "start": 459.304,
+     "end": 459.788
+    },
+    {
+     "w": "That",
+     "start": 459.788,
+     "end": 460.111
+    },
+    {
+     "w": "is",
+     "start": 460.111,
+     "end": 460.272
+    },
+    {
+     "w": "the",
+     "start": 460.272,
+     "end": 460.514
+    },
+    {
+     "w": "pattern",
+     "start": 460.514,
+     "end": 461.079
+    },
+    {
+     "w": "behind",
+     "start": 461.079,
+     "end": 461.563
+    },
+    {
+     "w": "almost",
+     "start": 461.563,
+     "end": 462.047
+    },
+    {
+     "w": "every",
+     "start": 462.047,
+     "end": 462.45
+    },
+    {
+     "w": "AI",
+     "start": 462.45,
+     "end": 462.611
+    },
+    {
+     "w": "automation",
+     "start": 462.611,
+     "end": 463.418
+    },
+    {
+     "w": "you",
+     "start": 463.418,
+     "end": 463.66
+    },
+    {
+     "w": "will",
+     "start": 463.66,
+     "end": 463.983
+    },
+    {
+     "w": "see.",
+     "start": 463.983,
+     "end": 464.305
+    }
+   ]
+  },
+  {
+   "id": "s44",
+   "start": 464.655,
+   "end": 478.825,
+   "text": "Comment GUIDE and the full step-by-step PDF with the checklist, prompts and a seven-day action plan is yours. And watch tomorrow's Short for day two of the seven-day workflow series.",
+   "words": [
+    {
+     "w": "Comment",
+     "start": 464.655,
+     "end": 465.189
+    },
+    {
+     "w": "GUIDE",
+     "start": 465.189,
+     "end": 465.571
+    },
+    {
+     "w": "and",
+     "start": 465.571,
+     "end": 465.799
+    },
+    {
+     "w": "the",
+     "start": 465.799,
+     "end": 466.028
+    },
+    {
+     "w": "full",
+     "start": 466.028,
+     "end": 466.333
+    },
+    {
+     "w": "step-by-step",
+     "start": 466.333,
+     "end": 467.249
+    },
+    {
+     "w": "PDF",
+     "start": 467.249,
+     "end": 467.477
+    },
+    {
+     "w": "with",
+     "start": 467.477,
+     "end": 467.782
+    },
+    {
+     "w": "the",
+     "start": 467.782,
+     "end": 468.011
+    },
+    {
+     "w": "checklist,",
+     "start": 468.011,
+     "end": 468.774
+    },
+    {
+     "w": "prompts",
+     "start": 468.774,
+     "end": 469.308
+    },
+    {
+     "w": "and",
+     "start": 469.308,
+     "end": 469.537
+    },
+    {
+     "w": "a",
+     "start": 469.537,
+     "end": 469.613
+    },
+    {
+     "w": "seven-day",
+     "start": 469.613,
+     "end": 470.299
+    },
+    {
+     "w": "action",
+     "start": 470.299,
+     "end": 470.757
+    },
+    {
+     "w": "plan",
+     "start": 470.757,
+     "end": 471.062
+    },
+    {
+     "w": "is",
+     "start": 471.062,
+     "end": 471.215
+    },
+    {
+     "w": "yours.",
+     "start": 471.215,
+     "end": 471.672
+    },
+    {
+     "w": "And",
+     "start": 471.672,
+     "end": 471.901
+    },
+    {
+     "w": "watch",
+     "start": 471.901,
+     "end": 472.282
+    },
+    {
+     "w": "tomorrow's",
+     "start": 472.282,
+     "end": 473.045
+    },
+    {
+     "w": "Short",
+     "start": 473.045,
+     "end": 473.426
+    },
+    {
+     "w": "for",
+     "start": 473.426,
+     "end": 473.655
+    },
+    {
+     "w": "day",
+     "start": 473.655,
+     "end": 473.884
+    },
+    {
+     "w": "two",
+     "start": 473.884,
+     "end": 474.113
+    },
+    {
+     "w": "of",
+     "start": 474.113,
+     "end": 474.265
+    },
+    {
+     "w": "the",
+     "start": 474.265,
+     "end": 474.494
+    },
+    {
+     "w": "seven-day",
+     "start": 474.494,
+     "end": 475.181
+    },
+    {
+     "w": "workflow",
+     "start": 475.181,
+     "end": 475.791
+    },
+    {
+     "w": "series.",
+     "start": 475.791,
+     "end": 476.325
+    }
+   ]
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Intro",
+   "start": 0
+  },
+  {
+   "title": "What n8n actually is",
+   "start": 20.3
+  },
+  {
+   "title": "Build the brain",
+   "start": 101.5
+  },
+  {
+   "title": "Give it hands",
+   "start": 202.6
+  },
+  {
+   "title": "Test it like a pro",
+   "start": 253.6
+  },
+  {
+   "title": "Make it run on its own",
+   "start": 347.6
   }
  ]
 }

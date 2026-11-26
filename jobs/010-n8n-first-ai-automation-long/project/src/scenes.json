@@ -1,270 +1,1847 @@
 {
- "plan": true,
- "note": "Script-stage plan. The build step replaces this with the full beat list.",
  "scenes": [
   {
    "id": "s01",
-   "kind": "H",
-   "chapter": null,
-   "text": "You copy and paste between apps all day. In the next nine minutes you will build an AI automation in n8n that does that work for you, and you will not write a single line of code."
+   "text": "You copy and paste between apps all day. In the next nine minutes you will build an AI automation in n8n that does that work for you, and you will not write a single line of code.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Let an n8n AI automation do it.",
+     "accent": [
+      "n8n"
+     ],
+     "pain": "Copy-pasting between apps, all day."
+    },
+    {
+     "type": "metricodometer",
+     "theme": "sand",
+     "label": "Minutes to your first build",
+     "value": 9,
+     "suffix": " min",
+     "sub": "No code required",
+     "kicker": "TODAY",
+     "mode": "roll",
+     "duration": 60
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Zero lines of code.",
+     "accent": [
+      "Zero"
+     ]
+    }
+   ]
   },
   {
    "id": "s02",
-   "kind": "R",
-   "chapter": null,
-   "text": "But first, the one mistake that makes most beginners quit in the first ten minutes. I will show you exactly where it hides."
+   "text": "But first, the one mistake that makes most beginners quit in the first ten minutes. I will show you exactly where it hides.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "One mistake makes beginners quit",
+     "accent": [
+      "mistake"
+     ],
+     "kicker": "THE BEGINNER TRAP",
+     "sub": "Here is exactly where it hides."
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Why did my workflow fail?",
+     "kind": "typing",
+     "accent": [],
+     "kicker": "FIRST RUN",
+     "query": "why does my first workflow fail on run one",
+     "typing": "why does my first workflow fail on run one"
+    }
+   ]
   },
   {
    "id": "s03",
-   "kind": "C",
-   "chapter": "What n8n actually is",
-   "text": "n8n is a workflow automation tool. A workflow is a chain of nodes. A trigger node starts it, the other nodes each do one job, and the output of one node becomes the input of the next. That is the whole idea."
+   "text": "n8n is a workflow automation tool. A workflow is a chain of nodes. A trigger node starts it, the other nodes each do one job, and the output of one node becomes the input of the next. That is the whole idea.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "What n8n actually is",
+     "accent": [
+      "is"
+     ],
+     "kicker": "CHAPTER 1"
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "obsidian",
+     "headline": "A Workflow Is a Chain of Nodes",
+     "accent": [
+      "Chain"
+     ],
+     "steps": [
+      {
+       "label": "Trigger",
+       "active": true
+      },
+      {
+       "label": "Node",
+       "active": false
+      },
+      {
+       "label": "Node",
+       "active": false
+      },
+      {
+       "label": "Output",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "A trigger starts the workflow",
+       "Each node does one job",
+       "Output feeds the next node"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "The whole idea",
+     "kind": "checklist",
+     "accent": [],
+     "kicker": "IN ONE SCREEN",
+     "items": [
+      {
+       "text": "A trigger node starts it"
+      },
+      {
+       "text": "Each node does one job"
+      },
+      {
+       "text": "Output becomes the next input"
+      }
+     ]
+    }
+   ],
+   "chapter": "What n8n actually is"
   },
   {
    "id": "s04",
-   "kind": "R",
-   "chapter": null,
-   "text": "Here is a way to picture it so it sticks."
+   "text": "Here is a way to picture it so it sticks.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Picture it like a recipe",
+     "accent": [
+      "recipe"
+     ]
+    }
+   ]
   },
   {
    "id": "s05",
-   "kind": "B",
-   "chapter": null,
-   "text": "Think of a recipe. The trigger is you walking into the kitchen. Each node is one step, chop, mix, bake, and each step hands its result to the next one. If the cake goes wrong, you do not throw out the kitchen. You find the one step that failed. Workflows in n8n work the same way, and you can open any node to see what it did."
+   "text": "Think of a recipe. The trigger is you walking into the kitchen. Each node is one step, chop, mix, bake, and each step hands its result to the next one. If the cake goes wrong, you do not throw out the kitchen. You find the one step that failed. Workflows in n8n work the same way, and you can open any node to see what it did.",
+   "visual": [
+    {
+     "type": "perspectivewall",
+     "theme": "sand",
+     "headline": "A Recipe Is a Workflow",
+     "accent": [
+      "Recipe"
+     ],
+     "kicker": "THINK KITCHEN",
+     "cards": [
+      {
+       "label": "Walk in",
+       "sub": "Trigger",
+       "glyph": "zap"
+      },
+      {
+       "label": "Chop",
+       "sub": "Node 1",
+       "glyph": "scissors"
+      },
+      {
+       "label": "Mix",
+       "sub": "Node 2",
+       "glyph": "blend"
+      },
+      {
+       "label": "Bake",
+       "sub": "Node 3",
+       "glyph": "flame"
+      },
+      {
+       "label": "Plate",
+       "sub": "Output",
+       "glyph": "check"
+      },
+      {
+       "label": "Taste",
+       "sub": "Check result",
+       "glyph": "eye"
+      },
+      {
+       "label": "Fix a step",
+       "sub": "Open the node",
+       "glyph": "wrench"
+      },
+      {
+       "label": "Re-run",
+       "sub": "Execute again",
+       "glyph": "refresh"
+      },
+      {
+       "label": "Season",
+       "sub": "Change one thing",
+       "glyph": "settings"
+      },
+      {
+       "label": "Serve",
+       "sub": "Publish",
+       "glyph": "send"
+      },
+      {
+       "label": "Repeat daily",
+       "sub": "Schedule",
+       "glyph": "clock"
+      },
+      {
+       "label": "Share",
+       "sub": "Template",
+       "glyph": "share"
+      }
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Cake went wrong? Find the one step that failed.",
+     "accent": [
+      "one",
+      "step"
+     ]
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "studio",
+     "headline": "Open Any Node",
+     "accent": [
+      "Open"
+     ],
+     "steps": [
+      {
+       "label": "Pick a node",
+       "active": true
+      },
+      {
+       "label": "See its input",
+       "active": false
+      },
+      {
+       "label": "See its output",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Input received",
+       "Step ran",
+       "Output ready"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    }
+   ]
   },
   {
    "id": "s06",
-   "kind": "R",
-   "chapter": null,
-   "text": "You can run it two ways, and one of them costs nothing. Here is the choice."
+   "text": "You can run it two ways, and one of them costs nothing. Here is the choice.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Two ways to run n8n",
+     "accent": [
+      "Two"
+     ],
+     "sub": "One of them costs nothing."
+    }
+   ]
   },
   {
    "id": "s07",
-   "kind": "B",
-   "chapter": null,
-   "text": "You can use n8n Cloud, which has a free trial that, at the time of recording, needs no credit card. Or you can self-host the Community Edition, which n8n describes as free and running without a license key. For your first build, cloud is faster, so open your dashboard and click Create Workflow."
+   "text": "You can use n8n Cloud, which has a free trial that, at the time of recording, needs no credit card. Or you can self-host the Community Edition, which n8n describes as free and running without a license key. For your first build, cloud is faster, so open your dashboard and click Create Workflow.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Choose how to run n8n",
+     "kind": "dropdown",
+     "accent": [
+      "Choose"
+     ],
+     "kicker": "YOUR CHOICE",
+     "dropdown": {
+      "label": "How will you run n8n?",
+      "options": [
+       "n8n Cloud (free trial)",
+       "Self-host Community Edition"
+      ],
+      "picked": 0
+     }
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Cloud is fastest for a first build",
+     "accent": [
+      "Cloud"
+     ],
+     "kicker": "RECOMMENDED",
+     "sub": "Free trial, no card needed at the time of recording."
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Open your dashboard",
+     "kind": "checklist",
+     "accent": [],
+     "kicker": "STEP 1",
+     "items": [
+      {
+       "text": "Open your dashboard"
+      },
+      {
+       "text": "Click Create Workflow"
+      },
+      {
+       "text": "Name your workflow"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "s08",
-   "kind": "R",
-   "chapter": null,
-   "text": "Before we build anything, learn one word, because it controls your bill. Execution."
+   "text": "Before we build anything, learn one word, because it controls your bill. Execution.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "One word controls your bill",
+     "accent": [
+      "bill"
+     ],
+     "sub": "Execution"
+    }
+   ]
   },
   {
    "id": "s09",
-   "kind": "B",
-   "chapter": null,
-   "text": "An execution is one run of your whole workflow, no matter how many steps it has. And only production runs, the automatic ones, count toward your plan's quota. When you test by hand, that is a manual execution, and it does not count."
+   "text": "An execution is one run of your whole workflow, no matter how many steps it has. And only production runs, the automatic ones, count toward your plan's quota. When you test by hand, that is a manual execution, and it does not count.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Execution = one run of the whole workflow",
+     "accent": [
+      "one",
+      "run"
+     ]
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Not every run counts",
+     "kind": "dropdown",
+     "accent": [
+      "counts"
+     ],
+     "kicker": "THE RULE",
+     "dropdown": {
+      "label": "Run type",
+      "options": [
+       "Manual (testing)",
+       "Production (automatic)"
+      ],
+      "picked": 1
+     }
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "sand",
+     "headline": "Only Production Runs Count",
+     "accent": [
+      "Production"
+     ],
+     "steps": [
+      {
+       "label": "Manual test",
+       "active": true
+      },
+      {
+       "label": "Production run",
+       "active": false
+      },
+      {
+       "label": "Quota check",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Manual runs: free to test",
+       "Production runs count toward quota",
+       "Test by hand first"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    }
+   ]
   },
   {
    "id": "s10",
-   "kind": "C",
-   "chapter": "Build the brain",
-   "text": "Click Add first step and choose the trigger called On chat message. This is the Chat Trigger node. Every time someone sends a message, your workflow runs. n8n even gives you a hosted chat window for it, so you can talk to your workflow without building any interface."
+   "text": "Click Add first step and choose the trigger called On chat message. This is the Chat Trigger node. Every time someone sends a message, your workflow runs. n8n even gives you a hosted chat window for it, so you can talk to your workflow without building any interface.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Build the brain",
+     "accent": [
+      "brain"
+     ],
+     "kicker": "CHAPTER 2"
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Add the first step",
+     "kind": "typing",
+     "accent": [
+      "first"
+     ],
+     "kicker": "STEP 1",
+     "query": "On chat message",
+     "typing": "On chat message"
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "obsidian",
+     "headline": "Chat Trigger, Hosted Chat",
+     "accent": [
+      "Chat"
+     ],
+     "steps": [
+      {
+       "label": "Add first step",
+       "active": true
+      },
+      {
+       "label": "On chat message",
+       "active": false
+      },
+      {
+       "label": "Open the chat",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Every message runs the workflow",
+       "n8n hosts a chat window",
+       "No interface to build"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    }
+   ],
+   "chapter": "Build the brain"
   },
   {
    "id": "s11",
-   "kind": "R",
-   "chapter": null,
-   "text": "Now the part that turns a plain workflow into an AI automation."
+   "text": "Now the part that turns a plain workflow into an AI automation.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Now make it an AI automation",
+     "accent": [
+      "AI"
+     ]
+    }
+   ]
   },
   {
    "id": "s12",
-   "kind": "B",
-   "chapter": null,
-   "text": "Click the plus after the trigger and add the AI Agent node. The agent is the brain. You connect a chat model to it, and it decides which tools to use to finish the task you give it."
+   "text": "Click the plus after the trigger and add the AI Agent node. The agent is the brain. You connect a chat model to it, and it decides which tools to use to finish the task you give it.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Add the AI Agent node",
+     "kind": "dropdown",
+     "accent": [
+      "Agent"
+     ],
+     "kicker": "STEP 2",
+     "dropdown": {
+      "label": "Add node",
+      "options": [
+       "Edit Fields",
+       "AI Agent",
+       "If",
+       "Code"
+      ],
+      "picked": 1
+     }
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "sand",
+     "headline": "The Agent Is the Brain",
+     "accent": [
+      "Brain"
+     ],
+     "steps": [
+      {
+       "label": "Receive message",
+       "active": true
+      },
+      {
+       "label": "Decide",
+       "active": false
+      },
+      {
+       "label": "Call tools",
+       "active": false
+      },
+      {
+       "label": "Answer",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Agent reads the message",
+       "Chooses which tools to use",
+       "Finishes the task"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    }
+   ]
   },
   {
    "id": "s13",
-   "kind": "R",
-   "chapter": null,
-   "text": "But right now the brain has nothing to think with, because it has no model."
+   "text": "But right now the brain has nothing to think with, because it has no model.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "A brain with nothing to think with",
+     "accent": [
+      "nothing"
+     ],
+     "sub": "No chat model connected yet."
+    }
+   ]
   },
   {
    "id": "s14",
-   "kind": "B",
-   "chapter": null,
-   "text": "Under Chat Model, add the OpenAI Chat Model node, or a Google Gemini chat model if you want to start with a free Google AI key. n8n's own beginner template uses a free Google AI key for exactly that reason."
+   "text": "Under Chat Model, add the OpenAI Chat Model node, or a Google Gemini chat model if you want to start with a free Google AI key. n8n's own beginner template uses a free Google AI key for exactly that reason.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Connect a chat model",
+     "kind": "dropdown",
+     "accent": [
+      "model"
+     ],
+     "kicker": "STEP 3",
+     "dropdown": {
+      "label": "Chat Model",
+      "options": [
+       "OpenAI Chat Model",
+       "Google Gemini Chat Model"
+      ],
+      "picked": 0
+     }
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Or start with a free key",
+     "kind": "dropdown",
+     "accent": [
+      "free"
+     ],
+     "kicker": "OPTION B",
+     "dropdown": {
+      "label": "Chat Model",
+      "options": [
+       "OpenAI Chat Model",
+       "Google Gemini Chat Model"
+      ],
+      "picked": 1
+     }
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "n8n's beginner template starts with a free Google AI key",
+     "accent": [
+      "free"
+     ]
+    }
+   ]
   },
   {
    "id": "s15",
-   "kind": "R",
-   "chapter": null,
-   "text": "Here is the mistake I promised, and it takes five seconds to avoid."
+   "text": "Here is the mistake I promised, and it takes five seconds to avoid.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "The 5-second mistake",
+     "accent": [
+      "5-second"
+     ],
+     "kicker": "AS PROMISED"
+    }
+   ]
   },
   {
    "id": "s16",
-   "kind": "B",
-   "chapter": null,
-   "text": "In the model node, open the credential dropdown, choose Create New Credential, and paste your API key. Skip this and the node fails on its first run, and it looks like n8n is broken when it is only missing a key. Keep that key private. Never paste it into a chat or a public screenshot."
+   "text": "In the model node, open the credential dropdown, choose Create New Credential, and paste your API key. Skip this and the node fails on its first run, and it looks like n8n is broken when it is only missing a key. Keep that key private. Never paste it into a chat or a public screenshot.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Create the credential",
+     "kind": "dropdown",
+     "accent": [
+      "credential"
+     ],
+     "kicker": "THE FIX",
+     "dropdown": {
+      "label": "Credential",
+      "options": [
+       "Select credential",
+       "Create New Credential"
+      ],
+      "picked": 1
+     }
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "studio",
+     "headline": "Paste your API key",
+     "kind": "typing",
+     "accent": [
+      "API key"
+     ],
+     "kicker": "STEP 4",
+     "query": "Paste your API key and save",
+     "typing": "Paste your API key and save"
+    },
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "It's only a missing key.",
+     "accent": [
+      "missing"
+     ],
+     "pain": "Node fails. Looks like n8n is broken."
+    },
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Keep your API key private",
+     "accent": [
+      "private"
+     ],
+     "sub": "Never paste it in chats or screenshots."
+    }
+   ]
   },
   {
    "id": "s17",
-   "kind": "R",
-   "chapter": null,
-   "text": "Now you have a trigger, a brain and a model. Here is what each one is really doing."
+   "text": "Now you have a trigger, a brain and a model. Here is what each one is really doing.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Three nodes, three jobs",
+     "accent": [
+      "three",
+      "jobs"
+     ]
+    }
+   ]
   },
   {
    "id": "s18",
-   "kind": "B",
-   "chapter": null,
-   "text": "The Chat Trigger listens and passes the message along. The model reads it and writes language. The agent sits in the middle and decides what happens next. Three nodes, three jobs. When you build bigger automations later, you will keep asking the same question: which node owns this job?"
+   "text": "The Chat Trigger listens and passes the message along. The model reads it and writes language. The agent sits in the middle and decides what happens next. Three nodes, three jobs. When you build bigger automations later, you will keep asking the same question: which node owns this job?",
+   "visual": [
+    {
+     "type": "tiltedagentstage",
+     "theme": "obsidian",
+     "headline": "Who Owns Which Job?",
+     "accent": [
+      "Owns"
+     ],
+     "steps": [
+      {
+       "label": "Chat Trigger listens",
+       "active": true
+      },
+      {
+       "label": "Model writes",
+       "active": false
+      },
+      {
+       "label": "Agent decides",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Trigger: passes the message along",
+       "Model: reads it and writes language",
+       "Agent: decides what happens next"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Which node owns this job?",
+     "accent": [
+      "owns"
+     ],
+     "kicker": "ASK THIS EVERY TIME"
+    }
+   ]
   },
   {
    "id": "s19",
-   "kind": "C",
-   "chapter": "Give it hands",
-   "text": "A chatbot only talks. An agent acts. To make that happen you attach tools. Click the plus under Tool on the AI Agent node and add something simple first, like the Date and Time tool."
+   "text": "A chatbot only talks. An agent acts. To make that happen you attach tools. Click the plus under Tool on the AI Agent node and add something simple first, like the Date and Time tool.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Give it hands",
+     "accent": [
+      "hands"
+     ],
+     "kicker": "CHAPTER 3"
+    },
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "An agent acts.",
+     "accent": [
+      "acts"
+     ],
+     "pain": "A chatbot only talks."
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Attach a tool",
+     "kind": "checklist",
+     "accent": [
+      "tool"
+     ],
+     "kicker": "STEP 5",
+     "items": [
+      {
+       "text": "Click the plus under Tool"
+      },
+      {
+       "text": "Pick Date and Time"
+      },
+      {
+       "text": "Keep your first tool simple"
+      }
+     ]
+    }
+   ],
+   "chapter": "Give it hands"
   },
   {
    "id": "s20",
-   "kind": "R",
-   "chapter": null,
-   "text": "Watch what changes when you add that one tool."
+   "text": "Watch what changes when you add that one tool.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Watch what one tool changes",
+     "accent": [
+      "one",
+      "tool"
+     ]
+    }
+   ]
   },
   {
    "id": "s21",
-   "kind": "B",
-   "chapter": null,
-   "text": "Ask the agent: what is the date three days from now? Without a tool, a language model has to guess. With the tool, the agent decides to call it, gets the real date, and answers from that. That decision is what makes it an agent."
+   "text": "Ask the agent: what is the date three days from now? Without a tool, a language model has to guess. With the tool, the agent decides to call it, gets the real date, and answers from that. That decision is what makes it an agent.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Ask the agent",
+     "kind": "typing",
+     "accent": [
+      "Ask"
+     ],
+     "kicker": "LIVE TEST",
+     "query": "What is the date three days from now?",
+     "typing": "What is the date three days from now?"
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "sand",
+     "headline": "Agent Calls the Tool",
+     "accent": [
+      "Tool"
+     ],
+     "steps": [
+      {
+       "label": "Read question",
+       "active": true
+      },
+      {
+       "label": "Choose tool",
+       "active": false
+      },
+      {
+       "label": "Get real date",
+       "active": false
+      },
+      {
+       "label": "Answer",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Needs today's date",
+       "Calling the Date and Time tool",
+       "Answering from the real date"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ],
+     "terminal": {
+      "title": "RUN LOG",
+      "lines": [
+       {
+        "text": "agent: question received",
+        "status": "ok"
+       },
+       {
+        "text": "tool: Date and Time",
+        "status": "running"
+       },
+       {
+        "text": "answer sent",
+        "status": "ok"
+       }
+      ]
+     }
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "That decision is what makes it an agent",
+     "accent": [
+      "agent"
+     ]
+    }
+   ]
   },
   {
    "id": "s22",
-   "kind": "R",
-   "chapter": null,
-   "text": "Next, tell the agent who it is, because a vague agent gives vague answers."
+   "text": "Next, tell the agent who it is, because a vague agent gives vague answers.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "A vague agent gives vague answers",
+     "accent": [
+      "vague"
+     ]
+    }
+   ]
   },
   {
    "id": "s23",
-   "kind": "B",
-   "chapter": null,
-   "text": "In the agent's options, add instructions: its job, its tone, and what it must never do. One clear sentence beats a long paragraph. For example: you are an assistant for my small business, answer in two sentences, and if you do not know, say so."
+   "text": "In the agent's options, add instructions: its job, its tone, and what it must never do. One clear sentence beats a long paragraph. For example: you are an assistant for my small business, answer in two sentences, and if you do not know, say so.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Write the instructions",
+     "kind": "checklist",
+     "accent": [
+      "instructions"
+     ],
+     "kicker": "AGENT OPTIONS",
+     "items": [
+      {
+       "text": "Its job"
+      },
+      {
+       "text": "Its tone"
+      },
+      {
+       "text": "What it must never do"
+      }
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "One clear sentence beats a long paragraph",
+     "accent": [
+      "One",
+      "sentence"
+     ]
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Example instructions",
+     "kind": "typing",
+     "accent": [],
+     "kicker": "EXAMPLE",
+     "query": "You are an assistant for my small business. Answer in two sentences. If you do not know, say so.",
+     "typing": "You are an assistant for my small business. Answer in two sentences. If you do not know, say so."
+    }
+   ]
   },
   {
    "id": "s24",
-   "kind": "C",
-   "chapter": "Test it like a pro",
-   "text": "Click Execute Workflow, or open the chat and send a message. That is a manual execution, made for testing. Open each node and read its output panel. You see exactly what went in and what came out, so debugging becomes reading instead of guessing."
+   "text": "Click Execute Workflow, or open the chat and send a message. That is a manual execution, made for testing. Open each node and read its output panel. You see exactly what went in and what came out, so debugging becomes reading instead of guessing.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Test it like a pro",
+     "accent": [
+      "pro"
+     ],
+     "kicker": "CHAPTER 4"
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "studio",
+     "headline": "Run a manual test",
+     "kind": "checklist",
+     "accent": [
+      "manual"
+     ],
+     "kicker": "STEP 6",
+     "items": [
+      {
+       "text": "Click Execute Workflow"
+      },
+      {
+       "text": "Or send a chat message"
+      },
+      {
+       "text": "Open each node"
+      },
+      {
+       "text": "Read input and output"
+      }
+     ]
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "sand",
+     "headline": "Debugging Is Reading",
+     "accent": [
+      "Reading"
+     ],
+     "steps": [
+      {
+       "label": "Run",
+       "active": true
+      },
+      {
+       "label": "Open node",
+       "active": false
+      },
+      {
+       "label": "Read output",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "See exactly what went in",
+       "See exactly what came out",
+       "Guessing becomes reading"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    }
+   ],
+   "chapter": "Test it like a pro"
   },
   {
    "id": "s25",
-   "kind": "R",
-   "chapter": null,
-   "text": "This is the habit that separates beginners from people who ship."
+   "text": "This is the habit that separates beginners from people who ship.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "The habit that separates beginners from shippers",
+     "accent": [
+      "habit"
+     ]
+    }
+   ]
   },
   {
    "id": "s26",
-   "kind": "B",
-   "chapter": null,
-   "text": "Before you change anything, read the output of the node before the problem. Most mistakes are not clever. A field is empty, a connection is missing, or the wrong thing was passed in. Check what went in, check what came out, then change one thing at a time. If you change three things at once, you will never know which one fixed it."
+   "text": "Before you change anything, read the output of the node before the problem. Most mistakes are not clever. A field is empty, a connection is missing, or the wrong thing was passed in. Check what went in, check what came out, then change one thing at a time. If you change three things at once, you will never know which one fixed it.",
+   "visual": [
+    {
+     "type": "tiltedagentstage",
+     "theme": "studio",
+     "headline": "Read Before You Change",
+     "accent": [
+      "Read"
+     ],
+     "steps": [
+      {
+       "label": "Read previous node",
+       "active": true
+      },
+      {
+       "label": "Check input",
+       "active": false
+      },
+      {
+       "label": "Check output",
+       "active": false
+      },
+      {
+       "label": "Change one thing",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Most mistakes are not clever",
+       "Check what went in, what came out",
+       "Change one thing at a time"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Change three things at once? You'll never know which one fixed it.",
+     "accent": [
+      "three"
+     ]
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Usual suspects",
+     "kind": "checklist",
+     "accent": [
+      "suspects"
+     ],
+     "kicker": "CHECK FIRST",
+     "items": [
+      {
+       "text": "Field empty?"
+      },
+      {
+       "text": "Connection missing?"
+      },
+      {
+       "text": "Wrong data passed in?"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "s27",
-   "kind": "R",
-   "chapter": null,
-   "text": "When something breaks, it breaks in one node, and n8n shows you which one."
+   "text": "When something breaks, it breaks in one node, and n8n shows you which one.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "It breaks in one node",
+     "accent": [
+      "one",
+      "node"
+     ],
+     "sub": "n8n shows you which."
+    }
+   ]
   },
   {
    "id": "s28",
-   "kind": "B",
-   "chapter": null,
-   "text": "A red node means open it and read the error. Start with the basics: credentials, missing connections, and empty fields. Fix one thing, run it again, and watch the output change."
+   "text": "A red node means open it and read the error. Start with the basics: credentials, missing connections, and empty fields. Fix one thing, run it again, and watch the output change.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Red node checklist",
+     "kind": "checklist",
+     "accent": [
+      "Red"
+     ],
+     "kicker": "WHEN IT BREAKS",
+     "items": [
+      {
+       "text": "Open the node"
+      },
+      {
+       "text": "Read the error"
+      },
+      {
+       "text": "Check credentials"
+      },
+      {
+       "text": "Check connections"
+      },
+      {
+       "text": "Check empty fields"
+      }
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Fix one thing. Run it again.",
+     "accent": [
+      "one"
+     ]
+    }
+   ]
   },
   {
    "id": "s29",
-   "kind": "R",
-   "chapter": null,
-   "text": "One more habit before we make this run on its own."
+   "text": "One more habit before we make this run on its own.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "One more habit",
+     "accent": [
+      "habit"
+     ]
+    }
+   ]
   },
   {
    "id": "s30",
-   "kind": "B",
-   "chapter": null,
-   "text": "Change the question and run it again. Try five very different questions. If the answers stay useful across all five, your agent is ready. If one answer is wrong, fix the instructions, not the model."
+   "text": "Change the question and run it again. Try five very different questions. If the answers stay useful across all five, your agent is ready. If one answer is wrong, fix the instructions, not the model.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Change the question",
+     "kind": "typing",
+     "accent": [
+      "five"
+     ],
+     "kicker": "HABIT",
+     "query": "Try five very different questions",
+     "typing": "Try five very different questions"
+    },
+    {
+     "type": "perspectivewall",
+     "theme": "sand",
+     "headline": "Five Test Questions",
+     "accent": [
+      "Five"
+     ],
+     "kicker": "ONE BY ONE",
+     "cards": [
+      {
+       "label": "Date math",
+       "sub": "What is the date in 3 days?",
+       "glyph": "calendar"
+      },
+      {
+       "label": "Summarise",
+       "sub": "Shrink a long text",
+       "glyph": "file-text"
+      },
+      {
+       "label": "Draft a reply",
+       "sub": "Polite two-liner",
+       "glyph": "mail"
+      },
+      {
+       "label": "Prioritise",
+       "sub": "Rank 3 tasks",
+       "glyph": "list"
+      },
+      {
+       "label": "Explain",
+       "sub": "A term for a beginner",
+       "glyph": "book"
+      },
+      {
+       "label": "Short input",
+       "sub": "Just one word",
+       "glyph": "type"
+      },
+      {
+       "label": "Long input",
+       "sub": "A full page",
+       "glyph": "scroll"
+      },
+      {
+       "label": "Odd phrasing",
+       "sub": "Say it differently",
+       "glyph": "shuffle"
+      },
+      {
+       "label": "Missing info",
+       "sub": "Leave out a detail",
+       "glyph": "help-circle"
+      },
+      {
+       "label": "Two questions",
+       "sub": "Ask both at once",
+       "glyph": "layers"
+      },
+      {
+       "label": "Typos",
+       "sub": "Misspell on purpose",
+       "glyph": "pen"
+      },
+      {
+       "label": "Rude tone",
+       "sub": "Test the guardrails",
+       "glyph": "shield"
+      }
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Wrong answer? Fix the instructions, not the model.",
+     "accent": [
+      "instructions"
+     ]
+    }
+   ]
   },
   {
    "id": "s31",
-   "kind": "R",
-   "chapter": null,
-   "text": "Pause here, because this is where people over-build."
+   "text": "Pause here, because this is where people over-build.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Don't over-build",
+     "accent": [
+      "over-build"
+     ]
+    }
+   ]
   },
   {
    "id": "s32",
-   "kind": "B",
-   "chapter": null,
-   "text": "You do not need ten nodes. You need one workflow that works from start to finish. A small automation that runs every day beats a giant one that never leaves your screen. Finish the loop first: message in, thought, tool call, answer out. Then, and only then, add the next idea on top of it."
+   "text": "You do not need ten nodes. You need one workflow that works from start to finish. A small automation that runs every day beats a giant one that never leaves your screen. Finish the loop first: message in, thought, tool call, answer out. Then, and only then, add the next idea on top of it.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "One workflow that works from start to finish",
+     "accent": [
+      "One"
+     ]
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "studio",
+     "headline": "Finish the Loop First",
+     "accent": [
+      "Loop"
+     ],
+     "steps": [
+      {
+       "label": "Message in",
+       "active": true
+      },
+      {
+       "label": "Thought",
+       "active": false
+      },
+      {
+       "label": "Tool call",
+       "active": false
+      },
+      {
+       "label": "Answer out",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Small and daily beats giant and idle",
+       "Finish the loop first",
+       "Then add the next idea"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Then, and only then",
+     "kind": "checklist",
+     "accent": [
+      "only"
+     ],
+     "kicker": "ORDER MATTERS",
+     "items": [
+      {
+       "text": "Message in"
+      },
+      {
+       "text": "Thought"
+      },
+      {
+       "text": "Tool call"
+      },
+      {
+       "text": "Answer out"
+      },
+      {
+       "text": "Add the next idea"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "s33",
-   "kind": "C",
-   "chapter": "Make it run on its own",
-   "text": "A chat workflow waits for you. To run on a clock, use the Schedule Trigger node. Pick seconds, minutes, hours, days, weeks or months, or type a custom cron expression. It uses the workflow's timezone if one is set, and otherwise the n8n instance timezone."
+   "text": "A chat workflow waits for you. To run on a clock, use the Schedule Trigger node. Pick seconds, minutes, hours, days, weeks or months, or type a custom cron expression. It uses the workflow's timezone if one is set, and otherwise the n8n instance timezone.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Make it run on its own",
+     "accent": [
+      "own"
+     ],
+     "kicker": "CHAPTER 5"
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "studio",
+     "headline": "Pick an interval",
+     "kind": "dropdown",
+     "accent": [
+      "interval"
+     ],
+     "kicker": "SCHEDULE TRIGGER",
+     "dropdown": {
+      "label": "Schedule Trigger interval",
+      "options": [
+       "Seconds",
+       "Minutes",
+       "Hours",
+       "Days",
+       "Weeks",
+       "Months",
+       "Custom cron"
+      ],
+      "picked": 3
+     }
+    },
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Workflow timezone first, else instance timezone",
+     "accent": [
+      "timezone"
+     ]
+    }
+   ],
+   "chapter": "Make it run on its own"
   },
   {
    "id": "s34",
-   "kind": "R",
-   "chapter": null,
-   "text": "Two details here save you from a very annoying surprise."
+   "text": "Two details here save you from a very annoying surprise.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Two details save you",
+     "accent": [
+      "Two",
+      "details"
+     ]
+    }
+   ]
   },
   {
    "id": "s35",
-   "kind": "B",
-   "chapter": null,
-   "text": "First, check the timezone, because a nine in the morning schedule means nothing if the workflow thinks it is somewhere else. Second, use a cron expression when the preset options are not enough. For example, zero nine star star star means every day at nine, and star slash fifteen means every fifteen minutes. The guide has a cheat sheet."
+   "text": "First, check the timezone, because a nine in the morning schedule means nothing if the workflow thinks it is somewhere else. Second, use a cron expression when the preset options are not enough. For example, zero nine star star star means every day at nine, and star slash fifteen means every fifteen minutes. The guide has a cheat sheet.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "studio",
+     "headline": "Check the timezone",
+     "kind": "dropdown",
+     "accent": [
+      "timezone"
+     ],
+     "kicker": "DETAIL 1",
+     "dropdown": {
+      "label": "Timezone",
+      "options": [
+       "Workflow timezone",
+       "Instance timezone"
+      ],
+      "picked": 0
+     }
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Cron: every day at nine",
+     "kind": "typing",
+     "accent": [
+      "nine"
+     ],
+     "kicker": "DETAIL 2",
+     "query": "0 9 * * *",
+     "typing": "0 9 * * *"
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Cron: every 15 minutes",
+     "kind": "typing",
+     "accent": [
+      "15"
+     ],
+     "kicker": "CRON",
+     "query": "*/15 * * * *",
+     "typing": "*/15 * * * *"
+    }
+   ]
   },
   {
    "id": "s36",
-   "kind": "R",
-   "chapter": null,
-   "text": "But a schedule does nothing until you do one last thing."
+   "text": "But a schedule does nothing until you do one last thing.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "A schedule does nothing until you…",
+     "accent": [
+      "nothing"
+     ]
+    }
+   ]
   },
   {
    "id": "s37",
-   "kind": "B",
-   "chapter": null,
-   "text": "You must publish the workflow. Saving alone is not enough. Published workflows run automatically from their triggers and schedules, and those production runs are the ones that count toward your execution quota."
+   "text": "You must publish the workflow. Saving alone is not enough. Published workflows run automatically from their triggers and schedules, and those production runs are the ones that count toward your execution quota.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Publish it",
+     "accent": [
+      "Publish"
+     ],
+     "sub": "Saving alone is not enough."
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "obsidian",
+     "headline": "Published Means It Runs",
+     "accent": [
+      "Published"
+     ],
+     "steps": [
+      {
+       "label": "Save",
+       "active": true
+      },
+      {
+       "label": "Publish",
+       "active": false
+      },
+      {
+       "label": "Trigger fires",
+       "active": false
+      },
+      {
+       "label": "Production run",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Triggers and schedules run on their own",
+       "Those runs count toward your quota"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    }
+   ]
   },
   {
    "id": "s38",
-   "kind": "R",
-   "chapter": null,
-   "text": "Here is the safest way to start, and it is smaller than you think."
+   "text": "Here is the safest way to start, and it is smaller than you think.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Start smaller than you think",
+     "accent": [
+      "smaller"
+     ]
+    }
+   ]
   },
   {
    "id": "s39",
-   "kind": "B",
-   "chapter": null,
-   "text": "Keep your first scheduled automation tiny: one trigger, one agent, one output, running once a day. You learn how it behaves before you scale it. And if you want a head start, n8n's template library has a build your first AI agent template you can open and study."
+   "text": "Keep your first scheduled automation tiny: one trigger, one agent, one output, running once a day. You learn how it behaves before you scale it. And if you want a head start, n8n's template library has a build your first AI agent template you can open and study.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Your first scheduled automation",
+     "kind": "checklist",
+     "accent": [
+      "tiny"
+     ],
+     "kicker": "KEEP IT TINY",
+     "items": [
+      {
+       "text": "One trigger"
+      },
+      {
+       "text": "One agent"
+      },
+      {
+       "text": "One output"
+      },
+      {
+       "text": "Once a day"
+      }
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Open n8n's Build your first AI agent template",
+     "accent": [
+      "template"
+     ],
+     "kicker": "HEAD START"
+    }
+   ]
   },
   {
    "id": "s40",
-   "kind": "R",
-   "chapter": null,
-   "text": "And here is how to keep this going after today."
+   "text": "And here is how to keep this going after today.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Keep going after today",
+     "accent": [
+      "going"
+     ]
+    }
+   ]
   },
   {
    "id": "s41",
-   "kind": "B",
-   "chapter": null,
-   "text": "Pick one boring task you repeat every week. Write it as a sentence: when this happens, do that. The first half is your trigger and the second half is your agent and tools. If you can say it as one sentence, you can almost certainly build it as a workflow. Start there, and keep it small."
+   "text": "Pick one boring task you repeat every week. Write it as a sentence: when this happens, do that. The first half is your trigger and the second half is your agent and tools. If you can say it as one sentence, you can almost certainly build it as a workflow. Start there, and keep it small.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "One boring task, one sentence",
+     "kind": "typing",
+     "accent": [
+      "sentence"
+     ],
+     "kicker": "HOW TO PICK",
+     "query": "When this happens, do that.",
+     "typing": "When this happens, do that."
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "obsidian",
+     "headline": "A Sentence Is a Workflow",
+     "accent": [
+      "Sentence"
+     ],
+     "steps": [
+      {
+       "label": "When this happens",
+       "active": true
+      },
+      {
+       "label": "Trigger",
+       "active": false
+      },
+      {
+       "label": "Do that",
+       "active": false
+      },
+      {
+       "label": "Agent and tools",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "First half is your trigger",
+       "Second half is your agent",
+       "Start small"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "studio",
+     "headline": "This week",
+     "kind": "checklist",
+     "accent": [
+      "week"
+     ],
+     "kicker": "YOUR MOVE",
+     "items": [
+      {
+       "text": "Pick one boring weekly task"
+      },
+      {
+       "text": "Write it as one sentence"
+      },
+      {
+       "text": "Build it small"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "s42",
-   "kind": "R",
-   "chapter": null,
-   "text": "So what did you just build?"
+   "text": "So what did you just build?",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "So what did you build?",
+     "accent": [
+      "build"
+     ]
+    }
+   ]
   },
   {
    "id": "s43",
-   "kind": "B",
-   "chapter": null,
-   "text": "A trigger that listens, an agent that thinks, a model that powers it, a tool that lets it act, tested by hand, then published to run alone. That is the pattern behind almost every AI automation you will see."
+   "text": "A trigger that listens, an agent that thinks, a model that powers it, a tool that lets it act, tested by hand, then published to run alone. That is the pattern behind almost every AI automation you will see.",
+   "visual": [
+    {
+     "type": "perspectivewall",
+     "theme": "sand",
+     "headline": "The Pattern Behind Almost Every AI Automation",
+     "accent": [
+      "Pattern"
+     ],
+     "kicker": "RECAP",
+     "cards": [
+      {
+       "label": "Trigger",
+       "sub": "listens",
+       "glyph": "zap"
+      },
+      {
+       "label": "Agent",
+       "sub": "thinks",
+       "glyph": "brain"
+      },
+      {
+       "label": "Model",
+       "sub": "powers it",
+       "glyph": "cpu"
+      },
+      {
+       "label": "Tool",
+       "sub": "lets it act",
+       "glyph": "wrench"
+      },
+      {
+       "label": "Manual test",
+       "sub": "read outputs",
+       "glyph": "play"
+      },
+      {
+       "label": "Publish",
+       "sub": "runs alone",
+       "glyph": "send"
+      },
+      {
+       "label": "Credential",
+       "sub": "add the key",
+       "glyph": "key"
+      },
+      {
+       "label": "Instructions",
+       "sub": "one clear job",
+       "glyph": "file-text"
+      },
+      {
+       "label": "Schedule",
+       "sub": "a clock",
+       "glyph": "clock"
+      },
+      {
+       "label": "Template",
+       "sub": "head start",
+       "glyph": "layout"
+      },
+      {
+       "label": "Small first",
+       "sub": "one output",
+       "glyph": "minimize"
+      },
+      {
+       "label": "Repeat",
+       "sub": "next automation",
+       "glyph": "refresh"
+      }
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Trigger. Agent. Model. Tool. Publish.",
+     "accent": [
+      "Trigger",
+      "Publish"
+     ]
+    }
+   ]
   },
   {
    "id": "s44",
-   "kind": "O",
-   "chapter": null,
-   "text": "Comment GUIDE and the full step-by-step PDF with the checklist, prompts and a seven-day action plan is yours. And watch tomorrow's Short for day two of the seven-day workflow series."
+   "text": "Comment GUIDE and the full step-by-step PDF with the checklist, prompts and a seven-day action plan is yours. And watch tomorrow's Short for day two of the seven-day workflow series.",
+   "visual": [
+    {
+     "type": "commenttriggeroutro",
+     "theme": "obsidian",
+     "handle": "@AIGraphicTV",
+     "name": "AI Graphic TV",
+     "bio": "Practical AI automation, step by step",
+     "commentWord": "GUIDE",
+     "dmPreview": "Sent! Check your DMs"
+    },
+    {
+     "type": "endcard",
+     "title": "Build Your First AI Automation in n8n",
+     "sub": "Subscribe to AI Graphic TV"
+    }
+   ]
   }
  ]
 }
