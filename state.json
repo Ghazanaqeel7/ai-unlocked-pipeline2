@@ -158,8 +158,8 @@
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-001-launch-ai-workflow-short/upload.mp4"
     },
     "904-turbo-ai-workflow-short": {
-      "status": "rendering",
-      "updated": "2026-11-26T06:30:22Z",
+      "status": "video_ready",
+      "updated": "2026-11-26T07:30:51Z",
       "run": "45768514146",
       "progress": [
         {
@@ -171,7 +171,10 @@
           "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
         }
       ],
-      "progress_count": 2
+      "progress_count": 2,
+      "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-904-turbo-ai-workflow-short/final.mp4",
+      "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-904-turbo-ai-workflow-short/preview.mp4",
+      "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-904-turbo-ai-workflow-short/upload.mp4"
     }
   },
   "ideas": [],
