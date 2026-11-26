@@ -24,15 +24,13 @@ export const CommentTriggerOutro = ({handle = '@AIGraphicTV', name = 'AI Graphic
   const commentMinH = narrow ? Math.round(h * (guide ? 0.3 : 0.32)) : undefined;
   const guideMinH = guide ? Math.round(h * (narrow ? 0.46 : 0.5)) : undefined;
 
+  const logoSize = narrow ? 240 : 230; // style_reference.md fix #3: 220-260px real logo, no fake avatar
   return (
     <AbsoluteFill>
       <StudioBg tn={tn} />
-      <div style={{position: 'absolute', top: narrow ? 28 : 36, left: narrow ? 28 : 36, width: narrow ? 72 : 64, height: narrow ? 72 : 64, opacity: prog(f, 0, 14, ease), zIndex: 6}}>
-        <Img src={staticFile('brand_logo.png')} style={{width: '100%', height: '100%', objectFit: 'contain'}} />
-      </div>
       {notifBanner && (
-        <div style={{position: 'absolute', left: '50%', top: narrow ? 90 - (1 - bannerK) * 140 : 60 - (1 - bannerK) * 140, transform: 'translateX(-50%)', opacity: bannerK, width: narrow ? '82%' : 520, maxWidth: 560}}>
-          <StudioCard radius={14} pad={narrow ? '18px 24px' : '14px 20px'} glow={t.accent}>
+        <div style={{position: 'absolute', left: '50%', top: narrow ? 90 - (1 - bannerK) * 140 : 60 - (1 - bannerK) * 140, transform: 'translateX(-50%)', opacity: bannerK, width: narrow ? '82%' : 520, maxWidth: 560, zIndex: 6}}>
+          <StudioCard radius={14} pad={narrow ? '18px 24px' : '14px 20px'} tn={tn} glow={t.accent}>
             <div style={{display: 'flex', alignItems: 'center', gap: 12}}>
               <div style={{width: narrow ? 14 : 10, height: narrow ? 14 : 10, borderRadius: '50%', background: '#34d399', flex: '0 0 auto'}} />
               <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 24 : 16, color: t.fg}}>{dmPreview || 'Sent! Check your DMs'}</div>
@@ -43,24 +41,17 @@ export const CommentTriggerOutro = ({handle = '@AIGraphicTV', name = 'AI Graphic
       <AbsoluteFill style={{justifyContent: 'center', alignItems: 'center', padding: narrow ? (guide ? '0 36px' : '0 46px') : '0 90px'}}>
         <div style={{display: 'flex', flexDirection: rowLayout ? 'row' : 'column', alignItems: 'center', gap: narrow ? (guide ? 18 : 26) : 56}}>
           <div style={{width: narrow ? (guide ? '58%' : '100%') : 560, maxWidth: 640, flex: narrow && guide ? '1 1 58%' : undefined, opacity: Math.min(1, profileK * 1.3), transform: `translateY(${(1 - Math.min(1, profileK)) * 24}px)`}}>
-            <StudioCard radius={22} pad={narrow ? '34px 30px' : '26px 32px'} glow={t.accent} style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
-              <div style={{display: 'flex', alignItems: 'center', gap: narrow ? 24 : 16}}>
-                <div style={{
-                  width: narrow ? 100 : 60, height: narrow ? 100 : 60, borderRadius: '50%', flex: '0 0 auto',
-                  background: `linear-gradient(135deg, ${t.accent}, ${t.accent2 || t.accent})`,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  fontFamily: F.display, fontSize: narrow ? 42 : 26, color: t.onAccent,
-                }}>{(name[0] || 'A').toUpperCase()}</div>
-                <div>
-                  <div style={{display: 'flex', alignItems: 'center', gap: 8, fontFamily: F.sans, fontWeight: 800, fontSize: narrow ? 34 : 21, color: t.fg}}>
-                    {name} <span style={{color: t.accent}}>✓</span>
-                  </div>
-                  <div style={{fontFamily: F.sans, fontSize: narrow ? 24 : 15, color: t.sub, marginTop: narrow ? 4 : 0}}>{handle}{bio ? ` · ${bio}` : ''}</div>
-                </div>
+            <StudioCard radius={22} pad={narrow ? '34px 30px' : '26px 32px'} tn={tn} glow={t.accent} style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center'}}>
+              <div style={{width: logoSize, height: logoSize, flex: '0 0 auto', marginBottom: narrow ? 20 : 16}}>
+                <Img src={staticFile('brand_logo.png')} style={{width: '100%', height: '100%', objectFit: 'contain'}} />
               </div>
+              <div style={{display: 'flex', alignItems: 'center', gap: 8, fontFamily: F.sans, fontWeight: 800, fontSize: narrow ? 34 : 21, color: t.fg}}>
+                {name} <span style={{color: t.accent}}>✓</span>
+              </div>
+              <div style={{fontFamily: F.sans, fontSize: narrow ? 24 : 15, color: t.sub, marginTop: narrow ? 4 : 0}}>{handle}{bio ? ` · ${bio}` : ''}</div>
             </StudioCard>
             <div style={{marginTop: narrow ? 28 : 16}}>
-              <StudioCard radius={22} pad={narrow ? '28px 26px' : '20px 26px'} glow={t.accent2 || t.accent} style={{minHeight: commentMinH, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+              <StudioCard radius={22} pad={narrow ? '28px 26px' : '20px 26px'} tn={tn} glow={t.accent2 || t.accent} style={{minHeight: commentMinH, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
                 <div style={{display: 'flex', alignItems: 'center', gap: narrow ? 18 : 12}}>
                   <div style={{
                     flex: 1, background: t.light ? 'rgba(15,23,42,.045)' : 'rgba(255,255,255,.06)',
@@ -90,7 +81,7 @@ export const CommentTriggerOutro = ({handle = '@AIGraphicTV', name = 'AI Graphic
               width: narrow ? '38%' : 340, flex: narrow ? '1 1 38%' : undefined, opacity: prog(f, 14, 16, ease),
               transform: `perspective(1000px) rotateY(${narrow ? -6 : -10}deg) rotateX(4deg) translateY(${(1 - prog(f, 14, 16, ease)) * 20}px)`,
             }}>
-              <StudioCard radius={18} pad={narrow ? '18px 16px' : '22px 24px'} glow={t.accent} style={{minHeight: guideMinH, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+              <StudioCard radius={18} pad={narrow ? '18px 16px' : '22px 24px'} tn={tn} glow={t.accent} style={{minHeight: guideMinH, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
                 <div style={{display: 'inline-block', background: t.accent, color: t.onAccent, fontFamily: F.display, fontSize: narrow ? 12 : 14, letterSpacing: 0.5, padding: '5px 10px', borderRadius: 7, marginBottom: 12}}>
                   {guide.badge || 'FREE GUIDE'}
                 </div>

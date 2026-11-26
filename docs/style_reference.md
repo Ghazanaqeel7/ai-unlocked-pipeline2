@@ -56,10 +56,14 @@ whole pill flips color with the beat underneath it:
 - **White card with bold dark text** over a dark/grid (obsidian) beat.
 - **Dark-ink pill with crisp white text** over a light (sand/studio) beat.
 
-The active word is bold and highlighted in the current beat's own accent color — never a blue bounding
-box or corner handles. A small `@AIGraphicTV` watermark stays in the top-safe-zone at all times. Driven
-by the same `timing.json → scenes[].words` data as before, plus each beat's `theme` (or legacy
-`polarity`/`tone` for old jobs) — nothing else about `scenes.json`'s shape changes.
+The active word is bold and highlighted in the current beat's own accent color — but only when it's an
+impact noun/verb; a stop-word (the/a/is/you/its/through/in/...) that happens to be the currently-spoken
+word stays in plain context style, never bold/accent (fix, 2026-11-26). Never a blue bounding box or
+corner handles. **The floating `@AIGraphicTV` top watermark has been removed entirely** (fix,
+2026-11-26) — the real brand logo now only appears, large, in `CommentTriggerOutro`'s outro card; no
+small corner badge anywhere else. Driven by the same `timing.json → scenes[].words` data as before, plus
+each beat's `theme` (or legacy `polarity`/`tone` for old jobs) — nothing else about `scenes.json`'s shape
+changes.
 
 ## 4. High-retention motion primitives (`pipeline/template/src/scenes/studio/`)
 
@@ -136,3 +140,23 @@ Every change above is **additive to the engine, destructive only to HostAvatar**
 already-approved job (e.g. `001-launch-ai-workflow-short`) is untouched and keeps rendering exactly as
 it did before, because the legacy component types stay registered in `Doc.jsx`'s `REGISTRY`. Only NEW
 jobs should use the Studio Editorial primitives above.
+
+## 8. Layout/contrast fixes (2026-11-26, from owner review of job 904)
+
+- **Root cause of invisible dark-on-dark text**: every `StudioCard` call site across all 6 `scenes/
+  studio/` primitives forgot to pass its resolved `tn` theme prop, so `StudioCard` silently fell back
+  to the legacy dark-navy `glass` tone for its card background regardless of the beat's real
+  sand/studio/obsidian theme — dark ink text (sand/studio) landed on a near-black card. Fixed at every
+  call site; `StudioCard` also now defaults `tn='obsidian'` defensively.
+- Headlines (`StudioHeadline`) are now massive (84-104px on 9:16, 72-92px on 16:9, independent of word
+  count), `lineHeight: 1.05`, `letterSpacing: -0.03em`, and positioned at `paddingTop: '12%'` in every
+  primitive (was a small fixed px offset).
+- UI cards (`TiltedAgentStage`, `MetricOdometer`, `RetentionGraph`, `PerspectiveWall`,
+  `InteractiveUiCard`) are now sized to 86-92% width / 42-55% viewport height (computed from
+  `useVideoConfig().height`) instead of small fixed-px boxes with large empty margins.
+- `CommentTriggerOutro`: removed the fake green initial-letter avatar circle and the small top-left
+  corner logo; the real `brand_logo.png` now renders once, large (220-260px), centered at the top of
+  the outro card.
+- `Captions.jsx`: the top `@AIGraphicTV` watermark is removed entirely. The bottom pill's active-word
+  highlight now skips stop-words (a/the/is/you/its/through/in/...) via a `STOPWORDS` check — only
+  impact nouns/verbs get the bold accent treatment.

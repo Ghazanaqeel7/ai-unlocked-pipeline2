@@ -110,7 +110,7 @@ jobs:
           DUR=$(python3 -c "import json;print(json.load(open('jobs/$J/project/src/timing.json'))['duration'])")
           FRAMES=$(python3 -c "print(max(1,int(round($DUR*30))-1))")
           COMP=Doc; [ "$JTYPE" = "short" ] && COMP=ShortDoc
-          bash pipeline/video/render_chunk.sh "jobs/$J" 0 "$FRAMES" out/chunk.mp4 4 "$COMP"
+          bash pipeline/video/render_chunk.sh "jobs/$J" 0 "$FRAMES" out/chunk.mp4 "$(nproc)" "$COMP"
 
           bash pipeline/video/finalize_long.sh "jobs/$J" "jobs/$J/project/out/chunk.mp4"
 

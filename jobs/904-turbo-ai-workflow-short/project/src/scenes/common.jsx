@@ -371,7 +371,11 @@ export const StudioBg = ({tn = 'obsidian'}) => {
 // Studio Editorial elevated card: pure white floating card (sand/studio themes) or a soft dark glass
 // panel with a glow (obsidian) — picked automatically from the resolved tone's own `light`/`shadow`
 // fields, so a studio primitive never needs its own per-theme card branching.
-export const StudioCard = ({children, style, radius = 20, pad = '30px 38px', glow, tn}) => {
+export const StudioCard = ({children, style, radius = 20, pad = '30px 38px', glow, tn = 'obsidian'}) => {
+  // Defensive default only — every call site must still pass its OWN resolved `tn` (the beat's real
+  // sand/studio/obsidian theme). A forgotten `tn` here used to silently fall back to tone(undefined)
+  // -> the legacy dark-navy 'glass' tone, producing dark-on-dark text whenever a sand/studio-themed
+  // primitive rendered its card (the "invisible checklist/graph labels" bug, style_reference.md fix).
   const t = tone(tn);
   const boxShadow = t.light
     ? `${t.shadow || '0 20px 50px rgba(0,0,0,.08)'}${glow ? `, 0 0 36px ${glow}26` : ''}`

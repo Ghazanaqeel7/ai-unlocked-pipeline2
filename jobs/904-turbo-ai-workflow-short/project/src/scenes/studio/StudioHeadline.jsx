@@ -12,7 +12,10 @@ export const StudioHeadline = ({text = '', accent = [], kicker, theme, size, sta
   const f = useCurrentFrame(); const t = tone(studioTheme(theme)); const {width: w} = useVideoConfig();
   const narrow = w < 1600;
   const ws = wordsWithAccent(text, accent);
-  const fs = size || (ws.length > 9 ? 0.58 : ws.length > 5 ? 0.76 : 0.95) * (narrow ? 70 : 112);
+  // Massive editorial display size (style_reference.md fix #1): 84-104px on 9:16, 72-92px on 16:9,
+  // regardless of word count — the old 0.58x factor let a long headline shrink to ~63px, well below
+  // "massive". `size` can still override for a one-off primitive that truly needs a smaller headline.
+  const fs = size || (ws.length > 9 ? 0.76 : ws.length > 5 ? 0.86 : 0.95) * (narrow ? 110 : 97);
   const step = 4;
   return (
     <div style={{textAlign: align, maxWidth: narrow ? 900 : 1600}}>
@@ -31,8 +34,8 @@ export const StudioHeadline = ({text = '', accent = [], kicker, theme, size, sta
             <span key={i} style={{position: 'relative', display: 'inline-block', opacity: k, transform: `scale(${sc})`}}>
               {x.a && <HighlightSweep frame={f} at={at + 2} color={t.accent} style={{inset: '6% -4%', zIndex: 0}} />}
               <span style={{
-                position: 'relative', zIndex: 1, fontFamily: F.display, fontSize: fs, lineHeight: 1.08,
-                letterSpacing: 0.3, textTransform: 'uppercase', color: x.a ? t.onAccent : t.fg,
+                position: 'relative', zIndex: 1, fontFamily: F.display, fontSize: fs, lineHeight: 1.05,
+                letterSpacing: '-0.03em', textTransform: 'uppercase', color: x.a ? t.onAccent : t.fg,
                 padding: x.a ? `0 ${fs * 0.08}px` : 0,
               }}>{x.w}</span>
             </span>

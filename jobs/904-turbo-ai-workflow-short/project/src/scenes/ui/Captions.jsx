@@ -48,13 +48,14 @@ export const Captions = ({words, polaritySegments}) => {
     }
   }
 
-  return (
-    <>
-      {idx !== -1 && <CaptionPill words={words} idx={idx} narrow={narrow} polarity={polarity} accent={accent} />}
-      <Watermark narrow={narrow} polarity={polarity} />
-    </>
-  );
+  return idx !== -1 ? <CaptionPill words={words} idx={idx} narrow={narrow} polarity={polarity} accent={accent} /> : null;
 };
+
+// style_reference.md fix #4: only an impact noun/verb gets the bold accent-color treatment in the
+// pill — a stop-word landing mid-speech (the/a/is/you/its/through/in/...) stays plain context style
+// even while it's the "active" (currently-spoken) word.
+const STOPWORDS = new Set(['a', 'an', 'the', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'to', 'of', 'in', 'on', 'at', 'by', 'for', 'with', 'from', 'into', 'onto', 'through', 'over', 'under', 'up', 'down', 'out', 'off', 'and', 'or', 'but', 'so', 'if', 'as', 'than', 'then', 'that', 'this', 'these', 'those', 'it', 'its', "it's", 'you', "you're", 'your', 'we', 'our', 'i', 'he', 'she', 'they', 'them', 'his', 'her', 'their', 'not', 'do', 'does', 'did', 'has', 'have', 'had', 'will', 'would', 'can', 'could', 'just', 'now', 'here', 'there']);
+const isStopWord = (w) => STOPWORDS.has((w || '').toLowerCase().replace(/[^a-z']/gi, ''));
 
 const CaptionPill = ({words, idx, narrow, polarity, accent}) => {
   const WINDOW = narrow ? 5 : 7;
@@ -63,7 +64,6 @@ const CaptionPill = ({words, idx, narrow, polarity, accent}) => {
   const light = polarity === 'light'; // sand/studio beat underneath -> dark-ink pill, white text
   const pillBg = light ? '#0F172A' : '#FFFFFF';
   const ctxColor = light ? 'rgba(255,255,255,.72)' : 'rgba(15,23,42,.65)';
-  const activeColor = light ? '#FFFFFF' : '#0F172A';
 
   return (
     <AbsoluteFill
@@ -90,32 +90,22 @@ const CaptionPill = ({words, idx, narrow, polarity, accent}) => {
       >
         {slice.map((w, i) => {
           const active = startIdx + i === idx;
+          const highlight = active && !isStopWord(w.w);
           return (
             <span
               key={startIdx + i}
               style={{
                 fontFamily: F.sans,
-                fontWeight: active ? 800 : 600,
+                fontWeight: highlight ? 800 : 600,
                 fontSize: narrow ? 34 : 28,
-                color: active ? accent : ctxColor,
+                color: highlight ? accent : ctxColor,
                 letterSpacing: '-0.01em',
               }}
             >
-              {active ? w.w.toUpperCase() : w.w}
+              {highlight ? w.w.toUpperCase() : w.w}
             </span>
           );
         })}
-      </div>
-    </AbsoluteFill>
-  );
-};
-
-const Watermark = ({narrow, polarity}) => {
-  const light = polarity === 'light';
-  return (
-    <AbsoluteFill style={{alignItems: 'center', justifyContent: 'flex-start', paddingTop: narrow ? 60 : 36, pointerEvents: 'none'}}>
-      <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 24 : 20, letterSpacing: 1, color: light ? 'rgba(15,23,42,.42)' : 'rgba(255,255,255,.4)'}}>
-        @AIGraphicTV
       </div>
     </AbsoluteFill>
   );

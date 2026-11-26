@@ -18,14 +18,15 @@ import {StudioHeadline} from './StudioHeadline.jsx';
 //   items    — [{text}] (for kind:'checklist')
 //   theme
 export const InteractiveUiCard = ({kicker, headline, accent = [], kind = 'dropdown', dropdown, query = '', items = [], theme}) => {
-  const f = useCurrentFrame(); const tn = studioTheme(theme); const t = tone(tn); const {width: w} = useVideoConfig();
+  const f = useCurrentFrame(); const tn = studioTheme(theme); const t = tone(tn); const {width: w, height: h} = useVideoConfig();
   const narrow = w < 1600;
+  const cardH = Math.round(h * 0.42); // full-bleed stage (style_reference.md fix #2: 42-55% vh)
   return (
     <AbsoluteFill>
       <StudioBg tn={tn} />
-      <AbsoluteFill style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: narrow ? 30 : 36, padding: '0 60px'}}>
-        {headline && <StudioHeadline text={headline} accent={accent} kicker={kicker} theme={tn} size={narrow ? 42 : 54} />}
-        <StudioCard radius={22} pad={narrow ? '28px 26px' : '30px 36px'} style={{width: narrow ? '86%' : 560}} glow={t.accent}>
+      <AbsoluteFill style={{flexDirection: 'column', alignItems: 'center', justifyContent: 'flex-start', gap: narrow ? 30 : 36, padding: '0 60px', paddingTop: '12%'}}>
+        {headline && <StudioHeadline text={headline} accent={accent} kicker={kicker} theme={tn} />}
+        <StudioCard radius={22} pad={narrow ? '28px 26px' : '30px 36px'} tn={tn} style={{width: '88%', minHeight: cardH, display: 'flex', flexDirection: 'column', justifyContent: 'center'}} glow={t.accent}>
           {kind === 'dropdown' && <DropdownDemo spec={dropdown} t={t} f={f} narrow={narrow} />}
           {kind === 'typing' && <TypingDemo query={query} t={t} f={f} narrow={narrow} />}
           {kind === 'checklist' && <ChecklistDemo items={items} t={t} f={f} narrow={narrow} />}
@@ -43,13 +44,13 @@ const DropdownDemo = ({spec = {}, t, f, narrow}) => {
   const isOpen = openK > 0.2 && closeK < 0.5;
   return (
     <div>
-      <div style={{fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 16 : 13, color: t.sub, marginBottom: 10, textTransform: 'uppercase', letterSpacing: 1}}>{label}</div>
+      <div style={{fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 22 : 18, color: t.sub, marginBottom: 16, textTransform: 'uppercase', letterSpacing: 1.5}}>{label}</div>
       <div style={{
-        display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: narrow ? '18px 20px' : '14px 18px',
-        borderRadius: 12, border: `1.5px solid ${t.accent}`, background: t.light ? '#FFFFFF' : 'rgba(255,255,255,.04)',
+        display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: narrow ? '26px 28px' : '22px 26px',
+        borderRadius: 16, border: `2px solid ${t.accent}`, background: t.light ? '#FFFFFF' : 'rgba(255,255,255,.04)',
       }}>
-        <span style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 24 : 19, color: t.fg}}>{options[picked] || options[0] || '—'}</span>
-        <ChevronDown size={20} color={t.accent} style={{transform: `rotate(${isOpen ? 180 : 0}deg)`}} />
+        <span style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 34 : 28, color: t.fg}}>{options[picked] || options[0] || '—'}</span>
+        <ChevronDown size={30} color={t.accent} style={{transform: `rotate(${isOpen ? 180 : 0}deg)`}} />
       </div>
       <div style={{maxHeight: isOpen ? 400 : 0, overflow: 'hidden', transition: 'none', marginTop: isOpen ? 8 : 0}}>
         {options.map((o, i) => {
@@ -57,13 +58,13 @@ const DropdownDemo = ({spec = {}, t, f, narrow}) => {
           const rowK = prog(f, 14 + i * 4, 8, ease);
           return (
             <div key={i} style={{
-              opacity: isOpen ? rowK : 0, padding: narrow ? '14px 18px' : '11px 16px', borderRadius: 8,
+              opacity: isOpen ? rowK : 0, padding: narrow ? '20px 24px' : '16px 20px', borderRadius: 10,
               background: isPicked && closeK > 0.3 ? `${t.accent}1f` : 'transparent',
               border: isPicked && closeK > 0.3 ? `1px solid ${t.accent}` : '1px solid transparent',
               display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-              fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 20 : 16, color: t.fg,
+              fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 28 : 22, color: t.fg,
             }}>
-              {o}{isPicked && closeK > 0.3 && <Check size={16} color={t.accent} />}
+              {o}{isPicked && closeK > 0.3 && <Check size={22} color={t.accent} />}
             </div>
           );
         })}
@@ -76,9 +77,9 @@ const TypingDemo = ({query, t, f, narrow}) => {
   const typeK = prog(f, 10, Math.max(14, query.length * 2.6), ease);
   const typed = query.slice(0, Math.round(query.length * typeK));
   return (
-    <div style={{display: 'flex', alignItems: 'center', gap: 14, padding: narrow ? '22px 24px' : '18px 22px', borderRadius: 14, border: `1.5px solid ${t.line}`, background: t.light ? '#FFFFFF' : 'rgba(255,255,255,.04)'}}>
-      <Search size={22} color={t.accent} />
-      <div style={{fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 26 : 20, color: t.fg}}>
+    <div style={{display: 'flex', alignItems: 'center', gap: 18, padding: narrow ? '32px 32px' : '26px 30px', borderRadius: 18, border: `2px solid ${t.line}`, background: t.light ? '#FFFFFF' : 'rgba(255,255,255,.04)'}}>
+      <Search size={30} color={t.accent} />
+      <div style={{fontFamily: F.sans, fontWeight: 600, fontSize: narrow ? 36 : 28, color: t.fg}}>
         {typed}<span style={{opacity: typeK < 1 ? (f % 20 < 10 ? 1 : 0) : 0}}>|</span>
       </div>
     </div>
@@ -92,14 +93,14 @@ const ChecklistDemo = ({items, t, f, narrow}) => (
       const k = prog(f, 8 + i * 10, 12, ease);
       const tickK = prog(f, 14 + i * 10, 10, ease);
       return (
-        <div key={i} style={{opacity: k, display: 'flex', alignItems: 'center', gap: 14, marginBottom: 16, transform: `translateX(${(1 - k) * -14}px)`}}>
+        <div key={i} style={{opacity: k, display: 'flex', alignItems: 'center', gap: 20, marginBottom: 26, transform: `translateX(${(1 - k) * -14}px)`}}>
           <div style={{
-            width: 28, height: 28, borderRadius: 8, flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            background: tickK > 0.5 ? t.accent : 'transparent', border: `2px solid ${t.accent}`,
+            width: 42, height: 42, borderRadius: 11, flex: '0 0 auto', display: 'flex', alignItems: 'center', justifyContent: 'center',
+            background: tickK > 0.5 ? t.accent : 'transparent', border: `2.5px solid ${t.accent}`,
           }}>
-            {tickK > 0.5 && <Check size={18} color={t.onAccent} strokeWidth={3} />}
+            {tickK > 0.5 && <Check size={26} color={t.onAccent} strokeWidth={3} />}
           </div>
-          <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 22 : 18, color: t.fg}}>{spec.text}</div>
+          <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 32 : 26, color: t.fg}}>{spec.text}</div>
         </div>
       );
     })}

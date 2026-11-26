@@ -18,8 +18,12 @@ import {StudioHeadline} from './StudioHeadline.jsx';
 //               to a full left->center->right->center sweep across the beat)
 //   theme     — 'sand' | 'studio' | 'obsidian' (default 'obsidian' — this primitive is built for it)
 export const TiltedAgentStage = ({kicker, headline, accent = [], steps = [], output, terminal, focus, theme, frames = 150}) => {
-  const f = useCurrentFrame(); const tn = studioTheme(theme || 'obsidian'); const t = tone(tn); const {width: w} = useVideoConfig();
+  const f = useCurrentFrame(); const tn = studioTheme(theme || 'obsidian'); const t = tone(tn); const {width: w, height: h} = useVideoConfig();
   const narrow = w < 1600;
+  // 42-55% vh full-bleed stage (style_reference.md fix #2) — but only for wide/side-by-side layout.
+  // In narrow/9:16 mode the 3 panes STACK (flexDirection:'column'), so forcing each to ~48% of
+  // the full video height overflows badly (3 x 48% > 100%). Use a content-driven compact height there.
+  const paneH = narrow ? Math.round(h * 0.2) : Math.round(h * 0.46);
   const order = focus && focus.length ? focus : ['left', 'center', 'right', 'center'];
   const segDur = frames / order.length;
   const segIdx = Math.min(order.length - 1, Math.floor(f / segDur));
@@ -33,8 +37,8 @@ export const TiltedAgentStage = ({kicker, headline, accent = [], steps = [], out
   return (
     <AbsoluteFill>
       <StudioBg tn={tn} />
-      <AbsoluteFill style={{flexDirection: 'column', alignItems: 'center', paddingTop: narrow ? 90 : 70}}>
-        {headline && <StudioHeadline text={headline} accent={accent} kicker={kicker} theme={tn} size={narrow ? 46 : 60} />}
+      <AbsoluteFill style={{flexDirection: 'column', alignItems: 'center', paddingTop: '12%'}}>
+        {headline && <StudioHeadline text={headline} accent={accent} kicker={kicker} theme={tn} />}
         <div style={{
           flex: 1, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', perspective: 1800,
           marginTop: narrow ? 30 : 16,
@@ -42,9 +46,9 @@ export const TiltedAgentStage = ({kicker, headline, accent = [], steps = [], out
           <div style={{
             display: 'flex', flexDirection: narrow ? 'column' : 'row', gap: narrow ? 18 : 22,
             transform: `rotateX(8deg) rotateY(${6 - camX * 0.3}deg) translateX(${camX * 10}px) scale(${camS})`,
-            transformStyle: 'preserve-3d', width: narrow ? '86%' : '82%',
+            transformStyle: 'preserve-3d', width: narrow ? '90%' : '88%',
           }}>
-            <Pane w={narrow ? '100%' : '24%'} glow={t.accent2 || t.accent} active={order[segIdx] === 'left'} delay={6}>
+            <Pane w={narrow ? '100%' : '24%'} h={paneH} tn={tn} glow={t.accent2 || t.accent} active={order[segIdx] === 'left'} delay={6}>
               <PaneTitle text="AGENT STEPS" tn={tn} />
               {steps.slice(0, 6).map((s, i) => {
                 const k = prog(f, 10 + i * 6, 12, ease);
@@ -60,7 +64,7 @@ export const TiltedAgentStage = ({kicker, headline, accent = [], steps = [], out
                 );
               })}
             </Pane>
-            <Pane w={narrow ? '100%' : '38%'} glow={t.accent} active={order[segIdx] === 'center'} delay={14}>
+            <Pane w={narrow ? '100%' : '38%'} h={paneH} tn={tn} glow={t.accent} active={order[segIdx] === 'center'} delay={14}>
               <PaneTitle text={(output && output.title) || 'LIVE REASONING'} tn={tn} />
               {(output?.lines || []).slice(0, 6).map((line, i) => {
                 const k = prog(f, 20 + i * 10, 14, ease);
@@ -71,7 +75,7 @@ export const TiltedAgentStage = ({kicker, headline, accent = [], steps = [], out
                 );
               })}
             </Pane>
-            <Pane w={narrow ? '100%' : '30%'} glow={t.accent2 || t.accent} active={order[segIdx] === 'right'} delay={22}>
+            <Pane w={narrow ? '100%' : '30%'} h={paneH} tn={tn} glow={t.accent2 || t.accent} active={order[segIdx] === 'right'} delay={22}>
               <PaneTitle text={(terminal && terminal.title) || 'TERMINAL'} tn={tn} />
               {(terminal?.lines || []).slice(0, 6).map((ln, i) => {
                 const spec = typeof ln === 'string' ? {text: ln, status: 'ok'} : ln;
@@ -92,19 +96,19 @@ export const TiltedAgentStage = ({kicker, headline, accent = [], steps = [], out
   );
 };
 
-const Pane = ({children, w, glow, active, delay}) => {
+const Pane = ({children, w, h, tn, glow, active, delay}) => {
   const f = useCurrentFrame(); const k = prog(f, delay, 16, ease);
   return (
     <div style={{
       width: w, opacity: k, transform: `translateY(${(1 - k) * 24}px) scale(${active ? 1.02 : 1})`,
       transition: 'none',
     }}>
-      <StudioCardFill glow={active ? glow : undefined}>{children}</StudioCardFill>
+      <StudioCardFill tn={tn} h={h} glow={active ? glow : undefined}>{children}</StudioCardFill>
     </div>
   );
 };
-const StudioCardFill = ({children, glow}) => (
-  <StudioCard radius={18} pad="22px 24px" glow={glow} style={{minHeight: 220}}>{children}</StudioCard>
+const StudioCardFill = ({children, tn, h, glow}) => (
+  <StudioCard radius={18} pad="22px 24px" tn={tn} glow={glow} style={{minHeight: h || 220}}>{children}</StudioCard>
 );
 const PaneTitle = ({text, tn}) => {
   const t = tone(tn);

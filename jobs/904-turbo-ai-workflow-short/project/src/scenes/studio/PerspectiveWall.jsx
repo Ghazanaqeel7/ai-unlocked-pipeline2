@@ -20,14 +20,14 @@ export const PerspectiveWall = ({kicker, headline, accent = [], cards = [], them
   return (
     <AbsoluteFill>
       <StudioBg tn={tn} />
-      <AbsoluteFill style={{flexDirection: 'column', alignItems: 'center', paddingTop: narrow ? 90 : 70, overflow: 'hidden'}}>
-        {headline && <StudioHeadline text={headline} accent={accent} kicker={kicker} theme={tn} size={narrow ? 42 : 56} />}
+      <AbsoluteFill style={{flexDirection: 'column', alignItems: 'center', paddingTop: '12%', overflow: 'hidden'}}>
+        {headline && <StudioHeadline text={headline} accent={accent} kicker={kicker} theme={tn} />}
         <div style={{
           flex: 1, width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', perspective: 1600, marginTop: 20,
         }}>
           <div style={{
             display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: narrow ? 14 : 18,
-            width: narrow ? '92%' : '80%', transform: `rotateX(14deg) rotateZ(${Math.sin(drift / 40) * 1.5}deg)`,
+            width: narrow ? '92%' : '88%', transform: `rotateX(14deg) rotateZ(${Math.sin(drift / 40) * 1.5}deg)`,
             transformStyle: 'preserve-3d',
           }}>
             {cards.slice(0, 30).map((c, i) => {
@@ -39,7 +39,7 @@ export const PerspectiveWall = ({kicker, headline, accent = [], cards = [], them
                   opacity: Math.min(1, k * 1.3),
                   transform: `translateY(${(1 - k) * 30 + Math.sin(drift / 50 + seed * 10) * 6}px) translateZ(${z}px) scale(${Math.min(1, k)})`,
                 }}>
-                  <StudioCard radius={14} pad={narrow ? '14px 12px' : '16px 14px'} style={{minHeight: narrow ? 100 : 120, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 8}}>
+                  <StudioCard radius={14} pad={narrow ? '14px 12px' : '16px 14px'} tn={tn} style={{minHeight: narrow ? 100 : 120, display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 8}}>
                     <ToolGlyph name={c.glyph || c.label} color={c.color || t.accent} size={narrow ? 26 : 28} />
                     <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 13 : 13.5, color: t.fg, textAlign: 'center', lineHeight: 1.2}}>{c.label}</div>
                     {c.sub && <div style={{fontFamily: F.mono, fontSize: narrow ? 11 : 11, color: t.sub}}>{c.sub}</div>}

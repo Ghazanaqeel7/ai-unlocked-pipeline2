@@ -15,8 +15,9 @@ import {StudioHeadline} from './StudioHeadline.jsx';
 //   callouts — [{pct, label}] — pct = 0..1 position along the x-axis where a pulsing marker + label sits
 //   theme
 export const RetentionGraph = ({kicker, headline, accent = [], good = [], bad = [], callouts = [], theme}) => {
-  const f = useCurrentFrame(); const tn = studioTheme(theme); const t = tone(tn); const {width: w} = useVideoConfig();
+  const f = useCurrentFrame(); const tn = studioTheme(theme); const t = tone(tn); const {width: w, height: h} = useVideoConfig();
   const narrow = w < 1600;
+  const cardH = Math.round(h * 0.5); // full-bleed stage (style_reference.md fix #2: 42-55% vh)
   const W = 900, H = 420, PAD = 40;
   const drawK = prog(f, 20, 55, ease);
   const toPath = (series) => {
@@ -32,10 +33,10 @@ export const RetentionGraph = ({kicker, headline, accent = [], good = [], bad = 
   return (
     <AbsoluteFill>
       <StudioBg tn={tn} />
-      <AbsoluteFill style={{flexDirection: 'column', alignItems: 'center', paddingTop: narrow ? 90 : 70, gap: narrow ? 26 : 30}}>
-        {headline && <StudioHeadline text={headline} accent={accent} kicker={kicker} theme={tn} size={narrow ? 42 : 56} />}
-        <StudioCard radius={24} pad={narrow ? '28px 24px' : '36px 46px'} glow={t.accent} style={{width: narrow ? '88%' : '70%'}}>
-          <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={narrow ? 320 : 380}>
+      <AbsoluteFill style={{flexDirection: 'column', alignItems: 'center', paddingTop: '12%', gap: narrow ? 26 : 30}}>
+        {headline && <StudioHeadline text={headline} accent={accent} kicker={kicker} theme={tn} />}
+        <StudioCard radius={24} pad={narrow ? '28px 24px' : '36px 46px'} tn={tn} glow={t.accent} style={{width: '88%', minHeight: cardH, display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+          <svg viewBox={`0 0 ${W} ${H}`} width="100%" height={Math.round(cardH * 0.62)}>
             {/* axis */}
             <line x1={PAD} y1={H - PAD} x2={W - PAD} y2={H - PAD} stroke={t.line} strokeWidth="2" />
             <line x1={PAD} y1={PAD} x2={PAD} y2={H - PAD} stroke={t.line} strokeWidth="2" />
@@ -63,13 +64,13 @@ export const RetentionGraph = ({kicker, headline, accent = [], good = [], bad = 
               );
             })}
           </svg>
-          <div style={{display: 'flex', flexDirection: 'column', gap: 10, marginTop: 6}}>
+          <div style={{display: 'flex', flexDirection: 'column', gap: 16, marginTop: 18}}>
             {callouts.map((c, i) => {
               const k = prog(f, 44 + i * 10, 14, ease);
               return (
-                <div key={i} style={{opacity: k, display: 'flex', alignItems: 'center', gap: 10, transform: `translateX(${(1 - k) * -12}px)`}}>
-                  <div style={{width: 10, height: 10, borderRadius: '50%', background: '#f0506e', flex: '0 0 auto'}} />
-                  <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 22 : 19, color: t.fg}}>{c.label}</div>
+                <div key={i} style={{opacity: k, display: 'flex', alignItems: 'center', gap: 12, transform: `translateX(${(1 - k) * -12}px)`}}>
+                  <div style={{width: 14, height: 14, borderRadius: '50%', background: '#f0506e', flex: '0 0 auto'}} />
+                  <div style={{fontFamily: F.sans, fontWeight: 700, fontSize: narrow ? 28 : 24, color: t.fg}}>{c.label}</div>
                 </div>
               );
             })}
