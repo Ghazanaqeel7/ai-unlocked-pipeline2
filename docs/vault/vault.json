@@ -2,7 +2,32 @@
  "brand": "AI Graphic TV",
  "vault_url": "https://ghazanaqeel7.github.io/ai-unlocked-pipeline2/vault.html",
  "guides": [],
- "offers": [],
+ "offers": [
+  {
+   "id": "tripwire",
+   "name": "n8n Starter Pack",
+   "price": "$9",
+   "platform": "gumroad",
+   "url": "https://aigraphictv.gumroad.com/l/n8n-starter-pack",
+   "pitch": "Prompt packs + checklists from this month's episodes."
+  },
+  {
+   "id": "bundle",
+   "name": "Master Vault",
+   "price": "$27",
+   "platform": "gumroad",
+   "url": "https://aigraphictv.gumroad.com/l/master-vault",
+   "pitch": "Every episode playbook (PDF) plus all prompt/config files."
+  },
+  {
+   "id": "dfy",
+   "name": "Done-For-You Automation",
+   "price": "$399",
+   "platform": "gumroad",
+   "url": "https://aigraphictv.gumroad.com/l/dfy-automation",
+   "pitch": "We set up your AI workflow for you."
+  }
+ ],
  "affiliates": [],
  "disclosure": "Some links are affiliate links: we may earn a commission at no extra cost to you."
 }
