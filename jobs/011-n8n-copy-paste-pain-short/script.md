@@ -8,9 +8,9 @@ Target 49s (~139 words at 170 wpm). Markers drive the retention rules (pipeline/
 
 [REHOOK 0:11] The AI Agent node is the brain. You connect a chat model, add a tool, and the agent decides what to do.
 
-[REHOOK 0:19] The beginner mistake is the missing API key. Create a credential first, or the node fails. Skip it and the whole run stops on the first step.
+[REHOOK 0:19] The beginner mistake is the missing API key. Create a credential first, or the node fails.
 
-[REHOOK 0:28] Test with Execute Workflow, read each node's output, then publish it so it runs on its own. Manual test runs do not count toward your quota.
+[REHOOK 0:28] Test with Execute Workflow, read each node's output, then publish it so it runs on its own.
 
 [REHOOK 0:38] Start tiny: one trigger, one agent, one output. Get that working before you add anything else.
 

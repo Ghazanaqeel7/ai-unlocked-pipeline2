@@ -1,17 +1,637 @@
 {
- "duration": 16.0,
+ "duration": 48.381,
  "scenes": [
   {
    "id": "s01",
    "start": 0.0,
-   "end": 8.0,
-   "text": "Most people use ChatGPT wrong. Here is the one setting that changes everything."
+   "end": 6.03,
+   "text": "Day one of seven: every n8n workflow starts with a trigger.",
+   "words": [
+    {
+     "w": "Day",
+     "start": 1.2,
+     "end": 1.474
+    },
+    {
+     "w": "one",
+     "start": 1.474,
+     "end": 1.749
+    },
+    {
+     "w": "of",
+     "start": 1.749,
+     "end": 1.931
+    },
+    {
+     "w": "seven:",
+     "start": 1.931,
+     "end": 2.48
+    },
+    {
+     "w": "every",
+     "start": 2.48,
+     "end": 2.937
+    },
+    {
+     "w": "n8n",
+     "start": 2.937,
+     "end": 3.211
+    },
+    {
+     "w": "workflow",
+     "start": 3.211,
+     "end": 3.943
+    },
+    {
+     "w": "starts",
+     "start": 3.943,
+     "end": 4.491
+    },
+    {
+     "w": "with",
+     "start": 4.491,
+     "end": 4.857
+    },
+    {
+     "w": "a",
+     "start": 4.857,
+     "end": 4.949
+    },
+    {
+     "w": "trigger.",
+     "start": 4.949,
+     "end": 5.68
+    }
+   ]
   },
   {
    "id": "s02",
-   "start": 8.0,
-   "end": 16.0,
-   "text": "This single trick saves hours every week."
+   "start": 6.03,
+   "end": 13.399,
+   "text": "A trigger is the event that starts everything. The Chat Trigger runs your workflow whenever someone sends a message.",
+   "words": [
+    {
+     "w": "A",
+     "start": 6.03,
+     "end": 6.102
+    },
+    {
+     "w": "trigger",
+     "start": 6.102,
+     "end": 6.603
+    },
+    {
+     "w": "is",
+     "start": 6.603,
+     "end": 6.746
+    },
+    {
+     "w": "the",
+     "start": 6.746,
+     "end": 6.961
+    },
+    {
+     "w": "event",
+     "start": 6.961,
+     "end": 7.319
+    },
+    {
+     "w": "that",
+     "start": 7.319,
+     "end": 7.606
+    },
+    {
+     "w": "starts",
+     "start": 7.606,
+     "end": 8.035
+    },
+    {
+     "w": "everything.",
+     "start": 8.035,
+     "end": 8.823
+    },
+    {
+     "w": "The",
+     "start": 8.823,
+     "end": 9.038
+    },
+    {
+     "w": "Chat",
+     "start": 9.038,
+     "end": 9.324
+    },
+    {
+     "w": "Trigger",
+     "start": 9.324,
+     "end": 9.826
+    },
+    {
+     "w": "runs",
+     "start": 9.826,
+     "end": 10.112
+    },
+    {
+     "w": "your",
+     "start": 10.112,
+     "end": 10.399
+    },
+    {
+     "w": "workflow",
+     "start": 10.399,
+     "end": 10.972
+    },
+    {
+     "w": "whenever",
+     "start": 10.972,
+     "end": 11.545
+    },
+    {
+     "w": "someone",
+     "start": 11.545,
+     "end": 12.046
+    },
+    {
+     "w": "sends",
+     "start": 12.046,
+     "end": 12.404
+    },
+    {
+     "w": "a",
+     "start": 12.404,
+     "end": 12.476
+    },
+    {
+     "w": "message.",
+     "start": 12.476,
+     "end": 13.049
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 13.399,
+   "end": 20.191,
+   "text": "The Schedule Trigger runs on a clock. Choose seconds up to months, or paste a custom cron expression.",
+   "words": [
+    {
+     "w": "The",
+     "start": 13.399,
+     "end": 13.629
+    },
+    {
+     "w": "Schedule",
+     "start": 13.629,
+     "end": 14.242
+    },
+    {
+     "w": "Trigger",
+     "start": 14.242,
+     "end": 14.779
+    },
+    {
+     "w": "runs",
+     "start": 14.779,
+     "end": 15.086
+    },
+    {
+     "w": "on",
+     "start": 15.086,
+     "end": 15.239
+    },
+    {
+     "w": "a",
+     "start": 15.239,
+     "end": 15.316
+    },
+    {
+     "w": "clock.",
+     "start": 15.316,
+     "end": 15.776
+    },
+    {
+     "w": "Choose",
+     "start": 15.776,
+     "end": 16.237
+    },
+    {
+     "w": "seconds",
+     "start": 16.237,
+     "end": 16.773
+    },
+    {
+     "w": "up",
+     "start": 16.773,
+     "end": 16.927
+    },
+    {
+     "w": "to",
+     "start": 16.927,
+     "end": 17.08
+    },
+    {
+     "w": "months,",
+     "start": 17.08,
+     "end": 17.617
+    },
+    {
+     "w": "or",
+     "start": 17.617,
+     "end": 17.77
+    },
+    {
+     "w": "paste",
+     "start": 17.77,
+     "end": 18.154
+    },
+    {
+     "w": "a",
+     "start": 18.154,
+     "end": 18.231
+    },
+    {
+     "w": "custom",
+     "start": 18.231,
+     "end": 18.691
+    },
+    {
+     "w": "cron",
+     "start": 18.691,
+     "end": 18.998
+    },
+    {
+     "w": "expression.",
+     "start": 18.998,
+     "end": 19.841
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 20.191,
+   "end": 26.472,
+   "text": "The catch: a scheduled workflow only runs once you publish it. Saving alone does nothing.",
+   "words": [
+    {
+     "w": "The",
+     "start": 20.191,
+     "end": 20.429
+    },
+    {
+     "w": "catch:",
+     "start": 20.429,
+     "end": 20.903
+    },
+    {
+     "w": "a",
+     "start": 20.903,
+     "end": 20.982
+    },
+    {
+     "w": "scheduled",
+     "start": 20.982,
+     "end": 21.694
+    },
+    {
+     "w": "workflow",
+     "start": 21.694,
+     "end": 22.326
+    },
+    {
+     "w": "only",
+     "start": 22.326,
+     "end": 22.643
+    },
+    {
+     "w": "runs",
+     "start": 22.643,
+     "end": 22.959
+    },
+    {
+     "w": "once",
+     "start": 22.959,
+     "end": 23.275
+    },
+    {
+     "w": "you",
+     "start": 23.275,
+     "end": 23.513
+    },
+    {
+     "w": "publish",
+     "start": 23.513,
+     "end": 24.066
+    },
+    {
+     "w": "it.",
+     "start": 24.066,
+     "end": 24.303
+    },
+    {
+     "w": "Saving",
+     "start": 24.303,
+     "end": 24.778
+    },
+    {
+     "w": "alone",
+     "start": 24.778,
+     "end": 25.173
+    },
+    {
+     "w": "does",
+     "start": 25.173,
+     "end": 25.489
+    },
+    {
+     "w": "nothing.",
+     "start": 25.489,
+     "end": 26.122
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 26.472,
+   "end": 33.286,
+   "text": "Testing by hand is a manual execution. Only production runs count toward your plan quota.",
+   "words": [
+    {
+     "w": "Testing",
+     "start": 26.472,
+     "end": 27.075
+    },
+    {
+     "w": "by",
+     "start": 27.075,
+     "end": 27.248
+    },
+    {
+     "w": "hand",
+     "start": 27.248,
+     "end": 27.592
+    },
+    {
+     "w": "is",
+     "start": 27.592,
+     "end": 27.765
+    },
+    {
+     "w": "a",
+     "start": 27.765,
+     "end": 27.851
+    },
+    {
+     "w": "manual",
+     "start": 27.851,
+     "end": 28.368
+    },
+    {
+     "w": "execution.",
+     "start": 28.368,
+     "end": 29.23
+    },
+    {
+     "w": "Only",
+     "start": 29.23,
+     "end": 29.575
+    },
+    {
+     "w": "production",
+     "start": 29.575,
+     "end": 30.437
+    },
+    {
+     "w": "runs",
+     "start": 30.437,
+     "end": 30.781
+    },
+    {
+     "w": "count",
+     "start": 30.781,
+     "end": 31.212
+    },
+    {
+     "w": "toward",
+     "start": 31.212,
+     "end": 31.729
+    },
+    {
+     "w": "your",
+     "start": 31.729,
+     "end": 32.074
+    },
+    {
+     "w": "plan",
+     "start": 32.074,
+     "end": 32.419
+    },
+    {
+     "w": "quota.",
+     "start": 32.419,
+     "end": 32.936
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 33.286,
+   "end": 39.375,
+   "text": "Pick the trigger first, then the nodes. Everything else in the workflow depends on how it starts.",
+   "words": [
+    {
+     "w": "Pick",
+     "start": 33.286,
+     "end": 33.569
+    },
+    {
+     "w": "the",
+     "start": 33.569,
+     "end": 33.782
+    },
+    {
+     "w": "trigger",
+     "start": 33.782,
+     "end": 34.278
+    },
+    {
+     "w": "first,",
+     "start": 34.278,
+     "end": 34.703
+    },
+    {
+     "w": "then",
+     "start": 34.703,
+     "end": 34.986
+    },
+    {
+     "w": "the",
+     "start": 34.986,
+     "end": 35.199
+    },
+    {
+     "w": "nodes.",
+     "start": 35.199,
+     "end": 35.624
+    },
+    {
+     "w": "Everything",
+     "start": 35.624,
+     "end": 36.332
+    },
+    {
+     "w": "else",
+     "start": 36.332,
+     "end": 36.616
+    },
+    {
+     "w": "in",
+     "start": 36.616,
+     "end": 36.758
+    },
+    {
+     "w": "the",
+     "start": 36.758,
+     "end": 36.97
+    },
+    {
+     "w": "workflow",
+     "start": 36.97,
+     "end": 37.537
+    },
+    {
+     "w": "depends",
+     "start": 37.537,
+     "end": 38.033
+    },
+    {
+     "w": "on",
+     "start": 38.033,
+     "end": 38.174
+    },
+    {
+     "w": "how",
+     "start": 38.174,
+     "end": 38.387
+    },
+    {
+     "w": "it",
+     "start": 38.387,
+     "end": 38.529
+    },
+    {
+     "w": "starts.",
+     "start": 38.529,
+     "end": 39.025
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 39.375,
+   "end": 48.381,
+   "text": "Day two adds the AI Agent. Follow so you do not miss it, and comment GUIDE for the PDF.",
+   "words": [
+    {
+     "w": "Day",
+     "start": 39.375,
+     "end": 39.658
+    },
+    {
+     "w": "two",
+     "start": 39.658,
+     "end": 39.94
+    },
+    {
+     "w": "adds",
+     "start": 39.94,
+     "end": 40.318
+    },
+    {
+     "w": "the",
+     "start": 40.318,
+     "end": 40.601
+    },
+    {
+     "w": "AI",
+     "start": 40.601,
+     "end": 40.789
+    },
+    {
+     "w": "Agent.",
+     "start": 40.789,
+     "end": 41.355
+    },
+    {
+     "w": "Follow",
+     "start": 41.355,
+     "end": 41.921
+    },
+    {
+     "w": "so",
+     "start": 41.921,
+     "end": 42.109
+    },
+    {
+     "w": "you",
+     "start": 42.109,
+     "end": 42.392
+    },
+    {
+     "w": "do",
+     "start": 42.392,
+     "end": 42.581
+    },
+    {
+     "w": "not",
+     "start": 42.581,
+     "end": 42.864
+    },
+    {
+     "w": "miss",
+     "start": 42.864,
+     "end": 43.241
+    },
+    {
+     "w": "it,",
+     "start": 43.241,
+     "end": 43.524
+    },
+    {
+     "w": "and",
+     "start": 43.524,
+     "end": 43.807
+    },
+    {
+     "w": "comment",
+     "start": 43.807,
+     "end": 44.467
+    },
+    {
+     "w": "GUIDE",
+     "start": 44.467,
+     "end": 44.938
+    },
+    {
+     "w": "for",
+     "start": 44.938,
+     "end": 45.221
+    },
+    {
+     "w": "the",
+     "start": 45.221,
+     "end": 45.504
+    },
+    {
+     "w": "PDF.",
+     "start": 45.504,
+     "end": 45.881
+    }
+   ]
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Intro",
+   "start": 0
   }
  ]
 }

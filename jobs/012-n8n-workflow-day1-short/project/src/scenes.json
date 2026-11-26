@@ -1,48 +1,380 @@
 {
- "plan": true,
- "note": "Script-stage plan. The build step replaces this with the full beat list.",
  "scenes": [
   {
    "id": "s01",
-   "kind": "H",
-   "chapter": null,
-   "text": "Day one of seven: every n8n workflow starts with a trigger."
+   "text": "Day one of seven: every n8n workflow starts with a trigger.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Every workflow starts with a trigger",
+     "accent": [
+      "trigger"
+     ],
+     "kicker": "DAY 1 OF 7"
+    },
+    {
+     "type": "perspectivewall",
+     "theme": "sand",
+     "headline": "7 Days of n8n",
+     "accent": [
+      "Days"
+     ],
+     "kicker": "THE SERIES",
+     "cards": [
+      {
+       "label": "Day 1",
+       "sub": "Triggers",
+       "glyph": "zap"
+      },
+      {
+       "label": "Day 2",
+       "sub": "AI Agent",
+       "glyph": "brain"
+      },
+      {
+       "label": "Day 3",
+       "sub": "Models",
+       "glyph": "cpu"
+      },
+      {
+       "label": "Day 4",
+       "sub": "Tools",
+       "glyph": "wrench"
+      },
+      {
+       "label": "Day 5",
+       "sub": "Testing",
+       "glyph": "play"
+      },
+      {
+       "label": "Day 6",
+       "sub": "Publishing",
+       "glyph": "send"
+      },
+      {
+       "label": "Day 7",
+       "sub": "Your own build",
+       "glyph": "rocket"
+      },
+      {
+       "label": "Trigger",
+       "sub": "starts it",
+       "glyph": "flag"
+      },
+      {
+       "label": "Agent",
+       "sub": "thinks",
+       "glyph": "sparkles"
+      },
+      {
+       "label": "Tool",
+       "sub": "acts",
+       "glyph": "tool"
+      },
+      {
+       "label": "Test",
+       "sub": "read outputs",
+       "glyph": "eye"
+      },
+      {
+       "label": "Publish",
+       "sub": "runs alone",
+       "glyph": "check"
+      }
+     ]
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "obsidian",
+     "headline": "Chat Trigger: Message In, Run Out",
+     "accent": [
+      "Chat"
+     ],
+     "steps": [
+      {
+       "label": "Message sent",
+       "active": true
+      },
+      {
+       "label": "Workflow runs",
+       "active": false
+      },
+      {
+       "label": "Reply",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Runs on every chat message",
+       "Hosted chat is built in"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Day 1: the trigger",
+     "accent": [
+      "trigger"
+     ],
+     "kicker": "TODAY"
+    }
+   ]
   },
   {
    "id": "s02",
-   "kind": "R",
-   "chapter": null,
-   "text": "A trigger is the event that starts everything. The Chat Trigger runs your workflow whenever someone sends a message."
+   "text": "A trigger is the event that starts everything. The Chat Trigger runs your workflow whenever someone sends a message.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Chat Trigger",
+     "kind": "typing",
+     "accent": [
+      "Chat"
+     ],
+     "kicker": "TRIGGER 1",
+     "query": "On chat message",
+     "typing": "On chat message"
+    },
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Runs whenever someone sends a message",
+     "accent": [
+      "message"
+     ]
+    }
+   ]
   },
   {
    "id": "s03",
-   "kind": "R",
-   "chapter": null,
-   "text": "The Schedule Trigger runs on a clock. Choose seconds up to months, or paste a custom cron expression."
+   "text": "The Schedule Trigger runs on a clock. Choose seconds up to months, or paste a custom cron expression.",
+   "visual": [
+    {
+     "type": "tiltedagentstage",
+     "theme": "studio",
+     "headline": "Schedule Trigger: Runs on a Clock",
+     "accent": [
+      "Clock"
+     ],
+     "steps": [
+      {
+       "label": "Seconds",
+       "active": true
+      },
+      {
+       "label": "Hours",
+       "active": false
+      },
+      {
+       "label": "Days",
+       "active": false
+      },
+      {
+       "label": "Months",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Pick an interval",
+       "Or paste a custom cron expression"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Pick an interval",
+     "kind": "dropdown",
+     "accent": [
+      "interval"
+     ],
+     "kicker": "TRIGGER 2",
+     "dropdown": {
+      "label": "Schedule interval",
+      "options": [
+       "Seconds",
+       "Minutes",
+       "Hours",
+       "Days",
+       "Weeks",
+       "Months",
+       "Custom cron"
+      ],
+      "picked": 3
+     }
+    }
+   ]
   },
   {
    "id": "s04",
-   "kind": "R",
-   "chapter": null,
-   "text": "The catch: a scheduled workflow only runs once you publish it. Saving alone does nothing."
+   "text": "The catch: a scheduled workflow only runs once you publish it. Saving alone does nothing.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Publish it.",
+     "accent": [
+      "Publish"
+     ],
+     "pain": "Saving alone does nothing."
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "studio",
+     "headline": "Save, then publish",
+     "kind": "checklist",
+     "accent": [
+      "publish"
+     ],
+     "kicker": "THE CATCH",
+     "items": [
+      {
+       "text": "Build the workflow"
+      },
+      {
+       "text": "Save it"
+      },
+      {
+       "text": "Publish it"
+      },
+      {
+       "text": "Schedule runs on its own"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "s05",
-   "kind": "R",
-   "chapter": null,
-   "text": "Testing by hand is a manual execution. Only production runs count toward your plan quota."
+   "text": "Testing by hand is a manual execution. Only production runs count toward your plan quota.",
+   "visual": [
+    {
+     "type": "tiltedagentstage",
+     "theme": "obsidian",
+     "headline": "Manual vs Production",
+     "accent": [
+      "Production"
+     ],
+     "steps": [
+      {
+       "label": "Manual test",
+       "active": true
+      },
+      {
+       "label": "Production run",
+       "active": false
+      },
+      {
+       "label": "Quota",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Manual runs: for testing",
+       "Only production runs count"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Which run counts?",
+     "kind": "dropdown",
+     "accent": [
+      "counts"
+     ],
+     "kicker": "REMEMBER",
+     "dropdown": {
+      "label": "Run type",
+      "options": [
+       "Manual (testing)",
+       "Production (automatic)"
+      ],
+      "picked": 1
+     }
+    }
+   ]
   },
   {
    "id": "s06",
-   "kind": "R",
-   "chapter": null,
-   "text": "Pick the trigger first, then the nodes. Everything else in the workflow depends on how it starts."
+   "text": "Pick the trigger first, then the nodes. Everything else in the workflow depends on how it starts.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Pick the trigger first",
+     "accent": [
+      "trigger"
+     ],
+     "sub": "Everything else depends on how it starts."
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Day 1 done",
+     "kind": "checklist",
+     "accent": [
+      "Day"
+     ],
+     "kicker": "DAY 1 RECAP",
+     "items": [
+      {
+       "text": "Chat Trigger"
+      },
+      {
+       "text": "Schedule Trigger"
+      },
+      {
+       "text": "Publish to run"
+      },
+      {
+       "text": "Day 2: the AI Agent"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "s07",
-   "kind": "O",
-   "chapter": null,
-   "text": "Day two adds the AI Agent. Follow so you do not miss it, and comment GUIDE for the PDF."
+   "text": "Day two adds the AI Agent. Follow so you do not miss it, and comment GUIDE for the PDF.",
+   "visual": [
+    {
+     "type": "commenttriggeroutro",
+     "theme": "obsidian",
+     "handle": "@AIGraphicTV",
+     "name": "AI Graphic TV",
+     "bio": "Practical AI automation, step by step",
+     "commentWord": "GUIDE",
+     "dmPreview": "Sent! Check your DMs"
+    }
+   ]
   }
  ]
 }

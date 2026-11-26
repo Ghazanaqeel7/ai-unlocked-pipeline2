@@ -1,48 +1,370 @@
 {
- "plan": true,
- "note": "Script-stage plan. The build step replaces this with the full beat list.",
  "scenes": [
   {
    "id": "s01",
-   "kind": "H",
-   "chapter": null,
-   "text": "You copy and paste between apps all day. There is a free way to stop."
+   "text": "You copy and paste between apps all day. There is a free way to stop.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "There's a free way to stop.",
+     "accent": [
+      "free"
+     ],
+     "pain": "Copy-pasting between apps, all day."
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "sand",
+     "headline": "Copy. Switch. Paste. Repeat.",
+     "accent": [
+      "Repeat"
+     ],
+     "steps": [
+      {
+       "label": "Copy",
+       "active": true
+      },
+      {
+       "label": "Switch app",
+       "active": false
+      },
+      {
+       "label": "Paste",
+       "active": false
+      },
+      {
+       "label": "Repeat",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Every single day",
+       "Same steps, same apps"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "It is called n8n",
+     "accent": [
+      "n8n"
+     ],
+     "kicker": "THE FIX"
+    }
+   ]
   },
   {
    "id": "s02",
-   "kind": "R",
-   "chapter": null,
-   "text": "It is called n8n. You build a workflow: one trigger, then nodes that pass data along automatically."
+   "text": "It is called n8n. You build a workflow: one trigger, then nodes that pass data along automatically.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "One trigger, then nodes",
+     "kind": "checklist",
+     "accent": [
+      "trigger"
+     ],
+     "kicker": "HOW IT WORKS",
+     "items": [
+      {
+       "text": "A trigger starts it"
+      },
+      {
+       "text": "Nodes pass data along"
+      },
+      {
+       "text": "No manual copying"
+      }
+     ]
+    },
+    {
+     "type": "perspectivewall",
+     "theme": "obsidian",
+     "headline": "Trigger to Nodes",
+     "accent": [
+      "Nodes"
+     ],
+     "kicker": "THE CHAIN",
+     "cards": [
+      {
+       "label": "Trigger",
+       "sub": "starts it",
+       "glyph": "zap"
+      },
+      {
+       "label": "Node",
+       "sub": "does a job",
+       "glyph": "box"
+      },
+      {
+       "label": "Node",
+       "sub": "passes data",
+       "glyph": "arrow-right"
+      },
+      {
+       "label": "Output",
+       "sub": "result",
+       "glyph": "check"
+      },
+      {
+       "label": "Chat",
+       "sub": "message in",
+       "glyph": "message-circle"
+      },
+      {
+       "label": "Agent",
+       "sub": "decides",
+       "glyph": "brain"
+      },
+      {
+       "label": "Model",
+       "sub": "writes",
+       "glyph": "cpu"
+      },
+      {
+       "label": "Tool",
+       "sub": "acts",
+       "glyph": "wrench"
+      },
+      {
+       "label": "Test",
+       "sub": "by hand",
+       "glyph": "play"
+      },
+      {
+       "label": "Publish",
+       "sub": "runs alone",
+       "glyph": "send"
+      },
+      {
+       "label": "Schedule",
+       "sub": "a clock",
+       "glyph": "clock"
+      },
+      {
+       "label": "Repeat",
+       "sub": "daily",
+       "glyph": "refresh"
+      }
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "studio",
+     "text": "Trigger, nodes, result.",
+     "accent": [
+      "result"
+     ]
+    }
+   ]
   },
   {
    "id": "s03",
-   "kind": "R",
-   "chapter": null,
-   "text": "The AI Agent node is the brain. You connect a chat model, add a tool, and the agent decides what to do."
+   "text": "The AI Agent node is the brain. You connect a chat model, add a tool, and the agent decides what to do.",
+   "visual": [
+    {
+     "type": "tiltedagentstage",
+     "theme": "obsidian",
+     "headline": "The AI Agent Is the Brain",
+     "accent": [
+      "Brain"
+     ],
+     "steps": [
+      {
+       "label": "Connect a chat model",
+       "active": true
+      },
+      {
+       "label": "Add a tool",
+       "active": false
+      },
+      {
+       "label": "Agent decides",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Reads the message",
+       "Picks the tool",
+       "Does the job"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    },
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Connect a model. Add a tool.",
+     "accent": [
+      "model",
+      "tool"
+     ]
+    }
+   ]
   },
   {
    "id": "s04",
-   "kind": "R",
-   "chapter": null,
-   "text": "The beginner mistake is the missing API key. Create a credential first, or the node fails. Skip it and the whole run stops on the first step."
+   "text": "The beginner mistake is the missing API key. Create a credential first, or the node fails.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "studio",
+     "headline": "Create a credential first",
+     "kind": "dropdown",
+     "accent": [
+      "credential"
+     ],
+     "kicker": "BEGINNER MISTAKE",
+     "dropdown": {
+      "label": "Credential",
+      "options": [
+       "Select credential",
+       "Create New Credential"
+      ],
+      "picked": 1
+     }
+    },
+    {
+     "type": "hookcard",
+     "theme": "sand",
+     "text": "Node fails. Missing key.",
+     "accent": [
+      "key"
+     ],
+     "pain": "Looks like n8n is broken."
+    }
+   ]
   },
   {
    "id": "s05",
-   "kind": "R",
-   "chapter": null,
-   "text": "Test with Execute Workflow, read each node's output, then publish it so it runs on its own. Manual test runs do not count toward your quota."
+   "text": "Test with Execute Workflow, read each node's output, then publish it so it runs on its own.",
+   "visual": [
+    {
+     "type": "interactiveuicard",
+     "theme": "obsidian",
+     "headline": "Test, then publish",
+     "kind": "checklist",
+     "accent": [
+      "publish"
+     ],
+     "kicker": "LAST STEPS",
+     "items": [
+      {
+       "text": "Click Execute Workflow"
+      },
+      {
+       "text": "Read each node output"
+      },
+      {
+       "text": "Publish to run on its own"
+      }
+     ]
+    },
+    {
+     "type": "tiltedagentstage",
+     "theme": "studio",
+     "headline": "Manual Runs Do Not Count",
+     "accent": [
+      "Manual"
+     ],
+     "steps": [
+      {
+       "label": "Test by hand",
+       "active": true
+      },
+      {
+       "label": "Publish",
+       "active": false
+      },
+      {
+       "label": "Production run",
+       "active": false
+      }
+     ],
+     "output": {
+      "title": "LIVE REASONING",
+      "lines": [
+       "Manual test runs: free to try",
+       "Production runs count toward quota"
+      ]
+     },
+     "focus": [
+      "left",
+      "center",
+      "right",
+      "center"
+     ]
+    }
+   ]
   },
   {
    "id": "s06",
-   "kind": "R",
-   "chapter": null,
-   "text": "Start tiny: one trigger, one agent, one output. Get that working before you add anything else."
+   "text": "Start tiny: one trigger, one agent, one output. Get that working before you add anything else.",
+   "visual": [
+    {
+     "type": "hookcard",
+     "theme": "obsidian",
+     "text": "Start tiny.",
+     "accent": [
+      "tiny"
+     ],
+     "sub": "One trigger, one agent, one output."
+    },
+    {
+     "type": "interactiveuicard",
+     "theme": "sand",
+     "headline": "Your first build",
+     "kind": "checklist",
+     "accent": [
+      "first"
+     ],
+     "kicker": "KEEP IT SMALL",
+     "items": [
+      {
+       "text": "One trigger"
+      },
+      {
+       "text": "One agent"
+      },
+      {
+       "text": "One output"
+      }
+     ]
+    }
+   ]
   },
   {
    "id": "s07",
-   "kind": "O",
-   "chapter": null,
-   "text": "The full walkthrough is on the channel. Comment GUIDE for the step-by-step PDF."
+   "text": "The full walkthrough is on the channel. Comment GUIDE for the step-by-step PDF.",
+   "visual": [
+    {
+     "type": "commenttriggeroutro",
+     "theme": "obsidian",
+     "handle": "@AIGraphicTV",
+     "name": "AI Graphic TV",
+     "bio": "Practical AI automation, step by step",
+     "commentWord": "GUIDE",
+     "dmPreview": "Sent! Check your DMs"
+    }
+   ]
   }
  ]
 }

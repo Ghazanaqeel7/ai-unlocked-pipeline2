@@ -1,17 +1,647 @@
 {
- "duration": 16.0,
+ "duration": 48.147,
  "scenes": [
   {
    "id": "s01",
    "start": 0.0,
-   "end": 8.0,
-   "text": "Most people use ChatGPT wrong. Here is the one setting that changes everything."
+   "end": 6.03,
+   "text": "You copy and paste between apps all day. There is a free way to stop.",
+   "words": [
+    {
+     "w": "You",
+     "start": 1.2,
+     "end": 1.444
+    },
+    {
+     "w": "copy",
+     "start": 1.444,
+     "end": 1.77
+    },
+    {
+     "w": "and",
+     "start": 1.77,
+     "end": 2.015
+    },
+    {
+     "w": "paste",
+     "start": 2.015,
+     "end": 2.422
+    },
+    {
+     "w": "between",
+     "start": 2.422,
+     "end": 2.992
+    },
+    {
+     "w": "apps",
+     "start": 2.992,
+     "end": 3.318
+    },
+    {
+     "w": "all",
+     "start": 3.318,
+     "end": 3.562
+    },
+    {
+     "w": "day.",
+     "start": 3.562,
+     "end": 3.888
+    },
+    {
+     "w": "There",
+     "start": 3.888,
+     "end": 4.295
+    },
+    {
+     "w": "is",
+     "start": 4.295,
+     "end": 4.458
+    },
+    {
+     "w": "a",
+     "start": 4.458,
+     "end": 4.54
+    },
+    {
+     "w": "free",
+     "start": 4.54,
+     "end": 4.865
+    },
+    {
+     "w": "way",
+     "start": 4.865,
+     "end": 5.11
+    },
+    {
+     "w": "to",
+     "start": 5.11,
+     "end": 5.273
+    },
+    {
+     "w": "stop.",
+     "start": 5.273,
+     "end": 5.68
+    }
+   ]
   },
   {
    "id": "s02",
-   "start": 8.0,
-   "end": 16.0,
-   "text": "This single trick saves hours every week."
+   "start": 6.03,
+   "end": 13.399,
+   "text": "It is called n8n. You build a workflow: one trigger, then nodes that pass data along automatically.",
+   "words": [
+    {
+     "w": "It",
+     "start": 6.03,
+     "end": 6.199
+    },
+    {
+     "w": "is",
+     "start": 6.199,
+     "end": 6.368
+    },
+    {
+     "w": "called",
+     "start": 6.368,
+     "end": 6.876
+    },
+    {
+     "w": "n8n.",
+     "start": 6.876,
+     "end": 7.214
+    },
+    {
+     "w": "You",
+     "start": 7.214,
+     "end": 7.468
+    },
+    {
+     "w": "build",
+     "start": 7.468,
+     "end": 7.89
+    },
+    {
+     "w": "a",
+     "start": 7.89,
+     "end": 7.975
+    },
+    {
+     "w": "workflow:",
+     "start": 7.975,
+     "end": 8.736
+    },
+    {
+     "w": "one",
+     "start": 8.736,
+     "end": 8.99
+    },
+    {
+     "w": "trigger,",
+     "start": 8.99,
+     "end": 9.666
+    },
+    {
+     "w": "then",
+     "start": 9.666,
+     "end": 10.004
+    },
+    {
+     "w": "nodes",
+     "start": 10.004,
+     "end": 10.427
+    },
+    {
+     "w": "that",
+     "start": 10.427,
+     "end": 10.765
+    },
+    {
+     "w": "pass",
+     "start": 10.765,
+     "end": 11.104
+    },
+    {
+     "w": "data",
+     "start": 11.104,
+     "end": 11.442
+    },
+    {
+     "w": "along",
+     "start": 11.442,
+     "end": 11.865
+    },
+    {
+     "w": "automatically.",
+     "start": 11.865,
+     "end": 13.049
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 13.399,
+   "end": 21.151,
+   "text": "The AI Agent node is the brain. You connect a chat model, add a tool, and the agent decides what to do.",
+   "words": [
+    {
+     "w": "The",
+     "start": 13.399,
+     "end": 13.669
+    },
+    {
+     "w": "AI",
+     "start": 13.669,
+     "end": 13.85
+    },
+    {
+     "w": "Agent",
+     "start": 13.85,
+     "end": 14.301
+    },
+    {
+     "w": "node",
+     "start": 14.301,
+     "end": 14.663
+    },
+    {
+     "w": "is",
+     "start": 14.663,
+     "end": 14.843
+    },
+    {
+     "w": "the",
+     "start": 14.843,
+     "end": 15.114
+    },
+    {
+     "w": "brain.",
+     "start": 15.114,
+     "end": 15.656
+    },
+    {
+     "w": "You",
+     "start": 15.656,
+     "end": 15.926
+    },
+    {
+     "w": "connect",
+     "start": 15.926,
+     "end": 16.558
+    },
+    {
+     "w": "a",
+     "start": 16.558,
+     "end": 16.649
+    },
+    {
+     "w": "chat",
+     "start": 16.649,
+     "end": 17.01
+    },
+    {
+     "w": "model,",
+     "start": 17.01,
+     "end": 17.551
+    },
+    {
+     "w": "add",
+     "start": 17.551,
+     "end": 17.822
+    },
+    {
+     "w": "a",
+     "start": 17.822,
+     "end": 17.912
+    },
+    {
+     "w": "tool,",
+     "start": 17.912,
+     "end": 18.364
+    },
+    {
+     "w": "and",
+     "start": 18.364,
+     "end": 18.635
+    },
+    {
+     "w": "the",
+     "start": 18.635,
+     "end": 18.906
+    },
+    {
+     "w": "agent",
+     "start": 18.906,
+     "end": 19.357
+    },
+    {
+     "w": "decides",
+     "start": 19.357,
+     "end": 19.989
+    },
+    {
+     "w": "what",
+     "start": 19.989,
+     "end": 20.35
+    },
+    {
+     "w": "to",
+     "start": 20.35,
+     "end": 20.531
+    },
+    {
+     "w": "do.",
+     "start": 20.531,
+     "end": 20.801
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 21.151,
+   "end": 27.667,
+   "text": "The beginner mistake is the missing API key. Create a credential first, or the node fails.",
+   "words": [
+    {
+     "w": "The",
+     "start": 21.151,
+     "end": 21.398
+    },
+    {
+     "w": "beginner",
+     "start": 21.398,
+     "end": 22.056
+    },
+    {
+     "w": "mistake",
+     "start": 22.056,
+     "end": 22.631
+    },
+    {
+     "w": "is",
+     "start": 22.631,
+     "end": 22.795
+    },
+    {
+     "w": "the",
+     "start": 22.795,
+     "end": 23.042
+    },
+    {
+     "w": "missing",
+     "start": 23.042,
+     "end": 23.617
+    },
+    {
+     "w": "API",
+     "start": 23.617,
+     "end": 23.864
+    },
+    {
+     "w": "key.",
+     "start": 23.864,
+     "end": 24.193
+    },
+    {
+     "w": "Create",
+     "start": 24.193,
+     "end": 24.686
+    },
+    {
+     "w": "a",
+     "start": 24.686,
+     "end": 24.768
+    },
+    {
+     "w": "credential",
+     "start": 24.768,
+     "end": 25.59
+    },
+    {
+     "w": "first,",
+     "start": 25.59,
+     "end": 26.084
+    },
+    {
+     "w": "or",
+     "start": 26.084,
+     "end": 26.248
+    },
+    {
+     "w": "the",
+     "start": 26.248,
+     "end": 26.495
+    },
+    {
+     "w": "node",
+     "start": 26.495,
+     "end": 26.823
+    },
+    {
+     "w": "fails.",
+     "start": 26.823,
+     "end": 27.317
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 27.667,
+   "end": 33.969,
+   "text": "Test with Execute Workflow, read each node's output, then publish it so it runs on its own.",
+   "words": [
+    {
+     "w": "Test",
+     "start": 27.667,
+     "end": 27.984
+    },
+    {
+     "w": "with",
+     "start": 27.984,
+     "end": 28.302
+    },
+    {
+     "w": "Execute",
+     "start": 28.302,
+     "end": 28.857
+    },
+    {
+     "w": "Workflow,",
+     "start": 28.857,
+     "end": 29.571
+    },
+    {
+     "w": "read",
+     "start": 29.571,
+     "end": 29.889
+    },
+    {
+     "w": "each",
+     "start": 29.889,
+     "end": 30.206
+    },
+    {
+     "w": "node's",
+     "start": 30.206,
+     "end": 30.682
+    },
+    {
+     "w": "output,",
+     "start": 30.682,
+     "end": 31.238
+    },
+    {
+     "w": "then",
+     "start": 31.238,
+     "end": 31.555
+    },
+    {
+     "w": "publish",
+     "start": 31.555,
+     "end": 32.111
+    },
+    {
+     "w": "it",
+     "start": 32.111,
+     "end": 32.27
+    },
+    {
+     "w": "so",
+     "start": 32.27,
+     "end": 32.428
+    },
+    {
+     "w": "it",
+     "start": 32.428,
+     "end": 32.587
+    },
+    {
+     "w": "runs",
+     "start": 32.587,
+     "end": 32.904
+    },
+    {
+     "w": "on",
+     "start": 32.904,
+     "end": 33.063
+    },
+    {
+     "w": "its",
+     "start": 33.063,
+     "end": 33.301
+    },
+    {
+     "w": "own.",
+     "start": 33.301,
+     "end": 33.619
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 33.969,
+   "end": 40.505,
+   "text": "Start tiny: one trigger, one agent, one output. Get that working before you add anything else.",
+   "words": [
+    {
+     "w": "Start",
+     "start": 33.969,
+     "end": 34.36
+    },
+    {
+     "w": "tiny:",
+     "start": 34.36,
+     "end": 34.752
+    },
+    {
+     "w": "one",
+     "start": 34.752,
+     "end": 34.987
+    },
+    {
+     "w": "trigger,",
+     "start": 34.987,
+     "end": 35.613
+    },
+    {
+     "w": "one",
+     "start": 35.613,
+     "end": 35.848
+    },
+    {
+     "w": "agent,",
+     "start": 35.848,
+     "end": 36.318
+    },
+    {
+     "w": "one",
+     "start": 36.318,
+     "end": 36.553
+    },
+    {
+     "w": "output.",
+     "start": 36.553,
+     "end": 37.101
+    },
+    {
+     "w": "Get",
+     "start": 37.101,
+     "end": 37.336
+    },
+    {
+     "w": "that",
+     "start": 37.336,
+     "end": 37.649
+    },
+    {
+     "w": "working",
+     "start": 37.649,
+     "end": 38.198
+    },
+    {
+     "w": "before",
+     "start": 38.198,
+     "end": 38.667
+    },
+    {
+     "w": "you",
+     "start": 38.667,
+     "end": 38.902
+    },
+    {
+     "w": "add",
+     "start": 38.902,
+     "end": 39.137
+    },
+    {
+     "w": "anything",
+     "start": 39.137,
+     "end": 39.764
+    },
+    {
+     "w": "else.",
+     "start": 39.764,
+     "end": 40.155
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 40.505,
+   "end": 48.147,
+   "text": "The full walkthrough is on the channel. Comment GUIDE for the step-by-step PDF.",
+   "words": [
+    {
+     "w": "The",
+     "start": 40.505,
+     "end": 40.736
+    },
+    {
+     "w": "full",
+     "start": 40.736,
+     "end": 41.042
+    },
+    {
+     "w": "walkthrough",
+     "start": 41.042,
+     "end": 41.887
+    },
+    {
+     "w": "is",
+     "start": 41.887,
+     "end": 42.04
+    },
+    {
+     "w": "on",
+     "start": 42.04,
+     "end": 42.194
+    },
+    {
+     "w": "the",
+     "start": 42.194,
+     "end": 42.424
+    },
+    {
+     "w": "channel.",
+     "start": 42.424,
+     "end": 43.038
+    },
+    {
+     "w": "Comment",
+     "start": 43.038,
+     "end": 43.575
+    },
+    {
+     "w": "GUIDE",
+     "start": 43.575,
+     "end": 43.958
+    },
+    {
+     "w": "for",
+     "start": 43.958,
+     "end": 44.189
+    },
+    {
+     "w": "the",
+     "start": 44.189,
+     "end": 44.419
+    },
+    {
+     "w": "step-by-step",
+     "start": 44.419,
+     "end": 45.34
+    },
+    {
+     "w": "PDF.",
+     "start": 45.34,
+     "end": 45.647
+    }
+   ]
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Intro",
+   "start": 0
   }
  ]
 }
