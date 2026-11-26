@@ -1,0 +1,160 @@
+name: render-long
+# Long-form jobs (type=long) render in 4 parallel chunks (one runner each) then merge, because a single Actions job
+# cannot finish a ~8 min 1080p Remotion render inside the 120 min limit. Shorts keep using render.yml.
+on:
+  push:
+    branches: [main]
+    paths: ['state.json']
+  schedule:
+    - cron: '47 * * * *'
+  workflow_dispatch:
+    inputs:
+      job:
+        description: 'Long job id to (re)render (empty = first render_queued long job)'
+        required: false
+
+concurrency:
+  group: render-long
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  pick:
+    runs-on: ubuntu-latest
+    outputs:
+      job: ${{ steps.pick.outputs.job }}
+      matrix: ${{ steps.pick.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: Pick long job
+        id: pick
+        env:
+          INPUT_JOB: ${{ github.event.inputs.job }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          s = json.load(open('state.json')); inp = os.environ.get('INPUT_JOB', '').strip(); job = ''
+          for k, v in s['jobs'].items():
+              try: t = json.load(open(f'jobs/{k}/meta.json')).get('type', 'long')
+              except Exception: continue
+              if t == 'long' and ((inp and k == inp) or (not inp and v.get('status') == 'render_queued')):
+                  job = k; break
+          m = []
+          if job:
+              dur = json.load(open(f'jobs/{job}/project/src/timing.json'))['duration']
+              total = max(1, int(round(dur * 30)) - 1); n = 4; step = -(-(total + 1) // n)
+              for i in range(n):
+                  a = i * step; b = min(total, (i + 1) * step - 1)
+                  if a <= total: m.append({'i': i, 'a': a, 'b': b})
+          open(os.environ['GITHUB_OUTPUT'], 'a').write(f"job={job}\nmatrix={json.dumps({'include': m})}\n")
+          print('picked', job, m)
+          PY
+      - name: Mark rendering
+        if: steps.pick.outputs.job != ''
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          J=${{ steps.pick.outputs.job }}
+          git config user.name "render-bot"; git config user.email "render-bot@users.noreply.github.com"
+          python3 pipeline/scripts/set_status.py "$J" rendering run="${{ github.run_id }}"
+          python3 pipeline/scripts/progress.py "$J" "🎞 Render starting in 4 parts at once (~40-60 min)" || true
+
+  chunk:
+    needs: pick
+    if: needs.pick.outputs.job != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJson(needs.pick.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: System packages
+        run: |
+          echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | sudo debconf-set-selections
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg ttf-mscorefonts-installer fonts-dejavu >/dev/null
+          fc-cache -f >/dev/null
+      - name: Render chunk
+        run: |
+          J=${{ needs.pick.outputs.job }}
+          (cd pipeline/template && tar cf - --exclude=node_modules --exclude=out --exclude='public/assets/*' --exclude=./src/scenes.json --exclude=./src/thumb.json --exclude=./src/timing.json --exclude=./src/custom_scenes .) | (cd "jobs/$J/project" && mkdir -p . && tar xf -)
+          mkdir -p "jobs/$J/project/public/assets/sfx"
+          cp pipeline/template/public/assets/sfx/*.mp3 "jobs/$J/project/public/assets/sfx/" 2>/dev/null || true
+          mkdir -p "jobs/$J/project/src/custom_scenes"
+          [ -f "jobs/$J/project/src/custom_scenes/index.js" ] || echo "export default {};" > "jobs/$J/project/src/custom_scenes/index.js"
+          python3 pipeline/video/validate_long.py "jobs/$J"
+          bash pipeline/video/render_chunk.sh "jobs/$J" ${{ matrix.a }} ${{ matrix.b }} out/chunk${{ matrix.i }}.mp4 "$(nproc)" Doc
+      - name: Thumbnail (chunk 0 only)
+        if: matrix.i == 0
+        run: |
+          J=${{ needs.pick.outputs.job }}
+          cd "jobs/$J/project"
+          CH=$(command -v google-chrome || command -v chromium || true)
+          npx remotion still src/index.jsx Thumb ../thumbnail.jpg --image-format=jpeg --jpeg-quality=92 --gl=swangle ${CH:+--browser-executable=$CH} || echo "thumbnail failed (non-fatal)"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: chunk-${{ matrix.i }}
+          path: |
+            jobs/${{ needs.pick.outputs.job }}/project/out/chunk${{ matrix.i }}.mp4
+            jobs/${{ needs.pick.outputs.job }}/thumbnail.jpg
+          if-no-files-found: error
+          retention-days: 3
+
+  merge:
+    needs: [pick, chunk]
+    if: needs.pick.outputs.job != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: System packages
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+      - uses: actions/download-artifact@v4
+        with:
+          path: chunks
+      - name: Finalize and release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          J=${{ needs.pick.outputs.job }}
+          git config user.name "render-bot"; git config user.email "render-bot@users.noreply.github.com"
+          mkdir -p "jobs/$J/project/out"
+          CHUNKS=$(ls chunks/chunk-*/jobs/$J/project/out/chunk*.mp4 | sort -V | tr '\n' ' ')
+          echo "chunks: $CHUNKS"
+          cp chunks/chunk-0/jobs/$J/thumbnail.jpg "jobs/$J/thumbnail.jpg" 2>/dev/null || true
+          bash pipeline/video/finalize_long.sh "jobs/$J" $CHUNKS
+          python3 pipeline/video/chapters.py "jobs/$J" || true
+          python3 -m pip install -q --break-system-packages reportlab >/dev/null 2>&1 || true
+          python3 pipeline/video/make_guide.py "jobs/$J" || echo "companion guide generation failed (non-fatal)"
+                    TITLE=$(python3 -c "import json;print(json.load(open('jobs/$J/meta.json'))['title'])")
+          gh release delete "job-$J" -y --cleanup-tag 2>/dev/null || true
+          ASSETS="jobs/$J/project/out/final.mp4 jobs/$J/project/out/preview.mp4 jobs/$J/project/out/upload.mp4"
+          [ -f "jobs/$J/thumbnail.jpg" ] && ASSETS="$ASSETS jobs/$J/thumbnail.jpg"
+          [ -f "jobs/$J/project/out/guide.pdf" ] && ASSETS="$ASSETS jobs/$J/project/out/guide.pdf jobs/$J/project/out/guide.md jobs/$J/project/out/social_copy.txt"
+          gh release create "job-$J" $ASSETS --title "$TITLE" --notes "Pipeline render for $J" --prerelease
+
+          git add jobs/$J/upload.json jobs/$J/credits.txt 2>/dev/null || true
+          git add -f jobs/$J/thumbnail.jpg 2>/dev/null || true
+          git commit -m "$J: upload helper data" || true
+          git checkout -- . ; git clean -fdq "jobs/$J/project" "jobs/$J/review" 2>/dev/null || true
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && break || sleep $((i*4)); done
+
+          URL="https://github.com/${{ github.repository }}/releases/download/job-$J/final.mp4"
+          PURL="https://github.com/${{ github.repository }}/releases/download/job-$J/preview.mp4"
+          UURL="https://github.com/${{ github.repository }}/releases/download/job-$J/upload.mp4"
+          if [ -f "jobs/$J/project/out/final.mp4" ]; then
+            python3 pipeline/scripts/set_status.py "$J" video_ready video_url="$URL" preview_url="$PURL" upload_url="$UURL"
+          else
+            python3 pipeline/scripts/set_status.py "$J" render_failed run="${{ github.run_id }}"
+          fi
+

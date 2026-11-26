@@ -36,7 +36,7 @@ jobs:
           import json, os
           s = json.load(open('state.json')); inp = os.environ.get('INPUT_JOB', '').strip()
           for k, v in s['jobs'].items():
-              if (inp and k == inp) or (not inp and v.get('status') == 'render_queued'):
+              if (inp and k == inp) or (not inp and v.get('status') == 'render_queued' and json.load(open(f'jobs/{k}/meta.json')).get('type', 'long') != 'long'):
                   print(k); break
           else:
               print('')
