@@ -158,8 +158,8 @@
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-001-launch-ai-workflow-short/upload.mp4"
     },
     "904-turbo-ai-workflow-short": {
-      "status": "rendering",
-      "updated": "2026-11-25T20:50:40Z",
+      "status": "render_queued",
+      "updated": "2026-11-26T06:29:09Z",
       "run": "45698417875",
       "progress": [
         {
