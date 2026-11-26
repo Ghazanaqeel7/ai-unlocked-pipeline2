@@ -1,149 +1,2180 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>AI Graphic TV | Build Autonomous AI Systems. Zero Fluff.</title>
-<meta name="description" content="Visual architecture breakdowns, production-ready n8n templates and free step-by-step PDF playbooks for creators, operators and founders.">
-<meta name="theme-color" content="#0B0C0E"><link rel="icon" href="logo.png">
-<meta property="og:title" content="AI Graphic TV"><meta property="og:description" content="Build Autonomous AI Systems. Zero Fluff.">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#0B0C0E;--gold:#D4AF37;--lime:#A3E635;--ink:#F4F4F5;--mute:#9a9aa3;--line:rgba(255,255,255,.09);--glass:rgba(255,255,255,.045)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}h1,h2,h3,.brand{font-family:"Plus Jakarta Sans",Inter,sans-serif}
-.bg{position:fixed;inset:0;z-index:-1;background:radial-gradient(60% 50% at 80% 0,rgba(212,175,55,.14),transparent 60%),radial-gradient(50% 40% at 10% 30%,rgba(163,230,53,.08),transparent 60%),var(--bg)}
-.bg:after{content:"";position:absolute;inset:-40px;background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:48px 48px;mask-image:radial-gradient(70% 60% at 50% 20%,#000,transparent);-webkit-mask-image:radial-gradient(70% 60% at 50% 20%,#000,transparent);animation:grid 24s linear infinite}
-@keyframes grid{to{transform:translateY(48px)}}
-.w{max-width:1160px;margin:0 auto;padding:0 22px}
-nav{position:sticky;top:0;z-index:20;background:rgba(11,12,14,.7);backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%);border-bottom:1px solid var(--line)}
-nav .w{display:flex;align-items:center;gap:22px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em;font-size:15px;white-space:nowrap}
-.brand img{width:30px;height:30px;border-radius:8px;box-shadow:0 0 18px rgba(212,175,55,.45)}
-.links{display:flex;gap:20px;margin-left:12px}.links a{color:var(--mute);font-size:14px}.links a:hover{color:var(--ink)}
-.sp{flex:1}.soc{display:flex;gap:6px}
-.pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--glass);border-radius:999px;padding:6px 12px;font-size:12.5px;color:var(--mute);transition:.2s}
-.pill:hover{color:var(--ink);border-color:var(--gold)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:12px;font-weight:600;font-size:15px;transition:.2s;border:1px solid transparent;cursor:pointer;font-family:inherit}
-.btn.g{background:linear-gradient(135deg,var(--gold),#f1d77a);color:#14120a;box-shadow:0 8px 28px rgba(212,175,55,.28)}
-.btn.g:hover{transform:translateY(-2px);box-shadow:0 12px 34px rgba(212,175,55,.42)}
-.btn.o{border-color:var(--line);background:var(--glass);color:var(--ink)}.btn.o:hover{border-color:var(--lime);color:var(--lime)}
-.btn.sm{padding:9px 16px;font-size:13.5px}
-.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:44px;align-items:center;padding:84px 0 56px}
-.badge{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.09em;color:var(--lime);border:1px solid rgba(163,230,53,.35);background:rgba(163,230,53,.07);padding:7px 14px;border-radius:999px;margin-bottom:22px}
-h1{font-size:clamp(38px,5.6vw,66px);line-height:1.04;letter-spacing:-.03em;margin:0 0 20px;font-weight:800;background:linear-gradient(120deg,#fff 20%,var(--gold) 70%,var(--lime));-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{color:var(--mute);font-size:18px;max-width:560px;margin:0 0 30px}.cta{display:flex;gap:12px;flex-wrap:wrap}
-.stage{border:1px solid var(--line);background:var(--glass);border-radius:22px;padding:18px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 30px 80px rgba(0,0,0,.5),0 0 60px rgba(212,175,55,.08)}
-.stage .bar{display:flex;align-items:center;gap:6px;color:var(--mute);font-size:12px;margin-bottom:8px}
-.dot{width:9px;height:9px;border-radius:50%;background:#3a3a40}.live{margin-left:auto;color:var(--lime);display:flex;align-items:center;gap:6px}
-.live:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);animation:p 1.6s infinite}
-@keyframes p{50%{opacity:.25}}
-svg text{font-family:Inter,sans-serif}
-.flow{stroke-dasharray:6 7;animation:dash 1.1s linear infinite}@keyframes dash{to{stroke-dashoffset:-13}}
-.node{transition:.25s;cursor:default}.node:hover rect{stroke:var(--lime);fill:rgba(163,230,53,.1)}
-.mets{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
-.met{border:1px solid var(--line);background:rgba(0,0,0,.25);border-radius:12px;padding:12px;text-align:center}
-.met b{display:block;font-family:"Plus Jakarta Sans";font-size:20px;color:var(--gold)}.met span{font-size:11.5px;color:var(--mute)}
-section{padding:72px 0}
-.eb{color:var(--gold);font-size:12.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase}
-h2{font-size:clamp(28px,4vw,42px);letter-spacing:-.025em;margin:8px 0 12px;line-height:1.1}
-.lead{color:var(--mute);max-width:600px;margin:0 0 38px}
-.grid{display:grid;gap:18px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.card{border:1px solid var(--line);background:var(--glass);border-radius:20px;padding:26px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:.25s;display:flex;flex-direction:column}
-.card:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.45);box-shadow:0 18px 50px rgba(0,0,0,.45)}
-.card h3{margin:6px 0 8px;font-size:19px;letter-spacing:-.01em}.card p{color:var(--mute);font-size:14.5px;margin:0 0 20px;flex:1}
-.row{display:flex;gap:8px;flex-wrap:wrap}
-.tag{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--lime)}.tag.s{color:var(--mute)}
-.card.feat{grid-column:span 2;border-color:rgba(212,175,55,.4);background:linear-gradient(135deg,rgba(212,175,55,.09),var(--glass))}
-.num{font-family:"Plus Jakarta Sans";font-weight:800;font-size:40px;color:transparent;-webkit-text-stroke:1px var(--gold)}
-.price{font-family:"Plus Jakarta Sans";font-size:48px;font-weight:800;letter-spacing:-.03em;margin:4px 0}
-.price small{font-size:14px;color:var(--mute);font-weight:500}
-.card ul{list-style:none;padding:0;margin:0 0 22px;color:var(--mute);font-size:14.5px;flex:1}
-.card li{padding:5px 0 5px 24px;position:relative}.card li:before{content:"✓";position:absolute;left:0;color:var(--lime)}
-.pop{border:1.5px solid transparent;background:linear-gradient(#101114,#101114) padding-box,linear-gradient(135deg,var(--gold),var(--lime)) border-box;box-shadow:0 0 50px rgba(212,175,55,.14);position:relative}
-.pop .ribbon{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--gold),var(--lime));color:#10120a;font-size:11px;font-weight:700;letter-spacing:.08em;padding:5px 14px;border-radius:999px}
-.ban{margin-top:22px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;border:1px solid rgba(163,230,53,.3);background:rgba(163,230,53,.05);border-radius:18px;padding:22px 26px}
-.ban b{font-family:"Plus Jakarta Sans";font-size:18px}.ban span{display:block;color:var(--mute);font-size:14px}
-footer{border-top:1px solid var(--line);padding:56px 0 30px;margin-top:30px;background:rgba(0,0,0,.25)}
-.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:30px}.fg h4{margin:0 0 12px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
-.fg a{display:block;color:var(--mute);font-size:14.5px;padding:3px 0}.fg a:hover{color:var(--ink)}.fg p{color:var(--mute);font-size:14.5px;margin:12px 0 0;max-width:340px}
-.legal{border-top:1px solid var(--line);margin-top:34px;padding-top:20px;color:#6f6f78;font-size:12.5px}
-@media(max-width:940px){.hero{grid-template-columns:1fr;padding-top:52px}.g3{grid-template-columns:1fr}.card.feat{grid-column:auto}.links,.soc{display:none}.fg{grid-template-columns:1fr 1fr}}
-@media(max-width:560px){.fg{grid-template-columns:1fr}.btn{width:100%;justify-content:center}.cta,.row{flex-direction:column}nav .btn{width:auto}section{padding:52px 0}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
-</style></head><body><div class="bg"></div>
-<nav><div class="w">
-<a class="brand" href="#top"><img src="logo.png" alt="" onerror="this.style.display='none'">AI GRAPHIC TV</a>
-<div class="links"><a href="#episodes">Episodes</a><a href="vault.html">Free Vault</a><a href="#packs">Workflow Packs</a><a href="#custom">Custom Build</a></div>
-<div class="sp"></div>
-<div class="soc"><a class="pill" href="https://www.youtube.com/@AIGraphicTV">YouTube</a><a class="pill" href="https://www.instagram.com/aigraphictv">Instagram</a><a class="pill" href="https://www.facebook.com/aigraphictv">Facebook</a></div>
-<a class="btn g sm" href="vault.html">Open Free Vault →</a></div></nav>
-<main id="top">
-<div class="w hero"><div>
-<span class="badge">NEW AI WORKFLOW EPISODES + FREE PLAYBOOKS EVERY WEEK</span>
-<h1>Build Autonomous AI Systems. Zero Fluff.</h1>
-<p class="sub">Visual architecture breakdowns, production-ready n8n templates, and free step-by-step PDF playbooks built for creators, operators, and founders.</p>
-<div class="cta"><a class="btn g" href="vault.html">Explore Free PDF Vault</a><a class="btn o" href="https://www.youtube.com/@AIGraphicTV">Watch on YouTube</a></div></div>
-<div class="stage"><div class="bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>&nbsp;workflow.n8n</span><span class="live">LIVE</span></div>
-<svg viewBox="0 0 520 330" width="100%" role="img" aria-label="Workflow: Trigger, Research and Fact-Check, AI Agent, Multi-Platform Render, PDF Vault and Gumroad">
-<defs><linearGradient id="gl" x1="0" x2="1"><stop offset="0" stop-color="#D4AF37"/><stop offset="1" stop-color="#A3E635"/></linearGradient>
-<filter id="gw"><feGaussianBlur stdDeviation="3"/></filter></defs>
-<g fill="none" stroke="url(#gl)" stroke-width="2" class="flow"><path d="M110 60 C150 60 150 120 190 120"/><path d="M310 120 C350 120 350 60 390 60"/><path d="M110 60 C150 60 150 200 190 200" opacity=".0"/><path d="M250 150 V190"/><path d="M310 230 C350 230 350 250 390 250"/><path d="M250 232 V262" opacity="0"/></g>
-<g class="node"><rect x="20" y="36" width="130" height="48" rx="12" fill="rgba(255,255,255,.05)" stroke="#D4AF37"/><text x="85" y="65" fill="#F4F4F5" font-size="13" text-anchor="middle" font-weight="600">⚡ Trigger</text></g>
-<g class="node"><rect x="190" y="96" width="130" height="48" rx="12" fill="rgba(255,255,255,.05)" stroke="#D4AF37"/><text x="255" y="118" fill="#F4F4F5" font-size="12" text-anchor="middle" font-weight="600">Research &amp;</text><text x="255" y="134" fill="#F4F4F5" font-size="12" text-anchor="middle" font-weight="600">Fact-Check</text></g>
-<g class="node"><rect x="360" y="36" width="140" height="48" rx="12" fill="rgba(163,230,53,.08)" stroke="#A3E635"/><text x="430" y="65" fill="#A3E635" font-size="13" text-anchor="middle" font-weight="600">🤖 Claude/GPT Agent</text></g>
-<g class="node"><rect x="190" y="190" width="130" height="48" rx="12" fill="rgba(255,255,255,.05)" stroke="#D4AF37"/><text x="255" y="212" fill="#F4F4F5" font-size="12" text-anchor="middle" font-weight="600">Multi-Platform</text><text x="255" y="228" fill="#F4F4F5" font-size="12" text-anchor="middle" font-weight="600">Render</text></g>
-<g class="node"><rect x="360" y="226" width="140" height="48" rx="12" fill="rgba(212,175,55,.1)" stroke="#D4AF37"/><text x="430" y="248" fill="#D4AF37" font-size="12" text-anchor="middle" font-weight="600">PDF Vault &amp;</text><text x="430" y="264" fill="#D4AF37" font-size="12" text-anchor="middle" font-weight="600">Gumroad</text></g>
-<g fill="none" stroke="url(#gl)" stroke-width="2" class="flow"><path d="M430 84 C430 140 340 150 320 200"/></g>
-<circle r="5" fill="#A3E635" filter="url(#gw)"><animateMotion dur="5s" repeatCount="indefinite" path="M110 60 C150 60 150 120 190 120 L310 120 C350 120 350 60 390 60 C430 90 340 150 320 200 L320 214 C350 230 350 250 390 250"/></circle>
-</svg>
-<div class="mets"><div class="met"><b>21+</b><span>Weekly Drops</span></div><div class="met"><b>25+</b><span>Ready JSONs</span></div><div class="met"><b>100%</b><span>Visual Blueprints</span></div></div></div></div>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Graphic TV (@AIGraphicTV) — Orbital Brand Hub, Architecture Diagrams &amp; Vault</title>
+  <meta
+    name="description"
+    content="Breakthroughs, AI tools, and future tech by AI Graphic TV (@AIGraphicTV). Explore interactive n8n &amp; AI agent diagrams, the free PDF Vault, workflow packs, and custom automation builds."
+  />
 
-<section id="episodes"><div class="w"><div class="eb">Featured Episodes</div><h2>Watch it built. Download the playbook.</h2><p class="lead">Every episode ships with a free step-by-step PDF in the Vault.</p>
-<div class="grid g3" id="eps">
-<div class="card feat"><span class="tag">Episode #01 · Live Playbook</span><h3>Build Your First AI Automation in n8n</h3><p>Chat Trigger, AI Agent, a chat model, a tool, a manual test, then publish. Includes the checklist, prompts and a 7-day action plan.</p><div class="row"><a class="btn g sm" href="https://www.youtube.com/@AIGraphicTV">Watch Episode</a><a class="btn o sm" href="vault.html">Download Free PDF</a></div></div>
-<div class="card"><span class="tag s">Coming soon</span><h3>Canva AI Workflow</h3><p>Design faster with an AI-assisted pipeline.</p><a class="btn o sm" href="vault.html">Get notified in the Vault</a></div>
-<div class="card"><span class="tag s">Coming soon</span><h3>ChatGPT Prompt Patterns</h3><p>Reusable patterns that make answers consistent.</p><a class="btn o sm" href="vault.html">Get notified in the Vault</a></div>
-<div class="card"><span class="tag s">Coming soon</span><h3>NotebookLM Research Flow</h3><p>Turn sources into briefs you can trust.</p><a class="btn o sm" href="vault.html">Get notified in the Vault</a></div>
-<div class="card"><span class="tag s">Coming soon</span><h3>Cursor App Build</h3><p>Ship a small app with an AI coding editor.</p><a class="btn o sm" href="vault.html">Get notified in the Vault</a></div>
-</div></div></section>
+  <!-- Fonts: Space Grotesk (Display), Plus Jakarta Sans (Body/UI) & JetBrains Mono (Telemetry/Code) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap"
+    rel="stylesheet"
+  />
 
-<section><div class="w"><div class="eb">How the system works</div><h2>Three steps. Five minutes.</h2><p class="lead">No theory dumps. Just the blueprint and the file.</p>
-<div class="grid g3"><div class="card"><div class="num">01</div><h3>Watch the Visual Breakdown</h3><p>See the full architecture drawn out before you touch a single node.</p></div>
-<div class="card"><div class="num">02</div><h3>Grab the Free PDF Playbook in the Vault</h3><p>Checklists, prompts and a 7-day action plan for every episode.</p></div>
-<div class="card"><div class="num">03</div><h3>Import JSON &amp; Ship in 5 Minutes</h3><p>Import a ready-made workflow, add your credentials, test, publish.</p></div></div></div></section>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['"Space Grotesk"', '"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            navy: {
+              950: '#040B16',
+              900: '#071324',
+              850: '#0C1B33',
+              800: '#122544',
+            },
+            orbital: {
+              300: '#7DD3FC',
+              400: '#38BDF8',
+              500: '#0EA5E9',
+            },
+            amberGold: {
+              300: '#FCD34D',
+              400: '#FBBF24',
+              500: '#F59E0B',
+            },
+            silverMist: {
+              100: '#F8FAFC',
+              200: '#E2E8F0',
+              300: '#CBD5E1',
+            },
+          },
+          boxShadow: {
+            orbitalGlass: '0 24px 60px -15px rgba(2, 8, 20, 0.85)',
+            cyanGlow: '0 0 28px -6px rgba(56, 189, 248, 0.34)',
+            amberGlow: '0 0 28px -6px rgba(245, 158, 11, 0.34)',
+          },
+        },
+      },
+    };
+  </script>
 
-<section id="packs"><div class="w"><div class="eb">Premium Offerings &amp; Toolkits</div><h2>Skip the blank canvas.</h2><p class="lead">Pick the level of help you need.</p>
-<div class="grid g3">
-<div class="card"><span class="tag s">Starter</span><h3>n8n Starter Pack</h3><div class="price">$9</div><ul><li>25 copy-paste n8n JSONs</li><li>Prompt library</li><li>Quickstart guide</li></ul><a class="btn o" href="https://aigraphictv.gumroad.com/l/n8n-starter-pack">Get the Starter Pack</a></div>
-<div class="card pop"><span class="ribbon">MOST POPULAR</span><span class="tag">Best value</span><h3>Master Vault</h3><div class="price">$27</div><ul><li>All 25+ n8n JSONs</li><li>Every episode PDF playbook</li><li>CLAUDE.md &amp; Cursor rules</li><li>Lifetime weekly drops</li></ul><a class="btn g" href="https://aigraphictv.gumroad.com/l/master-vault">Get the Master Vault</a></div>
-<div class="card" id="custom"><span class="tag s">Enterprise</span><h3>Done-For-You Automation Build</h3><div class="price">$399</div><ul><li>1-on-1 kickoff call</li><li>Custom AI/n8n system engineered for you</li><li>Delivered in 5 days</li></ul><a class="btn o" href="https://aigraphictv.gumroad.com/l/dfy-automation">Book Your Build</a></div>
-</div></div></section>
+  <style>
+    /* Orbital Navy Surface calibrated to @AIGraphicTV Logo */
+    :root {
+      color-scheme: dark;
+    }
 
-<section><div class="w"><div class="eb">Community</div><h2>Follow along everywhere.</h2><p class="lead">Short clips, full builds and behind-the-scenes on every platform.</p>
-<div class="grid g3">
-<div class="card"><span class="tag">YouTube</span><h3>@AIGraphicTV</h3><p>Full builds and visual breakdowns.</p><a class="btn g sm" href="https://www.youtube.com/@AIGraphicTV">Subscribe</a></div>
-<div class="card"><span class="tag">Instagram</span><h3>@AIGraphicTV</h3><p>Reels, quick tips and the comment-to-get-the-guide drops.</p><a class="btn o sm" href="https://www.instagram.com/aigraphictv">Follow</a></div>
-<div class="card"><span class="tag">Facebook</span><h3>@AIGraphicTV</h3><p>Reels and community discussion.</p><a class="btn o sm" href="https://www.facebook.com/aigraphictv">Follow</a></div></div>
-<div class="ban"><div><b>Free PDF Vault</b><span>Every approved playbook, free to download. No fluff.</span></div><a class="btn g" href="vault.html">Open Free Vault →</a></div></div></section>
-</main>
-<footer><div class="w"><div class="fg">
-<div><a class="brand" href="#top" style="padding:0"><img src="logo.png" alt="" onerror="this.style.display='none'">AI GRAPHIC TV</a><p>Visual AI workflow breakdowns, n8n templates and free playbooks for creators, operators and founders.</p></div>
-<div><h4>Quick links</h4><a href="#top">Home</a><a href="vault.html">PDF Vault</a><a href="#packs">Workflow Packs</a><a href="#custom">Custom Build</a></div>
-<div><h4>Follow</h4><a href="https://www.youtube.com/@AIGraphicTV">YouTube</a><a href="https://www.instagram.com/aigraphictv">Instagram</a><a href="https://www.facebook.com/aigraphictv">Facebook</a></div>
-<div><h4>Contact</h4><a href="mailto:aigraphictv@gmail.com">aigraphictv@gmail.com</a></div></div>
-<div class="legal">&copy; <span id="y"></span> AI Graphic TV. Educational content only; not financial, legal or professional advice. Results vary. Some links may be affiliate links; we may earn a commission at no extra cost to you. Product names belong to their owners.</div></div></footer>
-<script>
-document.getElementById('y').textContent=new Date().getFullYear();
-fetch('vault/vault.json').then(r=>r.ok?r.json():null).then(d=>{
- var a=d&&(Array.isArray(d)?d:(d.guides||d.items||[]));if(!a||!a.length)return;
- var box=document.getElementById('eps'),first=box.querySelector('.feat');
- a.slice(0,4).forEach(function(g){var t=g.title||g.name;var u=g.pdf||g.url||g.file;if(!t||!u)return;
-  var c=document.createElement('div');c.className='card';
-  var s=document.createElement('span');s.className='tag';s.textContent='Free PDF';
-  var h=document.createElement('h3');h.textContent=t;
-  var p=document.createElement('p');p.textContent=g.tldr||'Step-by-step playbook from the Vault.';
-  var l=document.createElement('a');l.className='btn o sm';l.textContent='Download Free PDF';l.href=/^https?:|^\//.test(u)?u:'vault/'+u;
-  c.append(s,h,p,l);box.insertBefore(c,first.nextSibling);
-  var all=box.querySelectorAll('.card');if(all.length>5)box.removeChild(all[all.length-1]);});
-}).catch(function(){});
-</script></body></html>
+    body {
+      background-color: #040b16;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
+      background-image:
+        radial-gradient(circle at 16% 10%, rgba(14, 165, 233, 0.14), transparent 38%),
+        radial-gradient(circle at 84% 12%, rgba(245, 158, 11, 0.12), transparent 36%),
+        radial-gradient(circle at 50% 65%, rgba(7, 19, 36, 0.92), rgba(4, 11, 22, 1) 75%),
+        linear-gradient(to right, rgba(56, 189, 248, 0.035) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(56, 189, 248, 0.035) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+    }
+
+    .orbital-panel {
+      background: linear-gradient(165deg, rgba(12, 27, 51, 0.82) 0%, rgba(7, 19, 36, 0.94) 100%);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+    }
+
+    .orbital-card-hover {
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.22s ease,
+        box-shadow 0.22s ease;
+    }
+
+    .orbital-card-hover:hover {
+      transform: translateY(-3px);
+      border-color: rgba(56, 189, 248, 0.48);
+      box-shadow: 0 22px 45px -16px rgba(2, 8, 20, 0.9), 0 0 26px -8px rgba(56, 189, 248, 0.24);
+    }
+
+    .silver-amber-text {
+      background: linear-gradient(125deg, #ffffff 0%, #e2e8f0 38%, #fcd34d 72%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: 'Space Grotesk', 'Plus Jakarta Sans', system-ui, sans-serif;
+      letter-spacing: -0.03em;
+    }
+
+    .font-mono, .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Animated connector flow along exact SVG paths */
+    @keyframes pulseFlow {
+      to {
+        stroke-dashoffset: -44;
+      }
+    }
+
+    .flow-cyan {
+      stroke-dasharray: 7 7;
+      animation: pulseFlow var(--flow-duration, 1.6s) linear infinite;
+    }
+
+    .flow-amber {
+      stroke-dasharray: 7 7;
+      animation: pulseFlow var(--flow-duration, 1.8s) linear infinite;
+    }
+
+    .flow-paused .flow-cyan,
+    .flow-paused .flow-amber {
+      animation-play-state: paused;
+    }
+
+    @keyframes beaconPulse {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.45;
+        transform: scale(0.82);
+      }
+    }
+
+    .beacon-dot {
+      animation: beaconPulse 1.8s ease-in-out infinite;
+    }
+
+    .arch-node {
+      cursor: pointer;
+      transition: opacity 0.2s ease, filter 0.2s ease;
+    }
+
+    .arch-node:hover {
+      filter: brightness(1.12);
+    }
+
+    .arch-node-active rect {
+      stroke-width: 2.5;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #040b16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1b3154;
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #2b4b7d;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-orbital-400/25 selection:text-orbital-300">
+
+  <!-- Toast Banner (Zero alert() usage) -->
+  <div
+    id="toastBanner"
+    role="status"
+    aria-live="polite"
+    class="fixed bottom-5 right-5 z-50 hidden max-w-sm rounded-2xl border border-orbital-400/45 bg-navy-850/95 px-4 py-3 text-sm text-silverMist-100 shadow-orbitalGlass backdrop-blur-md"
+  >
+    <div class="flex items-center gap-2.5">
+      <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amberGold-400"></span>
+      <span id="toastMessage" class="font-medium">Action completed.</span>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- 1. TOP NAVIGATION BAR (ORIGINAL LOGO + TABS + SOCIALS + COPY CTA)     -->
+  <!-- ===================================================================== -->
+  <header class="sticky top-0 z-40 border-b border-orbital-400/15 bg-navy-950/85 backdrop-blur-xl">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+
+      <!-- Original Channel Logo + Brand Title -->
+      <a
+        href="#brand-hub"
+        data-nav="brand-hub"
+        class="nav-trigger group flex items-center gap-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-orbital-400/60"
+      >
+        <div class="relative flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-amberGold-400/50 bg-navy-900 shadow-cyanGlow">
+          <!-- Primary original logo image with automatic fallback cascade -->
+          <img
+            src="./Gemini_Generated_Image_pxkvypxkvypxkvyp.jpg"
+            data-fallbacks='["./brand_logo.png","./assets/brand_logo.png","./logo.png","https://placehold.co/96x96/040B16/38BDF8?text=AIGTV"]'
+            alt="AI Graphic TV Original Logo"
+            class="channel-logo-img h-full w-full object-cover"
+          />
+          <!-- Secondary inline orbital emblem if external image fails -->
+          <svg
+            class="channel-logo-svg hidden h-7 w-7"
+            viewBox="0 0 40 40"
+            fill="none"
+            aria-hidden="true"
+          >
+            <circle cx="20" cy="20" r="10.5" fill="#071324" stroke="#38BDF8" stroke-width="1.8" />
+            <ellipse cx="20" cy="20" rx="10.5" ry="4.4" stroke="rgba(125,211,252,0.55)" stroke-width="1.1" />
+            <path d="M5 25.5C10.5 32.5 23.5 31.8 33.5 20.5" stroke="#FBBF24" stroke-width="2" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div class="leading-tight">
+          <div class="flex items-center gap-1.5">
+            <span class="font-display text-sm font-bold tracking-tight text-white sm:text-base">AI GRAPHIC</span>
+            <span class="rounded bg-gradient-to-r from-amberGold-500 to-amberGold-300 px-1.5 py-0.5 font-mono text-[10px] font-bold tracking-[0.14em] text-navy-950">
+              TV
+            </span>
+          </div>
+          <span class="block font-mono text-[11px] tracking-[0.08em] text-orbital-300">@AIGraphicTV</span>
+        </div>
+      </a>
+
+      <!-- View Switcher Tabs (Desktop) -->
+      <nav aria-label="Primary Views" class="hidden items-center gap-1 rounded-2xl border border-white/[0.1] bg-navy-900/90 p-1 lg:flex">
+        <button
+          type="button"
+          data-nav="brand-hub"
+          class="nav-trigger nav-pill rounded-xl px-3.5 py-1.5 text-xs font-semibold tracking-wide transition"
+        >
+          Brand Hub
+        </button>
+        <button
+          type="button"
+          data-nav="diagrams"
+          class="nav-trigger nav-pill rounded-xl px-3.5 py-1.5 text-xs font-semibold tracking-wide transition"
+        >
+          Architecture Diagrams
+        </button>
+        <button
+          type="button"
+          data-nav="free-vault"
+          class="nav-trigger nav-pill rounded-xl px-3.5 py-1.5 text-xs font-semibold tracking-wide transition"
+        >
+          Free Vault
+        </button>
+        <button
+          type="button"
+          data-nav="packs-dfy"
+          class="nav-trigger nav-pill rounded-xl px-3.5 py-1.5 text-xs font-semibold tracking-wide transition"
+        >
+          Packs &amp; DFY
+        </button>
+      </nav>
+
+      <!-- Social Links + Copy docs/index.html Drawer Button -->
+      <div class="flex items-center gap-2">
+        <div class="hidden items-center gap-1.5 sm:flex">
+          <a
+            href="https://www.youtube.com/@AIGraphicTV"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube @AIGraphicTV"
+            title="YouTube (@AIGraphicTV)"
+            class="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.1] bg-navy-850 text-silverMist-300 transition hover:border-red-400/60 hover:text-red-400"
+          >
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.instagram.com/aigraphictv/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram @AIGraphicTV"
+            title="Instagram (@AIGraphicTV)"
+            class="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.1] bg-navy-850 text-silverMist-300 transition hover:border-pink-400/60 hover:text-pink-400"
+          >
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+            </svg>
+          </a>
+          <a
+            href="https://www.facebook.com/people/AI-Graphic-TV/61597020445378/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook AI Graphic TV"
+            title="Facebook (AI Graphic TV)"
+            class="flex h-9 w-9 items-center justify-center rounded-xl border border-white/[0.1] bg-navy-850 text-silverMist-300 transition hover:border-orbital-400/60 hover:text-orbital-300"
+          >
+            <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24">
+              <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z" />
+            </svg>
+          </a>
+        </div>
+
+        <button
+          type="button"
+          id="openSourceDrawerBtn"
+          class="rounded-xl bg-gradient-to-r from-amberGold-500 to-amberGold-400 px-3.5 py-2 font-mono text-xs font-extrabold text-navy-950 shadow-amberGlow transition hover:from-amberGold-400 hover:to-amberGold-300"
+        >
+          Copy docs/index.html
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile View Bar -->
+    <div class="flex items-center justify-between gap-1 overflow-x-auto border-t border-white/[0.08] bg-navy-950/95 px-3 py-2 lg:hidden">
+      <button type="button" data-nav="brand-hub" class="nav-trigger nav-pill shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold">
+        Brand Hub
+      </button>
+      <button type="button" data-nav="diagrams" class="nav-trigger nav-pill shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold">
+        Architecture Diagrams
+      </button>
+      <button type="button" data-nav="free-vault" class="nav-trigger nav-pill shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold">
+        Free Vault
+      </button>
+      <button type="button" data-nav="packs-dfy" class="nav-trigger nav-pill shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold">
+        Packs &amp; DFY
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================================================================== -->
+  <!-- MAIN CONTENT                                                          -->
+  <!-- ===================================================================== -->
+  <main class="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 lg:px-8 lg:py-12">
+
+    <!-- =================================================================== -->
+    <!-- VIEW 1: BRAND HUB (#brand-hub)                                      -->
+    <!-- =================================================================== -->
+    <section id="view-brand-hub" class="view-section space-y-20">
+
+      <!-- HERO SECTION + ORIGINAL LOGO SHOWCASE + FIXED DIAGRAM -->
+      <div class="grid items-center gap-10 lg:grid-cols-12 lg:gap-8">
+        <!-- Left Copy Column -->
+        <div class="space-y-6 lg:col-span-6">
+          <!-- Featured Original Channel Logo Banner at Top of Hero -->
+          <div class="orbital-panel flex items-center gap-3.5 rounded-2xl p-3">
+            <img
+              src="./Gemini_Generated_Image_pxkvypxkvypxkvyp.jpg"
+              data-fallbacks='["./brand_logo.png","./assets/brand_logo.png","./logo.png","https://placehold.co/120x120/040B16/F59E0B?text=AIGTV"]'
+              alt="AI Graphic TV Official Orbital Globe Logo"
+              class="channel-logo-img h-14 w-14 shrink-0 rounded-xl border border-amberGold-400/50 object-cover shadow-cyanGlow"
+            />
+            <div class="min-w-0 flex-1">
+              <div class="flex items-center gap-2 font-mono text-[11px] font-bold tracking-[0.12em] text-amberGold-300">
+                <span class="beacon-dot h-2 w-2 rounded-full bg-amberGold-400"></span>
+                OFFICIAL CHANNEL · @AIGRAPHICTV
+              </div>
+              <p class="truncate text-xs text-silverMist-200 sm:text-sm">
+                Breakthroughs · AI Tools · Future Tech
+              </p>
+            </div>
+          </div>
+
+          <h1 class="font-display text-4xl font-bold tracking-[-0.035em] text-white sm:text-5xl xl:text-[54px] xl:leading-[1.06]">
+            Autonomous AI Systems &amp; Visual Playbooks.
+            <span class="silver-amber-text mt-1.5 block">Built for Real Execution.</span>
+          </h1>
+
+          <p class="max-w-xl text-base leading-[1.68] text-silverMist-200 sm:text-[17px]">
+            Every episode of <span class="font-semibold text-white">AI Graphic TV</span> breaks down complex <span class="font-mono text-sm text-orbital-300">n8n</span> automations, AI agents, and creator pipelines into clear diagrams, free PDF playbooks, and import-ready JSON packs.
+          </p>
+
+          <!-- Dual CTAs -->
+          <div class="flex flex-wrap items-center gap-3.5 pt-1">
+            <button
+              type="button"
+              data-nav="free-vault"
+              class="nav-trigger inline-flex items-center gap-2 rounded-xl bg-orbital-400 px-5 py-3 text-sm font-extrabold text-navy-950 shadow-cyanGlow transition hover:bg-orbital-300"
+            >
+              <span>Open Free PDF Vault</span>
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <button
+              type="button"
+              data-nav="packs-dfy"
+              class="nav-trigger inline-flex items-center gap-2 rounded-xl border border-amberGold-400/50 bg-navy-850/90 px-5 py-3 text-sm font-bold text-amberGold-300 transition hover:border-amberGold-300 hover:bg-navy-800"
+            >
+              <span>Explore Workflow Packs</span>
+            </button>
+          </div>
+
+          <!-- Quick Social Strip -->
+          <div class="flex flex-wrap items-center gap-4 pt-2 text-xs text-silverMist-300">
+            <a href="https://www.youtube.com/@AIGraphicTV" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-red-400">
+              <span class="font-mono text-amberGold-400">▶</span> YouTube @AIGraphicTV
+            </a>
+            <a href="https://www.instagram.com/aigraphictv/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-pink-400">
+              <span class="font-mono text-orbital-400">◎</span> Instagram @aigraphictv
+            </a>
+            <a href="https://www.facebook.com/people/AI-Graphic-TV/61597020445378/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-orbital-300">
+              <span class="font-mono text-amberGold-400">f</span> Facebook AI Graphic TV
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Interactive Workflow Diagram (BUG FIXED: 03 Reasoning -> GATE VERIFIED -> 04 Publish) -->
+        <div class="lg:col-span-6">
+          <div class="orbital-panel rounded-3xl p-4 shadow-orbitalGlass sm:p-6">
+            <div class="mb-3 flex flex-wrap items-center justify-between gap-2 border-b border-white/[0.08] pb-3">
+              <div class="flex items-center gap-2">
+                <span class="h-2.5 w-2.5 rounded-full bg-amberGold-400"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-orbital-400"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-silverMist-300/70"></span>
+                <span class="ml-1.5 font-mono text-xs text-silverMist-300">autonomous_engine.n8n</span>
+              </div>
+              <button
+                type="button"
+                data-nav="diagrams"
+                class="nav-trigger rounded-full border border-orbital-400/35 bg-orbital-400/10 px-3 py-0.5 font-mono text-[11px] font-semibold text-orbital-300 transition hover:bg-orbital-400/20"
+              >
+                All 3 Diagrams →
+              </button>
+            </div>
+
+            <!-- Interactive SVG Diagram 1 (Strictly Aligned Paths into GATE VERIFIED) -->
+            <div id="heroDiagramStage" class="w-full overflow-hidden rounded-2xl border border-orbital-400/15 bg-navy-950/90 p-2 sm:p-3">
+              <svg
+                viewBox="0 0 640 336"
+                class="h-auto w-full select-none"
+                role="img"
+                aria-label="End-to-End Autonomous Workflow Diagram with 03 Claude/GPT Agent Engine routing cleanly into GATE VERIFIED and then into 04 Multi-Platform Publish"
+              >
+                <defs>
+                  <pattern id="heroOrbGrid" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(56,189,248,0.045)" stroke-width="1" />
+                  </pattern>
+                  <marker id="mHeroGold" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+                    <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#FBBF24" />
+                  </marker>
+                  <marker id="mHeroCyan" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+                    <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#38BDF8" />
+                  </marker>
+                </defs>
+
+                <rect width="640" height="336" rx="14" fill="url(#heroOrbGrid)" />
+
+                <!-- Row 1 Connectors -->
+                <path
+                  d="M 194 78 L 234 78"
+                  stroke="#FBBF24"
+                  stroke-width="2.2"
+                  fill="none"
+                  class="flow-amber"
+                  marker-end="url(#mHeroGold)"
+                />
+                <path
+                  d="M 406 78 L 446 78"
+                  stroke="#38BDF8"
+                  stroke-width="2.2"
+                  fill="none"
+                  class="flow-cyan"
+                  marker-end="url(#mHeroCyan)"
+                />
+
+                <!-- FIXED CONNECTOR: Node 3 bottom center (531,122) -> drops to y=160 -> runs left to x=109 -> enters GATE VERIFIED top (109,200) -->
+                <path
+                  d="M 531 122 L 531 160 L 109 160 L 109 200"
+                  stroke="#FBBF24"
+                  stroke-width="2.2"
+                  fill="none"
+                  stroke-linejoin="round"
+                  class="flow-amber"
+                  marker-end="url(#mHeroGold)"
+                />
+
+                <!-- Row 2 Connectors -->
+                <path
+                  d="M 194 244 L 234 244"
+                  stroke="#38BDF8"
+                  stroke-width="2.2"
+                  fill="none"
+                  class="flow-cyan"
+                  marker-end="url(#mHeroCyan)"
+                />
+                <path
+                  d="M 406 244 L 446 244"
+                  stroke="#FBBF24"
+                  stroke-width="2.2"
+                  fill="none"
+                  class="flow-amber"
+                  marker-end="url(#mHeroGold)"
+                />
+
+                <!-- NODE 1: 01 TRIGGER -->
+                <g class="arch-node" data-inspect-key="trigger" transform="translate(24, 34)">
+                  <rect width="170" height="88" rx="14" fill="#0C1B33" stroke="#FBBF24" stroke-opacity="0.7" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#FBBF24" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">
+                    01 · TRIGGER
+                  </text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Space Grotesk, Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700">
+                    Schedule &amp; Topic
+                  </text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">
+                    Episode slot &amp; input feed
+                  </text>
+                </g>
+
+                <!-- NODE 2: 02 RESEARCH & FACT-CHECK -->
+                <g class="arch-node" data-inspect-key="research" transform="translate(234, 34)">
+                  <rect width="172" height="88" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">
+                    02 · VERIFY
+                  </text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Space Grotesk, Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700">
+                    Research &amp;
+                  </text>
+                  <text x="16" y="72" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">
+                    Fact-Check
+                  </text>
+                </g>
+
+                <!-- NODE 3: 03 CLAUDE / GPT AGENT ENGINE -->
+                <g class="arch-node" data-inspect-key="agent" transform="translate(446, 34)">
+                  <rect width="170" height="88" rx="14" fill="#0E223D" stroke="#38BDF8" stroke-opacity="0.85" stroke-width="1.7" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">
+                    03 · REASONING
+                  </text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Space Grotesk, Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">
+                    Claude / GPT
+                  </text>
+                  <text x="16" y="72" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">
+                    Agent Engine
+                  </text>
+                </g>
+
+                <!-- NODE GATE VERIFIED -->
+                <g class="arch-node" data-inspect-key="gate" transform="translate(24, 200)">
+                  <rect width="170" height="88" rx="14" fill="#132238" stroke="#F59E0B" stroke-opacity="0.85" stroke-width="1.7" />
+                  <circle cx="24" cy="24" r="5" fill="#F59E0B" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">
+                    GATE VERIFIED
+                  </text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Space Grotesk, Plus Jakarta Sans, sans-serif" font-size="13" font-weight="700">
+                    Script → Media → Vault
+                  </text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">
+                    Approved &amp; QA checked
+                  </text>
+                </g>
+
+                <!-- NODE 4: 04 MULTI-PLATFORM PUBLISH -->
+                <g class="arch-node" data-inspect-key="publish" transform="translate(234, 200)">
+                  <rect width="172" height="88" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">
+                    04 · PUBLISH
+                  </text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Space Grotesk, Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">
+                    Multi-Platform
+                  </text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">
+                    YT, IG Reels &amp; FB
+                  </text>
+                </g>
+
+                <!-- NODE 5: 05 PDF VAULT & GUMROAD PACKS -->
+                <g class="arch-node" data-inspect-key="vault-gumroad" transform="translate(446, 200)">
+                  <rect width="170" height="88" rx="14" fill="#122138" stroke="#FBBF24" stroke-opacity="0.8" stroke-width="1.6" />
+                  <circle cx="24" cy="24" r="5" fill="#FBBF24" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">
+                    05 · DELIVER
+                  </text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Space Grotesk, Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">
+                    PDF Vault &amp;
+                  </text>
+                  <text x="16" y="72" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">
+                    Gumroad $9/$27/$399
+                  </text>
+                </g>
+              </svg>
+            </div>
+
+            <!-- 3 Crisp Metric Cards -->
+            <div class="mt-4 grid grid-cols-3 gap-2.5 sm:gap-3.5">
+              <div class="rounded-2xl border border-amberGold-400/25 bg-navy-900/95 p-3 text-center">
+                <div class="font-display text-xl font-bold tabular-nums tracking-tight text-amberGold-400 sm:text-2xl">21+</div>
+                <div class="mt-0.5 text-[11px] font-medium text-silverMist-300 sm:text-xs">Weekly Drops</div>
+              </div>
+              <div class="rounded-2xl border border-orbital-400/25 bg-navy-900/95 p-3 text-center">
+                <div class="font-display text-xl font-bold tabular-nums tracking-tight text-orbital-300 sm:text-2xl">25+</div>
+                <div class="mt-0.5 text-[11px] font-medium text-silverMist-300 sm:text-xs">Ready JSONs</div>
+              </div>
+              <div class="rounded-2xl border border-white/[0.12] bg-navy-900/95 p-3 text-center">
+                <div class="font-display text-xl font-bold tabular-nums tracking-tight text-white sm:text-2xl">100%</div>
+                <div class="mt-0.5 text-[11px] font-medium text-silverMist-300 sm:text-xs">Visual Blueprints</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FEATURED EPISODES -->
+      <section aria-labelledby="home-episodes-title" class="space-y-6">
+        <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <span class="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-orbital-400">
+              Featured Episodes
+            </span>
+            <h2 id="home-episodes-title" class="font-display mt-1 text-2xl font-bold tracking-[-0.03em] text-white sm:text-3xl">
+              Visual Walkthroughs &amp; Free Playbooks
+            </h2>
+          </div>
+          <button
+            type="button"
+            data-nav="free-vault"
+            class="nav-trigger self-start rounded-xl border border-orbital-400/35 bg-navy-850 px-4 py-2 text-xs font-bold text-orbital-300 transition hover:bg-navy-800 sm:self-auto"
+          >
+            Open Free Vault →
+          </button>
+        </div>
+
+        <div id="homeEpisodesList" class="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- LIVE GUMROAD PACKS & DFY PREVIEW -->
+      <section aria-labelledby="home-packs-title" class="space-y-6">
+        <div>
+          <span class="font-mono text-xs font-semibold uppercase tracking-[0.14em] text-amberGold-400">
+            Workflow Packs &amp; Custom Build
+          </span>
+          <h2 id="home-packs-title" class="font-display mt-1 text-2xl font-bold tracking-[-0.03em] text-white sm:text-3xl">
+            Ready-to-Ship Templates &amp; Done-For-You Builds
+          </h2>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          <!-- $9 -->
+          <article class="orbital-panel orbital-card-hover flex flex-col justify-between rounded-3xl p-6">
+            <div>
+              <span class="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-orbital-300">Starter Pack</span>
+              <h3 class="font-display mt-2 text-xl font-bold text-white">n8n Starter Pack</h3>
+              <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-white">$9</div>
+              <p class="mt-3 text-sm leading-[1.65] text-silverMist-300">
+                25 copy-paste n8n JSON templates, 15-page prompt library, and quickstart setup guide.
+              </p>
+            </div>
+            <a
+              href="https://aigraphictv.gumroad.com/l/n8n-starter-pack"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 block rounded-xl border border-orbital-400/45 bg-navy-850 px-4 py-3 text-center text-sm font-bold text-orbital-300 transition hover:bg-orbital-400 hover:text-navy-950"
+            >
+              Get n8n Starter Pack ($9) ↗
+            </a>
+          </article>
+
+          <!-- $27 -->
+          <article class="relative flex flex-col justify-between rounded-3xl border-2 border-amberGold-400/80 bg-gradient-to-b from-navy-850 to-navy-950 p-6 shadow-amberGlow">
+            <span class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-amberGold-400 to-orbital-400 px-3.5 py-0.5 font-mono text-[11px] font-bold uppercase tracking-[0.1em] text-navy-950">
+              All-Access Vault
+            </span>
+            <div>
+              <span class="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-amberGold-300 pt-1 block">Complete Bundle</span>
+              <h3 class="font-display mt-2 text-xl font-bold text-white">Master Vault</h3>
+              <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-amberGold-300">$27</div>
+              <p class="mt-3 text-sm leading-[1.65] text-silverMist-200">
+                All 25+ n8n JSONs, every episode PDF playbook, Claude/Cursor rules, and lifetime weekly updates.
+              </p>
+            </div>
+            <a
+              href="https://aigraphictv.gumroad.com/l/master-vault"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 block rounded-xl bg-gradient-to-r from-amberGold-400 to-amberGold-500 px-4 py-3 text-center text-sm font-extrabold text-navy-950 transition hover:from-amberGold-300 hover:to-amberGold-400"
+            >
+              Unlock Master Vault ($27) ↗
+            </a>
+          </article>
+
+          <!-- $399 -->
+          <article class="orbital-panel orbital-card-hover flex flex-col justify-between rounded-3xl p-6">
+            <div>
+              <span class="font-mono text-xs font-semibold uppercase tracking-[0.1em] text-amberGold-400">Done-For-You</span>
+              <h3 class="font-display mt-2 text-xl font-bold text-white">Done-For-You Automation</h3>
+              <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-white">$399</div>
+              <p class="mt-3 text-sm leading-[1.65] text-silverMist-300">
+                1-on-1 kickoff call plus custom AI &amp; n8n workflows engineered and delivered in 5 days.
+              </p>
+            </div>
+            <a
+              href="https://aigraphictv.gumroad.com/l/dfy-automation"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 block rounded-xl bg-orbital-400 px-4 py-3 text-center text-sm font-extrabold text-navy-950 shadow-cyanGlow transition hover:bg-orbital-300"
+            >
+              Book Custom Build ($399) ↗
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <!-- SOCIAL COMMUNITY CARDS -->
+      <section aria-labelledby="home-social-title" class="orbital-panel rounded-3xl p-6 sm:p-8">
+        <h2 id="home-social-title" class="text-2xl font-bold text-white">Connect With @AIGraphicTV</h2>
+        <p class="mt-1 text-sm text-silverMist-300">
+          Catch new workflow breakdowns, visual reels, and playbook announcements across our official channels.
+        </p>
+
+        <div class="mt-6 grid gap-4 md:grid-cols-3">
+          <a
+            href="https://www.youtube.com/@AIGraphicTV"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="orbital-card-hover rounded-2xl border border-white/[0.1] bg-navy-900/90 p-5"
+          >
+            <div class="font-mono text-xs font-bold text-red-400">YOUTUBE · LONG &amp; SHORTS</div>
+            <div class="mt-2 text-base font-bold text-white">@AIGraphicTV</div>
+            <p class="mt-1 text-xs text-silverMist-300">Full visual automation tutorials and step-by-step builds.</p>
+          </a>
+
+          <a
+            href="https://www.instagram.com/aigraphictv/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="orbital-card-hover rounded-2xl border border-white/[0.1] bg-navy-900/90 p-5"
+          >
+            <div class="font-mono text-xs font-bold text-pink-400">INSTAGRAM · VISUAL REELS</div>
+            <div class="mt-2 text-base font-bold text-white">@aigraphictv</div>
+            <p class="mt-1 text-xs text-silverMist-300">Quick architecture clips, prompts, and visual breakdowns.</p>
+          </a>
+
+          <a
+            href="https://www.facebook.com/people/AI-Graphic-TV/61597020445378/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="orbital-card-hover rounded-2xl border border-white/[0.1] bg-navy-900/90 p-5"
+          >
+            <div class="font-mono text-xs font-bold text-orbital-300">FACEBOOK · COMMUNITY</div>
+            <div class="mt-2 text-base font-bold text-white">AI Graphic TV</div>
+            <p class="mt-1 text-xs text-silverMist-300">Episode alerts, discussions, and direct shares.</p>
+          </a>
+        </div>
+      </section>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 2: INTERACTIVE ARCHITECTURE DIAGRAMS (#diagrams)                -->
+    <!-- =================================================================== -->
+    <section id="view-diagrams" class="view-section hidden space-y-8">
+      <div class="orbital-panel rounded-3xl p-6 sm:p-8">
+        <div class="flex flex-col justify-between gap-4 lg:flex-row lg:items-center">
+          <div>
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-orbital-400">
+              Interactive System Blueprints
+            </span>
+            <h1 class="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              Architecture Diagrams
+            </h1>
+            <p class="mt-2 max-w-2xl text-sm text-silverMist-300">
+              Click any node inside a diagram to inspect its exact role, inputs/outputs, and reliability rule. Toggle flow speed or pause pulses anytime.
+            </p>
+          </div>
+
+          <!-- Flow Speed & Pause Controls -->
+          <div class="flex flex-wrap items-center gap-2">
+            <button
+              type="button"
+              data-speed="2.4s"
+              class="speed-btn rounded-xl border border-white/[0.12] bg-navy-900 px-3 py-2 font-mono text-xs text-silverMist-300 hover:border-orbital-400"
+            >
+              0.7x Slow
+            </button>
+            <button
+              type="button"
+              data-speed="1.6s"
+              class="speed-btn rounded-xl border border-orbital-400 bg-orbital-400/15 px-3 py-2 font-mono text-xs font-bold text-orbital-300"
+            >
+              1.0x Normal
+            </button>
+            <button
+              type="button"
+              data-speed="0.85s"
+              class="speed-btn rounded-xl border border-white/[0.12] bg-navy-900 px-3 py-2 font-mono text-xs text-silverMist-300 hover:border-amberGold-400"
+            >
+              1.8x Fast
+            </button>
+            <button
+              type="button"
+              id="toggleFlowPauseBtn"
+              class="rounded-xl border border-amberGold-400/45 bg-amberGold-400/10 px-3.5 py-2 font-mono text-xs font-bold text-amberGold-300 hover:bg-amberGold-400/20"
+            >
+              Pause Flow
+            </button>
+          </div>
+        </div>
+
+        <!-- Diagram Switcher Tabs -->
+        <div class="mt-6 flex flex-wrap gap-2 border-t border-white/[0.08] pt-5">
+          <button
+            type="button"
+            data-diagram-tab="diag-1"
+            class="diag-tab-btn rounded-xl bg-orbital-400 px-4 py-2 text-xs font-extrabold text-navy-950"
+          >
+            1. Autonomous Content &amp; Vault Engine
+          </button>
+          <button
+            type="button"
+            data-diagram-tab="diag-2"
+            class="diag-tab-btn rounded-xl border border-white/[0.12] bg-navy-900 px-4 py-2 text-xs font-semibold text-silverMist-300 hover:text-white"
+          >
+            2. Lead-to-Vault &amp; Paid Funnel
+          </button>
+          <button
+            type="button"
+            data-diagram-tab="diag-3"
+            class="diag-tab-btn rounded-xl border border-white/[0.12] bg-navy-900 px-4 py-2 text-xs font-semibold text-silverMist-300 hover:text-white"
+          >
+            3. QA, Render &amp; Deployment Pipeline
+          </button>
+        </div>
+      </div>
+
+      <!-- Diagram Stage + Node Inspector Panel -->
+      <div id="diagramsFlowWrapper" class="grid gap-6 lg:grid-cols-12">
+        <div class="lg:col-span-8">
+          <!-- DIAGRAM 1: End-to-End Autonomous Content & Vault Engine -->
+          <div id="diag-1" class="diag-panel orbital-panel rounded-3xl p-4 sm:p-6">
+            <div class="mb-3 flex items-center justify-between">
+              <h2 class="text-lg font-bold text-white">Diagram 1: Autonomous Content &amp; Vault Engine</h2>
+              <span class="font-mono text-xs text-amberGold-300">GATE VERIFIED CONNECTED</span>
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-orbital-400/15 bg-navy-950/90 p-2 sm:p-3">
+              <svg viewBox="0 0 640 336" class="h-auto w-full select-none" role="img" aria-label="Diagram 1: Autonomous Content and Vault Engine">
+                <defs>
+                  <pattern id="d1Grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(56,189,248,0.045)" stroke-width="1" />
+                  </pattern>
+                  <marker id="mD1Gold" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+                    <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#FBBF24" />
+                  </marker>
+                  <marker id="mD1Cyan" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+                    <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#38BDF8" />
+                  </marker>
+                </defs>
+                <rect width="640" height="336" rx="14" fill="url(#d1Grid)" />
+
+                <path d="M 194 78 L 234 78" stroke="#FBBF24" stroke-width="2.2" fill="none" class="flow-amber" marker-end="url(#mD1Gold)" />
+                <path d="M 406 78 L 446 78" stroke="#38BDF8" stroke-width="2.2" fill="none" class="flow-cyan" marker-end="url(#mD1Cyan)" />
+                <path d="M 531 122 L 531 160 L 109 160 L 109 200" stroke="#FBBF24" stroke-width="2.2" fill="none" stroke-linejoin="round" class="flow-amber" marker-end="url(#mD1Gold)" />
+                <path d="M 194 244 L 234 244" stroke="#38BDF8" stroke-width="2.2" fill="none" class="flow-cyan" marker-end="url(#mD1Cyan)" />
+                <path d="M 406 244 L 446 244" stroke="#FBBF24" stroke-width="2.2" fill="none" class="flow-amber" marker-end="url(#mD1Gold)" />
+
+                <g class="arch-node" data-inspect-key="trigger" transform="translate(24, 34)">
+                  <rect width="170" height="88" rx="14" fill="#0C1B33" stroke="#FBBF24" stroke-opacity="0.7" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#FBBF24" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">01 · TRIGGER</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700">Schedule &amp; Topic</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Episode slot &amp; input feed</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="research" transform="translate(234, 34)">
+                  <rect width="172" height="88" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">02 · VERIFY</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="14" font-weight="700">Research &amp;</text>
+                  <text x="16" y="72" fill="#E2E8F0" font-family="Plus Jakarta Sans, sans-serif" font-size="12.5" font-weight="600">Fact-Check</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="agent" transform="translate(446, 34)">
+                  <rect width="170" height="88" rx="14" fill="#0E223D" stroke="#38BDF8" stroke-opacity="0.85" stroke-width="1.7" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">03 · REASONING</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">Claude / GPT</text>
+                  <text x="16" y="72" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Agent Engine</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="gate" transform="translate(24, 200)">
+                  <rect width="170" height="88" rx="14" fill="#132238" stroke="#F59E0B" stroke-opacity="0.85" stroke-width="1.7" />
+                  <circle cx="24" cy="24" r="5" fill="#F59E0B" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">GATE VERIFIED</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13" font-weight="700">Script → Media → Vault</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Approved &amp; QA checked</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="publish" transform="translate(234, 200)">
+                  <rect width="172" height="88" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-opacity="0.65" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">04 · PUBLISH</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">Multi-Platform</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">YT, IG Reels &amp; FB</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="vault-gumroad" transform="translate(446, 200)">
+                  <rect width="170" height="88" rx="14" fill="#122138" stroke="#FBBF24" stroke-opacity="0.8" stroke-width="1.6" />
+                  <circle cx="24" cy="24" r="5" fill="#FBBF24" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">05 · DELIVER</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">PDF Vault &amp;</text>
+                  <text x="16" y="72" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="11" font-weight="600">Gumroad $9/$27/$399</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- DIAGRAM 2: Lead-to-Vault & Paid Funnel Diagram -->
+          <div id="diag-2" class="diag-panel orbital-panel hidden rounded-3xl p-4 sm:p-6">
+            <div class="mb-3 flex items-center justify-between">
+              <h2 class="text-lg font-bold text-white">Diagram 2: Lead-to-Vault &amp; Paid Funnel</h2>
+              <span class="font-mono text-xs text-orbital-300">FREE VALUE → TIERED OFFERS</span>
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-orbital-400/15 bg-navy-950/90 p-2 sm:p-3">
+              <svg viewBox="0 0 640 336" class="h-auto w-full select-none" role="img" aria-label="Diagram 2: Lead-to-Vault and Paid Funnel">
+                <defs>
+                  <pattern id="d2Grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(56,189,248,0.045)" stroke-width="1" />
+                  </pattern>
+                  <marker id="mD2Gold" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+                    <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#FBBF24" />
+                  </marker>
+                  <marker id="mD2Cyan" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+                    <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#38BDF8" />
+                  </marker>
+                </defs>
+                <rect width="640" height="336" rx="14" fill="url(#d2Grid)" />
+
+                <path d="M 194 78 L 234 78" stroke="#38BDF8" stroke-width="2.2" fill="none" class="flow-cyan" marker-end="url(#mD2Cyan)" />
+                <path d="M 406 78 L 446 78" stroke="#FBBF24" stroke-width="2.2" fill="none" class="flow-amber" marker-end="url(#mD2Gold)" />
+                <path d="M 531 122 L 531 160 L 531 200" stroke="#FBBF24" stroke-width="2.2" fill="none" class="flow-amber" marker-end="url(#mD2Gold)" />
+                <path d="M 446 244 L 109 244 L 109 122" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linejoin="round" class="flow-cyan" marker-end="url(#mD2Cyan)" />
+
+                <g class="arch-node" data-inspect-key="social-reach" transform="translate(24, 34)">
+                  <rect width="170" height="88" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">TOFU · SOCIAL</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">YT · IG · FB</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">@AIGraphicTV discovery</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="free-vault-node" transform="translate(234, 34)">
+                  <rect width="172" height="88" rx="14" fill="#0E223D" stroke="#38BDF8" stroke-opacity="0.85" stroke-width="1.6" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">MOFU · FREE</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">Free PDF Vault</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Episode guides &amp; prompts</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="packs-node" transform="translate(446, 34)">
+                  <rect width="170" height="88" rx="14" fill="#132238" stroke="#FBBF24" stroke-opacity="0.85" stroke-width="1.7" />
+                  <circle cx="24" cy="24" r="5" fill="#FBBF24" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">BOFU · TEMPLATES</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">$9 Pack / $27 Vault</text>
+                  <text x="16" y="72" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="11">Gumroad instant ZIP</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="dfy-node" transform="translate(446, 200)">
+                  <rect width="170" height="88" rx="14" fill="#122138" stroke="#F59E0B" stroke-opacity="0.85" stroke-width="1.7" />
+                  <circle cx="24" cy="24" r="5" fill="#F59E0B" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">HIGH-TOUCH · $399</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">DFY Automation</text>
+                  <text x="16" y="72" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="11">5-day custom build</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="retention-node" transform="translate(234, 200)">
+                  <rect width="172" height="88" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-opacity="0.6" stroke-width="1.4" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">RETENTION LOOP</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">Weekly Drops</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">New episodes &amp; updates</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+
+          <!-- DIAGRAM 3: Automated QA, Rendering & Deployment Pipeline -->
+          <div id="diag-3" class="diag-panel orbital-panel hidden rounded-3xl p-4 sm:p-6">
+            <div class="mb-3 flex items-center justify-between">
+              <h2 class="text-lg font-bold text-white">Diagram 3: QA, Render &amp; Deployment Pipeline</h2>
+              <span class="font-mono text-xs text-amberGold-300">ZERO-DISRUPTION DEPLOY</span>
+            </div>
+            <div class="overflow-hidden rounded-2xl border border-orbital-400/15 bg-navy-950/90 p-2 sm:p-3">
+              <svg viewBox="0 0 640 336" class="h-auto w-full select-none" role="img" aria-label="Diagram 3: Automated QA, Render and Deployment Pipeline">
+                <defs>
+                  <pattern id="d3Grid" width="24" height="24" patternUnits="userSpaceOnUse">
+                    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="rgba(56,189,248,0.045)" stroke-width="1" />
+                  </pattern>
+                  <marker id="mD3Gold" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+                    <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#FBBF24" />
+                  </marker>
+                  <marker id="mD3Cyan" viewBox="0 0 10 10" refX="7.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto">
+                    <path d="M 0 1.5 L 8.5 5 L 0 8.5 z" fill="#38BDF8" />
+                  </marker>
+                </defs>
+                <rect width="640" height="336" rx="14" fill="url(#d3Grid)" />
+
+                <path d="M 194 78 L 234 78" stroke="#38BDF8" stroke-width="2.2" fill="none" class="flow-cyan" marker-end="url(#mD3Cyan)" />
+                <path d="M 406 78 L 446 78" stroke="#FBBF24" stroke-width="2.2" fill="none" class="flow-amber" marker-end="url(#mD3Gold)" />
+                <path d="M 531 122 L 531 160 L 320 160 L 320 200" stroke="#FBBF24" stroke-width="2.2" fill="none" stroke-linejoin="round" class="flow-amber" marker-end="url(#mD3Gold)" />
+                <path d="M 406 244 L 446 244" stroke="#38BDF8" stroke-width="2.2" fill="none" class="flow-cyan" marker-end="url(#mD3Cyan)" />
+
+                <g class="arch-node" data-inspect-key="script-prompts" transform="translate(24, 34)">
+                  <rect width="170" height="88" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">STAGE A · SPEC</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">Script &amp; Prompts</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Structured outlines &amp; JSONs</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="media-pdf" transform="translate(234, 34)">
+                  <rect width="172" height="88" rx="14" fill="#0C1B33" stroke="#FBBF24" stroke-opacity="0.7" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#FBBF24" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">STAGE B · BUILD</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">Media &amp; PDF Render</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Video assets + guide PDFs</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="gate" transform="translate(446, 34)">
+                  <rect width="170" height="88" rx="14" fill="#132238" stroke="#F59E0B" stroke-opacity="0.85" stroke-width="1.7" />
+                  <circle cx="24" cy="24" r="5" fill="#F59E0B" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">GATE CHECK</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">Approval &amp; QA</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Verify links &amp; assets</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="github-repo" transform="translate(234, 200)">
+                  <rect width="172" height="88" rx="14" fill="#0C1B33" stroke="#38BDF8" stroke-opacity="0.7" stroke-width="1.5" />
+                  <circle cx="24" cy="24" r="5" fill="#38BDF8" />
+                  <text x="36" y="28" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">STAGE C · REPO</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">docs/index.html</text>
+                  <text x="16" y="72" fill="#CBD5E1" font-family="Plus Jakarta Sans, sans-serif" font-size="11">Isolated single-file update</text>
+                </g>
+
+                <g class="arch-node" data-inspect-key="vercel-hub" transform="translate(446, 200)">
+                  <rect width="170" height="88" rx="14" fill="#122138" stroke="#FBBF24" stroke-opacity="0.85" stroke-width="1.7" />
+                  <circle cx="24" cy="24" r="5" fill="#FBBF24" />
+                  <text x="36" y="28" fill="#FCD34D" font-family="JetBrains Mono, monospace" font-size="10" font-weight="700">STAGE D · LIVE</text>
+                  <text x="16" y="54" fill="#FFFFFF" font-family="Plus Jakarta Sans, sans-serif" font-size="13.5" font-weight="700">Vercel Brand Hub</text>
+                  <text x="16" y="72" fill="#7DD3FC" font-family="JetBrains Mono, monospace" font-size="11">Instant CDN rollout</text>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Node Inspector Card -->
+        <aside class="lg:col-span-4">
+          <div id="nodeInspectorCard" class="orbital-panel sticky top-24 rounded-3xl p-6">
+            <span id="inspectorBadge" class="font-mono text-xs font-bold uppercase tracking-wider text-amberGold-400">
+              NODE INSPECTOR · GATE VERIFIED
+            </span>
+            <h3 id="inspectorTitle" class="mt-2 text-xl font-bold text-white">
+              Gate Verified (Script → Media → Vault)
+            </h3>
+            <p id="inspectorDesc" class="mt-2.5 text-sm leading-relaxed text-silverMist-300">
+              Acts as the quality checkpoint between reasoning/generation and public publishing so every script, visual, PDF guide, and checkout link is verified before release.
+            </p>
+            <div class="mt-4 space-y-2 border-t border-white/[0.08] pt-4 font-mono text-xs">
+              <div class="text-orbital-300">Input: <span id="inspectorInput" class="text-silverMist-200">Drafted workflow &amp; media bundle</span></div>
+              <div class="text-amberGold-300">Output: <span id="inspectorOutput" class="text-silverMist-200">Cleared release to publish &amp; vault</span></div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 3: FREE VAULT (#free-vault)                                    -->
+    <!-- =================================================================== -->
+    <section id="view-free-vault" class="view-section hidden space-y-8">
+      <div class="orbital-panel rounded-3xl p-6 sm:p-8">
+        <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-orbital-400">
+              Searchable Playbook Library
+            </span>
+            <h1 class="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+              Free Episode PDF Vault
+            </h1>
+            <p class="mt-2 max-w-2xl text-sm text-silverMist-300">
+              Search guides by keyword or filter by topic. Open any playbook to read its checklist and copy starter prompts.
+            </p>
+          </div>
+          <a
+            href="https://aigraphictv.gumroad.com/l/master-vault"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="self-start rounded-xl bg-amberGold-400 px-4 py-2.5 text-xs font-extrabold text-navy-950 transition hover:bg-amberGold-300 sm:self-auto"
+          >
+            All-Access Master Vault ($27) ↗
+          </a>
+        </div>
+
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <input
+            id="vaultSearchBox"
+            type="search"
+            placeholder="Search n8n, prompts, visuals, research..."
+            aria-label="Search vault playbooks"
+            class="w-full max-w-md rounded-xl border border-white/[0.14] bg-navy-950 px-4 py-2.5 text-sm text-white placeholder-slate-500 focus:border-orbital-400 focus:outline-none"
+          />
+          <div id="vaultFilterChips" class="flex flex-wrap gap-2">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </div>
+
+      <div id="vaultPlaybookGrid" class="grid gap-6 md:grid-cols-2">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 4: PACKS & DFY + CUSTOM BRIEF FORM (#packs-dfy)                -->
+    <!-- =================================================================== -->
+    <section id="view-packs-dfy" class="view-section hidden space-y-8">
+      <div class="orbital-panel rounded-3xl p-6 sm:p-8">
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-amberGold-400">
+          Live Gumroad Offers
+        </span>
+        <h1 class="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
+          Workflow Packs &amp; Done-For-You Builds
+        </h1>
+        <p class="mt-2 max-w-2xl text-sm text-silverMist-300">
+          Choose between the <span class="font-mono text-white">$9 n8n Starter Pack</span>, the <span class="font-mono text-amberGold-300">$27 Master Vault</span>, or the <span class="font-mono text-orbital-300">$399 Done-For-You Automation Build</span>.
+        </p>
+
+        <div class="mt-7 grid gap-6 lg:grid-cols-3">
+          <article class="rounded-3xl border border-white/[0.12] bg-navy-900/90 p-6">
+            <span class="font-mono text-xs font-semibold tracking-[0.1em] text-orbital-300">TIER 01 · STARTER</span>
+            <h2 class="font-display mt-2 text-xl font-bold text-white">n8n Starter Pack</h2>
+            <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-white">$9</div>
+            <ul class="mt-4 space-y-2 text-sm text-silverMist-200">
+              <li>• 25 ready-to-import n8n workflow JSONs</li>
+              <li>• 15-page high-leverage prompt library</li>
+              <li>• Step-by-step quickstart setup guide</li>
+            </ul>
+            <a
+              href="https://aigraphictv.gumroad.com/l/n8n-starter-pack"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 block rounded-xl border border-orbital-400/50 bg-navy-850 px-4 py-3 text-center text-sm font-bold text-orbital-300 hover:bg-orbital-400 hover:text-navy-950"
+            >
+              Buy n8n Starter Pack ($9) ↗
+            </a>
+          </article>
+
+          <article class="rounded-3xl border-2 border-amberGold-400 bg-navy-850 p-6 shadow-amberGlow">
+            <span class="font-mono text-xs font-semibold tracking-[0.1em] text-amberGold-300">TIER 02 · MOST POPULAR</span>
+            <h2 class="font-display mt-2 text-xl font-bold text-white">Master Vault</h2>
+            <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-amberGold-300">$27</div>
+            <ul class="mt-4 space-y-2 text-sm text-silverMist-100">
+              <li>• Everything in the $9 n8n Starter Pack</li>
+              <li>• Full archive of episode PDF playbooks</li>
+              <li>• Claude &amp; Cursor coding rules + lifetime drops</li>
+            </ul>
+            <a
+              href="https://aigraphictv.gumroad.com/l/master-vault"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 block rounded-xl bg-amberGold-400 px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-amberGold-300"
+            >
+              Get Master Vault ($27) ↗
+            </a>
+          </article>
+
+          <article class="rounded-3xl border border-white/[0.12] bg-navy-900/90 p-6">
+            <span class="font-mono text-xs font-semibold tracking-[0.1em] text-amberGold-400">TIER 03 · DONE-FOR-YOU</span>
+            <h2 class="font-display mt-2 text-xl font-bold text-white">Done-For-You Automation</h2>
+            <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-white">$399</div>
+            <ul class="mt-4 space-y-2 text-sm text-silverMist-200">
+              <li>• 30-min 1-on-1 kickoff &amp; architecture call</li>
+              <li>• Custom AI &amp; n8n workflows built in 5 days</li>
+              <li>• Walkthrough guide + 14-day support</li>
+            </ul>
+            <a
+              href="https://aigraphictv.gumroad.com/l/dfy-automation"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="mt-6 block rounded-xl bg-orbital-400 px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-orbital-300"
+            >
+              Book Custom Build ($399) ↗
+            </a>
+          </article>
+        </div>
+      </div>
+
+      <!-- CUSTOM AUTOMATION BRIEF FORM (Sends to aigraphictv@gmail.com) -->
+      <div class="orbital-panel rounded-3xl p-6 sm:p-8">
+        <div class="flex flex-col justify-between gap-2 sm:flex-row sm:items-end">
+          <div>
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-amberGold-400">
+              Direct Inbox Delivery · aigraphictv@gmail.com
+            </span>
+            <h2 class="mt-1 text-2xl font-bold text-white">
+              Custom Automation &amp; Build Brief
+            </h2>
+          </div>
+          <span class="font-mono text-xs text-orbital-300">Recipient: aigraphictv@gmail.com</span>
+        </div>
+        <p class="mt-2 text-sm text-silverMist-300">
+          Send your workflow requirements straight to <strong class="text-white">aigraphictv@gmail.com</strong> via AJAX or open a pre-filled email draft in your mail client.
+        </p>
+
+        <form id="customBriefForm" class="mt-6 space-y-4">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="briefName" class="block font-mono text-xs font-semibold text-silverMist-200">Your Name</label>
+              <input
+                id="briefName"
+                name="name"
+                type="text"
+                required
+                placeholder="Alex Rivera"
+                class="mt-1.5 w-full rounded-xl border border-white/[0.14] bg-navy-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-orbital-400 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label for="briefEmail" class="block font-mono text-xs font-semibold text-silverMist-200">Reply Email</label>
+              <input
+                id="briefEmail"
+                name="email"
+                type="email"
+                required
+                placeholder="alex@company.com"
+                class="mt-1.5 w-full rounded-xl border border-white/[0.14] bg-navy-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-orbital-400 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2">
+            <div>
+              <label for="briefTier" class="block font-mono text-xs font-semibold text-silverMist-200">Interest / Tier</label>
+              <select
+                id="briefTier"
+                name="tier"
+                class="mt-1.5 w-full rounded-xl border border-white/[0.14] bg-navy-950 px-3.5 py-2.5 text-sm text-white focus:border-orbital-400 focus:outline-none"
+              >
+                <option value="Done-For-You Automation ($399)">Done-For-You Automation ($399)</option>
+                <option value="Master Vault ($27)">Master Vault ($27)</option>
+                <option value="n8n Starter Pack ($9)">n8n Starter Pack ($9)</option>
+                <option value="General Question">General Question</option>
+              </select>
+            </div>
+            <div>
+              <label for="briefStack" class="block font-mono text-xs font-semibold text-silverMist-200">Tools / Stack</label>
+              <input
+                id="briefStack"
+                name="stack"
+                type="text"
+                placeholder="n8n, OpenAI/Claude, Slack, Google Sheets"
+                class="mt-1.5 w-full rounded-xl border border-white/[0.14] bg-navy-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-orbital-400 focus:outline-none"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label for="briefGoal" class="block font-mono text-xs font-semibold text-silverMist-200">Workflow Goal &amp; Timeline</label>
+            <textarea
+              id="briefGoal"
+              name="message"
+              rows="3"
+              required
+              placeholder="Describe what you want automated, trigger events, and desired outcome..."
+              class="mt-1.5 w-full rounded-xl border border-white/[0.14] bg-navy-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-orbital-400 focus:outline-none"
+            ></textarea>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <button
+              type="submit"
+              id="submitBriefBtn"
+              class="rounded-xl bg-gradient-to-r from-amberGold-400 to-amberGold-500 px-5 py-2.5 text-sm font-extrabold text-navy-950 shadow-amberGlow transition hover:from-amberGold-300 hover:to-amberGold-400"
+            >
+              Send Brief to aigraphictv@gmail.com
+            </button>
+            <button
+              type="button"
+              id="openMailtoBtn"
+              class="rounded-xl border border-orbital-400/45 bg-navy-900 px-4 py-2.5 font-mono text-xs font-bold text-orbital-300 transition hover:bg-navy-850"
+            >
+              Open Mail Client (mailto:) ↗
+            </button>
+          </div>
+
+          <p id="briefStatusMsg" class="font-mono text-xs text-silverMist-300"></p>
+        </form>
+      </div>
+
+      <!-- Vercel Safe Transfer & Isolation Guide -->
+      <div class="orbital-panel rounded-3xl p-6 sm:p-8">
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-orbital-300">
+          Safe Deployment Guide
+        </span>
+        <h2 class="mt-1 text-2xl font-bold text-white">
+          How to Transfer to Vercel Without Affecting Anything Else
+        </h2>
+        <p class="mt-2 text-sm text-silverMist-300">
+          Updating only <code class="rounded bg-navy-950 px-1.5 py-0.5 font-mono text-xs text-amberGold-300">docs/index.html</code> keeps <code class="rounded bg-navy-950 px-1.5 py-0.5 font-mono text-xs text-orbital-300">docs/dashboard.html</code>, <code class="rounded bg-navy-950 px-1.5 py-0.5 font-mono text-xs text-orbital-300">docs/vault.html</code>, and all pipeline scripts/workflows untouched.
+        </p>
+
+        <ol class="mt-5 grid gap-4 md:grid-cols-3 text-sm">
+          <li class="rounded-2xl border border-white/[0.08] bg-navy-900/85 p-4">
+            <div class="font-mono text-xs font-bold text-amberGold-400">STEP 1 · COPY SOURCE</div>
+            <p class="mt-1.5 text-silverMist-200">
+              Click <strong>Copy docs/index.html</strong> in the header or drawer and paste it into <code class="font-mono text-xs text-orbital-300">docs/index.html</code> inside your repository.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-white/[0.08] bg-navy-900/85 p-4">
+            <div class="font-mono text-xs font-bold text-orbital-300">STEP 2 · COMMIT ONLY INDEX</div>
+            <p class="mt-1.5 text-silverMist-200">
+              Stage and push only <code class="font-mono text-xs text-amberGold-300">docs/index.html</code>. Your dashboard, vault, and automation scripts remain completely isolated.
+            </p>
+          </li>
+          <li class="rounded-2xl border border-white/[0.08] bg-navy-900/85 p-4">
+            <div class="font-mono text-xs font-bold text-amberGold-400">STEP 3 · VERCEL ROOT = docs</div>
+            <p class="mt-1.5 text-silverMist-200">
+              In Vercel Project Settings, confirm <strong>Root Directory</strong> is set to <code class="font-mono text-xs text-orbital-300">docs</code> so Vercel serves the updated landing page cleanly.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================== -->
+  <!-- SOURCE & VERCEL TRANSFER DRAWER / MODAL                                -->
+  <!-- ===================================================================== -->
+  <div
+    id="sourceDrawerModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="sourceDrawerTitle"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+  >
+    <div class="orbital-panel max-h-[90vh] w-full max-w-3xl overflow-y-auto rounded-3xl p-6 shadow-orbitalGlass sm:p-7">
+      <div class="flex items-start justify-between gap-4 border-b border-white/[0.08] pb-4">
+        <div>
+          <span class="font-mono text-xs font-bold uppercase tracking-wider text-amberGold-400">
+            REPOSITORY EXPORT · SAFE TRANSFER
+          </span>
+          <h3 id="sourceDrawerTitle" class="mt-1 text-xl font-bold text-white sm:text-2xl">
+            Copy Clean <code class="font-mono text-orbital-300">docs/index.html</code> &amp; Vercel Guide
+          </h3>
+        </div>
+        <button
+          type="button"
+          id="closeSourceDrawerBtn"
+          class="rounded-xl border border-white/[0.14] bg-navy-900 px-3 py-1.5 font-mono text-xs font-semibold text-silverMist-200 hover:text-white"
+        >
+          ESC ✕
+        </button>
+      </div>
+
+      <div class="mt-5 space-y-4">
+        <div class="rounded-2xl border border-orbital-400/20 bg-navy-950/90 p-4 text-xs leading-relaxed text-silverMist-200">
+          <p class="font-bold text-amberGold-300">Why this transfer is safe:</p>
+          <p class="mt-1">
+            Replacing only <code class="font-mono text-orbital-300">docs/index.html</code> updates your brand hub without modifying <code class="font-mono text-orbital-300">docs/dashboard.html</code>, <code class="font-mono text-orbital-300">docs/vault.html</code>, or your render/workflow pipelines.
+          </p>
+        </div>
+
+        <div class="flex items-center justify-between">
+          <span class="font-mono text-xs text-silverMist-300">Target file: <strong class="text-white">docs/index.html</strong></span>
+          <button
+            type="button"
+            id="copyDrawerHtmlBtn"
+            class="rounded-xl bg-orbital-400 px-4 py-2 font-mono text-xs font-extrabold text-navy-950 hover:bg-orbital-300"
+          >
+            Copy Full HTML Source
+          </button>
+        </div>
+
+        <textarea
+          id="sourceCodeTextarea"
+          readonly
+          rows="12"
+          aria-label="Clean HTML source for docs/index.html"
+          class="w-full rounded-2xl border border-white/[0.12] bg-navy-950 p-3.5 font-mono text-xs leading-relaxed text-silverMist-100 focus:border-orbital-400 focus:outline-none"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- PLAYBOOK PREVIEW MODAL                                                -->
+  <!-- ===================================================================== -->
+  <div
+    id="episodeModal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="epModalTitle"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4 backdrop-blur-sm"
+  >
+    <div class="orbital-panel max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-3xl p-6 shadow-orbitalGlass sm:p-7">
+      <div class="flex items-start justify-between gap-4 border-b border-white/[0.08] pb-4">
+        <div>
+          <span id="epModalMeta" class="font-mono text-xs font-bold uppercase tracking-wider text-orbital-400"></span>
+          <h3 id="epModalTitle" class="mt-1 text-xl font-bold text-white sm:text-2xl"></h3>
+        </div>
+        <button
+          type="button"
+          id="closeEpModalBtn"
+          class="rounded-xl border border-white/[0.14] bg-navy-900 px-3 py-1.5 font-mono text-xs font-semibold text-silverMist-200 hover:text-white"
+        >
+          ESC ✕
+        </button>
+      </div>
+
+      <div class="mt-5 space-y-5 text-sm text-silverMist-200">
+        <p id="epModalSummary" class="leading-relaxed text-silverMist-200"></p>
+        <div>
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-amberGold-400">Playbook Checklist</h4>
+          <ul id="epModalChecklist" class="mt-2.5 space-y-2"></ul>
+        </div>
+        <div class="rounded-2xl border border-white/[0.1] bg-navy-950 p-4">
+          <div class="flex items-center justify-between gap-2">
+            <span class="font-mono text-xs font-semibold text-orbital-300">Starter Prompt</span>
+            <button
+              type="button"
+              id="copyEpPromptBtn"
+              class="rounded-lg border border-amberGold-400/40 bg-amberGold-400/10 px-2.5 py-1 font-mono text-xs font-semibold text-amberGold-300 hover:bg-amberGold-400/20"
+            >
+              Copy Prompt
+            </button>
+          </div>
+          <pre id="epModalPrompt" class="mt-2.5 whitespace-pre-wrap font-mono text-xs leading-relaxed text-silverMist-100"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- FOOTER (WITH ORIGINAL LOGO + ALL SOCIAL LINKS + aigraphictv@gmail.com) -->
+  <!-- ===================================================================== -->
+  <footer class="mt-16 border-t border-orbital-400/15 bg-navy-950/95">
+    <div class="mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+      <div class="grid gap-8 md:grid-cols-4">
+        <div class="md:col-span-2">
+          <div class="flex items-center gap-3">
+            <img
+              src="./Gemini_Generated_Image_pxkvypxkvypxkvyp.jpg"
+              data-fallbacks='["./brand_logo.png","./assets/brand_logo.png","./logo.png","https://placehold.co/80x80/040B16/38BDF8?text=AIGTV"]'
+              alt="AI Graphic TV Footer Logo"
+              class="channel-logo-img h-10 w-10 rounded-lg border border-amberGold-400/40 object-cover"
+            />
+            <div>
+              <span class="text-base font-extrabold tracking-wider text-white">AI GRAPHIC TV</span>
+              <span class="ml-2 rounded bg-orbital-400/15 px-2 py-0.5 font-mono text-[10px] font-bold text-orbital-300 border border-orbital-400/30">
+                @AIGraphicTV
+              </span>
+            </div>
+          </div>
+          <p class="mt-3 max-w-md text-xs leading-relaxed text-silverMist-300 sm:text-sm">
+            Breakthroughs, AI tools, and future tech — visual workflow diagrams, free PDF playbooks, ready-to-import JSON packs, and custom automation builds.
+          </p>
+          <p class="mt-3 font-mono text-xs text-silverMist-300">
+            Contact: <a href="mailto:aigraphictv@gmail.com" class="text-amberGold-300 underline decoration-amberGold-400/40 underline-offset-4">aigraphictv@gmail.com</a>
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-silverMist-300">Sections</h4>
+          <ul class="mt-3 space-y-2 text-xs text-silverMist-300 sm:text-sm">
+            <li><button type="button" data-nav="brand-hub" class="nav-trigger hover:text-white">Brand Hub</button></li>
+            <li><button type="button" data-nav="diagrams" class="nav-trigger hover:text-white">Architecture Diagrams</button></li>
+            <li><button type="button" data-nav="free-vault" class="nav-trigger hover:text-white">Free Vault</button></li>
+            <li><button type="button" data-nav="packs-dfy" class="nav-trigger hover:text-white">Packs &amp; DFY</button></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-mono text-xs font-bold uppercase tracking-wider text-silverMist-300">Social Channels</h4>
+          <ul class="mt-3 space-y-2 text-xs text-silverMist-300 sm:text-sm">
+            <li><a href="https://www.youtube.com/@AIGraphicTV" target="_blank" rel="noopener noreferrer" class="hover:text-red-400">YouTube (@AIGraphicTV) ↗</a></li>
+            <li><a href="https://www.instagram.com/aigraphictv/" target="_blank" rel="noopener noreferrer" class="hover:text-pink-400">Instagram (@aigraphictv) ↗</a></li>
+            <li><a href="https://www.facebook.com/people/AI-Graphic-TV/61597020445378/" target="_blank" rel="noopener noreferrer" class="hover:text-orbital-300">Facebook (AI Graphic TV) ↗</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-8 flex flex-col items-center justify-between gap-3 border-t border-white/[0.07] pt-6 text-center text-xs text-slate-400 sm:flex-row sm:text-left">
+        <span>© <span id="footerYear">2026</span> AI Graphic TV (@AIGraphicTV). All rights reserved.</span>
+        <span>Educational workflow blueprints. Always test automations safely before production deployment.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================================================================== -->
+  <!-- INTERACTIVE SCRIPT: LOGO FALLBACK, ROUTING, DIAGRAMS, FORM & COPY   -->
+  <!-- ===================================================================== -->
+  <script>
+    (function () {
+      'use strict';
+
+      // Logo fallback handler: tries local/hosted logo paths gracefully without breaking layout
+      document.querySelectorAll('.channel-logo-img').forEach((img) => {
+        let idx = 0;
+        let fallbacks = [];
+        try {
+          fallbacks = JSON.parse(img.getAttribute('data-fallbacks') || '[]');
+        } catch (err) {
+          fallbacks = [];
+        }
+
+        img.addEventListener('error', () => {
+          if (idx < fallbacks.length) {
+            const nextSrc = fallbacks[idx++];
+            img.src = nextSrc;
+          } else {
+            img.classList.add('hidden');
+            const svgFallback = img.parentElement?.querySelector('.channel-logo-svg');
+            if (svgFallback) svgFallback.classList.remove('hidden');
+          }
+        });
+      });
+
+      const yearSpan = document.getElementById('footerYear');
+      if (yearSpan) yearSpan.textContent = String(new Date().getFullYear());
+
+      // Node Metadata for Interactive Inspector across all 3 diagrams
+      const NODE_SPECS = {
+        trigger: {
+          badge: 'NODE · 01 TRIGGER',
+          title: 'Schedule & Topic Trigger',
+          desc: 'Starts each run on a scheduled episode slot or webhook payload with topic metadata and target platform rules.',
+          input: 'Episode schedule slot or webhook JSON',
+          output: 'Normalized topic & run context',
+        },
+        research: {
+          badge: 'NODE · 02 VERIFY',
+          title: 'Research & Fact-Check',
+          desc: 'Gathers source notes, verifies tool details, and filters out unverified assumptions before script or prompt generation.',
+          input: 'Topic brief & reference sources',
+          output: 'Fact-checked context packet',
+        },
+        agent: {
+          badge: 'NODE · 03 REASONING',
+          title: 'Claude / GPT Agent Engine',
+          desc: 'Transforms verified context into structured scripts, system prompts, and n8n workflow blueprints, then routes cleanly into Gate Verified.',
+          input: 'Fact-checked context packet',
+          output: 'Structured blueprint → routes to Gate Verified',
+        },
+        gate: {
+          badge: 'NODE · GATE VERIFIED',
+          title: 'Gate Verified (Script → Media → Vault)',
+          desc: 'Receives the output from Claude / GPT Agent Engine, confirms asset quality and link accuracy, and passes approved items into publishing.',
+          input: 'Routed output from 03 Claude / GPT Agent Engine',
+          output: 'Approved package → routes to 04 Publish',
+        },
+        publish: {
+          badge: 'NODE · 04 PUBLISH',
+          title: 'Multi-Platform Publish',
+          desc: 'Distributes approved formats across YouTube, Instagram Reels, and Facebook with platform-tailored copy.',
+          input: 'Gate-approved media & captions',
+          output: 'Published social & video assets',
+        },
+        'vault-gumroad': {
+          badge: 'NODE · 05 DELIVER',
+          title: 'PDF Vault & Gumroad Packs',
+          desc: 'Pairs free episode guides in the Vault with the $9 n8n Starter Pack, $27 Master Vault, and $399 Done-For-You build.',
+          input: 'Published episode & guide metadata',
+          output: 'Free guides + Gumroad checkout tiers',
+        },
+        'social-reach': {
+          badge: 'FUNNEL · TOFU',
+          title: 'YouTube · Instagram · Facebook',
+          desc: 'Short-form clips and visual breakdowns introduce @AIGraphicTV and invite viewers to inspect the free episode guide.',
+          input: 'Visual hooks & workflow clips',
+          output: 'High-intent clicks into Free PDF Vault',
+        },
+        'free-vault-node': {
+          badge: 'FUNNEL · MOFU',
+          title: 'Free Episode PDF Vault',
+          desc: 'Gives builders actionable checklists and prompts upfront so they can test the system before choosing a paid pack.',
+          input: 'Viewer interest from episodes/socials',
+          output: 'Hands-on trust + pack comparison',
+        },
+        'packs-node': {
+          badge: 'FUNNEL · BOFU',
+          title: '$9 n8n Starter Pack & $27 Master Vault',
+          desc: 'Delivers ready-to-import workflow JSONs, prompt libraries, coding rules, and lifetime updates via Gumroad.',
+          input: 'Builders wanting ready-made templates',
+          output: 'Instant ZIP download & recurring value',
+        },
+        'dfy-node': {
+          badge: 'FUNNEL · $399 DFY',
+          title: 'Done-For-You Automation Build',
+          desc: '5-day custom engineering engagement with a 1-on-1 kickoff call for businesses wanting bespoke workflows built.',
+          input: 'Business workflow requirements',
+          output: 'Tested custom build + 14-day support',
+        },
+        'retention-node': {
+          badge: 'FUNNEL · RETENTION',
+          title: 'Weekly Episode & Vault Drops',
+          desc: 'Keeps the ecosystem fresh with new episodes, updated guides, and expanding template collections.',
+          input: 'Completed release cycle',
+          output: 'Fresh weekly episodes & updates',
+        },
+        'script-prompts': {
+          badge: 'PIPELINE · STAGE A',
+          title: 'Script & Prompts Spec',
+          desc: 'Defines clear structure, prompts, and schema rules before rendering visual or downloadable assets.',
+          input: 'Episode topic & objective',
+          output: 'Approved script & prompt set',
+        },
+        'media-pdf': {
+          badge: 'PIPELINE · STAGE B',
+          title: 'Media & PDF Render',
+          desc: 'Generates visual assets, diagrams, and episode guide PDFs aligned with the orbital brand system.',
+          input: 'Script & structured notes',
+          output: 'Video/visuals + episode guide PDF',
+        },
+        'github-repo': {
+          badge: 'PIPELINE · STAGE C',
+          title: 'Isolated docs/index.html Update',
+          desc: 'Updates only docs/index.html while leaving dashboard.html, vault.html, and automation scripts untouched.',
+          input: 'Verified brand hub HTML',
+          output: 'Clean commit on main branch',
+        },
+        'vercel-hub': {
+          badge: 'PIPELINE · STAGE D',
+          title: 'Vercel Brand Hub Rollout',
+          desc: 'Publishes the updated static brand hub from the docs root directory with zero impact on other routes.',
+          input: 'Pushed docs/index.html',
+          output: 'Live orbital brand website',
+        },
+      };
+
+      const PLAYBOOKS = [
+        {
+          id: 'pb-n8n',
+          code: 'EPISODE #01',
+          category: 'n8n & Agents',
+          title: 'Build Your First AI Automation in n8n',
+          summary:
+            'Map a clean webhook/schedule trigger, verify inputs, run an AI agent step, and route results into sheets, alerts, or vaults.',
+          checklist: [
+            'Start with a single trigger node and inspect sample payload fields',
+            'Validate required fields before calling external AI APIs',
+            'Route approved outputs through a clear verification step',
+          ],
+          prompt:
+            'Role: Automation Architect. Given input {{ $json }}, return clean JSON with "title", "key_steps" (array of 3 concise items), and "status".',
+        },
+        {
+          id: 'pb-visuals',
+          code: 'GUIDE · VISUALS',
+          category: 'Design & Media',
+          title: 'Orbital Brand Visuals & Thumbnails',
+          summary:
+            'Maintain consistent dark navy, cyan, and gold contrast across covers, square thumbnails, and social cards.',
+          checklist: [
+            'Keep headlines short and high-contrast against dark backgrounds',
+            'Ensure connector lines and labels never overlap at smaller sizes',
+            'Check both mobile and desktop framing before export',
+          ],
+          prompt:
+            'Create 4 visual concept hooks for [TOPIC] using dark navy, cyan, and gold accents with a 3-to-4 word focal headline.',
+        },
+        {
+          id: 'pb-prompts',
+          code: 'GUIDE · PROMPTS',
+          category: 'Prompt Systems',
+          title: 'Structured Prompt Engineering Playbook',
+          summary:
+            'Turn hit-or-miss prompts into repeatable templates with explicit roles, constraints, and formatting rules.',
+          checklist: [
+            'Define role, context, and exact output format upfront',
+            'State what the model must do when information is missing',
+            'Test edge cases with messy or incomplete inputs',
+          ],
+          prompt:
+            'Act as a technical editor. Turn these rough notes into a clear step-by-step guide without adding unverified claims:\n[PASTE NOTES]',
+        },
+        {
+          id: 'pb-research',
+          code: 'GUIDE · RESEARCH',
+          category: 'Research & Docs',
+          title: 'Source-Grounded Research & Notes',
+          summary:
+            'Organize reference material and documentation into structured summaries so every build stays accurate.',
+          checklist: [
+            'Collect primary docs and version notes before building',
+            'Separate verified facts from future roadmap ideas',
+            'Keep a concise changelog of every workflow revision',
+          ],
+          prompt:
+            'Summarize the core setup steps, prerequisites, and common pitfalls from these notes in under 120 words:\n[PASTE SOURCES]',
+        },
+      ];
+
+      let activeVaultCategory = 'All';
+      let currentModalPrompt = '';
+      let toastTimeout = null;
+
+      function showToast(msg) {
+        const banner = document.getElementById('toastBanner');
+        const textEl = document.getElementById('toastMessage');
+        if (!banner || !textEl) return;
+        textEl.textContent = msg;
+        banner.classList.remove('hidden');
+        if (toastTimeout) clearTimeout(toastTimeout);
+        toastTimeout = setTimeout(() => banner.classList.add('hidden'), 2600);
+      }
+
+      function copyToClipboard(text, msg) {
+        if (!text) return;
+        if (navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+          navigator.clipboard
+            .writeText(text)
+            .then(() => showToast(msg || 'Copied to clipboard!'))
+            .catch(() => fallbackCopy(text, msg));
+        } else {
+          fallbackCopy(text, msg);
+        }
+      }
+
+      function fallbackCopy(text, msg) {
+        try {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          showToast(msg || 'Copied to clipboard!');
+        } catch (err) {
+          showToast('Please copy manually from the text box.');
+        }
+      }
+
+      // View Navigation (#brand-hub, #diagrams, #free-vault, #packs-dfy)
+      const VIEWS = ['brand-hub', 'diagrams', 'free-vault', 'packs-dfy'];
+
+      function setView(viewName, syncHash = true) {
+        const target = VIEWS.includes(viewName) ? viewName : 'brand-hub';
+
+        document.querySelectorAll('.view-section').forEach((sec) => {
+          sec.classList.toggle('hidden', sec.id !== `view-${target}`);
+        });
+
+        document.querySelectorAll('.nav-pill').forEach((pill) => {
+          const active = pill.getAttribute('data-nav') === target;
+          pill.classList.toggle('bg-orbital-400', active);
+          pill.classList.toggle('text-navy-950', active);
+          pill.classList.toggle('font-extrabold', active);
+          pill.classList.toggle('text-silverMist-300', !active);
+        });
+
+        if (syncHash && window.location.hash !== `#${target}`) {
+          try {
+            history.replaceState(null, '', `#${target}`);
+          } catch (e) {
+            window.location.hash = `#${target}`;
+          }
+        }
+
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      document.querySelectorAll('.nav-trigger').forEach((el) => {
+        el.addEventListener('click', (e) => {
+          const dest = el.getAttribute('data-nav');
+          if (dest) {
+            if (el.tagName === 'A') e.preventDefault();
+            setView(dest, true);
+          }
+        });
+      });
+
+      window.addEventListener('hashchange', () => {
+        const h = window.location.hash.replace(/^#/, '');
+        if (VIEWS.includes(h)) setView(h, false);
+      });
+
+      // Diagram Switcher Tabs (Diagram 1, Diagram 2, Diagram 3)
+      document.querySelectorAll('.diag-tab-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const diagId = btn.getAttribute('data-diagram-tab');
+          document.querySelectorAll('.diag-panel').forEach((panel) => {
+            panel.classList.toggle('hidden', panel.id !== diagId);
+          });
+          document.querySelectorAll('.diag-tab-btn').forEach((b) => {
+            const isSelected = b.getAttribute('data-diagram-tab') === diagId;
+            b.className = isSelected
+              ? 'diag-tab-btn rounded-xl bg-orbital-400 px-4 py-2 text-xs font-extrabold text-navy-950'
+              : 'diag-tab-btn rounded-xl border border-white/[0.12] bg-navy-900 px-4 py-2 text-xs font-semibold text-silverMist-300 hover:text-white';
+          });
+        });
+      });
+
+      // Flow Speed & Pause Controls
+      const flowRoot = document.getElementById('diagramsFlowWrapper');
+      const pauseBtn = document.getElementById('toggleFlowPauseBtn');
+
+      document.querySelectorAll('.speed-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const dur = btn.getAttribute('data-speed') || '1.6s';
+          document.documentElement.style.setProperty('--flow-duration', dur);
+          document.querySelectorAll('.speed-btn').forEach((b) => {
+            const active = b === btn;
+            b.className = active
+              ? 'speed-btn rounded-xl border border-orbital-400 bg-orbital-400/15 px-3 py-2 font-mono text-xs font-bold text-orbital-300'
+              : 'speed-btn rounded-xl border border-white/[0.12] bg-navy-900 px-3 py-2 font-mono text-xs text-silverMist-300 hover:border-orbital-400';
+          });
+          showToast(`Flow speed set (${btn.textContent.trim()})`);
+        });
+      });
+
+      if (pauseBtn && flowRoot) {
+        pauseBtn.addEventListener('click', () => {
+          const paused = flowRoot.classList.toggle('flow-paused');
+          pauseBtn.textContent = paused ? 'Resume Flow' : 'Pause Flow';
+          showToast(paused ? 'Diagram flow paused' : 'Diagram flow resumed');
+        });
+      }
+
+      // Click Any Diagram Node to Inspect
+      function inspectNode(key) {
+        const spec = NODE_SPECS[key] || NODE_SPECS.gate;
+        document.getElementById('inspectorBadge').textContent = spec.badge;
+        document.getElementById('inspectorTitle').textContent = spec.title;
+        document.getElementById('inspectorDesc').textContent = spec.desc;
+        document.getElementById('inspectorInput').textContent = spec.input;
+        document.getElementById('inspectorOutput').textContent = spec.output;
+
+        document.querySelectorAll('.arch-node').forEach((node) => {
+          node.classList.toggle('arch-node-active', node.getAttribute('data-inspect-key') === key);
+        });
+      }
+
+      document.querySelectorAll('.arch-node').forEach((node) => {
+        node.addEventListener('click', () => {
+          const key = node.getAttribute('data-inspect-key');
+          if (key) {
+            inspectNode(key);
+            showToast(`Inspecting: ${key}`);
+          }
+        });
+      });
+
+      // Render Featured Episodes on Brand Hub & Searchable Free Vault
+      function renderHomeEpisodes() {
+        const el = document.getElementById('homeEpisodesList');
+        if (!el) return;
+        el.innerHTML = PLAYBOOKS.map(
+          (pb) => `
+          <article class="orbital-panel orbital-card-hover flex flex-col justify-between rounded-2xl p-5">
+            <div>
+              <span class="font-mono text-[10px] font-bold uppercase tracking-wider text-orbital-300">${pb.code} · ${pb.category}</span>
+              <h3 class="mt-2.5 text-base font-bold text-white">${pb.title}</h3>
+              <p class="mt-2 text-xs leading-relaxed text-silverMist-300">${pb.summary}</p>
+            </div>
+            <button
+              type="button"
+              data-open-pb="${pb.id}"
+              class="open-pb-btn mt-4 w-full rounded-xl border border-orbital-400/40 bg-navy-850 px-3 py-2 text-xs font-bold text-orbital-300 transition hover:bg-orbital-400 hover:text-navy-950"
+            >
+              View Playbook &amp; Prompt
+            </button>
+          </article>
+        `
+        ).join('');
+        bindPlaybookButtons();
+      }
+
+      const VAULT_CATS = ['All', 'n8n & Agents', 'Design & Media', 'Prompt Systems', 'Research & Docs'];
+
+      function renderVaultChips() {
+        const el = document.getElementById('vaultFilterChips');
+        if (!el) return;
+        el.innerHTML = VAULT_CATS.map((cat) => {
+          const active = cat === activeVaultCategory;
+          return `
+            <button
+              type="button"
+              data-vcat="${cat}"
+              class="vcat-btn rounded-xl px-3 py-1.5 text-xs font-semibold transition ${
+                active
+                  ? 'bg-orbital-400 font-extrabold text-navy-950'
+                  : 'border border-white/[0.12] bg-navy-900 text-silverMist-300 hover:text-white'
+              }"
+            >
+              ${cat}
+            </button>
+          `;
+        }).join('');
+
+        el.querySelectorAll('.vcat-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            activeVaultCategory = btn.getAttribute('data-vcat') || 'All';
+            renderVaultChips();
+            renderVaultItems();
+          });
+        });
+      }
+
+      function renderVaultItems() {
+        const grid = document.getElementById('vaultPlaybookGrid');
+        const box = document.getElementById('vaultSearchBox');
+        if (!grid) return;
+
+        const q = (box ? box.value : '').trim().toLowerCase();
+        const items = PLAYBOOKS.filter((pb) => {
+          const catOk = activeVaultCategory === 'All' || pb.category === activeVaultCategory;
+          const searchOk =
+            !q ||
+            pb.title.toLowerCase().includes(q) ||
+            pb.summary.toLowerCase().includes(q) ||
+            pb.category.toLowerCase().includes(q);
+          return catOk && searchOk;
+        });
+
+        if (items.length === 0) {
+          grid.innerHTML = `
+            <div class="orbital-panel col-span-full rounded-2xl p-8 text-center text-sm text-silverMist-300">
+              No matching playbooks found. Try another search term or select "All".
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = items
+          .map(
+            (pb) => `
+          <article class="orbital-panel orbital-card-hover flex flex-col justify-between rounded-3xl p-6">
+            <div>
+              <div class="flex items-center justify-between gap-2">
+                <span class="font-mono text-xs font-bold text-amberGold-300">${pb.code}</span>
+                <span class="font-mono text-xs text-orbital-300">${pb.category}</span>
+              </div>
+              <h2 class="mt-2.5 text-xl font-bold text-white">${pb.title}</h2>
+              <p class="mt-2 text-sm text-silverMist-300">${pb.summary}</p>
+              <ul class="mt-4 space-y-1.5 text-xs text-silverMist-200">
+                ${pb.checklist.map((c) => `<li><span class="font-mono text-amberGold-400">✓</span> ${c}</li>`).join('')}
+              </ul>
+            </div>
+            <div class="mt-6 flex flex-wrap gap-2 border-t border-white/[0.08] pt-4">
+              <button
+                type="button"
+                data-open-pb="${pb.id}"
+                class="open-pb-btn rounded-xl bg-amberGold-400 px-4 py-2 text-xs font-extrabold text-navy-950 hover:bg-amberGold-300"
+              >
+                Open Playbook
+              </button>
+              <button
+                type="button"
+                data-copy-pb="${pb.id}"
+                class="copy-pb-btn rounded-xl border border-white/[0.14] bg-navy-900 px-3.5 py-2 font-mono text-xs font-semibold text-silverMist-200 hover:border-orbital-400 hover:text-orbital-300"
+              >
+                Copy Prompt
+              </button>
+            </div>
+          </article>
+        `
+          )
+          .join('');
+
+        bindPlaybookButtons();
+        grid.querySelectorAll('.copy-pb-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const pb = PLAYBOOKS.find((x) => x.id === btn.getAttribute('data-copy-pb'));
+            if (pb) copyToClipboard(pb.prompt, `Copied prompt: ${pb.title}`);
+          });
+        });
+      }
+
+      // Playbook Modal
+      function bindPlaybookButtons() {
+        document.querySelectorAll('.open-pb-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            const pb = PLAYBOOKS.find((x) => x.id === btn.getAttribute('data-open-pb'));
+            if (pb) openPlaybookModal(pb);
+          });
+        });
+      }
+
+      function openPlaybookModal(pb) {
+        const modal = document.getElementById('episodeModal');
+        if (!modal) return;
+        document.getElementById('epModalMeta').textContent = `${pb.code} · ${pb.category}`;
+        document.getElementById('epModalTitle').textContent = pb.title;
+        document.getElementById('epModalSummary').textContent = pb.summary;
+        document.getElementById('epModalChecklist').innerHTML = pb.checklist
+          .map(
+            (step, i) =>
+              `<li class="rounded-xl border border-white/[0.07] bg-navy-900/80 px-3.5 py-2 text-xs sm:text-sm"><span class="mr-2 font-mono font-bold text-orbital-300">0${i + 1}</span>${step}</li>`
+          )
+          .join('');
+        currentModalPrompt = pb.prompt;
+        document.getElementById('epModalPrompt').textContent = pb.prompt;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+
+      function closePlaybookModal() {
+        const modal = document.getElementById('episodeModal');
+        if (!modal) return;
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+
+      document.getElementById('closeEpModalBtn')?.addEventListener('click', closePlaybookModal);
+      document.getElementById('episodeModal')?.addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) closePlaybookModal();
+      });
+      document.getElementById('copyEpPromptBtn')?.addEventListener('click', () => {
+        copyToClipboard(currentModalPrompt, 'Copied starter prompt!');
+      });
+
+      // Custom Automation Brief Submission to aigraphictv@gmail.com
+      function buildMailtoHref(payload) {
+        const subject = encodeURIComponent(`[AI Graphic TV Brief] ${payload.tier} — ${payload.name}`);
+        const body = encodeURIComponent(
+          [
+            `Name: ${payload.name}`,
+            `Reply Email: ${payload.email}`,
+            `Tier: ${payload.tier}`,
+            `Tools / Stack: ${payload.stack || 'Not specified'}`,
+            '',
+            'Workflow Goal:',
+            payload.message,
+          ].join('\n')
+        );
+        return `mailto:aigraphictv@gmail.com?subject=${subject}&body=${body}`;
+      }
+
+      function readBriefPayload() {
+        return {
+          name: document.getElementById('briefName')?.value.trim() || '',
+          email: document.getElementById('briefEmail')?.value.trim() || '',
+          tier: document.getElementById('briefTier')?.value || 'Done-For-You Automation ($399)',
+          stack: document.getElementById('briefStack')?.value.trim() || '',
+          message: document.getElementById('briefGoal')?.value.trim() || '',
+        };
+      }
+
+      const briefForm = document.getElementById('customBriefForm');
+      const briefStatus = document.getElementById('briefStatusMsg');
+      const submitBriefBtn = document.getElementById('submitBriefBtn');
+
+      briefForm?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const payload = readBriefPayload();
+        if (!payload.name || !payload.email || !payload.message) {
+          if (briefStatus) briefStatus.textContent = 'Please fill in your name, email, and workflow goal.';
+          return;
+        }
+
+        if (submitBriefBtn) {
+          submitBriefBtn.disabled = true;
+          submitBriefBtn.textContent = 'Sending to aigraphictv@gmail.com...';
+        }
+
+        try {
+          const res = await fetch('https://formsubmit.co/ajax/aigraphictv@gmail.com', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              Accept: 'application/json',
+            },
+            body: JSON.stringify({
+              _subject: `AI Graphic TV Brief: ${payload.tier} (${payload.name})`,
+              name: payload.name,
+              email: payload.email,
+              tier: payload.tier,
+              stack: payload.stack,
+              message: payload.message,
+            }),
+          });
+
+          if (!res.ok) throw new Error('FormSubmit request failed');
+
+          if (briefStatus) {
+            briefStatus.textContent =
+              'Brief sent to aigraphictv@gmail.com! (First-time setup: confirm the FormSubmit activation email in aigraphictv@gmail.com if prompted.)';
+          }
+          showToast('Brief sent to aigraphictv@gmail.com!');
+          briefForm.reset();
+        } catch (err) {
+          if (briefStatus) {
+            briefStatus.textContent =
+              'Direct AJAX was blocked or offline. Click "Open Mail Client (mailto:)" to send directly to aigraphictv@gmail.com.';
+          }
+          showToast('Use Open Mail Client to send to aigraphictv@gmail.com');
+        } finally {
+          if (submitBriefBtn) {
+            submitBriefBtn.disabled = false;
+            submitBriefBtn.textContent = 'Send Brief to aigraphictv@gmail.com';
+          }
+        }
+      });
+
+      document.getElementById('openMailtoBtn')?.addEventListener('click', () => {
+        const payload = readBriefPayload();
+        if (!payload.name && !payload.message) {
+          window.location.href = 'mailto:aigraphictv@gmail.com?subject=AI%20Graphic%20TV%20Automation%20Inquiry';
+          return;
+        }
+        window.location.href = buildMailtoHref(payload);
+        showToast('Opening mail draft for aigraphictv@gmail.com');
+      });
+
+      // Copy docs/index.html Source Drawer Modal
+      const drawerModal = document.getElementById('sourceDrawerModal');
+      const sourceTextarea = document.getElementById('sourceCodeTextarea');
+
+      function getCleanHtmlSource() {
+        return '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+      }
+
+      function openSourceDrawer() {
+        if (!drawerModal) return;
+        if (sourceTextarea) sourceTextarea.value = getCleanHtmlSource();
+        drawerModal.classList.remove('hidden');
+        drawerModal.classList.add('flex');
+      }
+
+      function closeSourceDrawer() {
+        if (!drawerModal) return;
+        drawerModal.classList.add('hidden');
+        drawerModal.classList.remove('flex');
+      }
+
+      document.getElementById('openSourceDrawerBtn')?.addEventListener('click', openSourceDrawer);
+      document.getElementById('closeSourceDrawerBtn')?.addEventListener('click', closeSourceDrawer);
+      drawerModal?.addEventListener('click', (e) => {
+        if (e.target === drawerModal) closeSourceDrawer();
+      });
+      document.getElementById('copyDrawerHtmlBtn')?.addEventListener('click', () => {
+        copyToClipboard(getCleanHtmlSource(), 'Copied clean docs/index.html source!');
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closePlaybookModal();
+          closeSourceDrawer();
+        }
+      });
+
+      document.getElementById('vaultSearchBox')?.addEventListener('input', renderVaultItems);
+
+      // Boot
+      inspectNode('gate');
+      renderHomeEpisodes();
+      renderVaultChips();
+      renderVaultItems();
+
+      const startHash = window.location.hash.replace(/^#/, '');
+      setView(VIEWS.includes(startHash) ? startHash : 'brand-hub', false);
+    })();
+  </script>
+</body>
+</html>
