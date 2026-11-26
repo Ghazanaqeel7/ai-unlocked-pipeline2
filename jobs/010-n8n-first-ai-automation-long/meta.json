@@ -28,5 +28,15 @@
     "slot": "long",
     "date": "2026-11-27"
   },
-  "evergreen_only": true
+  "evergreen_only": true,
+  "thumb": {
+    "image": {
+      "q": "glowing neural network abstract"
+    },
+    "icon": "bulb",
+    "line1": "STOP",
+    "line2": "COPY-PASTING",
+    "box": "n8n AI AGENT",
+    "box_color": "#C8F938"
+  }
 }
