@@ -237,9 +237,13 @@
         {
           "t": "2026-11-26T15:50:13Z",
           "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
+        },
+        {
+          "t": "2026-11-26T17:58:14Z",
+          "msg": "🎞 Render starting in 4 parts at once (~40-60 min)"
         }
       ],
-      "progress_count": 5,
+      "progress_count": 6,
       "decided_via": "dashboard",
       "decided_at": "2026-11-26T09:44:27Z",
       "run": "45872089641"
