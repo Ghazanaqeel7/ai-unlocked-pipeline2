@@ -2,6 +2,51 @@
   "_help": "Top-100 ranked backlog. status: idea -> scheduled -> used. See pipeline/research/build_backlog.py",
   "ideas": [
     {
+      "key": "prompt pattern that stops generic answers",
+      "tool": "ChatGPT",
+      "topic": "Prompt pattern that stops generic answers",
+      "pain_hook": "ChatGPT keeps giving boring answers",
+      "demand": 10,
+      "visual": 8,
+      "ctr": 9,
+      "trend_bonus": 8,
+      "score": 99.0,
+      "verified": false,
+      "status": "scheduled",
+      "job": null,
+      "rank": 1
+    },
+    {
+      "key": "analyse a spreadsheet with chatgpt in 2 minutes",
+      "tool": "ChatGPT",
+      "topic": "Analyse a spreadsheet with ChatGPT in 2 minutes",
+      "pain_hook": "Excel takes your whole afternoon",
+      "demand": 9,
+      "visual": 9,
+      "ctr": 9,
+      "trend_bonus": 8,
+      "score": 98.0,
+      "verified": false,
+      "status": "scheduled",
+      "job": null,
+      "rank": 2
+    },
+    {
+      "key": "build a simple app without coding using chatgpt",
+      "tool": "ChatGPT",
+      "topic": "Build a simple app without coding using ChatGPT",
+      "pain_hook": "You have an idea but cannot code",
+      "demand": 9,
+      "visual": 8,
+      "ctr": 9,
+      "trend_bonus": 8,
+      "score": 95.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 3
+    },
+    {
       "key": "build your first ai automation in n8n",
       "tool": "n8n",
       "topic": "Build your first AI automation in n8n",
@@ -14,7 +59,7 @@
       "verified": false,
       "status": "scheduled",
       "job": null,
-      "rank": 1
+      "rank": 4
     },
     {
       "key": "canva ai a week of posts in 20 minutes",
@@ -29,22 +74,37 @@
       "verified": false,
       "status": "scheduled",
       "job": null,
-      "rank": 2
+      "rank": 5
     },
     {
-      "key": "prompt pattern that stops generic answers",
+      "key": "custom gpt that answers like your best employee",
       "tool": "ChatGPT",
-      "topic": "Prompt pattern that stops generic answers",
-      "pain_hook": "ChatGPT keeps giving boring answers",
-      "demand": 10,
+      "topic": "Custom GPT that answers like your best employee",
+      "pain_hook": "Answering the same questions daily",
+      "demand": 9,
       "visual": 8,
-      "ctr": 9,
-      "trend_bonus": 0,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 92.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 6
+    },
+    {
+      "key": "claude artifacts build tools by chatting",
+      "tool": "Claude",
+      "topic": "Claude artifacts: build tools by chatting",
+      "pain_hook": "Needing a tool that does not exist",
+      "demand": 8,
+      "visual": 9,
+      "ctr": 8,
+      "trend_bonus": 8,
       "score": 91.0,
       "verified": false,
-      "status": "scheduled",
+      "status": "idea",
       "job": null,
-      "rank": 3
+      "rank": 7
     },
     {
       "key": "turn one pdf into a podcast slide deck and mind map",
@@ -59,22 +119,7 @@
       "verified": false,
       "status": "scheduled",
       "job": null,
-      "rank": 4
-    },
-    {
-      "key": "analyse a spreadsheet with chatgpt in 2 minutes",
-      "tool": "ChatGPT",
-      "topic": "Analyse a spreadsheet with ChatGPT in 2 minutes",
-      "pain_hook": "Excel takes your whole afternoon",
-      "demand": 9,
-      "visual": 9,
-      "ctr": 9,
-      "trend_bonus": 0,
-      "score": 90.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 5
+      "rank": 8
     },
     {
       "key": "build an app with cursor in one hour",
@@ -89,7 +134,7 @@
       "verified": false,
       "status": "scheduled",
       "job": null,
-      "rank": 6
+      "rank": 9
     },
     {
       "key": "capcut ai captions and auto cut",
@@ -104,7 +149,7 @@
       "verified": false,
       "status": "scheduled",
       "job": null,
-      "rank": 7
+      "rank": 10
     },
     {
       "key": "ai formulas that replace hours of excel",
@@ -119,7 +164,7 @@
       "verified": false,
       "status": "scheduled",
       "job": null,
-      "rank": 8
+      "rank": 11
     },
     {
       "key": "build your own ai agent without code",
@@ -134,22 +179,112 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 9
+      "rank": 12
     },
     {
-      "key": "build a simple app without coding using chatgpt",
+      "key": "use memory and custom instructions properly",
       "tool": "ChatGPT",
-      "topic": "Build a simple app without coding using ChatGPT",
-      "pain_hook": "You have an idea but cannot code",
+      "topic": "Use memory and custom instructions properly",
+      "pain_hook": "It forgets everything you told it",
       "demand": 9,
-      "visual": 8,
-      "ctr": 9,
-      "trend_bonus": 0,
-      "score": 87.0,
+      "visual": 7,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 89.0,
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 10
+      "rank": 13
+    },
+    {
+      "key": "turn a messy brain dump into a clean plan",
+      "tool": "ChatGPT",
+      "topic": "Turn a messy brain dump into a clean plan",
+      "pain_hook": "Overwhelmed with too many tasks",
+      "demand": 8,
+      "visual": 8,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 88.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 14
+    },
+    {
+      "key": "use chatgpt to negotiate a bill or salary",
+      "tool": "ChatGPT",
+      "topic": "Use ChatGPT to negotiate a bill or salary",
+      "pain_hook": "Overpaying and afraid to ask",
+      "demand": 8,
+      "visual": 7,
+      "ctr": 9,
+      "trend_bonus": 8,
+      "score": 88.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 15
+    },
+    {
+      "key": "claude projects for long documents",
+      "tool": "Claude",
+      "topic": "Claude Projects for long documents",
+      "pain_hook": "Long documents break your workflow",
+      "demand": 8,
+      "visual": 8,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 88.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 16
+    },
+    {
+      "key": "write like you with claude styles",
+      "tool": "Claude",
+      "topic": "Write like you with Claude styles",
+      "pain_hook": "AI writing sounds robotic",
+      "demand": 8,
+      "visual": 7,
+      "ctr": 9,
+      "trend_bonus": 8,
+      "score": 88.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 17
+    },
+    {
+      "key": "claude code for non developers",
+      "tool": "Claude",
+      "topic": "Claude Code for non-developers",
+      "pain_hook": "Terminal looks scary but saves hours",
+      "demand": 8,
+      "visual": 8,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 88.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 18
+    },
+    {
+      "key": "review a contract with claude before you sign",
+      "tool": "Claude",
+      "topic": "Review a contract with Claude before you sign",
+      "pain_hook": "Signing things you did not understand",
+      "demand": 8,
+      "visual": 7,
+      "ctr": 9,
+      "trend_bonus": 8,
+      "score": 88.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 19
     },
     {
       "key": "prompt templates for any task",
@@ -164,7 +299,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 11
+      "rank": 20
     },
     {
       "key": "free ai stack for a student",
@@ -179,7 +314,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 12
+      "rank": 21
     },
     {
       "key": "email triage agent with n8n",
@@ -194,7 +329,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 13
+      "rank": 22
     },
     {
       "key": "5 zaps that save 5 hours a week",
@@ -209,7 +344,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 14
+      "rank": 23
     },
     {
       "key": "midjourney prompts for product photos",
@@ -224,7 +359,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 15
+      "rank": 24
     },
     {
       "key": "consistent characters in midjourney",
@@ -239,7 +374,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 16
+      "rank": 25
     },
     {
       "key": "gamma full presentation from a prompt",
@@ -254,7 +389,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 17
+      "rank": 26
     },
     {
       "key": "runway turn a photo into a video clip",
@@ -269,7 +404,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 18
+      "rank": 27
     },
     {
       "key": "ai video editing for beginners",
@@ -284,7 +419,67 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 19
+      "rank": 28
+    },
+    {
+      "key": "voice mode as a language tutor",
+      "tool": "ChatGPT",
+      "topic": "Voice mode as a language tutor",
+      "pain_hook": "Language apps are not working for you",
+      "demand": 8,
+      "visual": 7,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 85.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 29
+    },
+    {
+      "key": "write a full week of linkedin posts in 10 minutes",
+      "tool": "ChatGPT",
+      "topic": "Write a full week of LinkedIn posts in 10 minutes",
+      "pain_hook": "Posting consistently feels impossible",
+      "demand": 8,
+      "visual": 7,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 85.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 30
+    },
+    {
+      "key": "claude for research with web search",
+      "tool": "Claude",
+      "topic": "Claude for research with web search",
+      "pain_hook": "Research takes days",
+      "demand": 8,
+      "visual": 7,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 85.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 31
+    },
+    {
+      "key": "ai study plan from your syllabus",
+      "tool": "Study",
+      "topic": "AI study plan from your syllabus",
+      "pain_hook": "Exams and no plan",
+      "demand": 9,
+      "visual": 7,
+      "ctr": 9,
+      "trend_bonus": 1,
+      "score": 85.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 32
     },
     {
       "key": "study for an exam from your own notes with notebooklm",
@@ -299,22 +494,22 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 20
+      "rank": 33
     },
     {
-      "key": "custom gpt that answers like your best employee",
-      "tool": "ChatGPT",
-      "topic": "Custom GPT that answers like your best employee",
-      "pain_hook": "Answering the same questions daily",
-      "demand": 9,
+      "key": "claude connectors calendar docs email",
+      "tool": "Claude",
+      "topic": "Claude connectors: calendar, docs, email",
+      "pain_hook": "Switching apps all day",
+      "demand": 7,
       "visual": 8,
       "ctr": 8,
-      "trend_bonus": 0,
+      "trend_bonus": 8,
       "score": 84.0,
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 21
+      "rank": 34
     },
     {
       "key": "tailor a resume to each job with ai",
@@ -329,37 +524,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 22
-    },
-    {
-      "key": "ai study plan from your syllabus",
-      "tool": "Study",
-      "topic": "AI study plan from your syllabus",
-      "pain_hook": "Exams and no plan",
-      "demand": 9,
-      "visual": 7,
-      "ctr": 9,
-      "trend_bonus": 0,
-      "score": 84.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 23
-    },
-    {
-      "key": "claude artifacts build tools by chatting",
-      "tool": "Claude",
-      "topic": "Claude artifacts: build tools by chatting",
-      "pain_hook": "Needing a tool that does not exist",
-      "demand": 8,
-      "visual": 9,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 83.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 24
+      "rank": 35
     },
     {
       "key": "make images and edit photos with gemini",
@@ -374,7 +539,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 25
+      "rank": 36
     },
     {
       "key": "auto post content from one idea to 5 platforms",
@@ -389,7 +554,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 26
+      "rank": 37
     },
     {
       "key": "replit agent idea to live app",
@@ -404,7 +569,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 27
+      "rank": 38
     },
     {
       "key": "lovable build a landing page by chatting",
@@ -419,7 +584,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 28
+      "rank": 39
     },
     {
       "key": "bolt new to prototype a saas idea",
@@ -434,7 +599,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 29
+      "rank": 40
     },
     {
       "key": "magic design for presentations",
@@ -449,7 +614,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 30
+      "rank": 41
     },
     {
       "key": "repurpose one long video into 10 shorts",
@@ -464,7 +629,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 31
+      "rank": 42
     },
     {
       "key": "ai in sheets clean data fast",
@@ -479,7 +644,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 32
+      "rank": 43
     },
     {
       "key": "build a faceless channel workflow with ai",
@@ -494,7 +659,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 33
+      "rank": 44
     },
     {
       "key": "ai agents vs automations what to use",
@@ -509,7 +674,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 34
+      "rank": 45
     },
     {
       "key": "ai chatbot for your website in 20 minutes",
@@ -524,7 +689,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 35
+      "rank": 46
     },
     {
       "key": "remove backgrounds and edit photos free with ai",
@@ -539,7 +704,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 36
+      "rank": 47
     },
     {
       "key": "ai tools that replaced my paid subscriptions",
@@ -554,7 +719,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 37
+      "rank": 48
     },
     {
       "key": "restore old family photos with ai",
@@ -569,22 +734,52 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 38
+      "rank": 49
     },
     {
-      "key": "use memory and custom instructions properly",
+      "key": "make chatgpt critique your work harshly",
       "tool": "ChatGPT",
-      "topic": "Use memory and custom instructions properly",
-      "pain_hook": "It forgets everything you told it",
-      "demand": 9,
+      "topic": "Make ChatGPT critique your work harshly",
+      "pain_hook": "Friends only say it's good",
+      "demand": 7,
       "visual": 7,
       "ctr": 8,
-      "trend_bonus": 0,
+      "trend_bonus": 8,
       "score": 81.0,
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 39
+      "rank": 50
+    },
+    {
+      "key": "analyse pdfs and charts with claude",
+      "tool": "Claude",
+      "topic": "Analyse PDFs and charts with Claude",
+      "pain_hook": "Reports you cannot read fast enough",
+      "demand": 7,
+      "visual": 8,
+      "ctr": 7,
+      "trend_bonus": 8,
+      "score": 81.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 51
+    },
+    {
+      "key": "automate weekly reports with claude",
+      "tool": "Claude",
+      "topic": "Automate weekly reports with Claude",
+      "pain_hook": "Friday report you hate writing",
+      "demand": 7,
+      "visual": 7,
+      "ctr": 8,
+      "trend_bonus": 8,
+      "score": 81.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 52
     },
     {
       "key": "build a personal research assistant from 20 sources",
@@ -599,97 +794,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 40
-    },
-    {
-      "key": "turn a messy brain dump into a clean plan",
-      "tool": "ChatGPT",
-      "topic": "Turn a messy brain dump into a clean plan",
-      "pain_hook": "Overwhelmed with too many tasks",
-      "demand": 8,
-      "visual": 8,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 80.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 41
-    },
-    {
-      "key": "use chatgpt to negotiate a bill or salary",
-      "tool": "ChatGPT",
-      "topic": "Use ChatGPT to negotiate a bill or salary",
-      "pain_hook": "Overpaying and afraid to ask",
-      "demand": 8,
-      "visual": 7,
-      "ctr": 9,
-      "trend_bonus": 0,
-      "score": 80.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 42
-    },
-    {
-      "key": "claude projects for long documents",
-      "tool": "Claude",
-      "topic": "Claude Projects for long documents",
-      "pain_hook": "Long documents break your workflow",
-      "demand": 8,
-      "visual": 8,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 80.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 43
-    },
-    {
-      "key": "write like you with claude styles",
-      "tool": "Claude",
-      "topic": "Write like you with Claude styles",
-      "pain_hook": "AI writing sounds robotic",
-      "demand": 8,
-      "visual": 7,
-      "ctr": 9,
-      "trend_bonus": 0,
-      "score": 80.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 44
-    },
-    {
-      "key": "claude code for non developers",
-      "tool": "Claude",
-      "topic": "Claude Code for non-developers",
-      "pain_hook": "Terminal looks scary but saves hours",
-      "demand": 8,
-      "visual": 8,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 80.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 45
-    },
-    {
-      "key": "review a contract with claude before you sign",
-      "tool": "Claude",
-      "topic": "Review a contract with Claude before you sign",
-      "pain_hook": "Signing things you did not understand",
-      "demand": 8,
-      "visual": 7,
-      "ctr": 9,
-      "trend_bonus": 0,
-      "score": 80.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 46
+      "rank": 53
     },
     {
       "key": "gemini deep research for a full report",
@@ -704,7 +809,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 47
+      "rank": 54
     },
     {
       "key": "gemini for sheets formulas",
@@ -719,7 +824,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 48
+      "rank": 55
     },
     {
       "key": "shopping and travel planning with ai",
@@ -734,7 +839,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 49
+      "rank": 56
     },
     {
       "key": "clone your voice for narration",
@@ -749,7 +854,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 50
+      "rank": 57
     },
     {
       "key": "ai voiceover for faceless videos",
@@ -764,7 +869,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 51
+      "rank": 58
     },
     {
       "key": "make a song from a text prompt",
@@ -779,7 +884,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 52
+      "rank": 59
     },
     {
       "key": "notion ai second brain setup",
@@ -794,7 +899,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 53
+      "rank": 60
     },
     {
       "key": "run ai locally for free with ollama",
@@ -809,7 +914,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 54
+      "rank": 61
     },
     {
       "key": "win upwork proposals with ai",
@@ -824,7 +929,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 55
+      "rank": 62
     },
     {
       "key": "keyword research with free ai tools",
@@ -839,7 +944,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 56
+      "rank": 63
     },
     {
       "key": "what not to paste into ai tools",
@@ -854,7 +959,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 57
+      "rank": 64
     },
     {
       "key": "chain prompts to get expert results",
@@ -869,7 +974,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 58
+      "rank": 65
     },
     {
       "key": "ai mistakes beginners make in week one",
@@ -884,7 +989,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 59
+      "rank": 66
     },
     {
       "key": "lead capture to crm automatically",
@@ -899,7 +1004,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 60
+      "rank": 67
     },
     {
       "key": "telegram bot that answers questions",
@@ -914,7 +1019,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 61
+      "rank": 68
     },
     {
       "key": "brand kit for a business in 15 minutes",
@@ -929,7 +1034,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 62
+      "rank": 69
     },
     {
       "key": "edit video by editing text",
@@ -944,7 +1049,67 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 63
+      "rank": 70
+    },
+    {
+      "key": "projects feature to organise client work",
+      "tool": "ChatGPT",
+      "topic": "Projects feature to organise client work",
+      "pain_hook": "Chats everywhere, nothing findable",
+      "demand": 7,
+      "visual": 7,
+      "ctr": 7,
+      "trend_bonus": 8,
+      "score": 78.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 71
+    },
+    {
+      "key": "create a daily briefing automatically",
+      "tool": "ChatGPT",
+      "topic": "Create a daily briefing automatically",
+      "pain_hook": "Starting every day in the inbox swamp",
+      "demand": 7,
+      "visual": 7,
+      "ctr": 7,
+      "trend_bonus": 8,
+      "score": 78.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 72
+    },
+    {
+      "key": "turn claude into a coding tutor",
+      "tool": "Claude",
+      "topic": "Turn Claude into a coding tutor",
+      "pain_hook": "Tutorials that never stick",
+      "demand": 7,
+      "visual": 7,
+      "ctr": 7,
+      "trend_bonus": 8,
+      "score": 78.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 73
+    },
+    {
+      "key": "learn any language with ai conversations",
+      "tool": "Study",
+      "topic": "Learn any language with AI conversations",
+      "pain_hook": "Not speaking after months",
+      "demand": 8,
+      "visual": 7,
+      "ctr": 8,
+      "trend_bonus": 1,
+      "score": 78.0,
+      "verified": false,
+      "status": "idea",
+      "job": null,
+      "rank": 74
     },
     {
       "key": "summarise a youtube playlist into one study guide",
@@ -959,52 +1124,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 64
-    },
-    {
-      "key": "voice mode as a language tutor",
-      "tool": "ChatGPT",
-      "topic": "Voice mode as a language tutor",
-      "pain_hook": "Language apps are not working for you",
-      "demand": 8,
-      "visual": 7,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 77.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 65
-    },
-    {
-      "key": "write a full week of linkedin posts in 10 minutes",
-      "tool": "ChatGPT",
-      "topic": "Write a full week of LinkedIn posts in 10 minutes",
-      "pain_hook": "Posting consistently feels impossible",
-      "demand": 8,
-      "visual": 7,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 77.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 66
-    },
-    {
-      "key": "claude for research with web search",
-      "tool": "Claude",
-      "topic": "Claude for research with web search",
-      "pain_hook": "Research takes days",
-      "demand": 8,
-      "visual": 7,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 77.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 67
+      "rank": 75
     },
     {
       "key": "gemini in google docs and gmail time savers",
@@ -1019,7 +1139,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 68
+      "rank": 76
     },
     {
       "key": "google ai studio free app prototypes",
@@ -1034,7 +1154,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 69
+      "rank": 77
     },
     {
       "key": "perplexity vs google for research",
@@ -1049,7 +1169,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 70
+      "rank": 78
     },
     {
       "key": "deepseek vs chatgpt for daily tasks",
@@ -1064,7 +1184,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 71
+      "rank": 79
     },
     {
       "key": "microsoft copilot in word and excel",
@@ -1079,7 +1199,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 72
+      "rank": 80
     },
     {
       "key": "ai email replies in your own tone",
@@ -1094,7 +1214,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 73
+      "rank": 81
     },
     {
       "key": "ai mock interviews that feel real",
@@ -1109,7 +1229,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 74
+      "rank": 82
     },
     {
       "key": "ai to grow a linkedin profile",
@@ -1124,7 +1244,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 75
+      "rank": 83
     },
     {
       "key": "productise one ai service for clients",
@@ -1139,22 +1259,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 76
-    },
-    {
-      "key": "learn any language with ai conversations",
-      "tool": "Study",
-      "topic": "Learn any language with AI conversations",
-      "pain_hook": "Not speaking after months",
-      "demand": 8,
-      "visual": 7,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 77.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 77
+      "rank": 84
     },
     {
       "key": "ai blog workflow that ranks",
@@ -1169,22 +1274,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 78
-    },
-    {
-      "key": "claude connectors calendar docs email",
-      "tool": "Claude",
-      "topic": "Claude connectors: calendar, docs, email",
-      "pain_hook": "Switching apps all day",
-      "demand": 7,
-      "visual": 8,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 76.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 79
+      "rank": 85
     },
     {
       "key": "make com scenarios for beginners",
@@ -1199,7 +1289,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 80
+      "rank": 86
     },
     {
       "key": "auto generate invoices and reminders",
@@ -1214,7 +1304,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 81
+      "rank": 87
     },
     {
       "key": "v0 to design a ui from a prompt",
@@ -1229,7 +1319,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 82
+      "rank": 88
     },
     {
       "key": "notion ai meeting notes to tasks",
@@ -1244,7 +1334,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 83
+      "rank": 89
     },
     {
       "key": "lm studio private ai on your laptop",
@@ -1259,7 +1349,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 84
+      "rank": 90
     },
     {
       "key": "find leads with ai research",
@@ -1274,7 +1364,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 85
+      "rank": 91
     },
     {
       "key": "one ai morning routine that saves an hour",
@@ -1289,7 +1379,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 86
+      "rank": 92
     },
     {
       "key": "build a dashboard with ai and no code",
@@ -1304,7 +1394,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 87
+      "rank": 93
     },
     {
       "key": "pika effects for short videos",
@@ -1319,7 +1409,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 88
+      "rank": 94
     },
     {
       "key": "turn meeting notes into action items automatically",
@@ -1334,7 +1424,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 89
+      "rank": 95
     },
     {
       "key": "make a podcast from your own business docs",
@@ -1349,52 +1439,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 90
-    },
-    {
-      "key": "make chatgpt critique your work harshly",
-      "tool": "ChatGPT",
-      "topic": "Make ChatGPT critique your work harshly",
-      "pain_hook": "Friends only say it's good",
-      "demand": 7,
-      "visual": 7,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 73.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 91
-    },
-    {
-      "key": "analyse pdfs and charts with claude",
-      "tool": "Claude",
-      "topic": "Analyse PDFs and charts with Claude",
-      "pain_hook": "Reports you cannot read fast enough",
-      "demand": 7,
-      "visual": 8,
-      "ctr": 7,
-      "trend_bonus": 0,
-      "score": 73.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 92
-    },
-    {
-      "key": "automate weekly reports with claude",
-      "tool": "Claude",
-      "topic": "Automate weekly reports with Claude",
-      "pain_hook": "Friday report you hate writing",
-      "demand": 7,
-      "visual": 7,
-      "ctr": 8,
-      "trend_bonus": 0,
-      "score": 73.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 93
+      "rank": 96
     },
     {
       "key": "gemini live talk to your screen",
@@ -1409,7 +1454,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 94
+      "rank": 97
     },
     {
       "key": "analyse a video with gemini",
@@ -1424,7 +1469,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 95
+      "rank": 98
     },
     {
       "key": "fact check anything in 30 seconds",
@@ -1439,7 +1484,7 @@
       "verified": false,
       "status": "idea",
       "job": null,
-      "rank": 96
+      "rank": 99
     },
     {
       "key": "competitor research in 10 minutes",
@@ -1449,51 +1494,6 @@
       "demand": 7,
       "visual": 7,
       "ctr": 8,
-      "trend_bonus": 0,
-      "score": 73.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 97
-    },
-    {
-      "key": "self host n8n for free",
-      "tool": "n8n",
-      "topic": "Self-host n8n for free",
-      "pain_hook": "Paying for automation limits",
-      "demand": 7,
-      "visual": 8,
-      "ctr": 7,
-      "trend_bonus": 0,
-      "score": 73.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 98
-    },
-    {
-      "key": "zapier ai agents for small business",
-      "tool": "Zapier",
-      "topic": "Zapier AI agents for small business",
-      "pain_hook": "Small tasks eating your week",
-      "demand": 7,
-      "visual": 8,
-      "ctr": 7,
-      "trend_bonus": 0,
-      "score": 73.0,
-      "verified": false,
-      "status": "idea",
-      "job": null,
-      "rank": 99
-    },
-    {
-      "key": "remove filler words and fix audio",
-      "tool": "Descript",
-      "topic": "Remove filler words and fix audio",
-      "pain_hook": "Audio sounds amateur",
-      "demand": 7,
-      "visual": 8,
-      "ctr": 7,
       "trend_bonus": 0,
       "score": 73.0,
       "verified": false,
