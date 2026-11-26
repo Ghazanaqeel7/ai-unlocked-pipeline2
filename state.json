@@ -193,9 +193,13 @@
         {
           "t": "2026-11-26T08:37:40Z",
           "msg": "Slot #1: Fri 27 Nov, 19:00 PKT, LONG: Build your first AI automation in n8n. Same day: pain Short 07:30 and series Short (day 1/7) 21:30."
+        },
+        {
+          "t": "2026-11-26T08:37:42Z",
+          "msg": "Long videos: Sat Canva AI: a week of posts in 20 minutes | Sun Prompt pattern that stops generic answers | Mon Turn one PDF into a podcast, slide deck and mind map"
         }
       ],
-      "progress_count": 2
+      "progress_count": 3
     }
   },
   "ideas": [],
