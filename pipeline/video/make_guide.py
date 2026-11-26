@@ -28,6 +28,31 @@ def load(job):
         return json.load(f)
 
 
+def monetization():
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'monetization.json')
+    try:
+        return json.load(open(p, encoding='utf-8'))
+    except Exception:
+        return {}
+
+
+def conversion_lines(mon, word='GUIDE'):
+    """Plain-text conversion block. Only offers/affiliates with live:true and a url are shown."""
+    vault = mon.get('vault_url', '')
+    out = []
+    if vault:
+        out.append(f'Free PDF vault (every episode playbook): {vault}')
+    for o in mon.get('offers', []):
+        if o.get('live') and o.get('url'):
+            out.append(f"{o['name']} ({o.get('price', '')}): {o['url']}")
+    aff = [a for a in mon.get('affiliates', []) if a.get('live') and a.get('url')]
+    for a in aff:
+        out.append(f"{a['tool']}: {a['url']}")
+    if aff and mon.get('disclosure'):
+        out.append(mon['disclosure'])
+    return out
+
+
 def render_markdown(guide, meta):
     title = guide.get('title') or meta.get('title', 'Untitled')
     tldr = guide.get('tldr') or []
@@ -73,6 +98,9 @@ def render_markdown(guide, meta):
         for m in mistakes:
             lines.append(f'- ⚠️ {m}')
         lines.append('')
+    cl = conversion_lines(monetization())
+    if cl:
+        lines += ['## Keep going', ''] + [f'- {c}' for c in cl] + ['']
     lines += ['---', '', '*From [AI Graphic TV](https://youtube.com/@AIGraphicTV) — subscribe for more.*', '']
     return '\n'.join(lines)
 
@@ -131,44 +159,73 @@ def render_pdf(guide, meta, out_path):
         canvas.drawRightString(w - 18 * mm, 10 * mm, '@AIGraphicTV — youtube.com/@AIGraphicTV')
         canvas.restoreState()
 
-    doc = SimpleDocTemplate(out_path, pagesize=A4, topMargin=36 * mm, bottomMargin=18 * mm,
-                             leftMargin=18 * mm, rightMargin=18 * mm)
-    flow = []
-    if tldr:
-        flow.append(Paragraph('<b>TL;DR</b><br/>' + '<br/>'.join(_escape(t) for t in tldr[:2]), tldr_style))
-        flow.append(Spacer(1, 10))
-    if tools:
-        flow.append(Paragraph('Tools &amp; Resources Required', h2))
-        rows = [[Paragraph(f"<b>{_escape(t.get('name', 'Tool'))}</b>", body),
-                 Paragraph(_escape(t.get('link', '[TOOL_LINK]')), body),
-                 Paragraph(_escape(t.get('note', '')), body)] for t in tools]
-        tbl = Table(rows, colWidths=[40 * mm, 45 * mm, None])
-        tbl.setStyle(TableStyle([('VALIGN', (0, 0), (-1, -1), 'TOP'),
-                                  ('LINEBELOW', (0, 0), (-1, -1), 0.4, HexColor('#d8dee8'))]))
-        flow.append(tbl)
-        flow.append(Spacer(1, 10))
-    if steps:
-        flow.append(Paragraph('Step-by-Step Implementation Checklist', h2))
-        for i, s in enumerate(steps, 1):
-            st = _escape(s.get('title', f'Step {i}')); detail = _escape(s.get('detail', ''))
-            txt = f'<b>☐ {i}. {st}</b>' + (f' — {detail}' if detail else '')
-            flow.append(Paragraph(txt, body))
-            flow.append(Spacer(1, 4))
+    from reportlab.platypus import PageBreak
+    big = ParagraphStyle('big', parent=styles['Title'], fontSize=30, leading=36, textColor=HexColor(NAVY), alignment=TA_LEFT)
+    sub = ParagraphStyle('sub', parent=body, fontSize=13, leading=18, textColor=HexColor('#334155'))
+    mon = monetization()
+    word = (guide.get('cta') or {}).get('comment_word', mon.get('comment_word_default', 'GUIDE'))
+
+    def build(extra_pages):
+        doc = SimpleDocTemplate(out_path, pagesize=A4, topMargin=36 * mm, bottomMargin=18 * mm,
+                                 leftMargin=18 * mm, rightMargin=18 * mm)
+        flow = [Spacer(1, 40 * mm), Paragraph('EPISODE PLAYBOOK', ParagraphStyle('k', parent=body, textColor=HexColor(GOLD), fontSize=12)),
+                Paragraph(_escape(title), big), Spacer(1, 8),
+                Paragraph(_escape(' '.join(tldr[:2]) or 'Your step-by-step implementation guide.'), sub), PageBreak(),
+                Paragraph('How to use this guide', h2),
+                Paragraph('1. Watch the episode once, then follow this guide with the tool open.<br/>'
+                          '2. Tick every checkbox in order: each step builds on the last.<br/>'
+                          '3. Copy the prompts and settings exactly first, then adapt them to your own work.<br/>'
+                          '4. Finish the 7-day action plan on the last pages: one small win per day.', body), PageBreak()]
+        if tools:
+            flow.append(Paragraph('Tools &amp; Resources Required', h2))
+            rows = [[Paragraph(f"<b>{_escape(t.get('name', 'Tool'))}</b>", body),
+                     Paragraph(_escape(t.get('link', '')), body),
+                     Paragraph(_escape(t.get('note', '')), body)] for t in tools]
+            tbl = Table(rows, colWidths=[40 * mm, 45 * mm, None])
+            tbl.setStyle(TableStyle([('VALIGN', (0, 0), (-1, -1), 'TOP'), ('LINEBELOW', (0, 0), (-1, -1), 0.4, HexColor('#d8dee8'))]))
+            flow += [tbl, Spacer(1, 10)]
+        if steps:
+            flow.append(Paragraph('Step-by-Step Implementation Checklist', h2))
+            for i, st_ in enumerate(steps, 1):
+                st = _escape(st_.get('title', f'Step {i}')); detail = _escape(st_.get('detail', ''))
+                flow += [Paragraph(f'<b>☐ {i}. {st}</b>' + (f' — {detail}' if detail else ''), body), Spacer(1, 6)]
+            flow.append(PageBreak())
+        if snippets:
+            flow.append(Paragraph('Copy-Paste Prompts / Config Snippets', h2))
+            for sn in snippets:
+                flow += [Paragraph(f"<b>{_escape(sn.get('label', 'Snippet'))}</b>", body), Spacer(1, 3),
+                         Preformatted(sn.get('code', ''), code_style), Spacer(1, 8)]
+            flow.append(PageBreak())
+        if tips or mistakes:
+            flow.append(Paragraph('Pro Tips &amp; Common Mistakes to Avoid', h2))
+            for t in tips:
+                flow += [Paragraph('✅ ' + _escape(t), body), Spacer(1, 4)]
+            for m in mistakes:
+                flow += [Paragraph('⚠️ ' + _escape(m), body), Spacer(1, 4)]
+            flow.append(PageBreak())
+        plan = guide.get('action_plan') or [f"Day {d}: " + (steps[(d - 1) % len(steps)].get('title', 'Practice a step') if steps else 'Practice one step')
+                                           for d in range(1, 8)]
+        flow.append(Paragraph('Your 7-day action plan', h2))
+        for line in plan[:7]:
+            flow += [Paragraph('☐ ' + _escape(line), body), Spacer(1, 8)]
+        flow.append(PageBreak())
+        for n in range(extra_pages):
+            flow += [Paragraph('Practice &amp; notes', h2), Paragraph('Write what you tried, what worked and what to change next time.', body),
+                     Spacer(1, 6)] + [Paragraph('_' * 70, body) for _ in range(18)] + [PageBreak()]
+        flow.append(Paragraph('Keep going', h2))
+        flow.append(Paragraph(f'Comment "{_escape(word)}" on the video and we will send you the next playbook.', body))
         flow.append(Spacer(1, 8))
-    if snippets:
-        flow.append(Paragraph('Copy-Paste Prompts / Config Snippets', h2))
-        for s in snippets:
-            flow.append(Paragraph(f"<b>{_escape(s.get('label', 'Snippet'))}</b>", body))
-            flow.append(Spacer(1, 3))
-            flow.append(Preformatted(s.get('code', ''), code_style))
-            flow.append(Spacer(1, 8))
-    if tips or mistakes:
-        flow.append(Paragraph('Pro Tips &amp; Common Mistakes to Avoid', h2))
-        for t in tips:
-            flow.append(Paragraph('✅ ' + _escape(t), body))
-        for m in mistakes:
-            flow.append(Paragraph('⚠️ ' + _escape(m), body))
-    doc.build(flow, onFirstPage=banner, onLaterPages=banner)
+        for c in conversion_lines(mon, word):
+            flow += [Paragraph('• ' + _escape(c), body), Spacer(1, 5)]
+        doc.build(flow, onFirstPage=banner, onLaterPages=banner)
+        return doc.page
+
+    pages = build(0)
+    if pages < 6:
+        pages = build(6 - pages)
+    if pages > 10:
+        print(f'WARNING: guide.pdf has {pages} pages (target 6-10): trim snippets/steps in guide.json')
+    print(f'guide.pdf: {pages} pages')
 
 
 def _escape(s):
@@ -184,7 +241,7 @@ def render_social_copy(guide, meta):
     tldr = ' '.join((guide.get('tldr') or [])[:2])
     cta = guide.get('cta') or {}
     word = cta.get('comment_word', 'GUIDE')
-    affiliate = cta.get('affiliate_link', '[AFFILIATE_LINK]')
+    conv = '\n        '.join(conversion_lines(monetization(), word))
     tags = meta.get('tags') or []
     hashtags = ' '.join('#' + str(t).replace(' ', '') for t in tags[:8])
 
@@ -194,7 +251,7 @@ def render_social_copy(guide, meta):
         {tldr}
 
         🔗 Tools mentioned: see the free step-by-step guide — comment "{word}" below and we'll send it to you.
-        🔗 Get started: {affiliate}
+        {conv}
 
         {hashtags}
 
@@ -207,14 +264,14 @@ def render_social_copy(guide, meta):
         {tldr}
 
         💬 Comment "{word}" and we'll DM you the free PDF guide.
-        🔗 Link in bio: {affiliate}
+        {conv}
 
         {hashtags}
     """).strip() + '\n'
 
     pinned = textwrap.dedent(f"""\
         📌 Free step-by-step PDF guide for this video — comment "{word}" and we'll send it your way!
-        Tools/links: {affiliate}
+        {conv}
     """).strip() + '\n'
 
     return (

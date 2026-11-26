@@ -2,16 +2,24 @@
   "config": {
     "publish_days": [
       "Mon",
+      "Tue",
       "Wed",
-      "Fri"
+      "Thu",
+      "Fri",
+      "Sat",
+      "Sun"
     ],
-    "pipeline_buffer": 2,
+    "pipeline_buffer": 3,
     "longform_enabled": true,
     "reels": true,
     "social_windows_pkt": [
       "05:00-09:00",
       "19:00-23:00"
-    ]
+    ],
+    "daily_package": {
+      "long": 1,
+      "shorts": 2
+    }
   },
   "jobs": {
     "900-test-short": {

@@ -1,0 +1,64 @@
+{
+  "week": "2026-11-23",
+  "made": "2026-11-25T03:30:00+05:00",
+  "note": "7-Day AI Workflow series. Day 1 is built and sitting at script_ready — approve it in the dashboard/Telegram to move it to building/render. Days 2-7 are planned briefs (topic/angle/why); each gets fact-checked against its real source before the script is written, per docs/render_guide.md and the Never list in CLAUDE.md.",
+  "items": [
+    {
+      "day": "Wed 25 Nov",
+      "format": "short",
+      "title": "1 PDF -> Podcast, Slide Deck & Mind Map (Day 1/7)",
+      "topic": "NotebookLM's Studio panel turns one uploaded PDF into an Audio Overview, a slide deck, and a mind map",
+      "angle": "1 Input -> 3 Real Outputs",
+      "why": "Verified against Google's own NotebookLM Help docs and 2025-2026 coverage — Studio panel genuinely ships Audio Overview + Slide Deck + Mind Map from the same upload, so the hook needs zero fabrication.",
+      "job": "001-launch-ai-workflow-short"
+    },
+    {
+      "day": "Thu 26 Nov",
+      "format": "short",
+      "title": "The GitHub Repo Giving Every Dev Free AI Skills (Day 2/7)",
+      "topic": "mattpocock/skills — the open-source 'AI Skills' directory trending on GitHub (200K+ stars) that packages reusable Claude/agent skills for everyday coding tasks",
+      "angle": "Real GitHub/AI tool breakdown",
+      "why": "Currently one of the fastest-growing trending AI repos on GitHub — real, inspectable, citable repo (no invented stats; exact star count re-checked live at script time)."
+    },
+    {
+      "day": "Fri 27 Nov",
+      "format": "short",
+      "title": "This Free AI Thumbnail Tool Replaced My Design App (Day 3/7)",
+      "topic": "A Product Hunt-launched AI thumbnail generator trained on top-performing thumbnails — before/after a real thumbnail redo",
+      "angle": "Before-vs-after AI benchmark",
+      "why": "Directly useful to our own audience (creators); before/after is a real side-by-side screen recording, not a claimed number — no invented benchmark."
+    },
+    {
+      "day": "Sat 28 Nov",
+      "format": "short",
+      "title": "Copy This One Prompt to Build Your Own AI Coding Agent (Day 4/7)",
+      "topic": "A copy-paste agent/skill blueprint (system prompt + tool list) for a minimal coding-assistant agent, demoed live",
+      "angle": "Copy-paste prompt/agent blueprint",
+      "why": "Matches @qodemaker / @automationmentor2's blueprint format; the prompt shown on screen is one we write and test ourselves, not lifted from a paid course."
+    },
+    {
+      "day": "Sun 29 Nov",
+      "format": "short",
+      "title": "The MCP Server That Lets Any AI Read Live Docs (Day 5/7)",
+      "topic": "Context7-style MCP server breakdown — how Model Context Protocol servers give an AI assistant live, up-to-date documentation instead of stale training data",
+      "angle": "Real GitHub/AI tool breakdown",
+      "why": "MCP servers are a genuinely trending, verifiable GitHub category right now; explained at the concept level (what an MCP server is/does), not claiming specific unverified adoption numbers."
+    },
+    {
+      "day": "Mon 30 Nov",
+      "format": "short",
+      "title": "I Timed Myself Coding With and Without an AI Agent (Day 6/7)",
+      "topic": "A real, on-screen stopwatch comparison: the same small coding task done manually vs. with an AI coding agent",
+      "angle": "Before-vs-after AI benchmark",
+      "why": "Our own timed demo, not a third-party benchmark claim — avoids the 'invented benchmark number' pitfall entirely by only reporting what we personally measured on screen."
+    },
+    {
+      "day": "Tue 1 Dec",
+      "format": "short",
+      "title": "7 AI Tools From This Week, Ranked (Day 7/7)",
+      "topic": "Recap/ranking of the 6 tools and workflows covered Day 1-6, plus a subscribe CTA into Week 2 of the series",
+      "angle": "7-Day AI Workflow series finale",
+      "why": "Wrap-up recap of our own verified content from Days 1-6 — no new external claims to fact-check, just our own prior scripts summarized."
+    }
+  ]
+}

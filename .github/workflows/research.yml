@@ -47,10 +47,16 @@ jobs:
         continue-on-error: true
         run: python3 pipeline/research/news.py
 
+      - name: Backlog refresh + daily package (1 long + 2 shorts)
+        continue-on-error: true
+        run: |
+          python3 pipeline/research/build_backlog.py --refresh
+          python3 pipeline/research/package.py daily
+
       - name: Save results
         run: |
           git config user.name "research-bot"; git config user.email "research-bot@users.noreply.github.com"
-          git add docs/research
+          git add docs/research research/backlog.json
           git diff --cached --quiet && { echo "no changes"; exit 0; }
           git commit -m "research: ${{ steps.m.outputs.mode }} $(date -u +%F)"
           for i in 1 2 3 4 5; do

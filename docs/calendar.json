@@ -1,64 +1,512 @@
 {
-  "week": "2026-11-23",
-  "made": "2026-11-25T03:30:00+05:00",
-  "note": "7-Day AI Workflow series. Day 1 is built and sitting at script_ready — approve it in the dashboard/Telegram to move it to building/render. Days 2-7 are planned briefs (topic/angle/why); each gets fact-checked against its real source before the script is written, per docs/render_guide.md and the Never list in CLAUDE.md.",
+  "week": "2026-11-27",
+  "made": "2026-11-26T13:33:39+05:00",
+  "approval": "pending",
+  "note": "7-Day Viral Content Calendar: 7 long + 14 shorts = 21 jobs. Each day: pain-point Short (07:30 PKT) -> Long (19:00) -> 7-Day-Series Short (21:30). Every item is fact-checked before its script is written.",
   "items": [
     {
-      "day": "Wed 25 Nov",
-      "format": "short",
-      "title": "1 PDF -> Podcast, Slide Deck & Mind Map (Day 1/7)",
-      "topic": "NotebookLM's Studio panel turns one uploaded PDF into an Audio Overview, a slide deck, and a mind map",
-      "angle": "1 Input -> 3 Real Outputs",
-      "why": "Verified against Google's own NotebookLM Help docs and 2025-2026 coverage — Studio panel genuinely ships Audio Overview + Slide Deck + Mind Map from the same upload, so the hook needs zero fabrication.",
-      "job": "001-launch-ai-workflow-short"
-    },
-    {
-      "day": "Thu 26 Nov",
-      "format": "short",
-      "title": "The GitHub Repo Giving Every Dev Free AI Skills (Day 2/7)",
-      "topic": "mattpocock/skills — the open-source 'AI Skills' directory trending on GitHub (200K+ stars) that packages reusable Claude/agent skills for everyday coding tasks",
-      "angle": "Real GitHub/AI tool breakdown",
-      "why": "Currently one of the fastest-growing trending AI repos on GitHub — real, inspectable, citable repo (no invented stats; exact star count re-checked live at script time)."
+      "day": "Fri 27 Nov",
+      "date": "2026-11-27",
+      "status": "planned",
+      "package": "d1",
+      "backlog_key": "build your first ai automation in n8n",
+      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Build your first AI automation in n8n",
+      "slot": "long",
+      "format": "long",
+      "slot_pkt": "19:00",
+      "spec": {
+        "target_seconds": [
+          480,
+          600
+        ],
+        "chapters": [
+          4,
+          5
+        ],
+        "rehook_every": 30
+      },
+      "topic": "Build your first AI automation in n8n",
+      "angle": "Full walkthrough: from the pain ('Copy-pasting between apps all day') to a working result",
+      "title": "Build your first AI automation in n8n"
     },
     {
       "day": "Fri 27 Nov",
+      "date": "2026-11-27",
+      "status": "planned",
+      "package": "d1",
+      "backlog_key": "build your first ai automation in n8n",
+      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Build your first AI automation in n8n",
+      "slot": "short_pain",
       "format": "short",
-      "title": "This Free AI Thumbnail Tool Replaced My Design App (Day 3/7)",
-      "topic": "A Product Hunt-launched AI thumbnail generator trained on top-performing thumbnails — before/after a real thumbnail redo",
-      "angle": "Before-vs-after AI benchmark",
-      "why": "Directly useful to our own audience (creators); before/after is a real side-by-side screen recording, not a claimed number — no invented benchmark."
+      "slot_pkt": "07:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "Build your first AI automation in n8n",
+      "angle": "Pain-point hook: Copy-pasting between apps all day",
+      "title": "Copy-pasting between apps all day",
+      "related_video_title": "Build your first AI automation in n8n"
+    },
+    {
+      "day": "Fri 27 Nov",
+      "date": "2026-11-27",
+      "status": "planned",
+      "package": "d1",
+      "backlog_key": "build your first ai automation in n8n",
+      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Build your first AI automation in n8n",
+      "slot": "short_series",
+      "format": "short",
+      "slot_pkt": "21:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "n8n 7-day workflow: day 1/7 of the series",
+      "angle": "One repeatable n8n workflow step, day 1 of 7",
+      "title": "n8n workflow, day 1/7",
+      "related_video_title": "Build your first AI automation in n8n"
     },
     {
       "day": "Sat 28 Nov",
+      "date": "2026-11-28",
+      "status": "planned",
+      "package": "d2",
+      "backlog_key": "canva ai a week of posts in 20 minutes",
+      "why": "Backlog #2 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Canva AI: a week of posts in 20 minutes",
+      "slot": "long",
+      "format": "long",
+      "slot_pkt": "19:00",
+      "spec": {
+        "target_seconds": [
+          480,
+          600
+        ],
+        "chapters": [
+          4,
+          5
+        ],
+        "rehook_every": 30
+      },
+      "topic": "Canva AI: a week of posts in 20 minutes",
+      "angle": "Full walkthrough: from the pain ('Social posts take forever') to a working result",
+      "title": "Canva AI: a week of posts in 20 minutes"
+    },
+    {
+      "day": "Sat 28 Nov",
+      "date": "2026-11-28",
+      "status": "planned",
+      "package": "d2",
+      "backlog_key": "canva ai a week of posts in 20 minutes",
+      "why": "Backlog #2 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Canva AI: a week of posts in 20 minutes",
+      "slot": "short_pain",
       "format": "short",
-      "title": "Copy This One Prompt to Build Your Own AI Coding Agent (Day 4/7)",
-      "topic": "A copy-paste agent/skill blueprint (system prompt + tool list) for a minimal coding-assistant agent, demoed live",
-      "angle": "Copy-paste prompt/agent blueprint",
-      "why": "Matches @qodemaker / @automationmentor2's blueprint format; the prompt shown on screen is one we write and test ourselves, not lifted from a paid course."
+      "slot_pkt": "07:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "Canva AI: a week of posts in 20 minutes",
+      "angle": "Pain-point hook: Social posts take forever",
+      "title": "Social posts take forever",
+      "related_video_title": "Canva AI: a week of posts in 20 minutes"
+    },
+    {
+      "day": "Sat 28 Nov",
+      "date": "2026-11-28",
+      "status": "planned",
+      "package": "d2",
+      "backlog_key": "canva ai a week of posts in 20 minutes",
+      "why": "Backlog #2 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Canva AI: a week of posts in 20 minutes",
+      "slot": "short_series",
+      "format": "short",
+      "slot_pkt": "21:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "Canva 7-day workflow: day 2/7 of the series",
+      "angle": "One repeatable Canva workflow step, day 2 of 7",
+      "title": "Canva workflow, day 2/7",
+      "related_video_title": "Canva AI: a week of posts in 20 minutes"
     },
     {
       "day": "Sun 29 Nov",
+      "date": "2026-11-29",
+      "status": "planned",
+      "package": "d3",
+      "backlog_key": "prompt pattern that stops generic answers",
+      "why": "Backlog #3 score 91.0 (demand 10, visual 8, pain-CTR 9)",
+      "long_title": "Prompt pattern that stops generic answers",
+      "slot": "long",
+      "format": "long",
+      "slot_pkt": "19:00",
+      "spec": {
+        "target_seconds": [
+          480,
+          600
+        ],
+        "chapters": [
+          4,
+          5
+        ],
+        "rehook_every": 30
+      },
+      "topic": "Prompt pattern that stops generic answers",
+      "angle": "Full walkthrough: from the pain ('ChatGPT keeps giving boring answers') to a working result",
+      "title": "Prompt pattern that stops generic answers"
+    },
+    {
+      "day": "Sun 29 Nov",
+      "date": "2026-11-29",
+      "status": "planned",
+      "package": "d3",
+      "backlog_key": "prompt pattern that stops generic answers",
+      "why": "Backlog #3 score 91.0 (demand 10, visual 8, pain-CTR 9)",
+      "long_title": "Prompt pattern that stops generic answers",
+      "slot": "short_pain",
       "format": "short",
-      "title": "The MCP Server That Lets Any AI Read Live Docs (Day 5/7)",
-      "topic": "Context7-style MCP server breakdown — how Model Context Protocol servers give an AI assistant live, up-to-date documentation instead of stale training data",
-      "angle": "Real GitHub/AI tool breakdown",
-      "why": "MCP servers are a genuinely trending, verifiable GitHub category right now; explained at the concept level (what an MCP server is/does), not claiming specific unverified adoption numbers."
+      "slot_pkt": "07:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "Prompt pattern that stops generic answers",
+      "angle": "Pain-point hook: ChatGPT keeps giving boring answers",
+      "title": "ChatGPT keeps giving boring answers",
+      "related_video_title": "Prompt pattern that stops generic answers"
+    },
+    {
+      "day": "Sun 29 Nov",
+      "date": "2026-11-29",
+      "status": "planned",
+      "package": "d3",
+      "backlog_key": "prompt pattern that stops generic answers",
+      "why": "Backlog #3 score 91.0 (demand 10, visual 8, pain-CTR 9)",
+      "long_title": "Prompt pattern that stops generic answers",
+      "slot": "short_series",
+      "format": "short",
+      "slot_pkt": "21:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "ChatGPT 7-day workflow: day 3/7 of the series",
+      "angle": "One repeatable ChatGPT workflow step, day 3 of 7",
+      "title": "ChatGPT workflow, day 3/7",
+      "related_video_title": "Prompt pattern that stops generic answers"
     },
     {
       "day": "Mon 30 Nov",
+      "date": "2026-11-30",
+      "status": "planned",
+      "package": "d4",
+      "backlog_key": "turn one pdf into a podcast slide deck and mind map",
+      "why": "Backlog #4 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "Turn one PDF into a podcast, slide deck and mind map",
+      "slot": "long",
+      "format": "long",
+      "slot_pkt": "19:00",
+      "spec": {
+        "target_seconds": [
+          480,
+          600
+        ],
+        "chapters": [
+          4,
+          5
+        ],
+        "rehook_every": 30
+      },
+      "topic": "Turn one PDF into a podcast, slide deck and mind map",
+      "angle": "Full walkthrough: from the pain ('You read 50 pages and remember nothing') to a working result",
+      "title": "Turn one PDF into a podcast, slide deck and mind map"
+    },
+    {
+      "day": "Mon 30 Nov",
+      "date": "2026-11-30",
+      "status": "planned",
+      "package": "d4",
+      "backlog_key": "turn one pdf into a podcast slide deck and mind map",
+      "why": "Backlog #4 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "Turn one PDF into a podcast, slide deck and mind map",
+      "slot": "short_pain",
       "format": "short",
-      "title": "I Timed Myself Coding With and Without an AI Agent (Day 6/7)",
-      "topic": "A real, on-screen stopwatch comparison: the same small coding task done manually vs. with an AI coding agent",
-      "angle": "Before-vs-after AI benchmark",
-      "why": "Our own timed demo, not a third-party benchmark claim — avoids the 'invented benchmark number' pitfall entirely by only reporting what we personally measured on screen."
+      "slot_pkt": "07:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "Turn one PDF into a podcast, slide deck and mind map",
+      "angle": "Pain-point hook: You read 50 pages and remember nothing",
+      "title": "You read 50 pages and remember nothing",
+      "related_video_title": "Turn one PDF into a podcast, slide deck and mind map"
+    },
+    {
+      "day": "Mon 30 Nov",
+      "date": "2026-11-30",
+      "status": "planned",
+      "package": "d4",
+      "backlog_key": "turn one pdf into a podcast slide deck and mind map",
+      "why": "Backlog #4 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "Turn one PDF into a podcast, slide deck and mind map",
+      "slot": "short_series",
+      "format": "short",
+      "slot_pkt": "21:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "NotebookLM 7-day workflow: day 4/7 of the series",
+      "angle": "One repeatable NotebookLM workflow step, day 4 of 7",
+      "title": "NotebookLM workflow, day 4/7",
+      "related_video_title": "Turn one PDF into a podcast, slide deck and mind map"
     },
     {
       "day": "Tue 1 Dec",
+      "date": "2026-12-01",
+      "status": "planned",
+      "package": "d5",
+      "backlog_key": "build an app with cursor in one hour",
+      "why": "Backlog #6 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "Build an app with Cursor in one hour",
+      "slot": "long",
+      "format": "long",
+      "slot_pkt": "19:00",
+      "spec": {
+        "target_seconds": [
+          480,
+          600
+        ],
+        "chapters": [
+          4,
+          5
+        ],
+        "rehook_every": 30
+      },
+      "topic": "Build an app with Cursor in one hour",
+      "angle": "Full walkthrough: from the pain ('Coding projects never finished') to a working result",
+      "title": "Build an app with Cursor in one hour"
+    },
+    {
+      "day": "Tue 1 Dec",
+      "date": "2026-12-01",
+      "status": "planned",
+      "package": "d5",
+      "backlog_key": "build an app with cursor in one hour",
+      "why": "Backlog #6 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "Build an app with Cursor in one hour",
+      "slot": "short_pain",
       "format": "short",
-      "title": "7 AI Tools From This Week, Ranked (Day 7/7)",
-      "topic": "Recap/ranking of the 6 tools and workflows covered Day 1-6, plus a subscribe CTA into Week 2 of the series",
-      "angle": "7-Day AI Workflow series finale",
-      "why": "Wrap-up recap of our own verified content from Days 1-6 — no new external claims to fact-check, just our own prior scripts summarized."
+      "slot_pkt": "07:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "Build an app with Cursor in one hour",
+      "angle": "Pain-point hook: Coding projects never finished",
+      "title": "Coding projects never finished",
+      "related_video_title": "Build an app with Cursor in one hour"
+    },
+    {
+      "day": "Tue 1 Dec",
+      "date": "2026-12-01",
+      "status": "planned",
+      "package": "d5",
+      "backlog_key": "build an app with cursor in one hour",
+      "why": "Backlog #6 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "Build an app with Cursor in one hour",
+      "slot": "short_series",
+      "format": "short",
+      "slot_pkt": "21:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "Cursor 7-day workflow: day 5/7 of the series",
+      "angle": "One repeatable Cursor workflow step, day 5 of 7",
+      "title": "Cursor workflow, day 5/7",
+      "related_video_title": "Build an app with Cursor in one hour"
+    },
+    {
+      "day": "Wed 2 Dec",
+      "date": "2026-12-02",
+      "status": "planned",
+      "package": "d6",
+      "backlog_key": "capcut ai captions and auto cut",
+      "why": "Backlog #7 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "CapCut AI captions and auto-cut",
+      "slot": "long",
+      "format": "long",
+      "slot_pkt": "19:00",
+      "spec": {
+        "target_seconds": [
+          480,
+          600
+        ],
+        "chapters": [
+          4,
+          5
+        ],
+        "rehook_every": 30
+      },
+      "topic": "CapCut AI captions and auto-cut",
+      "angle": "Full walkthrough: from the pain ('Captions take hours') to a working result",
+      "title": "CapCut AI captions and auto-cut"
+    },
+    {
+      "day": "Wed 2 Dec",
+      "date": "2026-12-02",
+      "status": "planned",
+      "package": "d6",
+      "backlog_key": "capcut ai captions and auto cut",
+      "why": "Backlog #7 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "CapCut AI captions and auto-cut",
+      "slot": "short_pain",
+      "format": "short",
+      "slot_pkt": "07:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "CapCut AI captions and auto-cut",
+      "angle": "Pain-point hook: Captions take hours",
+      "title": "Captions take hours",
+      "related_video_title": "CapCut AI captions and auto-cut"
+    },
+    {
+      "day": "Wed 2 Dec",
+      "date": "2026-12-02",
+      "status": "planned",
+      "package": "d6",
+      "backlog_key": "capcut ai captions and auto cut",
+      "why": "Backlog #7 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "CapCut AI captions and auto-cut",
+      "slot": "short_series",
+      "format": "short",
+      "slot_pkt": "21:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "CapCut 7-day workflow: day 6/7 of the series",
+      "angle": "One repeatable CapCut workflow step, day 6 of 7",
+      "title": "CapCut workflow, day 6/7",
+      "related_video_title": "CapCut AI captions and auto-cut"
+    },
+    {
+      "day": "Thu 3 Dec",
+      "date": "2026-12-03",
+      "status": "planned",
+      "package": "d7",
+      "backlog_key": "ai formulas that replace hours of excel",
+      "why": "Backlog #8 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "AI formulas that replace hours of Excel",
+      "slot": "long",
+      "format": "long",
+      "slot_pkt": "19:00",
+      "spec": {
+        "target_seconds": [
+          480,
+          600
+        ],
+        "chapters": [
+          4,
+          5
+        ],
+        "rehook_every": 30
+      },
+      "topic": "AI formulas that replace hours of Excel",
+      "angle": "Full walkthrough: from the pain ('Formulas that break everything') to a working result",
+      "title": "AI formulas that replace hours of Excel"
+    },
+    {
+      "day": "Thu 3 Dec",
+      "date": "2026-12-03",
+      "status": "planned",
+      "package": "d7",
+      "backlog_key": "ai formulas that replace hours of excel",
+      "why": "Backlog #8 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "AI formulas that replace hours of Excel",
+      "slot": "short_pain",
+      "format": "short",
+      "slot_pkt": "07:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "AI formulas that replace hours of Excel",
+      "angle": "Pain-point hook: Formulas that break everything",
+      "title": "Formulas that break everything",
+      "related_video_title": "AI formulas that replace hours of Excel"
+    },
+    {
+      "day": "Thu 3 Dec",
+      "date": "2026-12-03",
+      "status": "planned",
+      "package": "d7",
+      "backlog_key": "ai formulas that replace hours of excel",
+      "why": "Backlog #8 score 90.0 (demand 9, visual 9, pain-CTR 9)",
+      "long_title": "AI formulas that replace hours of Excel",
+      "slot": "short_series",
+      "format": "short",
+      "slot_pkt": "21:30",
+      "spec": {
+        "target_seconds": [
+          40,
+          50
+        ],
+        "rehook_every": 10
+      },
+      "topic": "Excel 7-day workflow: day 7/7 of the series",
+      "angle": "One repeatable Excel workflow step, day 7 of 7",
+      "title": "Excel workflow, day 7/7",
+      "related_video_title": "AI formulas that replace hours of Excel"
     }
   ]
 }

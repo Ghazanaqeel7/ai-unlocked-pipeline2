@@ -451,7 +451,7 @@ const ICONS={
   stats:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
   settings:'<circle cx="12" cy="12" r="3"/><path d="M12 2.5v2.2M12 19.3v2.2M4.6 4.6l1.6 1.6M17.8 17.8l1.6 1.6M2.5 12h2.2M19.3 12h2.2M4.6 19.4l1.6-1.6M17.8 6.2l1.6-1.6"/>'};
 const svg=(k,sz=18)=>`<svg width="${sz}" height="${sz}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ICONS[k]}</svg>`;
-const VIEWS=[['today','Today'],['videos','Videos'],['long','Long'],['myidea','My Story'],['stats','Stats'],['calendar','Calendar'],['research','Research'],['settings','Settings']];
+const VIEWS=[['today','Today'],['videos','Videos'],['long','Long'],['myidea','My Story'],['stats','Stats'],['calendar','Calendar'],['vault','PDF Vault'],['research','Research'],['settings','Settings']];
 const needsYou=()=>Object.entries(S.state.jobs).filter(([k,j])=>isJob(k)&&(info(j)[3]||j.status==='render_failed'));
 function systemsInfo(){
   const st=S.state;const lastBy=(k)=>S.commits.find(c=>whoOf(c)[0]===k);
@@ -496,6 +496,7 @@ function renderMain(){
   if(S.view==='research')return renderResearch();
   if(S.view==='stats')return renderStats();
   if(S.view==='calendar')return renderCalendar();
+  if(S.view==='vault')return renderVault();
   if(S.view==='long')return renderLong();
   if(S.view==='myidea')return renderMyIdea();
   $('#main').innerHTML=`<div class="vids ${S.detail?'has':''}"><aside class="vlist" id="jobs">${jobsListHtml()}</aside><section id="detail" style="min-width:0"></section></div>`;
@@ -925,6 +926,14 @@ async function renderDesk(){
 
 
 // ---------- calendar ----------
+async function approveCalendar(week){
+  try{await updateState(st=>{st.calendar_approved=week},`dashboard: calendar ${week} approved`);toast('Calendar approved');load()}catch(e){toast(e.message,true)}
+}
+function renderVault(){
+  $('#main').innerHTML=`<h1>PDF Vault &amp; Course Library</h1><div class="sub"><span>Approved guides with download + offer links</span></div>
+  <div class="note">Public page: <a href="vault.html" target="_blank">vault.html ↗</a> (share this link with viewers).</div>
+  <iframe src="vault.html" style="width:100%;height:78vh;border:1px solid var(--line,#ddd);border-radius:12px;background:#060B14" title="PDF Vault"></iframe>`;
+}
 async function renderCalendar(){
   let C=null;try{C=JSON.parse(await readText('docs/calendar.json'))}catch(e){}
   if(!C){$('#main').innerHTML='<h1>Content calendar</h1><div class="empty">No calendar yet — Claude writes one every Monday at 11:00 PKT.</div>';return}
@@ -937,6 +946,7 @@ async function renderCalendar(){
   <div class="sub"><span>Week of ${esc(C.week)}</span><span>Made ${ago(C.made)}</span><span>${nShort} Shorts · ${nLong} long</span><span>${done} of ${items.length} in production</span></div>
   ${C.note?`<div class="note">${esc(C.note)}</div>`:''}
   <div class="note">Claude writes a new calendar every Monday 11:00 PKT from the research, the playbook and your ideas, then makes the stories in this order. To change it, add an idea in <a href="#" onclick="pick('__desk');return false">Settings → Story ideas</a> — your ideas always go first.</div>
+  ${C.approval?`<div class="panel"><div class="lbl">Gate 1: calendar approval</div>${S.state.calendar_approved===C.week?'<p>Approved. Claude scripts Slot #1 first (the long), then the two shorts.</p>':`<p>Review the 7 days below. Slot #1 is scripted first.</p><button class="btn" onclick="approveCalendar('${esc(C.week)}')">Approve calendar</button>`}</div>`:''}
   <div class="cal">${items.map((it,i)=>`<div class="ci ${it.job?'on':''}">
     <div class="cd"><b>${esc(it.day||'#'+(i+1))}</b><span class="chip ${it.format==='long'?'c-work':'c-ok'}">${it.format==='long'?'Long video':'Short'}</span></div>
     <div class="cb"><div class="ct">${esc(it.title||it.topic)}</div>
@@ -944,7 +954,7 @@ async function renderCalendar(){
       ${it.angle?`<div class="cm"><span>Angle</span>${esc(it.angle)}</div>`:''}
       ${it.why?`<div class="cm"><span>Why</span>${esc(it.why)}</div>`:''}
       ${it.long_later?`<div class="cm"><span>Long later</span>${esc(it.long_later)}</div>`:''}
-      ${it.format==='long'?'<div class="note">Made as a Short until the long-video system is ready.</div>':''}</div>
+      ${it.slot_pkt?`<div class="cm"><span>Goes live</span>${esc(it.date||'')} ${esc(it.slot_pkt)} PKT</div>`:''}</div>
     <div class="cs">${stChip(it)}${it.job?`<button class="btn sm" onclick="pick('${esc(it.job)}')">Open ${esc(it.job.split('-')[0])}</button><div class="note">${live(it.job)}</div>`:''}</div>
   </div>`).join('')}</div>`;
 }

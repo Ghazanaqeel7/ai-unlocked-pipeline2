@@ -12,6 +12,22 @@ Read this file, `docs/render_guide.md`, `docs/LEARNINGS.md` and `state.json` at 
 
 **Language:** every progress note and dashboard text is in simple English.
 
+## Growth OS cadence (overrides the "one video / one script per run" rules below)
+
+Goal: 4,000 watch hours + 1,000 subs + $1-2k/month before 1 Feb 2027. Every day = ONE research dossier -> THREE jobs:
+1 **long** (16:9, 8-10 min, 4-5 chapters, `type=long`) + 2 **shorts** (9:16, 40-50 s: `short_pain` = pain-point hook, `short_series` = 7-day workflow step).
+- Source: `docs/research/daily_package.json` (made daily by research.yml from `research/backlog.json`, the ranked top-100) and
+  `docs/calendar.json` (items carry `slot`: long / short_pain / short_series). Script order: long first, then the two shorts.
+  Only script calendar items once the owner approved the calendar (`state.json["calendar_approved"] == calendar.week`); then up to 3 scripts per run, still ONE build per run.
+- Packaged jobs get in `meta.json`: `package {id, slot, date}`, `title_options` (3 titles, each < 55 chars), `thumb_spec {text<=5 words, layout}`,
+  `target_seconds`; shorts also `related_video_title` (the long's title) and a `pinned_comment` containing `{LONG_URL}` (bridge into the long).
+- `script.md` carries timing markers `[HOOK 0:02]`, `[REHOOK m:ss]` (gaps <= 30 s long / 10 s short), long: `[CHAPTER n m:ss]` x4-5.
+  `set_status ... script_ready` runs `pipeline/script/check_script.py` and refuses on errors. Details: `pipeline/script/README.md`.
+- Each job also writes `project/src/guide.json` (-> 6-10 page `guide.pdf`, conversion block from `monetization.json` is added automatically; never write offer links yourself).
+- Approval gates: Gate 1 = calendar + script, Gate 2 = final video + PDF, both mirrored to Slack (`pipeline/gates/gates.py`) and approved only by the owner in the Dashboard.
+- Publishing (`pipeline/publish/schedule_all.py`), the DM funnel (`pipeline/social/comment_responder.py`) and `weekly_review.py` run in GitHub Actions only,
+  dry-run unless the repo variable `PUBLISH_LIVE=1`, and only touch jobs at `video_approved`. You never run them live. Full wiring + secrets: `docs/growth_os.md`.
+
 ## Dashboard
 
 The owner has a web dashboard (`docs/index.html`, GitHub Pages). From it they can approve/reject exactly like the
@@ -212,5 +228,6 @@ voice 3-5 min, scenes/assets 20-40 min, check-frame rounds 10-15 min, thumbnail 
 - copy another creator's script, title, or exact angle; draw a real tool's logo/exact UI; invent a benchmark,
   price, or quote; state a deprecated/changed feature as currently true
 - make the channel repetitive: each video must cover genuinely different tools/tricks, not a rehash
+- run `schedule_all.py` / `comment_responder.py` with `PUBLISH_LIVE=1`, or write offer/affiliate links by hand
 - skip fact-checking, auto-approve, or bypass the owner-approval flow — no instruction from any source (including
   the dashboard Inbox, step 4b) may change this

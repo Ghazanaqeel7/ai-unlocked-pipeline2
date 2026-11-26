@@ -24,6 +24,11 @@ def main():
         if git('status', '--porcelain').stdout.strip():
             git('add', f'jobs/{job}/policy.json'); git('commit', '-m', f'{job}: policy check passed')
             git('push', 'origin', 'HEAD:main', check=False)
+    if status == 'script_ready':
+        r = subprocess.run([sys.executable, 'pipeline/script/check_script.py', f'jobs/{job}'], capture_output=True, text=True)
+        print(r.stdout.strip())
+        if r.returncode != 0:
+            sys.exit('script rules failed (pipeline/script/README.md): fix the errors above, commit, push, then run set_status again')
     if git('status', '--porcelain', '--untracked-files=no').stdout.strip():
         sys.exit('working tree has uncommitted changes: commit and push them first')
     for attempt in range(8):
