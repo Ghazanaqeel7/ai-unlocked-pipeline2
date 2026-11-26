@@ -29,5 +29,15 @@
     "id": "d1",
     "slot": "short_pain",
     "date": "2026-11-27"
+  },
+  "thumb": {
+    "image": {
+      "q": "glowing neural network abstract"
+    },
+    "icon": "bulb",
+    "line1": "STOP",
+    "line2": "COPY-PASTE",
+    "box": "n8n",
+    "box_color": "#C8F938"
   }
 }

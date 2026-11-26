@@ -11,7 +11,21 @@
      "accent": [
       "trigger"
      ],
-     "kicker": "DAY 1 OF 7"
+     "kicker": "DAY 1 OF 7",
+     "stack": [
+      {
+       "label": "Chat Trigger",
+       "value": "message"
+      },
+      {
+       "label": "Schedule Trigger",
+       "value": "clock"
+      },
+      {
+       "label": "Publish",
+       "value": "to run"
+      }
+     ]
     },
     {
      "type": "perspectivewall",
@@ -126,7 +140,21 @@
      "accent": [
       "trigger"
      ],
-     "kicker": "TODAY"
+     "kicker": "TODAY",
+     "stack": [
+      {
+       "label": "Day 1",
+       "value": "Triggers"
+      },
+      {
+       "label": "Day 2",
+       "value": "AI Agent"
+      },
+      {
+       "label": "Day 3",
+       "value": "Models"
+      }
+     ]
     }
    ]
   },
@@ -152,6 +180,20 @@
      "text": "Runs whenever someone sends a message",
      "accent": [
       "message"
+     ],
+     "stack": [
+      {
+       "label": "Message",
+       "value": "in"
+      },
+      {
+       "label": "Workflow",
+       "value": "runs"
+      },
+      {
+       "label": "Reply",
+       "value": "out"
+      }
      ]
     }
    ]
@@ -333,7 +375,21 @@
      "accent": [
       "trigger"
      ],
-     "sub": "Everything else depends on how it starts."
+     "sub": "Everything else depends on how it starts.",
+     "stack": [
+      {
+       "label": "Trigger",
+       "value": "first"
+      },
+      {
+       "label": "Nodes",
+       "value": "next"
+      },
+      {
+       "label": "Publish",
+       "value": "last"
+      }
+     ]
     },
     {
      "type": "interactiveuicard",

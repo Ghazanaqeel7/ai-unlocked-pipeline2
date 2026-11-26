@@ -59,7 +59,21 @@
      "accent": [
       "n8n"
      ],
-     "kicker": "THE FIX"
+     "kicker": "THE FIX",
+     "stack": [
+      {
+       "label": "Trigger",
+       "value": "starts"
+      },
+      {
+       "label": "Agent",
+       "value": "thinks"
+      },
+      {
+       "label": "Tool",
+       "value": "acts"
+      }
+     ]
     }
    ]
   },
@@ -165,6 +179,20 @@
      "text": "Trigger, nodes, result.",
      "accent": [
       "result"
+     ],
+     "stack": [
+      {
+       "label": "Trigger",
+       "value": "fires"
+      },
+      {
+       "label": "Nodes",
+       "value": "pass data"
+      },
+      {
+       "label": "Result",
+       "value": "delivered"
+      }
      ]
     }
    ]
@@ -216,6 +244,20 @@
      "accent": [
       "model",
       "tool"
+     ],
+     "stack": [
+      {
+       "label": "Model",
+       "value": "connected"
+      },
+      {
+       "label": "Tool",
+       "value": "added"
+      },
+      {
+       "label": "Agent",
+       "value": "ready"
+      }
      ]
     }
    ]
@@ -326,7 +368,21 @@
      "accent": [
       "tiny"
      ],
-     "sub": "One trigger, one agent, one output."
+     "sub": "One trigger, one agent, one output.",
+     "stack": [
+      {
+       "label": "1",
+       "value": "trigger"
+      },
+      {
+       "label": "1",
+       "value": "agent"
+      },
+      {
+       "label": "1",
+       "value": "output"
+      }
+     ]
     },
     {
      "type": "interactiveuicard",
