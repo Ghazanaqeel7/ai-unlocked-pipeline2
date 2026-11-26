@@ -1,0 +1,19 @@
+{
+ "title": "n8n workflow, day 1/7: the trigger",
+ "description": "Day 1 of the 7-day n8n workflow series: every workflow starts with a trigger. Chat Trigger vs Schedule Trigger, and why you must publish.\n\nSources: n8n Docs, AI Agent node; n8n Docs, Chat Trigger node; n8n Docs, Schedule Trigger node; n8n Docs, Executions; n8n Docs, Community Edition features; n8n pricing page; n8n template library (Build your first AI agent).\n\nFull video: {LONG_URL}\n\nSubscribe: https://youtube.com/@AIGraphicTV\n\n#n8n #AIAutomation #AIAgent #NoCode #Shorts\n\nImage credits:\nNeural network - Midjourney and Grok.png - Midjourney; prompt suggested by Grok - Public domain - https://commons.wikimedia.org/wiki/File:Neural_network_-_Midjourney_and_Grok.png",
+ "tags": [
+  "n8n",
+  "ai automation",
+  "ai agent",
+  "no code automation",
+  "workflow automation",
+  "ai tools",
+  "beginner tutorial",
+  "automate with ai",
+  "shorts",
+  "day 1"
+ ],
+ "chapters": [],
+ "credits": "Image credits:\nNeural network - Midjourney and Grok.png - Midjourney; prompt suggested by Grok - Public domain - https://commons.wikimedia.org/wiki/File:Neural_network_-_Midjourney_and_Grok.png",
+ "pinned_comment": "Build the whole thing step by step: {LONG_URL}\nDay 2 tomorrow. Comment GUIDE for the PDF."
+}
