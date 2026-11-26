@@ -10,6 +10,11 @@ PRIMARY_NEW = {'hookcard', 'toolgrid', 'browsersim', 'dochighlighter', 'workflow
 PRIMARY_LEGACY = {'mockup', 'statcounter', 'comparecard', 'stepflow'}
 PRIMARY = PRIMARY_NEW | PRIMARY_LEGACY
 SECONDARY = {'title', 'chapter', 'photo', 'stat', 'chart', 'timeline', 'map', 'headline', 'compare', 'list', 'quote', 'illustration', 'endcard'}
+# docs/style_reference.md "High-Retention Motion Components" — the 6 studio-editorial primitives
+# (theme-aware: 'theme' must be one of sand/studio/obsidian; see pipeline/template/src/theme.js
+# STUDIO_THEMES). Treated as SECONDARY for pacing/variety purposes, same as stat/chart/compare.
+STUDIO = {'tiltedagentstage', 'metricodometer', 'retentiongraph', 'perspectivewall', 'interactiveuicard', 'commenttriggeroutro'}
+SECONDARY = SECONDARY | STUDIO
 TYPES = PRIMARY | SECONDARY
 
 # Required-prop schema enforcement (safeguard #1, confirmed by the user): a lightweight/free LLM
@@ -24,6 +29,12 @@ REQUIRED_PROPS = {
     'workflowstepper': ['steps'],
     'socialctacard': [],  # every prop has a sane default
     'liveclipcard': ['url'],
+    'tiltedagentstage': ['headline', 'steps'],
+    'metricodometer': ['label', 'value'],
+    'retentiongraph': ['headline', 'good', 'bad'],
+    'perspectivewall': ['headline', 'cards'],
+    'interactiveuicard': ['headline', 'kind'],
+    'commenttriggeroutro': ['handle', 'commentWord'],
 }
 
 
@@ -52,6 +63,29 @@ def check_required_props(b):
             if not isinstance(s, dict) or not s.get('label'): errs.append(f'workflowstepper: step missing "label" — {s!r}'[:100])
     if t == 'dochighlighter' and not b.get('kind'):
         errs.append('dochighlighter: missing "kind" ("article"|"tweet"|"code")')
+    if t in ('tiltedagentstage', 'metricodometer', 'retentiongraph', 'perspectivewall', 'interactiveuicard', 'commenttriggeroutro'):
+        theme = b.get('theme')
+        if theme not in ('sand', 'studio', 'obsidian'):
+            errs.append(f'{t}: "theme" must be one of sand/studio/obsidian (got {theme!r}) — see docs/style_reference.md')
+    if t == 'tiltedagentstage':
+        steps = b.get('steps') or []
+        if len(steps) < 2: errs.append('tiltedagentstage: needs at least 2 "steps"')
+    if t == 'retentiongraph':
+        if len(b.get('good') or []) < 2 or len(b.get('bad') or []) < 2:
+            errs.append('retentiongraph: "good" and "bad" each need at least 2 data points')
+    if t == 'perspectivewall':
+        cards = b.get('cards') or []
+        if len(cards) < 3: errs.append('perspectivewall: needs at least 3 "cards" for a wall effect')
+    if t == 'interactiveuicard':
+        kind = b.get('kind')
+        if kind not in ('dropdown', 'typing', 'checklist'):
+            errs.append(f'interactiveuicard: "kind" must be one of dropdown/typing/checklist (got {kind!r})')
+        elif kind == 'dropdown' and not (b.get('dropdown') or {}).get('options'):
+            errs.append('interactiveuicard (kind:"dropdown"): missing "dropdown.options"')
+        elif kind == 'checklist' and not b.get('items'):
+            errs.append('interactiveuicard (kind:"checklist"): missing "items"')
+        elif kind == 'typing' and not b.get('typing'):
+            errs.append('interactiveuicard (kind:"typing"): missing "typing"')
     return errs
 
 
