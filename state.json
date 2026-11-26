@@ -189,9 +189,13 @@
         {
           "t": "2026-11-26T08:37:38Z",
           "msg": "📅 7-Day Viral Calendar is ready (27 Nov to 3 Dec): 7 long + 14 shorts = 21 jobs. Approve it on the Dashboard, Calendar tab."
+        },
+        {
+          "t": "2026-11-26T08:37:40Z",
+          "msg": "Slot #1: Fri 27 Nov, 19:00 PKT, LONG: Build your first AI automation in n8n. Same day: pain Short 07:30 and series Short (day 1/7) 21:30."
         }
       ],
-      "progress_count": 1
+      "progress_count": 2
     }
   },
   "ideas": [],
