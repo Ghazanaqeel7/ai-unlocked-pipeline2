@@ -1,52 +1,41 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "dossier": {
-    "tool": "ChatGPT",
-    "topic": "Analyse a spreadsheet with ChatGPT in 2 minutes",
-    "pain_hook": "Excel takes your whole afternoon",
+    "tool": "n8n",
+    "topic": "Build your first AI automation in n8n",
+    "pain_hook": "Copy-pasting between apps all day",
     "evidence": [
       {
-        "title": "ChatGPT new trick😱😝 #sruthified #trending #funny relatable Tamil #tech hacks tricks",
-        "views": 2262048,
-        "channel": "Sruthified"
+        "title": "Complete AI Automation using n8n | Build Your First Automation From Scratch in Bangla",
+        "views": 305048,
+        "channel": "Ali Hossain"
       },
       {
-        "title": "3 ChatGPT Study Hacks for Exam preparation 🎯 #chatgpt #studytips",
-        "views": 1505630,
-        "channel": "Rise Mind Tube"
+        "title": "n8n Tutorial – Zero to Hero Course",
+        "views": 1320121,
+        "channel": "freeCodeCamp.org"
       },
       {
-        "title": "This is creepy..!! 🤯 #scary #chatgpt #creepy",
-        "views": 1234140,
-        "channel": "WANTED PLAYZ"
+        "title": "Build Your First AI Automation in n8n (No Code)"
       },
       {
-        "title": "3 ChatGPT Secret Commands for Students 🤫 #studytips #viralshorts",
-        "views": 1336043,
-        "channel": "Rise Mind Tube"
+        "title": "Stop copy-pasting between apps (n8n)"
       },
       {
-        "title": "They put ChatGPT in a calculator..",
-        "views": 15368523,
-        "channel": "CarterPCs"
-      },
-      {
-        "title": "100+ ChatGPT Codes to Transform Your Photos 🤯🔥 #shorts",
-        "views": 314255,
-        "channel": "Vikas Thakur"
+        "title": "n8n workflow, day 1/7: the trigger"
       }
     ],
     "note": "Fact-check against the official docs/changelog before scripting. Evidence = titles that mention the tool, not claims."
   },
   "items": [
     {
-      "day": "Thu 26 Nov",
-      "date": "2026-11-26",
-      "status": "planned",
+      "day": "Fri 27 Nov",
+      "date": "2026-11-27",
+      "status": "scripted",
       "package": "d1",
-      "backlog_key": "analyse a spreadsheet with chatgpt in 2 minutes",
-      "why": "Backlog #2 score 98.0 (demand 9, visual 9, pain-CTR 9)",
-      "long_title": "Analyse a spreadsheet with ChatGPT in 2 minutes",
+      "backlog_key": "build your first ai automation in n8n",
+      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Build your first AI automation in n8n",
       "slot": "long",
       "format": "long",
       "slot_pkt": "19:00",
@@ -61,18 +50,19 @@
         ],
         "rehook_every": 30
       },
-      "topic": "Analyse a spreadsheet with ChatGPT in 2 minutes",
-      "angle": "Full walkthrough: from the pain ('Excel takes your whole afternoon') to a working result",
-      "title": "Analyse a spreadsheet with ChatGPT in 2 minutes"
+      "topic": "Build your first AI automation in n8n",
+      "angle": "Full walkthrough: from the pain ('Copy-pasting between apps all day') to a working result",
+      "title": "Build your first AI automation in n8n",
+      "job": "010-n8n-first-ai-automation-long"
     },
     {
-      "day": "Thu 26 Nov",
-      "date": "2026-11-26",
-      "status": "planned",
+      "day": "Fri 27 Nov",
+      "date": "2026-11-27",
+      "status": "scripted",
       "package": "d1",
-      "backlog_key": "analyse a spreadsheet with chatgpt in 2 minutes",
-      "why": "Backlog #2 score 98.0 (demand 9, visual 9, pain-CTR 9)",
-      "long_title": "Analyse a spreadsheet with ChatGPT in 2 minutes",
+      "backlog_key": "build your first ai automation in n8n",
+      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Build your first AI automation in n8n",
       "slot": "short_pain",
       "format": "short",
       "slot_pkt": "07:30",
@@ -83,19 +73,20 @@
         ],
         "rehook_every": 10
       },
-      "topic": "Analyse a spreadsheet with ChatGPT in 2 minutes",
-      "angle": "Pain-point hook: Excel takes your whole afternoon",
-      "title": "Excel takes your whole afternoon",
-      "related_video_title": "Analyse a spreadsheet with ChatGPT in 2 minutes"
+      "topic": "Build your first AI automation in n8n",
+      "angle": "Pain-point hook: Copy-pasting between apps all day",
+      "title": "Copy-pasting between apps all day",
+      "related_video_title": "Build your first AI automation in n8n",
+      "job": "011-n8n-copy-paste-pain-short"
     },
     {
-      "day": "Thu 26 Nov",
-      "date": "2026-11-26",
-      "status": "planned",
+      "day": "Fri 27 Nov",
+      "date": "2026-11-27",
+      "status": "scripted",
       "package": "d1",
-      "backlog_key": "analyse a spreadsheet with chatgpt in 2 minutes",
-      "why": "Backlog #2 score 98.0 (demand 9, visual 9, pain-CTR 9)",
-      "long_title": "Analyse a spreadsheet with ChatGPT in 2 minutes",
+      "backlog_key": "build your first ai automation in n8n",
+      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Build your first AI automation in n8n",
       "slot": "short_series",
       "format": "short",
       "slot_pkt": "21:30",
@@ -106,10 +97,11 @@
         ],
         "rehook_every": 10
       },
-      "topic": "ChatGPT 7-day workflow: day 1/7 of the series",
-      "angle": "One repeatable ChatGPT workflow step, day 1 of 7",
-      "title": "ChatGPT workflow, day 1/7",
-      "related_video_title": "Analyse a spreadsheet with ChatGPT in 2 minutes"
+      "topic": "n8n 7-day workflow: day 1/7 of the series",
+      "angle": "One repeatable n8n workflow step, day 1 of 7",
+      "title": "n8n workflow, day 1/7",
+      "related_video_title": "Build your first AI automation in n8n",
+      "job": "012-n8n-workflow-day1-short"
     }
   ],
   "link_rule": "Shorts: meta.related_video_title = long title; pinned_comment bridges to the long (use {LONG_URL})."
