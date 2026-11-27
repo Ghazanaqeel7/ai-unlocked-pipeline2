@@ -11,9 +11,9 @@ import {F} from '../theme.js';
 // Palette: orbital navy #040B16/#081324, cyan #38BDF8, gold #F59E0B, silver text.
 // Motion: cubic-bezier(0.22,1,0.36,1) settle, staggered entry, short exit fade — never stuck mid-opacity.
 // ---------------------------------------------------------------------------------------------
-const P = {bg: '#040B16', bg2: '#081324', cyan: '#38BDF8', gold: '#F59E0B', text: '#E8EEF7', sub: '#9FB0C8', line: 'rgba(56,189,248,.18)', card: 'rgba(8,19,36,.88)'};
+const P = {bg: '#040B16', bg2: '#081324', cyan: '#38BDF8', gold: '#F59E0B', text: '#E8EEF7', sub: '#9FB0C8', line: 'rgba(56,189,248,.18)', card: 'linear-gradient(160deg, rgba(16,34,60,.92), rgba(8,19,36,.9))'};
 const EASE = Easing.bezier(0.22, 1, 0.36, 1);
-export const LAYOUT_NAMES = ['split', 'steps', 'compare', 'kinetic', 'outro'];
+export const LAYOUT_NAMES = ['split', 'steps', 'compare', 'kinetic', 'outro', 'metric', 'quote', 'grid'];
 
 const useBox = () => {
   const {width, height} = useVideoConfig();
@@ -45,7 +45,8 @@ const iconFor = (label, i = 0) => { for (const [re, k] of KEYS) if (re.test(labe
 const Icon = ({k, size = 30, color = P.bg}) => (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{flex: '0 0 auto'}}><path d={ICONS[k] || ICONS.spark} /></svg>);
 
 // ---- field helpers (render real scenes.json data; derive from narration when fields are absent) ----
-const asText = (x) => (typeof x === 'string' ? x : x ? x.text || x.label || x.title || x.name || '' : '');
+const arr = (x) => (Array.isArray(x) ? x : []);
+const asText = (x) => (typeof x === 'string' ? x : typeof x === 'number' ? String(x) : x && typeof x === 'object' ? String(x.text || x.label || x.title || x.name || '') : '');
 const sentences = (s) => String(s || '').split(/(?<=[.!?])\s+/).map((x) => x.trim()).filter(Boolean);
 const clip = (s, n) => { s = String(s || '').trim(); return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : s; };
 const pickList = (v, max = 4) => {
@@ -56,7 +57,8 @@ const pickList = (v, max = 4) => {
 };
 const headline = (v) => clip(v.title || v.headline || v.text || sentences(v.narration)[0] || '', 80);
 const kicker = (v) => clip(v.kicker || v.label || '', 40);
-const metrics = (v) => (Array.isArray(v.metrics) ? v.metrics : []).slice(0, 3).map((m) => ({value: String(m.value != null ? m.value : m.v), label: clip(m.label || m.l || '', 28)}));
+const metrics = (v) => arr(v.metrics).filter((m) => m && typeof m === 'object' && (m.value != null || m.v != null)).slice(0, 3).map((m) => ({value: clip(String(m.value != null ? m.value : m.v), 12), label: clip(m.label || m.l || '', 28)}));
+const firstNumber = (t) => { const m = String(t || '').match(/[$€£]?\d[\d,.]*\s?(?:%|x|k|m|hrs?|hours|min|days|×)?/i); return m ? m[0].trim() : ''; };
 
 // font size that fits: longer text -> smaller, clamped, so nothing clips
 const fit = (text, base, min, perChar = 0.9) => Math.max(min, Math.min(base, base - Math.max(0, String(text).length - 18) * perChar));
@@ -69,6 +71,8 @@ const Waves = ({box}) => {
       <path d={wave(34, 260, 0.035, 0, H * 0.84)} fill="rgba(56,189,248,.07)" />
       <path d={wave(26, 340, -0.028, 2, H * 0.89)} fill="rgba(245,158,11,.06)" />
       <path d={wave(20, 200, 0.045, 4, H * 0.94)} fill="rgba(56,189,248,.08)" />
+      {[0.34, 0.5, 0.68].map((k, i) => <circle key={i} cx={W * 0.86} cy={H * 0.14} r={Math.min(W, H) * k} fill="none" stroke={i === 1 ? 'rgba(245,158,11,.14)' : 'rgba(56,189,248,.14)'} strokeWidth="2" strokeDasharray={i === 1 ? '6 16' : '2 0'} style={{transformOrigin: `${W * 0.86}px ${H * 0.14}px`, transform: `rotate(${f * (i % 2 ? -0.12 : 0.1)}deg)`}} />)}
+      {[0, 1, 2, 3, 4, 5].map((i) => <circle key={'p' + i} cx={(W * (0.12 + i * 0.17) + Math.sin(f * 0.02 + i) * 24)} cy={(H * (0.2 + (i % 3) * 0.28) + Math.cos(f * 0.017 + i * 2) * 18)} r={3 + (i % 3)} fill={i % 2 ? 'rgba(245,158,11,.35)' : 'rgba(56,189,248,.35)'} />)}
       <circle cx={W * (0.82 + 0.03 * Math.sin(f * 0.02))} cy={H * 0.18} r={Math.min(W, H) * 0.28} fill="rgba(56,189,248,.05)" />
     </svg>
   );
@@ -86,7 +90,7 @@ const Kick = ({v, frames}) => (kicker(v) ? <Rise frames={frames} dy={14} style={
 const Split = ({v, frames, box}) => {
   const list = pickList(v, 4); const title = headline(v); const n = Math.max(list.length, 2);
   const col = {display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 0, maxWidth: '100%'};
-  const wf = Array.isArray(v.workflow) ? v.workflow.map((x) => ({label: clip(asText(x), 40), sub: ''})) : null;
+  const wf = Array.isArray(v.workflow) ? v.workflow.filter(Boolean).map((x) => ({label: clip(asText(x), 40), sub: ''})) : null;
   const nodes = (wf && wf.length ? wf : list.length ? list : [{label: 'Idea'}, {label: 'Result'}]).slice(0, 4);
   const gate = v.gate === false ? '' : clip(typeof v.gate === 'string' ? v.gate : v.verified ? 'Gate Verified' : '', 24);
   return (
@@ -142,7 +146,7 @@ const Steps = ({v, frames, box}) => {
 // 3) Before / After Comparison ------------------------------------------------------------------
 const Compare = ({v, frames, box}) => {
   const before = v.before || {}; const after = v.after || {};
-  const lines = (side, fb) => ((side && (side.items || side.bullets)) || (Array.isArray(side) ? side : fb)).map(asText).filter(Boolean).slice(0, 3).map((s) => clip(s, 70));
+  const lines = (side, fb) => (arr(side && (side.items || side.bullets)).length ? arr(side.items || side.bullets) : Array.isArray(side) ? side : fb).map(asText).filter(Boolean).slice(0, 3).map((s) => clip(s, 70));
   const list = pickList(v, 6);
   const bl = lines(before, list.slice(0, Math.ceil(list.length / 2)).map((x) => x.label));
   const al = lines(after, list.slice(Math.ceil(list.length / 2)).map((x) => x.label));
@@ -172,7 +176,7 @@ const Compare = ({v, frames, box}) => {
 // 4) Kinetic Statement + Key Points -------------------------------------------------------------
 const Kinetic = ({v, frames, box}) => {
   const title = headline(v); const words = title.split(/\s+/); const list = pickList(v, 3); const mt = metrics(v);
-  const acc = new Set((v.accent || []).map((a) => String(a).toLowerCase()));
+  const acc = new Set((Array.isArray(v.accent) ? v.accent : v.accent ? [v.accent] : []).map((a) => String(a).toLowerCase()));
   const size = box.narrow ? fit(title, 112, 64, 1.1) : fit(title, 104, 58, 1.0);
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: 34, height: '100%', justifyContent: 'center'}}>
@@ -238,13 +242,109 @@ const Outro = ({v, frames, box, seed = 0}) => {
   );
 };
 
-const LAYOUTS = [Split, Steps, Compare, Kinetic, Outro];
+// 6) Metric / KPI Spotlight --------------------------------------------------------------------
+const Metric = ({v, frames, box}) => {
+  const mt = metrics(v);
+  const hero = mt[0] || {value: clip(String(v.value != null ? v.value : firstNumber(v.title || v.narration) || '✓'), 12), label: clip(v.label || '', 28)};
+  const rest = mt.slice(1); const title = headline(v);
+  const {t} = useIn(frames, 4, 40); const size = Math.max(90, Math.min(box.narrow ? 230 : 210, (box.narrow ? 560 : 640) / Math.max(2, hero.value.length) * 1.7));
+  const R = box.narrow ? 150 : 130; const C2 = 2 * Math.PI * R;
+  return (
+    <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', alignItems: 'center', justifyContent: 'center', gap: box.narrow ? 36 : 64, height: '100%'}}>
+      <div style={{position: 'relative', flex: '0 0 auto', width: R * 2 + 40, height: R * 2 + 40, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
+        <svg width={R * 2 + 40} height={R * 2 + 40} style={{position: 'absolute', left: 0, top: 0, transform: 'rotate(-90deg)'}}>
+          <circle cx={R + 20} cy={R + 20} r={R} fill="none" stroke={P.line} strokeWidth="10" />
+          <circle cx={R + 20} cy={R + 20} r={R} fill="none" stroke={P.cyan} strokeWidth="10" strokeLinecap="round" strokeDasharray={C2} strokeDashoffset={C2 * (1 - 0.82 * t)} />
+        </svg>
+        <div style={{textAlign: 'center', maxWidth: R * 1.7, overflow: 'hidden'}}><div style={{color: P.gold, fontWeight: 900, fontSize: Math.min(size, R * 1.1), lineHeight: 1, letterSpacing: '-0.03em'}}>{hero.value}</div>{hero.label ? <div style={{marginTop: 8, color: P.sub, fontSize: 22, fontWeight: 600}}>{hero.label}</div> : null}</div>
+      </div>
+      <div style={{minWidth: 0, flex: '1 1 auto', maxWidth: '100%'}}>
+        <Kick v={v} frames={frames} />
+        <Rise frames={frames} delay={6} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 70, 46) : fit(title, 64, 42)}}>{title}</Rise>
+        <div style={{display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap'}}>
+          {rest.map((m, i) => <Rise key={i} frames={frames} delay={16 + i * 6} style={{background: P.card, border: `2px solid ${P.line}`, borderRadius: 18, padding: '14px 22px', boxSizing: 'border-box', maxWidth: '100%'}}><div style={{color: P.cyan, fontWeight: 900, fontSize: 44, lineHeight: 1}}>{m.value}</div><div style={{color: P.sub, fontSize: 22, marginTop: 4}}>{m.label}</div></Rise>)}
+        </div>
+      </div>
+    </div>
+  );
+};
 
-// Props injected by Doc.jsx: layoutIndex (0-4), seed (job offset), isLast, narration, frames.
+// 7) Quote / Hook Statement ---------------------------------------------------------------------
+const Quote = ({v, frames, box}) => {
+  const text = clip(v.quote || v.hook || v.title || v.headline || v.text || sentences(v.narration)[0] || '', 140);
+  const by = clip(v.author || v.source || v.sub || '', 50);
+  const size = box.narrow ? fit(text, 84, 52, 0.7) : fit(text, 76, 44, 0.6);
+  return (
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%', position: 'relative'}}>
+      <Rise frames={frames} delay={0} dy={20} style={{color: P.gold, fontFamily: 'Georgia, serif', fontWeight: 900, fontSize: box.narrow ? 220 : 190, lineHeight: 0.7, height: box.narrow ? 120 : 100}}>“</Rise>
+      <Rise frames={frames} delay={6} style={{color: P.text, fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.12, fontSize: size, borderLeft: `6px solid ${P.cyan}`, paddingLeft: 32}}>{text}</Rise>
+      {by ? <Rise frames={frames} delay={16} style={{marginTop: 26, paddingLeft: 38, color: P.cyan, fontWeight: 700, fontSize: box.narrow ? 32 : 26, letterSpacing: '0.06em'}}>— {by}</Rise> : null}
+    </div>
+  );
+};
+
+// 8) Visual Card Grid ---------------------------------------------------------------------------
+const Grid = ({v, frames, box}) => {
+  const list = pickList(v, 4); const title = headline(v);
+  return (
+    <div style={{display: 'flex', flexDirection: 'column', gap: 30, height: '100%', justifyContent: 'center'}}>
+      <div><Kick v={v} frames={frames} /><Rise frames={frames} delay={3} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 70, 46) : fit(title, 62, 40)}}>{title}</Rise></div>
+      <div style={{display: 'grid', gridTemplateColumns: box.narrow ? '1fr' : '1fr 1fr', gap: 20}}>
+        {list.map((it, i) => (
+          <Rise key={i} frames={frames} delay={10 + i * 7} dy={36} style={{display: 'flex', gap: 20, alignItems: 'center', minWidth: 0, boxSizing: 'border-box', background: P.card, border: `2px solid ${i % 3 === 2 ? P.gold : P.line}`, borderRadius: 24, padding: '22px 26px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.08)'}}>
+            <div style={{flex: '0 0 auto', width: 64, height: 64, borderRadius: 18, background: i % 3 === 2 ? P.gold : P.cyan, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon k={iconFor(it.label, i)} size={34} /></div>
+            <div style={{minWidth: 0}}><div style={{color: P.text, fontWeight: 800, fontSize: box.narrow ? 34 : 28, lineHeight: 1.2}}>{it.label}</div>{it.sub ? <div style={{color: P.sub, fontSize: box.narrow ? 26 : 21, marginTop: 6, lineHeight: 1.3}}>{it.sub}</div> : null}</div>
+          </Rise>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+// ---- content-driven layout planner (deterministic, no adjacent repeats) ----------------------------
+const DEFAULT_ROT = ['kinetic', 'split', 'quote', 'grid', 'metric', 'steps', 'compare'];
+const candidates = (v) => {
+  const o = v && typeof v === 'object' ? v : {};
+  if (LAYOUT_NAMES.includes(o.layout)) return [o.layout];
+  const txt = `${o.title || ''} ${o.headline || ''} ${o.text || ''} ${o.narration || ''}`.toLowerCase();
+  const list = arr(o.bullets || o.items || o.points || o.steps || o.callouts); const c = [];
+  if (o.before || o.after || /\b(vs\.?|versus|before|after|instead of|without|compared)\b/.test(txt)) c.push('compare');
+  if (arr(o.workflow).length > 1 || arr(o.steps).length > 1 || /\b(step|steps|first|then|next|workflow|pipeline|how to)\b/.test(txt)) c.push(list.length > 3 ? 'steps' : 'split');
+  if (metrics(o).length || o.metric || o.value != null || /\d\s?(%|x|×|k\b|hours?|hrs?|min|days?|\$)/.test(txt)) c.push('metric');
+  if (o.quote || o.hook || o.type === 'quote' || /\?\s*$/.test(String(o.title || o.text || '').trim())) c.push('quote');
+  if (list.length >= 4) c.push('grid'); else if (list.length >= 2) c.push('split', 'grid');
+  return c;
+};
+export const planLayouts = (visuals, seed = 0) => {
+  const out = []; const n = DEFAULT_ROT.length; const s0 = Number.isFinite(seed) ? Math.abs(Math.floor(seed)) : 0;
+  arr(visuals).forEach((v, i, all) => {
+    if (i === all.length - 1) { out.push('outro'); return; }
+    const pool = [...candidates(v), ...DEFAULT_ROT.map((_, k) => DEFAULT_ROT[(s0 + i + k) % n])];
+    const prev = out[i - 1]; const prev2 = out[i - 2];
+    const pick = pool.find((x) => x !== prev && x !== prev2 && x !== 'outro') || pool.find((x) => x !== prev) || 'kinetic';
+    out.push(pick);
+  });
+  return out;
+};
+
+const LAYOUTS = {split: Split, steps: Steps, compare: Compare, kinetic: Kinetic, outro: Outro, metric: Metric, quote: Quote, grid: Grid};
+
+class Boundary extends React.Component {
+  constructor(p) { super(p); this.state = {bad: false}; }
+  static getDerivedStateFromError() { return {bad: true}; }
+  render() {
+    if (!this.state.bad) return this.props.children;
+    const {box, v} = this.props; const t = clip(headline(v) || 'AI Graphic TV', 60);
+    return <div style={{display: 'flex', alignItems: 'center', height: '100%', color: P.text, fontWeight: 900, fontSize: box.narrow ? 72 : 64, lineHeight: 1.1}}>{t}</div>;
+  }
+}
+
+// Props injected by Doc.jsx: layout (planned name), seed, isLast, narration, frames. Everything is guarded.
 export const AutoLayout = (props) => {
   const box = useBox();
-  const {frames = 60, layoutIndex = 0, seed = 0, isLast = false} = props;
-  const idx = isLast ? 4 : ((layoutIndex % 5) + 5) % 5;
-  const L = LAYOUTS[props.layout && LAYOUT_NAMES.includes(props.layout) ? LAYOUT_NAMES.indexOf(props.layout) : idx];
-  return <Shell v={props} box={box}><L v={props} frames={frames} box={box} seed={seed} /></Shell>;
+  const frames = Number.isFinite(props.frames) && props.frames > 0 ? props.frames : 60;
+  const name = props.isLast ? 'outro' : LAYOUTS[props.layout] ? props.layout : 'kinetic';
+  const L = LAYOUTS[name];
+  const seed = Number.isFinite(props.seed) ? props.seed : 0;
+  return <Shell v={props} box={box}><Boundary box={box} v={props}><L v={props} frames={frames} box={box} seed={seed} /></Boundary></Shell>;
 };

@@ -15,7 +15,7 @@ import {ListScene} from './scenes/ListScene.jsx';
 import {Quote} from './scenes/Quote.jsx';
 import {Illustration} from './scenes/Illustration.jsx';
 import {EndCard} from './scenes/EndCard.jsx';
-import {AutoLayout} from './scenes/AutoLayout.jsx';
+import {AutoLayout, planLayouts} from './scenes/AutoLayout.jsx';
 import {rnd} from './util.js';
 import {Grain, Sfx, AmbientOrbs} from './scenes/common.jsx';
 import {HookCard} from './scenes/ui/HookCard.jsx';
@@ -62,7 +62,7 @@ export const REGISTRY = {
 // Per-job bespoke scenes (render_guide.md "Custom per-job scenes") layer on top of — and can override —
 // the shared REGISTRY above. customScenes defaults to {} for any job that hasn't written one; Doc.jsx
 // always imports this same file path so the import itself never fails even when a job has nothing here.
-const FULL_REGISTRY = {...REGISTRY, ...customScenes};
+const FULL_REGISTRY = {...REGISTRY, ...(customScenes || {})};
 // Job seed offset: scenes.json `seed` (number) wins, else derived deterministically from title + first scene id,
 // so different videos start on different layouts while one video always renders identically.
 const JOB_SEED = Number.isFinite(scenesData.seed) ? Math.abs(Math.floor(scenesData.seed)) : Math.floor(rnd(`${scenesData.title || ''}|${((scenesData.scenes || [])[0] || {}).id || ''}`) * 1000);
@@ -70,6 +70,7 @@ const JOB_SEED = Number.isFinite(scenesData.seed) ? Math.abs(Math.floor(scenesDa
 // (autoIndex + JOB_SEED) % 5, adjacent beats never repeat). Studio primitives (hookcard, tiltedagentstage,
 // metricodometer, ...) and any custom scene are never touched.
 const AUTO_TYPES = new Set(['auto', 'autolayout', 'title', 'headline', 'list', 'quote', 'chapter', 'endcard', 'illustration', 'stat', 'compare', 'timeline']);
+const isAutoBeat = (b) => !!b && !!b.visual && (b.visual.type === 'auto' || b.visual.type === 'autolayout' || (scenesData.autolayout === true && AUTO_TYPES.has(b.visual.type) && !(customScenes || {})[b.visual.type]));
 const OVERLAP = 11;   // frames: a beat keeps showing this long after its end so the next one cross-fades in
                        // (render_guide.md "cinematic scene transitions": 10-12 frame spring slide/zoom/blur-dissolve)
 
@@ -153,12 +154,12 @@ export const Doc = () => {
     [beats]
   );
   const lastIdx = beats.length - 1;
-  // running index over auto-layout beats only -> consecutive auto beats always get different layouts
-  const autoIdx = React.useMemo(() => {
-    let n = 0; return beats.map((b) => {
-      const a = b.visual.type === 'auto' || b.visual.type === 'autolayout' || (scenesData.autolayout === true && AUTO_TYPES.has(b.visual.type) && !customScenes[b.visual.type]);
-      return a ? n++ : n;
-    });
+  // content-driven plan over auto-layout beats only (planLayouts: keyword/field analysis + seed, no adjacent repeats)
+  const autoPlan = React.useMemo(() => {
+    const idxs = []; beats.forEach((b, i) => { if (isAutoBeat(b)) idxs.push(i); });
+    const names = planLayouts(idxs.map((i) => ({...beats[i].visual, takeaway: beats[i].visual.takeaway || scenesData.takeaway})), JOB_SEED);
+    const m = {}; idxs.forEach((i, k) => { m[i] = names[k]; });
+    return {m, lastAuto: idxs.length ? idxs[idxs.length - 1] : -1};
   }, [beats]);
   const f = useCurrentFrame();
   // render_guide.md "ambient light orbs on dark grid beats": active only while the current frame sits
@@ -171,10 +172,9 @@ export const Doc = () => {
         const isLast = i === lastIdx;
         let Comp = FULL_REGISTRY[b.visual.type] || Title;
         let extra = {};
-        const isAuto = b.visual.type === 'auto' || b.visual.type === 'autolayout' || (scenesData.autolayout === true && AUTO_TYPES.has(b.visual.type) && !customScenes[b.visual.type]);
-        if (isAuto) {
+        if (isAutoBeat(b)) {
           Comp = AutoLayout;
-          extra = {layoutIndex: (autoIdx[i] + JOB_SEED) % 5, seed: JOB_SEED, isLast, takeaway: b.visual.takeaway || scenesData.takeaway};
+          extra = {layout: autoPlan.m[i], seed: JOB_SEED, isLast: i === autoPlan.lastAuto && isLast, takeaway: b.visual.takeaway || scenesData.takeaway};
         }
         const seqDur = b.dur + (isLast ? 0 : OVERLAP);
         return (
