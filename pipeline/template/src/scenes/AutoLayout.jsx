@@ -1,5 +1,5 @@
 import React from 'react';
-import {AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, Easing} from 'remotion';
+import {AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, Easing, spring} from 'remotion';
 import {F} from '../theme.js';
 
 // ---------------------------------------------------------------------------------------------
@@ -24,8 +24,8 @@ const useBox = () => {
 };
 // staggered entry 0..1 (with exit fade over the last 10 frames), clean settle, no snaps
 const useIn = (frames, delay = 0, len = 20) => {
-  const f = useCurrentFrame();
-  const t = interpolate(f, [delay, delay + len], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: EASE});
+  const f = useCurrentFrame(); const {fps} = useVideoConfig();
+  const t = Math.min(1, Math.max(0, spring({frame: f - delay, fps, config: {damping: 22, stiffness: 110, mass: 0.9}})));
   const out = frames ? interpolate(f, [frames - 10, frames], [1, 0.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1;
   return {t, o: Math.min(1, t * 1.25) * Math.max(out, 0.0) || 0, f};
 };
@@ -33,6 +33,16 @@ const Rise = ({children, frames, delay = 0, dy = 34, dx = 0, style}) => {
   const {t, o} = useIn(frames, delay);
   return <div style={{opacity: o, transform: `translate(${(1 - t) * dx}px, ${(1 - t) * dy}px)`, ...style}}>{children}</div>;
 };
+
+// small inline icon set, picked from the label's keywords (so each topic gets matching icons automatically)
+const ICONS = {
+  bolt: 'M13 2L4 14h6l-1 8 9-12h-6l1-8z', check: 'M5 13l4 4L19 7', mail: 'M3 6h18v12H3zM3 7l9 6 9-6', doc: 'M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7',
+  gear: 'M12 8a4 4 0 100 8 4 4 0 000-8zM12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2', chart: 'M4 20V10M10 20V4M16 20v-8M22 20H2',
+  link: 'M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1', spark: 'M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z',
+};
+const KEYS = [[/mail|email|inbox|send/i, 'mail'], [/doc|sheet|file|note|report|pdf/i, 'doc'], [/data|metric|chart|track|analy|report|stat/i, 'chart'], [/trigger|webhook|api|connect|link|integrat/i, 'link'], [/automat|workflow|setup|config|build|run|node/i, 'gear'], [/verif|check|test|gate|approve|done|result/i, 'check'], [/fast|speed|save|time|instant|boost/i, 'bolt']];
+const iconFor = (label, i = 0) => { for (const [re, k] of KEYS) if (re.test(label || '')) return k; return ['spark', 'bolt', 'gear', 'chart'][i % 4]; };
+const Icon = ({k, size = 30, color = P.bg}) => (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{flex: '0 0 auto'}}><path d={ICONS[k] || ICONS.spark} /></svg>);
 
 // ---- field helpers (render real scenes.json data; derive from narration when fields are absent) ----
 const asText = (x) => (typeof x === 'string' ? x : x ? x.text || x.label || x.title || x.name || '' : '');
@@ -51,8 +61,21 @@ const metrics = (v) => (Array.isArray(v.metrics) ? v.metrics : []).slice(0, 3).m
 // font size that fits: longer text -> smaller, clamped, so nothing clips
 const fit = (text, base, min, perChar = 0.9) => Math.max(min, Math.min(base, base - Math.max(0, String(text).length - 18) * perChar));
 
+const Waves = ({box}) => {
+  const f = useCurrentFrame(); const {width: W, height: H} = box;
+  const wave = (amp, len, speed, phase, y0) => { let d = `M0 ${H}`; for (let x = 0; x <= W; x += 40) d += ` L${x} ${(y0 + Math.sin((x / len) + f * speed + phase) * amp).toFixed(1)}`; return d + ` L${W} ${H} Z`; };
+  return (
+    <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0}}>
+      <path d={wave(34, 260, 0.035, 0, H * 0.84)} fill="rgba(56,189,248,.07)" />
+      <path d={wave(26, 340, -0.028, 2, H * 0.89)} fill="rgba(245,158,11,.06)" />
+      <path d={wave(20, 200, 0.045, 4, H * 0.94)} fill="rgba(56,189,248,.08)" />
+      <circle cx={W * (0.82 + 0.03 * Math.sin(f * 0.02))} cy={H * 0.18} r={Math.min(W, H) * 0.28} fill="rgba(56,189,248,.05)" />
+    </svg>
+  );
+};
 const Shell = ({children, v, box}) => (
   <AbsoluteFill style={{background: `radial-gradient(ellipse 80% 70% at 18% 12%, ${P.bg2} 0%, ${P.bg} 70%)`, overflow: 'hidden', fontFamily: F.sans}}>
+    <Waves box={box} />
     <AbsoluteFill style={{backgroundImage: `linear-gradient(${P.line} 1px, transparent 1px), linear-gradient(90deg, ${P.line} 1px, transparent 1px)`, backgroundSize: '72px 72px', opacity: 0.35}} />
     <div style={{position: 'absolute', left: box.m, top: box.top, width: box.w, height: box.h, overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>{children}</div>
   </AbsoluteFill>
@@ -63,7 +86,9 @@ const Kick = ({v, frames}) => (kicker(v) ? <Rise frames={frames} dy={14} style={
 const Split = ({v, frames, box}) => {
   const list = pickList(v, 4); const title = headline(v); const n = Math.max(list.length, 2);
   const col = {display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 0, maxWidth: '100%'};
-  const nodes = (list.length ? list : [{label: 'Idea'}, {label: 'Result'}]).slice(0, 4);
+  const wf = Array.isArray(v.workflow) ? v.workflow.map((x) => ({label: clip(asText(x), 40), sub: ''})) : null;
+  const nodes = (wf && wf.length ? wf : list.length ? list : [{label: 'Idea'}, {label: 'Result'}]).slice(0, 4);
+  const gate = v.gate === false ? '' : clip(typeof v.gate === 'string' ? v.gate : v.verified ? 'Gate Verified' : '', 24);
   return (
     <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: box.narrow ? 48 : 72, alignItems: box.narrow ? 'stretch' : 'center', height: '100%'}}>
       <div style={{...col, flex: box.narrow ? '0 0 auto' : '1 1 52%'}}>
@@ -77,8 +102,9 @@ const Split = ({v, frames, box}) => {
           <React.Fragment key={i}>
             <Rise frames={frames} delay={10 + i * 7} dx={box.narrow ? 0 : 40} dy={box.narrow ? 24 : 0}
               style={{display: 'flex', alignItems: 'center', gap: 20, background: P.card, border: `2px solid ${i === nodes.length - 1 ? P.gold : P.cyan}`, borderRadius: 22, padding: '20px 26px', boxSizing: 'border-box'}}>
-              <div style={{flex: '0 0 auto', width: 52, height: 52, borderRadius: 14, background: i === nodes.length - 1 ? P.gold : P.cyan, color: P.bg, fontWeight: 900, fontSize: 28, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>{i + 1}</div>
-              <div style={{minWidth: 0, color: P.text, fontWeight: 700, fontSize: box.narrow ? 34 : 30, lineHeight: 1.2}}>{it.label}</div>
+              <div style={{flex: '0 0 auto', width: 56, height: 56, borderRadius: 16, background: i === nodes.length - 1 ? P.gold : P.cyan, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon k={iconFor(it.label, i)} /></div>
+              <div style={{minWidth: 0, flex: '1 1 auto', color: P.text, fontWeight: 700, fontSize: box.narrow ? 34 : 30, lineHeight: 1.2}}>{it.label}</div>
+              {gate && i === nodes.length - 1 ? <div style={{flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(245,158,11,.14)', border: `2px solid ${P.gold}`, color: P.gold, borderRadius: 999, padding: '8px 16px', fontWeight: 800, fontSize: 22}}><Icon k="check" size={22} color={P.gold} />{gate}</div> : null}
             </Rise>
             {i < nodes.length - 1 ? <Rise frames={frames} delay={14 + i * 7} dy={0} style={{alignSelf: 'center', width: 4, height: box.narrow ? 22 : 18, background: `linear-gradient(${P.cyan}, ${P.gold})`}} /> : null}
           </React.Fragment>
@@ -103,7 +129,7 @@ const Steps = ({v, frames, box}) => {
         {list.map((it, i) => (
           <Rise key={i} frames={frames} delay={10 + i * 8} dy={44}
             style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', background: P.card, borderRadius: 26, padding: '26px 28px', border: `2px solid ${i === active ? P.gold : P.line}`, boxShadow: i === active ? '0 0 0 4px rgba(245,158,11,.12)' : 'none'}}>
-            <div style={{color: i === active ? P.gold : P.cyan, fontWeight: 900, fontSize: box.narrow ? 54 : 48, lineHeight: 1}}>{String(i + 1).padStart(2, '0')}</div>
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}><div style={{color: i === active ? P.gold : P.cyan, fontWeight: 900, fontSize: box.narrow ? 54 : 48, lineHeight: 1}}>{String(i + 1).padStart(2, '0')}</div><Icon k={iconFor(it.label, i)} size={40} color={i === active ? P.gold : P.cyan} /></div>
             <div style={{marginTop: 14, color: P.text, fontWeight: 800, lineHeight: 1.2, fontSize: box.narrow ? 38 : 30}}>{it.label}</div>
             {it.sub ? <div style={{marginTop: 10, color: P.sub, fontSize: box.narrow ? 28 : 22, lineHeight: 1.3}}>{it.sub}</div> : null}
           </Rise>
@@ -121,6 +147,8 @@ const Compare = ({v, frames, box}) => {
   const bl = lines(before, list.slice(0, Math.ceil(list.length / 2)).map((x) => x.label));
   const al = lines(after, list.slice(Math.ceil(list.length / 2)).map((x) => x.label));
   const title = headline(v);
+  const m0 = v.metric || v.efficiency || v.time_saved || (Array.isArray(v.metrics) && v.metrics[0]) || null;
+  const mt = m0 ? (typeof m0 === 'object' ? {value: String(m0.value != null ? m0.value : m0.v || ''), label: clip(m0.label || m0.l || 'faster', 40)} : {value: String(m0), label: 'saved'}) : null;
   const Side = ({label, items, color, delay, dx}) => (
     <Rise frames={frames} delay={delay} dx={dx} dy={0} style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', background: P.card, border: `2px solid ${color}`, borderRadius: 28, padding: '28px 32px'}}>
       <div style={{color, fontWeight: 900, letterSpacing: '0.16em', textTransform: 'uppercase', fontSize: 26}}>{clip(asText(label) || '', 24)}</div>
@@ -136,6 +164,7 @@ const Compare = ({v, frames, box}) => {
         <Side label={before.label || 'Before'} items={bl} color="#F87171" delay={10} dx={-50} />
         <Side label={after.label || 'After'} items={al} color={P.gold} delay={18} dx={50} />
       </div>
+      {mt ? <Rise frames={frames} delay={28} style={{alignSelf: 'flex-start', display: 'flex', alignItems: 'center', gap: 16, background: 'rgba(245,158,11,.12)', border: `2px solid ${P.gold}`, borderRadius: 18, padding: '14px 26px'}}><Icon k="bolt" size={34} color={P.gold} /><span style={{color: P.gold, fontWeight: 900, fontSize: box.narrow ? 46 : 40}}>{mt.value}</span><span style={{color: P.text, fontSize: box.narrow ? 30 : 26, fontWeight: 600}}>{mt.label}</span></Rise> : null}
     </div>
   );
 };
@@ -174,6 +203,7 @@ const Outro = ({v, frames, box, seed = 0}) => {
   const list = pickList(v, 3); const cta = clip(v.cta || v.sub || 'Subscribe to AI Graphic TV', 60);
   const variant = (seed + takeaway.length) % 3;
   const size = box.narrow ? fit(takeaway, 92, 54, 0.8) : fit(takeaway, 80, 46, 0.7);
+  const Handle = ({delay}) => <Rise frames={frames} delay={delay} style={{marginTop: 22, color: P.cyan, fontWeight: 800, fontSize: box.narrow ? 34 : 28, letterSpacing: '0.04em'}}>@AIGraphicTV</Rise>;
   const Cta = ({delay}) => <Rise frames={frames} delay={delay} style={{alignSelf: 'flex-start', marginTop: 34, background: P.gold, color: P.bg, fontWeight: 900, fontSize: box.narrow ? 38 : 32, padding: '16px 36px', borderRadius: 16, maxWidth: '100%', boxSizing: 'border-box'}}>{cta}</Rise>;
   if (variant === 0) {          // recap checklist
     return (
@@ -183,7 +213,7 @@ const Outro = ({v, frames, box, seed = 0}) => {
         <div style={{marginTop: 28, display: 'flex', flexDirection: 'column', gap: 14}}>
           {list.map((it, i) => <Rise key={i} frames={frames} delay={12 + i * 6} style={{display: 'flex', gap: 16, color: P.text, fontSize: box.narrow ? 36 : 30, fontWeight: 600}}><span style={{color: P.gold, fontWeight: 900}}>✓</span><span style={{minWidth: 0}}>{it.label}</span></Rise>)}
         </div>
-        <Cta delay={22} />
+        <Cta delay={22} /><Handle delay={28} />
       </div>
     );
   }
@@ -194,7 +224,7 @@ const Outro = ({v, frames, box, seed = 0}) => {
           <div style={{color: P.cyan, fontWeight: 800, letterSpacing: '0.2em', fontSize: 24, textTransform: 'uppercase'}}>The takeaway</div>
           <div style={{marginTop: 20, color: P.text, fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', fontSize: size}}>{takeaway}</div>
         </Rise>
-        <Cta delay={16} />
+        <Cta delay={16} /><Handle delay={22} />
       </div>
     );
   }
@@ -203,7 +233,7 @@ const Outro = ({v, frames, box, seed = 0}) => {
       <Rise frames={frames} delay={2} style={{color: P.gold, fontWeight: 900, letterSpacing: '0.2em', fontSize: 26, textTransform: 'uppercase'}}>Your next step</Rise>
       <Rise frames={frames} delay={7} style={{marginTop: 18, color: P.text, fontWeight: 900, lineHeight: 1.08, letterSpacing: '-0.02em', fontSize: size}}>{takeaway}</Rise>
       <Rise frames={frames} delay={14} style={{marginTop: 26, width: 160, height: 6, borderRadius: 3, background: P.cyan}} />
-      <Cta delay={20} />
+      <Cta delay={20} /><Handle delay={26} />
     </div>
   );
 };
