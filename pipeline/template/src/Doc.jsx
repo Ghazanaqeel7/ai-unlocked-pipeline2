@@ -78,18 +78,18 @@ const OVERLAP = 11;   // frames: a beat keeps showing this long after its end so
 // which reflects the whole composition, not the current Sequence). Cinematic transition: entrance is a
 // combined spring slide (from below) + scale-down-into-place + a short blur-dissolve (blur clears as
 // opacity rises), exit is the mirror (slides up slightly, re-blurs) so cuts never feel hard.
-const Fade = ({children, first, last, dur}) => {
+const Fade = ({children, first, last, dur, noIn, noOut, flat}) => {
   const f = useCurrentFrame();
-  const a = first ? 1 : interpolate(f, [0, OVERLAP], [0, 1], {extrapolateRight: 'clamp'});
-  const b = last ? 1 : interpolate(f, [dur - OVERLAP, dur], [1, 0], {extrapolateLeft: 'clamp'});
-  const entranceY = first ? 0 : (1 - a) * 26;
-  const exitY = last ? 0 : (1 - b) * -18;
-  const entrance = first ? 1 : 1 + 0.08 * (1 - a);
-  const blurIn = first ? 0 : (1 - a) * 8;
-  const blurOut = last ? 0 : (1 - b) * 6;
+  const a = (first || noIn) ? 1 : interpolate(f, [0, OVERLAP], [0, 1], {extrapolateRight: 'clamp'});
+  const b = (last || noOut) ? 1 : interpolate(f, [dur - OVERLAP, dur], [1, 0], {extrapolateLeft: 'clamp'});
+  const entranceY = (first || noIn) ? 0 : (1 - a) * 26;
+  const exitY = (last || noOut) ? 0 : (1 - b) * -18;
+  const entrance = (first || noIn) ? 1 : 1 + 0.08 * (1 - a);
+  const blurIn = (first || noIn) ? 0 : (1 - a) * 8;
+  const blurOut = (last || noOut) ? 0 : (1 - b) * 6;
   // render_guide.md pacing rule: a subtle continuous zoom across the WHOLE beat (not just the entrance)
   // so nothing ever sits fully static for its 2-4s on screen.
-  const zoom = interpolate(f, [0, Math.max(1, dur)], [1.0, 1.04], {extrapolateRight: 'clamp'});
+  const zoom = flat ? 1 : interpolate(f, [0, Math.max(1, dur)], [1.0, 1.04], {extrapolateRight: 'clamp'});
   const s = entrance * zoom;
   return (
     <AbsoluteFill style={{
@@ -174,12 +174,12 @@ export const Doc = () => {
         let extra = {};
         if (isAutoBeat(b)) {
           Comp = AutoLayout;
-          extra = {layout: autoPlan.m[i], seed: JOB_SEED, isLast: i === autoPlan.lastAuto && isLast, takeaway: b.visual.takeaway || scenesData.takeaway};
+          extra = {layout: autoPlan.m[i], seed: JOB_SEED, t0: b.from, isLast: i === autoPlan.lastAuto && isLast, takeaway: b.visual.takeaway || scenesData.takeaway};
         }
         const seqDur = b.dur + (isLast ? 0 : OVERLAP);
         return (
           <Sequence key={b.key} from={b.from} durationInFrames={seqDur}>
-            <Fade first={i === 0} last={isLast} dur={seqDur}><Comp {...b.visual} {...extra} frames={b.dur} /></Fade>
+            <Fade first={i === 0} last={isLast} dur={seqDur} flat={isAutoBeat(b)} noIn={isAutoBeat(b) && i > 0 && isAutoBeat(beats[i - 1])} noOut={isAutoBeat(b) && !isLast && isAutoBeat(beats[i + 1])}><Comp {...b.visual} {...extra} frames={b.dur} /></Fade>
             {i > 0 && <Sfx type="whoosh" at={0} volume={0.45} />}
           </Sequence>
         );

@@ -14,7 +14,9 @@ SECONDARY = {'title', 'chapter', 'photo', 'stat', 'chart', 'timeline', 'map', 'h
 # (theme-aware: 'theme' must be one of sand/studio/obsidian; see pipeline/template/src/theme.js
 # STUDIO_THEMES). Treated as SECONDARY for pacing/variety purposes, same as stat/chart/compare.
 STUDIO = {'tiltedagentstage', 'metricodometer', 'retentiongraph', 'perspectivewall', 'interactiveuicard', 'commenttriggeroutro'}
-SECONDARY = SECONDARY | STUDIO
+# AutoLayout (pipeline/template/src/scenes/AutoLayout.jsx): content-driven layout planner; every prop optional.
+AUTO = {'auto', 'autolayout'}
+SECONDARY = SECONDARY | STUDIO | AUTO
 TYPES = PRIMARY | SECONDARY
 
 # Required-prop schema enforcement (safeguard #1, confirmed by the user): a lightweight/free LLM

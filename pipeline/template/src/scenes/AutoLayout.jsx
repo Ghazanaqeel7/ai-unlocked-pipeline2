@@ -25,9 +25,9 @@ const useBox = () => {
 // staggered entry 0..1 (with exit fade over the last 10 frames), clean settle, no snaps
 const useIn = (frames, delay = 0, len = 20) => {
   const f = useCurrentFrame(); const {fps} = useVideoConfig();
-  const t = Math.min(1, Math.max(0, spring({frame: f - delay, fps, config: {damping: 22, stiffness: 110, mass: 0.9}})));
-  const out = frames ? interpolate(f, [frames - 10, frames], [1, 0.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1;
-  return {t, o: Math.min(1, t * 1.25) * Math.max(out, 0.0) || 0, f};
+  const t = Math.min(1, Math.max(0, spring({frame: f - delay, fps, config: {damping: 24, stiffness: 190, mass: 0.8}})));
+  const out = frames ? interpolate(f, [frames - 6, frames], [1, 0.0], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'}) : 1;
+  return {t, o: Math.min(1, t * 1.7) * Math.max(out, 0.0) || 0, f};
 };
 const Rise = ({children, frames, delay = 0, dy = 34, dx = 0, style}) => {
   const {t, o} = useIn(frames, delay);
@@ -58,13 +58,26 @@ const pickList = (v, max = 4) => {
 const headline = (v) => clip(v.title || v.headline || v.text || sentences(v.narration)[0] || '', 80);
 const kicker = (v) => clip(v.kicker || v.label || '', 40);
 const metrics = (v) => arr(v.metrics).filter((m) => m && typeof m === 'object' && (m.value != null || m.v != null)).slice(0, 3).map((m) => ({value: clip(String(m.value != null ? m.value : m.v), 12), label: clip(m.label || m.l || '', 28)}));
+const NUMW = {two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10};
+const NOUNS = 'tools?|steps?|ways?|tips?|points?|apps?|mistakes?|reasons?|hacks?|things?|ideas?|rules?|habits?|tricks?|stages?|workflows?|templates?|prompts?|secrets?|lessons?|features?|strategies|methods?|examples?|questions?|platforms?|agents?';
+const COUNT_RE = new RegExp('\\b(\\d{1,2}|' + Object.keys(NUMW).join('|') + ')(\\s+(?:[a-z-]+\\s+){0,2}?)(' + NOUNS + ')\\b', 'i');
+// keep on-screen count claims ("5 tools") equal to the cards actually shown
+const fixCount = (title, n) => {
+  if (!title || !Number.isFinite(n) || n < 2 || n > 10) return title;
+  return String(title).replace(COUNT_RE, (m, num, mid, noun) => {
+    const digit = /^\d/.test(num); const cur = digit ? Number(num) : NUMW[num.toLowerCase()];
+    if (cur === n) return m;
+    let w = String(n); if (!digit) { w = Object.keys(NUMW).find((k) => NUMW[k] === n) || w; if (num[0] === num[0].toUpperCase()) w = w[0].toUpperCase() + w.slice(1); }
+    return w + mid + noun;
+  });
+};
 const firstNumber = (t) => { const m = String(t || '').match(/[$€£]?\d[\d,.]*\s?(?:%|x|k|m|hrs?|hours|min|days|×)?/i); return m ? m[0].trim() : ''; };
 
 // font size that fits: longer text -> smaller, clamped, so nothing clips
 const fit = (text, base, min, perChar = 0.9) => Math.max(min, Math.min(base, base - Math.max(0, String(text).length - 18) * perChar));
 
-const Waves = ({box}) => {
-  const f = useCurrentFrame(); const {width: W, height: H} = box;
+const Waves = ({box, t0 = 0}) => {
+  const f = useCurrentFrame() + t0; const {width: W, height: H} = box;
   const wave = (amp, len, speed, phase, y0) => { let d = `M0 ${H}`; for (let x = 0; x <= W; x += 40) d += ` L${x} ${(y0 + Math.sin((x / len) + f * speed + phase) * amp).toFixed(1)}`; return d + ` L${W} ${H} Z`; };
   return (
     <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0}}>
@@ -79,7 +92,7 @@ const Waves = ({box}) => {
 };
 const Shell = ({children, v, box}) => (
   <AbsoluteFill style={{background: `radial-gradient(ellipse 80% 70% at 18% 12%, ${P.bg2} 0%, ${P.bg} 70%)`, overflow: 'hidden', fontFamily: F.sans}}>
-    <Waves box={box} />
+    <Waves box={box} t0={Number.isFinite(v.t0) ? v.t0 : 0} />
     <AbsoluteFill style={{backgroundImage: `linear-gradient(${P.line} 1px, transparent 1px), linear-gradient(90deg, ${P.line} 1px, transparent 1px)`, backgroundSize: '72px 72px', opacity: 0.35}} />
     <div style={{position: 'absolute', left: box.m, top: box.top, width: box.w, height: box.h, overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>{children}</div>
   </AbsoluteFill>
@@ -88,10 +101,11 @@ const Kick = ({v, frames}) => (kicker(v) ? <Rise frames={frames} dy={14} style={
 
 // 1) Split Editorial + Visual Diagram -----------------------------------------------------------
 const Split = ({v, frames, box}) => {
-  const list = pickList(v, 4); const title = headline(v); const n = Math.max(list.length, 2);
+  const list = pickList(v, 5); const n = Math.max(list.length, 2);
   const col = {display: 'flex', flexDirection: 'column', justifyContent: 'center', minWidth: 0, maxWidth: '100%'};
   const wf = Array.isArray(v.workflow) ? v.workflow.filter(Boolean).map((x) => ({label: clip(asText(x), 40), sub: ''})) : null;
-  const nodes = (wf && wf.length ? wf : list.length ? list : [{label: 'Idea'}, {label: 'Result'}]).slice(0, 4);
+  const nodes = (wf && wf.length ? wf : list.length ? list : [{label: 'Idea'}, {label: 'Result'}]).slice(0, 5);
+  const title = fixCount(headline(v), nodes.length);
   const gate = v.gate === false ? '' : clip(typeof v.gate === 'string' ? v.gate : v.verified ? 'Gate Verified' : '', 24);
   return (
     <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: box.narrow ? 48 : 72, alignItems: box.narrow ? 'stretch' : 'center', height: '100%'}}>
@@ -104,7 +118,7 @@ const Split = ({v, frames, box}) => {
       <div style={{...col, flex: '1 1 48%', gap: 0}}>
         {nodes.map((it, i) => (
           <React.Fragment key={i}>
-            <Rise frames={frames} delay={10 + i * 7} dx={box.narrow ? 0 : 40} dy={box.narrow ? 24 : 0}
+            <Rise frames={frames} delay={6 + i * 5} dx={box.narrow ? 0 : 40} dy={box.narrow ? 24 : 0}
               style={{display: 'flex', alignItems: 'center', gap: 20, background: P.card, border: `2px solid ${i === nodes.length - 1 ? P.gold : P.cyan}`, borderRadius: 22, padding: '20px 26px', boxSizing: 'border-box'}}>
               <div style={{flex: '0 0 auto', width: 56, height: 56, borderRadius: 16, background: i === nodes.length - 1 ? P.gold : P.cyan, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon k={iconFor(it.label, i)} /></div>
               <div style={{minWidth: 0, flex: '1 1 auto', color: P.text, fontWeight: 700, fontSize: box.narrow ? 34 : 30, lineHeight: 1.2}}>{it.label}</div>
@@ -120,7 +134,7 @@ const Split = ({v, frames, box}) => {
 
 // 2) Step / Process Cards -----------------------------------------------------------------------
 const Steps = ({v, frames, box}) => {
-  const list = pickList(v, 4); const title = headline(v);
+  const list = pickList(v, 5); const title = fixCount(headline(v), list.length);
   const {f} = useIn(frames);
   const active = Math.min(list.length - 1, Math.floor((f / Math.max(1, frames)) * list.length));
   return (
@@ -131,11 +145,11 @@ const Steps = ({v, frames, box}) => {
       </div>
       <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: 22, alignItems: 'stretch'}}>
         {list.map((it, i) => (
-          <Rise key={i} frames={frames} delay={10 + i * 8} dy={44}
+          <Rise key={i} frames={frames} delay={6 + i * 5} dy={44}
             style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', background: P.card, borderRadius: 26, padding: '26px 28px', border: `2px solid ${i === active ? P.gold : P.line}`, boxShadow: i === active ? '0 0 0 4px rgba(245,158,11,.12)' : 'none'}}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}><div style={{color: i === active ? P.gold : P.cyan, fontWeight: 900, fontSize: box.narrow ? 54 : 48, lineHeight: 1}}>{String(i + 1).padStart(2, '0')}</div><Icon k={iconFor(it.label, i)} size={40} color={i === active ? P.gold : P.cyan} /></div>
-            <div style={{marginTop: 14, color: P.text, fontWeight: 800, lineHeight: 1.2, fontSize: box.narrow ? 38 : 30}}>{it.label}</div>
-            {it.sub ? <div style={{marginTop: 10, color: P.sub, fontSize: box.narrow ? 28 : 22, lineHeight: 1.3}}>{it.sub}</div> : null}
+            <div style={{marginTop: 14, color: P.text, fontWeight: 800, lineHeight: 1.2, fontSize: box.narrow ? (list.length > 3 ? 32 : 38) : (list.length > 4 ? 25 : 30)}}>{it.label}</div>
+            {it.sub && !(box.narrow && list.length > 3) && !(!box.narrow && list.length > 4) ? <div style={{marginTop: 10, color: P.sub, fontSize: box.narrow ? 28 : 22, lineHeight: 1.3}}>{it.sub}</div> : null}
           </Rise>
         ))}
       </div>
@@ -285,13 +299,13 @@ const Quote = ({v, frames, box}) => {
 
 // 8) Visual Card Grid ---------------------------------------------------------------------------
 const Grid = ({v, frames, box}) => {
-  const list = pickList(v, 4); const title = headline(v);
+  const list = pickList(v, 6); const title = fixCount(headline(v), list.length);
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: 30, height: '100%', justifyContent: 'center'}}>
       <div><Kick v={v} frames={frames} /><Rise frames={frames} delay={3} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 70, 46) : fit(title, 62, 40)}}>{title}</Rise></div>
       <div style={{display: 'grid', gridTemplateColumns: box.narrow ? '1fr' : '1fr 1fr', gap: 20}}>
         {list.map((it, i) => (
-          <Rise key={i} frames={frames} delay={10 + i * 7} dy={36} style={{display: 'flex', gap: 20, alignItems: 'center', minWidth: 0, boxSizing: 'border-box', background: P.card, border: `2px solid ${i % 3 === 2 ? P.gold : P.line}`, borderRadius: 24, padding: '22px 26px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.08)'}}>
+          <Rise key={i} frames={frames} delay={6 + i * 5} dy={36} style={{gridColumn: !box.narrow && list.length % 2 === 1 && i === list.length - 1 ? '1 / -1' : 'auto', display: 'flex', gap: 20, alignItems: 'center', minWidth: 0, boxSizing: 'border-box', background: P.card, border: `2px solid ${i % 3 === 2 ? P.gold : P.line}`, borderRadius: 24, padding: '22px 26px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.08)'}}>
             <div style={{flex: '0 0 auto', width: 64, height: 64, borderRadius: 18, background: i % 3 === 2 ? P.gold : P.cyan, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon k={iconFor(it.label, i)} size={34} /></div>
             <div style={{minWidth: 0}}><div style={{color: P.text, fontWeight: 800, fontSize: box.narrow ? 34 : 28, lineHeight: 1.2}}>{it.label}</div>{it.sub ? <div style={{color: P.sub, fontSize: box.narrow ? 26 : 21, marginTop: 6, lineHeight: 1.3}}>{it.sub}</div> : null}</div>
           </Rise>
