@@ -15,6 +15,8 @@ import {ListScene} from './scenes/ListScene.jsx';
 import {Quote} from './scenes/Quote.jsx';
 import {Illustration} from './scenes/Illustration.jsx';
 import {EndCard} from './scenes/EndCard.jsx';
+import {AutoLayout} from './scenes/AutoLayout.jsx';
+import {rnd} from './util.js';
 import {Grain, Sfx, AmbientOrbs} from './scenes/common.jsx';
 import {HookCard} from './scenes/ui/HookCard.jsx';
 import {ToolGrid} from './scenes/ui/ToolGrid.jsx';
@@ -47,6 +49,7 @@ import customScenes from './custom_scenes/index.js';
 export const REGISTRY = {
   title: Title, chapter: Chapter, endcard: EndCard, quote: Quote,
   hookcard: HookCard,
+  auto: AutoLayout, autolayout: AutoLayout,   // 5 rotating layouts, see scenes/AutoLayout.jsx
   // Studio Editorial primary components (docs/style_reference.md)
   tiltedagentstage: TiltedAgentStage, metricodometer: MetricOdometer, retentiongraph: RetentionGraph,
   perspectivewall: PerspectiveWall, interactiveuicard: InteractiveUiCard, commenttriggeroutro: CommentTriggerOutro,
@@ -60,6 +63,13 @@ export const REGISTRY = {
 // the shared REGISTRY above. customScenes defaults to {} for any job that hasn't written one; Doc.jsx
 // always imports this same file path so the import itself never fails even when a job has nothing here.
 const FULL_REGISTRY = {...REGISTRY, ...customScenes};
+// Job seed offset: scenes.json `seed` (number) wins, else derived deterministically from title + first scene id,
+// so different videos start on different layouts while one video always renders identically.
+const JOB_SEED = Number.isFinite(scenesData.seed) ? Math.abs(Math.floor(scenesData.seed)) : Math.floor(rnd(`${scenesData.title || ''}|${((scenesData.scenes || [])[0] || {}).id || ''}`) * 1000);
+// With `"autolayout": true` in scenes.json, plain generic types are rendered by AutoLayout (layout =
+// (autoIndex + JOB_SEED) % 5, adjacent beats never repeat). Studio primitives (hookcard, tiltedagentstage,
+// metricodometer, ...) and any custom scene are never touched.
+const AUTO_TYPES = new Set(['auto', 'autolayout', 'title', 'headline', 'list', 'quote', 'chapter', 'endcard', 'illustration', 'stat', 'compare', 'timeline']);
 const OVERLAP = 11;   // frames: a beat keeps showing this long after its end so the next one cross-fades in
                        // (render_guide.md "cinematic scene transitions": 10-12 frame spring slide/zoom/blur-dissolve)
 
@@ -115,7 +125,7 @@ export const buildBeats = () => {
     beats.forEach((b, bi) => {
       const a = Math.round(start + total * cuts[bi]);
       const z = bi + 1 < beats.length ? Math.round(start + total * cuts[bi + 1]) : end;
-      out.push({key: `${sc.id}-${bi}`, from: a, dur: Math.max(10, z - a), visual: {tone: sc.tone, ...b}, si, bi});
+      out.push({key: `${sc.id}-${bi}`, from: a, dur: Math.max(10, z - a), visual: {tone: sc.tone, narration: sc.text, ...b}, si, bi});
     });
   });
   return out;
@@ -143,6 +153,13 @@ export const Doc = () => {
     [beats]
   );
   const lastIdx = beats.length - 1;
+  // running index over auto-layout beats only -> consecutive auto beats always get different layouts
+  const autoIdx = React.useMemo(() => {
+    let n = 0; return beats.map((b) => {
+      const a = b.visual.type === 'auto' || b.visual.type === 'autolayout' || (scenesData.autolayout === true && AUTO_TYPES.has(b.visual.type) && !customScenes[b.visual.type]);
+      return a ? n++ : n;
+    });
+  }, [beats]);
   const f = useCurrentFrame();
   // render_guide.md "ambient light orbs on dark grid beats": active only while the current frame sits
   // inside a 'dark' polarity segment, so light/alabaster editorial beats stay clean.
@@ -151,12 +168,18 @@ export const Doc = () => {
     <AbsoluteFill style={{backgroundColor: '#000'}}>
       <AmbientOrbs active={currentPolarity !== 'light'} />
       {beats.map((b, i) => {
-        const Comp = FULL_REGISTRY[b.visual.type] || Title;
         const isLast = i === lastIdx;
+        let Comp = FULL_REGISTRY[b.visual.type] || Title;
+        let extra = {};
+        const isAuto = b.visual.type === 'auto' || b.visual.type === 'autolayout' || (scenesData.autolayout === true && AUTO_TYPES.has(b.visual.type) && !customScenes[b.visual.type]);
+        if (isAuto) {
+          Comp = AutoLayout;
+          extra = {layoutIndex: (autoIdx[i] + JOB_SEED) % 5, seed: JOB_SEED, isLast, takeaway: b.visual.takeaway || scenesData.takeaway};
+        }
         const seqDur = b.dur + (isLast ? 0 : OVERLAP);
         return (
           <Sequence key={b.key} from={b.from} durationInFrames={seqDur}>
-            <Fade first={i === 0} last={isLast} dur={seqDur}><Comp {...b.visual} frames={b.dur} /></Fade>
+            <Fade first={i === 0} last={isLast} dur={seqDur}><Comp {...b.visual} {...extra} frames={b.dur} /></Fade>
             {i > 0 && <Sfx type="whoosh" at={0} volume={0.45} />}
           </Sequence>
         );
