@@ -268,6 +268,13 @@
         >
           Packs &amp; DFY
         </button>
+        <button
+          type="button"
+          data-nav="prompt-engine"
+          class="nav-trigger nav-pill rounded-xl px-3.5 py-1.5 text-xs font-semibold tracking-wide transition"
+        >
+          Prompt Engine
+        </button>
       </nav>
 
       <!-- Social Links + Copy docs/index.html Drawer Button -->
@@ -334,6 +341,9 @@
       </button>
       <button type="button" data-nav="packs-dfy" class="nav-trigger nav-pill shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold">
         Packs &amp; DFY
+      </button>
+      <button type="button" data-nav="prompt-engine" class="nav-trigger nav-pill shrink-0 rounded-lg px-3 py-1.5 text-xs font-semibold">
+        Prompt Engine
       </button>
     </div>
   </header>
@@ -1129,62 +1139,115 @@
           Choose between the <span class="font-mono text-white">$9 n8n Starter Pack</span>, the <span class="font-mono text-amberGold-300">$27 Master Vault</span>, or the <span class="font-mono text-orbital-300">$399 Done-For-You Automation Build</span>.
         </p>
 
-        <div class="mt-7 grid gap-6 lg:grid-cols-3">
-          <article class="rounded-3xl border border-white/[0.12] bg-navy-900/90 p-6">
+        <!-- Asymmetric bento: Starter + DFY stacked left, Master Vault spans tall on the right -->
+        <div class="mt-7 grid gap-5 lg:grid-cols-5">
+          <article class="flex flex-col rounded-3xl border border-white/[0.12] bg-navy-900/90 p-6 lg:col-span-2">
             <span class="font-mono text-xs font-semibold tracking-[0.1em] text-orbital-300">TIER 01 · STARTER</span>
             <h2 class="font-display mt-2 text-xl font-bold text-white">n8n Starter Pack</h2>
             <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-white">$9</div>
-            <ul class="mt-4 space-y-2 text-sm text-silverMist-200">
-              <li>• 25 ready-to-import n8n workflow JSONs</li>
-              <li>• 15-page high-leverage prompt library</li>
-              <li>• Step-by-step quickstart setup guide</li>
-            </ul>
+            <p class="mt-2 text-xs text-silverMist-300">For solo builders who just need the raw workflows.</p>
             <a
               href="https://aigraphictv.gumroad.com/l/n8n-starter-pack"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-6 block rounded-xl border border-orbital-400/50 bg-navy-850 px-4 py-3 text-center text-sm font-bold text-orbital-300 hover:bg-orbital-400 hover:text-navy-950"
+              class="mt-5 block rounded-xl border border-orbital-400/50 bg-navy-850 px-4 py-3 text-center text-sm font-bold text-orbital-300 hover:bg-orbital-400 hover:text-navy-950"
             >
-              Buy n8n Starter Pack ($9) ↗
+              Buy Starter Pack ($9) ↗
             </a>
           </article>
 
-          <article class="rounded-3xl border-2 border-amberGold-400 bg-navy-850 p-6 shadow-amberGlow">
-            <span class="font-mono text-xs font-semibold tracking-[0.1em] text-amberGold-300">TIER 02 · MOST POPULAR</span>
+          <article class="relative flex flex-col overflow-hidden rounded-3xl border-2 border-amberGold-400 bg-navy-850 p-6 shadow-amberGlow lg:col-span-1 lg:row-span-2">
+            <span class="absolute -right-10 top-5 rotate-45 bg-amberGold-400 px-10 py-1 font-mono text-[10px] font-extrabold uppercase tracking-widest text-navy-950">
+              Most Popular
+            </span>
+            <span class="font-mono text-xs font-semibold tracking-[0.1em] text-amberGold-300">TIER 02</span>
             <h2 class="font-display mt-2 text-xl font-bold text-white">Master Vault</h2>
             <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-amberGold-300">$27</div>
-            <ul class="mt-4 space-y-2 text-sm text-silverMist-100">
-              <li>• Everything in the $9 n8n Starter Pack</li>
-              <li>• Full archive of episode PDF playbooks</li>
-              <li>• Claude &amp; Cursor coding rules + lifetime drops</li>
-            </ul>
+            <p class="mt-2 text-xs text-silverMist-100">Everything, plus the full Episode PDF Vault, prompt library and lifetime drops.</p>
+            <div class="mt-5 flex-1 space-y-2.5 border-t border-white/[0.1] pt-4 text-xs text-silverMist-100">
+              <p class="flex items-start gap-2"><span class="mt-0.5 font-mono text-amberGold-400">✓</span><span>Expanded n8n &amp; agent workflow library</span></p>
+              <p class="flex items-start gap-2"><span class="mt-0.5 font-mono text-amberGold-400">✓</span><span>Full Episode PDF Vault archive</span></p>
+              <p class="flex items-start gap-2"><span class="mt-0.5 font-mono text-amberGold-400">✓</span><span>Prompt library + Claude/Cursor rules</span></p>
+              <p class="flex items-start gap-2"><span class="mt-0.5 font-mono text-amberGold-400">✓</span><span>Architecture blueprints &amp; diagrams</span></p>
+              <p class="flex items-start gap-2"><span class="mt-0.5 font-mono text-amberGold-400">✓</span><span>Lifetime content drops</span></p>
+            </div>
             <a
               href="https://aigraphictv.gumroad.com/l/master-vault"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-6 block rounded-xl bg-amberGold-400 px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-amberGold-300"
+              class="mt-5 block rounded-xl bg-amberGold-400 px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-amberGold-300"
             >
               Get Master Vault ($27) ↗
             </a>
           </article>
 
-          <article class="rounded-3xl border border-white/[0.12] bg-navy-900/90 p-6">
+          <article class="flex flex-col rounded-3xl border border-white/[0.12] bg-navy-900/90 p-6 lg:col-span-2">
             <span class="font-mono text-xs font-semibold tracking-[0.1em] text-amberGold-400">TIER 03 · DONE-FOR-YOU</span>
             <h2 class="font-display mt-2 text-xl font-bold text-white">Done-For-You Automation</h2>
             <div class="font-display mt-3 text-4xl font-bold tabular-nums tracking-tight text-white">$399</div>
-            <ul class="mt-4 space-y-2 text-sm text-silverMist-200">
-              <li>• 30-min 1-on-1 kickoff &amp; architecture call</li>
-              <li>• Custom AI &amp; n8n workflows built in 5 days</li>
-              <li>• Walkthrough guide + 14-day support</li>
-            </ul>
+            <p class="mt-2 text-xs text-silverMist-300">We architect, build and hand off a custom automation for you.</p>
             <a
               href="https://aigraphictv.gumroad.com/l/dfy-automation"
               target="_blank"
               rel="noopener noreferrer"
-              class="mt-6 block rounded-xl bg-orbital-400 px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-orbital-300"
+              class="mt-5 block rounded-xl bg-orbital-400 px-4 py-3 text-center text-sm font-extrabold text-navy-950 hover:bg-orbital-300"
             >
               Book Custom Build ($399) ↗
             </a>
+          </article>
+
+          <article class="rounded-3xl border border-white/[0.08] bg-navy-900/60 p-5 lg:col-span-4">
+            <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-silverMist-300">Side-by-side breakdown</span>
+            <div class="mt-3 overflow-x-auto">
+              <table class="w-full min-w-[560px] border-separate border-spacing-y-1.5 text-left text-xs">
+                <thead>
+                  <tr class="text-silverMist-300">
+                    <th class="px-3 py-1.5 font-mono font-semibold">What's included</th>
+                    <th class="px-3 py-1.5 text-center font-mono font-semibold text-orbital-300">Starter · $9</th>
+                    <th class="px-3 py-1.5 text-center font-mono font-semibold text-amberGold-300">Vault · $27</th>
+                    <th class="px-3 py-1.5 text-center font-mono font-semibold text-orbital-300">DFY · $399</th>
+                  </tr>
+                </thead>
+                <tbody class="text-silverMist-100">
+                  <tr class="bg-navy-900/70">
+                    <td class="rounded-l-lg px-3 py-2">n8n workflow JSONs</td>
+                    <td class="px-3 py-2 text-center">25</td>
+                    <td class="px-3 py-2 text-center font-bold text-amberGold-300">Expanded</td>
+                    <td class="rounded-r-lg px-3 py-2 text-center">Custom-built</td>
+                  </tr>
+                  <tr class="bg-navy-900/70">
+                    <td class="rounded-l-lg px-3 py-2">Prompt library &amp; Prompt Engine presets</td>
+                    <td class="px-3 py-2 text-center">15-page PDF</td>
+                    <td class="px-3 py-2 text-center font-bold text-amberGold-300">Full library</td>
+                    <td class="rounded-r-lg px-3 py-2 text-center">Tailored prompts</td>
+                  </tr>
+                  <tr class="bg-navy-900/70">
+                    <td class="rounded-l-lg px-3 py-2">Episode PDF Vault access</td>
+                    <td class="px-3 py-2 text-center text-slate-500">—</td>
+                    <td class="px-3 py-2 text-center font-bold text-amberGold-300">Full archive</td>
+                    <td class="rounded-r-lg px-3 py-2 text-center">Full archive</td>
+                  </tr>
+                  <tr class="bg-navy-900/70">
+                    <td class="rounded-l-lg px-3 py-2">1-on-1 architecture call</td>
+                    <td class="px-3 py-2 text-center text-slate-500">—</td>
+                    <td class="px-3 py-2 text-center text-slate-500">—</td>
+                    <td class="rounded-r-lg px-3 py-2 text-center font-bold text-orbital-300">30 min</td>
+                  </tr>
+                  <tr class="bg-navy-900/70">
+                    <td class="rounded-l-lg px-3 py-2">Support window</td>
+                    <td class="px-3 py-2 text-center">Community</td>
+                    <td class="px-3 py-2 text-center font-bold text-amberGold-300">Lifetime drops</td>
+                    <td class="rounded-r-lg px-3 py-2 text-center font-bold text-orbital-300">14 days 1:1</td>
+                  </tr>
+                  <tr class="bg-navy-900/70">
+                    <td class="rounded-l-lg px-3 py-2">Best for</td>
+                    <td class="px-3 py-2 text-center">Trying n8n</td>
+                    <td class="px-3 py-2 text-center font-bold text-amberGold-300">Serious builders</td>
+                    <td class="rounded-r-lg px-3 py-2 text-center font-bold text-orbital-300">Zero setup time</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </article>
         </div>
       </div>
@@ -1323,6 +1386,89 @@
             </p>
           </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- VIEW 5: AI PROMPT ENGINE (#prompt-engine)                           -->
+    <!-- =================================================================== -->
+    <section id="view-prompt-engine" class="view-section hidden space-y-6">
+      <div class="orbital-panel rounded-3xl p-6 sm:p-8">
+        <span class="font-mono text-xs font-bold uppercase tracking-widest text-orbital-300">Production-Grade Prompting</span>
+        <h1 class="mt-1 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">AI Prompt Engine</h1>
+        <p class="mt-2 max-w-2xl text-sm text-silverMist-300">
+          Turn a rough idea into a structured, role-defined, constraint-backed prompt — Role, Context, Task,
+          Constraints and Output Format — for any use case. Runs entirely in your browser; no account needed.
+        </p>
+      </div>
+
+      <div class="grid gap-6 lg:grid-cols-5">
+        <!-- Input column -->
+        <div class="orbital-panel space-y-5 rounded-3xl p-6 sm:p-7 lg:col-span-2">
+          <div>
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-amberGold-400">1 · Category</span>
+            <div id="peCategoryChips" class="mt-2.5 grid grid-cols-2 gap-2"></div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label for="peTone" class="block font-mono text-xs font-semibold text-silverMist-200">2 · Tone</label>
+              <select id="peTone" class="mt-1.5 w-full rounded-xl border border-white/[0.14] bg-navy-950 px-3 py-2.5 text-sm text-white focus:border-orbital-400 focus:outline-none">
+                <option value="professional">Professional</option>
+                <option value="technical">Technical / Precise</option>
+                <option value="persuasive">Persuasive</option>
+                <option value="casual">Casual / Friendly</option>
+              </select>
+            </div>
+            <div>
+              <label for="peComplexity" class="block font-mono text-xs font-semibold text-silverMist-200">3 · Complexity</label>
+              <select id="peComplexity" class="mt-1.5 w-full rounded-xl border border-white/[0.14] bg-navy-950 px-3 py-2.5 text-sm text-white focus:border-orbital-400 focus:outline-none">
+                <option value="simple">Simple</option>
+                <option value="standard" selected>Standard</option>
+                <option value="expert">Expert / Advanced</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="peIdea" class="block font-mono text-xs font-semibold text-silverMist-200">4 · Your rough idea</label>
+            <textarea
+              id="peIdea"
+              rows="5"
+              placeholder="e.g. an n8n workflow that watches a Gmail inbox, drafts a reply with Claude, and pings me on Slack for approval before sending"
+              class="mt-1.5 w-full rounded-xl border border-white/[0.14] bg-navy-950 px-3.5 py-2.5 text-sm text-white placeholder-slate-500 focus:border-orbital-400 focus:outline-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="button"
+            id="peGenerateBtn"
+            class="w-full rounded-xl bg-gradient-to-r from-amberGold-400 to-amberGold-500 px-5 py-3 text-sm font-extrabold text-navy-950 shadow-amberGlow transition hover:from-amberGold-300 hover:to-amberGold-400"
+          >
+            Generate Structured Prompt
+          </button>
+          <p class="font-mono text-[10px] text-silverMist-300" id="peEngineStatus">Offline engine ready — works with zero API key.</p>
+        </div>
+
+        <!-- Output column -->
+        <div class="orbital-panel space-y-4 rounded-3xl p-6 sm:p-7 lg:col-span-3">
+          <div class="flex items-center justify-between">
+            <span class="font-mono text-xs font-bold uppercase tracking-widest text-orbital-300">Generated Prompt</span>
+            <div class="flex gap-2">
+              <button type="button" id="peRefineBtn" class="rounded-lg border border-white/[0.14] bg-navy-900 px-3 py-1.5 font-mono text-[11px] font-semibold text-silverMist-200 hover:border-orbital-400 hover:text-orbital-300">Refine</button>
+              <button type="button" id="peExpandBtn" class="rounded-lg border border-white/[0.14] bg-navy-900 px-3 py-1.5 font-mono text-[11px] font-semibold text-silverMist-200 hover:border-orbital-400 hover:text-orbital-300">Expand</button>
+              <button type="button" id="peCopyBtn" class="rounded-lg bg-orbital-400 px-3 py-1.5 font-mono text-[11px] font-extrabold text-navy-950 hover:bg-orbital-300">Copy</button>
+            </div>
+          </div>
+
+          <div id="peOutput" class="space-y-3 font-mono text-xs leading-relaxed text-silverMist-100">
+            <div class="rounded-2xl border border-white/[0.1] bg-navy-950 p-5 text-silverMist-300">
+              Pick a category, describe your idea, and hit <strong class="text-white">Generate</strong> — your structured prompt will appear here.
+            </div>
+          </div>
+
+          <div id="peCta" class="hidden rounded-2xl border border-amberGold-400/40 bg-navy-850 p-4 text-xs text-silverMist-100"></div>
+        </div>
       </div>
     </section>
   </main>
@@ -1464,6 +1610,7 @@
             <li><button type="button" data-nav="diagrams" class="nav-trigger hover:text-white">Architecture Diagrams</button></li>
             <li><button type="button" data-nav="free-vault" class="nav-trigger hover:text-white">Free Vault</button></li>
             <li><button type="button" data-nav="packs-dfy" class="nav-trigger hover:text-white">Packs &amp; DFY</button></li>
+            <li><button type="button" data-nav="prompt-engine" class="nav-trigger hover:text-white">Prompt Engine</button></li>
           </ul>
         </div>
 
@@ -1483,6 +1630,52 @@
       </div>
     </div>
   </footer>
+
+  <!-- ===================================================================== -->
+  <!-- 24/7 AI CLIENT-CONVERSION CONCIERGE WIDGET                            -->
+  <!-- ===================================================================== -->
+  <button
+    type="button"
+    id="concierge-launcher"
+    aria-label="Open AI Concierge"
+    class="fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-2xl border border-orbital-400/50 bg-navy-900 text-orbital-300 shadow-cyanGlow transition hover:scale-105 hover:bg-navy-850 sm:bottom-6 sm:right-6"
+  >
+    <span class="absolute inline-flex h-3 w-3 animate-ping rounded-full bg-amberGold-400/70 -top-0.5 -right-0.5"></span>
+    <svg viewBox="0 0 24 24" class="h-6 w-6 fill-current" aria-hidden="true">
+      <path d="M12 2a9 9 0 0 0-9 9v3.382c0 .562.228 1.1.63 1.49l1.37 1.33V21l3.2-1.6A9 9 0 1 0 12 2zm-4 8.5a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3zm4 0a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z"/>
+    </svg>
+  </button>
+
+  <div
+    id="concierge-panel"
+    class="fixed bottom-5 right-5 z-40 hidden h-[32rem] max-h-[75vh] w-[22rem] max-w-[92vw] flex-col overflow-hidden rounded-3xl border border-orbital-400/25 bg-navy-900 shadow-orbitalGlass sm:bottom-24 sm:right-6"
+  >
+    <div class="flex items-center justify-between gap-2 border-b border-white/[0.08] bg-navy-950/80 px-4 py-3">
+      <div class="flex items-center gap-2">
+        <span class="h-2 w-2 rounded-full bg-amberGold-400 shadow-amberGlow"></span>
+        <div>
+          <p class="font-display text-sm font-bold text-white">AI Graphic TV Concierge</p>
+          <p id="concierge-status" class="font-mono text-[10px] text-silverMist-300">Offline-ready · always on</p>
+        </div>
+      </div>
+      <button type="button" id="concierge-close" aria-label="Close" class="rounded-lg px-2 py-1 font-mono text-xs text-silverMist-300 hover:text-white">✕</button>
+    </div>
+
+    <div id="concierge-thread" class="flex-1 space-y-3 overflow-y-auto px-4 py-4 text-sm"></div>
+
+    <div id="concierge-quick-replies" class="flex flex-wrap gap-1.5 border-t border-white/[0.06] px-4 py-2.5"></div>
+
+    <form id="concierge-form" class="flex items-center gap-2 border-t border-white/[0.08] px-3 py-3">
+      <input
+        id="concierge-input"
+        type="text"
+        autocomplete="off"
+        placeholder="Ask about pricing, ROI, timelines..."
+        class="min-w-0 flex-1 rounded-xl border border-white/[0.14] bg-navy-950 px-3 py-2.5 text-xs text-white placeholder-slate-500 focus:border-orbital-400 focus:outline-none"
+      />
+      <button type="submit" class="shrink-0 rounded-xl bg-orbital-400 px-3.5 py-2.5 font-mono text-xs font-extrabold text-navy-950 hover:bg-orbital-300">Send</button>
+    </form>
+  </div>
 
   <!-- ===================================================================== -->
   <!-- INTERACTIVE SCRIPT: LOGO FALLBACK, ROUTING, DIAGRAMS, FORM & COPY   -->
@@ -1732,7 +1925,7 @@
       }
 
       // View Navigation (#brand-hub, #diagrams, #free-vault, #packs-dfy)
-      const VIEWS = ['brand-hub', 'diagrams', 'free-vault', 'packs-dfy'];
+      const VIEWS = ['brand-hub', 'diagrams', 'free-vault', 'packs-dfy', 'prompt-engine'];
 
       function setView(viewName, syncHash = true) {
         const target = VIEWS.includes(viewName) ? viewName : 'brand-hub';
@@ -2141,6 +2334,539 @@
       });
 
       document.getElementById('vaultSearchBox')?.addEventListener('input', renderVaultItems);
+
+      // ===================================================================
+      // AI PROMPT ENGINE — category presets + offline structured-prompt
+      // generator with an optional real-LLM hook. Set window.AIGTV_PROMPT_API_URL
+      // to a JSON endpoint ({idea,category,tone,complexity} in -> {prompt} out)
+      // to use a live model; otherwise the built-in fallback engine runs fully
+      // offline so the page never breaks for visitors.
+      // ===================================================================
+      const PROMPT_CATEGORIES = [
+        {
+          id: 'agents',
+          badge: 'SYS',
+          label: 'AI Agents & System Prompts',
+          role: 'a senior AI systems architect who designs production-grade system prompts and autonomous agent instructions',
+          taskVerb: 'design a complete system prompt / agent instruction set for',
+          constraints: [
+            'Define the agent\'s scope and explicitly state what it must refuse or escalate',
+            'Specify tool-use rules: which tools it may call, in what order, and error-handling behavior',
+            'Include a short self-check the agent runs before responding',
+          ],
+          outputFormat: 'A single system prompt in Markdown with clear ## Role, ## Scope, ## Tools, ## Constraints and ## Response Style sections',
+          ctaTier: 'vault',
+        },
+        {
+          id: 'n8n',
+          badge: 'N8N',
+          label: 'n8n & Workflow Automation',
+          role: 'a workflow automation engineer who specializes in n8n, webhooks and API integrations',
+          taskVerb: 'plan and describe the n8n workflow (trigger → logic → action) for',
+          constraints: [
+            'List every node in order with its purpose (trigger, filter, AI step, integration, notification)',
+            'Call out required credentials/API keys without inventing values',
+            'Note one realistic failure mode and how the workflow should handle it',
+          ],
+          outputFormat: 'A numbered node-by-node workflow plan, followed by a short paragraph on what to test before going live',
+          ctaTier: 'vault',
+        },
+        {
+          id: 'image-video',
+          badge: 'IMG',
+          label: 'Image & Video Generation',
+          role: 'an art director who writes precise prompts for image and video generation models',
+          taskVerb: 'write a generation prompt for',
+          constraints: [
+            'Specify subject, composition, lighting, camera/lens feel, and style references',
+            'State the aspect ratio and any elements to explicitly exclude',
+            'Avoid naming real living people, copyrighted characters, or brand logos',
+          ],
+          outputFormat: 'A single dense prompt string, plus 2 shorter stylistic variations on separate lines',
+          ctaTier: 'vault',
+        },
+        {
+          id: 'coding',
+          badge: 'DEV',
+          label: 'Full-Stack Coding',
+          role: 'a staff-level full-stack engineer who writes precise, scoped coding prompts',
+          taskVerb: 'write a coding task prompt for',
+          constraints: [
+            'State the stack/language/framework and any files or conventions to follow',
+            'Require tests or a manual verification step before the task is considered done',
+            'Call out edge cases the implementation must handle',
+          ],
+          outputFormat: 'A prompt with explicit acceptance criteria as a checklist',
+          ctaTier: 'dfy',
+        },
+        {
+          id: 'marketing',
+          badge: 'ADS',
+          label: 'Marketing & Ads Copy',
+          role: 'a direct-response copywriter who writes high-converting ad and marketing copy',
+          taskVerb: 'write marketing/ad copy for',
+          constraints: [
+            'Lead with the strongest hook/pain point in the first line',
+            'Include one clear call-to-action and one objection it should pre-empt',
+            'Match the specified tone exactly; no generic filler adjectives',
+          ],
+          outputFormat: 'A hook, 2-3 body variations, and a closing CTA line, each labeled',
+          ctaTier: 'vault',
+        },
+        {
+          id: 'business',
+          badge: 'BIZ',
+          label: 'Business & Sales',
+          role: 'an operations/sales strategist who writes prompts for business analysis and sales enablement',
+          taskVerb: 'produce a business/sales analysis prompt for',
+          constraints: [
+            'Ask the model to state assumptions explicitly before concluding',
+            'Require a short list of risks or open questions in the output',
+            'Keep recommendations tied to the stated goal, not generic best practice',
+          ],
+          outputFormat: 'A structured brief: Summary, Analysis, Recommendation, Open Questions',
+          ctaTier: 'dfy',
+        },
+      ];
+
+      const PE_TONES = {
+        professional: 'Write in a clear, professional register — no slang, no hype.',
+        technical: 'Write in precise, technical language; prefer exact terms over approximations.',
+        persuasive: 'Write with a confident, persuasive edge that drives action.',
+        casual: 'Write in a relaxed, conversational register, like explaining to a sharp colleague.',
+      };
+
+      const PE_COMPLEXITY = {
+        simple: { label: 'Simple', extra: ['Keep the whole output under 150 words.'] },
+        standard: { label: 'Standard', extra: ['Be thorough but avoid padding; every line should earn its place.'] },
+        expert: {
+          label: 'Expert / Advanced',
+          extra: [
+            'Include at least one concrete example or edge case.',
+            'Add a brief "why this works" rationale after the main output.',
+          ],
+        },
+      };
+
+      let peState = { category: PROMPT_CATEGORIES[0].id, level: 0, lastIdea: '' };
+
+      function renderPeCategoryChips() {
+        const el = document.getElementById('peCategoryChips');
+        if (!el) return;
+        el.innerHTML = PROMPT_CATEGORIES.map(
+          (c) => `
+          <button type="button" data-pe-cat="${c.id}" class="pe-cat-btn flex items-center gap-2 rounded-xl border px-3 py-2.5 text-left text-xs font-semibold transition ${
+            c.id === peState.category
+              ? 'border-amberGold-400 bg-navy-850 text-amberGold-300'
+              : 'border-white/[0.12] bg-navy-950 text-silverMist-200 hover:border-orbital-400/50'
+          }">
+            <span class="rounded-md bg-navy-900 px-1.5 py-0.5 font-mono text-[10px] text-orbital-300">${c.badge}</span>
+            <span>${c.label}</span>
+          </button>`
+        ).join('');
+        el.querySelectorAll('.pe-cat-btn').forEach((btn) => {
+          btn.addEventListener('click', () => {
+            peState.category = btn.getAttribute('data-pe-cat');
+            renderPeCategoryChips();
+          });
+        });
+      }
+
+      function buildFallbackPrompt(input) {
+        const cat = PROMPT_CATEGORIES.find((c) => c.id === input.category) || PROMPT_CATEGORIES[0];
+        const toneLine = PE_TONES[input.tone] || PE_TONES.professional;
+        const complexity = PE_COMPLEXITY[input.complexity] || PE_COMPLEXITY.standard;
+        const idea = input.idea || 'the goal described above';
+
+        let constraints = cat.constraints.slice();
+        constraints.push(toneLine);
+        constraints = constraints.concat(complexity.extra);
+
+        if (input.level >= 1) {
+          constraints.push('Ask one clarifying question only if a critical detail is genuinely missing — otherwise proceed with reasonable assumptions, stated explicitly.');
+        }
+        if (input.level >= 2) {
+          constraints.push('Provide a short "Alternative approach" section if a materially different method is worth considering.');
+          constraints.push('Add a one-line summary of key risks or failure modes at the end.');
+        }
+
+        return {
+          role: `You are ${cat.role}.`,
+          context: `A user has the following rough idea and needs it turned into something production-ready:\n"${idea}"`,
+          task: `Your task: ${cat.taskVerb} this idea, filling in reasonable specifics where the idea is vague rather than asking unnecessary questions.`,
+          constraints,
+          outputFormat: cat.outputFormat + (input.level >= 2 ? ', plus the alternative-approach and risk sections noted above' : '.'),
+          ctaTier: cat.ctaTier,
+        };
+      }
+
+      async function generateStructuredPrompt(input) {
+        const apiUrl = window.AIGTV_PROMPT_API_URL || null;
+        const statusEl = document.getElementById('peEngineStatus');
+        if (apiUrl) {
+          try {
+            if (statusEl) statusEl.textContent = 'Contacting live prompt-engine API...';
+            const res = await fetch(apiUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(input),
+            });
+            if (res.ok) {
+              const data = await res.json();
+              if (data && (data.prompt || data.role)) {
+                if (statusEl) statusEl.textContent = 'Live prompt-engine API connected.';
+                return data;
+              }
+            }
+            throw new Error('API returned no usable prompt');
+          } catch (err) {
+            if (statusEl) statusEl.textContent = 'Live API unreachable — using offline engine.';
+          }
+        } else if (statusEl) {
+          statusEl.textContent = 'Offline engine ready — works with zero API key.';
+        }
+        return buildFallbackPrompt(input);
+      }
+
+      function peCtaMarkup(tier) {
+        if (tier === 'dfy') {
+          return `Want this fully built and wired up for you instead of DIY? <button type="button" data-nav="packs-dfy" class="nav-trigger font-bold text-orbital-300 underline">See the $399 Done-For-You Automation →</button>`;
+        }
+        return `Want the full prompt library + expanded n8n workflow library this prompt pairs with? <button type="button" data-nav="packs-dfy" class="nav-trigger font-bold text-amberGold-300 underline">Get the $27 Master Vault →</button>`;
+      }
+
+      function renderPeOutput(prompt) {
+        const out = document.getElementById('peOutput');
+        const cta = document.getElementById('peCta');
+        if (!out) return;
+
+        const blocks = [
+          ['Role', prompt.role],
+          ['Context', prompt.context],
+          ['Task', prompt.task],
+          ['Constraints', Array.isArray(prompt.constraints) ? prompt.constraints.map((c) => `• ${c}`).join('\n') : prompt.constraints],
+          ['Output Format', prompt.outputFormat],
+        ];
+
+        out.innerHTML = blocks
+          .map(
+            ([label, body]) => `
+          <div class="rounded-2xl border border-white/[0.1] bg-navy-950 p-4">
+            <span class="font-mono text-[10px] font-bold uppercase tracking-widest text-amberGold-400">${label}</span>
+            <p class="mt-1.5 whitespace-pre-line text-silverMist-100">${(body || '').replace(/</g, '&lt;')}</p>
+          </div>`
+          )
+          .join('');
+
+        if (cta) {
+          cta.classList.remove('hidden');
+          cta.innerHTML = peCtaMarkup(prompt.ctaTier);
+          cta.querySelectorAll('.nav-trigger').forEach((el) => {
+            el.addEventListener('click', () => setView(el.getAttribute('data-nav'), true));
+          });
+        }
+      }
+
+      function currentPeInput(level) {
+        const idea = document.getElementById('peIdea')?.value.trim() || '';
+        peState.lastIdea = idea;
+        return {
+          category: peState.category,
+          tone: document.getElementById('peTone')?.value || 'professional',
+          complexity: document.getElementById('peComplexity')?.value || 'standard',
+          idea,
+          level: typeof level === 'number' ? level : peState.level,
+        };
+      }
+
+      let lastGeneratedPrompt = null;
+
+      document.getElementById('peGenerateBtn')?.addEventListener('click', async () => {
+        peState.level = 0;
+        const input = currentPeInput(0);
+        lastGeneratedPrompt = await generateStructuredPrompt(input);
+        renderPeOutput(lastGeneratedPrompt);
+      });
+
+      document.getElementById('peRefineBtn')?.addEventListener('click', async () => {
+        peState.level = Math.max(1, peState.level);
+        const input = currentPeInput(peState.level);
+        lastGeneratedPrompt = await generateStructuredPrompt(input);
+        renderPeOutput(lastGeneratedPrompt);
+        showToast('Refined with sharper constraints.');
+      });
+
+      document.getElementById('peExpandBtn')?.addEventListener('click', async () => {
+        peState.level = 2;
+        const input = currentPeInput(2);
+        lastGeneratedPrompt = await generateStructuredPrompt(input);
+        renderPeOutput(lastGeneratedPrompt);
+        showToast('Expanded with alternatives & risk notes.');
+      });
+
+      document.getElementById('peCopyBtn')?.addEventListener('click', () => {
+        if (!lastGeneratedPrompt) {
+          showToast('Generate a prompt first.');
+          return;
+        }
+        const p = lastGeneratedPrompt;
+        const text = [
+          `ROLE:\n${p.role}`,
+          `CONTEXT:\n${p.context}`,
+          `TASK:\n${p.task}`,
+          `CONSTRAINTS:\n${(Array.isArray(p.constraints) ? p.constraints : [p.constraints]).map((c) => `- ${c}`).join('\n')}`,
+          `OUTPUT FORMAT:\n${p.outputFormat}`,
+        ].join('\n\n');
+        copyToClipboard(text, 'Structured prompt copied!');
+      });
+
+      renderPeCategoryChips();
+
+      // ===================================================================
+      // 24/7 AI CLIENT-CONVERSION CONCIERGE — rule-based KB + bottleneck
+      // diagnosis + lead capture, with an optional real-LLM hook. Set
+      // window.AIGTV_CONCIERGE_API_URL to a JSON endpoint ({message,history}
+      // in -> {reply} out) to answer with a live model; otherwise the
+      // built-in knowledge base answers so the widget never goes dark.
+      // ===================================================================
+      const CONCIERGE_KB = [
+        {
+          keys: ['price', 'pricing', 'cost', 'how much', 'tiers', 'packages'],
+          reply:
+            'We have 3 tiers: the n8n Starter Pack ($9, 25 workflow JSONs + prompt library), the Master Vault ($27, an expanded workflow library + the full Episode PDF Vault — most popular), and Done-For-You Automation ($399, we build a custom workflow for you in 5 days with 14 days of support).',
+        },
+        {
+          keys: ['roi', 'worth it', 'save time', 'how much time'],
+          reply:
+            'Most buyers automate 5-15 hours/month of manual inbox, content or lead-follow-up work with a single n8n workflow from the Vault — at $27 that pays for itself in the first week for almost anyone billing their own time.',
+        },
+        {
+          keys: ['architecture', 'how does it work', 'how it works', 'technical', 'workflow architecture'],
+          reply:
+            'Every workflow follows Trigger → Logic/AI step → Action: something happens (a form, an email, a schedule), an AI step (Claude/OpenAI) reasons or drafts, and an action fires (Slack message, CRM update, email sent, post published). The Vault includes architecture blueprints for the more complex multi-step builds.',
+        },
+        {
+          keys: ['stack', 'tech stack', 'tools', 'what do you use', 'integrations'],
+          reply:
+            'Core stack is n8n for orchestration, Claude/OpenAI for the AI steps, and whatever you already use for actions — Gmail, Slack, Google Sheets, Airtable, WordPress, or a CRM. Nothing proprietary; you keep and own every workflow file.',
+        },
+        {
+          keys: ['timeline', 'how long', 'turnaround', 'when'],
+          reply:
+            'Starter Pack and Master Vault are instant downloads. Done-For-You Automation starts with a 30-minute kickoff call, then a 5-day build, followed by 14 days of 1:1 support while you put it to work.',
+        },
+        {
+          keys: ['prompt engine', 'prompt-engine'],
+          reply:
+            'The Prompt Engine page (top nav) turns a rough idea into a structured Role/Context/Task/Constraints/Output-Format prompt for free, with presets for agents, n8n, coding, marketing and more.',
+        },
+        {
+          keys: ['vault', 'episode', 'pdf'],
+          reply:
+            'The Episode PDF Vault is the full archive of playbooks from every AI Graphic TV episode — included in the Master Vault, browsable free in the "Free Vault" tab too.',
+        },
+        {
+          keys: ['refund', 'guarantee'],
+          reply:
+            'Gumroad purchases follow Gumroad\'s standard buyer protections. For Done-For-You builds, reach out any time during the 14-day support window and we\'ll make it right.',
+        },
+      ];
+
+      const BOTTLENECK_OPTIONS = [
+        { id: 'manual', label: 'Too much manual work', tier: 'vault', note: 'That\'s exactly what the Master Vault\'s expanded workflow library is built to kill — most people automate the first one in under an hour.' },
+        { id: 'leads', label: 'Leads / follow-up falling through', tier: 'vault', note: 'The Vault\'s lead-capture + auto-followup workflow handles that out of the box; for a CRM-specific setup, Done-For-You wires it to your exact stack.' },
+        { id: 'content', label: 'Content takes too long to produce', tier: 'vault', note: 'The content/social repurposer workflow in the Vault turns one asset into a week of posts automatically.' },
+        { id: 'unsure', label: 'Not sure yet — just exploring', tier: 'starter', note: 'Start with the $9 Starter Pack or try the free Prompt Engine — no risk, and you\'ll see the pattern fast.' },
+      ];
+
+      const concierge = {
+        open: false,
+        thread: [],
+        awaitingLead: false,
+        askedBottleneck: false,
+      };
+
+      function ceAddMessage(from, text) {
+        concierge.thread.push({ from, text });
+        ceRenderThread();
+      }
+
+      function ceRenderThread() {
+        const el = document.getElementById('concierge-thread');
+        if (!el) return;
+        el.innerHTML = concierge.thread
+          .map((m) =>
+            m.from === 'bot'
+              ? `<div class="max-w-[85%] rounded-2xl rounded-bl-sm bg-navy-850 px-3.5 py-2.5 text-xs leading-relaxed text-silverMist-100">${m.text}</div>`
+              : `<div class="ml-auto max-w-[85%] rounded-2xl rounded-br-sm bg-orbital-400 px-3.5 py-2.5 text-xs font-semibold leading-relaxed text-navy-950">${m.text}</div>`
+          )
+          .join('');
+        el.scrollTop = el.scrollHeight;
+      }
+
+      function ceRenderQuickReplies(options) {
+        const el = document.getElementById('concierge-quick-replies');
+        if (!el) return;
+        if (!options || !options.length) {
+          el.innerHTML = '';
+          return;
+        }
+        el.innerHTML = options
+          .map((o) => `<button type="button" data-qr="${o.id}" class="ce-qr-btn rounded-full border border-white/[0.14] bg-navy-950 px-2.5 py-1 font-mono text-[10px] font-semibold text-silverMist-200 hover:border-orbital-400 hover:text-orbital-300">${o.label}</button>`)
+          .join('');
+        el.querySelectorAll('.ce-qr-btn').forEach((btn) => {
+          btn.addEventListener('click', () => handleQuickReply(btn.getAttribute('data-qr'), options));
+        });
+      }
+
+      function handleQuickReply(id, options) {
+        const opt = options.find((o) => o.id === id);
+        if (!opt) return;
+        ceAddMessage('user', opt.label);
+        ceRenderQuickReplies([]);
+        if (opt.tier) {
+          ceAddMessage('bot', opt.note);
+          const tierMap = { starter: 'n8n Starter Pack ($9)', vault: 'Master Vault ($27)', dfy: 'Done-For-You Automation ($399)' };
+          setTimeout(() => {
+            ceAddMessage('bot', `My pick for you: <strong>${tierMap[opt.tier]}</strong>. Want me to grab your details so we can follow up with a custom recommendation, or would you rather head straight to Packs &amp; DFY?`);
+            ceRenderQuickReplies([
+              { id: 'lead', label: 'Get a custom quote' },
+              { id: 'packs', label: 'Show me Packs & DFY' },
+            ]);
+          }, 350);
+        } else if (id === 'lead') {
+          promptLeadCapture();
+        } else if (id === 'packs') {
+          setView('packs-dfy', true);
+          toggleConcierge(false);
+        }
+      }
+
+      function scoreKb(message) {
+        const lower = message.toLowerCase();
+        let best = null;
+        let bestScore = 0;
+        CONCIERGE_KB.forEach((entry) => {
+          const score = entry.keys.reduce((acc, k) => (lower.includes(k) ? acc + k.length : acc), 0);
+          if (score > bestScore) {
+            bestScore = score;
+            best = entry;
+          }
+        });
+        return bestScore > 0 ? best : null;
+      }
+
+      function promptLeadCapture() {
+        concierge.awaitingLead = true;
+        ceAddMessage(
+          'bot',
+          'Great — share your Name, Email or WhatsApp, and your Business/Goal in one message (e.g. "Alex, alex@co.com, automate my lead follow-up") and I\'ll pass it straight to the team.'
+        );
+        ceRenderQuickReplies([]);
+      }
+
+      async function submitConciergeLead(raw) {
+        const parts = raw.split(',').map((s) => s.trim());
+        const payload = {
+          _subject: 'AI Graphic TV Concierge Lead',
+          name: parts[0] || 'Not given',
+          contact: parts[1] || 'Not given',
+          goal: parts.slice(2).join(', ') || raw,
+          source: 'Concierge widget',
+        };
+        try {
+          await fetch('https://formsubmit.co/ajax/aigraphictv@gmail.com', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+            body: JSON.stringify(payload),
+          });
+          ceAddMessage('bot', "Got it — sent to the team. We'll follow up by email/WhatsApp with a tailored recommendation.");
+        } catch (err) {
+          ceAddMessage('bot', `Couldn't reach the lead pipeline right now — email <strong>aigraphictv@gmail.com</strong> directly with the same details and we'll pick it up.`);
+        }
+      }
+
+      async function handleConciergeReply(apiUrl, message) {
+        if (apiUrl) {
+          try {
+            const res = await fetch(apiUrl, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ message, history: concierge.thread }),
+            });
+            if (res.ok) {
+              const data = await res.json();
+              if (data && data.reply) return data.reply;
+            }
+          } catch (err) {
+            /* fall through to offline KB */
+          }
+        }
+        const hit = scoreKb(message);
+        if (hit) return hit.reply;
+        return null;
+      }
+
+      async function handleConciergeMessage(message) {
+        if (!message) return;
+        ceAddMessage('user', message);
+
+        if (concierge.awaitingLead) {
+          concierge.awaitingLead = false;
+          await submitConciergeLead(message);
+          return;
+        }
+
+        const apiUrl = window.AIGTV_CONCIERGE_API_URL || null;
+        const reply = await handleConciergeReply(apiUrl, message);
+
+        if (reply) {
+          ceAddMessage('bot', reply);
+          return;
+        }
+
+        if (!concierge.askedBottleneck) {
+          concierge.askedBottleneck = true;
+          ceAddMessage(
+            'bot',
+            "I didn't catch an exact match — let's diagnose this quickly instead. What's the biggest bottleneck you're trying to solve right now?"
+          );
+          ceRenderQuickReplies(BOTTLENECK_OPTIONS);
+          return;
+        }
+
+        ceAddMessage(
+          'bot',
+          'Happy to dig deeper on pricing, ROI, the tech stack, or timelines — or I can pass your details to the team for a custom answer.'
+        );
+        ceRenderQuickReplies([{ id: 'lead', label: 'Get a custom quote' }]);
+      }
+
+      function toggleConcierge(forceOpen) {
+        const panel = document.getElementById('concierge-panel');
+        if (!panel) return;
+        concierge.open = typeof forceOpen === 'boolean' ? forceOpen : !concierge.open;
+        panel.classList.toggle('hidden', !concierge.open);
+        panel.classList.toggle('flex', concierge.open);
+        if (concierge.open && concierge.thread.length === 0) {
+          ceAddMessage(
+            'bot',
+            "Hi! I'm the AI Graphic TV concierge — ask me about pricing, ROI, our n8n/AI workflow stack, or timelines, and I'll point you to the right package."
+          );
+          ceRenderQuickReplies(BOTTLENECK_OPTIONS);
+        }
+      }
+
+      document.getElementById('concierge-launcher')?.addEventListener('click', () => toggleConcierge());
+      document.getElementById('concierge-close')?.addEventListener('click', () => toggleConcierge(false));
+      document.getElementById('concierge-form')?.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = document.getElementById('concierge-input');
+        const val = input?.value.trim();
+        if (!val) return;
+        input.value = '';
+        handleConciergeMessage(val);
+      });
 
       // Boot
       inspectNode('gate');
