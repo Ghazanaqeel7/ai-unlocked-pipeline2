@@ -340,8 +340,8 @@
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-014-canva-social-posts-pain-short/upload.mp4"
     },
     "015-canva-workflow-day2-short": {
-      "status": "rendering",
-      "updated": "2026-11-28T07:14:46Z",
+      "status": "video_ready",
+      "updated": "2026-11-28T08:21:14Z",
       "run": "46120211638",
       "progress": [
         {
@@ -349,7 +349,10 @@
           "msg": "🎞 Render starting: images, voice and music (~10-20 min)"
         }
       ],
-      "progress_count": 1
+      "progress_count": 1,
+      "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-015-canva-workflow-day2-short/final.mp4",
+      "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-015-canva-workflow-day2-short/preview.mp4",
+      "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-015-canva-workflow-day2-short/upload.mp4"
     }
   },
   "ideas": [],
