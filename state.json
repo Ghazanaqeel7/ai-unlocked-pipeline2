@@ -317,8 +317,8 @@
       "updated": "2026-11-28T05:30:07Z"
     },
     "015-canva-workflow-day2-short": {
-      "status": "script_ready",
-      "updated": "2026-11-28T05:29:57Z"
+      "status": "render_queued",
+      "updated": "2026-11-28T05:30:09Z"
     }
   },
   "ideas": [],
