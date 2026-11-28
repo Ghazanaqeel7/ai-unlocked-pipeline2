@@ -309,8 +309,8 @@
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-012-n8n-workflow-day1-short/upload.mp4"
     },
     "013-canva-ai-week-of-posts-long": {
-      "status": "rendering",
-      "updated": "2026-11-28T07:24:51Z",
+      "status": "video_ready",
+      "updated": "2026-11-28T08:37:31Z",
       "run": "46121073563",
       "progress": [
         {
@@ -322,7 +322,10 @@
           "msg": "🎞 Render starting in 18 parts at once (~60-90 min)"
         }
       ],
-      "progress_count": 2
+      "progress_count": 2,
+      "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-013-canva-ai-week-of-posts-long/final.mp4",
+      "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-013-canva-ai-week-of-posts-long/preview.mp4",
+      "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-013-canva-ai-week-of-posts-long/upload.mp4"
     },
     "014-canva-social-posts-pain-short": {
       "status": "video_ready",
