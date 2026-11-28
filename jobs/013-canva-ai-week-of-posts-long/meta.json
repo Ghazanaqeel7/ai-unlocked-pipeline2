@@ -1,0 +1,43 @@
+{
+ "type": "long",
+ "title": "Canva AI: A Week of Posts in One Sitting",
+ "title_options": [
+  "Canva AI: A Week of Posts in One Sitting",
+  "Canva AI Workflow: Plan a Week of Posts",
+  "Plan a Week of Social Posts in Canva"
+ ],
+ "thumb_spec": {
+  "text": "A WEEK OF POSTS",
+  "layout": "Canva logo-free: a 7-day calendar grid with posts filling in, big A WEEK OF POSTS in yellow."
+ },
+ "description": "Build a full week of branded social posts in one sitting: Brand Kit and brand voice, Magic Write drafts, Bulk Create designs, Magic Resize and the Content Planner.\n\nSources: Canva Help, brand voice; Canva Help, Magic Write voice; Canva Help, Bulk Create; Canva Help, Bulk Create and Data Autofill; Canva Help, Content Planner; Canva Design School, social media\n\nChapters are in the description above the fold on YouTube.\n\nSubscribe for a new AI workflow every day: https://youtube.com/@AIGraphicTV\n\n#Canva #CanvaAI #SocialMedia #ContentPlanner #AITools",
+ "tags": [
+  "canva",
+  "canva ai",
+  "canva tutorial",
+  "social media",
+  "content planner",
+  "magic write",
+  "bulk create",
+  "ai tools",
+  "brand kit"
+ ],
+ "pinned_comment": "What is the one post type that eats your week? Comment GUIDE for the free step-by-step PDF.",
+ "target_seconds": 510,
+ "evergreen_only": true,
+ "package": {
+  "id": "d2",
+  "slot": "long",
+  "date": "2026-11-28"
+ },
+ "thumb": {
+  "image": {
+   "q": "social media calendar planner desk"
+  },
+  "icon": "bulb",
+  "line1": "A WEEK OF",
+  "line2": "POSTS",
+  "box": "CANVA AI",
+  "box_color": "#C8F938"
+ }
+}

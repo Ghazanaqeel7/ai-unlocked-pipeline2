@@ -1,0 +1,44 @@
+{
+ "type": "short",
+ "title": "Social posts take forever (fix it in Canva)",
+ "title_options": [
+  "Social posts take forever (fix it in Canva)",
+  "Stop designing every post from scratch",
+  "Canva AI: write, build, schedule a week"
+ ],
+ "thumb_spec": {
+  "text": "POSTS TAKE FOREVER",
+  "layout": "Big POSTS TAKE FOREVER on a yellow pill over a half-empty content calendar."
+ },
+ "description": "Social posts take forever. Brand Kit, brand voice, Magic Write, Bulk Create and the Content Planner, in one short workflow.\n\nSources: Canva Help, brand voice; Canva Help, Magic Write voice; Canva Help, Bulk Create; Canva Help, Bulk Create and Data Autofill; Canva Help, Content Planner\n\nFull video: {LONG_URL}\n\nSubscribe: https://youtube.com/@AIGraphicTV\n\n#Canva #CanvaAI #SocialMedia #Shorts",
+ "tags": [
+  "canva",
+  "canva ai",
+  "canva tutorial",
+  "social media",
+  "content planner",
+  "magic write",
+  "bulk create",
+  "ai tools",
+  "brand kit",
+  "shorts"
+ ],
+ "related_video_title": "Canva AI: A Week of Posts in One Sitting",
+ "pinned_comment": "Full step-by-step build: {LONG_URL}\nComment GUIDE for the PDF.",
+ "target_seconds": 48,
+ "package": {
+  "id": "d2",
+  "slot": "short_pain",
+  "date": "2026-11-28"
+ },
+ "thumb": {
+  "image": {
+   "q": "busy social media content calendar"
+  },
+  "icon": "bulb",
+  "line1": "POSTS TAKE",
+  "line2": "FOREVER",
+  "box": "CANVA",
+  "box_color": "#C8F938"
+ }
+}

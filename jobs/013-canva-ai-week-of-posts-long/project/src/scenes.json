@@ -1,0 +1,1011 @@
+{
+ "title": "Canva AI: A Week of Posts in One Sitting",
+ "autolayout": true,
+ "scenes": [
+  {
+   "id": "s01",
+   "text": "Social posts take forever. You open Canva on Monday, and by Friday you have made three posts and hated two of them. In this video you will build a full week of branded posts in one sitting, using Canva's own AI and automation tools.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "A week of posts, one sitting",
+     "kicker": "CANVA AI",
+     "sub": "Branded, written and scheduled"
+    },
+    {
+     "type": "compare",
+     "title": "Post by post vs one workflow",
+     "comparison": {
+      "before": {
+       "label": "One at a time",
+       "items": [
+        "Blank page every post",
+        "Retype every caption",
+        "Resize by hand"
+       ]
+      },
+      "after": {
+       "label": "One workflow",
+       "items": [
+        "Brand set once",
+        "Write with Magic Write",
+        "Schedule the week"
+       ]
+      }
+     },
+     "kicker": "THE PLAN"
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "text": "But first, the one setup step that makes every post after it faster. Skip it and the rest of this workflow falls apart. I will show you exactly where it lives.",
+   "visual": [
+    {
+     "type": "illustration",
+     "title": "One setup step first",
+     "sub": "It makes every later post faster",
+     "kicker": "COMING UP"
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "text": "Chapter one is your Brand Kit. A Brand Kit holds your colors, fonts and logos so every design starts on brand instead of blank.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Your Brand Kit holds",
+     "items": [
+      {
+       "text": "Colors",
+       "sub": "your palette"
+      },
+      {
+       "text": "Fonts",
+       "sub": "headings and body"
+      },
+      {
+       "text": "Logos",
+       "sub": "one click away"
+      }
+     ],
+     "kicker": "CHAPTER 1"
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "text": "Open Canva, go to Brand in the side panel, and choose Brand Kits. If you have more than one kit, pick the one you want to edit.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Find your Brand Kit",
+     "steps": [
+      "Open the Canva homepage",
+      "Side panel: Brand",
+      "Choose Brand Kits",
+      "Pick the kit to edit"
+     ],
+     "kicker": "WHERE IT LIVES"
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "text": "Here is the part most people miss. Inside the Brand Kit there is a brand voice section. That is where you write down how your brand sounds.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Brand voice lives in the kit",
+     "kicker": "THE PART PEOPLE MISS",
+     "sub": "Write down how your brand sounds"
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "text": "Check your plan first. Canva says brand voice is available on Pro, Teams, Education and Nonprofits plans. And on a team, only owners, administrators and brand designers can add or edit it.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Brand voice availability",
+     "items": [
+      {
+       "text": "Canva Pro"
+      },
+      {
+       "text": "Canva Teams"
+      },
+      {
+       "text": "Education and Nonprofits"
+      }
+     ],
+     "kicker": "CHECK YOUR PLAN"
+    },
+    {
+     "type": "headline",
+     "title": "Team edit rights",
+     "kicker": "WHO CAN EDIT",
+     "sub": "Owners, admins and brand designers"
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "text": "Keep your brand voice guidelines short and concrete. Say who you write for, how formal you sound, and any words you always or never use. Then save.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "A useful voice brief",
+     "items": [
+      {
+       "text": "Who you write for"
+      },
+      {
+       "text": "How formal you sound"
+      },
+      {
+       "text": "Words you always use"
+      },
+      {
+       "text": "Words you never use"
+      }
+     ],
+     "kicker": "WRITE IT DOWN"
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "text": "Why bother? Once a brand voice exists, Canva says its guidelines also apply when you use the Magic Write shortcut, the forward slash key. You set the tone once and every caption inherits it.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Set the tone once",
+     "kicker": "WHY IT PAYS OFF",
+     "sub": "The slash shortcut follows your brand voice"
+    },
+    {
+     "type": "quote",
+     "quote": "brand voice guidelines still apply when using the Magic Write shortcut",
+     "author": "Canva Help",
+     "kicker": "IN CANVA'S WORDS"
+    }
+   ]
+  },
+  {
+   "id": "x1",
+   "text": "Here is a brief you can adapt. Ask for a friendly Instagram caption for a small bakery, about a weekend special, two sentences, upbeat tone. Swap in your own business, offer and tone, then regenerate until one line sounds like you.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "A brief you can adapt",
+     "items": [
+      {
+       "text": "Who: a small bakery"
+      },
+      {
+       "text": "What: a weekend special"
+      },
+      {
+       "text": "Length: two sentences"
+      },
+      {
+       "text": "Tone: upbeat"
+      }
+     ],
+     "kicker": "EXAMPLE"
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "text": "Before you leave the Brand Kit, check that your colors, fonts and logo are in there too. That way every template you open next starts looking like you.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Template before and after",
+     "comparison": {
+      "before": {
+       "label": "Default template",
+       "items": [
+        "Random colors",
+        "Stock fonts",
+        "No logo"
+       ]
+      },
+      "after": {
+       "label": "With your Brand Kit",
+       "items": [
+        "Your palette",
+        "Your fonts",
+        "Your logo"
+       ]
+      }
+     },
+     "kicker": "BRAND KIT APPLIED"
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "text": "Chapter two is writing the week. Open a new Instagram post design, and pick a simple template that has room for a headline and a caption.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Start the first post",
+     "steps": [
+      "New design",
+      "Pick an Instagram post",
+      "Choose a simple template"
+     ],
+     "kicker": "CHAPTER 2"
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "text": "Select a text box. A floating toolbar appears, and it has a Magic Write button. You can also press the forward slash key and choose Magic Write.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Two ways to open Magic Write",
+     "kicker": "SELECT A TEXT BOX",
+     "sub": "Toolbar button, or press slash"
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "text": "Magic Write works from a prompt. Tell it the topic, who it is for, and the tone you want. Canva's own guidance says you can include tone in your brief, from playful to formal.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "A good Magic Write brief",
+     "items": [
+      {
+       "text": "Topic",
+       "sub": "what the post is about"
+      },
+      {
+       "text": "Audience",
+       "sub": "who it is for"
+      },
+      {
+       "text": "Tone",
+       "sub": "playful to formal"
+      }
+     ],
+     "kicker": "THE PROMPT"
+    }
+   ]
+  },
+  {
+   "id": "x9",
+   "text": "Be specific about length too. Ask for two sentences, or a word limit, and Magic Write has a clear target instead of rambling.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Name the length",
+     "kicker": "BE SPECIFIC",
+     "sub": "Two sentences, or a word limit"
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "text": "Treat the first result as a draft, not a finished post. Read it out loud, cut anything that does not sound like you, and keep the best line as your headline.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Draft to final",
+     "comparison": {
+      "before": {
+       "label": "First draft",
+       "items": [
+        "Generic opener",
+        "Long sentences",
+        "No point of view"
+       ]
+      },
+      "after": {
+       "label": "Your edit",
+       "items": [
+        "Sharper hook",
+        "One idea",
+        "Sounds like you"
+       ]
+      }
+     },
+     "kicker": "EDIT IT"
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "text": "You can also save your own writing style. Select some text, open Magic Write, choose Change voice, and save a tone of voice you can pick again later.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Save your own tone",
+     "steps": [
+      "Select some text",
+      "Open Magic Write",
+      "Choose Change voice",
+      "Save and reuse it"
+     ],
+     "kicker": "YOUR WRITING STYLE"
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "text": "Now write the week. Plan seven angles, one for each day: a tip, a mistake, a before and after, a question, a story, a checklist and a recap. Run each through the same brief.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Seven post angles",
+     "items": [
+      {
+       "text": "Tip"
+      },
+      {
+       "text": "Mistake"
+      },
+      {
+       "text": "Before and after"
+      },
+      {
+       "text": "Question"
+      },
+      {
+       "text": "Story"
+      },
+      {
+       "text": "Checklist"
+      },
+      {
+       "text": "Recap"
+      }
+     ],
+     "kicker": "A WEEK OF ANGLES"
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "text": "Do not publish raw AI text. Always fact check numbers and claims yourself, and read each caption once before it goes anywhere near a schedule.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "You are the editor",
+     "kicker": "DO NOT SKIP",
+     "sub": "Check every claim before you schedule"
+    }
+   ]
+  },
+  {
+   "id": "x2",
+   "text": "A good habit is keeping a swipe file of your best captions. When a draft lands well, paste it into your table as an example, and reuse its structure in the next brief.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Keep a swipe file",
+     "kicker": "GOOD HABIT",
+     "sub": "Reuse what already worked"
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "text": "That gives you seven drafts. Next we make the designs, and this is where Canva stops being a one at a time tool.",
+   "visual": [
+    {
+     "type": "illustration",
+     "title": "Seven drafts done",
+     "sub": "Now the designs",
+     "kicker": "NEXT"
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "text": "Chapter three is Bulk Create. It takes data in rows and columns and links it to placeholder elements in your design, so one template becomes many posts.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "One template, many posts",
+     "kicker": "CHAPTER 3",
+     "sub": "Bulk Create links data to your design"
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "text": "First, build one finished post as your template. Give every piece of changing text its own text box, because Canva needs a separate box for each data field.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Prepare the template",
+     "items": [
+      {
+       "text": "One finished post",
+       "sub": "your master design"
+      },
+      {
+       "text": "One text box per field",
+       "sub": "headline, caption, tag"
+      },
+      {
+       "text": "A frame for images",
+       "sub": "if photos change"
+      }
+     ],
+     "kicker": "STEP 1"
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "text": "Then build your data. Make a simple table with a column for the headline and a column for the caption, and one row per post. Seven days means seven rows.",
+   "visual": [
+    {
+     "type": "stat",
+     "title": "Your week as a table",
+     "metrics": [
+      {
+       "value": "7",
+       "label": "rows, one per day"
+      },
+      {
+       "value": "2",
+       "label": "columns to start"
+      },
+      {
+       "value": "1",
+       "label": "master template"
+      }
+     ],
+     "kicker": "STEP 2"
+    }
+   ]
+  },
+  {
+   "id": "x8",
+   "text": "A quick tip on columns. Start with just a headline and a caption. Once that works, add a column for a hashtag line or an image, and connect those too.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Grow the table slowly",
+     "items": [
+      {
+       "text": "Start: headline, caption"
+      },
+      {
+       "text": "Then: hashtag line"
+      },
+      {
+       "text": "Then: an image"
+      }
+     ],
+     "kicker": "COLUMNS"
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "text": "You can upload a CSV or Excel file, or just enter the data by hand inside Canva. Entering it by hand is fine for a week of posts.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Two ways to add data",
+     "comparison": {
+      "before": {
+       "label": "Upload a file",
+       "items": [
+        "CSV or Excel",
+        "Good for big batches"
+       ]
+      },
+      "after": {
+       "label": "Enter by hand",
+       "items": [
+        "Type it inside Canva",
+        "Fine for one week"
+       ]
+      }
+     },
+     "kicker": "STEP 3"
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "text": "Connect the data to your design. Select an element, open More, and choose Connect data. Or click Auto-match fields and let Canva try to connect everything for you.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Connect the data",
+     "steps": [
+      "Select an element",
+      "More, then Connect data",
+      "Or click Auto-match fields",
+      "Check every connection"
+     ],
+     "kicker": "STEP 4"
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "text": "Check the preview before you generate. Bulk Create makes one design for every row, so a typo in your table becomes seven typos in your designs.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Preview before you create",
+     "kicker": "SAVE YOURSELF",
+     "sub": "One design per row, typos included"
+    }
+   ]
+  },
+  {
+   "id": "s24",
+   "text": "A few limits to know. Bulk Create is desktop only, it is limited to certain plans, and Canva documents up to 300 rows in one batch. A week of posts fits easily.",
+   "visual": [
+    {
+     "type": "stat",
+     "title": "Bulk Create limits",
+     "metrics": [
+      {
+       "value": "300",
+       "label": "rows per batch"
+      },
+      {
+       "value": "Desktop",
+       "label": "only"
+      },
+      {
+       "value": "Plan",
+       "label": "gated, check yours"
+      }
+     ],
+     "kicker": "KNOW THE LIMITS",
+     "sub": "Per Canva Help"
+    }
+   ]
+  },
+  {
+   "id": "s25",
+   "text": "One more catch. Image links do not work in Bulk Create. If your posts use photos, upload them, or pick them from your Canva library.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Images in Bulk Create",
+     "comparison": {
+      "before": {
+       "label": "Does not work",
+       "items": [
+        "Pasted image links"
+       ]
+      },
+      "after": {
+       "label": "Works",
+       "items": [
+        "Uploaded images",
+        "Your Canva library"
+       ]
+      }
+     },
+     "kicker": "WATCH OUT"
+    }
+   ]
+  },
+  {
+   "id": "x3",
+   "text": "Keep the table tidy. Short headlines fit a template better, and a long caption can overflow a text box, so check the longest row in the preview first.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Table tidy up",
+     "comparison": {
+      "before": {
+       "label": "Messy table",
+       "items": [
+        "Long headlines",
+        "Overflowing captions"
+       ]
+      },
+      "after": {
+       "label": "Tidy table",
+       "items": [
+        "Short headlines",
+        "Longest row checked"
+       ]
+      }
+     },
+     "kicker": "KEEP IT TIDY"
+    }
+   ]
+  },
+  {
+   "id": "s26",
+   "text": "Click Create designs, and Canva generates one design for each row of data. So your seven rows become seven finished designs.",
+   "visual": [
+    {
+     "type": "stat",
+     "title": "Seven rows in, seven designs out",
+     "metrics": [
+      {
+       "value": "7",
+       "label": "rows of data"
+      },
+      {
+       "value": "7",
+       "label": "finished designs"
+      }
+     ],
+     "kicker": "THE PAYOFF"
+    }
+   ]
+  },
+  {
+   "id": "s27",
+   "text": "Now the same post often needs other shapes. Magic Resize adapts a design to another size, Canva's design school covers it in its social media lesson.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Same post, other shapes",
+     "kicker": "MAGIC RESIZE",
+     "sub": "Adapt a design to another size"
+    }
+   ]
+  },
+  {
+   "id": "s28",
+   "text": "After a resize, always look at the result. Canva's guidance on reshaping a post says to keep your key text and faces clear of the protected space.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "After you resize, check",
+     "items": [
+      {
+       "text": "Key text stays clear"
+      },
+      {
+       "text": "Faces stay visible"
+      },
+      {
+       "text": "Logo is not cropped"
+      }
+     ],
+     "kicker": "QUICK CHECK"
+    }
+   ]
+  },
+  {
+   "id": "x4",
+   "text": "Only resize the posts that need it. If a design already works in every shape you publish in, skip this step and save the time.",
+   "visual": [
+    {
+     "type": "illustration",
+     "title": "Resize only when needed",
+     "sub": "Skip it if one shape works",
+     "kicker": "SAVE TIME"
+    }
+   ]
+  },
+  {
+   "id": "s29",
+   "text": "Chapter four is scheduling. Canva has a built in Content Planner, so you can plan and schedule posts without leaving Canva.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Plan it inside Canva",
+     "kicker": "CHAPTER 4",
+     "sub": "The built in Content Planner"
+    }
+   ]
+  },
+  {
+   "id": "s30",
+   "text": "From the homepage side menu choose More, then Content Planner. Select Add New, then Post, and pick the design you just made.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Open the Content Planner",
+     "steps": [
+      "Homepage side menu: More",
+      "Choose Content Planner",
+      "Add New, then Post",
+      "Pick your design"
+     ],
+     "kicker": "WHERE IT LIVES"
+    }
+   ]
+  },
+  {
+   "id": "s31",
+   "text": "Connect your social accounts. Canva lets you connect more than one account, and you choose who sees or can publish to each one.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Account visibility",
+     "items": [
+      {
+       "text": "Private",
+       "sub": "only you can schedule"
+      },
+      {
+       "text": "Team viewable",
+       "sub": "teammates can see it"
+      }
+     ],
+     "kicker": "WHO SEES WHAT"
+    }
+   ]
+  },
+  {
+   "id": "x10",
+   "text": "If you manage posts for a team, set each account's visibility on purpose. A private account keeps scheduling to you, while team viewable lets everyone see what is going out.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Account visibility",
+     "comparison": {
+      "before": {
+       "label": "Private",
+       "items": [
+        "Only you schedule"
+       ]
+      },
+      "after": {
+       "label": "Team viewable",
+       "items": [
+        "Everyone sees what is out"
+       ]
+      }
+     },
+     "kicker": "TEAM SETTING"
+    }
+   ]
+  },
+  {
+   "id": "s32",
+   "text": "Canva's Content Planner page lists platforms including Facebook, Instagram and LinkedIn, and its help center says more are on the way. Check the current list for your account.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Platforms Canva names",
+     "items": [
+      {
+       "text": "Facebook"
+      },
+      {
+       "text": "Instagram"
+      },
+      {
+       "text": "LinkedIn"
+      }
+     ],
+     "kicker": "CHECK YOUR LIST"
+    }
+   ]
+  },
+  {
+   "id": "s33",
+   "text": "A note on Instagram. Canva says scheduling to Instagram has to be done from a desktop browser. On mobile you can view the planner and schedule from the editor.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Scheduling to Instagram",
+     "comparison": {
+      "before": {
+       "label": "Desktop browser",
+       "items": [
+        "Schedule from Content Planner"
+       ]
+      },
+      "after": {
+       "label": "Mobile",
+       "items": [
+        "View the planner",
+        "Schedule from the editor"
+       ]
+      }
+     },
+     "kicker": "GOOD TO KNOW"
+    }
+   ]
+  },
+  {
+   "id": "x5",
+   "text": "Do a final pass on the calendar view. You want a mix of angles across the week, not three tips in a row, and every post on the day you meant.",
+   "visual": [
+    {
+     "type": "stat",
+     "title": "Final calendar check",
+     "metrics": [
+      {
+       "value": "7",
+       "label": "posts scheduled"
+      },
+      {
+       "value": "7",
+       "label": "different days"
+      },
+      {
+       "value": "1",
+       "label": "angle each"
+      }
+     ],
+     "kicker": "LAST LOOK"
+    }
+   ]
+  },
+  {
+   "id": "s34",
+   "text": "Pick a day and a time for each post, then click Schedule. Spread the seven posts across the week instead of stacking them on one day.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Schedule each post",
+     "steps": [
+      "Pick the day",
+      "Pick the time",
+      "Click Schedule",
+      "Repeat for the week"
+     ],
+     "kicker": "THE LAST STEP"
+    }
+   ]
+  },
+  {
+   "id": "s35",
+   "text": "Plans change. Canva says you can pause and edit a scheduled post without uploading the file again, so a typo on Wednesday is a quick fix.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Edit without re-uploading",
+     "kicker": "PLANS CHANGE",
+     "sub": "Pause and edit a scheduled post"
+    }
+   ]
+  },
+  {
+   "id": "s36",
+   "text": "Once posts are live, Canva's Content Planner can show insights like impressions, clicks, likes and comments. Use them to decide which angle to repeat next week.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Insights to watch",
+     "items": [
+      {
+       "text": "Impressions"
+      },
+      {
+       "text": "Clicks"
+      },
+      {
+       "text": "Likes"
+      },
+      {
+       "text": "Comments"
+      }
+     ],
+     "kicker": "AFTER IT GOES LIVE"
+    }
+   ]
+  },
+  {
+   "id": "x6",
+   "text": "Write down what worked. Next week, change one thing, the angle, the time or the hook, so you actually learn from the results instead of guessing.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Learn from the week",
+     "steps": [
+      "Note the best post",
+      "Change one thing",
+      "Run it again",
+      "Compare the results"
+     ],
+     "kicker": "NEXT WEEK"
+    }
+   ]
+  },
+  {
+   "id": "s37",
+   "text": "Let us put the whole workflow together. Set your brand voice once. Write seven drafts with Magic Write. Turn them into designs with Bulk Create. Resize where you need to. Schedule the week.",
+   "visual": [
+    {
+     "type": "auto",
+     "title": "The whole workflow",
+     "items": [
+      {
+       "text": "Brand Kit and brand voice"
+      },
+      {
+       "text": "Magic Write drafts"
+      },
+      {
+       "text": "Bulk Create designs"
+      },
+      {
+       "text": "Magic Resize"
+      },
+      {
+       "text": "Content Planner"
+      }
+     ],
+     "kicker": "RECAP"
+    }
+   ]
+  },
+  {
+   "id": "x7",
+   "text": "If you only have time for one upgrade today, set your brand voice. It takes a few minutes, and every caption you write afterward starts closer to done.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "One upgrade today",
+     "kicker": "START HERE",
+     "sub": "Set your brand voice"
+    }
+   ]
+  },
+  {
+   "id": "s38",
+   "text": "Your first run will feel slower than doing one post by hand. The second week is where it pays off, because the brand voice and the template are already done.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Week one vs week two",
+     "comparison": {
+      "before": {
+       "label": "Week one",
+       "items": [
+        "Set up brand voice",
+        "Build the template",
+        "Write the data"
+       ]
+      },
+      "after": {
+       "label": "Week two",
+       "items": [
+        "Reuse the template",
+        "New rows only",
+        "Schedule and done"
+       ]
+      }
+     },
+     "kicker": "WHERE IT PAYS OFF"
+    }
+   ]
+  },
+  {
+   "id": "s39",
+   "text": "One more thing. This is a series, so tomorrow the short shows one step from this workflow in under a minute. Follow the channel so you do not miss day two.",
+   "visual": [
+    {
+     "type": "illustration",
+     "title": "Day 2 of 7 is next",
+     "sub": "One workflow step, fast",
+     "kicker": "THE SERIES"
+    }
+   ]
+  },
+  {
+   "id": "s40",
+   "text": "Comment GUIDE and I will send the step by step PDF for this workflow. Subscribe to AI Graphic TV for a new AI workflow every day.",
+   "visual": [
+    {
+     "type": "endcard",
+     "title": "Plan a week of posts in one sitting",
+     "takeaway": "Brand voice once. Seven drafts. One bulk run.",
+     "cta": "Comment GUIDE for the PDF"
+    }
+   ]
+  }
+ ]
+}

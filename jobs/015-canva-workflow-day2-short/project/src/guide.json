@@ -1,0 +1,32 @@
+{
+ "title": "Canva Brand Voice Cheat Sheet (Day 2 of 7)",
+ "tldr": [
+  "Set the brand voice once in the Brand Kit; the Magic Write slash shortcut follows it.",
+  "Only owners, admins and brand designers can edit it on a team."
+ ],
+ "tools": [
+  {
+   "name": "Canva",
+   "link": "canva.com",
+   "note": "Brand voice is on Pro, Teams, Education, Nonprofits"
+  }
+ ],
+ "steps": [
+  {
+   "title": "Open Brand Kits",
+   "detail": "Homepage side panel: Brand, then Brand Kits."
+  },
+  {
+   "title": "Write the brief",
+   "detail": "Audience, formality, go to words, never words."
+  },
+  {
+   "title": "Use Magic Write",
+   "detail": "Select text, press slash, choose Magic Write."
+  },
+  {
+   "title": "Edit the draft",
+   "detail": "Check claims before you post."
+  }
+ ]
+}

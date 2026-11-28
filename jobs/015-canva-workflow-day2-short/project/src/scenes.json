@@ -1,0 +1,231 @@
+{
+ "title": "Canva workflow day 2",
+ "autolayout": true,
+ "scenes": [
+  {
+   "id": "s01",
+   "text": "Day two of seven: set your Canva brand voice once.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Day 2 of 7: brand voice",
+     "kicker": "CANVA WORKFLOW",
+     "sub": "Set it once"
+    },
+    {
+     "type": "illustration",
+     "title": "Series: 7 days of Canva",
+     "sub": "One step a day",
+     "kicker": "THE SERIES"
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "text": "Open the Canva homepage, go to Brand, then Brand Kits.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Find it",
+     "steps": [
+      "Canva homepage",
+      "Side panel: Brand",
+      "Brand Kits",
+      "Pick your kit"
+     ],
+     "kicker": "WHERE IT LIVES"
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "text": "Pick your kit. Find the brand voice section.",
+   "visual": [
+    {
+     "type": "illustration",
+     "title": "Brand voice section",
+     "sub": "Inside your Brand Kit",
+     "kicker": "STEP 1"
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "text": "Write who you speak to and how formal you are.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "What to write",
+     "items": [
+      {
+       "text": "Who you speak to"
+      },
+      {
+       "text": "How formal you are"
+      },
+      {
+       "text": "Words you always use"
+      }
+     ],
+     "kicker": "STEP 2"
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "text": "Add words you never use too. Then save.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Add the never words",
+     "kicker": "STEP 3",
+     "sub": "Then save"
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "text": "It is on Pro, Teams, Education and Nonprofits.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Available on",
+     "items": [
+      {
+       "text": "Canva Pro"
+      },
+      {
+       "text": "Canva Teams"
+      },
+      {
+       "text": "Education"
+      },
+      {
+       "text": "Nonprofits"
+      }
+     ],
+     "kicker": "CHECK YOUR PLAN"
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "text": "On teams, only owners, admins and brand designers edit it.",
+   "visual": [
+    {
+     "type": "stat",
+     "title": "Who can edit",
+     "metrics": [
+      {
+       "value": "3",
+       "label": "roles can edit"
+      },
+      {
+       "value": "Owners",
+       "label": "admins, designers"
+      }
+     ],
+     "kicker": "TEAM RULE"
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "text": "Select text, press slash, choose Magic Write.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Use it",
+     "steps": [
+      "Select a text box",
+      "Press slash",
+      "Choose Magic Write",
+      "Describe the post"
+     ],
+     "kicker": "STEP 4"
+    },
+    {
+     "type": "headline",
+     "title": "Slash is the shortcut",
+     "kicker": "TRY IT",
+     "sub": "Select text, press /"
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "text": "Canva says the guidelines apply to that shortcut too.",
+   "visual": [
+    {
+     "type": "quote",
+     "quote": "brand voice guidelines still apply when using the Magic Write shortcut",
+     "author": "Canva Help",
+     "kicker": "IN CANVA'S WORDS"
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "text": "Read the draft and check claims before posting.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Draft to post",
+     "comparison": {
+      "before": {
+       "label": "Raw draft",
+       "items": [
+        "Generic",
+        "Unchecked"
+       ]
+      },
+      "after": {
+       "label": "Your edit",
+       "items": [
+        "Sounds like you",
+        "Claims checked"
+       ]
+      }
+     },
+     "kicker": "EDIT IT"
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "text": "Day three: Bulk Create. Follow so you do not miss it.",
+   "visual": [
+    {
+     "type": "illustration",
+     "title": "Day 3 of 7: Bulk Create",
+     "sub": "One template, many posts",
+     "kicker": "NEXT"
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "text": "Full workflow: link in the pinned comment.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Full workflow video",
+     "kicker": "WATCH NEXT",
+     "sub": "Link in the pinned comment"
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "text": "Comment GUIDE for the free PDF.",
+   "visual": [
+    {
+     "type": "endcard",
+     "title": "Brand voice, set once",
+     "takeaway": "Write it once. Magic Write follows it.",
+     "cta": "Comment GUIDE for the PDF"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,277 @@
+{
+ "title": "Social posts take forever",
+ "autolayout": true,
+ "scenes": [
+  {
+   "id": "s01",
+   "text": "Social posts take forever. Here is the fix.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Social posts take forever",
+     "kicker": "THE PAIN",
+     "sub": "Here is the fix"
+    },
+    {
+     "type": "illustration",
+     "title": "Hours lost on posts",
+     "sub": "There is a faster way",
+     "kicker": "THE FIX"
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "text": "Every post starts blank. New colors, new fonts, new caption.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Every post, from scratch",
+     "comparison": {
+      "before": {
+       "label": "Blank page",
+       "items": [
+        "New colors",
+        "New fonts",
+        "New caption"
+       ]
+      },
+      "after": {
+       "label": "Brand Kit",
+       "items": [
+        "Colors saved",
+        "Fonts saved",
+        "Logo saved"
+       ]
+      }
+     },
+     "kicker": "THE PROBLEM"
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "text": "Fix one: put your colors, fonts and logo in a Canva Brand Kit.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Fix one: Brand Kit",
+     "items": [
+      {
+       "text": "Colors"
+      },
+      {
+       "text": "Fonts"
+      },
+      {
+       "text": "Logos"
+      }
+     ],
+     "kicker": "STEP 1"
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "text": "Fix two: add a brand voice, so Magic Write sounds like you.",
+   "visual": [
+    {
+     "type": "headline",
+     "title": "Add a brand voice",
+     "kicker": "STEP 2",
+     "sub": "Magic Write sounds like you"
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "text": "Brand voice depends on your Canva plan.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Brand voice plans",
+     "items": [
+      {
+       "text": "Canva Pro"
+      },
+      {
+       "text": "Canva Teams"
+      },
+      {
+       "text": "Education and Nonprofits"
+      }
+     ],
+     "kicker": "CHECK YOUR PLAN"
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "text": "Fix three: write a week of captions in one pass.",
+   "visual": [
+    {
+     "type": "stat",
+     "title": "One pass, one week",
+     "metrics": [
+      {
+       "value": "7",
+       "label": "captions"
+      },
+      {
+       "value": "1",
+       "label": "brief"
+      }
+     ],
+     "kicker": "STEP 3"
+    },
+    {
+     "type": "list",
+     "title": "Brief once",
+     "items": [
+      {
+       "text": "Topic"
+      },
+      {
+       "text": "Audience"
+      },
+      {
+       "text": "Tone"
+      }
+     ],
+     "kicker": "ONE BRIEF"
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "text": "Bulk Create turns each table row into a design.",
+   "visual": [
+    {
+     "type": "auto",
+     "title": "Bulk Create",
+     "steps": [
+      "Build one template",
+      "Add a row per post",
+      "Connect the data",
+      "Create designs"
+     ],
+     "kicker": "STEP 4"
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "text": "Seven rows in, seven designs out.",
+   "visual": [
+    {
+     "type": "stat",
+     "title": "Rows in, designs out",
+     "metrics": [
+      {
+       "value": "7",
+       "label": "rows"
+      },
+      {
+       "value": "7",
+       "label": "designs"
+      }
+     ],
+     "kicker": "THE PAYOFF"
+    },
+    {
+     "type": "headline",
+     "title": "Preview first",
+     "kicker": "CHECK IT",
+     "sub": "A typo in the table is a typo in every post"
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "text": "Last, schedule them from the Canva Content Planner.",
+   "visual": [
+    {
+     "type": "auto",
+     "title": "Schedule inside Canva",
+     "kicker": "STEP 5",
+     "sub": "Content Planner"
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "text": "Instagram scheduling needs a desktop browser.",
+   "visual": [
+    {
+     "type": "compare",
+     "title": "Instagram scheduling",
+     "comparison": {
+      "before": {
+       "label": "Desktop browser",
+       "items": [
+        "Schedule from planner"
+       ]
+      },
+      "after": {
+       "label": "Mobile",
+       "items": [
+        "View planner",
+        "Schedule from editor"
+       ]
+      }
+     },
+     "kicker": "GOOD TO KNOW"
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "text": "Brand once, write once, build once, schedule once.",
+   "visual": [
+    {
+     "type": "list",
+     "title": "Four things, once each",
+     "items": [
+      {
+       "text": "Brand"
+      },
+      {
+       "text": "Write"
+      },
+      {
+       "text": "Build"
+      },
+      {
+       "text": "Schedule"
+      }
+     ],
+     "kicker": "THE WORKFLOW"
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "text": "Full walkthrough: link in the pinned comment.",
+   "visual": [
+    {
+     "type": "illustration",
+     "title": "Full walkthrough",
+     "sub": "Pinned comment",
+     "kicker": "WATCH NEXT"
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "text": "Follow for day two, and comment GUIDE for the PDF.",
+   "visual": [
+    {
+     "type": "endcard",
+     "title": "Posts, faster",
+     "takeaway": "Brand once. Write once. Schedule once.",
+     "cta": "Comment GUIDE for the PDF"
+    }
+   ]
+  }
+ ]
+}

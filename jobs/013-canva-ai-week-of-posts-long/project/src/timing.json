@@ -1,0 +1,7491 @@
+{
+ "duration": 512.797,
+ "scenes": [
+  {
+   "id": "s01",
+   "start": 0.0,
+   "end": 16.483,
+   "text": "Social posts take forever. You open Canva on Monday, and by Friday you have made three posts and hated two of them. In this video you will build a full week of branded posts in one sitting, using Canva's own AI and automation tools.",
+   "words": [
+    {
+     "w": "Social",
+     "start": 1.2,
+     "end": 1.674
+    },
+    {
+     "w": "posts",
+     "start": 1.674,
+     "end": 2.069
+    },
+    {
+     "w": "take",
+     "start": 2.069,
+     "end": 2.385
+    },
+    {
+     "w": "forever.",
+     "start": 2.385,
+     "end": 3.017
+    },
+    {
+     "w": "You",
+     "start": 3.017,
+     "end": 3.254
+    },
+    {
+     "w": "open",
+     "start": 3.254,
+     "end": 3.57
+    },
+    {
+     "w": "Canva",
+     "start": 3.57,
+     "end": 3.965
+    },
+    {
+     "w": "on",
+     "start": 3.965,
+     "end": 4.123
+    },
+    {
+     "w": "Monday,",
+     "start": 4.123,
+     "end": 4.677
+    },
+    {
+     "w": "and",
+     "start": 4.677,
+     "end": 4.914
+    },
+    {
+     "w": "by",
+     "start": 4.914,
+     "end": 5.072
+    },
+    {
+     "w": "Friday",
+     "start": 5.072,
+     "end": 5.546
+    },
+    {
+     "w": "you",
+     "start": 5.546,
+     "end": 5.783
+    },
+    {
+     "w": "have",
+     "start": 5.783,
+     "end": 6.099
+    },
+    {
+     "w": "made",
+     "start": 6.099,
+     "end": 6.415
+    },
+    {
+     "w": "three",
+     "start": 6.415,
+     "end": 6.81
+    },
+    {
+     "w": "posts",
+     "start": 6.81,
+     "end": 7.205
+    },
+    {
+     "w": "and",
+     "start": 7.205,
+     "end": 7.442
+    },
+    {
+     "w": "hated",
+     "start": 7.442,
+     "end": 7.837
+    },
+    {
+     "w": "two",
+     "start": 7.837,
+     "end": 8.074
+    },
+    {
+     "w": "of",
+     "start": 8.074,
+     "end": 8.232
+    },
+    {
+     "w": "them.",
+     "start": 8.232,
+     "end": 8.627
+    },
+    {
+     "w": "In",
+     "start": 8.627,
+     "end": 8.785
+    },
+    {
+     "w": "this",
+     "start": 8.785,
+     "end": 9.101
+    },
+    {
+     "w": "video",
+     "start": 9.101,
+     "end": 9.496
+    },
+    {
+     "w": "you",
+     "start": 9.496,
+     "end": 9.733
+    },
+    {
+     "w": "will",
+     "start": 9.733,
+     "end": 10.049
+    },
+    {
+     "w": "build",
+     "start": 10.049,
+     "end": 10.444
+    },
+    {
+     "w": "a",
+     "start": 10.444,
+     "end": 10.523
+    },
+    {
+     "w": "full",
+     "start": 10.523,
+     "end": 10.84
+    },
+    {
+     "w": "week",
+     "start": 10.84,
+     "end": 11.156
+    },
+    {
+     "w": "of",
+     "start": 11.156,
+     "end": 11.314
+    },
+    {
+     "w": "branded",
+     "start": 11.314,
+     "end": 11.867
+    },
+    {
+     "w": "posts",
+     "start": 11.867,
+     "end": 12.262
+    },
+    {
+     "w": "in",
+     "start": 12.262,
+     "end": 12.42
+    },
+    {
+     "w": "one",
+     "start": 12.42,
+     "end": 12.657
+    },
+    {
+     "w": "sitting,",
+     "start": 12.657,
+     "end": 13.289
+    },
+    {
+     "w": "using",
+     "start": 13.289,
+     "end": 13.684
+    },
+    {
+     "w": "Canva's",
+     "start": 13.684,
+     "end": 14.237
+    },
+    {
+     "w": "own",
+     "start": 14.237,
+     "end": 14.474
+    },
+    {
+     "w": "AI",
+     "start": 14.474,
+     "end": 14.632
+    },
+    {
+     "w": "and",
+     "start": 14.632,
+     "end": 14.869
+    },
+    {
+     "w": "automation",
+     "start": 14.869,
+     "end": 15.659
+    },
+    {
+     "w": "tools.",
+     "start": 15.659,
+     "end": 16.133
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "start": 16.483,
+   "end": 26.924,
+   "text": "But first, the one setup step that makes every post after it faster. Skip it and the rest of this workflow falls apart. I will show you exactly where it lives.",
+   "words": [
+    {
+     "w": "But",
+     "start": 16.483,
+     "end": 16.718
+    },
+    {
+     "w": "first,",
+     "start": 16.718,
+     "end": 17.187
+    },
+    {
+     "w": "the",
+     "start": 17.187,
+     "end": 17.422
+    },
+    {
+     "w": "one",
+     "start": 17.422,
+     "end": 17.657
+    },
+    {
+     "w": "setup",
+     "start": 17.657,
+     "end": 18.048
+    },
+    {
+     "w": "step",
+     "start": 18.048,
+     "end": 18.361
+    },
+    {
+     "w": "that",
+     "start": 18.361,
+     "end": 18.674
+    },
+    {
+     "w": "makes",
+     "start": 18.674,
+     "end": 19.065
+    },
+    {
+     "w": "every",
+     "start": 19.065,
+     "end": 19.456
+    },
+    {
+     "w": "post",
+     "start": 19.456,
+     "end": 19.769
+    },
+    {
+     "w": "after",
+     "start": 19.769,
+     "end": 20.16
+    },
+    {
+     "w": "it",
+     "start": 20.16,
+     "end": 20.316
+    },
+    {
+     "w": "faster.",
+     "start": 20.316,
+     "end": 20.864
+    },
+    {
+     "w": "Skip",
+     "start": 20.864,
+     "end": 21.177
+    },
+    {
+     "w": "it",
+     "start": 21.177,
+     "end": 21.333
+    },
+    {
+     "w": "and",
+     "start": 21.333,
+     "end": 21.568
+    },
+    {
+     "w": "the",
+     "start": 21.568,
+     "end": 21.802
+    },
+    {
+     "w": "rest",
+     "start": 21.802,
+     "end": 22.115
+    },
+    {
+     "w": "of",
+     "start": 22.115,
+     "end": 22.272
+    },
+    {
+     "w": "this",
+     "start": 22.272,
+     "end": 22.585
+    },
+    {
+     "w": "workflow",
+     "start": 22.585,
+     "end": 23.21
+    },
+    {
+     "w": "falls",
+     "start": 23.21,
+     "end": 23.602
+    },
+    {
+     "w": "apart.",
+     "start": 23.602,
+     "end": 24.071
+    },
+    {
+     "w": "I",
+     "start": 24.071,
+     "end": 24.149
+    },
+    {
+     "w": "will",
+     "start": 24.149,
+     "end": 24.462
+    },
+    {
+     "w": "show",
+     "start": 24.462,
+     "end": 24.775
+    },
+    {
+     "w": "you",
+     "start": 24.775,
+     "end": 25.01
+    },
+    {
+     "w": "exactly",
+     "start": 25.01,
+     "end": 25.557
+    },
+    {
+     "w": "where",
+     "start": 25.557,
+     "end": 25.948
+    },
+    {
+     "w": "it",
+     "start": 25.948,
+     "end": 26.105
+    },
+    {
+     "w": "lives.",
+     "start": 26.105,
+     "end": 26.574
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "start": 26.924,
+   "end": 35.615,
+   "text": "Chapter one is your Brand Kit. A Brand Kit holds your colors, fonts and logos so every design starts on brand instead of blank.",
+   "words": [
+    {
+     "w": "Chapter",
+     "start": 26.924,
+     "end": 27.485
+    },
+    {
+     "w": "one",
+     "start": 27.485,
+     "end": 27.726
+    },
+    {
+     "w": "is",
+     "start": 27.726,
+     "end": 27.886
+    },
+    {
+     "w": "your",
+     "start": 27.886,
+     "end": 28.207
+    },
+    {
+     "w": "Brand",
+     "start": 28.207,
+     "end": 28.608
+    },
+    {
+     "w": "Kit.",
+     "start": 28.608,
+     "end": 28.929
+    },
+    {
+     "w": "A",
+     "start": 28.929,
+     "end": 29.009
+    },
+    {
+     "w": "Brand",
+     "start": 29.009,
+     "end": 29.41
+    },
+    {
+     "w": "Kit",
+     "start": 29.41,
+     "end": 29.651
+    },
+    {
+     "w": "holds",
+     "start": 29.651,
+     "end": 30.052
+    },
+    {
+     "w": "your",
+     "start": 30.052,
+     "end": 30.373
+    },
+    {
+     "w": "colors,",
+     "start": 30.373,
+     "end": 30.934
+    },
+    {
+     "w": "fonts",
+     "start": 30.934,
+     "end": 31.335
+    },
+    {
+     "w": "and",
+     "start": 31.335,
+     "end": 31.576
+    },
+    {
+     "w": "logos",
+     "start": 31.576,
+     "end": 31.977
+    },
+    {
+     "w": "so",
+     "start": 31.977,
+     "end": 32.137
+    },
+    {
+     "w": "every",
+     "start": 32.137,
+     "end": 32.538
+    },
+    {
+     "w": "design",
+     "start": 32.538,
+     "end": 33.02
+    },
+    {
+     "w": "starts",
+     "start": 33.02,
+     "end": 33.501
+    },
+    {
+     "w": "on",
+     "start": 33.501,
+     "end": 33.661
+    },
+    {
+     "w": "brand",
+     "start": 33.661,
+     "end": 34.062
+    },
+    {
+     "w": "instead",
+     "start": 34.062,
+     "end": 34.624
+    },
+    {
+     "w": "of",
+     "start": 34.624,
+     "end": 34.784
+    },
+    {
+     "w": "blank.",
+     "start": 34.784,
+     "end": 35.265
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "start": 35.615,
+   "end": 43.88,
+   "text": "Open Canva, go to Brand in the side panel, and choose Brand Kits. If you have more than one kit, pick the one you want to edit.",
+   "words": [
+    {
+     "w": "Open",
+     "start": 35.615,
+     "end": 35.929
+    },
+    {
+     "w": "Canva,",
+     "start": 35.929,
+     "end": 36.399
+    },
+    {
+     "w": "go",
+     "start": 36.399,
+     "end": 36.556
+    },
+    {
+     "w": "to",
+     "start": 36.556,
+     "end": 36.712
+    },
+    {
+     "w": "Brand",
+     "start": 36.712,
+     "end": 37.104
+    },
+    {
+     "w": "in",
+     "start": 37.104,
+     "end": 37.261
+    },
+    {
+     "w": "the",
+     "start": 37.261,
+     "end": 37.496
+    },
+    {
+     "w": "side",
+     "start": 37.496,
+     "end": 37.809
+    },
+    {
+     "w": "panel,",
+     "start": 37.809,
+     "end": 38.28
+    },
+    {
+     "w": "and",
+     "start": 38.28,
+     "end": 38.515
+    },
+    {
+     "w": "choose",
+     "start": 38.515,
+     "end": 38.985
+    },
+    {
+     "w": "Brand",
+     "start": 38.985,
+     "end": 39.377
+    },
+    {
+     "w": "Kits.",
+     "start": 39.377,
+     "end": 39.769
+    },
+    {
+     "w": "If",
+     "start": 39.769,
+     "end": 39.925
+    },
+    {
+     "w": "you",
+     "start": 39.925,
+     "end": 40.16
+    },
+    {
+     "w": "have",
+     "start": 40.16,
+     "end": 40.474
+    },
+    {
+     "w": "more",
+     "start": 40.474,
+     "end": 40.787
+    },
+    {
+     "w": "than",
+     "start": 40.787,
+     "end": 41.101
+    },
+    {
+     "w": "one",
+     "start": 41.101,
+     "end": 41.336
+    },
+    {
+     "w": "kit,",
+     "start": 41.336,
+     "end": 41.649
+    },
+    {
+     "w": "pick",
+     "start": 41.649,
+     "end": 41.963
+    },
+    {
+     "w": "the",
+     "start": 41.963,
+     "end": 42.198
+    },
+    {
+     "w": "one",
+     "start": 42.198,
+     "end": 42.433
+    },
+    {
+     "w": "you",
+     "start": 42.433,
+     "end": 42.668
+    },
+    {
+     "w": "want",
+     "start": 42.668,
+     "end": 42.981
+    },
+    {
+     "w": "to",
+     "start": 42.981,
+     "end": 43.138
+    },
+    {
+     "w": "edit.",
+     "start": 43.138,
+     "end": 43.53
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "start": 43.88,
+   "end": 52.614,
+   "text": "Here is the part most people miss. Inside the Brand Kit there is a brand voice section. That is where you write down how your brand sounds.",
+   "words": [
+    {
+     "w": "Here",
+     "start": 43.88,
+     "end": 44.177
+    },
+    {
+     "w": "is",
+     "start": 44.177,
+     "end": 44.325
+    },
+    {
+     "w": "the",
+     "start": 44.325,
+     "end": 44.548
+    },
+    {
+     "w": "part",
+     "start": 44.548,
+     "end": 44.845
+    },
+    {
+     "w": "most",
+     "start": 44.845,
+     "end": 45.141
+    },
+    {
+     "w": "people",
+     "start": 45.141,
+     "end": 45.586
+    },
+    {
+     "w": "miss.",
+     "start": 45.586,
+     "end": 45.957
+    },
+    {
+     "w": "Inside",
+     "start": 45.957,
+     "end": 46.403
+    },
+    {
+     "w": "the",
+     "start": 46.403,
+     "end": 46.625
+    },
+    {
+     "w": "Brand",
+     "start": 46.625,
+     "end": 46.996
+    },
+    {
+     "w": "Kit",
+     "start": 46.996,
+     "end": 47.219
+    },
+    {
+     "w": "there",
+     "start": 47.219,
+     "end": 47.59
+    },
+    {
+     "w": "is",
+     "start": 47.59,
+     "end": 47.738
+    },
+    {
+     "w": "a",
+     "start": 47.738,
+     "end": 47.812
+    },
+    {
+     "w": "brand",
+     "start": 47.812,
+     "end": 48.183
+    },
+    {
+     "w": "voice",
+     "start": 48.183,
+     "end": 48.554
+    },
+    {
+     "w": "section.",
+     "start": 48.554,
+     "end": 49.148
+    },
+    {
+     "w": "That",
+     "start": 49.148,
+     "end": 49.445
+    },
+    {
+     "w": "is",
+     "start": 49.445,
+     "end": 49.593
+    },
+    {
+     "w": "where",
+     "start": 49.593,
+     "end": 49.964
+    },
+    {
+     "w": "you",
+     "start": 49.964,
+     "end": 50.187
+    },
+    {
+     "w": "write",
+     "start": 50.187,
+     "end": 50.558
+    },
+    {
+     "w": "down",
+     "start": 50.558,
+     "end": 50.854
+    },
+    {
+     "w": "how",
+     "start": 50.854,
+     "end": 51.077
+    },
+    {
+     "w": "your",
+     "start": 51.077,
+     "end": 51.374
+    },
+    {
+     "w": "brand",
+     "start": 51.374,
+     "end": 51.745
+    },
+    {
+     "w": "sounds.",
+     "start": 51.745,
+     "end": 52.264
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "start": 52.614,
+   "end": 65.935,
+   "text": "Check your plan first. Canva says brand voice is available on Pro, Teams, Education and Nonprofits plans. And on a team, only owners, administrators and brand designers can add or edit it.",
+   "words": [
+    {
+     "w": "Check",
+     "start": 52.614,
+     "end": 53.027
+    },
+    {
+     "w": "your",
+     "start": 53.027,
+     "end": 53.358
+    },
+    {
+     "w": "plan",
+     "start": 53.358,
+     "end": 53.688
+    },
+    {
+     "w": "first.",
+     "start": 53.688,
+     "end": 54.184
+    },
+    {
+     "w": "Canva",
+     "start": 54.184,
+     "end": 54.597
+    },
+    {
+     "w": "says",
+     "start": 54.597,
+     "end": 54.927
+    },
+    {
+     "w": "brand",
+     "start": 54.927,
+     "end": 55.34
+    },
+    {
+     "w": "voice",
+     "start": 55.34,
+     "end": 55.753
+    },
+    {
+     "w": "is",
+     "start": 55.753,
+     "end": 55.919
+    },
+    {
+     "w": "available",
+     "start": 55.919,
+     "end": 56.662
+    },
+    {
+     "w": "on",
+     "start": 56.662,
+     "end": 56.827
+    },
+    {
+     "w": "Pro,",
+     "start": 56.827,
+     "end": 57.158
+    },
+    {
+     "w": "Teams,",
+     "start": 57.158,
+     "end": 57.654
+    },
+    {
+     "w": "Education",
+     "start": 57.654,
+     "end": 58.397
+    },
+    {
+     "w": "and",
+     "start": 58.397,
+     "end": 58.645
+    },
+    {
+     "w": "Nonprofits",
+     "start": 58.645,
+     "end": 59.471
+    },
+    {
+     "w": "plans.",
+     "start": 59.471,
+     "end": 59.967
+    },
+    {
+     "w": "And",
+     "start": 59.967,
+     "end": 60.215
+    },
+    {
+     "w": "on",
+     "start": 60.215,
+     "end": 60.38
+    },
+    {
+     "w": "a",
+     "start": 60.38,
+     "end": 60.462
+    },
+    {
+     "w": "team,",
+     "start": 60.462,
+     "end": 60.876
+    },
+    {
+     "w": "only",
+     "start": 60.876,
+     "end": 61.206
+    },
+    {
+     "w": "owners,",
+     "start": 61.206,
+     "end": 61.784
+    },
+    {
+     "w": "administrators",
+     "start": 61.784,
+     "end": 62.941
+    },
+    {
+     "w": "and",
+     "start": 62.941,
+     "end": 63.189
+    },
+    {
+     "w": "brand",
+     "start": 63.189,
+     "end": 63.602
+    },
+    {
+     "w": "designers",
+     "start": 63.602,
+     "end": 64.345
+    },
+    {
+     "w": "can",
+     "start": 64.345,
+     "end": 64.593
+    },
+    {
+     "w": "add",
+     "start": 64.593,
+     "end": 64.841
+    },
+    {
+     "w": "or",
+     "start": 64.841,
+     "end": 65.006
+    },
+    {
+     "w": "edit",
+     "start": 65.006,
+     "end": 65.337
+    },
+    {
+     "w": "it.",
+     "start": 65.337,
+     "end": 65.585
+    }
+   ]
+  },
+  {
+   "id": "s07",
+   "start": 65.935,
+   "end": 75.885,
+   "text": "Keep your brand voice guidelines short and concrete. Say who you write for, how formal you sound, and any words you always or never use. Then save.",
+   "words": [
+    {
+     "w": "Keep",
+     "start": 65.935,
+     "end": 66.252
+    },
+    {
+     "w": "your",
+     "start": 66.252,
+     "end": 66.569
+    },
+    {
+     "w": "brand",
+     "start": 66.569,
+     "end": 66.966
+    },
+    {
+     "w": "voice",
+     "start": 66.966,
+     "end": 67.363
+    },
+    {
+     "w": "guidelines",
+     "start": 67.363,
+     "end": 68.156
+    },
+    {
+     "w": "short",
+     "start": 68.156,
+     "end": 68.553
+    },
+    {
+     "w": "and",
+     "start": 68.553,
+     "end": 68.791
+    },
+    {
+     "w": "concrete.",
+     "start": 68.791,
+     "end": 69.505
+    },
+    {
+     "w": "Say",
+     "start": 69.505,
+     "end": 69.743
+    },
+    {
+     "w": "who",
+     "start": 69.743,
+     "end": 69.981
+    },
+    {
+     "w": "you",
+     "start": 69.981,
+     "end": 70.219
+    },
+    {
+     "w": "write",
+     "start": 70.219,
+     "end": 70.616
+    },
+    {
+     "w": "for,",
+     "start": 70.616,
+     "end": 70.933
+    },
+    {
+     "w": "how",
+     "start": 70.933,
+     "end": 71.171
+    },
+    {
+     "w": "formal",
+     "start": 71.171,
+     "end": 71.647
+    },
+    {
+     "w": "you",
+     "start": 71.647,
+     "end": 71.885
+    },
+    {
+     "w": "sound,",
+     "start": 71.885,
+     "end": 72.361
+    },
+    {
+     "w": "and",
+     "start": 72.361,
+     "end": 72.599
+    },
+    {
+     "w": "any",
+     "start": 72.599,
+     "end": 72.837
+    },
+    {
+     "w": "words",
+     "start": 72.837,
+     "end": 73.234
+    },
+    {
+     "w": "you",
+     "start": 73.234,
+     "end": 73.472
+    },
+    {
+     "w": "always",
+     "start": 73.472,
+     "end": 73.948
+    },
+    {
+     "w": "or",
+     "start": 73.948,
+     "end": 74.107
+    },
+    {
+     "w": "never",
+     "start": 74.107,
+     "end": 74.503
+    },
+    {
+     "w": "use.",
+     "start": 74.503,
+     "end": 74.821
+    },
+    {
+     "w": "Then",
+     "start": 74.821,
+     "end": 75.138
+    },
+    {
+     "w": "save.",
+     "start": 75.138,
+     "end": 75.535
+    }
+   ]
+  },
+  {
+   "id": "s08",
+   "start": 75.885,
+   "end": 88.757,
+   "text": "Why bother? Once a brand voice exists, Canva says its guidelines also apply when you use the Magic Write shortcut, the forward slash key. You set the tone once and every caption inherits it.",
+   "words": [
+    {
+     "w": "Why",
+     "start": 75.885,
+     "end": 76.124
+    },
+    {
+     "w": "bother?",
+     "start": 76.124,
+     "end": 76.682
+    },
+    {
+     "w": "Once",
+     "start": 76.682,
+     "end": 77.001
+    },
+    {
+     "w": "a",
+     "start": 77.001,
+     "end": 77.081
+    },
+    {
+     "w": "brand",
+     "start": 77.081,
+     "end": 77.48
+    },
+    {
+     "w": "voice",
+     "start": 77.48,
+     "end": 77.879
+    },
+    {
+     "w": "exists,",
+     "start": 77.879,
+     "end": 78.437
+    },
+    {
+     "w": "Canva",
+     "start": 78.437,
+     "end": 78.836
+    },
+    {
+     "w": "says",
+     "start": 78.836,
+     "end": 79.155
+    },
+    {
+     "w": "its",
+     "start": 79.155,
+     "end": 79.394
+    },
+    {
+     "w": "guidelines",
+     "start": 79.394,
+     "end": 80.192
+    },
+    {
+     "w": "also",
+     "start": 80.192,
+     "end": 80.511
+    },
+    {
+     "w": "apply",
+     "start": 80.511,
+     "end": 80.91
+    },
+    {
+     "w": "when",
+     "start": 80.91,
+     "end": 81.229
+    },
+    {
+     "w": "you",
+     "start": 81.229,
+     "end": 81.468
+    },
+    {
+     "w": "use",
+     "start": 81.468,
+     "end": 81.707
+    },
+    {
+     "w": "the",
+     "start": 81.707,
+     "end": 81.947
+    },
+    {
+     "w": "Magic",
+     "start": 81.947,
+     "end": 82.345
+    },
+    {
+     "w": "Write",
+     "start": 82.345,
+     "end": 82.744
+    },
+    {
+     "w": "shortcut,",
+     "start": 82.744,
+     "end": 83.462
+    },
+    {
+     "w": "the",
+     "start": 83.462,
+     "end": 83.701
+    },
+    {
+     "w": "forward",
+     "start": 83.701,
+     "end": 84.26
+    },
+    {
+     "w": "slash",
+     "start": 84.26,
+     "end": 84.659
+    },
+    {
+     "w": "key.",
+     "start": 84.659,
+     "end": 84.978
+    },
+    {
+     "w": "You",
+     "start": 84.978,
+     "end": 85.217
+    },
+    {
+     "w": "set",
+     "start": 85.217,
+     "end": 85.456
+    },
+    {
+     "w": "the",
+     "start": 85.456,
+     "end": 85.695
+    },
+    {
+     "w": "tone",
+     "start": 85.695,
+     "end": 86.014
+    },
+    {
+     "w": "once",
+     "start": 86.014,
+     "end": 86.334
+    },
+    {
+     "w": "and",
+     "start": 86.334,
+     "end": 86.573
+    },
+    {
+     "w": "every",
+     "start": 86.573,
+     "end": 86.972
+    },
+    {
+     "w": "caption",
+     "start": 86.972,
+     "end": 87.53
+    },
+    {
+     "w": "inherits",
+     "start": 87.53,
+     "end": 88.168
+    },
+    {
+     "w": "it.",
+     "start": 88.168,
+     "end": 88.407
+    }
+   ]
+  },
+  {
+   "id": "x1",
+   "start": 88.757,
+   "end": 104.297,
+   "text": "Here is a brief you can adapt. Ask for a friendly Instagram caption for a small bakery, about a weekend special, two sentences, upbeat tone. Swap in your own business, offer and tone, then regenerate until one line sounds like you.",
+   "words": [
+    {
+     "w": "Here",
+     "start": 88.757,
+     "end": 89.075
+    },
+    {
+     "w": "is",
+     "start": 89.075,
+     "end": 89.234
+    },
+    {
+     "w": "a",
+     "start": 89.234,
+     "end": 89.314
+    },
+    {
+     "w": "brief",
+     "start": 89.314,
+     "end": 89.712
+    },
+    {
+     "w": "you",
+     "start": 89.712,
+     "end": 89.95
+    },
+    {
+     "w": "can",
+     "start": 89.95,
+     "end": 90.189
+    },
+    {
+     "w": "adapt.",
+     "start": 90.189,
+     "end": 90.666
+    },
+    {
+     "w": "Ask",
+     "start": 90.666,
+     "end": 90.905
+    },
+    {
+     "w": "for",
+     "start": 90.905,
+     "end": 91.143
+    },
+    {
+     "w": "a",
+     "start": 91.143,
+     "end": 91.223
+    },
+    {
+     "w": "friendly",
+     "start": 91.223,
+     "end": 91.859
+    },
+    {
+     "w": "Instagram",
+     "start": 91.859,
+     "end": 92.575
+    },
+    {
+     "w": "caption",
+     "start": 92.575,
+     "end": 93.131
+    },
+    {
+     "w": "for",
+     "start": 93.131,
+     "end": 93.37
+    },
+    {
+     "w": "a",
+     "start": 93.37,
+     "end": 93.449
+    },
+    {
+     "w": "small",
+     "start": 93.449,
+     "end": 93.847
+    },
+    {
+     "w": "bakery,",
+     "start": 93.847,
+     "end": 94.404
+    },
+    {
+     "w": "about",
+     "start": 94.404,
+     "end": 94.801
+    },
+    {
+     "w": "a",
+     "start": 94.801,
+     "end": 94.881
+    },
+    {
+     "w": "weekend",
+     "start": 94.881,
+     "end": 95.437
+    },
+    {
+     "w": "special,",
+     "start": 95.437,
+     "end": 96.074
+    },
+    {
+     "w": "two",
+     "start": 96.074,
+     "end": 96.312
+    },
+    {
+     "w": "sentences,",
+     "start": 96.312,
+     "end": 97.107
+    },
+    {
+     "w": "upbeat",
+     "start": 97.107,
+     "end": 97.585
+    },
+    {
+     "w": "tone.",
+     "start": 97.585,
+     "end": 97.982
+    },
+    {
+     "w": "Swap",
+     "start": 97.982,
+     "end": 98.3
+    },
+    {
+     "w": "in",
+     "start": 98.3,
+     "end": 98.459
+    },
+    {
+     "w": "your",
+     "start": 98.459,
+     "end": 98.778
+    },
+    {
+     "w": "own",
+     "start": 98.778,
+     "end": 99.016
+    },
+    {
+     "w": "business,",
+     "start": 99.016,
+     "end": 99.732
+    },
+    {
+     "w": "offer",
+     "start": 99.732,
+     "end": 100.129
+    },
+    {
+     "w": "and",
+     "start": 100.129,
+     "end": 100.368
+    },
+    {
+     "w": "tone,",
+     "start": 100.368,
+     "end": 100.766
+    },
+    {
+     "w": "then",
+     "start": 100.766,
+     "end": 101.084
+    },
+    {
+     "w": "regenerate",
+     "start": 101.084,
+     "end": 101.879
+    },
+    {
+     "w": "until",
+     "start": 101.879,
+     "end": 102.277
+    },
+    {
+     "w": "one",
+     "start": 102.277,
+     "end": 102.515
+    },
+    {
+     "w": "line",
+     "start": 102.515,
+     "end": 102.833
+    },
+    {
+     "w": "sounds",
+     "start": 102.833,
+     "end": 103.31
+    },
+    {
+     "w": "like",
+     "start": 103.31,
+     "end": 103.629
+    },
+    {
+     "w": "you.",
+     "start": 103.629,
+     "end": 103.947
+    }
+   ]
+  },
+  {
+   "id": "s09",
+   "start": 104.297,
+   "end": 113.863,
+   "text": "Before you leave the Brand Kit, check that your colors, fonts and logo are in there too. That way every template you open next starts looking like you.",
+   "words": [
+    {
+     "w": "Before",
+     "start": 104.297,
+     "end": 104.743
+    },
+    {
+     "w": "you",
+     "start": 104.743,
+     "end": 104.966
+    },
+    {
+     "w": "leave",
+     "start": 104.966,
+     "end": 105.337
+    },
+    {
+     "w": "the",
+     "start": 105.337,
+     "end": 105.56
+    },
+    {
+     "w": "Brand",
+     "start": 105.56,
+     "end": 105.932
+    },
+    {
+     "w": "Kit,",
+     "start": 105.932,
+     "end": 106.229
+    },
+    {
+     "w": "check",
+     "start": 106.229,
+     "end": 106.601
+    },
+    {
+     "w": "that",
+     "start": 106.601,
+     "end": 106.898
+    },
+    {
+     "w": "your",
+     "start": 106.898,
+     "end": 107.195
+    },
+    {
+     "w": "colors,",
+     "start": 107.195,
+     "end": 107.716
+    },
+    {
+     "w": "fonts",
+     "start": 107.716,
+     "end": 108.087
+    },
+    {
+     "w": "and",
+     "start": 108.087,
+     "end": 108.31
+    },
+    {
+     "w": "logo",
+     "start": 108.31,
+     "end": 108.607
+    },
+    {
+     "w": "are",
+     "start": 108.607,
+     "end": 108.83
+    },
+    {
+     "w": "in",
+     "start": 108.83,
+     "end": 108.979
+    },
+    {
+     "w": "there",
+     "start": 108.979,
+     "end": 109.351
+    },
+    {
+     "w": "too.",
+     "start": 109.351,
+     "end": 109.648
+    },
+    {
+     "w": "That",
+     "start": 109.648,
+     "end": 109.945
+    },
+    {
+     "w": "way",
+     "start": 109.945,
+     "end": 110.168
+    },
+    {
+     "w": "every",
+     "start": 110.168,
+     "end": 110.54
+    },
+    {
+     "w": "template",
+     "start": 110.54,
+     "end": 111.134
+    },
+    {
+     "w": "you",
+     "start": 111.134,
+     "end": 111.357
+    },
+    {
+     "w": "open",
+     "start": 111.357,
+     "end": 111.655
+    },
+    {
+     "w": "next",
+     "start": 111.655,
+     "end": 111.952
+    },
+    {
+     "w": "starts",
+     "start": 111.952,
+     "end": 112.398
+    },
+    {
+     "w": "looking",
+     "start": 112.398,
+     "end": 112.918
+    },
+    {
+     "w": "like",
+     "start": 112.918,
+     "end": 113.215
+    },
+    {
+     "w": "you.",
+     "start": 113.215,
+     "end": 113.513
+    }
+   ]
+  },
+  {
+   "id": "s10",
+   "start": 113.863,
+   "end": 123.066,
+   "text": "Chapter two is writing the week. Open a new Instagram post design, and pick a simple template that has room for a headline and a caption.",
+   "words": [
+    {
+     "w": "Chapter",
+     "start": 113.863,
+     "end": 114.416
+    },
+    {
+     "w": "two",
+     "start": 114.416,
+     "end": 114.653
+    },
+    {
+     "w": "is",
+     "start": 114.653,
+     "end": 114.811
+    },
+    {
+     "w": "writing",
+     "start": 114.811,
+     "end": 115.365
+    },
+    {
+     "w": "the",
+     "start": 115.365,
+     "end": 115.602
+    },
+    {
+     "w": "week.",
+     "start": 115.602,
+     "end": 115.997
+    },
+    {
+     "w": "Open",
+     "start": 115.997,
+     "end": 116.313
+    },
+    {
+     "w": "a",
+     "start": 116.313,
+     "end": 116.392
+    },
+    {
+     "w": "new",
+     "start": 116.392,
+     "end": 116.629
+    },
+    {
+     "w": "Instagram",
+     "start": 116.629,
+     "end": 117.341
+    },
+    {
+     "w": "post",
+     "start": 117.341,
+     "end": 117.657
+    },
+    {
+     "w": "design,",
+     "start": 117.657,
+     "end": 118.21
+    },
+    {
+     "w": "and",
+     "start": 118.21,
+     "end": 118.447
+    },
+    {
+     "w": "pick",
+     "start": 118.447,
+     "end": 118.764
+    },
+    {
+     "w": "a",
+     "start": 118.764,
+     "end": 118.843
+    },
+    {
+     "w": "simple",
+     "start": 118.843,
+     "end": 119.317
+    },
+    {
+     "w": "template",
+     "start": 119.317,
+     "end": 119.949
+    },
+    {
+     "w": "that",
+     "start": 119.949,
+     "end": 120.266
+    },
+    {
+     "w": "has",
+     "start": 120.266,
+     "end": 120.503
+    },
+    {
+     "w": "room",
+     "start": 120.503,
+     "end": 120.819
+    },
+    {
+     "w": "for",
+     "start": 120.819,
+     "end": 121.056
+    },
+    {
+     "w": "a",
+     "start": 121.056,
+     "end": 121.135
+    },
+    {
+     "w": "headline",
+     "start": 121.135,
+     "end": 121.767
+    },
+    {
+     "w": "and",
+     "start": 121.767,
+     "end": 122.005
+    },
+    {
+     "w": "a",
+     "start": 122.005,
+     "end": 122.084
+    },
+    {
+     "w": "caption.",
+     "start": 122.084,
+     "end": 122.716
+    }
+   ]
+  },
+  {
+   "id": "s11",
+   "start": 123.066,
+   "end": 132.803,
+   "text": "Select a text box. A floating toolbar appears, and it has a Magic Write button. You can also press the forward slash key and choose Magic Write.",
+   "words": [
+    {
+     "w": "Select",
+     "start": 123.066,
+     "end": 123.543
+    },
+    {
+     "w": "a",
+     "start": 123.543,
+     "end": 123.623
+    },
+    {
+     "w": "text",
+     "start": 123.623,
+     "end": 123.941
+    },
+    {
+     "w": "box.",
+     "start": 123.941,
+     "end": 124.259
+    },
+    {
+     "w": "A",
+     "start": 124.259,
+     "end": 124.339
+    },
+    {
+     "w": "floating",
+     "start": 124.339,
+     "end": 124.975
+    },
+    {
+     "w": "toolbar",
+     "start": 124.975,
+     "end": 125.532
+    },
+    {
+     "w": "appears,",
+     "start": 125.532,
+     "end": 126.168
+    },
+    {
+     "w": "and",
+     "start": 126.168,
+     "end": 126.407
+    },
+    {
+     "w": "it",
+     "start": 126.407,
+     "end": 126.566
+    },
+    {
+     "w": "has",
+     "start": 126.566,
+     "end": 126.805
+    },
+    {
+     "w": "a",
+     "start": 126.805,
+     "end": 126.884
+    },
+    {
+     "w": "Magic",
+     "start": 126.884,
+     "end": 127.282
+    },
+    {
+     "w": "Write",
+     "start": 127.282,
+     "end": 127.68
+    },
+    {
+     "w": "button.",
+     "start": 127.68,
+     "end": 128.237
+    },
+    {
+     "w": "You",
+     "start": 128.237,
+     "end": 128.475
+    },
+    {
+     "w": "can",
+     "start": 128.475,
+     "end": 128.714
+    },
+    {
+     "w": "also",
+     "start": 128.714,
+     "end": 129.032
+    },
+    {
+     "w": "press",
+     "start": 129.032,
+     "end": 129.43
+    },
+    {
+     "w": "the",
+     "start": 129.43,
+     "end": 129.668
+    },
+    {
+     "w": "forward",
+     "start": 129.668,
+     "end": 130.225
+    },
+    {
+     "w": "slash",
+     "start": 130.225,
+     "end": 130.623
+    },
+    {
+     "w": "key",
+     "start": 130.623,
+     "end": 130.862
+    },
+    {
+     "w": "and",
+     "start": 130.862,
+     "end": 131.1
+    },
+    {
+     "w": "choose",
+     "start": 131.1,
+     "end": 131.578
+    },
+    {
+     "w": "Magic",
+     "start": 131.578,
+     "end": 131.975
+    },
+    {
+     "w": "Write.",
+     "start": 131.975,
+     "end": 132.453
+    }
+   ]
+  },
+  {
+   "id": "s12",
+   "start": 132.803,
+   "end": 144.011,
+   "text": "Magic Write works from a prompt. Tell it the topic, who it is for, and the tone you want. Canva's own guidance says you can include tone in your brief, from playful to formal.",
+   "words": [
+    {
+     "w": "Magic",
+     "start": 132.803,
+     "end": 133.185
+    },
+    {
+     "w": "Write",
+     "start": 133.185,
+     "end": 133.567
+    },
+    {
+     "w": "works",
+     "start": 133.567,
+     "end": 133.95
+    },
+    {
+     "w": "from",
+     "start": 133.95,
+     "end": 134.256
+    },
+    {
+     "w": "a",
+     "start": 134.256,
+     "end": 134.332
+    },
+    {
+     "w": "prompt.",
+     "start": 134.332,
+     "end": 134.867
+    },
+    {
+     "w": "Tell",
+     "start": 134.867,
+     "end": 135.173
+    },
+    {
+     "w": "it",
+     "start": 135.173,
+     "end": 135.326
+    },
+    {
+     "w": "the",
+     "start": 135.326,
+     "end": 135.556
+    },
+    {
+     "w": "topic,",
+     "start": 135.556,
+     "end": 136.014
+    },
+    {
+     "w": "who",
+     "start": 136.014,
+     "end": 136.244
+    },
+    {
+     "w": "it",
+     "start": 136.244,
+     "end": 136.397
+    },
+    {
+     "w": "is",
+     "start": 136.397,
+     "end": 136.55
+    },
+    {
+     "w": "for,",
+     "start": 136.55,
+     "end": 136.856
+    },
+    {
+     "w": "and",
+     "start": 136.856,
+     "end": 137.085
+    },
+    {
+     "w": "the",
+     "start": 137.085,
+     "end": 137.314
+    },
+    {
+     "w": "tone",
+     "start": 137.314,
+     "end": 137.62
+    },
+    {
+     "w": "you",
+     "start": 137.62,
+     "end": 137.85
+    },
+    {
+     "w": "want.",
+     "start": 137.85,
+     "end": 138.232
+    },
+    {
+     "w": "Canva's",
+     "start": 138.232,
+     "end": 138.767
+    },
+    {
+     "w": "own",
+     "start": 138.767,
+     "end": 138.997
+    },
+    {
+     "w": "guidance",
+     "start": 138.997,
+     "end": 139.608
+    },
+    {
+     "w": "says",
+     "start": 139.608,
+     "end": 139.914
+    },
+    {
+     "w": "you",
+     "start": 139.914,
+     "end": 140.144
+    },
+    {
+     "w": "can",
+     "start": 140.144,
+     "end": 140.373
+    },
+    {
+     "w": "include",
+     "start": 140.373,
+     "end": 140.908
+    },
+    {
+     "w": "tone",
+     "start": 140.908,
+     "end": 141.214
+    },
+    {
+     "w": "in",
+     "start": 141.214,
+     "end": 141.367
+    },
+    {
+     "w": "your",
+     "start": 141.367,
+     "end": 141.673
+    },
+    {
+     "w": "brief,",
+     "start": 141.673,
+     "end": 142.132
+    },
+    {
+     "w": "from",
+     "start": 142.132,
+     "end": 142.438
+    },
+    {
+     "w": "playful",
+     "start": 142.438,
+     "end": 142.973
+    },
+    {
+     "w": "to",
+     "start": 142.973,
+     "end": 143.126
+    },
+    {
+     "w": "formal.",
+     "start": 143.126,
+     "end": 143.661
+    }
+   ]
+  },
+  {
+   "id": "x9",
+   "start": 144.011,
+   "end": 152.703,
+   "text": "Be specific about length too. Ask for two sentences, or a word limit, and Magic Write has a clear target instead of rambling.",
+   "words": [
+    {
+     "w": "Be",
+     "start": 144.011,
+     "end": 144.173
+    },
+    {
+     "w": "specific",
+     "start": 144.173,
+     "end": 144.821
+    },
+    {
+     "w": "about",
+     "start": 144.821,
+     "end": 145.226
+    },
+    {
+     "w": "length",
+     "start": 145.226,
+     "end": 145.712
+    },
+    {
+     "w": "too.",
+     "start": 145.712,
+     "end": 146.036
+    },
+    {
+     "w": "Ask",
+     "start": 146.036,
+     "end": 146.279
+    },
+    {
+     "w": "for",
+     "start": 146.279,
+     "end": 146.522
+    },
+    {
+     "w": "two",
+     "start": 146.522,
+     "end": 146.765
+    },
+    {
+     "w": "sentences,",
+     "start": 146.765,
+     "end": 147.575
+    },
+    {
+     "w": "or",
+     "start": 147.575,
+     "end": 147.737
+    },
+    {
+     "w": "a",
+     "start": 147.737,
+     "end": 147.818
+    },
+    {
+     "w": "word",
+     "start": 147.818,
+     "end": 148.142
+    },
+    {
+     "w": "limit,",
+     "start": 148.142,
+     "end": 148.627
+    },
+    {
+     "w": "and",
+     "start": 148.627,
+     "end": 148.87
+    },
+    {
+     "w": "Magic",
+     "start": 148.87,
+     "end": 149.275
+    },
+    {
+     "w": "Write",
+     "start": 149.275,
+     "end": 149.68
+    },
+    {
+     "w": "has",
+     "start": 149.68,
+     "end": 149.923
+    },
+    {
+     "w": "a",
+     "start": 149.923,
+     "end": 150.004
+    },
+    {
+     "w": "clear",
+     "start": 150.004,
+     "end": 150.409
+    },
+    {
+     "w": "target",
+     "start": 150.409,
+     "end": 150.895
+    },
+    {
+     "w": "instead",
+     "start": 150.895,
+     "end": 151.462
+    },
+    {
+     "w": "of",
+     "start": 151.462,
+     "end": 151.624
+    },
+    {
+     "w": "rambling.",
+     "start": 151.624,
+     "end": 152.353
+    }
+   ]
+  },
+  {
+   "id": "s13",
+   "start": 152.703,
+   "end": 162.909,
+   "text": "Treat the first result as a draft, not a finished post. Read it out loud, cut anything that does not sound like you, and keep the best line as your headline.",
+   "words": [
+    {
+     "w": "Treat",
+     "start": 152.703,
+     "end": 153.091
+    },
+    {
+     "w": "the",
+     "start": 153.091,
+     "end": 153.324
+    },
+    {
+     "w": "first",
+     "start": 153.324,
+     "end": 153.712
+    },
+    {
+     "w": "result",
+     "start": 153.712,
+     "end": 154.177
+    },
+    {
+     "w": "as",
+     "start": 154.177,
+     "end": 154.332
+    },
+    {
+     "w": "a",
+     "start": 154.332,
+     "end": 154.41
+    },
+    {
+     "w": "draft,",
+     "start": 154.41,
+     "end": 154.876
+    },
+    {
+     "w": "not",
+     "start": 154.876,
+     "end": 155.108
+    },
+    {
+     "w": "a",
+     "start": 155.108,
+     "end": 155.186
+    },
+    {
+     "w": "finished",
+     "start": 155.186,
+     "end": 155.807
+    },
+    {
+     "w": "post.",
+     "start": 155.807,
+     "end": 156.195
+    },
+    {
+     "w": "Read",
+     "start": 156.195,
+     "end": 156.505
+    },
+    {
+     "w": "it",
+     "start": 156.505,
+     "end": 156.661
+    },
+    {
+     "w": "out",
+     "start": 156.661,
+     "end": 156.893
+    },
+    {
+     "w": "loud,",
+     "start": 156.893,
+     "end": 157.281
+    },
+    {
+     "w": "cut",
+     "start": 157.281,
+     "end": 157.514
+    },
+    {
+     "w": "anything",
+     "start": 157.514,
+     "end": 158.135
+    },
+    {
+     "w": "that",
+     "start": 158.135,
+     "end": 158.446
+    },
+    {
+     "w": "does",
+     "start": 158.446,
+     "end": 158.756
+    },
+    {
+     "w": "not",
+     "start": 158.756,
+     "end": 158.989
+    },
+    {
+     "w": "sound",
+     "start": 158.989,
+     "end": 159.377
+    },
+    {
+     "w": "like",
+     "start": 159.377,
+     "end": 159.687
+    },
+    {
+     "w": "you,",
+     "start": 159.687,
+     "end": 159.998
+    },
+    {
+     "w": "and",
+     "start": 159.998,
+     "end": 160.23
+    },
+    {
+     "w": "keep",
+     "start": 160.23,
+     "end": 160.541
+    },
+    {
+     "w": "the",
+     "start": 160.541,
+     "end": 160.774
+    },
+    {
+     "w": "best",
+     "start": 160.774,
+     "end": 161.084
+    },
+    {
+     "w": "line",
+     "start": 161.084,
+     "end": 161.395
+    },
+    {
+     "w": "as",
+     "start": 161.395,
+     "end": 161.55
+    },
+    {
+     "w": "your",
+     "start": 161.55,
+     "end": 161.86
+    },
+    {
+     "w": "headline.",
+     "start": 161.86,
+     "end": 162.559
+    }
+   ]
+  },
+  {
+   "id": "s14",
+   "start": 162.909,
+   "end": 172.901,
+   "text": "You can also save your own writing style. Select some text, open Magic Write, choose Change voice, and save a tone of voice you can pick again later.",
+   "words": [
+    {
+     "w": "You",
+     "start": 162.909,
+     "end": 163.146
+    },
+    {
+     "w": "can",
+     "start": 163.146,
+     "end": 163.383
+    },
+    {
+     "w": "also",
+     "start": 163.383,
+     "end": 163.699
+    },
+    {
+     "w": "save",
+     "start": 163.699,
+     "end": 164.015
+    },
+    {
+     "w": "your",
+     "start": 164.015,
+     "end": 164.331
+    },
+    {
+     "w": "own",
+     "start": 164.331,
+     "end": 164.568
+    },
+    {
+     "w": "writing",
+     "start": 164.568,
+     "end": 165.122
+    },
+    {
+     "w": "style.",
+     "start": 165.122,
+     "end": 165.596
+    },
+    {
+     "w": "Select",
+     "start": 165.596,
+     "end": 166.07
+    },
+    {
+     "w": "some",
+     "start": 166.07,
+     "end": 166.386
+    },
+    {
+     "w": "text,",
+     "start": 166.386,
+     "end": 166.782
+    },
+    {
+     "w": "open",
+     "start": 166.782,
+     "end": 167.098
+    },
+    {
+     "w": "Magic",
+     "start": 167.098,
+     "end": 167.493
+    },
+    {
+     "w": "Write,",
+     "start": 167.493,
+     "end": 167.967
+    },
+    {
+     "w": "choose",
+     "start": 167.967,
+     "end": 168.441
+    },
+    {
+     "w": "Change",
+     "start": 168.441,
+     "end": 168.916
+    },
+    {
+     "w": "voice,",
+     "start": 168.916,
+     "end": 169.39
+    },
+    {
+     "w": "and",
+     "start": 169.39,
+     "end": 169.627
+    },
+    {
+     "w": "save",
+     "start": 169.627,
+     "end": 169.943
+    },
+    {
+     "w": "a",
+     "start": 169.943,
+     "end": 170.022
+    },
+    {
+     "w": "tone",
+     "start": 170.022,
+     "end": 170.338
+    },
+    {
+     "w": "of",
+     "start": 170.338,
+     "end": 170.496
+    },
+    {
+     "w": "voice",
+     "start": 170.496,
+     "end": 170.892
+    },
+    {
+     "w": "you",
+     "start": 170.892,
+     "end": 171.129
+    },
+    {
+     "w": "can",
+     "start": 171.129,
+     "end": 171.366
+    },
+    {
+     "w": "pick",
+     "start": 171.366,
+     "end": 171.682
+    },
+    {
+     "w": "again",
+     "start": 171.682,
+     "end": 172.077
+    },
+    {
+     "w": "later.",
+     "start": 172.077,
+     "end": 172.551
+    }
+   ]
+  },
+  {
+   "id": "s15",
+   "start": 172.901,
+   "end": 184.409,
+   "text": "Now write the week. Plan seven angles, one for each day: a tip, a mistake, a before and after, a question, a story, a checklist and a recap. Run each through the same brief.",
+   "words": [
+    {
+     "w": "Now",
+     "start": 172.901,
+     "end": 173.14
+    },
+    {
+     "w": "write",
+     "start": 173.14,
+     "end": 173.539
+    },
+    {
+     "w": "the",
+     "start": 173.539,
+     "end": 173.778
+    },
+    {
+     "w": "week.",
+     "start": 173.778,
+     "end": 174.176
+    },
+    {
+     "w": "Plan",
+     "start": 174.176,
+     "end": 174.495
+    },
+    {
+     "w": "seven",
+     "start": 174.495,
+     "end": 174.894
+    },
+    {
+     "w": "angles,",
+     "start": 174.894,
+     "end": 175.452
+    },
+    {
+     "w": "one",
+     "start": 175.452,
+     "end": 175.691
+    },
+    {
+     "w": "for",
+     "start": 175.691,
+     "end": 175.93
+    },
+    {
+     "w": "each",
+     "start": 175.93,
+     "end": 176.249
+    },
+    {
+     "w": "day:",
+     "start": 176.249,
+     "end": 176.567
+    },
+    {
+     "w": "a",
+     "start": 176.567,
+     "end": 176.647
+    },
+    {
+     "w": "tip,",
+     "start": 176.647,
+     "end": 176.966
+    },
+    {
+     "w": "a",
+     "start": 176.966,
+     "end": 177.045
+    },
+    {
+     "w": "mistake,",
+     "start": 177.045,
+     "end": 177.683
+    },
+    {
+     "w": "a",
+     "start": 177.683,
+     "end": 177.763
+    },
+    {
+     "w": "before",
+     "start": 177.763,
+     "end": 178.241
+    },
+    {
+     "w": "and",
+     "start": 178.241,
+     "end": 178.48
+    },
+    {
+     "w": "after,",
+     "start": 178.48,
+     "end": 178.958
+    },
+    {
+     "w": "a",
+     "start": 178.958,
+     "end": 179.038
+    },
+    {
+     "w": "question,",
+     "start": 179.038,
+     "end": 179.755
+    },
+    {
+     "w": "a",
+     "start": 179.755,
+     "end": 179.835
+    },
+    {
+     "w": "story,",
+     "start": 179.835,
+     "end": 180.313
+    },
+    {
+     "w": "a",
+     "start": 180.313,
+     "end": 180.393
+    },
+    {
+     "w": "checklist",
+     "start": 180.393,
+     "end": 181.11
+    },
+    {
+     "w": "and",
+     "start": 181.11,
+     "end": 181.349
+    },
+    {
+     "w": "a",
+     "start": 181.349,
+     "end": 181.429
+    },
+    {
+     "w": "recap.",
+     "start": 181.429,
+     "end": 181.907
+    },
+    {
+     "w": "Run",
+     "start": 181.907,
+     "end": 182.146
+    },
+    {
+     "w": "each",
+     "start": 182.146,
+     "end": 182.465
+    },
+    {
+     "w": "through",
+     "start": 182.465,
+     "end": 183.023
+    },
+    {
+     "w": "the",
+     "start": 183.023,
+     "end": 183.262
+    },
+    {
+     "w": "same",
+     "start": 183.262,
+     "end": 183.58
+    },
+    {
+     "w": "brief.",
+     "start": 183.58,
+     "end": 184.059
+    }
+   ]
+  },
+  {
+   "id": "s16",
+   "start": 184.409,
+   "end": 194.039,
+   "text": "Do not publish raw AI text. Always fact check numbers and claims yourself, and read each caption once before it goes anywhere near a schedule.",
+   "words": [
+    {
+     "w": "Do",
+     "start": 184.409,
+     "end": 184.566
+    },
+    {
+     "w": "not",
+     "start": 184.566,
+     "end": 184.802
+    },
+    {
+     "w": "publish",
+     "start": 184.802,
+     "end": 185.352
+    },
+    {
+     "w": "raw",
+     "start": 185.352,
+     "end": 185.588
+    },
+    {
+     "w": "AI",
+     "start": 185.588,
+     "end": 185.746
+    },
+    {
+     "w": "text.",
+     "start": 185.746,
+     "end": 186.139
+    },
+    {
+     "w": "Always",
+     "start": 186.139,
+     "end": 186.611
+    },
+    {
+     "w": "fact",
+     "start": 186.611,
+     "end": 186.925
+    },
+    {
+     "w": "check",
+     "start": 186.925,
+     "end": 187.318
+    },
+    {
+     "w": "numbers",
+     "start": 187.318,
+     "end": 187.869
+    },
+    {
+     "w": "and",
+     "start": 187.869,
+     "end": 188.105
+    },
+    {
+     "w": "claims",
+     "start": 188.105,
+     "end": 188.577
+    },
+    {
+     "w": "yourself,",
+     "start": 188.577,
+     "end": 189.285
+    },
+    {
+     "w": "and",
+     "start": 189.285,
+     "end": 189.521
+    },
+    {
+     "w": "read",
+     "start": 189.521,
+     "end": 189.835
+    },
+    {
+     "w": "each",
+     "start": 189.835,
+     "end": 190.15
+    },
+    {
+     "w": "caption",
+     "start": 190.15,
+     "end": 190.7
+    },
+    {
+     "w": "once",
+     "start": 190.7,
+     "end": 191.015
+    },
+    {
+     "w": "before",
+     "start": 191.015,
+     "end": 191.487
+    },
+    {
+     "w": "it",
+     "start": 191.487,
+     "end": 191.644
+    },
+    {
+     "w": "goes",
+     "start": 191.644,
+     "end": 191.958
+    },
+    {
+     "w": "anywhere",
+     "start": 191.958,
+     "end": 192.588
+    },
+    {
+     "w": "near",
+     "start": 192.588,
+     "end": 192.902
+    },
+    {
+     "w": "a",
+     "start": 192.902,
+     "end": 192.981
+    },
+    {
+     "w": "schedule.",
+     "start": 192.981,
+     "end": 193.689
+    }
+   ]
+  },
+  {
+   "id": "x2",
+   "start": 194.039,
+   "end": 204.714,
+   "text": "A good habit is keeping a swipe file of your best captions. When a draft lands well, paste it into your table as an example, and reuse its structure in the next brief.",
+   "words": [
+    {
+     "w": "A",
+     "start": 194.039,
+     "end": 194.115
+    },
+    {
+     "w": "good",
+     "start": 194.115,
+     "end": 194.421
+    },
+    {
+     "w": "habit",
+     "start": 194.421,
+     "end": 194.804
+    },
+    {
+     "w": "is",
+     "start": 194.804,
+     "end": 194.956
+    },
+    {
+     "w": "keeping",
+     "start": 194.956,
+     "end": 195.492
+    },
+    {
+     "w": "a",
+     "start": 195.492,
+     "end": 195.568
+    },
+    {
+     "w": "swipe",
+     "start": 195.568,
+     "end": 195.951
+    },
+    {
+     "w": "file",
+     "start": 195.951,
+     "end": 196.257
+    },
+    {
+     "w": "of",
+     "start": 196.257,
+     "end": 196.41
+    },
+    {
+     "w": "your",
+     "start": 196.41,
+     "end": 196.716
+    },
+    {
+     "w": "best",
+     "start": 196.716,
+     "end": 197.022
+    },
+    {
+     "w": "captions.",
+     "start": 197.022,
+     "end": 197.71
+    },
+    {
+     "w": "When",
+     "start": 197.71,
+     "end": 198.016
+    },
+    {
+     "w": "a",
+     "start": 198.016,
+     "end": 198.092
+    },
+    {
+     "w": "draft",
+     "start": 198.092,
+     "end": 198.475
+    },
+    {
+     "w": "lands",
+     "start": 198.475,
+     "end": 198.857
+    },
+    {
+     "w": "well,",
+     "start": 198.857,
+     "end": 199.24
+    },
+    {
+     "w": "paste",
+     "start": 199.24,
+     "end": 199.622
+    },
+    {
+     "w": "it",
+     "start": 199.622,
+     "end": 199.775
+    },
+    {
+     "w": "into",
+     "start": 199.775,
+     "end": 200.081
+    },
+    {
+     "w": "your",
+     "start": 200.081,
+     "end": 200.387
+    },
+    {
+     "w": "table",
+     "start": 200.387,
+     "end": 200.769
+    },
+    {
+     "w": "as",
+     "start": 200.769,
+     "end": 200.922
+    },
+    {
+     "w": "an",
+     "start": 200.922,
+     "end": 201.075
+    },
+    {
+     "w": "example,",
+     "start": 201.075,
+     "end": 201.687
+    },
+    {
+     "w": "and",
+     "start": 201.687,
+     "end": 201.917
+    },
+    {
+     "w": "reuse",
+     "start": 201.917,
+     "end": 202.299
+    },
+    {
+     "w": "its",
+     "start": 202.299,
+     "end": 202.528
+    },
+    {
+     "w": "structure",
+     "start": 202.528,
+     "end": 203.217
+    },
+    {
+     "w": "in",
+     "start": 203.217,
+     "end": 203.37
+    },
+    {
+     "w": "the",
+     "start": 203.37,
+     "end": 203.599
+    },
+    {
+     "w": "next",
+     "start": 203.599,
+     "end": 203.905
+    },
+    {
+     "w": "brief.",
+     "start": 203.905,
+     "end": 204.364
+    }
+   ]
+  },
+  {
+   "id": "s17",
+   "start": 204.714,
+   "end": 212.232,
+   "text": "That gives you seven drafts. Next we make the designs, and this is where Canva stops being a one at a time tool.",
+   "words": [
+    {
+     "w": "That",
+     "start": 204.714,
+     "end": 205.033
+    },
+    {
+     "w": "gives",
+     "start": 205.033,
+     "end": 205.431
+    },
+    {
+     "w": "you",
+     "start": 205.431,
+     "end": 205.67
+    },
+    {
+     "w": "seven",
+     "start": 205.67,
+     "end": 206.068
+    },
+    {
+     "w": "drafts.",
+     "start": 206.068,
+     "end": 206.625
+    },
+    {
+     "w": "Next",
+     "start": 206.625,
+     "end": 206.944
+    },
+    {
+     "w": "we",
+     "start": 206.944,
+     "end": 207.103
+    },
+    {
+     "w": "make",
+     "start": 207.103,
+     "end": 207.422
+    },
+    {
+     "w": "the",
+     "start": 207.422,
+     "end": 207.661
+    },
+    {
+     "w": "designs,",
+     "start": 207.661,
+     "end": 208.298
+    },
+    {
+     "w": "and",
+     "start": 208.298,
+     "end": 208.537
+    },
+    {
+     "w": "this",
+     "start": 208.537,
+     "end": 208.856
+    },
+    {
+     "w": "is",
+     "start": 208.856,
+     "end": 209.015
+    },
+    {
+     "w": "where",
+     "start": 209.015,
+     "end": 209.413
+    },
+    {
+     "w": "Canva",
+     "start": 209.413,
+     "end": 209.811
+    },
+    {
+     "w": "stops",
+     "start": 209.811,
+     "end": 210.209
+    },
+    {
+     "w": "being",
+     "start": 210.209,
+     "end": 210.608
+    },
+    {
+     "w": "a",
+     "start": 210.608,
+     "end": 210.687
+    },
+    {
+     "w": "one",
+     "start": 210.687,
+     "end": 210.926
+    },
+    {
+     "w": "at",
+     "start": 210.926,
+     "end": 211.086
+    },
+    {
+     "w": "a",
+     "start": 211.086,
+     "end": 211.165
+    },
+    {
+     "w": "time",
+     "start": 211.165,
+     "end": 211.484
+    },
+    {
+     "w": "tool.",
+     "start": 211.484,
+     "end": 211.882
+    }
+   ]
+  },
+  {
+   "id": "s18",
+   "start": 212.232,
+   "end": 222.737,
+   "text": "Chapter three is Bulk Create. It takes data in rows and columns and links it to placeholder elements in your design, so one template becomes many posts.",
+   "words": [
+    {
+     "w": "Chapter",
+     "start": 212.232,
+     "end": 212.796
+    },
+    {
+     "w": "three",
+     "start": 212.796,
+     "end": 213.199
+    },
+    {
+     "w": "is",
+     "start": 213.199,
+     "end": 213.36
+    },
+    {
+     "w": "Bulk",
+     "start": 213.36,
+     "end": 213.683
+    },
+    {
+     "w": "Create.",
+     "start": 213.683,
+     "end": 214.247
+    },
+    {
+     "w": "It",
+     "start": 214.247,
+     "end": 214.408
+    },
+    {
+     "w": "takes",
+     "start": 214.408,
+     "end": 214.811
+    },
+    {
+     "w": "data",
+     "start": 214.811,
+     "end": 215.133
+    },
+    {
+     "w": "in",
+     "start": 215.133,
+     "end": 215.295
+    },
+    {
+     "w": "rows",
+     "start": 215.295,
+     "end": 215.617
+    },
+    {
+     "w": "and",
+     "start": 215.617,
+     "end": 215.859
+    },
+    {
+     "w": "columns",
+     "start": 215.859,
+     "end": 216.423
+    },
+    {
+     "w": "and",
+     "start": 216.423,
+     "end": 216.665
+    },
+    {
+     "w": "links",
+     "start": 216.665,
+     "end": 217.068
+    },
+    {
+     "w": "it",
+     "start": 217.068,
+     "end": 217.229
+    },
+    {
+     "w": "to",
+     "start": 217.229,
+     "end": 217.39
+    },
+    {
+     "w": "placeholder",
+     "start": 217.39,
+     "end": 218.276
+    },
+    {
+     "w": "elements",
+     "start": 218.276,
+     "end": 218.921
+    },
+    {
+     "w": "in",
+     "start": 218.921,
+     "end": 219.082
+    },
+    {
+     "w": "your",
+     "start": 219.082,
+     "end": 219.405
+    },
+    {
+     "w": "design,",
+     "start": 219.405,
+     "end": 219.969
+    },
+    {
+     "w": "so",
+     "start": 219.969,
+     "end": 220.13
+    },
+    {
+     "w": "one",
+     "start": 220.13,
+     "end": 220.372
+    },
+    {
+     "w": "template",
+     "start": 220.372,
+     "end": 221.017
+    },
+    {
+     "w": "becomes",
+     "start": 221.017,
+     "end": 221.581
+    },
+    {
+     "w": "many",
+     "start": 221.581,
+     "end": 221.903
+    },
+    {
+     "w": "posts.",
+     "start": 221.903,
+     "end": 222.387
+    }
+   ]
+  },
+  {
+   "id": "s19",
+   "start": 222.737,
+   "end": 233.135,
+   "text": "First, build one finished post as your template. Give every piece of changing text its own text box, because Canva needs a separate box for each data field.",
+   "words": [
+    {
+     "w": "First,",
+     "start": 222.737,
+     "end": 223.204
+    },
+    {
+     "w": "build",
+     "start": 223.204,
+     "end": 223.593
+    },
+    {
+     "w": "one",
+     "start": 223.593,
+     "end": 223.827
+    },
+    {
+     "w": "finished",
+     "start": 223.827,
+     "end": 224.45
+    },
+    {
+     "w": "post",
+     "start": 224.45,
+     "end": 224.762
+    },
+    {
+     "w": "as",
+     "start": 224.762,
+     "end": 224.918
+    },
+    {
+     "w": "your",
+     "start": 224.918,
+     "end": 225.229
+    },
+    {
+     "w": "template.",
+     "start": 225.229,
+     "end": 225.93
+    },
+    {
+     "w": "Give",
+     "start": 225.93,
+     "end": 226.242
+    },
+    {
+     "w": "every",
+     "start": 226.242,
+     "end": 226.631
+    },
+    {
+     "w": "piece",
+     "start": 226.631,
+     "end": 227.021
+    },
+    {
+     "w": "of",
+     "start": 227.021,
+     "end": 227.176
+    },
+    {
+     "w": "changing",
+     "start": 227.176,
+     "end": 227.8
+    },
+    {
+     "w": "text",
+     "start": 227.8,
+     "end": 228.111
+    },
+    {
+     "w": "its",
+     "start": 228.111,
+     "end": 228.345
+    },
+    {
+     "w": "own",
+     "start": 228.345,
+     "end": 228.579
+    },
+    {
+     "w": "text",
+     "start": 228.579,
+     "end": 228.89
+    },
+    {
+     "w": "box,",
+     "start": 228.89,
+     "end": 229.202
+    },
+    {
+     "w": "because",
+     "start": 229.202,
+     "end": 229.747
+    },
+    {
+     "w": "Canva",
+     "start": 229.747,
+     "end": 230.136
+    },
+    {
+     "w": "needs",
+     "start": 230.136,
+     "end": 230.526
+    },
+    {
+     "w": "a",
+     "start": 230.526,
+     "end": 230.604
+    },
+    {
+     "w": "separate",
+     "start": 230.604,
+     "end": 231.227
+    },
+    {
+     "w": "box",
+     "start": 231.227,
+     "end": 231.461
+    },
+    {
+     "w": "for",
+     "start": 231.461,
+     "end": 231.694
+    },
+    {
+     "w": "each",
+     "start": 231.694,
+     "end": 232.006
+    },
+    {
+     "w": "data",
+     "start": 232.006,
+     "end": 232.317
+    },
+    {
+     "w": "field.",
+     "start": 232.317,
+     "end": 232.785
+    }
+   ]
+  },
+  {
+   "id": "s20",
+   "start": 233.135,
+   "end": 243.383,
+   "text": "Then build your data. Make a simple table with a column for the headline and a column for the caption, and one row per post. Seven days means seven rows.",
+   "words": [
+    {
+     "w": "Then",
+     "start": 233.135,
+     "end": 233.454
+    },
+    {
+     "w": "build",
+     "start": 233.454,
+     "end": 233.853
+    },
+    {
+     "w": "your",
+     "start": 233.853,
+     "end": 234.172
+    },
+    {
+     "w": "data.",
+     "start": 234.172,
+     "end": 234.572
+    },
+    {
+     "w": "Make",
+     "start": 234.572,
+     "end": 234.891
+    },
+    {
+     "w": "a",
+     "start": 234.891,
+     "end": 234.971
+    },
+    {
+     "w": "simple",
+     "start": 234.971,
+     "end": 235.45
+    },
+    {
+     "w": "table",
+     "start": 235.45,
+     "end": 235.849
+    },
+    {
+     "w": "with",
+     "start": 235.849,
+     "end": 236.168
+    },
+    {
+     "w": "a",
+     "start": 236.168,
+     "end": 236.248
+    },
+    {
+     "w": "column",
+     "start": 236.248,
+     "end": 236.727
+    },
+    {
+     "w": "for",
+     "start": 236.727,
+     "end": 236.966
+    },
+    {
+     "w": "the",
+     "start": 236.966,
+     "end": 237.206
+    },
+    {
+     "w": "headline",
+     "start": 237.206,
+     "end": 237.845
+    },
+    {
+     "w": "and",
+     "start": 237.845,
+     "end": 238.084
+    },
+    {
+     "w": "a",
+     "start": 238.084,
+     "end": 238.164
+    },
+    {
+     "w": "column",
+     "start": 238.164,
+     "end": 238.643
+    },
+    {
+     "w": "for",
+     "start": 238.643,
+     "end": 238.882
+    },
+    {
+     "w": "the",
+     "start": 238.882,
+     "end": 239.122
+    },
+    {
+     "w": "caption,",
+     "start": 239.122,
+     "end": 239.76
+    },
+    {
+     "w": "and",
+     "start": 239.76,
+     "end": 240.0
+    },
+    {
+     "w": "one",
+     "start": 240.0,
+     "end": 240.239
+    },
+    {
+     "w": "row",
+     "start": 240.239,
+     "end": 240.479
+    },
+    {
+     "w": "per",
+     "start": 240.479,
+     "end": 240.718
+    },
+    {
+     "w": "post.",
+     "start": 240.718,
+     "end": 241.117
+    },
+    {
+     "w": "Seven",
+     "start": 241.117,
+     "end": 241.517
+    },
+    {
+     "w": "days",
+     "start": 241.517,
+     "end": 241.836
+    },
+    {
+     "w": "means",
+     "start": 241.836,
+     "end": 242.235
+    },
+    {
+     "w": "seven",
+     "start": 242.235,
+     "end": 242.634
+    },
+    {
+     "w": "rows.",
+     "start": 242.634,
+     "end": 243.033
+    }
+   ]
+  },
+  {
+   "id": "x8",
+   "start": 243.383,
+   "end": 253.205,
+   "text": "A quick tip on columns. Start with just a headline and a caption. Once that works, add a column for a hashtag line or an image, and connect those too.",
+   "words": [
+    {
+     "w": "A",
+     "start": 243.383,
+     "end": 243.462
+    },
+    {
+     "w": "quick",
+     "start": 243.462,
+     "end": 243.853
+    },
+    {
+     "w": "tip",
+     "start": 243.853,
+     "end": 244.088
+    },
+    {
+     "w": "on",
+     "start": 244.088,
+     "end": 244.244
+    },
+    {
+     "w": "columns.",
+     "start": 244.244,
+     "end": 244.871
+    },
+    {
+     "w": "Start",
+     "start": 244.871,
+     "end": 245.262
+    },
+    {
+     "w": "with",
+     "start": 245.262,
+     "end": 245.575
+    },
+    {
+     "w": "just",
+     "start": 245.575,
+     "end": 245.888
+    },
+    {
+     "w": "a",
+     "start": 245.888,
+     "end": 245.967
+    },
+    {
+     "w": "headline",
+     "start": 245.967,
+     "end": 246.593
+    },
+    {
+     "w": "and",
+     "start": 246.593,
+     "end": 246.828
+    },
+    {
+     "w": "a",
+     "start": 246.828,
+     "end": 246.906
+    },
+    {
+     "w": "caption.",
+     "start": 246.906,
+     "end": 247.532
+    },
+    {
+     "w": "Once",
+     "start": 247.532,
+     "end": 247.845
+    },
+    {
+     "w": "that",
+     "start": 247.845,
+     "end": 248.158
+    },
+    {
+     "w": "works,",
+     "start": 248.158,
+     "end": 248.628
+    },
+    {
+     "w": "add",
+     "start": 248.628,
+     "end": 248.863
+    },
+    {
+     "w": "a",
+     "start": 248.863,
+     "end": 248.941
+    },
+    {
+     "w": "column",
+     "start": 248.941,
+     "end": 249.411
+    },
+    {
+     "w": "for",
+     "start": 249.411,
+     "end": 249.646
+    },
+    {
+     "w": "a",
+     "start": 249.646,
+     "end": 249.724
+    },
+    {
+     "w": "hashtag",
+     "start": 249.724,
+     "end": 250.272
+    },
+    {
+     "w": "line",
+     "start": 250.272,
+     "end": 250.585
+    },
+    {
+     "w": "or",
+     "start": 250.585,
+     "end": 250.742
+    },
+    {
+     "w": "an",
+     "start": 250.742,
+     "end": 250.898
+    },
+    {
+     "w": "image,",
+     "start": 250.898,
+     "end": 251.368
+    },
+    {
+     "w": "and",
+     "start": 251.368,
+     "end": 251.603
+    },
+    {
+     "w": "connect",
+     "start": 251.603,
+     "end": 252.151
+    },
+    {
+     "w": "those",
+     "start": 252.151,
+     "end": 252.542
+    },
+    {
+     "w": "too.",
+     "start": 252.542,
+     "end": 252.855
+    }
+   ]
+  },
+  {
+   "id": "s21",
+   "start": 253.205,
+   "end": 263.241,
+   "text": "You can upload a CSV or Excel file, or just enter the data by hand inside Canva. Entering it by hand is fine for a week of posts.",
+   "words": [
+    {
+     "w": "You",
+     "start": 253.205,
+     "end": 253.49
+    },
+    {
+     "w": "can",
+     "start": 253.49,
+     "end": 253.775
+    },
+    {
+     "w": "upload",
+     "start": 253.775,
+     "end": 254.345
+    },
+    {
+     "w": "a",
+     "start": 254.345,
+     "end": 254.44
+    },
+    {
+     "w": "CSV",
+     "start": 254.44,
+     "end": 254.725
+    },
+    {
+     "w": "or",
+     "start": 254.725,
+     "end": 254.915
+    },
+    {
+     "w": "Excel",
+     "start": 254.915,
+     "end": 255.389
+    },
+    {
+     "w": "file,",
+     "start": 255.389,
+     "end": 255.864
+    },
+    {
+     "w": "or",
+     "start": 255.864,
+     "end": 256.054
+    },
+    {
+     "w": "just",
+     "start": 256.054,
+     "end": 256.434
+    },
+    {
+     "w": "enter",
+     "start": 256.434,
+     "end": 256.909
+    },
+    {
+     "w": "the",
+     "start": 256.909,
+     "end": 257.193
+    },
+    {
+     "w": "data",
+     "start": 257.193,
+     "end": 257.573
+    },
+    {
+     "w": "by",
+     "start": 257.573,
+     "end": 257.763
+    },
+    {
+     "w": "hand",
+     "start": 257.763,
+     "end": 258.143
+    },
+    {
+     "w": "inside",
+     "start": 258.143,
+     "end": 258.713
+    },
+    {
+     "w": "Canva.",
+     "start": 258.713,
+     "end": 259.282
+    },
+    {
+     "w": "Entering",
+     "start": 259.282,
+     "end": 260.042
+    },
+    {
+     "w": "it",
+     "start": 260.042,
+     "end": 260.232
+    },
+    {
+     "w": "by",
+     "start": 260.232,
+     "end": 260.422
+    },
+    {
+     "w": "hand",
+     "start": 260.422,
+     "end": 260.802
+    },
+    {
+     "w": "is",
+     "start": 260.802,
+     "end": 260.992
+    },
+    {
+     "w": "fine",
+     "start": 260.992,
+     "end": 261.371
+    },
+    {
+     "w": "for",
+     "start": 261.371,
+     "end": 261.656
+    },
+    {
+     "w": "a",
+     "start": 261.656,
+     "end": 261.751
+    },
+    {
+     "w": "week",
+     "start": 261.751,
+     "end": 262.131
+    },
+    {
+     "w": "of",
+     "start": 262.131,
+     "end": 262.321
+    },
+    {
+     "w": "posts.",
+     "start": 262.321,
+     "end": 262.891
+    }
+   ]
+  },
+  {
+   "id": "s22",
+   "start": 263.241,
+   "end": 274.108,
+   "text": "Connect the data to your design. Select an element, open More, and choose Connect data. Or click Auto-match fields and let Canva try to connect everything for you.",
+   "words": [
+    {
+     "w": "Connect",
+     "start": 263.241,
+     "end": 263.782
+    },
+    {
+     "w": "the",
+     "start": 263.782,
+     "end": 264.014
+    },
+    {
+     "w": "data",
+     "start": 264.014,
+     "end": 264.323
+    },
+    {
+     "w": "to",
+     "start": 264.323,
+     "end": 264.478
+    },
+    {
+     "w": "your",
+     "start": 264.478,
+     "end": 264.787
+    },
+    {
+     "w": "design.",
+     "start": 264.787,
+     "end": 265.329
+    },
+    {
+     "w": "Select",
+     "start": 265.329,
+     "end": 265.793
+    },
+    {
+     "w": "an",
+     "start": 265.793,
+     "end": 265.947
+    },
+    {
+     "w": "element,",
+     "start": 265.947,
+     "end": 266.566
+    },
+    {
+     "w": "open",
+     "start": 266.566,
+     "end": 266.875
+    },
+    {
+     "w": "More,",
+     "start": 266.875,
+     "end": 267.262
+    },
+    {
+     "w": "and",
+     "start": 267.262,
+     "end": 267.494
+    },
+    {
+     "w": "choose",
+     "start": 267.494,
+     "end": 267.958
+    },
+    {
+     "w": "Connect",
+     "start": 267.958,
+     "end": 268.499
+    },
+    {
+     "w": "data.",
+     "start": 268.499,
+     "end": 268.886
+    },
+    {
+     "w": "Or",
+     "start": 268.886,
+     "end": 269.041
+    },
+    {
+     "w": "click",
+     "start": 269.041,
+     "end": 269.427
+    },
+    {
+     "w": "Auto-match",
+     "start": 269.427,
+     "end": 270.201
+    },
+    {
+     "w": "fields",
+     "start": 270.201,
+     "end": 270.665
+    },
+    {
+     "w": "and",
+     "start": 270.665,
+     "end": 270.897
+    },
+    {
+     "w": "let",
+     "start": 270.897,
+     "end": 271.129
+    },
+    {
+     "w": "Canva",
+     "start": 271.129,
+     "end": 271.515
+    },
+    {
+     "w": "try",
+     "start": 271.515,
+     "end": 271.747
+    },
+    {
+     "w": "to",
+     "start": 271.747,
+     "end": 271.902
+    },
+    {
+     "w": "connect",
+     "start": 271.902,
+     "end": 272.443
+    },
+    {
+     "w": "everything",
+     "start": 272.443,
+     "end": 273.217
+    },
+    {
+     "w": "for",
+     "start": 273.217,
+     "end": 273.449
+    },
+    {
+     "w": "you.",
+     "start": 273.449,
+     "end": 273.758
+    }
+   ]
+  },
+  {
+   "id": "s23",
+   "start": 274.108,
+   "end": 283.61,
+   "text": "Check the preview before you generate. Bulk Create makes one design for every row, so a typo in your table becomes seven typos in your designs.",
+   "words": [
+    {
+     "w": "Check",
+     "start": 274.108,
+     "end": 274.496
+    },
+    {
+     "w": "the",
+     "start": 274.496,
+     "end": 274.728
+    },
+    {
+     "w": "preview",
+     "start": 274.728,
+     "end": 275.271
+    },
+    {
+     "w": "before",
+     "start": 275.271,
+     "end": 275.737
+    },
+    {
+     "w": "you",
+     "start": 275.737,
+     "end": 275.969
+    },
+    {
+     "w": "generate.",
+     "start": 275.969,
+     "end": 276.667
+    },
+    {
+     "w": "Bulk",
+     "start": 276.667,
+     "end": 276.978
+    },
+    {
+     "w": "Create",
+     "start": 276.978,
+     "end": 277.443
+    },
+    {
+     "w": "makes",
+     "start": 277.443,
+     "end": 277.831
+    },
+    {
+     "w": "one",
+     "start": 277.831,
+     "end": 278.064
+    },
+    {
+     "w": "design",
+     "start": 278.064,
+     "end": 278.529
+    },
+    {
+     "w": "for",
+     "start": 278.529,
+     "end": 278.762
+    },
+    {
+     "w": "every",
+     "start": 278.762,
+     "end": 279.149
+    },
+    {
+     "w": "row,",
+     "start": 279.149,
+     "end": 279.46
+    },
+    {
+     "w": "so",
+     "start": 279.46,
+     "end": 279.615
+    },
+    {
+     "w": "a",
+     "start": 279.615,
+     "end": 279.692
+    },
+    {
+     "w": "typo",
+     "start": 279.692,
+     "end": 280.003
+    },
+    {
+     "w": "in",
+     "start": 280.003,
+     "end": 280.158
+    },
+    {
+     "w": "your",
+     "start": 280.158,
+     "end": 280.468
+    },
+    {
+     "w": "table",
+     "start": 280.468,
+     "end": 280.856
+    },
+    {
+     "w": "becomes",
+     "start": 280.856,
+     "end": 281.399
+    },
+    {
+     "w": "seven",
+     "start": 281.399,
+     "end": 281.786
+    },
+    {
+     "w": "typos",
+     "start": 281.786,
+     "end": 282.174
+    },
+    {
+     "w": "in",
+     "start": 282.174,
+     "end": 282.329
+    },
+    {
+     "w": "your",
+     "start": 282.329,
+     "end": 282.64
+    },
+    {
+     "w": "designs.",
+     "start": 282.64,
+     "end": 283.26
+    }
+   ]
+  },
+  {
+   "id": "s24",
+   "start": 283.61,
+   "end": 295.501,
+   "text": "A few limits to know. Bulk Create is desktop only, it is limited to certain plans, and Canva documents up to 300 rows in one batch. A week of posts fits easily.",
+   "words": [
+    {
+     "w": "A",
+     "start": 283.61,
+     "end": 283.699
+    },
+    {
+     "w": "few",
+     "start": 283.699,
+     "end": 283.968
+    },
+    {
+     "w": "limits",
+     "start": 283.968,
+     "end": 284.505
+    },
+    {
+     "w": "to",
+     "start": 284.505,
+     "end": 284.684
+    },
+    {
+     "w": "know.",
+     "start": 284.684,
+     "end": 285.131
+    },
+    {
+     "w": "Bulk",
+     "start": 285.131,
+     "end": 285.489
+    },
+    {
+     "w": "Create",
+     "start": 285.489,
+     "end": 286.026
+    },
+    {
+     "w": "is",
+     "start": 286.026,
+     "end": 286.205
+    },
+    {
+     "w": "desktop",
+     "start": 286.205,
+     "end": 286.831
+    },
+    {
+     "w": "only,",
+     "start": 286.831,
+     "end": 287.278
+    },
+    {
+     "w": "it",
+     "start": 287.278,
+     "end": 287.457
+    },
+    {
+     "w": "is",
+     "start": 287.457,
+     "end": 287.636
+    },
+    {
+     "w": "limited",
+     "start": 287.636,
+     "end": 288.262
+    },
+    {
+     "w": "to",
+     "start": 288.262,
+     "end": 288.441
+    },
+    {
+     "w": "certain",
+     "start": 288.441,
+     "end": 289.068
+    },
+    {
+     "w": "plans,",
+     "start": 289.068,
+     "end": 289.604
+    },
+    {
+     "w": "and",
+     "start": 289.604,
+     "end": 289.873
+    },
+    {
+     "w": "Canva",
+     "start": 289.873,
+     "end": 290.32
+    },
+    {
+     "w": "documents",
+     "start": 290.32,
+     "end": 291.125
+    },
+    {
+     "w": "up",
+     "start": 291.125,
+     "end": 291.304
+    },
+    {
+     "w": "to",
+     "start": 291.304,
+     "end": 291.483
+    },
+    {
+     "w": "300",
+     "start": 291.483,
+     "end": 291.752
+    },
+    {
+     "w": "rows",
+     "start": 291.752,
+     "end": 292.109
+    },
+    {
+     "w": "in",
+     "start": 292.109,
+     "end": 292.288
+    },
+    {
+     "w": "one",
+     "start": 292.288,
+     "end": 292.557
+    },
+    {
+     "w": "batch.",
+     "start": 292.557,
+     "end": 293.094
+    },
+    {
+     "w": "A",
+     "start": 293.094,
+     "end": 293.183
+    },
+    {
+     "w": "week",
+     "start": 293.183,
+     "end": 293.541
+    },
+    {
+     "w": "of",
+     "start": 293.541,
+     "end": 293.72
+    },
+    {
+     "w": "posts",
+     "start": 293.72,
+     "end": 294.167
+    },
+    {
+     "w": "fits",
+     "start": 294.167,
+     "end": 294.525
+    },
+    {
+     "w": "easily.",
+     "start": 294.525,
+     "end": 295.151
+    }
+   ]
+  },
+  {
+   "id": "s25",
+   "start": 295.501,
+   "end": 304.705,
+   "text": "One more catch. Image links do not work in Bulk Create. If your posts use photos, upload them, or pick them from your Canva library.",
+   "words": [
+    {
+     "w": "One",
+     "start": 295.501,
+     "end": 295.747
+    },
+    {
+     "w": "more",
+     "start": 295.747,
+     "end": 296.075
+    },
+    {
+     "w": "catch.",
+     "start": 296.075,
+     "end": 296.567
+    },
+    {
+     "w": "Image",
+     "start": 296.567,
+     "end": 296.977
+    },
+    {
+     "w": "links",
+     "start": 296.977,
+     "end": 297.387
+    },
+    {
+     "w": "do",
+     "start": 297.387,
+     "end": 297.551
+    },
+    {
+     "w": "not",
+     "start": 297.551,
+     "end": 297.797
+    },
+    {
+     "w": "work",
+     "start": 297.797,
+     "end": 298.125
+    },
+    {
+     "w": "in",
+     "start": 298.125,
+     "end": 298.288
+    },
+    {
+     "w": "Bulk",
+     "start": 298.288,
+     "end": 298.616
+    },
+    {
+     "w": "Create.",
+     "start": 298.616,
+     "end": 299.19
+    },
+    {
+     "w": "If",
+     "start": 299.19,
+     "end": 299.354
+    },
+    {
+     "w": "your",
+     "start": 299.354,
+     "end": 299.682
+    },
+    {
+     "w": "posts",
+     "start": 299.682,
+     "end": 300.092
+    },
+    {
+     "w": "use",
+     "start": 300.092,
+     "end": 300.338
+    },
+    {
+     "w": "photos,",
+     "start": 300.338,
+     "end": 300.912
+    },
+    {
+     "w": "upload",
+     "start": 300.912,
+     "end": 301.404
+    },
+    {
+     "w": "them,",
+     "start": 301.404,
+     "end": 301.813
+    },
+    {
+     "w": "or",
+     "start": 301.813,
+     "end": 301.977
+    },
+    {
+     "w": "pick",
+     "start": 301.977,
+     "end": 302.305
+    },
+    {
+     "w": "them",
+     "start": 302.305,
+     "end": 302.633
+    },
+    {
+     "w": "from",
+     "start": 302.633,
+     "end": 302.961
+    },
+    {
+     "w": "your",
+     "start": 302.961,
+     "end": 303.289
+    },
+    {
+     "w": "Canva",
+     "start": 303.289,
+     "end": 303.699
+    },
+    {
+     "w": "library.",
+     "start": 303.699,
+     "end": 304.355
+    }
+   ]
+  },
+  {
+   "id": "x3",
+   "start": 304.705,
+   "end": 314.953,
+   "text": "Keep the table tidy. Short headlines fit a template better, and a long caption can overflow a text box, so check the longest row in the preview first.",
+   "words": [
+    {
+     "w": "Keep",
+     "start": 304.705,
+     "end": 305.027
+    },
+    {
+     "w": "the",
+     "start": 305.027,
+     "end": 305.268
+    },
+    {
+     "w": "table",
+     "start": 305.268,
+     "end": 305.67
+    },
+    {
+     "w": "tidy.",
+     "start": 305.67,
+     "end": 306.073
+    },
+    {
+     "w": "Short",
+     "start": 306.073,
+     "end": 306.475
+    },
+    {
+     "w": "headlines",
+     "start": 306.475,
+     "end": 307.199
+    },
+    {
+     "w": "fit",
+     "start": 307.199,
+     "end": 307.441
+    },
+    {
+     "w": "a",
+     "start": 307.441,
+     "end": 307.521
+    },
+    {
+     "w": "template",
+     "start": 307.521,
+     "end": 308.165
+    },
+    {
+     "w": "better,",
+     "start": 308.165,
+     "end": 308.729
+    },
+    {
+     "w": "and",
+     "start": 308.729,
+     "end": 308.97
+    },
+    {
+     "w": "a",
+     "start": 308.97,
+     "end": 309.05
+    },
+    {
+     "w": "long",
+     "start": 309.05,
+     "end": 309.372
+    },
+    {
+     "w": "caption",
+     "start": 309.372,
+     "end": 309.936
+    },
+    {
+     "w": "can",
+     "start": 309.936,
+     "end": 310.177
+    },
+    {
+     "w": "overflow",
+     "start": 310.177,
+     "end": 310.821
+    },
+    {
+     "w": "a",
+     "start": 310.821,
+     "end": 310.901
+    },
+    {
+     "w": "text",
+     "start": 310.901,
+     "end": 311.223
+    },
+    {
+     "w": "box,",
+     "start": 311.223,
+     "end": 311.545
+    },
+    {
+     "w": "so",
+     "start": 311.545,
+     "end": 311.706
+    },
+    {
+     "w": "check",
+     "start": 311.706,
+     "end": 312.109
+    },
+    {
+     "w": "the",
+     "start": 312.109,
+     "end": 312.35
+    },
+    {
+     "w": "longest",
+     "start": 312.35,
+     "end": 312.913
+    },
+    {
+     "w": "row",
+     "start": 312.913,
+     "end": 313.155
+    },
+    {
+     "w": "in",
+     "start": 313.155,
+     "end": 313.316
+    },
+    {
+     "w": "the",
+     "start": 313.316,
+     "end": 313.557
+    },
+    {
+     "w": "preview",
+     "start": 313.557,
+     "end": 314.12
+    },
+    {
+     "w": "first.",
+     "start": 314.12,
+     "end": 314.603
+    }
+   ]
+  },
+  {
+   "id": "s26",
+   "start": 314.953,
+   "end": 323.986,
+   "text": "Click Create designs, and Canva generates one design for each row of data. So your seven rows become seven finished designs.",
+   "words": [
+    {
+     "w": "Click",
+     "start": 314.953,
+     "end": 315.371
+    },
+    {
+     "w": "Create",
+     "start": 315.371,
+     "end": 315.872
+    },
+    {
+     "w": "designs,",
+     "start": 315.872,
+     "end": 316.54
+    },
+    {
+     "w": "and",
+     "start": 316.54,
+     "end": 316.79
+    },
+    {
+     "w": "Canva",
+     "start": 316.79,
+     "end": 317.207
+    },
+    {
+     "w": "generates",
+     "start": 317.207,
+     "end": 317.959
+    },
+    {
+     "w": "one",
+     "start": 317.959,
+     "end": 318.209
+    },
+    {
+     "w": "design",
+     "start": 318.209,
+     "end": 318.71
+    },
+    {
+     "w": "for",
+     "start": 318.71,
+     "end": 318.961
+    },
+    {
+     "w": "each",
+     "start": 318.961,
+     "end": 319.295
+    },
+    {
+     "w": "row",
+     "start": 319.295,
+     "end": 319.545
+    },
+    {
+     "w": "of",
+     "start": 319.545,
+     "end": 319.712
+    },
+    {
+     "w": "data.",
+     "start": 319.712,
+     "end": 320.13
+    },
+    {
+     "w": "So",
+     "start": 320.13,
+     "end": 320.297
+    },
+    {
+     "w": "your",
+     "start": 320.297,
+     "end": 320.63
+    },
+    {
+     "w": "seven",
+     "start": 320.63,
+     "end": 321.048
+    },
+    {
+     "w": "rows",
+     "start": 321.048,
+     "end": 321.382
+    },
+    {
+     "w": "become",
+     "start": 321.382,
+     "end": 321.883
+    },
+    {
+     "w": "seven",
+     "start": 321.883,
+     "end": 322.3
+    },
+    {
+     "w": "finished",
+     "start": 322.3,
+     "end": 322.968
+    },
+    {
+     "w": "designs.",
+     "start": 322.968,
+     "end": 323.636
+    }
+   ]
+  },
+  {
+   "id": "s27",
+   "start": 323.986,
+   "end": 334.789,
+   "text": "Now the same post often needs other shapes. Magic Resize adapts a design to another size, Canva's design school covers it in its social media lesson.",
+   "words": [
+    {
+     "w": "Now",
+     "start": 323.986,
+     "end": 324.239
+    },
+    {
+     "w": "the",
+     "start": 324.239,
+     "end": 324.492
+    },
+    {
+     "w": "same",
+     "start": 324.492,
+     "end": 324.829
+    },
+    {
+     "w": "post",
+     "start": 324.829,
+     "end": 325.166
+    },
+    {
+     "w": "often",
+     "start": 325.166,
+     "end": 325.588
+    },
+    {
+     "w": "needs",
+     "start": 325.588,
+     "end": 326.009
+    },
+    {
+     "w": "other",
+     "start": 326.009,
+     "end": 326.431
+    },
+    {
+     "w": "shapes.",
+     "start": 326.431,
+     "end": 327.021
+    },
+    {
+     "w": "Magic",
+     "start": 327.021,
+     "end": 327.442
+    },
+    {
+     "w": "Resize",
+     "start": 327.442,
+     "end": 327.948
+    },
+    {
+     "w": "adapts",
+     "start": 327.948,
+     "end": 328.454
+    },
+    {
+     "w": "a",
+     "start": 328.454,
+     "end": 328.538
+    },
+    {
+     "w": "design",
+     "start": 328.538,
+     "end": 329.044
+    },
+    {
+     "w": "to",
+     "start": 329.044,
+     "end": 329.213
+    },
+    {
+     "w": "another",
+     "start": 329.213,
+     "end": 329.803
+    },
+    {
+     "w": "size,",
+     "start": 329.803,
+     "end": 330.224
+    },
+    {
+     "w": "Canva's",
+     "start": 330.224,
+     "end": 330.814
+    },
+    {
+     "w": "design",
+     "start": 330.814,
+     "end": 331.32
+    },
+    {
+     "w": "school",
+     "start": 331.32,
+     "end": 331.826
+    },
+    {
+     "w": "covers",
+     "start": 331.826,
+     "end": 332.332
+    },
+    {
+     "w": "it",
+     "start": 332.332,
+     "end": 332.5
+    },
+    {
+     "w": "in",
+     "start": 332.5,
+     "end": 332.669
+    },
+    {
+     "w": "its",
+     "start": 332.669,
+     "end": 332.922
+    },
+    {
+     "w": "social",
+     "start": 332.922,
+     "end": 333.428
+    },
+    {
+     "w": "media",
+     "start": 333.428,
+     "end": 333.849
+    },
+    {
+     "w": "lesson.",
+     "start": 333.849,
+     "end": 334.439
+    }
+   ]
+  },
+  {
+   "id": "s28",
+   "start": 334.789,
+   "end": 344.803,
+   "text": "After a resize, always look at the result. Canva's guidance on reshaping a post says to keep your key text and faces clear of the protected space.",
+   "words": [
+    {
+     "w": "After",
+     "start": 334.789,
+     "end": 335.192
+    },
+    {
+     "w": "a",
+     "start": 335.192,
+     "end": 335.273
+    },
+    {
+     "w": "resize,",
+     "start": 335.273,
+     "end": 335.836
+    },
+    {
+     "w": "always",
+     "start": 335.836,
+     "end": 336.319
+    },
+    {
+     "w": "look",
+     "start": 336.319,
+     "end": 336.642
+    },
+    {
+     "w": "at",
+     "start": 336.642,
+     "end": 336.803
+    },
+    {
+     "w": "the",
+     "start": 336.803,
+     "end": 337.044
+    },
+    {
+     "w": "result.",
+     "start": 337.044,
+     "end": 337.608
+    },
+    {
+     "w": "Canva's",
+     "start": 337.608,
+     "end": 338.172
+    },
+    {
+     "w": "guidance",
+     "start": 338.172,
+     "end": 338.816
+    },
+    {
+     "w": "on",
+     "start": 338.816,
+     "end": 338.977
+    },
+    {
+     "w": "reshaping",
+     "start": 338.977,
+     "end": 339.702
+    },
+    {
+     "w": "a",
+     "start": 339.702,
+     "end": 339.782
+    },
+    {
+     "w": "post",
+     "start": 339.782,
+     "end": 340.105
+    },
+    {
+     "w": "says",
+     "start": 340.105,
+     "end": 340.427
+    },
+    {
+     "w": "to",
+     "start": 340.427,
+     "end": 340.588
+    },
+    {
+     "w": "keep",
+     "start": 340.588,
+     "end": 340.91
+    },
+    {
+     "w": "your",
+     "start": 340.91,
+     "end": 341.232
+    },
+    {
+     "w": "key",
+     "start": 341.232,
+     "end": 341.474
+    },
+    {
+     "w": "text",
+     "start": 341.474,
+     "end": 341.796
+    },
+    {
+     "w": "and",
+     "start": 341.796,
+     "end": 342.037
+    },
+    {
+     "w": "faces",
+     "start": 342.037,
+     "end": 342.44
+    },
+    {
+     "w": "clear",
+     "start": 342.44,
+     "end": 342.843
+    },
+    {
+     "w": "of",
+     "start": 342.843,
+     "end": 343.004
+    },
+    {
+     "w": "the",
+     "start": 343.004,
+     "end": 343.245
+    },
+    {
+     "w": "protected",
+     "start": 343.245,
+     "end": 343.97
+    },
+    {
+     "w": "space.",
+     "start": 343.97,
+     "end": 344.453
+    }
+   ]
+  },
+  {
+   "id": "x4",
+   "start": 344.803,
+   "end": 353.495,
+   "text": "Only resize the posts that need it. If a design already works in every shape you publish in, skip this step and save the time.",
+   "words": [
+    {
+     "w": "Only",
+     "start": 344.803,
+     "end": 345.13
+    },
+    {
+     "w": "resize",
+     "start": 345.13,
+     "end": 345.621
+    },
+    {
+     "w": "the",
+     "start": 345.621,
+     "end": 345.866
+    },
+    {
+     "w": "posts",
+     "start": 345.866,
+     "end": 346.275
+    },
+    {
+     "w": "that",
+     "start": 346.275,
+     "end": 346.602
+    },
+    {
+     "w": "need",
+     "start": 346.602,
+     "end": 346.93
+    },
+    {
+     "w": "it.",
+     "start": 346.93,
+     "end": 347.175
+    },
+    {
+     "w": "If",
+     "start": 347.175,
+     "end": 347.338
+    },
+    {
+     "w": "a",
+     "start": 347.338,
+     "end": 347.42
+    },
+    {
+     "w": "design",
+     "start": 347.42,
+     "end": 347.911
+    },
+    {
+     "w": "already",
+     "start": 347.911,
+     "end": 348.483
+    },
+    {
+     "w": "works",
+     "start": 348.483,
+     "end": 348.892
+    },
+    {
+     "w": "in",
+     "start": 348.892,
+     "end": 349.056
+    },
+    {
+     "w": "every",
+     "start": 349.056,
+     "end": 349.465
+    },
+    {
+     "w": "shape",
+     "start": 349.465,
+     "end": 349.874
+    },
+    {
+     "w": "you",
+     "start": 349.874,
+     "end": 350.119
+    },
+    {
+     "w": "publish",
+     "start": 350.119,
+     "end": 350.691
+    },
+    {
+     "w": "in,",
+     "start": 350.691,
+     "end": 350.937
+    },
+    {
+     "w": "skip",
+     "start": 350.937,
+     "end": 351.264
+    },
+    {
+     "w": "this",
+     "start": 351.264,
+     "end": 351.591
+    },
+    {
+     "w": "step",
+     "start": 351.591,
+     "end": 351.918
+    },
+    {
+     "w": "and",
+     "start": 351.918,
+     "end": 352.163
+    },
+    {
+     "w": "save",
+     "start": 352.163,
+     "end": 352.49
+    },
+    {
+     "w": "the",
+     "start": 352.49,
+     "end": 352.736
+    },
+    {
+     "w": "time.",
+     "start": 352.736,
+     "end": 353.145
+    }
+   ]
+  },
+  {
+   "id": "s29",
+   "start": 353.495,
+   "end": 361.887,
+   "text": "Chapter four is scheduling. Canva has a built in Content Planner, so you can plan and schedule posts without leaving Canva.",
+   "words": [
+    {
+     "w": "Chapter",
+     "start": 353.495,
+     "end": 354.041
+    },
+    {
+     "w": "four",
+     "start": 354.041,
+     "end": 354.354
+    },
+    {
+     "w": "is",
+     "start": 354.354,
+     "end": 354.51
+    },
+    {
+     "w": "scheduling.",
+     "start": 354.51,
+     "end": 355.369
+    },
+    {
+     "w": "Canva",
+     "start": 355.369,
+     "end": 355.759
+    },
+    {
+     "w": "has",
+     "start": 355.759,
+     "end": 355.993
+    },
+    {
+     "w": "a",
+     "start": 355.993,
+     "end": 356.071
+    },
+    {
+     "w": "built",
+     "start": 356.071,
+     "end": 356.462
+    },
+    {
+     "w": "in",
+     "start": 356.462,
+     "end": 356.618
+    },
+    {
+     "w": "Content",
+     "start": 356.618,
+     "end": 357.165
+    },
+    {
+     "w": "Planner,",
+     "start": 357.165,
+     "end": 357.789
+    },
+    {
+     "w": "so",
+     "start": 357.789,
+     "end": 357.945
+    },
+    {
+     "w": "you",
+     "start": 357.945,
+     "end": 358.18
+    },
+    {
+     "w": "can",
+     "start": 358.18,
+     "end": 358.414
+    },
+    {
+     "w": "plan",
+     "start": 358.414,
+     "end": 358.726
+    },
+    {
+     "w": "and",
+     "start": 358.726,
+     "end": 358.961
+    },
+    {
+     "w": "schedule",
+     "start": 358.961,
+     "end": 359.585
+    },
+    {
+     "w": "posts",
+     "start": 359.585,
+     "end": 359.976
+    },
+    {
+     "w": "without",
+     "start": 359.976,
+     "end": 360.522
+    },
+    {
+     "w": "leaving",
+     "start": 360.522,
+     "end": 361.069
+    },
+    {
+     "w": "Canva.",
+     "start": 361.069,
+     "end": 361.537
+    }
+   ]
+  },
+  {
+   "id": "s30",
+   "start": 361.887,
+   "end": 370.643,
+   "text": "From the homepage side menu choose More, then Content Planner. Select Add New, then Post, and pick the design you just made.",
+   "words": [
+    {
+     "w": "From",
+     "start": 361.887,
+     "end": 362.214
+    },
+    {
+     "w": "the",
+     "start": 362.214,
+     "end": 362.459
+    },
+    {
+     "w": "homepage",
+     "start": 362.459,
+     "end": 363.111
+    },
+    {
+     "w": "side",
+     "start": 363.111,
+     "end": 363.438
+    },
+    {
+     "w": "menu",
+     "start": 363.438,
+     "end": 363.764
+    },
+    {
+     "w": "choose",
+     "start": 363.764,
+     "end": 364.254
+    },
+    {
+     "w": "More,",
+     "start": 364.254,
+     "end": 364.662
+    },
+    {
+     "w": "then",
+     "start": 364.662,
+     "end": 364.988
+    },
+    {
+     "w": "Content",
+     "start": 364.988,
+     "end": 365.56
+    },
+    {
+     "w": "Planner.",
+     "start": 365.56,
+     "end": 366.212
+    },
+    {
+     "w": "Select",
+     "start": 366.212,
+     "end": 366.702
+    },
+    {
+     "w": "Add",
+     "start": 366.702,
+     "end": 366.947
+    },
+    {
+     "w": "New,",
+     "start": 366.947,
+     "end": 367.273
+    },
+    {
+     "w": "then",
+     "start": 367.273,
+     "end": 367.6
+    },
+    {
+     "w": "Post,",
+     "start": 367.6,
+     "end": 368.008
+    },
+    {
+     "w": "and",
+     "start": 368.008,
+     "end": 368.253
+    },
+    {
+     "w": "pick",
+     "start": 368.253,
+     "end": 368.579
+    },
+    {
+     "w": "the",
+     "start": 368.579,
+     "end": 368.824
+    },
+    {
+     "w": "design",
+     "start": 368.824,
+     "end": 369.313
+    },
+    {
+     "w": "you",
+     "start": 369.313,
+     "end": 369.558
+    },
+    {
+     "w": "just",
+     "start": 369.558,
+     "end": 369.885
+    },
+    {
+     "w": "made.",
+     "start": 369.885,
+     "end": 370.293
+    }
+   ]
+  },
+  {
+   "id": "s31",
+   "start": 370.643,
+   "end": 378.758,
+   "text": "Connect your social accounts. Canva lets you connect more than one account, and you choose who sees or can publish to each one.",
+   "words": [
+    {
+     "w": "Connect",
+     "start": 370.643,
+     "end": 371.16
+    },
+    {
+     "w": "your",
+     "start": 371.16,
+     "end": 371.456
+    },
+    {
+     "w": "social",
+     "start": 371.456,
+     "end": 371.9
+    },
+    {
+     "w": "accounts.",
+     "start": 371.9,
+     "end": 372.566
+    },
+    {
+     "w": "Canva",
+     "start": 372.566,
+     "end": 372.935
+    },
+    {
+     "w": "lets",
+     "start": 372.935,
+     "end": 373.231
+    },
+    {
+     "w": "you",
+     "start": 373.231,
+     "end": 373.453
+    },
+    {
+     "w": "connect",
+     "start": 373.453,
+     "end": 373.971
+    },
+    {
+     "w": "more",
+     "start": 373.971,
+     "end": 374.266
+    },
+    {
+     "w": "than",
+     "start": 374.266,
+     "end": 374.562
+    },
+    {
+     "w": "one",
+     "start": 374.562,
+     "end": 374.784
+    },
+    {
+     "w": "account,",
+     "start": 374.784,
+     "end": 375.376
+    },
+    {
+     "w": "and",
+     "start": 375.376,
+     "end": 375.598
+    },
+    {
+     "w": "you",
+     "start": 375.598,
+     "end": 375.82
+    },
+    {
+     "w": "choose",
+     "start": 375.82,
+     "end": 376.263
+    },
+    {
+     "w": "who",
+     "start": 376.263,
+     "end": 376.485
+    },
+    {
+     "w": "sees",
+     "start": 376.485,
+     "end": 376.781
+    },
+    {
+     "w": "or",
+     "start": 376.781,
+     "end": 376.929
+    },
+    {
+     "w": "can",
+     "start": 376.929,
+     "end": 377.151
+    },
+    {
+     "w": "publish",
+     "start": 377.151,
+     "end": 377.668
+    },
+    {
+     "w": "to",
+     "start": 377.668,
+     "end": 377.816
+    },
+    {
+     "w": "each",
+     "start": 377.816,
+     "end": 378.112
+    },
+    {
+     "w": "one.",
+     "start": 378.112,
+     "end": 378.408
+    }
+   ]
+  },
+  {
+   "id": "x10",
+   "start": 378.758,
+   "end": 389.881,
+   "text": "If you manage posts for a team, set each account's visibility on purpose. A private account keeps scheduling to you, while team viewable lets everyone see what is going out.",
+   "words": [
+    {
+     "w": "If",
+     "start": 378.758,
+     "end": 378.908
+    },
+    {
+     "w": "you",
+     "start": 378.908,
+     "end": 379.132
+    },
+    {
+     "w": "manage",
+     "start": 379.132,
+     "end": 379.581
+    },
+    {
+     "w": "posts",
+     "start": 379.581,
+     "end": 379.955
+    },
+    {
+     "w": "for",
+     "start": 379.955,
+     "end": 380.179
+    },
+    {
+     "w": "a",
+     "start": 380.179,
+     "end": 380.254
+    },
+    {
+     "w": "team,",
+     "start": 380.254,
+     "end": 380.628
+    },
+    {
+     "w": "set",
+     "start": 380.628,
+     "end": 380.853
+    },
+    {
+     "w": "each",
+     "start": 380.853,
+     "end": 381.152
+    },
+    {
+     "w": "account's",
+     "start": 381.152,
+     "end": 381.825
+    },
+    {
+     "w": "visibility",
+     "start": 381.825,
+     "end": 382.574
+    },
+    {
+     "w": "on",
+     "start": 382.574,
+     "end": 382.723
+    },
+    {
+     "w": "purpose.",
+     "start": 382.723,
+     "end": 383.322
+    },
+    {
+     "w": "A",
+     "start": 383.322,
+     "end": 383.397
+    },
+    {
+     "w": "private",
+     "start": 383.397,
+     "end": 383.92
+    },
+    {
+     "w": "account",
+     "start": 383.92,
+     "end": 384.444
+    },
+    {
+     "w": "keeps",
+     "start": 384.444,
+     "end": 384.818
+    },
+    {
+     "w": "scheduling",
+     "start": 384.818,
+     "end": 385.566
+    },
+    {
+     "w": "to",
+     "start": 385.566,
+     "end": 385.716
+    },
+    {
+     "w": "you,",
+     "start": 385.716,
+     "end": 386.015
+    },
+    {
+     "w": "while",
+     "start": 386.015,
+     "end": 386.389
+    },
+    {
+     "w": "team",
+     "start": 386.389,
+     "end": 386.688
+    },
+    {
+     "w": "viewable",
+     "start": 386.688,
+     "end": 387.287
+    },
+    {
+     "w": "lets",
+     "start": 387.287,
+     "end": 387.586
+    },
+    {
+     "w": "everyone",
+     "start": 387.586,
+     "end": 388.185
+    },
+    {
+     "w": "see",
+     "start": 388.185,
+     "end": 388.409
+    },
+    {
+     "w": "what",
+     "start": 388.409,
+     "end": 388.708
+    },
+    {
+     "w": "is",
+     "start": 388.708,
+     "end": 388.858
+    },
+    {
+     "w": "going",
+     "start": 388.858,
+     "end": 389.232
+    },
+    {
+     "w": "out.",
+     "start": 389.232,
+     "end": 389.531
+    }
+   ]
+  },
+  {
+   "id": "s32",
+   "start": 389.881,
+   "end": 401.218,
+   "text": "Canva's Content Planner page lists platforms including Facebook, Instagram and LinkedIn, and its help center says more are on the way. Check the current list for your account.",
+   "words": [
+    {
+     "w": "Canva's",
+     "start": 389.881,
+     "end": 390.401
+    },
+    {
+     "w": "Content",
+     "start": 390.401,
+     "end": 390.921
+    },
+    {
+     "w": "Planner",
+     "start": 390.921,
+     "end": 391.44
+    },
+    {
+     "w": "page",
+     "start": 391.44,
+     "end": 391.737
+    },
+    {
+     "w": "lists",
+     "start": 391.737,
+     "end": 392.108
+    },
+    {
+     "w": "platforms",
+     "start": 392.108,
+     "end": 392.776
+    },
+    {
+     "w": "including",
+     "start": 392.776,
+     "end": 393.445
+    },
+    {
+     "w": "Facebook,",
+     "start": 393.445,
+     "end": 394.113
+    },
+    {
+     "w": "Instagram",
+     "start": 394.113,
+     "end": 394.781
+    },
+    {
+     "w": "and",
+     "start": 394.781,
+     "end": 395.003
+    },
+    {
+     "w": "LinkedIn,",
+     "start": 395.003,
+     "end": 395.672
+    },
+    {
+     "w": "and",
+     "start": 395.672,
+     "end": 395.894
+    },
+    {
+     "w": "its",
+     "start": 395.894,
+     "end": 396.117
+    },
+    {
+     "w": "help",
+     "start": 396.117,
+     "end": 396.414
+    },
+    {
+     "w": "center",
+     "start": 396.414,
+     "end": 396.859
+    },
+    {
+     "w": "says",
+     "start": 396.859,
+     "end": 397.156
+    },
+    {
+     "w": "more",
+     "start": 397.156,
+     "end": 397.453
+    },
+    {
+     "w": "are",
+     "start": 397.453,
+     "end": 397.676
+    },
+    {
+     "w": "on",
+     "start": 397.676,
+     "end": 397.824
+    },
+    {
+     "w": "the",
+     "start": 397.824,
+     "end": 398.047
+    },
+    {
+     "w": "way.",
+     "start": 398.047,
+     "end": 398.344
+    },
+    {
+     "w": "Check",
+     "start": 398.344,
+     "end": 398.715
+    },
+    {
+     "w": "the",
+     "start": 398.715,
+     "end": 398.938
+    },
+    {
+     "w": "current",
+     "start": 398.938,
+     "end": 399.458
+    },
+    {
+     "w": "list",
+     "start": 399.458,
+     "end": 399.754
+    },
+    {
+     "w": "for",
+     "start": 399.754,
+     "end": 399.977
+    },
+    {
+     "w": "your",
+     "start": 399.977,
+     "end": 400.274
+    },
+    {
+     "w": "account.",
+     "start": 400.274,
+     "end": 400.868
+    }
+   ]
+  },
+  {
+   "id": "s33",
+   "start": 401.218,
+   "end": 411.787,
+   "text": "A note on Instagram. Canva says scheduling to Instagram has to be done from a desktop browser. On mobile you can view the planner and schedule from the editor.",
+   "words": [
+    {
+     "w": "A",
+     "start": 401.218,
+     "end": 401.296
+    },
+    {
+     "w": "note",
+     "start": 401.296,
+     "end": 401.608
+    },
+    {
+     "w": "on",
+     "start": 401.608,
+     "end": 401.764
+    },
+    {
+     "w": "Instagram.",
+     "start": 401.764,
+     "end": 402.544
+    },
+    {
+     "w": "Canva",
+     "start": 402.544,
+     "end": 402.934
+    },
+    {
+     "w": "says",
+     "start": 402.934,
+     "end": 403.246
+    },
+    {
+     "w": "scheduling",
+     "start": 403.246,
+     "end": 404.026
+    },
+    {
+     "w": "to",
+     "start": 404.026,
+     "end": 404.182
+    },
+    {
+     "w": "Instagram",
+     "start": 404.182,
+     "end": 404.884
+    },
+    {
+     "w": "has",
+     "start": 404.884,
+     "end": 405.118
+    },
+    {
+     "w": "to",
+     "start": 405.118,
+     "end": 405.274
+    },
+    {
+     "w": "be",
+     "start": 405.274,
+     "end": 405.43
+    },
+    {
+     "w": "done",
+     "start": 405.43,
+     "end": 405.742
+    },
+    {
+     "w": "from",
+     "start": 405.742,
+     "end": 406.054
+    },
+    {
+     "w": "a",
+     "start": 406.054,
+     "end": 406.132
+    },
+    {
+     "w": "desktop",
+     "start": 406.132,
+     "end": 406.678
+    },
+    {
+     "w": "browser.",
+     "start": 406.678,
+     "end": 407.302
+    },
+    {
+     "w": "On",
+     "start": 407.302,
+     "end": 407.458
+    },
+    {
+     "w": "mobile",
+     "start": 407.458,
+     "end": 407.926
+    },
+    {
+     "w": "you",
+     "start": 407.926,
+     "end": 408.16
+    },
+    {
+     "w": "can",
+     "start": 408.16,
+     "end": 408.394
+    },
+    {
+     "w": "view",
+     "start": 408.394,
+     "end": 408.706
+    },
+    {
+     "w": "the",
+     "start": 408.706,
+     "end": 408.941
+    },
+    {
+     "w": "planner",
+     "start": 408.941,
+     "end": 409.487
+    },
+    {
+     "w": "and",
+     "start": 409.487,
+     "end": 409.721
+    },
+    {
+     "w": "schedule",
+     "start": 409.721,
+     "end": 410.345
+    },
+    {
+     "w": "from",
+     "start": 410.345,
+     "end": 410.657
+    },
+    {
+     "w": "the",
+     "start": 410.657,
+     "end": 410.891
+    },
+    {
+     "w": "editor.",
+     "start": 410.891,
+     "end": 411.437
+    }
+   ]
+  },
+  {
+   "id": "x5",
+   "start": 411.787,
+   "end": 420.755,
+   "text": "Do a final pass on the calendar view. You want a mix of angles across the week, not three tips in a row, and every post on the day you meant.",
+   "words": [
+    {
+     "w": "Do",
+     "start": 411.787,
+     "end": 411.942
+    },
+    {
+     "w": "a",
+     "start": 411.942,
+     "end": 412.02
+    },
+    {
+     "w": "final",
+     "start": 412.02,
+     "end": 412.408
+    },
+    {
+     "w": "pass",
+     "start": 412.408,
+     "end": 412.718
+    },
+    {
+     "w": "on",
+     "start": 412.718,
+     "end": 412.874
+    },
+    {
+     "w": "the",
+     "start": 412.874,
+     "end": 413.107
+    },
+    {
+     "w": "calendar",
+     "start": 413.107,
+     "end": 413.728
+    },
+    {
+     "w": "view.",
+     "start": 413.728,
+     "end": 414.116
+    },
+    {
+     "w": "You",
+     "start": 414.116,
+     "end": 414.349
+    },
+    {
+     "w": "want",
+     "start": 414.349,
+     "end": 414.66
+    },
+    {
+     "w": "a",
+     "start": 414.66,
+     "end": 414.737
+    },
+    {
+     "w": "mix",
+     "start": 414.737,
+     "end": 414.97
+    },
+    {
+     "w": "of",
+     "start": 414.97,
+     "end": 415.125
+    },
+    {
+     "w": "angles",
+     "start": 415.125,
+     "end": 415.591
+    },
+    {
+     "w": "across",
+     "start": 415.591,
+     "end": 416.057
+    },
+    {
+     "w": "the",
+     "start": 416.057,
+     "end": 416.29
+    },
+    {
+     "w": "week,",
+     "start": 416.29,
+     "end": 416.678
+    },
+    {
+     "w": "not",
+     "start": 416.678,
+     "end": 416.911
+    },
+    {
+     "w": "three",
+     "start": 416.911,
+     "end": 417.3
+    },
+    {
+     "w": "tips",
+     "start": 417.3,
+     "end": 417.61
+    },
+    {
+     "w": "in",
+     "start": 417.61,
+     "end": 417.765
+    },
+    {
+     "w": "a",
+     "start": 417.765,
+     "end": 417.843
+    },
+    {
+     "w": "row,",
+     "start": 417.843,
+     "end": 418.154
+    },
+    {
+     "w": "and",
+     "start": 418.154,
+     "end": 418.387
+    },
+    {
+     "w": "every",
+     "start": 418.387,
+     "end": 418.775
+    },
+    {
+     "w": "post",
+     "start": 418.775,
+     "end": 419.085
+    },
+    {
+     "w": "on",
+     "start": 419.085,
+     "end": 419.241
+    },
+    {
+     "w": "the",
+     "start": 419.241,
+     "end": 419.474
+    },
+    {
+     "w": "day",
+     "start": 419.474,
+     "end": 419.707
+    },
+    {
+     "w": "you",
+     "start": 419.707,
+     "end": 419.939
+    },
+    {
+     "w": "meant.",
+     "start": 419.939,
+     "end": 420.405
+    }
+   ]
+  },
+  {
+   "id": "s34",
+   "start": 420.755,
+   "end": 429.276,
+   "text": "Pick a day and a time for each post, then click Schedule. Spread the seven posts across the week instead of stacking them on one day.",
+   "words": [
+    {
+     "w": "Pick",
+     "start": 420.755,
+     "end": 421.058
+    },
+    {
+     "w": "a",
+     "start": 421.058,
+     "end": 421.134
+    },
+    {
+     "w": "day",
+     "start": 421.134,
+     "end": 421.361
+    },
+    {
+     "w": "and",
+     "start": 421.361,
+     "end": 421.588
+    },
+    {
+     "w": "a",
+     "start": 421.588,
+     "end": 421.663
+    },
+    {
+     "w": "time",
+     "start": 421.663,
+     "end": 421.966
+    },
+    {
+     "w": "for",
+     "start": 421.966,
+     "end": 422.193
+    },
+    {
+     "w": "each",
+     "start": 422.193,
+     "end": 422.495
+    },
+    {
+     "w": "post,",
+     "start": 422.495,
+     "end": 422.874
+    },
+    {
+     "w": "then",
+     "start": 422.874,
+     "end": 423.176
+    },
+    {
+     "w": "click",
+     "start": 423.176,
+     "end": 423.555
+    },
+    {
+     "w": "Schedule.",
+     "start": 423.555,
+     "end": 424.235
+    },
+    {
+     "w": "Spread",
+     "start": 424.235,
+     "end": 424.689
+    },
+    {
+     "w": "the",
+     "start": 424.689,
+     "end": 424.916
+    },
+    {
+     "w": "seven",
+     "start": 424.916,
+     "end": 425.295
+    },
+    {
+     "w": "posts",
+     "start": 425.295,
+     "end": 425.673
+    },
+    {
+     "w": "across",
+     "start": 425.673,
+     "end": 426.127
+    },
+    {
+     "w": "the",
+     "start": 426.127,
+     "end": 426.354
+    },
+    {
+     "w": "week",
+     "start": 426.354,
+     "end": 426.656
+    },
+    {
+     "w": "instead",
+     "start": 426.656,
+     "end": 427.186
+    },
+    {
+     "w": "of",
+     "start": 427.186,
+     "end": 427.337
+    },
+    {
+     "w": "stacking",
+     "start": 427.337,
+     "end": 427.942
+    },
+    {
+     "w": "them",
+     "start": 427.942,
+     "end": 428.245
+    },
+    {
+     "w": "on",
+     "start": 428.245,
+     "end": 428.396
+    },
+    {
+     "w": "one",
+     "start": 428.396,
+     "end": 428.623
+    },
+    {
+     "w": "day.",
+     "start": 428.623,
+     "end": 428.926
+    }
+   ]
+  },
+  {
+   "id": "s35",
+   "start": 429.276,
+   "end": 438.757,
+   "text": "Plans change. Canva says you can pause and edit a scheduled post without uploading the file again, so a typo on Wednesday is a quick fix.",
+   "words": [
+    {
+     "w": "Plans",
+     "start": 429.276,
+     "end": 429.684
+    },
+    {
+     "w": "change.",
+     "start": 429.684,
+     "end": 430.254
+    },
+    {
+     "w": "Canva",
+     "start": 430.254,
+     "end": 430.662
+    },
+    {
+     "w": "says",
+     "start": 430.662,
+     "end": 430.988
+    },
+    {
+     "w": "you",
+     "start": 430.988,
+     "end": 431.233
+    },
+    {
+     "w": "can",
+     "start": 431.233,
+     "end": 431.477
+    },
+    {
+     "w": "pause",
+     "start": 431.477,
+     "end": 431.885
+    },
+    {
+     "w": "and",
+     "start": 431.885,
+     "end": 432.129
+    },
+    {
+     "w": "edit",
+     "start": 432.129,
+     "end": 432.455
+    },
+    {
+     "w": "a",
+     "start": 432.455,
+     "end": 432.537
+    },
+    {
+     "w": "scheduled",
+     "start": 432.537,
+     "end": 433.271
+    },
+    {
+     "w": "post",
+     "start": 433.271,
+     "end": 433.597
+    },
+    {
+     "w": "without",
+     "start": 433.597,
+     "end": 434.167
+    },
+    {
+     "w": "uploading",
+     "start": 434.167,
+     "end": 434.901
+    },
+    {
+     "w": "the",
+     "start": 434.901,
+     "end": 435.146
+    },
+    {
+     "w": "file",
+     "start": 435.146,
+     "end": 435.472
+    },
+    {
+     "w": "again,",
+     "start": 435.472,
+     "end": 435.961
+    },
+    {
+     "w": "so",
+     "start": 435.961,
+     "end": 436.124
+    },
+    {
+     "w": "a",
+     "start": 436.124,
+     "end": 436.206
+    },
+    {
+     "w": "typo",
+     "start": 436.206,
+     "end": 436.532
+    },
+    {
+     "w": "on",
+     "start": 436.532,
+     "end": 436.695
+    },
+    {
+     "w": "Wednesday",
+     "start": 436.695,
+     "end": 437.428
+    },
+    {
+     "w": "is",
+     "start": 437.428,
+     "end": 437.591
+    },
+    {
+     "w": "a",
+     "start": 437.591,
+     "end": 437.673
+    },
+    {
+     "w": "quick",
+     "start": 437.673,
+     "end": 438.081
+    },
+    {
+     "w": "fix.",
+     "start": 438.081,
+     "end": 438.407
+    }
+   ]
+  },
+  {
+   "id": "s36",
+   "start": 438.757,
+   "end": 449.859,
+   "text": "Once posts are live, Canva's Content Planner can show insights like impressions, clicks, likes and comments. Use them to decide which angle to repeat next week.",
+   "words": [
+    {
+     "w": "Once",
+     "start": 438.757,
+     "end": 439.075
+    },
+    {
+     "w": "posts",
+     "start": 439.075,
+     "end": 439.473
+    },
+    {
+     "w": "are",
+     "start": 439.473,
+     "end": 439.712
+    },
+    {
+     "w": "live,",
+     "start": 439.712,
+     "end": 440.111
+    },
+    {
+     "w": "Canva's",
+     "start": 440.111,
+     "end": 440.668
+    },
+    {
+     "w": "Content",
+     "start": 440.668,
+     "end": 441.226
+    },
+    {
+     "w": "Planner",
+     "start": 441.226,
+     "end": 441.783
+    },
+    {
+     "w": "can",
+     "start": 441.783,
+     "end": 442.022
+    },
+    {
+     "w": "show",
+     "start": 442.022,
+     "end": 442.341
+    },
+    {
+     "w": "insights",
+     "start": 442.341,
+     "end": 442.978
+    },
+    {
+     "w": "like",
+     "start": 442.978,
+     "end": 443.296
+    },
+    {
+     "w": "impressions,",
+     "start": 443.296,
+     "end": 444.252
+    },
+    {
+     "w": "clicks,",
+     "start": 444.252,
+     "end": 444.81
+    },
+    {
+     "w": "likes",
+     "start": 444.81,
+     "end": 445.208
+    },
+    {
+     "w": "and",
+     "start": 445.208,
+     "end": 445.447
+    },
+    {
+     "w": "comments.",
+     "start": 445.447,
+     "end": 446.164
+    },
+    {
+     "w": "Use",
+     "start": 446.164,
+     "end": 446.403
+    },
+    {
+     "w": "them",
+     "start": 446.403,
+     "end": 446.721
+    },
+    {
+     "w": "to",
+     "start": 446.721,
+     "end": 446.88
+    },
+    {
+     "w": "decide",
+     "start": 446.88,
+     "end": 447.358
+    },
+    {
+     "w": "which",
+     "start": 447.358,
+     "end": 447.756
+    },
+    {
+     "w": "angle",
+     "start": 447.756,
+     "end": 448.155
+    },
+    {
+     "w": "to",
+     "start": 448.155,
+     "end": 448.314
+    },
+    {
+     "w": "repeat",
+     "start": 448.314,
+     "end": 448.792
+    },
+    {
+     "w": "next",
+     "start": 448.792,
+     "end": 449.11
+    },
+    {
+     "w": "week.",
+     "start": 449.11,
+     "end": 449.509
+    }
+   ]
+  },
+  {
+   "id": "x6",
+   "start": 449.859,
+   "end": 458.913,
+   "text": "Write down what worked. Next week, change one thing, the angle, the time or the hook, so you actually learn from the results instead of guessing.",
+   "words": [
+    {
+     "w": "Write",
+     "start": 449.859,
+     "end": 450.221
+    },
+    {
+     "w": "down",
+     "start": 450.221,
+     "end": 450.511
+    },
+    {
+     "w": "what",
+     "start": 450.511,
+     "end": 450.802
+    },
+    {
+     "w": "worked.",
+     "start": 450.802,
+     "end": 451.309
+    },
+    {
+     "w": "Next",
+     "start": 451.309,
+     "end": 451.599
+    },
+    {
+     "w": "week,",
+     "start": 451.599,
+     "end": 451.962
+    },
+    {
+     "w": "change",
+     "start": 451.962,
+     "end": 452.397
+    },
+    {
+     "w": "one",
+     "start": 452.397,
+     "end": 452.615
+    },
+    {
+     "w": "thing,",
+     "start": 452.615,
+     "end": 453.05
+    },
+    {
+     "w": "the",
+     "start": 453.05,
+     "end": 453.268
+    },
+    {
+     "w": "angle,",
+     "start": 453.268,
+     "end": 453.703
+    },
+    {
+     "w": "the",
+     "start": 453.703,
+     "end": 453.921
+    },
+    {
+     "w": "time",
+     "start": 453.921,
+     "end": 454.211
+    },
+    {
+     "w": "or",
+     "start": 454.211,
+     "end": 454.356
+    },
+    {
+     "w": "the",
+     "start": 454.356,
+     "end": 454.573
+    },
+    {
+     "w": "hook,",
+     "start": 454.573,
+     "end": 454.936
+    },
+    {
+     "w": "so",
+     "start": 454.936,
+     "end": 455.081
+    },
+    {
+     "w": "you",
+     "start": 455.081,
+     "end": 455.299
+    },
+    {
+     "w": "actually",
+     "start": 455.299,
+     "end": 455.879
+    },
+    {
+     "w": "learn",
+     "start": 455.879,
+     "end": 456.242
+    },
+    {
+     "w": "from",
+     "start": 456.242,
+     "end": 456.532
+    },
+    {
+     "w": "the",
+     "start": 456.532,
+     "end": 456.749
+    },
+    {
+     "w": "results",
+     "start": 456.749,
+     "end": 457.257
+    },
+    {
+     "w": "instead",
+     "start": 457.257,
+     "end": 457.765
+    },
+    {
+     "w": "of",
+     "start": 457.765,
+     "end": 457.91
+    },
+    {
+     "w": "guessing.",
+     "start": 457.91,
+     "end": 458.563
+    }
+   ]
+  },
+  {
+   "id": "s37",
+   "start": 458.913,
+   "end": 471.231,
+   "text": "Let us put the whole workflow together. Set your brand voice once. Write seven drafts with Magic Write. Turn them into designs with Bulk Create. Resize where you need to. Schedule the week.",
+   "words": [
+    {
+     "w": "Let",
+     "start": 458.913,
+     "end": 459.141
+    },
+    {
+     "w": "us",
+     "start": 459.141,
+     "end": 459.294
+    },
+    {
+     "w": "put",
+     "start": 459.294,
+     "end": 459.523
+    },
+    {
+     "w": "the",
+     "start": 459.523,
+     "end": 459.751
+    },
+    {
+     "w": "whole",
+     "start": 459.751,
+     "end": 460.132
+    },
+    {
+     "w": "workflow",
+     "start": 460.132,
+     "end": 460.742
+    },
+    {
+     "w": "together.",
+     "start": 460.742,
+     "end": 461.428
+    },
+    {
+     "w": "Set",
+     "start": 461.428,
+     "end": 461.657
+    },
+    {
+     "w": "your",
+     "start": 461.657,
+     "end": 461.962
+    },
+    {
+     "w": "brand",
+     "start": 461.962,
+     "end": 462.343
+    },
+    {
+     "w": "voice",
+     "start": 462.343,
+     "end": 462.724
+    },
+    {
+     "w": "once.",
+     "start": 462.724,
+     "end": 463.105
+    },
+    {
+     "w": "Write",
+     "start": 463.105,
+     "end": 463.486
+    },
+    {
+     "w": "seven",
+     "start": 463.486,
+     "end": 463.868
+    },
+    {
+     "w": "drafts",
+     "start": 463.868,
+     "end": 464.325
+    },
+    {
+     "w": "with",
+     "start": 464.325,
+     "end": 464.63
+    },
+    {
+     "w": "Magic",
+     "start": 464.63,
+     "end": 465.011
+    },
+    {
+     "w": "Write.",
+     "start": 465.011,
+     "end": 465.468
+    },
+    {
+     "w": "Turn",
+     "start": 465.468,
+     "end": 465.773
+    },
+    {
+     "w": "them",
+     "start": 465.773,
+     "end": 466.078
+    },
+    {
+     "w": "into",
+     "start": 466.078,
+     "end": 466.383
+    },
+    {
+     "w": "designs",
+     "start": 466.383,
+     "end": 466.917
+    },
+    {
+     "w": "with",
+     "start": 466.917,
+     "end": 467.222
+    },
+    {
+     "w": "Bulk",
+     "start": 467.222,
+     "end": 467.527
+    },
+    {
+     "w": "Create.",
+     "start": 467.527,
+     "end": 468.06
+    },
+    {
+     "w": "Resize",
+     "start": 468.06,
+     "end": 468.518
+    },
+    {
+     "w": "where",
+     "start": 468.518,
+     "end": 468.899
+    },
+    {
+     "w": "you",
+     "start": 468.899,
+     "end": 469.127
+    },
+    {
+     "w": "need",
+     "start": 469.127,
+     "end": 469.432
+    },
+    {
+     "w": "to.",
+     "start": 469.432,
+     "end": 469.661
+    },
+    {
+     "w": "Schedule",
+     "start": 469.661,
+     "end": 470.271
+    },
+    {
+     "w": "the",
+     "start": 470.271,
+     "end": 470.5
+    },
+    {
+     "w": "week.",
+     "start": 470.5,
+     "end": 470.881
+    }
+   ]
+  },
+  {
+   "id": "x7",
+   "start": 471.231,
+   "end": 480.797,
+   "text": "If you only have time for one upgrade today, set your brand voice. It takes a few minutes, and every caption you write afterward starts closer to done.",
+   "words": [
+    {
+     "w": "If",
+     "start": 471.231,
+     "end": 471.379
+    },
+    {
+     "w": "you",
+     "start": 471.379,
+     "end": 471.602
+    },
+    {
+     "w": "only",
+     "start": 471.602,
+     "end": 471.9
+    },
+    {
+     "w": "have",
+     "start": 471.9,
+     "end": 472.197
+    },
+    {
+     "w": "time",
+     "start": 472.197,
+     "end": 472.494
+    },
+    {
+     "w": "for",
+     "start": 472.494,
+     "end": 472.717
+    },
+    {
+     "w": "one",
+     "start": 472.717,
+     "end": 472.94
+    },
+    {
+     "w": "upgrade",
+     "start": 472.94,
+     "end": 473.46
+    },
+    {
+     "w": "today,",
+     "start": 473.46,
+     "end": 473.906
+    },
+    {
+     "w": "set",
+     "start": 473.906,
+     "end": 474.129
+    },
+    {
+     "w": "your",
+     "start": 474.129,
+     "end": 474.427
+    },
+    {
+     "w": "brand",
+     "start": 474.427,
+     "end": 474.798
+    },
+    {
+     "w": "voice.",
+     "start": 474.798,
+     "end": 475.244
+    },
+    {
+     "w": "It",
+     "start": 475.244,
+     "end": 475.393
+    },
+    {
+     "w": "takes",
+     "start": 475.393,
+     "end": 475.764
+    },
+    {
+     "w": "a",
+     "start": 475.764,
+     "end": 475.839
+    },
+    {
+     "w": "few",
+     "start": 475.839,
+     "end": 476.062
+    },
+    {
+     "w": "minutes,",
+     "start": 476.062,
+     "end": 476.656
+    },
+    {
+     "w": "and",
+     "start": 476.656,
+     "end": 476.879
+    },
+    {
+     "w": "every",
+     "start": 476.879,
+     "end": 477.251
+    },
+    {
+     "w": "caption",
+     "start": 477.251,
+     "end": 477.771
+    },
+    {
+     "w": "you",
+     "start": 477.771,
+     "end": 477.994
+    },
+    {
+     "w": "write",
+     "start": 477.994,
+     "end": 478.366
+    },
+    {
+     "w": "afterward",
+     "start": 478.366,
+     "end": 479.035
+    },
+    {
+     "w": "starts",
+     "start": 479.035,
+     "end": 479.48
+    },
+    {
+     "w": "closer",
+     "start": 479.48,
+     "end": 479.926
+    },
+    {
+     "w": "to",
+     "start": 479.926,
+     "end": 480.075
+    },
+    {
+     "w": "done.",
+     "start": 480.075,
+     "end": 480.447
+    }
+   ]
+  },
+  {
+   "id": "s38",
+   "start": 480.797,
+   "end": 490.704,
+   "text": "Your first run will feel slower than doing one post by hand. The second week is where it pays off, because the brand voice and the template are already done.",
+   "words": [
+    {
+     "w": "Your",
+     "start": 480.797,
+     "end": 481.095
+    },
+    {
+     "w": "first",
+     "start": 481.095,
+     "end": 481.469
+    },
+    {
+     "w": "run",
+     "start": 481.469,
+     "end": 481.693
+    },
+    {
+     "w": "will",
+     "start": 481.693,
+     "end": 481.991
+    },
+    {
+     "w": "feel",
+     "start": 481.991,
+     "end": 482.29
+    },
+    {
+     "w": "slower",
+     "start": 482.29,
+     "end": 482.738
+    },
+    {
+     "w": "than",
+     "start": 482.738,
+     "end": 483.037
+    },
+    {
+     "w": "doing",
+     "start": 483.037,
+     "end": 483.41
+    },
+    {
+     "w": "one",
+     "start": 483.41,
+     "end": 483.634
+    },
+    {
+     "w": "post",
+     "start": 483.634,
+     "end": 483.933
+    },
+    {
+     "w": "by",
+     "start": 483.933,
+     "end": 484.082
+    },
+    {
+     "w": "hand.",
+     "start": 484.082,
+     "end": 484.455
+    },
+    {
+     "w": "The",
+     "start": 484.455,
+     "end": 484.679
+    },
+    {
+     "w": "second",
+     "start": 484.679,
+     "end": 485.127
+    },
+    {
+     "w": "week",
+     "start": 485.127,
+     "end": 485.426
+    },
+    {
+     "w": "is",
+     "start": 485.426,
+     "end": 485.575
+    },
+    {
+     "w": "where",
+     "start": 485.575,
+     "end": 485.949
+    },
+    {
+     "w": "it",
+     "start": 485.949,
+     "end": 486.098
+    },
+    {
+     "w": "pays",
+     "start": 486.098,
+     "end": 486.397
+    },
+    {
+     "w": "off,",
+     "start": 486.397,
+     "end": 486.695
+    },
+    {
+     "w": "because",
+     "start": 486.695,
+     "end": 487.218
+    },
+    {
+     "w": "the",
+     "start": 487.218,
+     "end": 487.442
+    },
+    {
+     "w": "brand",
+     "start": 487.442,
+     "end": 487.815
+    },
+    {
+     "w": "voice",
+     "start": 487.815,
+     "end": 488.189
+    },
+    {
+     "w": "and",
+     "start": 488.189,
+     "end": 488.413
+    },
+    {
+     "w": "the",
+     "start": 488.413,
+     "end": 488.637
+    },
+    {
+     "w": "template",
+     "start": 488.637,
+     "end": 489.234
+    },
+    {
+     "w": "are",
+     "start": 489.234,
+     "end": 489.458
+    },
+    {
+     "w": "already",
+     "start": 489.458,
+     "end": 489.981
+    },
+    {
+     "w": "done.",
+     "start": 489.981,
+     "end": 490.354
+    }
+   ]
+  },
+  {
+   "id": "s39",
+   "start": 490.704,
+   "end": 500.633,
+   "text": "One more thing. This is a series, so tomorrow the short shows one step from this workflow in under a minute. Follow the channel so you do not miss day two.",
+   "words": [
+    {
+     "w": "One",
+     "start": 490.704,
+     "end": 490.934
+    },
+    {
+     "w": "more",
+     "start": 490.934,
+     "end": 491.24
+    },
+    {
+     "w": "thing.",
+     "start": 491.24,
+     "end": 491.7
+    },
+    {
+     "w": "This",
+     "start": 491.7,
+     "end": 492.007
+    },
+    {
+     "w": "is",
+     "start": 492.007,
+     "end": 492.16
+    },
+    {
+     "w": "a",
+     "start": 492.16,
+     "end": 492.237
+    },
+    {
+     "w": "series,",
+     "start": 492.237,
+     "end": 492.773
+    },
+    {
+     "w": "so",
+     "start": 492.773,
+     "end": 492.926
+    },
+    {
+     "w": "tomorrow",
+     "start": 492.926,
+     "end": 493.539
+    },
+    {
+     "w": "the",
+     "start": 493.539,
+     "end": 493.769
+    },
+    {
+     "w": "short",
+     "start": 493.769,
+     "end": 494.152
+    },
+    {
+     "w": "shows",
+     "start": 494.152,
+     "end": 494.535
+    },
+    {
+     "w": "one",
+     "start": 494.535,
+     "end": 494.765
+    },
+    {
+     "w": "step",
+     "start": 494.765,
+     "end": 495.072
+    },
+    {
+     "w": "from",
+     "start": 495.072,
+     "end": 495.378
+    },
+    {
+     "w": "this",
+     "start": 495.378,
+     "end": 495.685
+    },
+    {
+     "w": "workflow",
+     "start": 495.685,
+     "end": 496.298
+    },
+    {
+     "w": "in",
+     "start": 496.298,
+     "end": 496.451
+    },
+    {
+     "w": "under",
+     "start": 496.451,
+     "end": 496.834
+    },
+    {
+     "w": "a",
+     "start": 496.834,
+     "end": 496.911
+    },
+    {
+     "w": "minute.",
+     "start": 496.911,
+     "end": 497.447
+    },
+    {
+     "w": "Follow",
+     "start": 497.447,
+     "end": 497.907
+    },
+    {
+     "w": "the",
+     "start": 497.907,
+     "end": 498.137
+    },
+    {
+     "w": "channel",
+     "start": 498.137,
+     "end": 498.673
+    },
+    {
+     "w": "so",
+     "start": 498.673,
+     "end": 498.827
+    },
+    {
+     "w": "you",
+     "start": 498.827,
+     "end": 499.057
+    },
+    {
+     "w": "do",
+     "start": 499.057,
+     "end": 499.21
+    },
+    {
+     "w": "not",
+     "start": 499.21,
+     "end": 499.44
+    },
+    {
+     "w": "miss",
+     "start": 499.44,
+     "end": 499.746
+    },
+    {
+     "w": "day",
+     "start": 499.746,
+     "end": 499.976
+    },
+    {
+     "w": "two.",
+     "start": 499.976,
+     "end": 500.283
+    }
+   ]
+  },
+  {
+   "id": "s40",
+   "start": 500.633,
+   "end": 512.797,
+   "text": "Comment GUIDE and I will send the step by step PDF for this workflow. Subscribe to AI Graphic TV for a new AI workflow every day.",
+   "words": [
+    {
+     "w": "Comment",
+     "start": 500.633,
+     "end": 501.283
+    },
+    {
+     "w": "GUIDE",
+     "start": 501.283,
+     "end": 501.748
+    },
+    {
+     "w": "and",
+     "start": 501.748,
+     "end": 502.027
+    },
+    {
+     "w": "I",
+     "start": 502.027,
+     "end": 502.119
+    },
+    {
+     "w": "will",
+     "start": 502.119,
+     "end": 502.491
+    },
+    {
+     "w": "send",
+     "start": 502.491,
+     "end": 502.863
+    },
+    {
+     "w": "the",
+     "start": 502.863,
+     "end": 503.142
+    },
+    {
+     "w": "step",
+     "start": 503.142,
+     "end": 503.513
+    },
+    {
+     "w": "by",
+     "start": 503.513,
+     "end": 503.699
+    },
+    {
+     "w": "step",
+     "start": 503.699,
+     "end": 504.071
+    },
+    {
+     "w": "PDF",
+     "start": 504.071,
+     "end": 504.35
+    },
+    {
+     "w": "for",
+     "start": 504.35,
+     "end": 504.628
+    },
+    {
+     "w": "this",
+     "start": 504.628,
+     "end": 505.0
+    },
+    {
+     "w": "workflow.",
+     "start": 505.0,
+     "end": 505.836
+    },
+    {
+     "w": "Subscribe",
+     "start": 505.836,
+     "end": 506.673
+    },
+    {
+     "w": "to",
+     "start": 506.673,
+     "end": 506.859
+    },
+    {
+     "w": "AI",
+     "start": 506.859,
+     "end": 507.044
+    },
+    {
+     "w": "Graphic",
+     "start": 507.044,
+     "end": 507.695
+    },
+    {
+     "w": "TV",
+     "start": 507.695,
+     "end": 507.881
+    },
+    {
+     "w": "for",
+     "start": 507.881,
+     "end": 508.159
+    },
+    {
+     "w": "a",
+     "start": 508.159,
+     "end": 508.252
+    },
+    {
+     "w": "new",
+     "start": 508.252,
+     "end": 508.531
+    },
+    {
+     "w": "AI",
+     "start": 508.531,
+     "end": 508.717
+    },
+    {
+     "w": "workflow",
+     "start": 508.717,
+     "end": 509.46
+    },
+    {
+     "w": "every",
+     "start": 509.46,
+     "end": 509.925
+    },
+    {
+     "w": "day.",
+     "start": 509.925,
+     "end": 510.297
+    }
+   ]
+  }
+ ],
+ "chapters": [
+  {
+   "title": "Intro",
+   "start": 0
+  }
+ ]
+}

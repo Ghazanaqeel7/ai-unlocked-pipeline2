@@ -1,0 +1,32 @@
+{
+ "title": "Canva Posts Fast: Cheat Sheet",
+ "tldr": [
+  "Brand once, write once, build once, schedule once.",
+  "Brand voice and Bulk Create depend on your plan."
+ ],
+ "tools": [
+  {
+   "name": "Canva",
+   "link": "canva.com",
+   "note": "Plan-dependent: brand voice and Bulk Create"
+  }
+ ],
+ "steps": [
+  {
+   "title": "Brand Kit",
+   "detail": "Colors, fonts and logos saved once."
+  },
+  {
+   "title": "Brand voice",
+   "detail": "Added in the Brand Kit; Magic Write follows it."
+  },
+  {
+   "title": "Bulk Create",
+   "detail": "One design per data row. Preview first."
+  },
+  {
+   "title": "Content Planner",
+   "detail": "Schedule inside Canva. Instagram: desktop browser."
+  }
+ ]
+}

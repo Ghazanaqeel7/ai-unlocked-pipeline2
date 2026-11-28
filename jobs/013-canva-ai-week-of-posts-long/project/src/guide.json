@@ -1,0 +1,48 @@
+{
+ "title": "Canva Week-of-Posts Playbook",
+ "tldr": [
+  "Set a brand voice once, write seven drafts with Magic Write, build them with Bulk Create, schedule in the Content Planner.",
+  "Check your Canva plan: brand voice and Bulk Create depend on it."
+ ],
+ "tools": [
+  {
+   "name": "Canva",
+   "link": "canva.com",
+   "note": "Brand voice and Bulk Create depend on your plan"
+  }
+ ],
+ "steps": [
+  {
+   "title": "Set your brand voice",
+   "detail": "Homepage: Brand, Brand Kits, Brand voice. Save short guidelines."
+  },
+  {
+   "title": "Write seven drafts",
+   "detail": "Select text, press slash, choose Magic Write. Edit and fact check every draft."
+  },
+  {
+   "title": "Build one template",
+   "detail": "One text box per data field, then prepare a table with one row per post."
+  },
+  {
+   "title": "Run Bulk Create",
+   "detail": "Connect data, preview, then Create designs. Desktop only."
+  },
+  {
+   "title": "Resize if needed",
+   "detail": "Use Magic Resize, then check text and faces are still clear."
+  },
+  {
+   "title": "Schedule the week",
+   "detail": "Homepage: More, Content Planner, Add New, Post. Instagram needs a desktop browser."
+  }
+ ],
+ "prompts": [],
+ "checklist": [
+  "Brand voice saved",
+  "Seven drafts edited and fact checked",
+  "Template has one text box per field",
+  "Preview checked before Create designs",
+  "Posts scheduled across the week"
+ ]
+}

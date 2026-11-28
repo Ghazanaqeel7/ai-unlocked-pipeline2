@@ -1,0 +1,46 @@
+{
+ "type": "short",
+ "title": "Canva workflow, day 2/7: brand voice",
+ "title_options": [
+  "Canva workflow, day 2/7: brand voice",
+  "Canva Day 2/7: set your brand voice once",
+  "Day 2/7: make Magic Write sound like you"
+ ],
+ "thumb_spec": {
+  "text": "DAY 2 / 7",
+  "layout": "Huge DAY 2/7 on a yellow pill, a glowing speech bubble."
+ },
+ "description": "Day 2 of the 7-day Canva workflow series: set your brand voice in the Brand Kit so Magic Write follows it.\n\nSources: Canva Help, brand voice; Canva Help, Magic Write voice\n\nFull video: {LONG_URL}\n\nSubscribe: https://youtube.com/@AIGraphicTV\n\n#Canva #MagicWrite #BrandVoice #Shorts",
+ "tags": [
+  "canva",
+  "canva ai",
+  "canva tutorial",
+  "social media",
+  "content planner",
+  "magic write",
+  "bulk create",
+  "ai tools",
+  "brand kit",
+  "shorts",
+  "day 2",
+  "brand voice"
+ ],
+ "related_video_title": "Canva AI: A Week of Posts in One Sitting",
+ "pinned_comment": "Build the whole week of posts: {LONG_URL}\nDay 3 tomorrow. Comment GUIDE for the PDF.",
+ "target_seconds": 47,
+ "package": {
+  "id": "d2",
+  "slot": "short_series",
+  "date": "2026-11-28"
+ },
+ "thumb": {
+  "image": {
+   "q": "glowing speech bubble abstract"
+  },
+  "icon": "bulb",
+  "line1": "DAY 2 / 7",
+  "line2": "BRAND VOICE",
+  "box": "CANVA",
+  "box_color": "#C8F938"
+ }
+}
