@@ -1,41 +1,36 @@
 {
-  "date": "2026-11-27",
+  "date": "2026-11-28",
   "dossier": {
-    "tool": "n8n",
-    "topic": "Build your first AI automation in n8n",
-    "pain_hook": "Copy-pasting between apps all day",
+    "tool": "Canva",
+    "topic": "Canva AI: a week of posts in 20 minutes",
+    "pain_hook": "Social posts take forever",
     "evidence": [
       {
-        "title": "Complete AI Automation using n8n | Build Your First Automation From Scratch in Bangla",
-        "views": 305048,
-        "channel": "Ali Hossain"
+        "title": "This secret Canva tool is insane 😳 #canva #students",
+        "views": 986407,
+        "channel": "Luis Urrutia"
       },
       {
-        "title": "n8n Tutorial – Zero to Hero Course",
-        "views": 1320121,
-        "channel": "freeCodeCamp.org"
+        "title": "Canva AI: A Week of Posts in One Sitting"
       },
       {
-        "title": "Build Your First AI Automation in n8n (No Code)"
+        "title": "Social posts take forever (fix it in Canva)"
       },
       {
-        "title": "Stop copy-pasting between apps (n8n)"
-      },
-      {
-        "title": "n8n workflow, day 1/7: the trigger"
+        "title": "Canva workflow, day 2/7: brand voice"
       }
     ],
     "note": "Fact-check against the official docs/changelog before scripting. Evidence = titles that mention the tool, not claims."
   },
   "items": [
     {
-      "day": "Fri 27 Nov",
-      "date": "2026-11-27",
-      "status": "scripted",
-      "package": "d1",
-      "backlog_key": "build your first ai automation in n8n",
-      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
-      "long_title": "Build your first AI automation in n8n",
+      "day": "Sat 28 Nov",
+      "date": "2026-11-28",
+      "status": "planned",
+      "package": "d2",
+      "backlog_key": "canva ai a week of posts in 20 minutes",
+      "why": "Backlog #2 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Canva AI: a week of posts in 20 minutes",
       "slot": "long",
       "format": "long",
       "slot_pkt": "19:00",
@@ -50,19 +45,18 @@
         ],
         "rehook_every": 30
       },
-      "topic": "Build your first AI automation in n8n",
-      "angle": "Full walkthrough: from the pain ('Copy-pasting between apps all day') to a working result",
-      "title": "Build your first AI automation in n8n",
-      "job": "010-n8n-first-ai-automation-long"
+      "topic": "Canva AI: a week of posts in 20 minutes",
+      "angle": "Full walkthrough: from the pain ('Social posts take forever') to a working result",
+      "title": "Canva AI: a week of posts in 20 minutes"
     },
     {
-      "day": "Fri 27 Nov",
-      "date": "2026-11-27",
-      "status": "scripted",
-      "package": "d1",
-      "backlog_key": "build your first ai automation in n8n",
-      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
-      "long_title": "Build your first AI automation in n8n",
+      "day": "Sat 28 Nov",
+      "date": "2026-11-28",
+      "status": "planned",
+      "package": "d2",
+      "backlog_key": "canva ai a week of posts in 20 minutes",
+      "why": "Backlog #2 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Canva AI: a week of posts in 20 minutes",
       "slot": "short_pain",
       "format": "short",
       "slot_pkt": "07:30",
@@ -73,20 +67,19 @@
         ],
         "rehook_every": 10
       },
-      "topic": "Build your first AI automation in n8n",
-      "angle": "Pain-point hook: Copy-pasting between apps all day",
-      "title": "Copy-pasting between apps all day",
-      "related_video_title": "Build your first AI automation in n8n",
-      "job": "011-n8n-copy-paste-pain-short"
+      "topic": "Canva AI: a week of posts in 20 minutes",
+      "angle": "Pain-point hook: Social posts take forever",
+      "title": "Social posts take forever",
+      "related_video_title": "Canva AI: a week of posts in 20 minutes"
     },
     {
-      "day": "Fri 27 Nov",
-      "date": "2026-11-27",
-      "status": "scripted",
-      "package": "d1",
-      "backlog_key": "build your first ai automation in n8n",
-      "why": "Backlog #1 score 93.0 (demand 9, visual 10, pain-CTR 9)",
-      "long_title": "Build your first AI automation in n8n",
+      "day": "Sat 28 Nov",
+      "date": "2026-11-28",
+      "status": "planned",
+      "package": "d2",
+      "backlog_key": "canva ai a week of posts in 20 minutes",
+      "why": "Backlog #2 score 93.0 (demand 9, visual 10, pain-CTR 9)",
+      "long_title": "Canva AI: a week of posts in 20 minutes",
       "slot": "short_series",
       "format": "short",
       "slot_pkt": "21:30",
@@ -97,11 +90,10 @@
         ],
         "rehook_every": 10
       },
-      "topic": "n8n 7-day workflow: day 1/7 of the series",
-      "angle": "One repeatable n8n workflow step, day 1 of 7",
-      "title": "n8n workflow, day 1/7",
-      "related_video_title": "Build your first AI automation in n8n",
-      "job": "012-n8n-workflow-day1-short"
+      "topic": "Canva 7-day workflow: day 2/7 of the series",
+      "angle": "One repeatable Canva workflow step, day 2 of 7",
+      "title": "Canva workflow, day 2/7",
+      "related_video_title": "Canva AI: a week of posts in 20 minutes"
     }
   ],
   "link_rule": "Shorts: meta.related_video_title = long title; pinned_comment bridges to the long (use {LONG_URL})."

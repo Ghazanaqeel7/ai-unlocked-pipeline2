@@ -287,6 +287,21 @@
    "rank": 19
   },
   {
+   "key": "ai study plan from your syllabus",
+   "tool": "Study",
+   "topic": "AI study plan from your syllabus",
+   "pain_hook": "Exams and no plan",
+   "demand": 9,
+   "visual": 7,
+   "ctr": 9,
+   "trend_bonus": 3,
+   "score": 87.0,
+   "verified": false,
+   "status": "idea",
+   "job": null,
+   "rank": 20
+  },
+  {
    "key": "prompt templates for any task",
    "tool": "Prompting",
    "topic": "Prompt templates for any task",
@@ -299,7 +314,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 20
+   "rank": 21
   },
   {
    "key": "free ai stack for a student",
@@ -314,7 +329,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 21
+   "rank": 22
   },
   {
    "key": "email triage agent with n8n",
@@ -329,7 +344,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 22
+   "rank": 23
   },
   {
    "key": "5 zaps that save 5 hours a week",
@@ -344,7 +359,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 23
+   "rank": 24
   },
   {
    "key": "midjourney prompts for product photos",
@@ -359,7 +374,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 24
+   "rank": 25
   },
   {
    "key": "consistent characters in midjourney",
@@ -374,7 +389,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 25
+   "rank": 26
   },
   {
    "key": "gamma full presentation from a prompt",
@@ -389,7 +404,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 26
+   "rank": 27
   },
   {
    "key": "runway turn a photo into a video clip",
@@ -404,7 +419,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 27
+   "rank": 28
   },
   {
    "key": "ai video editing for beginners",
@@ -415,21 +430,6 @@
    "visual": 10,
    "ctr": 8,
    "trend_bonus": 0,
-   "score": 86.0,
-   "verified": false,
-   "status": "idea",
-   "job": null,
-   "rank": 28
-  },
-  {
-   "key": "ai study plan from your syllabus",
-   "tool": "Study",
-   "topic": "AI study plan from your syllabus",
-   "pain_hook": "Exams and no plan",
-   "demand": 9,
-   "visual": 7,
-   "ctr": 9,
-   "trend_bonus": 2,
    "score": 86.0,
    "verified": false,
    "status": "idea",
@@ -932,6 +932,21 @@
    "rank": 62
   },
   {
+   "key": "learn any language with ai conversations",
+   "tool": "Study",
+   "topic": "Learn any language with AI conversations",
+   "pain_hook": "Not speaking after months",
+   "demand": 8,
+   "visual": 7,
+   "ctr": 8,
+   "trend_bonus": 3,
+   "score": 80.0,
+   "verified": false,
+   "status": "idea",
+   "job": null,
+   "rank": 63
+  },
+  {
    "key": "keyword research with free ai tools",
    "tool": "SEO",
    "topic": "Keyword research with free AI tools",
@@ -944,7 +959,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 63
+   "rank": 64
   },
   {
    "key": "what not to paste into ai tools",
@@ -959,7 +974,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 64
+   "rank": 65
   },
   {
    "key": "chain prompts to get expert results",
@@ -974,7 +989,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 65
+   "rank": 66
   },
   {
    "key": "ai mistakes beginners make in week one",
@@ -989,7 +1004,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 66
+   "rank": 67
   },
   {
    "key": "lead capture to crm automatically",
@@ -1004,7 +1019,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 67
+   "rank": 68
   },
   {
    "key": "telegram bot that answers questions",
@@ -1019,7 +1034,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 68
+   "rank": 69
   },
   {
    "key": "brand kit for a business in 15 minutes",
@@ -1034,7 +1049,7 @@
    "verified": false,
    "status": "idea",
    "job": null,
-   "rank": 69
+   "rank": 70
   },
   {
    "key": "edit video by editing text",
@@ -1045,21 +1060,6 @@
    "visual": 9,
    "ctr": 8,
    "trend_bonus": 0,
-   "score": 79.0,
-   "verified": false,
-   "status": "idea",
-   "job": null,
-   "rank": 70
-  },
-  {
-   "key": "learn any language with ai conversations",
-   "tool": "Study",
-   "topic": "Learn any language with AI conversations",
-   "pain_hook": "Not speaking after months",
-   "demand": 8,
-   "visual": 7,
-   "ctr": 8,
-   "trend_bonus": 2,
    "score": 79.0,
    "verified": false,
    "status": "idea",
