@@ -309,8 +309,9 @@
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-012-n8n-workflow-day1-short/upload.mp4"
     },
     "013-canva-ai-week-of-posts-long": {
-      "status": "render_queued",
-      "updated": "2026-11-28T05:30:05Z"
+      "status": "rendering",
+      "updated": "2026-11-28T05:30:28Z",
+      "run": "46112383106"
     },
     "014-canva-social-posts-pain-short": {
       "status": "render_queued",
