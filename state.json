@@ -316,9 +316,13 @@
         {
           "t": "2026-11-28T05:30:30Z",
           "msg": "🎞 Render starting in 4 parts at once (~40-60 min)"
+        },
+        {
+          "t": "2026-11-28T07:24:52Z",
+          "msg": "🎞 Render starting in 18 parts at once (~60-90 min)"
         }
       ],
-      "progress_count": 1
+      "progress_count": 2
     },
     "014-canva-social-posts-pain-short": {
       "status": "video_ready",
