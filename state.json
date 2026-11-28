@@ -336,8 +336,9 @@
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-014-canva-social-posts-pain-short/upload.mp4"
     },
     "015-canva-workflow-day2-short": {
-      "status": "render_queued",
-      "updated": "2026-11-28T05:30:09Z"
+      "status": "rendering",
+      "updated": "2026-11-28T07:14:46Z",
+      "run": "46120211638"
     }
   },
   "ideas": [],
