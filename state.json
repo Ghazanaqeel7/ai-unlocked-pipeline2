@@ -313,8 +313,8 @@
       "updated": "2026-11-28T05:30:05Z"
     },
     "014-canva-social-posts-pain-short": {
-      "status": "script_ready",
-      "updated": "2026-11-28T05:29:53Z"
+      "status": "render_queued",
+      "updated": "2026-11-28T05:30:07Z"
     },
     "015-canva-workflow-day2-short": {
       "status": "script_ready",
