@@ -11,7 +11,9 @@ import {F} from '../theme.js';
 // Palette: orbital navy #040B16/#081324, cyan #38BDF8, gold #F59E0B, silver text.
 // Motion: cubic-bezier(0.22,1,0.36,1) settle, staggered entry, short exit fade — never stuck mid-opacity.
 // ---------------------------------------------------------------------------------------------
+const GRAD = {backgroundImage: 'linear-gradient(90deg, #F59E0B 0%, #FDE7B0 45%, #38BDF8 100%)', WebkitBackgroundClip: 'text', backgroundClip: 'text', color: 'transparent', WebkitTextFillColor: 'transparent'};
 const P = {bg: '#040B16', bg2: '#081324', cyan: '#38BDF8', gold: '#F59E0B', text: '#E8EEF7', sub: '#9FB0C8', line: 'rgba(56,189,248,.18)', card: 'linear-gradient(160deg, rgba(16,34,60,.92), rgba(8,19,36,.9))'};
+const CARD = {background: P.card, boxShadow: 'inset 0 1px 0 rgba(255,255,255,.10), inset 0 0 0 1px rgba(56,189,248,.05), 0 18px 44px rgba(0,0,0,.38)'};
 const EASE = Easing.bezier(0.22, 1, 0.36, 1);
 export const LAYOUT_NAMES = ['split', 'steps', 'compare', 'kinetic', 'outro', 'metric', 'quote', 'grid'];
 
@@ -38,13 +40,20 @@ const Rise = ({children, frames, delay = 0, dy = 34, dx = 0, style}) => {
 const ICONS = {
   bolt: 'M13 2L4 14h6l-1 8 9-12h-6l1-8z', check: 'M5 13l4 4L19 7', mail: 'M3 6h18v12H3zM3 7l9 6 9-6', doc: 'M6 3h9l4 4v14H6zM14 3v5h5M9 13h7M9 17h7',
   gear: 'M12 8a4 4 0 100 8 4 4 0 000-8zM12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2', chart: 'M4 20V10M10 20V4M16 20v-8M22 20H2',
+  heart: 'M12 21s-7-4.5-9-9a5 5 0 019-3 5 5 0 019 3c-2 4.5-9 9-9 9z', book: 'M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 19a2 2 0 012-2h13',
+  coin: 'M12 3a9 9 0 100 18 9 9 0 000-18zM12 7v10M9.5 9.5c0-1 1-1.5 2.5-1.5s2.5.5 2.5 1.5-1 1.5-2.5 1.5-2.5.5-2.5 1.5 1 1.5 2.5 1.5 2.5-.5 2.5-1.5',
+  camera: 'M3 8h4l2-3h6l2 3h4v12H3zM12 11a3.5 3.5 0 100 7 3.5 3.5 0 000-7z', mic: 'M12 3a3 3 0 013 3v6a3 3 0 01-6 0V6a3 3 0 013-3zM5 11a7 7 0 0014 0M12 18v3',
+  people: 'M9 11a3 3 0 100-6 3 3 0 000 6zM3 20a6 6 0 0112 0M17 8a2.5 2.5 0 110 5M18 20a5 5 0 00-3-4.6',
   link: 'M10 14a4 4 0 005.7 0l3-3a4 4 0 00-5.7-5.7l-1 1M14 10a4 4 0 00-5.7 0l-3 3a4 4 0 005.7 5.7l1-1', spark: 'M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z',
 };
-const KEYS = [[/mail|email|inbox|send/i, 'mail'], [/doc|sheet|file|note|report|pdf/i, 'doc'], [/data|metric|chart|track|analy|report|stat/i, 'chart'], [/trigger|webhook|api|connect|link|integrat/i, 'link'], [/automat|workflow|setup|config|build|run|node/i, 'gear'], [/verif|check|test|gate|approve|done|result/i, 'check'], [/fast|speed|save|time|instant|boost/i, 'bolt']];
+const KEYS = [[/health|sleep|fitness|workout|diet|stress|mental|wellness|habit/i, 'heart'], [/learn|study|course|skill|lesson|school|read|book|exam/i, 'book'], [/money|revenue|profit|income|sales|price|cost|budget|invest|cash|roi/i, 'coin'], [/audience|communit|team|people|customer|listener|fans?|follower|hire/i, 'people'], [/video|film|photo|camera|content|reel|shoot/i, 'camera'], [/podcast|voice|audio|record|mic\b|music/i, 'mic'], [/mail|email|inbox|send/i, 'mail'], [/doc|sheet|file|note|report|pdf/i, 'doc'], [/data|metric|chart|track|analy|report|stat/i, 'chart'], [/trigger|webhook|api|connect|link|integrat/i, 'link'], [/automat|workflow|setup|config|build|run|node/i, 'gear'], [/verif|check|test|gate|approve|done|result/i, 'check'], [/fast|speed|save|time|instant|boost/i, 'bolt']];
 const iconFor = (label, i = 0) => { for (const [re, k] of KEYS) if (re.test(label || '')) return k; return ['spark', 'bolt', 'gear', 'chart'][i % 4]; };
 const Icon = ({k, size = 30, color = P.bg}) => (<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{flex: '0 0 auto'}}><path d={ICONS[k] || ICONS.spark} /></svg>);
 
 // ---- field helpers (render real scenes.json data; derive from narration when fields are absent) ----
+const txtOf = (v) => `${(v && (v.title || v.headline || v.text || '')) || ''} ${(v && v.kicker) || ''} ${(v && v.narration) || ''}`.toLowerCase();
+// node-flow / connector visuals are used ONLY for technical / workflow topics; other domains get editorial rows
+const isTech = (v) => !!(v && (arr(v.workflow).length || v.gate || /\b(workflow|automat\w*|n8n|api|webhook|code|coding|software|integration|pipeline|node|nodes|agent|agents|database|script|deploy\w*|zapier|trigger|prompt|model)\b/.test(txtOf(v))));
 const arr = (x) => (Array.isArray(x) ? x : []);
 const asText = (x) => (typeof x === 'string' ? x : typeof x === 'number' ? String(x) : x && typeof x === 'object' ? String(x.text || x.label || x.title || x.name || '') : '');
 const sentences = (s) => String(s || '').split(/(?<=[.!?])\s+/).map((x) => x.trim()).filter(Boolean);
@@ -79,24 +88,53 @@ const fit = (text, base, min, perChar = 0.9) => Math.max(min, Math.min(base, bas
 const Waves = ({box, t0 = 0}) => {
   const f = useCurrentFrame() + t0; const {width: W, height: H} = box;
   const wave = (amp, len, speed, phase, y0) => { let d = `M0 ${H}`; for (let x = 0; x <= W; x += 40) d += ` L${x} ${(y0 + Math.sin((x / len) + f * speed + phase) * amp).toFixed(1)}`; return d + ` L${W} ${H} Z`; };
+  const bx = ((f * 3.2) % (W * 2.4)) - W * 0.7;      // slow diagonal light beam, always alive
   return (
-    <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0}}>
+    <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0, transform: `translate(${(-Math.sin(f * 0.03) * 7).toFixed(1)}px, ${(-Math.cos(f * 0.025) * 5).toFixed(1)}px) scale(1.03)`}}>
+      <defs><linearGradient id="alBeam" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stopColor="rgba(56,189,248,0)" /><stop offset="0.5" stopColor="rgba(56,189,248,.10)" /><stop offset="1" stopColor="rgba(56,189,248,0)" /></linearGradient></defs>
+      <polygon points={`${bx},0 ${bx + W * 0.28},0 ${bx + W * 0.28 - H * 0.35},${H} ${bx - H * 0.35},${H}`} fill="url(#alBeam)" />
       <path d={wave(34, 260, 0.035, 0, H * 0.84)} fill="rgba(56,189,248,.07)" />
       <path d={wave(26, 340, -0.028, 2, H * 0.89)} fill="rgba(245,158,11,.06)" />
       <path d={wave(20, 200, 0.045, 4, H * 0.94)} fill="rgba(56,189,248,.08)" />
       {[0.34, 0.5, 0.68].map((k, i) => <circle key={i} cx={W * 0.86} cy={H * 0.14} r={Math.min(W, H) * k} fill="none" stroke={i === 1 ? 'rgba(245,158,11,.14)' : 'rgba(56,189,248,.14)'} strokeWidth="2" strokeDasharray={i === 1 ? '6 16' : '2 0'} style={{transformOrigin: `${W * 0.86}px ${H * 0.14}px`, transform: `rotate(${f * (i % 2 ? -0.12 : 0.1)}deg)`}} />)}
-      {[0, 1, 2, 3, 4, 5].map((i) => <circle key={'p' + i} cx={(W * (0.12 + i * 0.17) + Math.sin(f * 0.02 + i) * 24)} cy={(H * (0.2 + (i % 3) * 0.28) + Math.cos(f * 0.017 + i * 2) * 18)} r={3 + (i % 3)} fill={i % 2 ? 'rgba(245,158,11,.35)' : 'rgba(56,189,248,.35)'} />)}
+      {[0, 1, 2, 3, 4, 5, 6, 7, 8].map((i) => <circle key={'p' + i} cx={(W * (0.08 + i * 0.115) + Math.sin(f * 0.02 + i) * 26)} cy={(H * (0.16 + (i % 4) * 0.22) + Math.cos(f * 0.017 + i * 2) * 20 - (f * 0.25 * (1 + (i % 3) * 0.4)) % 40)} r={2.5 + (i % 3)} fill={i % 2 ? 'rgba(245,158,11,.4)' : 'rgba(56,189,248,.4)'} />)}
       <circle cx={W * (0.82 + 0.03 * Math.sin(f * 0.02))} cy={H * 0.18} r={Math.min(W, H) * 0.28} fill="rgba(56,189,248,.05)" />
     </svg>
   );
 };
-const Shell = ({children, v, box}) => (
-  <AbsoluteFill style={{background: `radial-gradient(ellipse 80% 70% at 18% 12%, ${P.bg2} 0%, ${P.bg} 70%)`, overflow: 'hidden', fontFamily: F.sans}}>
-    <Waves box={box} t0={Number.isFinite(v.t0) ? v.t0 : 0} />
-    <AbsoluteFill style={{backgroundImage: `linear-gradient(${P.line} 1px, transparent 1px), linear-gradient(90deg, ${P.line} 1px, transparent 1px)`, backgroundSize: '72px 72px', opacity: 0.35}} />
-    <div style={{position: 'absolute', left: box.m, top: box.top, width: box.w, height: box.h, overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>{children}</div>
-  </AbsoluteFill>
-);
+const Brackets = ({box}) => {
+  const L = 38; const o = Math.round(box.m * 0.45); const st = {position: 'absolute', width: L, height: L, borderColor: 'rgba(56,189,248,.35)', borderStyle: 'solid', borderWidth: 0};
+  return (<>
+    <div style={{...st, left: o, top: o, borderTopWidth: 3, borderLeftWidth: 3}} /><div style={{...st, right: o, top: o, borderTopWidth: 3, borderRightWidth: 3}} />
+    <div style={{...st, left: o, bottom: o, borderBottomWidth: 3, borderLeftWidth: 3, borderColor: 'rgba(245,158,11,.35)'}} /><div style={{...st, right: o, bottom: o, borderBottomWidth: 3, borderRightWidth: 3, borderColor: 'rgba(245,158,11,.35)'}} />
+  </>);
+};
+// light-streak wipe on every beat entry (except the very first) so cuts feel like one continuous motion
+const Sweep = ({t0}) => {
+  const f = useCurrentFrame(); if (!(t0 > 0) || f >= 16) return null; const t = f / 16; const x = t * 150 - 30;
+  return <AbsoluteFill style={{pointerEvents: 'none', background: `linear-gradient(105deg, transparent ${x - 22}%, rgba(56,189,248,.20) ${x - 8}%, rgba(245,158,11,.16) ${x}%, transparent ${x + 10}%)`, opacity: 1 - t * 0.6}} />;
+};
+const Bars = ({box, t0}) => {
+  const f = useCurrentFrame() + t0; const n = box.narrow ? 28 : 56; const bw = box.w / n;
+  return (
+    <div style={{position: 'absolute', left: box.m, bottom: box.capB + 14, width: box.w, height: 64, display: 'flex', alignItems: 'flex-end', gap: 0, opacity: 0.55, overflow: 'hidden'}}>
+      {Array.from({length: n}).map((_, i) => <div key={i} style={{width: bw - 4, marginRight: 4, height: 8 + Math.abs(Math.sin(f * 0.12 + i * 0.55) * Math.cos(f * 0.05 + i * 0.2)) * 54, borderRadius: 3, background: i % 5 === 0 ? P.gold : P.cyan}} />)}
+    </div>
+  );
+};
+const Shell = ({children, v, box}) => {
+  const t0 = Number.isFinite(v.t0) ? v.t0 : 0; const f = useCurrentFrame() + t0;
+  return (
+    <AbsoluteFill style={{background: `radial-gradient(ellipse 80% 70% at 18% 12%, ${P.bg2} 0%, ${P.bg} 70%)`, overflow: 'hidden', fontFamily: F.sans}}>
+      <Waves box={box} t0={t0} />
+      <AbsoluteFill style={{backgroundImage: `linear-gradient(${P.line} 1px, transparent 1px), linear-gradient(90deg, ${P.line} 1px, transparent 1px)`, backgroundSize: '72px 72px', backgroundPosition: `${(f * 0.25).toFixed(1)}px ${(f * 0.18).toFixed(1)}px`, opacity: 0.32}} />
+      <Brackets box={box} />
+      {v.isLast || v.layout === 'outro' ? <Bars box={box} t0={t0} /> : null}
+      <div style={{position: 'absolute', left: box.m, top: box.top, width: box.w, height: box.h, overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'center', transform: `translate(${(Math.sin(f * 0.03) * 5).toFixed(1)}px, ${(Math.cos(f * 0.025) * 4).toFixed(1)}px)`}}>{children}</div>
+      <Sweep t0={t0} />
+    </AbsoluteFill>
+  );
+};
 const Kick = ({v, frames}) => (kicker(v) ? <Rise frames={frames} dy={14} style={{color: P.cyan, fontWeight: 800, letterSpacing: '0.18em', fontSize: 24, textTransform: 'uppercase', marginBottom: 18}}>{kicker(v)}</Rise> : null);
 
 // 1) Split Editorial + Visual Diagram -----------------------------------------------------------
@@ -106,6 +144,7 @@ const Split = ({v, frames, box}) => {
   const wf = Array.isArray(v.workflow) ? v.workflow.filter(Boolean).map((x) => ({label: clip(asText(x), 40), sub: ''})) : null;
   const nodes = (wf && wf.length ? wf : list.length ? list : [{label: 'Idea'}, {label: 'Result'}]).slice(0, 5);
   const title = fixCount(headline(v), nodes.length);
+  const tech = isTech(v);
   const gate = v.gate === false ? '' : clip(typeof v.gate === 'string' ? v.gate : v.verified ? 'Gate Verified' : '', 24);
   return (
     <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: box.narrow ? 48 : 72, alignItems: box.narrow ? 'stretch' : 'center', height: '100%'}}>
@@ -115,16 +154,16 @@ const Split = ({v, frames, box}) => {
         <Rise frames={frames} delay={12} style={{marginTop: 24, width: 120, height: 6, borderRadius: 3, background: P.gold}} />
         {v.sub || v.caption ? <Rise frames={frames} delay={16} style={{marginTop: 22, color: P.sub, fontSize: box.narrow ? 36 : 30, lineHeight: 1.35}}>{clip(v.sub || v.caption, 140)}</Rise> : null}
       </div>
-      <div style={{...col, flex: '1 1 48%', gap: 0}}>
+      <div style={{...col, flex: '1 1 48%', gap: tech ? 0 : 16}}>
         {nodes.map((it, i) => (
           <React.Fragment key={i}>
             <Rise frames={frames} delay={6 + i * 5} dx={box.narrow ? 0 : 40} dy={box.narrow ? 24 : 0}
-              style={{display: 'flex', alignItems: 'center', gap: 20, background: P.card, border: `2px solid ${i === nodes.length - 1 ? P.gold : P.cyan}`, borderRadius: 22, padding: '20px 26px', boxSizing: 'border-box'}}>
+              style={{display: 'flex', alignItems: 'center', gap: 20, ...CARD, border: `2px solid ${tech ? (i === nodes.length - 1 ? P.gold : P.cyan) : P.line}`, borderLeft: tech ? undefined : `7px solid ${i % 2 ? P.gold : P.cyan}`, borderRadius: tech ? 22 : 18, padding: '20px 26px', boxSizing: 'border-box'}}>
               <div style={{flex: '0 0 auto', width: 56, height: 56, borderRadius: 16, background: i === nodes.length - 1 ? P.gold : P.cyan, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon k={iconFor(it.label, i)} /></div>
               <div style={{minWidth: 0, flex: '1 1 auto', color: P.text, fontWeight: 700, fontSize: box.narrow ? 34 : 30, lineHeight: 1.2}}>{it.label}</div>
               {gate && i === nodes.length - 1 ? <div style={{flex: '0 0 auto', display: 'flex', alignItems: 'center', gap: 8, background: 'rgba(245,158,11,.14)', border: `2px solid ${P.gold}`, color: P.gold, borderRadius: 999, padding: '8px 16px', fontWeight: 800, fontSize: 22}}><Icon k="check" size={22} color={P.gold} />{gate}</div> : null}
             </Rise>
-            {i < nodes.length - 1 ? <Rise frames={frames} delay={14 + i * 7} dy={0} style={{alignSelf: 'center', width: 4, height: box.narrow ? 22 : 18, background: `linear-gradient(${P.cyan}, ${P.gold})`}} /> : null}
+            {tech && i < nodes.length - 1 ? <Rise frames={frames} delay={14 + i * 7} dy={0} style={{alignSelf: 'center', width: 4, height: box.narrow ? 22 : 18, background: `linear-gradient(${P.cyan}, ${P.gold})`}} /> : null}
           </React.Fragment>
         ))}
       </div>
@@ -146,7 +185,7 @@ const Steps = ({v, frames, box}) => {
       <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: 22, alignItems: 'stretch'}}>
         {list.map((it, i) => (
           <Rise key={i} frames={frames} delay={6 + i * 5} dy={44}
-            style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', background: P.card, borderRadius: 26, padding: '26px 28px', border: `2px solid ${i === active ? P.gold : P.line}`, boxShadow: i === active ? '0 0 0 4px rgba(245,158,11,.12)' : 'none'}}>
+            style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', ...CARD, borderRadius: 26, padding: '26px 28px', border: `2px solid ${i === active ? P.gold : P.line}`, boxShadow: i === active ? '0 0 0 4px rgba(245,158,11,.12)' : 'none'}}>
             <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}><div style={{color: i === active ? P.gold : P.cyan, fontWeight: 900, fontSize: box.narrow ? 54 : 48, lineHeight: 1}}>{String(i + 1).padStart(2, '0')}</div><Icon k={iconFor(it.label, i)} size={40} color={i === active ? P.gold : P.cyan} /></div>
             <div style={{marginTop: 14, color: P.text, fontWeight: 800, lineHeight: 1.2, fontSize: box.narrow ? (list.length > 3 ? 32 : 38) : (list.length > 4 ? 25 : 30)}}>{it.label}</div>
             {it.sub && !(box.narrow && list.length > 3) && !(!box.narrow && list.length > 4) ? <div style={{marginTop: 10, color: P.sub, fontSize: box.narrow ? 28 : 22, lineHeight: 1.3}}>{it.sub}</div> : null}
@@ -168,7 +207,7 @@ const Compare = ({v, frames, box}) => {
   const m0 = v.metric || v.efficiency || v.time_saved || (Array.isArray(v.metrics) && v.metrics[0]) || null;
   const mt = m0 ? (typeof m0 === 'object' ? {value: String(m0.value != null ? m0.value : m0.v || ''), label: clip(m0.label || m0.l || 'faster', 40)} : {value: String(m0), label: 'saved'}) : null;
   const Side = ({label, items, color, delay, dx}) => (
-    <Rise frames={frames} delay={delay} dx={dx} dy={0} style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', background: P.card, border: `2px solid ${color}`, borderRadius: 28, padding: '28px 32px'}}>
+    <Rise frames={frames} delay={delay} dx={dx} dy={0} style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', ...CARD, border: `2px solid ${color}`, borderRadius: 28, padding: '28px 32px'}}>
       <div style={{color, fontWeight: 900, letterSpacing: '0.16em', textTransform: 'uppercase', fontSize: 26}}>{clip(asText(label) || '', 24)}</div>
       <div style={{marginTop: 18, display: 'flex', flexDirection: 'column', gap: 16}}>
         {items.map((s, i) => <div key={i} style={{color: P.text, fontSize: box.narrow ? 36 : 30, lineHeight: 1.25, fontWeight: 600, display: 'flex', gap: 14}}><span style={{color, flex: '0 0 auto'}}>{color === P.gold ? '✓' : '✕'}</span><span style={{minWidth: 0}}>{s}</span></div>)}
@@ -197,12 +236,12 @@ const Kinetic = ({v, frames, box}) => {
       <Kick v={v} frames={frames} />
       <div style={{display: 'flex', flexWrap: 'wrap', gap: `0 ${Math.round(size * 0.25)}px`, color: P.text, fontWeight: 900, letterSpacing: '-0.025em', lineHeight: 1.05, fontSize: size}}>
         {words.map((w, i) => (
-          <Rise key={i} frames={frames} delay={2 + i * 3} dy={size * 0.5} style={{color: acc.has(w.toLowerCase().replace(/[^a-z0-9$%.]/g, '')) || i === words.length - 1 ? P.gold : P.text}}>{w}</Rise>
+          <Rise key={i} frames={frames} delay={2 + i * 3} dy={size * 0.5} style={acc.has(w.toLowerCase().replace(/[^a-z0-9$%.]/g, '')) || i === words.length - 1 ? GRAD : {color: P.text}}>{w}</Rise>
         ))}
       </div>
       <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: 18}}>
         {mt.map((m, i) => (
-          <Rise key={'m' + i} frames={frames} delay={14 + i * 6} style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', background: P.card, border: `2px solid ${P.cyan}`, borderRadius: 22, padding: '18px 24px'}}>
+          <Rise key={'m' + i} frames={frames} delay={14 + i * 6} style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', ...CARD, border: `2px solid ${P.cyan}`, borderRadius: 22, padding: '18px 24px'}}>
             <div style={{color: P.cyan, fontWeight: 900, fontSize: box.narrow ? 64 : 56, lineHeight: 1}}>{m.value}</div>
             <div style={{color: P.sub, fontSize: 24, marginTop: 6}}>{m.label}</div>
           </Rise>
@@ -238,7 +277,7 @@ const Outro = ({v, frames, box, seed = 0}) => {
   if (variant === 1) {          // big takeaway panel
     return (
       <div style={{display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'flex-start'}}>
-        <Rise frames={frames} delay={2} style={{width: '100%', boxSizing: 'border-box', background: P.card, border: `3px solid ${P.cyan}`, borderRadius: 34, padding: box.narrow ? '48px 44px' : '44px 56px'}}>
+        <Rise frames={frames} delay={2} style={{width: '100%', boxSizing: 'border-box', ...CARD, border: `3px solid ${P.cyan}`, borderRadius: 34, padding: box.narrow ? '48px 44px' : '44px 56px'}}>
           <div style={{color: P.cyan, fontWeight: 800, letterSpacing: '0.2em', fontSize: 24, textTransform: 'uppercase'}}>The takeaway</div>
           <div style={{marginTop: 20, color: P.text, fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', fontSize: size}}>{takeaway}</div>
         </Rise>
@@ -276,7 +315,7 @@ const Metric = ({v, frames, box}) => {
         <Kick v={v} frames={frames} />
         <Rise frames={frames} delay={6} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 70, 46) : fit(title, 64, 42)}}>{title}</Rise>
         <div style={{display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap'}}>
-          {rest.map((m, i) => <Rise key={i} frames={frames} delay={16 + i * 6} style={{background: P.card, border: `2px solid ${P.line}`, borderRadius: 18, padding: '14px 22px', boxSizing: 'border-box', maxWidth: '100%'}}><div style={{color: P.cyan, fontWeight: 900, fontSize: 44, lineHeight: 1}}>{m.value}</div><div style={{color: P.sub, fontSize: 22, marginTop: 4}}>{m.label}</div></Rise>)}
+          {rest.map((m, i) => <Rise key={i} frames={frames} delay={16 + i * 6} style={{...CARD, border: `2px solid ${P.line}`, borderRadius: 18, padding: '14px 22px', boxSizing: 'border-box', maxWidth: '100%'}}><div style={{color: P.cyan, fontWeight: 900, fontSize: 44, lineHeight: 1}}>{m.value}</div><div style={{color: P.sub, fontSize: 22, marginTop: 4}}>{m.label}</div></Rise>)}
         </div>
       </div>
     </div>
@@ -305,7 +344,7 @@ const Grid = ({v, frames, box}) => {
       <div><Kick v={v} frames={frames} /><Rise frames={frames} delay={3} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 70, 46) : fit(title, 62, 40)}}>{title}</Rise></div>
       <div style={{display: 'grid', gridTemplateColumns: box.narrow ? '1fr' : '1fr 1fr', gap: 20}}>
         {list.map((it, i) => (
-          <Rise key={i} frames={frames} delay={6 + i * 5} dy={36} style={{gridColumn: !box.narrow && list.length % 2 === 1 && i === list.length - 1 ? '1 / -1' : 'auto', display: 'flex', gap: 20, alignItems: 'center', minWidth: 0, boxSizing: 'border-box', background: P.card, border: `2px solid ${i % 3 === 2 ? P.gold : P.line}`, borderRadius: 24, padding: '22px 26px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.08)'}}>
+          <Rise key={i} frames={frames} delay={6 + i * 5} dy={36} style={{gridColumn: !box.narrow && list.length % 2 === 1 && i === list.length - 1 ? '1 / -1' : 'auto', display: 'flex', gap: 20, alignItems: 'center', minWidth: 0, boxSizing: 'border-box', ...CARD, border: `2px solid ${i % 3 === 2 ? P.gold : P.line}`, borderRadius: 24, padding: '22px 26px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.08)'}}>
             <div style={{flex: '0 0 auto', width: 64, height: 64, borderRadius: 18, background: i % 3 === 2 ? P.gold : P.cyan, display: 'flex', alignItems: 'center', justifyContent: 'center'}}><Icon k={iconFor(it.label, i)} size={34} /></div>
             <div style={{minWidth: 0}}><div style={{color: P.text, fontWeight: 800, fontSize: box.narrow ? 34 : 28, lineHeight: 1.2}}>{it.label}</div>{it.sub ? <div style={{color: P.sub, fontSize: box.narrow ? 26 : 21, marginTop: 6, lineHeight: 1.3}}>{it.sub}</div> : null}</div>
           </Rise>
