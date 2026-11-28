@@ -321,8 +321,9 @@
       "progress_count": 1
     },
     "014-canva-social-posts-pain-short": {
-      "status": "render_queued",
-      "updated": "2026-11-28T05:30:07Z"
+      "status": "rendering",
+      "updated": "2026-11-28T05:31:41Z",
+      "run": "46112386524"
     },
     "015-canva-workflow-day2-short": {
       "status": "render_queued",
