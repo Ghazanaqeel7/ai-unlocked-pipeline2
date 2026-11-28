@@ -1,6 +1,7 @@
 import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, Easing, spring} from 'remotion';
 import {F} from '../theme.js';
+import {TopicGraphic, GRAPHIC_KINDS} from './TopicGraphics.jsx';
 
 // ---------------------------------------------------------------------------------------------
 // AutoLayout — 5 genuinely distinct scene layouts rendered from scenes.json fields.
@@ -60,11 +61,11 @@ const sentences = (s) => String(s || '').split(/(?<=[.!?])\s+/).map((x) => x.tri
 const clip = (s, n) => { s = String(s || '').trim(); return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : s; };
 const pickList = (v, max = 4) => {
   const raw = v.bullets || v.items || v.points || v.steps || v.callouts || [];
-  let list = (Array.isArray(raw) ? raw : []).map((x) => ({label: clip(asText(x), 90), sub: clip(x && x.sub ? x.sub : x && x.detail ? x.detail : '', 80)})).filter((x) => x.label);
-  if (!list.length) list = sentences(v.narration).slice(1, max + 1).map((s) => ({label: clip(s, 90), sub: ''}));
+  let list = (Array.isArray(raw) ? raw : []).map((x) => ({label: clip(asText(x), 56), sub: clip(x && x.sub ? x.sub : x && x.detail ? x.detail : '', 80)})).filter((x) => x.label);
+  if (!list.length) list = sentences(v.narration).slice(1, max + 1).map((s) => ({label: clip(s, 48), sub: ''}));
   return list.slice(0, max);
 };
-const headline = (v) => clip(v.title || v.headline || v.text || sentences(v.narration)[0] || '', 80);
+const headline = (v) => clip(v.title || v.headline || v.text || sentences(v.narration)[0] || '', 60);
 const kicker = (v) => clip(v.kicker || v.label || '', 40);
 const metrics = (v) => arr(v.metrics).filter((m) => m && typeof m === 'object' && (m.value != null || m.v != null)).slice(0, 3).map((m) => ({value: clip(String(m.value != null ? m.value : m.v), 12), label: clip(m.label || m.l || '', 28)}));
 const NUMW = {two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10};
@@ -147,14 +148,14 @@ const Split = ({v, frames, box}) => {
   const tech = isTech(v);
   const gate = v.gate === false ? '' : clip(typeof v.gate === 'string' ? v.gate : v.verified ? 'Gate Verified' : '', 24);
   return (
-    <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: box.narrow ? 48 : 72, alignItems: box.narrow ? 'stretch' : 'center', height: '100%'}}>
+    <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: box.narrow ? 30 : 72, alignItems: box.narrow ? 'stretch' : 'center', justifyContent: 'center', height: '100%'}}>
       <div style={{...col, flex: box.narrow ? '0 0 auto' : '1 1 52%'}}>
         <Kick v={v} frames={frames} />
         <Rise frames={frames} delay={4} style={{color: P.text, fontWeight: 900, lineHeight: 1.06, letterSpacing: '-0.02em', fontSize: box.narrow ? fit(title, 88, 56) : fit(title, 84, 52)}}>{title}</Rise>
         <Rise frames={frames} delay={12} style={{marginTop: 24, width: 120, height: 6, borderRadius: 3, background: P.gold}} />
         {v.sub || v.caption ? <Rise frames={frames} delay={16} style={{marginTop: 22, color: P.sub, fontSize: box.narrow ? 36 : 30, lineHeight: 1.35}}>{clip(v.sub || v.caption, 140)}</Rise> : null}
       </div>
-      <div style={{...col, flex: '1 1 48%', gap: tech ? 0 : 16}}>
+      <div style={{...col, flex: box.narrow ? '0 0 auto' : '1 1 48%', gap: tech ? 0 : 16}}>
         {nodes.map((it, i) => (
           <React.Fragment key={i}>
             <Rise frames={frames} delay={6 + i * 5} dx={box.narrow ? 0 : 40} dy={box.narrow ? 24 : 0}
@@ -300,23 +301,15 @@ const Metric = ({v, frames, box}) => {
   const mt = metrics(v);
   const hero = mt[0] || {value: clip(String(v.value != null ? v.value : firstNumber(v.title || v.narration) || '✓'), 12), label: clip(v.label || '', 28)};
   const rest = mt.slice(1); const title = headline(v);
-  const {t} = useIn(frames, 4, 40); const size = Math.max(90, Math.min(box.narrow ? 230 : 210, (box.narrow ? 560 : 640) / Math.max(2, hero.value.length) * 1.7));
-  const R = box.narrow ? 150 : 130; const C2 = 2 * Math.PI * R;
+  const size = Math.max(80, Math.min(box.narrow ? 190 : 170, (box.w * (box.narrow ? 1 : 0.9)) / Math.max(2.2, hero.value.length * 0.62)));
   return (
-    <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', alignItems: 'center', justifyContent: 'center', gap: box.narrow ? 36 : 64, height: '100%'}}>
-      <div style={{position: 'relative', flex: '0 0 auto', width: R * 2 + 40, height: R * 2 + 40, display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-        <svg width={R * 2 + 40} height={R * 2 + 40} style={{position: 'absolute', left: 0, top: 0, transform: 'rotate(-90deg)'}}>
-          <circle cx={R + 20} cy={R + 20} r={R} fill="none" stroke={P.line} strokeWidth="10" />
-          <circle cx={R + 20} cy={R + 20} r={R} fill="none" stroke={P.cyan} strokeWidth="10" strokeLinecap="round" strokeDasharray={C2} strokeDashoffset={C2 * (1 - 0.82 * t)} />
-        </svg>
-        <div style={{textAlign: 'center', maxWidth: R * 1.7, overflow: 'hidden'}}><div style={{color: P.gold, fontWeight: 900, fontSize: Math.min(size, R * 1.1), lineHeight: 1, letterSpacing: '-0.03em'}}>{hero.value}</div>{hero.label ? <div style={{marginTop: 8, color: P.sub, fontSize: 22, fontWeight: 600}}>{hero.label}</div> : null}</div>
-      </div>
-      <div style={{minWidth: 0, flex: '1 1 auto', maxWidth: '100%'}}>
-        <Kick v={v} frames={frames} />
-        <Rise frames={frames} delay={6} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 70, 46) : fit(title, 64, 42)}}>{title}</Rise>
-        <div style={{display: 'flex', gap: 16, marginTop: 24, flexWrap: 'wrap'}}>
-          {rest.map((m, i) => <Rise key={i} frames={frames} delay={16 + i * 6} style={{...CARD, border: `2px solid ${P.line}`, borderRadius: 18, padding: '14px 22px', boxSizing: 'border-box', maxWidth: '100%'}}><div style={{color: P.cyan, fontWeight: 900, fontSize: 44, lineHeight: 1}}>{m.value}</div><div style={{color: P.sub, fontSize: 22, marginTop: 4}}>{m.label}</div></Rise>)}
-        </div>
+    <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 22, height: '100%', minWidth: 0}}>
+      <Kick v={v} frames={frames} />
+      <Rise frames={frames} delay={2} dy={30} style={{...GRAD, fontWeight: 900, fontSize: size, lineHeight: 1, letterSpacing: '-0.03em', whiteSpace: 'nowrap'}}>{hero.value}</Rise>
+      {hero.label ? <Rise frames={frames} delay={6} style={{color: P.sub, fontSize: box.narrow ? 32 : 26, fontWeight: 600}}>{hero.label}</Rise> : null}
+      <Rise frames={frames} delay={8} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 66, 44) : fit(title, 58, 38)}}>{title}</Rise>
+      <div style={{display: 'flex', gap: 16, flexWrap: 'wrap'}}>
+        {rest.map((m, i) => <Rise key={i} frames={frames} delay={14 + i * 5} style={{...CARD, border: `2px solid ${P.line}`, borderRadius: 18, padding: '12px 22px', boxSizing: 'border-box', maxWidth: '100%'}}><span style={{color: P.cyan, fontWeight: 900, fontSize: 40}}>{m.value}</span><span style={{color: P.sub, fontSize: 24, marginLeft: 12}}>{m.label}</span></Rise>)}
       </div>
     </div>
   );
@@ -392,12 +385,66 @@ class Boundary extends React.Component {
   }
 }
 
-// Props injected by Doc.jsx: layout (planned name), seed, isLast, narration, frames. Everything is guarded.
+// ---- topic-matched graphic planner: content/domain first, never the same graphic on adjacent beats ----
+const GR_ROT = ['chart', 'mockup', 'roadmap', 'flow', 'ring', 'beforeafter'];
+const graphicPrefs = (v, layout) => {
+  const o = v && typeof v === 'object' ? v : {}; const t = txtOf(o); const p = [];
+  if (GRAPHIC_KINDS.includes(o.graphic)) return [o.graphic];
+  if (layout === 'compare' || o.before || o.after) p.push('beforeafter', 'ring');
+  if (arr(o.workflow).length || isTech(o)) p.push('flow');
+  if (metrics(o).length || o.metric || /%|\d|grow\w*|revenue|money|profit|roi|sales|income|rise|faster|earn|save/.test(t)) p.push('chart', 'ring');
+  if (layout === 'steps' || /roadmap|plan|phase|journey|milestone|timeline|steps?|stage|launch|strategy|path|habits?|routine/.test(t)) p.push('roadmap');
+  if (/\b(app|apps|website|site|product|dashboard|template|tool|tools|feature|platform|page|course|guide|software|stack)\b/.test(t)) p.push('mockup');
+  if (/problem|pain|mistake|stop|fix|wrong|waste|struggle|tired|quit|fail|vs\b|before/.test(t)) p.push('beforeafter');
+  return p;
+};
+export const planGraphics = (visuals, layouts, seed = 0) => {
+  const out = []; const n = GR_ROT.length; const s0 = Number.isFinite(seed) ? Math.abs(Math.floor(seed)) : 0;
+  arr(visuals).forEach((v, i) => {
+    if (i === arr(visuals).length - 1) { out.push('ring'); return; }
+    const pool = [...graphicPrefs(v, (layouts || [])[i]), ...GR_ROT.map((_, k) => GR_ROT[(s0 + i + k) % n])];
+    const prev = out[i - 1]; const prev2 = out[i - 2];
+    out.push(pool.find((x) => x !== prev && x !== prev2) || pool.find((x) => x !== prev) || 'chart');
+  });
+  return out;
+};
+
+class Safe extends React.Component {
+  constructor(p) { super(p); this.state = {bad: false}; }
+  static getDerivedStateFromError() { return {bad: true}; }
+  render() { return this.state.bad ? null : this.props.children; }
+}
+
+// Props injected by Doc.jsx: layout + graphic (planned names), seed, isLast, t0, narration, frames. Everything is guarded.
 export const AutoLayout = (props) => {
   const box = useBox();
   const frames = Number.isFinite(props.frames) && props.frames > 0 ? props.frames : 60;
   const name = props.isLast ? 'outro' : LAYOUTS[props.layout] ? props.layout : 'kinetic';
   const L = LAYOUTS[name];
   const seed = Number.isFinite(props.seed) ? props.seed : 0;
-  return <Shell v={props} box={box}><Boundary box={box} v={props}><L v={props} frames={frames} box={box} seed={seed} /></Boundary></Shell>;
+  const kind = GRAPHIC_KINDS.includes(props.graphic) ? props.graphic : 'chart';
+  const iconPath = (l, i) => ICONS[iconFor(l, i)] || ICONS.spark;
+  const dense = ['steps', 'grid', 'compare', 'split'].includes(name) || pickList(props, 6).length > 3;
+  const t0 = Number.isFinite(props.t0) ? props.t0 : 0;
+  let inner;
+  if (box.narrow) {
+    const gH = dense ? 320 : 460; const sub = {...box, h: box.h - gH - 22};
+    inner = (
+      <div style={{display: 'flex', flexDirection: 'column', gap: 22, height: '100%'}}>
+        <div style={{flex: `0 0 ${gH}px`, display: 'flex', justifyContent: 'center', overflow: 'hidden'}}><Safe><TopicGraphic kind={kind} v={props} w={box.w} h={gH} t0={t0} frames={frames} iconPath={iconPath} /></Safe></div>
+        <div style={{flex: '1 1 auto', minHeight: 0, overflow: 'hidden'}}><Boundary box={sub} v={props}><L v={props} frames={frames} box={sub} seed={seed} /></Boundary></div>
+      </div>
+    );
+  } else if (['kinetic', 'quote', 'outro', 'metric'].includes(name)) {
+    const gw = Math.round(box.w * 0.4); const gh = Math.min(box.h, 440); const sub = {...box, w: box.w - gw - 56};
+    inner = (
+      <div style={{display: 'flex', flexDirection: 'row', alignItems: 'center', gap: 56, height: '100%'}}>
+        <div style={{flex: '1 1 auto', minWidth: 0, height: '100%', overflow: 'hidden'}}><Boundary box={sub} v={props}><L v={props} frames={frames} box={sub} seed={seed} /></Boundary></div>
+        <div style={{flex: `0 0 ${gw}px`}}><Safe><TopicGraphic kind={kind} v={props} w={gw} h={gh} t0={t0} frames={frames} iconPath={iconPath} /></Safe></div>
+      </div>
+    );
+  } else {
+    inner = <Boundary box={box} v={props}><L v={props} frames={frames} box={box} seed={seed} /></Boundary>;
+  }
+  return <Shell v={props} box={box}>{inner}</Shell>;
 };

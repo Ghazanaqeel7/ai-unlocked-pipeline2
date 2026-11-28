@@ -15,7 +15,7 @@ import {ListScene} from './scenes/ListScene.jsx';
 import {Quote} from './scenes/Quote.jsx';
 import {Illustration} from './scenes/Illustration.jsx';
 import {EndCard} from './scenes/EndCard.jsx';
-import {AutoLayout, planLayouts} from './scenes/AutoLayout.jsx';
+import {AutoLayout, planLayouts, planGraphics} from './scenes/AutoLayout.jsx';
 import {rnd} from './util.js';
 import {Grain, Sfx, AmbientOrbs} from './scenes/common.jsx';
 import {HookCard} from './scenes/ui/HookCard.jsx';
@@ -158,8 +158,10 @@ export const Doc = () => {
   const autoPlan = React.useMemo(() => {
     const idxs = []; beats.forEach((b, i) => { if (isAutoBeat(b)) idxs.push(i); });
     const names = planLayouts(idxs.map((i) => ({...beats[i].visual, takeaway: beats[i].visual.takeaway || scenesData.takeaway})), JOB_SEED);
-    const m = {}; idxs.forEach((i, k) => { m[i] = names[k]; });
-    return {m, lastAuto: idxs.length ? idxs[idxs.length - 1] : -1};
+    const vis = idxs.map((i) => ({...beats[i].visual, takeaway: beats[i].visual.takeaway || scenesData.takeaway}));
+    const gn = planGraphics(vis, names, JOB_SEED);
+    const m = {}; const g = {}; idxs.forEach((i, k) => { m[i] = names[k]; g[i] = gn[k]; });
+    return {m, g, lastAuto: idxs.length ? idxs[idxs.length - 1] : -1};
   }, [beats]);
   const f = useCurrentFrame();
   // render_guide.md "ambient light orbs on dark grid beats": active only while the current frame sits
@@ -174,7 +176,7 @@ export const Doc = () => {
         let extra = {};
         if (isAutoBeat(b)) {
           Comp = AutoLayout;
-          extra = {layout: autoPlan.m[i], seed: JOB_SEED, t0: b.from, isLast: i === autoPlan.lastAuto && isLast, takeaway: b.visual.takeaway || scenesData.takeaway};
+          extra = {layout: autoPlan.m[i], graphic: autoPlan.g[i], seed: JOB_SEED, t0: b.from, isLast: i === autoPlan.lastAuto && isLast, takeaway: b.visual.takeaway || scenesData.takeaway};
         }
         const seqDur = b.dur + (isLast ? 0 : OVERLAP);
         return (
