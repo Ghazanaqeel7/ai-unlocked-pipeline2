@@ -13,6 +13,19 @@ already-rendered/already-approved jobs never break on a re-render** — never re
 default in a new job. `hookcard` is the one exception: it's still primary, just pass it
 `theme: 'sand'|'studio'|'obsidian'` instead of the old `tone`/`polarity` pair.
 
+## DEFAULT for every new job: `"autolayout": true` (locked)
+
+Every new topic's `scenes.json` starts with `"autolayout": true` (optional `"seed": <int>` varies the layout order per topic).
+`Doc` (16:9) and `ShortDoc` (9:16) then pick a content-matched layout + animated graphic per beat automatically
+(`scenes/AutoLayout.jsx`, `scenes/TopicGraphics.jsx`). Write beats with the generic types (`headline`, `list`, `stat`,
+`compare`, `quote`, `illustration`, `endcard`, or `auto`) and **rich structured fields instead of prose**:
+`kicker`, `title` (short, punchy), `sub`, `items`/`bullets` (`[{text, sub}]`), `steps`, `workflow` (technical topics only),
+`metrics` (`[{value, label}]`), `comparison` (`{before:{label,items}, after:{label,items}, metric:{value,label}}`),
+`quote`/`author`, and on the last beat an `endcard` with `takeaway` + `cta`. Card counts always follow the real
+`items`/`steps` length (a "5 tools" title is auto-corrected to match). The final beat renders the AI Graphic TV logo +
+`@AIGraphicTV`; 16:9 also carries a subtle top-right watermark. `auto`/`autolayout` pass `validate_long.py` /
+`validate_short.py`. Studio primitives and approved jobs are unchanged and can still be mixed in.
+
 Two formats exist — read the one that matches the job's `meta.json type`:
 
 - **`long`** — 6-10 minute deep-dive explainers.

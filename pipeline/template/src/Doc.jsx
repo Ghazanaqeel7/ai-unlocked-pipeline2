@@ -16,6 +16,7 @@ import {Quote} from './scenes/Quote.jsx';
 import {Illustration} from './scenes/Illustration.jsx';
 import {EndCard} from './scenes/EndCard.jsx';
 import {AutoLayout, planLayouts, planGraphics} from './scenes/AutoLayout.jsx';
+import {BrandLogo, BrandMark} from './scenes/BrandLogo.jsx';
 import {rnd} from './util.js';
 import {Grain, Sfx, AmbientOrbs} from './scenes/common.jsx';
 import {HookCard} from './scenes/ui/HookCard.jsx';
@@ -154,6 +155,7 @@ export const Doc = () => {
     [beats]
   );
   const lastIdx = beats.length - 1;
+  const {width: vw, height: vh} = useVideoConfig();
   // content-driven plan over auto-layout beats only (planLayouts: keyword/field analysis + seed, no adjacent repeats)
   const autoPlan = React.useMemo(() => {
     const idxs = []; beats.forEach((b, i) => { if (isAutoBeat(b)) idxs.push(i); });
@@ -188,6 +190,17 @@ export const Doc = () => {
       })}
       <AbsoluteFill style={{background: 'radial-gradient(ellipse 90% 85% at 50% 50%, rgba(0,0,0,0) 62%, rgba(0,0,0,.35) 100%)', pointerEvents: 'none'}} />
       <Grain />
+      {(() => {
+        // Brand: 16:9 gets a subtle top-right watermark all video long (hidden once an AutoLayout outro shows the full logo);
+        // a non-auto final beat that doesn't already draw the logo gets it centered at the top for its last seconds.
+        const last = beats[lastIdx]; const wide = vw > vh; const outroOn = !!last && f >= last.from;
+        const lastAuto = !!last && isAutoBeat(last); const hasOwnLogo = !!last && ['commenttriggeroutro', 'socialctacard'].includes(last.visual.type);
+        const sm = Math.round(Math.min(vw, vh) * 0.07);
+        return (<>
+          {wide && !(outroOn && lastAuto) ? <div style={{position: 'absolute', right: 84, top: 84, pointerEvents: 'none'}}><BrandMark height={46} /></div> : null}
+          {outroOn && last && !lastAuto && !hasOwnLogo ? <AbsoluteFill style={{alignItems: 'center', pointerEvents: 'none'}}><div style={{marginTop: wide ? 84 : 140}}><BrandLogo size={wide ? 120 : 150} /></div></AbsoluteFill> : null}
+        </>);
+      })()}
       <Captions words={words} polaritySegments={polaritySegments} />
     </AbsoluteFill>
   );

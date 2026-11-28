@@ -21,6 +21,7 @@ export const C = {
 export const F = {
   display: 'Anton, Impact, "Arial Black", sans-serif',
   serif: '"Playfair Display", Georgia, serif',
+  head: '"Space Grotesk", Inter, Arial, "Liberation Sans", sans-serif',
   sans: 'Inter, Arial, "Liberation Sans", sans-serif',
   mono: '"Space Mono", "Courier New", monospace',
 };

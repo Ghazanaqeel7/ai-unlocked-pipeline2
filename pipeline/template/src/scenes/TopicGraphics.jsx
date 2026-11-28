@@ -11,6 +11,7 @@ import {useCurrentFrame, useVideoConfig, spring, interpolate} from 'remotion';
 const C = {bg: '#040B16', bg2: '#081324', cyan: '#38BDF8', gold: '#F59E0B', red: '#F87171', text: '#E8EEF7', sub: '#9FB0C8', line: 'rgba(56,189,248,.22)'};
 export const GRAPHIC_KINDS = ['chart', 'ring', 'flow', 'beforeafter', 'mockup', 'roadmap'];
 
+const HEAD = '"Space Grotesk", Inter, Arial, sans-serif';
 const arr = (x) => (Array.isArray(x) ? x : []);
 const txt = (x) => (typeof x === 'string' ? x : typeof x === 'number' ? String(x) : x && typeof x === 'object' ? String(x.text || x.label || x.title || x.name || '') : '');
 const clip = (s, n) => { s = String(s || '').trim(); return s.length > n ? s.slice(0, n - 1).replace(/\s+\S*$/, '') + '…' : s; };
@@ -63,7 +64,7 @@ const Chart = ({v, w, h, f}) => {
       {ramp.map((r, i) => <rect key={i} x={pad + bw * i + bw * 0.2} width={bw * 0.6} rx="8" y={top + ch - r * ch * sm(f, 4 + i * 3)} height={r * ch * sm(f, 4 + i * 3)} fill={i === n - 1 ? C.gold : C.cyan} opacity={i === n - 1 ? 0.9 : 0.28 + i * 0.06} />)}
       <path d={d} pathLength="1" strokeDasharray="1" strokeDashoffset={1 - draw} fill="none" stroke={`url(#${id}l)`} strokeWidth="6" strokeLinecap="round" filter={`url(#${id}g)`} />
       <circle cx={last[0]} cy={last[1]} r={9 + Math.sin(f * 0.2) * 2} fill={C.gold} opacity={draw > 0.9 ? 1 : 0} filter={`url(#${id}g)`} />
-      {m ? <text x={pad} y={78} fill={C.gold} fontSize="64" fontWeight="900" fontFamily="Inter, Arial, sans-serif" letterSpacing="-1">{fmt(m, sm(f, 2, {damping: 30, stiffness: 70, mass: 1}))}</text> : null}
+      {m ? <text x={pad} y={78} fill={C.gold} fontSize="64" fontWeight="700" fontFamily={HEAD} letterSpacing="-1">{fmt(m, sm(f, 2, {damping: 30, stiffness: 70, mass: 1}))}</text> : null}
       {m && m.label ? <text x={w - pad} y={76} textAnchor="end" fill={C.sub} fontSize="26" fontWeight="600" fontFamily="Inter, Arial, sans-serif">{m.label}</text> : null}
     </Frame>
   );
@@ -80,7 +81,7 @@ const Ring = ({v, w, h, f}) => {
       <circle cx={cx} cy={cy} r={r} fill="none" stroke="rgba(56,189,248,.14)" strokeWidth="16" />
       <circle cx={cx} cy={cy} r={r} fill="none" stroke="url(#grl)" strokeWidth="16" strokeLinecap="round" strokeDasharray={circ} strokeDashoffset={circ * (1 - pct * p)} transform={`rotate(-90 ${cx} ${cy})`} filter="url(#grg)" />
       <circle cx={cx + Math.cos(a) * (r - 28)} cy={cy + Math.sin(a) * (r - 28)} r="6" fill={C.gold} opacity=".9" />
-      {m ? <text x={cx} y={cy + 20} textAnchor="middle" fill={C.text} fontSize={Math.round(r * 0.62)} fontWeight="900" fontFamily="Inter, Arial, sans-serif">{fmt(m, sm(f, 2, {damping: 30, stiffness: 70, mass: 1}))}</text>
+      {m ? <text x={cx} y={cy + 20} textAnchor="middle" fill={C.text} fontSize={Math.round(r * 0.62)} fontWeight="700" fontFamily={HEAD}>{fmt(m, sm(f, 2, {damping: 30, stiffness: 70, mass: 1}))}</text>
         : <g><Icon d={CHECK} x={cx} y={cy} size={r * 0.8} color={C.gold} sw={2.6} /></g>}
       {m && m.label ? <text x={cx} y={cy + r * 0.55 + 14} textAnchor="middle" fill={C.sub} fontSize="24" fontWeight="600" fontFamily="Inter, Arial, sans-serif">{m.label}</text> : null}
     </Frame>

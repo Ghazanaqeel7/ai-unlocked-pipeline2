@@ -2,6 +2,7 @@ import React from 'react';
 import {AbsoluteFill, useCurrentFrame, useVideoConfig, interpolate, Easing, spring} from 'remotion';
 import {F} from '../theme.js';
 import {TopicGraphic, GRAPHIC_KINDS} from './TopicGraphics.jsx';
+import {BrandLogo} from './BrandLogo.jsx';
 
 // ---------------------------------------------------------------------------------------------
 // AutoLayout — 5 genuinely distinct scene layouts rendered from scenes.json fields.
@@ -55,6 +56,8 @@ const Icon = ({k, size = 30, color = P.bg}) => (<svg width={size} height={size} 
 const txtOf = (v) => `${(v && (v.title || v.headline || v.text || '')) || ''} ${(v && v.kicker) || ''} ${(v && v.narration) || ''}`.toLowerCase();
 // node-flow / connector visuals are used ONLY for technical / workflow topics; other domains get editorial rows
 const isTech = (v) => !!(v && (arr(v.workflow).length || v.gate || /\b(workflow|automat\w*|n8n|api|webhook|code|coding|software|integration|pipeline|node|nodes|agent|agents|database|script|deploy\w*|zapier|trigger|prompt|model)\b/.test(txtOf(v))));
+// accept `comparison: {before, after, metric}` as an alias of top-level before/after/metric
+const norm = (p) => { const o = p && typeof p === 'object' ? p : {}; const c = o.comparison && typeof o.comparison === 'object' ? o.comparison : null; return c ? {...o, before: o.before || c.before, after: o.after || c.after, metric: o.metric || c.metric || c.efficiency || c.time_saved} : o; };
 const arr = (x) => (Array.isArray(x) ? x : []);
 const asText = (x) => (typeof x === 'string' ? x : typeof x === 'number' ? String(x) : x && typeof x === 'object' ? String(x.text || x.label || x.title || x.name || '') : '');
 const sentences = (s) => String(s || '').split(/(?<=[.!?])\s+/).map((x) => x.trim()).filter(Boolean);
@@ -151,7 +154,7 @@ const Split = ({v, frames, box}) => {
     <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: box.narrow ? 30 : 72, alignItems: box.narrow ? 'stretch' : 'center', justifyContent: 'center', height: '100%'}}>
       <div style={{...col, flex: box.narrow ? '0 0 auto' : '1 1 52%'}}>
         <Kick v={v} frames={frames} />
-        <Rise frames={frames} delay={4} style={{color: P.text, fontWeight: 900, lineHeight: 1.06, letterSpacing: '-0.02em', fontSize: box.narrow ? fit(title, 88, 56) : fit(title, 84, 52)}}>{title}</Rise>
+        <Rise frames={frames} delay={4} style={{color: P.text, fontFamily: F.head, fontWeight: 700, lineHeight: 1.06, letterSpacing: '-0.025em', fontSize: box.narrow ? fit(title, 88, 56) : fit(title, 84, 52)}}>{title}</Rise>
         <Rise frames={frames} delay={12} style={{marginTop: 24, width: 120, height: 6, borderRadius: 3, background: P.gold}} />
         {v.sub || v.caption ? <Rise frames={frames} delay={16} style={{marginTop: 22, color: P.sub, fontSize: box.narrow ? 36 : 30, lineHeight: 1.35}}>{clip(v.sub || v.caption, 140)}</Rise> : null}
       </div>
@@ -181,13 +184,13 @@ const Steps = ({v, frames, box}) => {
     <div style={{display: 'flex', flexDirection: 'column', gap: box.narrow ? 36 : 40, height: '100%', justifyContent: 'center'}}>
       <div>
         <Kick v={v} frames={frames} />
-        <Rise frames={frames} delay={3} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 74, 48) : fit(title, 68, 44)}}>{title}</Rise>
+        <Rise frames={frames} delay={3} style={{color: P.text, fontFamily: F.head, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 74, 48) : fit(title, 68, 44)}}>{title}</Rise>
       </div>
       <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: 22, alignItems: 'stretch'}}>
         {list.map((it, i) => (
           <Rise key={i} frames={frames} delay={6 + i * 5} dy={44}
             style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', ...CARD, borderRadius: 26, padding: '26px 28px', border: `2px solid ${i === active ? P.gold : P.line}`, boxShadow: i === active ? '0 0 0 4px rgba(245,158,11,.12)' : 'none'}}>
-            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}><div style={{color: i === active ? P.gold : P.cyan, fontWeight: 900, fontSize: box.narrow ? 54 : 48, lineHeight: 1}}>{String(i + 1).padStart(2, '0')}</div><Icon k={iconFor(it.label, i)} size={40} color={i === active ? P.gold : P.cyan} /></div>
+            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'space-between'}}><div style={{color: i === active ? P.gold : P.cyan, fontFamily: F.head, fontWeight: 700, fontSize: box.narrow ? 54 : 48, lineHeight: 1}}>{String(i + 1).padStart(2, '0')}</div><Icon k={iconFor(it.label, i)} size={40} color={i === active ? P.gold : P.cyan} /></div>
             <div style={{marginTop: 14, color: P.text, fontWeight: 800, lineHeight: 1.2, fontSize: box.narrow ? (list.length > 3 ? 32 : 38) : (list.length > 4 ? 25 : 30)}}>{it.label}</div>
             {it.sub && !(box.narrow && list.length > 3) && !(!box.narrow && list.length > 4) ? <div style={{marginTop: 10, color: P.sub, fontSize: box.narrow ? 28 : 22, lineHeight: 1.3}}>{it.sub}</div> : null}
           </Rise>
@@ -209,7 +212,7 @@ const Compare = ({v, frames, box}) => {
   const mt = m0 ? (typeof m0 === 'object' ? {value: String(m0.value != null ? m0.value : m0.v || ''), label: clip(m0.label || m0.l || 'faster', 40)} : {value: String(m0), label: 'saved'}) : null;
   const Side = ({label, items, color, delay, dx}) => (
     <Rise frames={frames} delay={delay} dx={dx} dy={0} style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', ...CARD, border: `2px solid ${color}`, borderRadius: 28, padding: '28px 32px'}}>
-      <div style={{color, fontWeight: 900, letterSpacing: '0.16em', textTransform: 'uppercase', fontSize: 26}}>{clip(asText(label) || '', 24)}</div>
+      <div style={{color, fontFamily: F.head, fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', fontSize: 26}}>{clip(asText(label) || '', 24)}</div>
       <div style={{marginTop: 18, display: 'flex', flexDirection: 'column', gap: 16}}>
         {items.map((s, i) => <div key={i} style={{color: P.text, fontSize: box.narrow ? 36 : 30, lineHeight: 1.25, fontWeight: 600, display: 'flex', gap: 14}}><span style={{color, flex: '0 0 auto'}}>{color === P.gold ? '✓' : '✕'}</span><span style={{minWidth: 0}}>{s}</span></div>)}
       </div>
@@ -217,12 +220,12 @@ const Compare = ({v, frames, box}) => {
   );
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: 34, height: '100%', justifyContent: 'center'}}>
-      <div><Kick v={v} frames={frames} /><Rise frames={frames} delay={3} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 72, 46) : fit(title, 64, 42)}}>{title}</Rise></div>
+      <div><Kick v={v} frames={frames} /><Rise frames={frames} delay={3} style={{color: P.text, fontFamily: F.head, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 72, 46) : fit(title, 64, 42)}}>{title}</Rise></div>
       <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: 26, alignItems: 'stretch'}}>
         <Side label={before.label || 'Before'} items={bl} color="#F87171" delay={10} dx={-50} />
         <Side label={after.label || 'After'} items={al} color={P.gold} delay={18} dx={50} />
       </div>
-      {mt ? <Rise frames={frames} delay={28} style={{alignSelf: 'flex-start', display: 'flex', alignItems: 'center', gap: 16, background: 'rgba(245,158,11,.12)', border: `2px solid ${P.gold}`, borderRadius: 18, padding: '14px 26px'}}><Icon k="bolt" size={34} color={P.gold} /><span style={{color: P.gold, fontWeight: 900, fontSize: box.narrow ? 46 : 40}}>{mt.value}</span><span style={{color: P.text, fontSize: box.narrow ? 30 : 26, fontWeight: 600}}>{mt.label}</span></Rise> : null}
+      {mt ? <Rise frames={frames} delay={28} style={{alignSelf: 'flex-start', display: 'flex', alignItems: 'center', gap: 16, background: 'rgba(245,158,11,.12)', border: `2px solid ${P.gold}`, borderRadius: 18, padding: '14px 26px'}}><Icon k="bolt" size={34} color={P.gold} /><span style={{color: P.gold, fontFamily: F.head, fontWeight: 700, fontSize: box.narrow ? 46 : 40}}>{mt.value}</span><span style={{color: P.text, fontSize: box.narrow ? 30 : 26, fontWeight: 600}}>{mt.label}</span></Rise> : null}
     </div>
   );
 };
@@ -235,7 +238,7 @@ const Kinetic = ({v, frames, box}) => {
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: 34, height: '100%', justifyContent: 'center'}}>
       <Kick v={v} frames={frames} />
-      <div style={{display: 'flex', flexWrap: 'wrap', gap: `0 ${Math.round(size * 0.25)}px`, color: P.text, fontWeight: 900, letterSpacing: '-0.025em', lineHeight: 1.05, fontSize: size}}>
+      <div style={{display: 'flex', flexWrap: 'wrap', gap: `0 ${Math.round(size * 0.25)}px`, color: P.text, fontFamily: F.head, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.05, fontSize: size}}>
         {words.map((w, i) => (
           <Rise key={i} frames={frames} delay={2 + i * 3} dy={size * 0.5} style={acc.has(w.toLowerCase().replace(/[^a-z0-9$%.]/g, '')) || i === words.length - 1 ? GRAD : {color: P.text}}>{w}</Rise>
         ))}
@@ -243,7 +246,7 @@ const Kinetic = ({v, frames, box}) => {
       <div style={{display: 'flex', flexDirection: box.narrow ? 'column' : 'row', gap: 18}}>
         {mt.map((m, i) => (
           <Rise key={'m' + i} frames={frames} delay={14 + i * 6} style={{flex: '1 1 0', minWidth: 0, boxSizing: 'border-box', ...CARD, border: `2px solid ${P.cyan}`, borderRadius: 22, padding: '18px 24px'}}>
-            <div style={{color: P.cyan, fontWeight: 900, fontSize: box.narrow ? 64 : 56, lineHeight: 1}}>{m.value}</div>
+            <div style={{color: P.cyan, fontFamily: F.head, fontWeight: 700, fontSize: box.narrow ? 64 : 56, lineHeight: 1}}>{m.value}</div>
             <div style={{color: P.sub, fontSize: 24, marginTop: 6}}>{m.label}</div>
           </Rise>
         ))}
@@ -262,14 +265,15 @@ const Outro = ({v, frames, box, seed = 0}) => {
   const variant = (seed + takeaway.length) % 3;
   const size = box.narrow ? fit(takeaway, 92, 54, 0.8) : fit(takeaway, 80, 46, 0.7);
   const Handle = ({delay}) => <Rise frames={frames} delay={delay} style={{marginTop: 22, color: P.cyan, fontWeight: 800, fontSize: box.narrow ? 34 : 28, letterSpacing: '0.04em'}}>@AIGraphicTV</Rise>;
-  const Cta = ({delay}) => <Rise frames={frames} delay={delay} style={{alignSelf: 'flex-start', marginTop: 34, background: P.gold, color: P.bg, fontWeight: 900, fontSize: box.narrow ? 38 : 32, padding: '16px 36px', borderRadius: 16, maxWidth: '100%', boxSizing: 'border-box'}}>{cta}</Rise>;
+  const Cta = ({delay}) => <Rise frames={frames} delay={delay} style={{alignSelf: 'flex-start', marginTop: 34, background: P.gold, color: P.bg, fontFamily: F.head, fontWeight: 700, fontSize: box.narrow ? 38 : 32, padding: '16px 36px', borderRadius: 16, maxWidth: '100%', boxSizing: 'border-box'}}>{cta}</Rise>;
   if (variant === 0) {          // recap checklist
     return (
       <div style={{display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center'}}>
+        <Rise frames={frames} delay={0} dy={0} style={{marginBottom: 22, alignSelf: 'flex-start'}}><BrandLogo size={box.narrow ? 130 : 120} /></Rise>
         <Kick v={{kicker: v.kicker || 'Recap'}} frames={frames} />
-        <Rise frames={frames} delay={3} style={{color: P.text, fontWeight: 900, lineHeight: 1.08, letterSpacing: '-0.02em', fontSize: size}}>{takeaway}</Rise>
+        <Rise frames={frames} delay={3} style={{color: P.text, fontFamily: F.head, fontWeight: 700, lineHeight: 1.08, letterSpacing: '-0.025em', fontSize: size}}>{takeaway}</Rise>
         <div style={{marginTop: 28, display: 'flex', flexDirection: 'column', gap: 14}}>
-          {list.map((it, i) => <Rise key={i} frames={frames} delay={12 + i * 6} style={{display: 'flex', gap: 16, color: P.text, fontSize: box.narrow ? 36 : 30, fontWeight: 600}}><span style={{color: P.gold, fontWeight: 900}}>✓</span><span style={{minWidth: 0}}>{it.label}</span></Rise>)}
+          {list.map((it, i) => <Rise key={i} frames={frames} delay={12 + i * 6} style={{display: 'flex', gap: 16, color: P.text, fontSize: box.narrow ? 36 : 30, fontWeight: 600}}><span style={{color: P.gold, fontFamily: F.head, fontWeight: 700}}>✓</span><span style={{minWidth: 0}}>{it.label}</span></Rise>)}
         </div>
         <Cta delay={22} /><Handle delay={28} />
       </div>
@@ -278,9 +282,10 @@ const Outro = ({v, frames, box, seed = 0}) => {
   if (variant === 1) {          // big takeaway panel
     return (
       <div style={{display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems: 'flex-start'}}>
+        <Rise frames={frames} delay={0} dy={0} style={{marginBottom: 22, alignSelf: 'flex-start'}}><BrandLogo size={box.narrow ? 130 : 120} /></Rise>
         <Rise frames={frames} delay={2} style={{width: '100%', boxSizing: 'border-box', ...CARD, border: `3px solid ${P.cyan}`, borderRadius: 34, padding: box.narrow ? '48px 44px' : '44px 56px'}}>
           <div style={{color: P.cyan, fontWeight: 800, letterSpacing: '0.2em', fontSize: 24, textTransform: 'uppercase'}}>The takeaway</div>
-          <div style={{marginTop: 20, color: P.text, fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', fontSize: size}}>{takeaway}</div>
+          <div style={{marginTop: 20, color: P.text, fontFamily: F.head, fontWeight: 700, lineHeight: 1.1, letterSpacing: '-0.025em', fontSize: size}}>{takeaway}</div>
         </Rise>
         <Cta delay={16} /><Handle delay={22} />
       </div>
@@ -288,8 +293,9 @@ const Outro = ({v, frames, box, seed = 0}) => {
   }
   return (                       // next-step card
     <div style={{display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center'}}>
-      <Rise frames={frames} delay={2} style={{color: P.gold, fontWeight: 900, letterSpacing: '0.2em', fontSize: 26, textTransform: 'uppercase'}}>Your next step</Rise>
-      <Rise frames={frames} delay={7} style={{marginTop: 18, color: P.text, fontWeight: 900, lineHeight: 1.08, letterSpacing: '-0.02em', fontSize: size}}>{takeaway}</Rise>
+      <Rise frames={frames} delay={0} dy={0} style={{marginBottom: 22, alignSelf: 'flex-start'}}><BrandLogo size={box.narrow ? 130 : 120} /></Rise>
+        <Rise frames={frames} delay={2} style={{color: P.gold, fontFamily: F.head, fontWeight: 700, letterSpacing: '0.2em', fontSize: 26, textTransform: 'uppercase'}}>Your next step</Rise>
+      <Rise frames={frames} delay={7} style={{marginTop: 18, color: P.text, fontFamily: F.head, fontWeight: 700, lineHeight: 1.08, letterSpacing: '-0.025em', fontSize: size}}>{takeaway}</Rise>
       <Rise frames={frames} delay={14} style={{marginTop: 26, width: 160, height: 6, borderRadius: 3, background: P.cyan}} />
       <Cta delay={20} /><Handle delay={26} />
     </div>
@@ -305,11 +311,11 @@ const Metric = ({v, frames, box}) => {
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 22, height: '100%', minWidth: 0}}>
       <Kick v={v} frames={frames} />
-      <Rise frames={frames} delay={2} dy={30} style={{...GRAD, fontWeight: 900, fontSize: size, lineHeight: 1, letterSpacing: '-0.03em', whiteSpace: 'nowrap'}}>{hero.value}</Rise>
+      <Rise frames={frames} delay={2} dy={30} style={{...GRAD, fontFamily: F.head, fontWeight: 700, fontSize: size, lineHeight: 1, letterSpacing: '-0.025em', whiteSpace: 'nowrap'}}>{hero.value}</Rise>
       {hero.label ? <Rise frames={frames} delay={6} style={{color: P.sub, fontSize: box.narrow ? 32 : 26, fontWeight: 600}}>{hero.label}</Rise> : null}
-      <Rise frames={frames} delay={8} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 66, 44) : fit(title, 58, 38)}}>{title}</Rise>
+      <Rise frames={frames} delay={8} style={{color: P.text, fontFamily: F.head, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 66, 44) : fit(title, 58, 38)}}>{title}</Rise>
       <div style={{display: 'flex', gap: 16, flexWrap: 'wrap'}}>
-        {rest.map((m, i) => <Rise key={i} frames={frames} delay={14 + i * 5} style={{...CARD, border: `2px solid ${P.line}`, borderRadius: 18, padding: '12px 22px', boxSizing: 'border-box', maxWidth: '100%'}}><span style={{color: P.cyan, fontWeight: 900, fontSize: 40}}>{m.value}</span><span style={{color: P.sub, fontSize: 24, marginLeft: 12}}>{m.label}</span></Rise>)}
+        {rest.map((m, i) => <Rise key={i} frames={frames} delay={14 + i * 5} style={{...CARD, border: `2px solid ${P.line}`, borderRadius: 18, padding: '12px 22px', boxSizing: 'border-box', maxWidth: '100%'}}><span style={{color: P.cyan, fontFamily: F.head, fontWeight: 700, fontSize: 40}}>{m.value}</span><span style={{color: P.sub, fontSize: 24, marginLeft: 12}}>{m.label}</span></Rise>)}
       </div>
     </div>
   );
@@ -322,8 +328,8 @@ const Quote = ({v, frames, box}) => {
   const size = box.narrow ? fit(text, 84, 52, 0.7) : fit(text, 76, 44, 0.6);
   return (
     <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center', height: '100%', position: 'relative'}}>
-      <Rise frames={frames} delay={0} dy={20} style={{color: P.gold, fontFamily: 'Georgia, serif', fontWeight: 900, fontSize: box.narrow ? 220 : 190, lineHeight: 0.7, height: box.narrow ? 120 : 100}}>“</Rise>
-      <Rise frames={frames} delay={6} style={{color: P.text, fontWeight: 800, letterSpacing: '-0.02em', lineHeight: 1.12, fontSize: size, borderLeft: `6px solid ${P.cyan}`, paddingLeft: 32}}>{text}</Rise>
+      <Rise frames={frames} delay={0} dy={20} style={{color: P.gold, fontFamily: F.head, fontWeight: 700, fontSize: box.narrow ? 220 : 190, lineHeight: 0.7, height: box.narrow ? 120 : 100}}>“</Rise>
+      <Rise frames={frames} delay={6} style={{color: P.text, fontWeight: 800, letterSpacing: '-0.025em', lineHeight: 1.12, fontSize: size, borderLeft: `6px solid ${P.cyan}`, paddingLeft: 32}}>{text}</Rise>
       {by ? <Rise frames={frames} delay={16} style={{marginTop: 26, paddingLeft: 38, color: P.cyan, fontWeight: 700, fontSize: box.narrow ? 32 : 26, letterSpacing: '0.06em'}}>— {by}</Rise> : null}
     </div>
   );
@@ -334,7 +340,7 @@ const Grid = ({v, frames, box}) => {
   const list = pickList(v, 6); const title = fixCount(headline(v), list.length);
   return (
     <div style={{display: 'flex', flexDirection: 'column', gap: 30, height: '100%', justifyContent: 'center'}}>
-      <div><Kick v={v} frames={frames} /><Rise frames={frames} delay={3} style={{color: P.text, fontWeight: 900, letterSpacing: '-0.02em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 70, 46) : fit(title, 62, 40)}}>{title}</Rise></div>
+      <div><Kick v={v} frames={frames} /><Rise frames={frames} delay={3} style={{color: P.text, fontFamily: F.head, fontWeight: 700, letterSpacing: '-0.025em', lineHeight: 1.08, fontSize: box.narrow ? fit(title, 70, 46) : fit(title, 62, 40)}}>{title}</Rise></div>
       <div style={{display: 'grid', gridTemplateColumns: box.narrow ? '1fr' : '1fr 1fr', gap: 20}}>
         {list.map((it, i) => (
           <Rise key={i} frames={frames} delay={6 + i * 5} dy={36} style={{gridColumn: !box.narrow && list.length % 2 === 1 && i === list.length - 1 ? '1 / -1' : 'auto', display: 'flex', gap: 20, alignItems: 'center', minWidth: 0, boxSizing: 'border-box', ...CARD, border: `2px solid ${i % 3 === 2 ? P.gold : P.line}`, borderRadius: 24, padding: '22px 26px', boxShadow: 'inset 0 1px 0 rgba(255,255,255,.08)'}}>
@@ -361,8 +367,8 @@ const candidates = (v) => {
   if (list.length >= 4) c.push('grid'); else if (list.length >= 2) c.push('split', 'grid');
   return c;
 };
-export const planLayouts = (visuals, seed = 0) => {
-  const out = []; const n = DEFAULT_ROT.length; const s0 = Number.isFinite(seed) ? Math.abs(Math.floor(seed)) : 0;
+export const planLayouts = (visuals0, seed = 0) => {
+  const visuals = arr(visuals0).map(norm); const out = []; const n = DEFAULT_ROT.length; const s0 = Number.isFinite(seed) ? Math.abs(Math.floor(seed)) : 0;
   arr(visuals).forEach((v, i, all) => {
     if (i === all.length - 1) { out.push('outro'); return; }
     const pool = [...candidates(v), ...DEFAULT_ROT.map((_, k) => DEFAULT_ROT[(s0 + i + k) % n])];
@@ -381,7 +387,7 @@ class Boundary extends React.Component {
   render() {
     if (!this.state.bad) return this.props.children;
     const {box, v} = this.props; const t = clip(headline(v) || 'AI Graphic TV', 60);
-    return <div style={{display: 'flex', alignItems: 'center', height: '100%', color: P.text, fontWeight: 900, fontSize: box.narrow ? 72 : 64, lineHeight: 1.1}}>{t}</div>;
+    return <div style={{display: 'flex', alignItems: 'center', height: '100%', color: P.text, fontFamily: F.head, fontWeight: 700, fontSize: box.narrow ? 72 : 64, lineHeight: 1.1}}>{t}</div>;
   }
 }
 
@@ -398,8 +404,8 @@ const graphicPrefs = (v, layout) => {
   if (/problem|pain|mistake|stop|fix|wrong|waste|struggle|tired|quit|fail|vs\b|before/.test(t)) p.push('beforeafter');
   return p;
 };
-export const planGraphics = (visuals, layouts, seed = 0) => {
-  const out = []; const n = GR_ROT.length; const s0 = Number.isFinite(seed) ? Math.abs(Math.floor(seed)) : 0;
+export const planGraphics = (visuals0, layouts, seed = 0) => {
+  const visuals = arr(visuals0).map(norm); const out = []; const n = GR_ROT.length; const s0 = Number.isFinite(seed) ? Math.abs(Math.floor(seed)) : 0;
   arr(visuals).forEach((v, i) => {
     if (i === arr(visuals).length - 1) { out.push('ring'); return; }
     const pool = [...graphicPrefs(v, (layouts || [])[i]), ...GR_ROT.map((_, k) => GR_ROT[(s0 + i + k) % n])];
@@ -416,7 +422,8 @@ class Safe extends React.Component {
 }
 
 // Props injected by Doc.jsx: layout + graphic (planned names), seed, isLast, t0, narration, frames. Everything is guarded.
-export const AutoLayout = (props) => {
+export const AutoLayout = (rawProps) => {
+  const props = norm(rawProps);
   const box = useBox();
   const frames = Number.isFinite(props.frames) && props.frames > 0 ? props.frames : 60;
   const name = props.isLast ? 'outro' : LAYOUTS[props.layout] ? props.layout : 'kinetic';

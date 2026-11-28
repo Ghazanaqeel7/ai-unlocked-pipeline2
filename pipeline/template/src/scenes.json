@@ -1,5 +1,6 @@
 {
  "title": "Sample AI Graphic TV video (template demo)",
+ "autolayout": true,
  "scenes": [
   {
    "id": "s01",
@@ -7,7 +8,9 @@
    "visual": {
     "type": "title",
     "text": "You're using ChatGPT wrong",
-    "accent": ["wrong"]
+    "accent": [
+     "wrong"
+    ]
    },
    "tone": "dark"
   },
@@ -16,9 +19,9 @@
    "text": "This single trick saves hours every week.",
    "visual": {
     "type": "headline",
-    "kicker": "AI UNLOCKED · TRICK #1",
+    "kicker": "AI UNLOCKED \u00b7 TRICK #1",
     "text": "One setting most people never touch",
-    "source": "Sample text — replace with the real script"
+    "source": "Sample text \u2014 replace with the real script"
    },
    "tone": "cyan"
   }
