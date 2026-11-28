@@ -307,6 +307,10 @@
       "video_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-012-n8n-workflow-day1-short/final.mp4",
       "preview_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-012-n8n-workflow-day1-short/preview.mp4",
       "upload_url": "https://github.com/Ghazanaqeel7/ai-unlocked-pipeline2/releases/download/job-012-n8n-workflow-day1-short/upload.mp4"
+    },
+    "013-canva-ai-week-of-posts-long": {
+      "status": "script_ready",
+      "updated": "2026-11-28T05:29:50Z"
     }
   },
   "ideas": [],
