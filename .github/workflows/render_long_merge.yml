@@ -1,0 +1,65 @@
+name: render-long-merge
+# Merge-only re-run: reuses the chunk artifacts of an earlier render-long run (inputs.run_id) so a failed merge does not cost a re-render.
+on:
+  workflow_dispatch:
+    inputs:
+      job: { description: 'Long job id', required: true }
+      run_id: { description: 'render-long run id that holds the chunk-N artifacts', required: true }
+concurrency:
+  group: render-long
+  cancel-in-progress: false
+permissions:
+  contents: write
+  actions: read
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 1 }
+      - name: System packages
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg >/dev/null
+      - uses: actions/download-artifact@v4
+        with:
+          path: chunks
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ github.token }}
+      - name: Finalize and release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          J=${{ inputs.job }}
+          git config user.name "render-bot"; git config user.email "render-bot@users.noreply.github.com"
+          mkdir -p "jobs/$J/project/out"
+          CHUNKS=$(find chunks -name 'chunk*.mp4' | awk -F/ '{print $NF" "$0}' | sort -V | cut -d' ' -f2 | tr '\n' ' ')
+          echo "chunks: $CHUNKS"
+          T=$(find chunks -name thumbnail.jpg | head -1); [ -n "$T" ] && cp "$T" "jobs/$J/thumbnail.jpg" || true
+          bash pipeline/video/finalize_long.sh "jobs/$J" $CHUNKS
+          python3 pipeline/video/chapters.py "jobs/$J" || true
+          python3 -m pip install -q --break-system-packages reportlab >/dev/null 2>&1 || true
+          python3 pipeline/video/make_guide.py "jobs/$J" || echo "companion guide generation failed (non-fatal)"
+                    TITLE=$(python3 -c "import json;print(json.load(open('jobs/$J/meta.json'))['title'])")
+          gh release delete "job-$J" -y --cleanup-tag 2>/dev/null || true
+          ASSETS="jobs/$J/project/out/final.mp4 jobs/$J/project/out/preview.mp4 jobs/$J/project/out/upload.mp4"
+          [ -f "jobs/$J/thumbnail.jpg" ] && ASSETS="$ASSETS jobs/$J/thumbnail.jpg"
+          [ -f "jobs/$J/project/out/guide.pdf" ] && ASSETS="$ASSETS jobs/$J/project/out/guide.pdf jobs/$J/project/out/guide.md jobs/$J/project/out/social_copy.txt"
+          gh release create "job-$J" $ASSETS --title "$TITLE" --notes "Pipeline render for $J" --prerelease
+
+          git add jobs/$J/upload.json jobs/$J/credits.txt 2>/dev/null || true
+          git add -f jobs/$J/thumbnail.jpg 2>/dev/null || true
+          git commit -m "$J: upload helper data" || true
+          git checkout -- . ; git clean -fdq "jobs/$J/project" "jobs/$J/review" 2>/dev/null || true
+          for i in 1 2 3 4 5; do git pull --rebase -q origin main && git push -q origin HEAD:main && break || sleep $((i*4)); done
+
+          URL="https://github.com/${{ github.repository }}/releases/download/job-$J/final.mp4"
+          PURL="https://github.com/${{ github.repository }}/releases/download/job-$J/preview.mp4"
+          UURL="https://github.com/${{ github.repository }}/releases/download/job-$J/upload.mp4"
+          if [ -f "jobs/$J/project/out/final.mp4" ]; then
+            python3 pipeline/scripts/set_status.py "$J" video_ready video_url="$URL" preview_url="$PURL" upload_url="$UURL"
+          else
+            python3 pipeline/scripts/set_status.py "$J" render_failed run="${{ github.run_id }}"
+          fi
+

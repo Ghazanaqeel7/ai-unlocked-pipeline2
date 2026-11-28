@@ -129,9 +129,9 @@ jobs:
           J=${{ needs.pick.outputs.job }}
           git config user.name "render-bot"; git config user.email "render-bot@users.noreply.github.com"
           mkdir -p "jobs/$J/project/out"
-          CHUNKS=$(ls chunks/chunk-*/jobs/$J/project/out/chunk*.mp4 | sort -V | tr '\n' ' ')
+          CHUNKS=$(find chunks -name 'chunk*.mp4' | awk -F/ '{print $NF" "$0}' | sort -V | cut -d' ' -f2 | tr '\n' ' ')
           echo "chunks: $CHUNKS"
-          cp chunks/chunk-0/jobs/$J/thumbnail.jpg "jobs/$J/thumbnail.jpg" 2>/dev/null || true
+          T=$(find chunks -name thumbnail.jpg | head -1); [ -n "$T" ] && cp "$T" "jobs/$J/thumbnail.jpg" || true
           bash pipeline/video/finalize_long.sh "jobs/$J" $CHUNKS
           python3 pipeline/video/chapters.py "jobs/$J" || true
           python3 -m pip install -q --break-system-packages reportlab >/dev/null 2>&1 || true
